@@ -1,7 +1,7 @@
 // Swiss Electrical Academy — Service Worker V1.1
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'sea-v1.1.1-cache';
+const CACHE_NAME = 'sea-v1.2.0-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',

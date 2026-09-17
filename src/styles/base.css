@@ -959,6 +959,10 @@ button, input, select {
   white-space: pre-line;
 }
 
+.section-body table {
+  white-space: normal;
+}
+
 /* Cas Pratique */
 .case-study-box {
   background-color: rgba(34, 197, 94, 0.08);

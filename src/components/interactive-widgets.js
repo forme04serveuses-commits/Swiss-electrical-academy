@@ -8,35 +8,35 @@ export function createPyramidWidget() {
   const tiersData = [
     {
       level: 1,
-      name: "1er rang : Actes de l'Assemblée et du Conseil fédéral",
+      name: "1er rang : Conseil fédéral (CF) — Lois et Ordonnances fédérales",
       color: "tier-1",
-      badge: "Lois & Ordonnances fédérales",
-      description: "Niveau juridique le plus contraignant. Comprend la LIE (Loi sur les installations électriques, RS 734.0), l'OIBT (Ordonnance sur les installations à basse tension, RS 734.27), l'OCFo (RS 734.2) et l'OTEM. Adoptés par le Parlement et le Conseil fédéral.",
-      binding: "Force légale contraignante absolue. Prévaut sur tous les rangs inférieurs."
+      badge: "Conseil fédéral (CF)",
+      description: "Niveau le plus contraignant. Comprend les Lois fédérales et Ordonnances : RS 734.0 - LIE (Loi sur les installations électriques), RS 734.1 - OCFa (Courant faible), RS 734.2 - OCFo (Courant fort), RS 734.24 - O ESTI, RS 734.26 - OMBT, RS 734.27 - OIBT (Basse tension), RS 734.31 - OLEI (Lignes électriques), RS 734.5 - OCEM, RS 784.10 - LTC (Télécommunications), RS 814.710 - ORNI, RS 832.20 - LAA, RS 832.30 - OPA et RS 930.11 - LSPro.",
+      binding: "Niveau le plus contraignant — Droit fédéral édicté par l'Assemblée fédérale et le Conseil fédéral."
     },
     {
       level: 2,
-      name: "2e rang : Ordonnances du DETEC",
+      name: "2e rang : Ordonnances des départements fédéraux (DETEC)",
       color: "tier-2",
-      badge: "Département fédéral",
-      description: "Ordonnances techniques édictées par le Département fédéral de l'environnement, des transports, de l'énergie et de la communication (ex: ordonnance sur le matériel électrique à basse tension).",
-      binding: "Prescriptions départementales d'application obligatoire."
+      badge: "Département fédéral (DETEC)",
+      description: "RS 734.272 - O DETEC : Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l'Environnement, des Transports, de l'Energie et de la Communication).",
+      binding: "Ordonnance départementale d'application obligatoire."
     },
     {
       level: 3,
       name: "3e rang : Règles techniques reconnues",
       color: "tier-3",
-      badge: "Normes & Directives ESTI",
-      description: "NIBT 2025 (SN 411000), normes européennes EN (CENELEC), normes internationales CEI/IEC, et directives officielles de l'ESTI (Inspection fédérale des installations à courant fort).",
-      binding: "Leur respect confère la présomption légale de conformité aux ordonnances fédérales (OIBT art. 4)."
+      badge: "Normes & Règles techniques",
+      description: "NIBT : Norme sur les installations à basse tension (SN 411000:2025), SN EN (Norme Suisse Européenne Norme), et directives de l'ESTI (Inspection fédérale des installations à courant fort).",
+      binding: "Normes techniques et règles d'application reconnues."
     },
     {
       level: 4,
-      name: "4e rang : Directives professionnelles & recommandations",
+      name: "4e rang : Directives professionnelles, règles et guides",
       color: "tier-4",
-      badge: "Branches & Réseaux",
-      description: "PDIE (Prescriptions des distributeurs d'électricité suisses pour le raccordement au réseau), directives de sécurité du travail SUVA, prescriptions de protection incendie de l'AEAI.",
-      binding: "Recommandations professionnelles et conditions techniques de raccordement des gestionnaires de réseau."
+      badge: "Règles, Guides & Directives",
+      description: "PDIE (Prescriptions des distributeurs d'électricité CH), SUVA (Caisse nationale suisse d'assurance en cas d'accidents), AEAI (Association des établissements cantonaux d'assurance incendie), SNR (Règle Suisse) et SNG (Guide Suisse).",
+      binding: "Niveau le moins contraignant — règles techniques / directives."
     }
   ];
 
@@ -44,14 +44,14 @@ export function createPyramidWidget() {
   container.className = 'interactive-widget-wrapper';
   container.innerHTML = `
     <div class="widget-header">
-      <div class="widget-title">📐 Pyramide interactive des prescriptions suisses</div>
-      <div class="widget-desc">Cliquez sur un étage de la pyramide pour explorer son niveau d'autorité juridique.</div>
+      <div class="widget-title">📐 Pyramide hiérarchique des lois, ordonnances et règles techniques suisses</div>
+      <div class="widget-desc">Du niveau le plus contraignant (Conseil fédéral) au niveau le moins contraignant (règles techniques / directives). Cliquez sur un étage pour explorer son niveau d'autorité juridique.</div>
     </div>
     <div class="pyramid-visual">
-      <div class="pyramid-tier tier-1 active" data-tier="0">1er rang : Lois & Ordonnances fédérales (LIE, OIBT, OCFo)</div>
-      <div class="pyramid-tier tier-2" data-tier="1">2e rang : Ordonnances du DETEC</div>
-      <div class="pyramid-tier tier-3" data-tier="2">3e rang : Règles techniques reconnues (NIBT, Directives ESTI)</div>
-      <div class="pyramid-tier tier-4" data-tier="3">4e rang : Directives professionnelles (PDIE, SUVA, AEAI)</div>
+      <div class="pyramid-tier tier-1 active" data-tier="0">1er rang : Conseil fédéral (LIE, OCFa, OCFo, OIBT, O ESTI, OMBT...)</div>
+      <div class="pyramid-tier tier-2" data-tier="1">2e rang : Ordonnances du DETEC (RS 734.272 - O DETEC)</div>
+      <div class="pyramid-tier tier-3" data-tier="2">3e rang : Règles techniques reconnues (NIBT SN 411000:2025, SN EN, ESTI)</div>
+      <div class="pyramid-tier tier-4" data-tier="3">4e rang : Directives & Guides (PDIE, SUVA, AEAI, SNR, SNG)</div>
     </div>
     <div class="pyramid-detail-card" id="pyramidDetailBox">
       <div style="font-weight:700; font-size:1.05rem; color:var(--text-primary); margin-bottom:0.4rem;" id="pyramidDetailTitle">
@@ -66,41 +66,52 @@ export function createPyramidWidget() {
       </div>
     </div>
 
-    <!-- Tableau normatif SN / SNR / SNG -->
+    <!-- Structure et présentation des SN, SNR et SNG -->
     <div style="margin-top:1.5rem;">
-      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.5rem;">
-        Tableau officiel des types de normes suisses (SNV / CES)
+      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.35rem;">
+        Structure et présentation des SN, SNR et SNG
       </div>
-      <table class="thresholds-table">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Désignation</th>
-            <th>Élaboration</th>
-            <th>Validité</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>SN</strong></td>
-            <td>Norme suisse</td>
-            <td>SNV / CES</td>
-            <td><strong>Illimitée</strong></td>
-          </tr>
-          <tr>
-            <td><strong>SNR</strong></td>
-            <td>Règle suisse</td>
-            <td>Comité technique</td>
-            <td><strong>5 ans</strong> (prolongeable 3 ans)</td>
-          </tr>
-          <tr>
-            <td><strong>SNG</strong></td>
-            <td>Guide suisse</td>
-            <td>Groupe d'experts</td>
-            <td><strong>Illimitée</strong> (informatif)</td>
-          </tr>
-        </tbody>
-      </table>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem; line-height:1.5;">
+        Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d'origine européenne ou internationale et ont été transférées dans l'assortiment de normes suisses.
+      </p>
+      <div style="overflow-x:auto;">
+        <table class="thresholds-table">
+          <thead>
+            <tr>
+              <th style="min-width:130px;"></th>
+              <th style="min-width:180px;">[SN]</th>
+              <th style="min-width:180px;">[SNR]</th>
+              <th style="min-width:180px;">[SNG]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Définition</strong></td>
+              <td>Publication normative préparée sous la direction d'un organisme de normalisation CH, EU ou internationale reconnus</td>
+              <td>Publication préparée sous la direction d'un organisme de normalisation CH reconnu</td>
+              <td>Publication chapotée par un organisme de normalisation CH indiquant des explications pour l'élaboration et l'utilisation de normes et de règles</td>
+            </tr>
+            <tr>
+              <td><strong>Intégration à la norme CH</strong></td>
+              <td>Oui</td>
+              <td>Non</td>
+              <td>Non</td>
+            </tr>
+            <tr>
+              <td><strong>Description</strong></td>
+              <td>Norme classique</td>
+              <td>Publication normative à un accord limité (sans procéder à un vote formel)</td>
+              <td>Publication sans définition normative</td>
+            </tr>
+            <tr>
+              <td><strong>Validité</strong></td>
+              <td>Illimitée</td>
+              <td>5 ans, possibilité de prolonger de 3 ans en cas ➜ en SN/SNG</td>
+              <td>Illimitée</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   `;
 
