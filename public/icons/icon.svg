@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="electricGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="swissRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <filter id="electricGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Arrière-plan squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+
+  <!-- Trame de repère circulaire discrète -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#38BDF8" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#38BDF8" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- Emblème hexagonal d'ingénierie suisse -->
+  <polygon points="256,76 396,156 396,316 256,396 116,316 116,156" 
+           fill="none" stroke="#38BDF8" stroke-width="12" stroke-linejoin="round" stroke-opacity="0.7"/>
+
+  <!-- Bouclier central de sécurité -->
+  <path d="M256,120 L360,180 L360,290 C360,350 256,400 256,400 C256,400 152,350 152,290 L152,180 Z" 
+        fill="#172033" stroke="#38BDF8" stroke-width="4" stroke-opacity="0.4"/>
+
+  <!-- Petite croix suisse officielle discrète au sommet du bouclier -->
+  <rect x="249" y="152" width="14" height="26" rx="2" fill="#EF4444"/>
+  <rect x="243" y="158" width="26" height="14" rx="2" fill="#EF4444"/>
+  <rect x="252" y="155" width="8" height="20" rx="1" fill="#FFFFFF"/>
+  <rect x="246" y="161" width="20" height="8" rx="1" fill="#FFFFFF"/>
+
+  <!-- Éclair dynamique haute tension (Electric Blue) -->
+  <path d="M272,185 L196,285 L248,285 L236,365 L316,265 L264,265 Z" 
+        fill="url(#electricGrad)" filter="url(#electricGlow)"/>
+
+  <!-- Socle académique épuré -->
+  <path d="M200,425 L312,425" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M228,440 L284,440" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-opacity="0.6"/>
+</svg>

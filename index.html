@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Swiss Electrical Academy — Plateforme e-learning officielle</title>
+  <meta name="description" content="Apprendre les règles. Comprendre les risques. Maîtriser la pratique. Plateforme e-learning suisse officielle sur la LIE, l'OIBT, la NIBT 2025 (SN 411000) et la sécurité électrique."/>
+
+  <!-- Métadonnées Open Graph (aperçu riche pour GitHub, LinkedIn, etc.) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Swiss Electrical Academy"/>
+  <meta property="og:title" content="Swiss Electrical Academy — Plateforme e-learning officielle"/>
+  <meta property="og:description" content="Apprendre les règles. Comprendre les risques. Maîtriser la pratique. Plateforme e-learning suisse officielle sur la LIE, l'OIBT, la NIBT 2025 (SN 411000) et la sécurité électrique."/>
+  <meta property="og:image" content="./public/icons/icon-512.png"/>
+
+  <!-- Cartes Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Swiss Electrical Academy — Plateforme e-learning officielle"/>
+  <meta name="twitter:description" content="Apprendre les règles. Comprendre les risques. Maîtriser la pratique. Plateforme e-learning suisse officielle sur la LIE, l'OIBT, la NIBT 2025 (SN 411000) et la sécurité électrique."/>
+  <meta name="twitter:image" content="./public/icons/icon-512.png"/>
+
+  <!-- Configuration PWA & Mobile (chemins relatifs ./ indispensables pour GitHub Pages) -->
+  <meta name="theme-color" content="#0B1220"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Swiss Academy"/>
+  <meta name="application-name" content="Swiss Academy"/>
+  <link rel="manifest" href="./manifest.webmanifest"/>
+  <link rel="icon" type="image/svg+xml" href="./public/icons/icon.svg"/>
+  <link rel="apple-touch-icon" href="./public/icons/icon-192.png"/>
+
+  <!-- Typographie Inter officielle -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Feuilles de style (chemins relatifs ./ pour support parfait en sous-répertoire GitHub Pages) -->
+  <link rel="stylesheet" href="./src/styles/theme.css"/>
+  <link rel="stylesheet" href="./src/styles/base.css"/>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Message de secours si JavaScript est désactivé -->
+  <noscript>
+    <div style="font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 48px 20px; color: #F8FAFC; background: #0B1220; min-height: 100vh;">
+      <h1 style="font-size: 24px; margin-bottom: 12px; color: #38BDF8;">Swiss Electrical Academy</h1>
+      <p style="color: #94A3B8; max-width: 480px; margin: 0 auto; line-height: 1.6;">
+        Cette plateforme e-learning interactive requiert l'activation de JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans les paramètres de votre navigateur.
+      </p>
+    </div>
+  </noscript>
+
+  <!-- Point d'entrée de l'application (Bundle autonome compatible GitHub Pages & serveur local) -->
+  <script src="./src/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,2869 @@
+/* Swiss Electrical Academy — Standalone Bundle (Compatible file:// & http://) */
+(() => {
+'use strict';
+
+// ==================== src/data/academy-data.js ====================
+// Swiss Electrical Academy — Registre officiel des données et modules (V1.1)
+// Source de vérité : Prescriptions officielles suisses (LIE, OCFo, OIBT, NIBT 2025, ESTI, SN)
+// Règle absolue : Aucune invention de référence technique. Données réelles ou « Contenu en préparation ».
+
+const ACADEMY_INFO = {
+  institution: "Swiss Electrical Academy",
+  baseline: "Apprendre les règles. Comprendre les risques. Maîtriser la pratique.",
+  version: "1.1",
+  themeColor: "#0B1220",
+  accentElectric: "#38BDF8",
+  accentRed: "#EF4444"
+};
+
+// Profil apprenant par défaut
+const DEFAULT_USER = {
+  name: "Alex",
+  role: "Installateur-électricien",
+  avatar: "👨‍🔧",
+  level: "Niveau 2 — Praticien qualifié"
+};
+
+// Badges déblocables officiels (Section 25)
+const OFFICIAL_BADGES = [
+  {
+    id: "badge-first-step",
+    name: "Premier pas",
+    icon: "🎓",
+    description: "Première leçon terminée ou premier quiz validé",
+    xpReq: 10
+  },
+  {
+    id: "badge-security",
+    name: "Sécurité",
+    icon: "⚡",
+    description: "Formation B — Dangers de l’électricité validée",
+    moduleId: "B",
+    xpReq: 50
+  },
+  {
+    id: "badge-nibt-explorer",
+    name: "NIBT Explorer",
+    icon: "📐",
+    description: "Premiers chapitres NIBT explorés et validés",
+    moduleId: "N",
+    xpReq: 100
+  },
+  {
+    id: "badge-swiss-norms",
+    name: "Normes suisses",
+    icon: "🇨🇭",
+    description: "Première formation du Module F — Suisse Norme consultée",
+    moduleId: "F",
+    xpReq: 150
+  },
+  {
+    id: "badge-academy",
+    name: "Académie",
+    icon: "🏆",
+    description: "Progression importante dans l'ensemble de la plateforme",
+    xpReq: 300
+  }
+];
+
+// Données de démonstration pour l'espace formateur (Section 27)
+const TRAINER_DEMO = {
+  stats: {
+    studentsCount: 24,
+    avgProgress: 64,
+    quizzesCompleted: 142,
+    successRate: 86
+  },
+  students: [
+    { name: "Alex (Vous)", progress: 75, lastActivity: "N0 — Partie 0", score: 92, status: "En cours" },
+    { name: "Marc Dupond", progress: 85, lastActivity: "A00 — Pyramide", score: 95, status: "Actif" },
+    { name: "Sophie Meier", progress: 60, lastActivity: "B00 — Sécurité", score: 88, status: "Actif" },
+    { name: "Thomas Vuilleumier", progress: 42, lastActivity: "N0 — Partie 0", score: 78, status: "À relancer" },
+    { name: "Lukas Weber", progress: 95, lastActivity: "N0 — Quiz validé", score: 98, status: "Prêt examen" },
+    { name: "Emma Bovet", progress: 30, lastActivity: "A00 — Pyramide", score: 80, status: "En cours" }
+  ]
+};
+
+// Architecture officielle des 5 modules (A, B, N, E, F)
+const ACADEMY_MODULES = [
+  // --------------------------------------------------------------------------
+  // MODULE A — Dispositions légales
+  // --------------------------------------------------------------------------
+  {
+    id: "A",
+    code: "A",
+    title: "Dispositions légales",
+    countLabel: "5 formations",
+    description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
+    badgeTheme: "legal",
+    formations: [
+      {
+        id: "pyramide-lois",
+        routeId: "pyramide-lois",
+        code: "Pyramide des lois",
+        title: "Pyramide des lois",
+        subtitle: "1.2 Base : Hiérarchie des lois, ordonnances et règles techniques suisses",
+        status: "Disponible",
+        duration: "6 min",
+        tag: "Droit fédéral",
+        xpReward: 30,
+        objective: "Comprendre l'agencement hiérarchique rigoureux des prescriptions applicables aux installations électriques en Suisse et distinguer lois, ordonnances, règles techniques et directives.",
+        introduction: "En Suisse, l'ensemble des prescriptions applicables aux installations électriques s'ordonne selon une pyramide hiérarchique rigoureuse, allant du niveau fédéral le plus contraignant aux règles techniques d'application.",
+        contentSections: [
+          {
+            title: "1.2.1 Les quatre échelons de la pyramide",
+            text: `La hiérarchie juridique suisse s'articule du sommet vers la base selon la règle fondamentale : le droit supérieur prime toujours le droit inférieur.
+            
+• 1er rang : Actes de l'Assemblée fédérale et du Conseil fédéral
+  Ce sont les Lois fédérales adoptées par le parlement (ex: LIE - Loi sur les installations électriques, RS 734.0) et les Ordonnances fédérales édictées par le Conseil fédéral (ex: OIBT - Ordonnance sur les installations à basse tension, RS 734.27 ; OCFo - Ordonnance sur le courant fort, RS 734.2 ; OTEM).
+  
+• 2e rang : Ordonnances des départements fédéraux
+  Ordonnances du DETEC (Département fédéral de l'environnement, des transports, de l'énergie et de la communication), par exemple l'ordonnance sur le matériel électrique à basse tension.
+  
+• 3e rang : Règles techniques reconnues
+  Normes nationales et internationales reconnues par les autorités suisses : NIBT (SN 411000:2025), normes EN (CENELEC), normes internationales CEI/IEC, ainsi que les directives de l'ESTI.
+  
+• 4e rang : Directives et recommandations professionnelles
+  Recommandations des associations et exploitants de réseau : PDIE (Prescriptions des distributeurs d'électricité), directives SUVA pour la sécurité du travail, prescriptions de protection incendie AEAI.`
+          },
+          {
+            title: "1.2.2 Genèse et repères historiques",
+            text: `• 26 juin 1888 : Loi fédérale sur l'établissement de lignes téléphoniques et télégraphiques. La Confédération intervient pour la première fois pour protéger les télécommunications des perturbations et dangers causés par l'essor du courant fort.
+• Création de l'ASE : Face aux défis techniques et aux risques croissants, l'Association Suisse des Électriciens (actuellement Electrosuisse) prépare les premières prescriptions de sécurité pour l'exploitation des installations.
+• 24 juin 1902 : Promulgation de la LIE (Loi sur les installations électriques), pierre angulaire toujours en vigueur régissant la sécurité électrique en Suisse.`
+          },
+          {
+            title: "1.2.3 Typologie des normes en vigueur en Suisse",
+            text: `Plus de 26'000 normes sont actives en Suisse. On distingue 3 catégories officielles :
+• SN (Norme suisse) : Élaborée ou adoptée par la SNV (Association suisse de normalisation) ou le CES (Comité électrotechnique suisse). Sa validité est illimitée jusqu'à révision ou retrait.
+• SNR (Règle suisse) : Document normatif à validité limitée à 5 ans (prolongeable une seule fois de 3 ans).
+• SNG (Guide suisse) : Document explicatif ou guide d'application à validité illimitée.`
+          },
+          {
+            title: "1.2.4 Abréviations officielles indispensables",
+            text: `• CF : Conseil Fédéral (gouvernement suisse).
+• RS : Recueil Systématique du droit fédéral (classification officielle des lois et ordonnances).
+• DETEC : Département fédéral de l'environnement, des transports, de l'énergie et de la communication.
+• ESTI : Inspection fédérale des installations à courant fort (organe officiel de surveillance).
+• SUVA : Caisse nationale suisse d'assurance en cas d'accidents (protection de la santé au travail).
+• AEAI : Association des établissements cantonaux d'assurance incendie.
+• PDIE : Prescriptions des distributeurs d'électricité (règles de raccordement réseau).`
+          }
+        ],
+        interactiveWidget: "pyramid-widget",
+        practicalExample: "Sur un chantier, si une recommandation d'un fabricant de matériel ou une notice d'exploitant entre en contradiction avec l'OIBT (RS 734.27), c'est impérativement l'OIBT qui fait foi. En droit suisse, une directive de rang 4 ne peut en aucun cas assouplir une ordonnance de rang 1.",
+        importantPoint: "Les normes techniques (telles que la NIBT) acquièrent leur force obligatoire par renvoi formel dans les ordonnances fédérales (notamment l'article 4 de l'OIBT).",
+        synthesis: "La pyramide des lois garantit la sécurité juridique et technique : la LIE fixe le cadre pénal et légal, l'OIBT détaille les exigences d'installation et de contrôle, et la NIBT traduit ces exigences en règles de calcul et de pose concrètes.",
+        quiz: [
+          {
+            id: "q_a00_1",
+            type: "single",
+            question: "Quel texte constitue la base légale de niveau 1 régissant les installations électriques en Suisse ?",
+            options: [
+              "La directive ESTI 221",
+              "La LIE (Loi sur les installations électriques du 24 juin 1902)",
+              "La NIBT SN 411000",
+              "Le manuel SUVA"
+            ],
+            correctAnswer: 1,
+            explanation: "La LIE (RS 734.0) est une loi fédérale votée par l'Assemblée fédérale, située au 1er rang de la pyramide des lois."
+          },
+          {
+            id: "q_a00_2",
+            type: "single",
+            question: "Quelle est la durée de validité maximale initiale d'une règle suisse (SNR) ?",
+            options: [
+              "Illimitée",
+              "3 ans",
+              "5 ans (prolongeable de 3 ans)",
+              "10 ans"
+            ],
+            correctAnswer: 2,
+            explanation: "Une SNR a une durée de validité fixée à 5 ans, prolongeable une seule fois d'une durée de 3 ans maximum."
+          },
+          {
+            id: "q_a00_3",
+            type: "single",
+            question: "Que signifie l'abréviation officielle « ESTI » dans le système réglementaire suisse ?",
+            options: [
+              "Établissement Suisse de Tarification Industrielle",
+              "Inspection fédérale des installations à courant fort",
+              "Entreprise Suisse de Télécommunications et d'Installations",
+              "École Supérieure des Techniques de l'Ingénierie"
+            ],
+            correctAnswer: 1,
+            explanation: "L'ESTI est l'Inspection fédérale des installations à courant fort, autorité fédérale suisse de surveillance et de contrôle technique."
+          },
+          {
+            id: "q_a00_4",
+            type: "boolean",
+            question: "Vrai ou Faux : Une prescription PDIE peut déroger à une exigence de sécurité définie dans l'OIBT.",
+            options: [
+              "Vrai",
+              "Faux"
+            ],
+            correctAnswer: 1,
+            explanation: "Faux : L'OIBT est une ordonnance du Conseil fédéral (1er rang) alors que les PDIE sont au 4e rang. Le droit supérieur prévaut obligatoirement."
+          }
+        ]
+      },
+      {
+        id: "rs-734-0-lie",
+        routeId: "rs-734-0-lie",
+        code: "RS 734.0 - LIE",
+        title: "RS 734.0 — Loi sur les installations électriques",
+        subtitle: "Loi fédérale du 24 juin 1902 concernant les installations électriques à faible et à fort courant",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Loi fédérale",
+        xpReward: 0,
+        objective: "Maîtriser les dispositions générales, le champ d'application de la LIE, la responsabilité civile de l'exploitant et les dispositions pénales.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
+        contentSections: [
+          {
+            title: "🔒 Contenu en préparation",
+            text: "La fiche détaillée relative à la RS 734.0 (LIE) est en cours de formalisation technique d'après le Recueil systématique du droit fédéral."
+          }
+        ]
+      },
+      {
+        id: "rs-734-2-ocfo",
+        routeId: "rs-734-2-ocfo",
+        code: "RS 734.2 - OCFo",
+        title: "RS 734.2 — Ordonnance sur le courant fort",
+        subtitle: "Ordonnance du Conseil fédéral sur les installations électriques à courant fort",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Ordonnance",
+        xpReward: 0,
+        objective: "Comprendre les exigences de sécurité relatives à la construction, l'exploitation et la maintenance des installations à courant fort.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
+        contentSections: [
+          {
+            title: "🔒 Contenu en préparation",
+            text: "La fiche technique relative à la RS 734.2 (OCFo) est en cours de rédaction."
+          }
+        ]
+      },
+      {
+        id: "rs-734-27-oibt",
+        routeId: "rs-734-27-oibt",
+        code: "RS 734.27 - OIBT",
+        title: "RS 734.27 — Ordonnance sur les installations à basse tension",
+        subtitle: "Ordonnance du Conseil fédéral du 7 novembre 2001 sur les installations à basse tension",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Ordonnance",
+        xpReward: 0,
+        objective: "Étudier les règles fondamentales régissant les autorisations d'installer, le devoir de diligence, les périodicités de contrôle et le rapport de sécurité (RS / RaSi).",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
+        contentSections: [
+          {
+            title: "🔒 Contenu en préparation",
+            text: "La fiche technique relative à la RS 734.27 (OIBT) est en cours de formalisation."
+          }
+        ]
+      },
+      {
+        id: "rs-814-710-orni",
+        routeId: "rs-814-710-orni",
+        code: "RS 814.710 - ORNI",
+        title: "RS 814.710 — Protection contre le rayonnement non ionisant",
+        subtitle: "Ordonnance du 23 décembre 1999 sur la protection contre le rayonnement non ionisant",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Santé et environnement",
+        xpReward: 0,
+        objective: "Connaître les valeurs limites d'immission et les valeurs limites de l'installation pour les champs magnétiques à basse fréquence (50 Hz).",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
+        contentSections: [
+          {
+            title: "🔒 Contenu en préparation",
+            text: "La fiche technique relative à l'ORNI (RS 814.710) est en cours de structuration pédagogique."
+          }
+        ]
+      }
+    ]
+  },
+
+  // --------------------------------------------------------------------------
+  // MODULE B — Dangers de l’électricité
+  // --------------------------------------------------------------------------
+  {
+    id: "B",
+    code: "B",
+    title: "Dangers de l’électricité",
+    countLabel: "1 formation",
+    description: "Analyse des risques d'électrisation, grandeurs physiques de contact (Ub, Ib, Uf, If), seuils physiologiques corporels et 5 règles vitales de sécurité.",
+    badgeTheme: "danger",
+    formations: [
+      {
+        id: "securite-electrique",
+        routeId: "securite-electrique",
+        code: "Sécurité électrique",
+        title: "Sécurité électrique",
+        subtitle: "Grandeurs physiques de défaut, seuils physiologiques du corps humain et 5 règles vitales",
+        status: "Disponible",
+        duration: "8 min",
+        tag: "Sécurité vitale",
+        xpReward: 40,
+        objective: "Identifier avec précision les grandeurs électriques de défaut (Ub, Ib, Uf, If), comprendre la réaction de l'organisme humain selon l'intensité du courant et appliquer rigoureusement les 5 règles de sécurité.",
+        introduction: "Le courant électrique présente un danger invisible et redoutable. Dès lors qu'un corps humain entre en contact avec une pièce sous tension, il ferme un circuit électrique et devient conducteur.",
+        contentSections: [
+          {
+            title: "1. Notions physiques fondamentales en situation de défaut",
+            text: `En électrotechnique de sécurité, on distingue rigoureusement :
+• Ub (Tension de contact - Berührungsspannung) :
+  Partie de la tension de défaut susceptible d'être pontée par une personne touchant une masse métallique et le sol ou deux éléments simultanément conducteurs.
+  
+• Ib (Courant de contact - Berührungsstrom) :
+  Courant électrique qui traverse effectivement le corps humain lors du contact : Ib = Ub / Rb (où Rb est la résistance électrique interne et superficielle du corps, conventionnellement estimée à 1000 Ω en milieu sec sous 230 V).
+  
+• Uf (Tension de défaut - Fehlerspannung) :
+  Tension apparaissant entre une masse conductrice et une terre de référence lointaine lors d'un claquage d'isolement.
+  
+• If (Courant de défaut - Fehlerstrom) :
+  Courant total s'écoulant au point de défaut d'isolement vers la terre ou le conducteur de protection PE.`
+          },
+          {
+            title: "2. Seuils physiologiques d'effet du courant alternatif (50 Hz)",
+            text: `Les effets sur le corps humain dépendent de l'intensité (mA), de la trajectoire (main-main, main-pied) et de la durée d'exposition :
+• 0.5 mA — Seuil de perception :
+  Sensation de léger picotement ou de chatouillement à l'extrémité des doigts. Aucun réflexe musculaire dangereux.
+  
+• 10 mA — Seuil de non-lâcher :
+  Contraction musculaire tétanisante involontaire. La personne ne peut plus ouvrir la main pour relâcher le conducteur saisi.
+  
+• 30 mA — Seuil d'asphyxie respiratoire :
+  Paralysie des muscles thoraciques et du diaphragme si le contact se prolonge. Risque d'étouffement rapide. C'est le seuil maximal de déclenchement imposé pour les DDR de protection complémentaire des personnes (30 mA).
+  
+• 50 mA — Seuil de fibrillation ventriculaire :
+  Dérèglement chaotique et irréversible des contractions du cœur. Les ventricules ne pompent plus le sang : arrêt circulatoire mortel en quelques minutes sans réanimation rapide.`
+          },
+          {
+            title: "3. Les 5 règles vitales de sécurité (SUVA / ESTI)",
+            text: `Avant toute intervention sur une installation électrique ou à proximité de celle-ci, les 5 règles vitales doivent être appliquées dans l'ordre chronologique strict :
+1. Déclencher et couper sur tous les pôles (séparation visible ou garantie de l'alimentation).
+2. Sécuriser contre le réenclenchement inopiné (cadenassage, condamnation d'organes, pancartes).
+3. Vérifier l'absence de tension sur tous les conducteurs à l'aide d'un vérificateur d'absence de tension (VAT) préalablement testé.
+4. Mettre à terre et en court-circuit (obligatoire en haute tension et pour les lignes aériennes basse tension).
+5. Protéger et couvrir les parties voisines restées sous tension (écrans isolants, nappes en caoutchouc).`
+          }
+        ],
+        interactiveWidget: "danger-widget",
+        practicalExample: "Sous une tension de contact Ub = 230 V avec une impédance corporelle Rb = 1000 Ω, le courant corporel atteint immédiatement Ib = 230 V / 1000 Ω = 230 mA ! Cette valeur est presque 5 fois supérieure au seuil létal de fibrillation cardiaque (50 mA). L'installation doit couper en une fraction de seconde (< 0.4 s en schéma TN).",
+        importantPoint: "Un disjoncteur standard (ex: B16A ou C16A) protège les câbles contre les surintensités, mais ne protège PAS une personne contre l'électrisation ! Seul un dispositif à courant différentiel résiduel (DDR ≤ 30 mA) assure la protection complémentaire des personnes contre les contacts directs et indirects.",
+        synthesis: "La sécurité électrique repose sur deux piliers : des dispositifs techniques fiables (coupure automatique par DDR et mise à la terre) et une discipline professionnelle irréprochable (respect absolu des 5 règles vitales).",
+        quiz: [
+          {
+            id: "q_b00_1",
+            type: "single",
+            question: "Que représente le symbole électrique « Ub » dans l'analyse de sécurité ?",
+            options: [
+              "Le courant s'écoulant au point de défaut",
+              "La tension de contact susceptible d'être pontée par une personne",
+              "La tension nominale du réseau de distribution",
+              "La résistance de boucle de terre"
+            ],
+            correctAnswer: 1,
+            explanation: "Ub (Berührungsspannung) est la tension de contact qui apparaît entre deux parties simultanément accessibles lors d'un défaut."
+          },
+          {
+            id: "q_b00_2",
+            type: "single",
+            question: "À partir de quel seuil d'intensité en courant alternatif 50 Hz le risque de fibrillation ventriculaire irréversible apparaît-il ?",
+            options: [
+              "0.5 mA",
+              "10 mA",
+              "30 mA",
+              "50 mA"
+            ],
+            correctAnswer: 3,
+            explanation: "Dès 50 mA en alternatif 50 Hz, le risque de fibrillation cardiaque irréversible survient, rendant le choc potentiellement mortel."
+          },
+          {
+            id: "q_b00_3",
+            type: "single",
+            question: "Quelle est la 3e règle vitale de sécurité parmi les 5 règles officielles ESTI / SUVA ?",
+            options: [
+              "Mettre à terre et en court-circuit",
+              "Vérifier l'absence de tension",
+              "Déclencher et couper sur tous les pôles",
+              "Couvrir les parties voisines"
+            ],
+            correctAnswer: 1,
+            explanation: "L'ordre strict est : 1. Déclencher, 2. Sécuriser contre le réenclenchement, 3. Vérifier l'absence de tension, 4. Mettre à terre et en court-circuit, 5. Couvrir les parties voisines."
+          },
+          {
+            id: "q_b00_4",
+            type: "single",
+            question: "Quelle est la sensibilité maximale d'un disjoncteur différentiel (DDR) destiné à la protection complémentaire des personnes ?",
+            options: [
+              "10 mA",
+              "30 mA",
+              "100 mA",
+              "300 mA"
+            ],
+            correctAnswer: 1,
+            explanation: "Le seuil légal de protection complémentaire des personnes est 30 mA, choisi car il se situe en dessous du seuil de fibrillation ventriculaire (50 mA)."
+          }
+        ]
+      }
+    ]
+  },
+
+  // --------------------------------------------------------------------------
+  // MODULE N — NIBT (Norme SN 411000:2025) — Strictement N !
+  // --------------------------------------------------------------------------
+  {
+    id: "N",
+    code: "N",
+    title: "NIBT",
+    countLabel: "17 chapitres",
+    description: "Norme sur les Installations à Basse Tension — SN 411000:2025. Cœur technique des règles d'installation, de conception et de sécurité en Suisse.",
+    badgeTheme: "nibt",
+    formations: [
+      {
+        id: "n0",
+        routeId: "n0",
+        code: "N0",
+        title: "Partie 0",
+        subtitle: "Introduction à la NIBT 2025, chaîne de normalisation, volumes et conventions de symboles",
+        status: "Disponible",
+        duration: "7 min",
+        tag: "Fondements NIBT",
+        xpReward: 35,
+        objective: "Maîtriser l'organisation de la NIBT 2025 (SN 411000), comprendre la chaîne d'harmonisation internationale et interpréter sans erreur les symboles réglementaires.",
+        introduction: "La NIBT (Norme sur les Installations à Basse Tension) est le recueil de règles techniques fondamental régissant la conception, la réalisation et le contrôle des installations électriques en Suisse.",
+        contentSections: [
+          {
+            title: "1. La chaîne de normalisation internationale et suisse",
+            text: `La NIBT s'inscrit dans un processus de normalisation en 3 niveaux :
+• Niveau mondial : CEI (Commission Électrotechnique Internationale - IEC)
+  Élabore les normes fondamentales mondiales d'installations (série IEC 60364).
+  
+• Niveau européen : CENELEC (Comité Européen de Normalisation Électrotechnique)
+  Transpose les documents CEI en documents d'harmonisation européens (série HD 60364).
+  
+• Niveau national suisse : CES / Electrosuisse via la commission TK 64
+  La Commission Technique TK 64 (Comité Électrotechnique Suisse) intègre les prescriptions européennes, les complète par les spécificités suisses et publie la NIBT sous l'appellation officielle SN 411000 (édition actuelle : 2025).`
+          },
+          {
+            title: "2. Organisation de la NIBT 2025 en deux volumes",
+            text: `La NIBT 2025 est structurée en deux volumes physiques et thématiques distincts :
+• Volume 1 — Prescriptions fondamentales :
+  Regroupe les parties 1 à 6 de la norme (Domaine d'application, définitions, caractéristiques générales, protection pour assurer la sécurité, choix et mise en œuvre des matériels, vérifications initiales et périodiques).
+  
+• Volume 2 — Installations et emplacements spéciaux :
+  Dédié exclusivement à la Partie 7 (Locaux humides, salles de bain, piscines, chantiers, locaux médicaux, installations photovoltaïques, bornes de recharge pour véhicules électriques).`
+          },
+          {
+            title: "3. Conventions et symboles officiels de la NIBT",
+            text: `Dans les textes et tableaux de la NIBT, des symboles et chiffres clés sont normalisés :
+• Chiffre « 5 » dans la numérotation :
+  Signale une disposition ou modification nationale suisse spécifique introduite par le TK 64 qui s'écarte ou complète le texte européen CENELEC.
+  
+• Symbole « OK » :
+  Solution admissible et conforme aux exigences normatives.
+  
+• Symbole « ⚠ » :
+  Obligation impérative : doit être appliqué, est nécessaire.
+  
+• Symbole « 8 » :
+  Impossible du point de vue de la construction ou des lois physiques.
+  
+• Symbole « 9 » :
+  Inadmissible : formellement interdit, on ne doit pas.
+  
+• Symbole « ✅ » :
+  Désigne la solution expressément recommandée par les experts.
+  
+• Document SNG 491000 : Guide pratique d'application édité pour expliciter les cas complexes de la NIBT.`
+          }
+        ],
+        interactiveWidget: "nibt-widget",
+        practicalExample: "Dans un tableau comparatif de la NIBT, si un mode de pose est repéré par le symbole « 9 », il est rigoureusement interdit et sera refusé lors du contrôle de réception. S'il porte le symbole « 5 », il traduit une exigence suisse propre qui n'existe pas en France ou en Allemagne.",
+        importantPoint: "La commission technique suisse responsable de la mise à jour et de l'adaptation de la NIBT est la commission TK 64 d'Electrosuisse.",
+        synthesis: "La NIBT SN 411000:2025 est une norme harmonisée au niveau mondial (CEI) et européen (CENELEC), dotée de spécificités suisses (identifiées par le chiffre 5) gérées par le TK 64.",
+        quiz: [
+          {
+            id: "q_n0_1",
+            type: "single",
+            question: "Quel comité technique suisse est responsable de l'élaboration et de la mise à jour de la NIBT ?",
+            options: [
+              "Le comité TK 12",
+              "La commission technique TK 64",
+              "Le département fédéral de justice",
+              "La commission fédérale de l'énergie"
+            ],
+            correctAnswer: 1,
+            explanation: "C'est la commission technique TK 64 du Comité Électrotechnique Suisse (CES / Electrosuisse) qui rédige et adapte la NIBT."
+          },
+          {
+            id: "q_n0_2",
+            type: "single",
+            question: "Dans la numérotation des articles de la NIBT, que signifie la présence du chiffre « 5 » ?",
+            options: [
+              "Il s'agit d'une règle réservée aux installations de plus de 500 Volts",
+              "Il s'agit d'une prescription nationale suisse spécifique",
+              "L'article a une validité maximale de 5 ans",
+              "L'article ne s'applique qu'au volume 2"
+            ],
+            correctAnswer: 1,
+            explanation: "Le chiffre 5 indique une disposition nationale suisse spécifique rédigée par le TK 64, distincte du texte européen CENELEC."
+          },
+          {
+            id: "q_n0_3",
+            type: "single",
+            question: "Dans les tableaux de la NIBT, que signifie sans équivoque le chiffre « 9 » ?",
+            options: [
+              "Recommandé",
+              "Obligatoire",
+              "Inadmissible (formellement interdit)",
+              "Sous réserve d'autorisation"
+            ],
+            correctAnswer: 2,
+            explanation: "Le chiffre 9 signifie 'Inadmissible' : on ne doit en aucun cas mettre en œuvre cette disposition."
+          },
+          {
+            id: "q_n0_4",
+            type: "single",
+            question: "En combien de volumes physiques l'édition officielle NIBT 2025 est-elle organisée ?",
+            options: [
+              "1 volume unique",
+              "2 volumes (Volume 1 : Parties 1-6 ; Volume 2 : Partie 7)",
+              "4 volumes trimestriels",
+              "7 volumes individuels"
+            ],
+            correctAnswer: 1,
+            explanation: "La NIBT 2025 se divise en 2 volumes : le volume 1 pour les règles fondamentales (1 à 6) et le volume 2 pour les emplacements spéciaux (Partie 7)."
+          }
+        ]
+      },
+      {
+        id: "n1",
+        routeId: "n1",
+        code: "N1",
+        title: "Partie 1 — Domaine d'application",
+        subtitle: "Objet et principes fondamentaux de la NIBT",
+        status: "En développement",
+        duration: "À venir",
+        tag: "NIBT V1",
+        xpReward: 0,
+        objective: "Délimiter les installations couvertes par la NIBT et les exclusions légales.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n3",
+        routeId: "n3",
+        code: "N3",
+        title: "Partie 3 — Détermination des caractéristiques générales",
+        subtitle: "Alimentation, schémas des liaisons à la terre et influences externes",
+        status: "En développement",
+        duration: "À venir",
+        tag: "NIBT V1",
+        xpReward: 0,
+        objective: "Identifier les régimes de neutre (TN, TT, IT) et classifier les influences externes.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n41",
+        routeId: "n41",
+        code: "N41",
+        title: "Chapitre 4.1 — Protection contre les chocs électriques",
+        subtitle: "Protection principale et protection en cas de défaut",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Sécurité NIBT",
+        xpReward: 0,
+        objective: "Maîtriser les mesures de protection par coupure automatique de l'alimentation, TBTS, TBTP et isolation double.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n42",
+        routeId: "n42",
+        code: "N42",
+        title: "Chapitre 4.2 — Effets thermiques",
+        subtitle: "Protection contre les incendies et les brûlures provoqués par l'installation",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Thermique",
+        xpReward: 0,
+        objective: "Prévenir les risques d'inflammation et de surchauffe des composants.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n43",
+        routeId: "n43",
+        code: "N43",
+        title: "Chapitre 4.3 — Surintensités",
+        subtitle: "Protection des conducteurs contre les surcharges et courts-circuits",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Surintensités",
+        xpReward: 0,
+        objective: "Dimensionner les dispositifs de coupure selon la section et le courant admissible des conducteurs.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n44",
+        routeId: "n44",
+        code: "N44",
+        title: "Chapitre 4.4 — Perturbations de tension",
+        subtitle: "Protection contre les surtensions transitoires et les effets électromagnétiques",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Surtensions",
+        xpReward: 0,
+        objective: "Mettre en œuvre les parafoudres (SPD) et le blindage CEM.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n46",
+        routeId: "n46",
+        code: "N46",
+        title: "Chapitre 4.6 — Sectionnement et commande",
+        subtitle: "Organes de coupure d'urgence, de maintenance et d'exploitation",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Coupure",
+        xpReward: 0,
+        objective: "Positionner les dispositifs d'arrêt d'urgence et de sectionnement omnipolaire.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n51",
+        routeId: "n51",
+        code: "N51",
+        title: "Chapitre 5.1 — Règles communes des matériels",
+        subtitle: "Choix, installation, repérage et compatibilité des composants",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Matériels",
+        xpReward: 0,
+        objective: "Respecter les règles de marquage CE/CH et de mise en œuvre.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n52",
+        routeId: "n52",
+        code: "N52",
+        title: "Chapitre 5.2 — Canalisations électriques",
+        subtitle: "Types de conducteurs, modes de pose et facteurs de correction de courant",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Canalisations",
+        xpReward: 0,
+        objective: "Calculer les sections de câbles en fonction de la température et du groupement.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n53",
+        routeId: "n53",
+        code: "N53",
+        title: "Chapitre 5.3 — Appareillage",
+        subtitle: "Appareils de coupure, de sectionnement et de protection",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Appareillage",
+        xpReward: 0,
+        objective: "Sélectionner les courbes de déclenchement des disjoncteurs et les types de DDR (A, F, B).",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n54",
+        routeId: "n54",
+        code: "N54",
+        title: "Chapitre 5.4 — Mises à la terre et liaisons équipotentielles",
+        subtitle: "Prises de terre, conducteurs de terre et liaisons équipotentielles principales",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Terre",
+        xpReward: 0,
+        objective: "Concevoir le réseau de terre de fondation et les liaisons équipotentielles de protection.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n56",
+        routeId: "n56",
+        code: "N56",
+        title: "Chapitre 5.6 — Alimentation pour services de sécurité",
+        subtitle: "Éclairage de secours, pompes incendie et sources autonomes de remplacement",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Services sécurité",
+        xpReward: 0,
+        objective: "Garantir le maintien de fonction en cas de sinistre.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n6",
+        routeId: "n6",
+        code: "N6",
+        title: "Chapitre 6 — Vérifications",
+        subtitle: "Contrôles visuels, mesures instrumentales et protocoles de réception",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Contrôles",
+        xpReward: 0,
+        objective: "Exécuter les mesures de continuité des PE, résistance d'isolement, impédance de boucle et temps de déclenchement DDR.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n71",
+        routeId: "n71",
+        code: "N71",
+        title: "Chapitre 7.01 — Locaux contenant une baignoire ou une douche",
+        subtitle: "Volumes de sécurité 0, 1, 2 et indices de protection IP",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Emplacements spéciaux",
+        xpReward: 0,
+        objective: "Maîtriser les volumes de protection et les interdictions d'appareillage dans les salles de bain.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n72",
+        routeId: "n72",
+        code: "N72",
+        title: "Chapitre 7.02 — Bassins de natation et fontaines",
+        subtitle: "Exigences accrues pour piscines et plans d'eau",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Emplacements spéciaux",
+        xpReward: 0,
+        objective: "Sécuriser les éclairages subaquatiques et les équipements techniques de pompage.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      },
+      {
+        id: "n74",
+        routeId: "n74",
+        code: "N74",
+        title: "Chapitre 7.04 — Chantiers de construction",
+        subtitle: "Armoires de chantier, liaisons équipotentielles temporaires et DDR 30 mA",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Chantiers",
+        xpReward: 0,
+        objective: "Équiper et vérifier les coffrets de distribution provisoires sur chantier.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément à la norme SN 411000:2025.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Ce chapitre NIBT sera prochainement documenté d'après les sources du TK 64." }]
+      }
+    ]
+  },
+
+  // --------------------------------------------------------------------------
+  // MODULE E — ESTI directives
+  // --------------------------------------------------------------------------
+  {
+    id: "E",
+    code: "E",
+    title: "ESTI directives",
+    countLabel: "2 directives",
+    description: "Directives de l'Inspection fédérale des installations à courant fort (ESTI) précisant les obligations de sécurité, d'autorisation et de contrôle technique.",
+    badgeTheme: "esti",
+    formations: [
+      {
+        id: "esti-221",
+        routeId: "esti-221",
+        code: "ESTI 221",
+        title: "Directive ESTI 221",
+        subtitle: "Exigences relatives aux autorisations d'installer et de contrôler selon l'OIBT",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Directive ESTI",
+        xpReward: 0,
+        objective: "Connaître les critères de délivrance des autorisations générales et limitées d'installer.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux directives officielles de l'ESTI.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "La fiche relative à la directive ESTI 221 sera complétée à partir des sources officielles de l'inspection fédérale." }]
+      },
+      {
+        id: "esti-407",
+        routeId: "esti-407",
+        code: "ESTI 407",
+        title: "Directive ESTI 407",
+        subtitle: "Activités sur ou à proximité des installations électriques",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Sécurité chantier",
+        xpReward: 0,
+        objective: "Appliquer les mesures organisationnelles lors des travaux sous tension et au voisinage de conducteurs actifs.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux directives officielles de l'ESTI.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "La fiche relative à la directive ESTI 407 sera complétée à partir des sources officielles de l'inspection fédérale." }]
+      }
+    ]
+  },
+
+  // --------------------------------------------------------------------------
+  // MODULE F — Suisse Norme (Strictement nommé ainsi)
+  // --------------------------------------------------------------------------
+  {
+    id: "F",
+    code: "F",
+    title: "Suisse Norme",
+    countLabel: "3 normes",
+    description: "Normes électrotechniques suisses spécifiques homologuées par Electrosuisse et l'Association suisse de normalisation (SNV).",
+    badgeTheme: "normes",
+    formations: [
+      {
+        id: "sn-414022",
+        routeId: "sn-414022",
+        code: "SN414022",
+        title: "SN 414022",
+        subtitle: "Protection contre la foudre et installations de paratonnerres",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Norme suisse",
+        xpReward: 0,
+        objective: "Comprendre les principes de capture, d'écoulement et de terre pour les installations de paratonnerres.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation d'après la norme SN 414022.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Cette norme fait l'objet d'une formalisation technique selon les directives suisses." }]
+      },
+      {
+        id: "sn-414113",
+        routeId: "sn-414113",
+        code: "SN414113",
+        title: "SN 414113",
+        subtitle: "Installations de télécommunications et réseaux de données dans les bâtiments",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Norme suisse",
+        xpReward: 0,
+        objective: "Maîtriser le câblage universel de communication (CU et optique).",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation d'après la norme SN 414113.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Cette norme fait l'objet d'une formalisation technique selon les directives suisses." }]
+      },
+      {
+        id: "sn-411439",
+        routeId: "sn-411439",
+        code: "SN411439",
+        title: "SN 411439",
+        subtitle: "Raccordement des systèmes photovoltaïques et onduleurs au réseau basse tension",
+        status: "En développement",
+        duration: "À venir",
+        tag: "Norme suisse",
+        xpReward: 0,
+        objective: "Assurer la sécurité de l'interface AC/DC et la protection contre le découplage réseau.",
+        introduction: "Cette formation dédiée est actuellement en cours de préparation d'après la norme SN 411439.",
+        contentSections: [{ title: "🔒 Contenu en préparation", text: "Cette norme fait l'objet d'une formalisation technique selon les directives suisses." }]
+      }
+    ]
+  }
+];
+
+// Trouver une formation par identifiant ou module/route
+function findFormation(moduleId, formationId) {
+  const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
+  if (!mod) return null;
+  const formation = mod.formations.find(f => f.id === formationId || f.routeId === formationId);
+  if (!formation) return null;
+  return { module: mod, formation };
+}
+
+
+// ==================== src/services/storage.js ====================
+// Swiss Electrical Academy — Service de stockage et persistance (V1.1)
+// Gestion localStorage, calcul de progression et garantie anti-farming d'XP
+
+
+const STORAGE_KEY_PREFIX = 'sea_';
+
+const KEYS = {
+  XP: `${STORAGE_KEY_PREFIX}xp`,
+  AWARDED_SOURCES: `${STORAGE_KEY_PREFIX}awarded_xp_sources`,
+  COMPLETED_LESSONS: `${STORAGE_KEY_PREFIX}completed_lessons`,
+  QUIZ_RESULTS: `${STORAGE_KEY_PREFIX}quiz_results`,
+  UNLOCKED_BADGES: `${STORAGE_KEY_PREFIX}unlocked_badges`,
+  LAST_ACTIVITY: `${STORAGE_KEY_PREFIX}last_activity`,
+  THEME: `${STORAGE_KEY_PREFIX}theme`
+};
+
+const StorageService = {
+  // Récupérer les données de thème
+  getTheme() {
+    return localStorage.getItem(KEYS.THEME) || 'dark';
+  },
+
+  setTheme(theme) {
+    localStorage.setItem(KEYS.THEME, theme);
+  },
+
+  // XP total
+  getXp() {
+    const raw = localStorage.getItem(KEYS.XP);
+    return raw ? parseInt(raw, 10) : 0;
+  },
+
+  // Ajouter des XP avec protection stricte anti-farming
+  // Retourne le nombre d'XP réellement ajouté (0 si déjà attribué)
+  addXp(amount, sourceId) {
+    if (!sourceId || amount <= 0) return 0;
+
+    const awardedSources = this.getAwardedSources();
+    if (awardedSources.includes(sourceId)) {
+      console.log(`[Anti-Farming] XP déjà attribués pour ${sourceId}, aucun doublon accordé.`);
+      return 0;
+    }
+
+    // Attribuer l'XP
+    const currentXp = this.getXp();
+    const newXp = currentXp + amount;
+    localStorage.setItem(KEYS.XP, newXp.toString());
+
+    // Enregistrer la source pour empêcher tout gain futur
+    awardedSources.push(sourceId);
+    localStorage.setItem(KEYS.AWARDED_SOURCES, JSON.stringify(awardedSources));
+
+    // Vérifier si des badges doivent être débloqués
+    this.checkAndUnlockBadges(newXp);
+
+    return amount;
+  },
+
+  getAwardedSources() {
+    try {
+      const raw = localStorage.getItem(KEYS.AWARDED_SOURCES);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  // Leçons terminées
+  getCompletedLessons() {
+    try {
+      const raw = localStorage.getItem(KEYS.COMPLETED_LESSONS);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  isLessonCompleted(formationId) {
+    const list = this.getCompletedLessons();
+    return list.includes(formationId);
+  },
+
+  markLessonCompleted(formationId, moduleId) {
+    const list = this.getCompletedLessons();
+    if (!list.includes(formationId)) {
+      list.push(formationId);
+      localStorage.setItem(KEYS.COMPLETED_LESSONS, JSON.stringify(list));
+    }
+    // Vérifier les badges liés aux modules
+    this.checkAndUnlockBadges(this.getXp(), moduleId);
+  },
+
+  // Résultats de quiz
+  getQuizResults() {
+    try {
+      const raw = localStorage.getItem(KEYS.QUIZ_RESULTS);
+      return raw ? JSON.parse(raw) : {};
+    } catch {
+      return {};
+    }
+  },
+
+  getQuizResultFor(formationId) {
+    const all = this.getQuizResults();
+    return all[formationId] || null;
+  },
+
+  saveQuizResult(formationId, result) {
+    const all = this.getQuizResults();
+    all[formationId] = {
+      ...result,
+      timestamp: Date.now()
+    };
+    localStorage.setItem(KEYS.QUIZ_RESULTS, JSON.stringify(all));
+  },
+
+  // Dernière activité
+  getLastActivity() {
+    try {
+      const raw = localStorage.getItem(KEYS.LAST_ACTIVITY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  },
+
+  setLastActivity(activity) {
+    const data = {
+      ...activity,
+      timestamp: Date.now()
+    };
+    localStorage.setItem(KEYS.LAST_ACTIVITY, JSON.stringify(data));
+  },
+
+  // Badges débloqués
+  getUnlockedBadges() {
+    try {
+      const raw = localStorage.getItem(KEYS.UNLOCKED_BADGES);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  unlockBadge(badgeId) {
+    const list = this.getUnlockedBadges();
+    if (!list.includes(badgeId)) {
+      list.push(badgeId);
+      localStorage.setItem(KEYS.UNLOCKED_BADGES, JSON.stringify(list));
+      return true;
+    }
+    return false;
+  },
+
+  checkAndUnlockBadges(currentXp = this.getXp(), currentModuleId = null) {
+    const completed = this.getCompletedLessons();
+    const unlocked = this.getUnlockedBadges();
+
+    OFFICIAL_BADGES.forEach(badge => {
+      if (unlocked.includes(badge.id)) return;
+
+      let shouldUnlock = false;
+
+      // Badge Premier pas
+      if (badge.id === 'badge-first-step' && completed.length >= 1) {
+        shouldUnlock = true;
+      }
+
+      // Badge Sécurité (Module B)
+      if (badge.id === 'badge-security' && completed.includes('securite-electrique')) {
+        shouldUnlock = true;
+      }
+
+      // Badge NIBT Explorer (Module N)
+      if (badge.id === 'badge-nibt-explorer' && completed.includes('n0')) {
+        shouldUnlock = true;
+      }
+
+      // Badge Normes suisses (Module F)
+      if (badge.id === 'badge-swiss-norms' && (currentModuleId === 'F' || completed.some(id => id.startsWith('sn-')))) {
+        shouldUnlock = true;
+      }
+
+      // Badge Académie (Progression globale ou XP élevé)
+      if (badge.id === 'badge-academy' && currentXp >= 100) {
+        shouldUnlock = true;
+      }
+
+      if (shouldUnlock) {
+        this.unlockBadge(badge.id);
+      }
+    });
+  },
+
+  // Calcul des statistiques de progression
+  getProgressStats() {
+    const completed = this.getCompletedLessons();
+    const moduleStats = {};
+    let totalFormations = 0;
+    let completedFormations = 0;
+
+    ACADEMY_MODULES.forEach(mod => {
+      const modTotal = mod.formations.length;
+      totalFormations += modTotal;
+      const modCompleted = mod.formations.filter(f => completed.includes(f.id)).length;
+      completedFormations += modCompleted;
+
+      const percentage = modTotal > 0 ? Math.round((modCompleted / modTotal) * 100) : 0;
+      moduleStats[mod.id] = {
+        id: mod.id,
+        title: mod.title,
+        total: modTotal,
+        completed: modCompleted,
+        percentage
+      };
+    });
+
+    const globalPercentage = totalFormations > 0 ? Math.round((completedFormations / totalFormations) * 100) : 0;
+
+    return {
+      globalPercentage,
+      totalFormations,
+      completedFormations,
+      moduleStats,
+      xp: this.getXp(),
+      badgesCount: this.getUnlockedBadges().length,
+      totalBadgesCount: OFFICIAL_BADGES.length
+    };
+  }
+};
+
+
+// ==================== src/components/interactive-widgets.js ====================
+// Swiss Electrical Academy — Composants Interactifs Pédagogiques (V1.1)
+// Widgets spécialisés : Pyramide des lois (A00), Dangers Ub/Ib (B00), Chaîne NIBT (N0)
+
+// ----------------------------------------------------------------------------
+// 1. Pyramide des lois suisse (Module A — A00)
+// ----------------------------------------------------------------------------
+function createPyramidWidget() {
+  const tiersData = [
+    {
+      level: 1,
+      name: "1er rang : Actes de l'Assemblée et du Conseil fédéral",
+      color: "tier-1",
+      badge: "Lois & Ordonnances fédérales",
+      description: "Niveau juridique le plus contraignant. Comprend la LIE (Loi sur les installations électriques, RS 734.0), l'OIBT (Ordonnance sur les installations à basse tension, RS 734.27), l'OCFo (RS 734.2) et l'OTEM. Adoptés par le Parlement et le Conseil fédéral.",
+      binding: "Force légale contraignante absolue. Prévaut sur tous les rangs inférieurs."
+    },
+    {
+      level: 2,
+      name: "2e rang : Ordonnances du DETEC",
+      color: "tier-2",
+      badge: "Département fédéral",
+      description: "Ordonnances techniques édictées par le Département fédéral de l'environnement, des transports, de l'énergie et de la communication (ex: ordonnance sur le matériel électrique à basse tension).",
+      binding: "Prescriptions départementales d'application obligatoire."
+    },
+    {
+      level: 3,
+      name: "3e rang : Règles techniques reconnues",
+      color: "tier-3",
+      badge: "Normes & Directives ESTI",
+      description: "NIBT 2025 (SN 411000), normes européennes EN (CENELEC), normes internationales CEI/IEC, et directives officielles de l'ESTI (Inspection fédérale des installations à courant fort).",
+      binding: "Leur respect confère la présomption légale de conformité aux ordonnances fédérales (OIBT art. 4)."
+    },
+    {
+      level: 4,
+      name: "4e rang : Directives professionnelles & recommandations",
+      color: "tier-4",
+      badge: "Branches & Réseaux",
+      description: "PDIE (Prescriptions des distributeurs d'électricité suisses pour le raccordement au réseau), directives de sécurité du travail SUVA, prescriptions de protection incendie de l'AEAI.",
+      binding: "Recommandations professionnelles et conditions techniques de raccordement des gestionnaires de réseau."
+    }
+  ];
+
+  const container = document.createElement('div');
+  container.className = 'interactive-widget-wrapper';
+  container.innerHTML = `
+    <div class="widget-header">
+      <div class="widget-title">📐 Pyramide interactive des prescriptions suisses</div>
+      <div class="widget-desc">Cliquez sur un étage de la pyramide pour explorer son niveau d'autorité juridique.</div>
+    </div>
+    <div class="pyramid-visual">
+      <div class="pyramid-tier tier-1 active" data-tier="0">1er rang : Lois & Ordonnances fédérales (LIE, OIBT, OCFo)</div>
+      <div class="pyramid-tier tier-2" data-tier="1">2e rang : Ordonnances du DETEC</div>
+      <div class="pyramid-tier tier-3" data-tier="2">3e rang : Règles techniques reconnues (NIBT, Directives ESTI)</div>
+      <div class="pyramid-tier tier-4" data-tier="3">4e rang : Directives professionnelles (PDIE, SUVA, AEAI)</div>
+    </div>
+    <div class="pyramid-detail-card" id="pyramidDetailBox">
+      <div style="font-weight:700; font-size:1.05rem; color:var(--text-primary); margin-bottom:0.4rem;" id="pyramidDetailTitle">
+        ${tiersData[0].name}
+      </div>
+      <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--electric-blue); background:var(--primary-subtle); padding:0.2rem 0.5rem; border-radius:4px; margin-bottom:0.65rem;" id="pyramidDetailBadge">
+        ${tiersData[0].badge}
+      </div>
+      <p style="line-height:1.55; margin-bottom:0.65rem;" id="pyramidDetailDesc">${tiersData[0].description}</p>
+      <div style="font-size:0.8rem; color:var(--warning); font-weight:600;" id="pyramidDetailBinding">
+        ⚖️ ${tiersData[0].binding}
+      </div>
+    </div>
+
+    <!-- Tableau normatif SN / SNR / SNG -->
+    <div style="margin-top:1.5rem;">
+      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.5rem;">
+        Tableau officiel des types de normes suisses (SNV / CES)
+      </div>
+      <table class="thresholds-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Désignation</th>
+            <th>Élaboration</th>
+            <th>Validité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SN</strong></td>
+            <td>Norme suisse</td>
+            <td>SNV / CES</td>
+            <td><strong>Illimitée</strong></td>
+          </tr>
+          <tr>
+            <td><strong>SNR</strong></td>
+            <td>Règle suisse</td>
+            <td>Comité technique</td>
+            <td><strong>5 ans</strong> (prolongeable 3 ans)</td>
+          </tr>
+          <tr>
+            <td><strong>SNG</strong></td>
+            <td>Guide suisse</td>
+            <td>Groupe d'experts</td>
+            <td><strong>Illimitée</strong> (informatif)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  // Gestion de l'interactivité
+  const tiersElements = container.querySelectorAll('.pyramid-tier');
+  const titleEl = container.querySelector('#pyramidDetailTitle');
+  const badgeEl = container.querySelector('#pyramidDetailBadge');
+  const descEl = container.querySelector('#pyramidDetailDesc');
+  const bindingEl = container.querySelector('#pyramidDetailBinding');
+
+  tiersElements.forEach(el => {
+    el.addEventListener('click', () => {
+      tiersElements.forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const idx = parseInt(el.getAttribute('data-tier'), 10);
+      const item = tiersData[idx];
+      titleEl.textContent = item.name;
+      badgeEl.textContent = item.badge;
+      descEl.textContent = item.description;
+      bindingEl.textContent = `⚖️ ${item.binding}`;
+    });
+  });
+
+  return container;
+}
+
+// ----------------------------------------------------------------------------
+// 2. Dangers de l'électricité, notions Ub/Ib et 5 règles (Module B — B00)
+// ----------------------------------------------------------------------------
+function createDangerWidget() {
+  const container = document.createElement('div');
+  container.className = 'interactive-widget-wrapper';
+  container.innerHTML = `
+    <div class="widget-header">
+      <div class="widget-title">⚡ Simulateur interactif de tension & courant de contact</div>
+      <div class="widget-desc">Ajustez la tension de contact Ub pour observer le courant traversant le corps humain Ib (Rb = 1000 Ω) et le niveau de danger physiologique.</div>
+    </div>
+
+    <!-- Schéma des grandeurs Ub / Ib / Uf / If -->
+    <div class="danger-metrics-grid">
+      <div class="danger-metric-box">
+        <div class="danger-metric-symbol">Ub</div>
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Tension de contact</div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Tension susceptible d'être pontée par une personne entre deux parties accessibles.</div>
+      </div>
+      <div class="danger-metric-box">
+        <div class="danger-metric-symbol">Ib</div>
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Courant de contact</div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Courant traversant le corps : <code>Ib = Ub / Rb</code>.</div>
+      </div>
+      <div class="danger-metric-box">
+        <div class="danger-metric-symbol">Uf</div>
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Tension de défaut</div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Tension entre une carcasse métallique sous défaut et la terre lointaine.</div>
+      </div>
+      <div class="danger-metric-box">
+        <div class="danger-metric-symbol">If</div>
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Courant de défaut</div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Courant total s'écoulant au point de claquage d'isolement.</div>
+      </div>
+    </div>
+
+    <!-- Simulateur interactif de contact -->
+    <div style="background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+        <span style="font-weight:700; font-size:0.9rem; color:var(--text-primary);">Tension de contact Ub : <span id="valUb" style="color:var(--electric-blue); font-size:1.1rem;">230 V</span></span>
+        <span style="font-size:0.8rem; color:var(--text-muted);">Résistance corporelle conventionnelle Rb = 1000 Ω</span>
+      </div>
+      <input type="range" id="sliderUb" min="10" max="400" step="5" value="230" style="width:100%; cursor:pointer; accent-color:var(--electric-blue);"/>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:1.25rem; padding:0.85rem 1.1rem; border-radius:var(--radius-sm); background:var(--bg-surface-elevated);" id="dangerResultBox">
+        <div>
+          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Courant corporel calculé (Ib)</div>
+          <div style="font-size:1.5rem; font-weight:800;" id="calcIb">230 mA</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Conséquence physiologique</div>
+          <div style="font-size:0.95rem; font-weight:700; color:var(--danger);" id="dangerLevelText">⚠️ Risque létal de fibrillation ventriculaire (> 50 mA)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tableau des seuils physiologiques 50 Hz -->
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.5rem;">
+        Seuils physiologiques du courant alternatif (50 Hz)
+      </div>
+      <table class="thresholds-table">
+        <thead>
+          <tr>
+            <th>Seuil</th>
+            <th>Intensité</th>
+            <th>Réaction physiologique corporelle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Perception</strong></td>
+            <td><strong>0.5 mA</strong></td>
+            <td>Léger picotement sans danger ni contraction musculaire.</td>
+          </tr>
+          <tr>
+            <td><strong>Non-lâcher</strong></td>
+            <td><strong>10 mA</strong></td>
+            <td>Contraction musculaire tétanisante : impossibilité de lâcher le conducteur saisi.</td>
+          </tr>
+          <tr>
+            <td><strong>Asphyxie respiratoire</strong></td>
+            <td><strong>30 mA</strong></td>
+            <td>Tétanisation des muscles thoraciques si le contact dure. <em>(Seuil des DDR haute sensibilité)</em>.</td>
+          </tr>
+          <tr style="background:rgba(239, 68, 68, 0.08);">
+            <td><strong style="color:var(--danger);">Fibrillation ventriculaire</strong></td>
+            <td><strong style="color:var(--danger);">≥ 50 mA</strong></td>
+            <td>Arrêt circulatoire chaotique du cœur. Mortel en quelques minutes sans défibrillateur.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5 règles vitales de sécurité -->
+    <div>
+      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.65rem;">
+        Les 5 règles vitales de sécurité (SUVA / ESTI) — Ordre chronologique strict :
+      </div>
+      <div class="rule-vital-item"><div class="rule-number">1</div><span><strong>Déclencher</strong> et couper sur tous les pôles.</span></div>
+      <div class="rule-vital-item"><div class="rule-number">2</div><span><strong>Sécuriser</strong> contre tout réenclenchement intempestif.</span></div>
+      <div class="rule-vital-item"><div class="rule-number">3</div><span><strong>Vérifier</strong> l'absence de tension sur tous les conducteurs à l'aide d'un VAT certifié.</span></div>
+      <div class="rule-vital-item"><div class="rule-number">4</div><span><strong>Mettre à terre</strong> et en court-circuit (lignes aériennes et haute tension).</span></div>
+      <div class="rule-vital-item"><div class="rule-number">5</div><span><strong>Protéger</strong> et couvrir les parties voisines restées sous tension.</span></div>
+    </div>
+  `;
+
+  // Logique du slider
+  const slider = container.querySelector('#sliderUb');
+  const valUb = container.querySelector('#valUb');
+  const calcIb = container.querySelector('#calcIb');
+  const dangerLevelText = container.querySelector('#dangerLevelText');
+
+  slider.addEventListener('input', (e) => {
+    const ub = parseInt(e.target.value, 10);
+    valUb.textContent = `${ub} V`;
+    // Rb = 1000 ohms -> Ib = Ub / 1000 A = Ub mA
+    const ib = ub; 
+    calcIb.textContent = `${ib} mA`;
+
+    if (ib < 0.5) {
+      dangerLevelText.textContent = "🟢 En dessous du seuil de perception";
+      dangerLevelText.style.color = "var(--success)";
+      calcIb.style.color = "var(--success)";
+    } else if (ib < 10) {
+      dangerLevelText.textContent = "🟡 Perception tactile sans tétanisation";
+      dangerLevelText.style.color = "var(--warning)";
+      calcIb.style.color = "var(--warning)";
+    } else if (ib < 30) {
+      dangerLevelText.textContent = "🟠 Tétanisation musculaire (seuil de non-lâcher)";
+      dangerLevelText.style.color = "var(--warning)";
+      calcIb.style.color = "var(--warning)";
+    } else if (ib < 50) {
+      dangerLevelText.textContent = "🔴 Asphyxie respiratoire possible si prolongé";
+      dangerLevelText.style.color = "var(--danger)";
+      calcIb.style.color = "var(--danger)";
+    } else {
+      dangerLevelText.textContent = "⚠️ Danger létal : Risque de fibrillation ventriculaire";
+      dangerLevelText.style.color = "var(--danger)";
+      calcIb.style.color = "var(--danger)";
+    }
+  });
+
+  return container;
+}
+
+// ----------------------------------------------------------------------------
+// 3. Chaîne de normalisation NIBT & Symboles (Module N — N0)
+// ----------------------------------------------------------------------------
+function createNibtWidget() {
+  const container = document.createElement('div');
+  container.className = 'interactive-widget-wrapper';
+  container.innerHTML = `
+    <div class="widget-header">
+      <div class="widget-title">🌐 Chaîne officielle de normalisation NIBT (Section 16 & 50)</div>
+      <div class="widget-desc">De la norme internationale CEI à la norme suisse d'application NIBT SN 411000:2025.</div>
+    </div>
+
+    <!-- Diagramme de filiation CEI -> CENELEC -> CES/TK64 -> NIBT -->
+    <div class="norm-chain-flow">
+      <div class="norm-step-card">
+        <div class="norm-step-level">Mondial</div>
+        <div class="norm-step-name">CEI / IEC</div>
+        <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem;">Série IEC 60364</div>
+      </div>
+      <div class="norm-arrow">➔</div>
+      <div class="norm-step-card">
+        <div class="norm-step-level">Européen</div>
+        <div class="norm-step-name">CENELEC</div>
+        <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem;">Série HD 60364</div>
+      </div>
+      <div class="norm-arrow">➔</div>
+      <div class="norm-step-card" style="border-color:var(--electric-blue); box-shadow:var(--shadow-electric);">
+        <div class="norm-step-level">Suisse</div>
+        <div class="norm-step-name">CES / TK 64</div>
+        <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem;">Comité Électrotechnique</div>
+      </div>
+      <div class="norm-arrow">➔</div>
+      <div class="norm-step-card" style="background:var(--primary-subtle); border-color:var(--electric-blue);">
+        <div class="norm-step-level" style="color:var(--text-primary);">Norme Finale</div>
+        <div class="norm-step-name" style="color:var(--electric-blue);">NIBT 2025</div>
+        <div style="font-size:0.72rem; color:var(--text-primary); margin-top:0.2rem;">SN 411000:2025</div>
+      </div>
+    </div>
+
+    <!-- Répartition en 2 Volumes -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0;">
+      <div style="background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem;">
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.95rem; margin-bottom:0.3rem;">Volume 1 : Prescriptions fondamentales</div>
+        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.45;">
+          Comprend les <strong>Parties 1 à 6</strong> de la norme : Principes, définitions, caractéristiques, sécurité, choix des matériels et vérifications de conformité.
+        </div>
+      </div>
+      <div style="background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem;">
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.95rem; margin-bottom:0.3rem;">Volume 2 : Emplacements spéciaux</div>
+        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.45;">
+          Dédié intégralement à la <strong>Partie 7</strong> : Locaux avec baignoire/douche (7.01), piscines (7.02), chantiers (7.04), solaire PV et bornes IRVE.
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille des Symboles officiels NIBT -->
+    <div>
+      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.5rem;">
+        Guide des conventions et symboles réglementaires NIBT
+      </div>
+      <div class="symbols-grid">
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--electric-blue);">5</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Écart suisse</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Disposition nationale suisse</div>
+          </div>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--success);">OK</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Admissible</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Solution conforme</div>
+          </div>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--warning);">⚠</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Nécessaire</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Obligation impérative</div>
+          </div>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--text-muted);">8</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Impossible</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Constructif / physique</div>
+          </div>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--danger);">9</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Inadmissible</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Formellement interdit</div>
+          </div>
+        </div>
+        <div class="symbol-card">
+          <div class="symbol-badge" style="color:var(--success);">✅</div>
+          <div>
+            <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary);">Recommandé</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Bonne pratique préconisée</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return container;
+}
+
+
+// ==================== src/components/quiz.js ====================
+// Swiss Electrical Academy — Moteur de Quiz Pédagogique (V1.1)
+// Types de questions, feedback immédiat (✓ Correct / ✕ Incorrect), score, révision des erreurs et gain d'XP anti-farming
+
+
+function createQuizEngine(formation, onComplete) {
+  const quizData = formation.quiz;
+  if (!quizData || quizData.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'quiz-section';
+    empty.innerHTML = `
+      <div style="text-align:center; padding:1.5rem; color:var(--text-muted);">
+        ℹ️ Aucun quiz associé à cette fiche.
+      </div>
+    `;
+    return empty;
+  }
+
+  let currentIndex = 0;
+  let userAnswers = {}; // { [questionIndex]: selectedOptionIndex }
+  let userMistakes = []; // [questionIndices]
+  let currentScore = 0;
+  let isAnswerSubmitted = false;
+
+  const container = document.createElement('div');
+  container.className = 'quiz-section';
+
+  function renderCurrentQuestion() {
+    container.innerHTML = '';
+
+    // Si toutes les questions ont été traitées, afficher le score final
+    if (currentIndex >= quizData.length) {
+      renderFinalScore();
+      return;
+    }
+
+    const q = quizData[currentIndex];
+    isAnswerSubmitted = false;
+
+    container.innerHTML = `
+      <div class="quiz-header">
+        <div class="quiz-title">📝 Quiz d'évaluation — ${formation.title}</div>
+        <div class="quiz-progress-pill">Question ${currentIndex + 1} / ${quizData.length}</div>
+      </div>
+
+      <div class="question-card">
+        <div class="question-text">${currentIndex + 1}. ${q.question}</div>
+        <div class="options-list" id="optionsList"></div>
+      </div>
+
+      <div id="feedbackContainer"></div>
+
+      <div class="quiz-actions-row">
+        <button class="btn-quiz-action" id="btnValidateAnswer" disabled>Valider la réponse</button>
+      </div>
+    `;
+
+    const optionsList = container.querySelector('#optionsList');
+    const btnValidate = container.querySelector('#btnValidateAnswer');
+    const feedbackContainer = container.querySelector('#feedbackContainer');
+
+    q.options.forEach((optText, optIdx) => {
+      const optEl = document.createElement('div');
+      optEl.className = 'option-item';
+      optEl.innerHTML = `
+        <div class="option-radio"></div>
+        <div class="option-text">${optText}</div>
+      `;
+
+      optEl.addEventListener('click', () => {
+        if (isAnswerSubmitted) return; // Ne plus changer après validation
+        optionsList.querySelectorAll('.option-item').forEach(el => el.classList.remove('selected'));
+        optEl.classList.add('selected');
+        userAnswers[currentIndex] = optIdx;
+        btnValidate.disabled = false;
+      });
+
+      optionsList.appendChild(optEl);
+    });
+
+    btnValidate.addEventListener('click', () => {
+      if (isAnswerSubmitted) {
+        // Passer à la question suivante
+        currentIndex++;
+        renderCurrentQuestion();
+        return;
+      }
+
+      // Valider la réponse actuelle
+      isAnswerSubmitted = true;
+      const selectedOpt = userAnswers[currentIndex];
+      const isCorrect = (selectedOpt === q.correctAnswer);
+
+      if (isCorrect) {
+        currentScore++;
+      } else {
+        userMistakes.push(currentIndex);
+      }
+
+      // Colorer les options
+      const optElements = optionsList.querySelectorAll('.option-item');
+      optElements.forEach((el, idx) => {
+        if (idx === q.correctAnswer) {
+          el.classList.add('correct');
+        } else if (idx === selectedOpt) {
+          el.classList.add('incorrect');
+        }
+      });
+
+      // Feedback Immédiat (Section 21)
+      feedbackContainer.innerHTML = `
+        <div class="quiz-feedback-box ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}">
+          <div class="feedback-badge">
+            ${isCorrect ? '✓ Correct !' : '✕ Incorrect'}
+          </div>
+          <div class="feedback-explanation">
+            ${isCorrect ? '' : `<strong>Bonne réponse :</strong> ${q.options[q.correctAnswer]}<br/>`}
+            ${q.explanation}
+          </div>
+        </div>
+      `;
+
+      btnValidate.textContent = (currentIndex + 1 < quizData.length) ? "Question suivante →" : "Voir les résultats 🏁";
+    });
+  }
+
+  function renderFinalScore() {
+    const total = quizData.length;
+    const percentage = Math.round((currentScore / total) * 100);
+    const passed = percentage >= 75;
+    const xpAvailable = formation.xpReward || 20;
+
+    // Enregistrer les résultats dans le localStorage
+    StorageService.saveQuizResult(formation.id, {
+      score: currentScore,
+      total,
+      percentage,
+      passed
+    });
+
+    // Attribuer l'XP (anti-farming : si déjà acquis, addXp renvoie 0)
+    let awardedXp = 0;
+    if (passed) {
+      StorageService.markLessonCompleted(formation.id, formation.moduleId);
+      awardedXp = StorageService.addXp(xpAvailable, `quiz_${formation.id}`);
+    }
+
+    const isAlreadyAwarded = StorageService.getAwardedSources().includes(`quiz_${formation.id}`);
+
+    container.innerHTML = `
+      <div class="quiz-score-card">
+        <div class="score-circle">
+          <div class="score-number">${currentScore}/${total}</div>
+          <div class="score-percent">${percentage}%</div>
+        </div>
+
+        <div style="font-size:1.3rem; font-weight:800; color:var(--text-primary);">
+          ${passed ? '🎉 Félicitations ! Formation validée' : '⚠️ Objectif non atteint (75% requis)'}
+        </div>
+
+        <div style="color:var(--text-secondary); max-width:460px; line-height:1.5;">
+          ${passed 
+            ? 'Vous avez démontré votre maîtrise des notions abordées dans cette formation technique.' 
+            : 'Nous vous recommandons de réviser les notions clés et de retenter le quiz.'}
+        </div>
+
+        ${passed ? `
+          <div class="score-xp-award">
+            ⚡ ${awardedXp > 0 ? `+${awardedXp} XP gagnés !` : `${xpAvailable} XP (Déjà acquis)`}
+          </div>
+        ` : ''}
+
+        <div class="score-actions-row">
+          ${userMistakes.length > 0 ? `
+            <button class="btn-quiz-action" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);" id="btnReviewMistakes">
+              🔍 Revoir mes erreurs (${userMistakes.length})
+            </button>
+          ` : ''}
+          <button class="btn-quiz-action" id="btnRestartQuiz">
+            🔄 Recommencer le quiz
+          </button>
+          <button class="btn-quiz-action" style="background:var(--success); color:#FFFFFF;" id="btnFinishLesson">
+            Continuer la formation →
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Revoir mes erreurs (AC-P1-007)
+    const btnReview = container.querySelector('#btnReviewMistakes');
+    if (btnReview) {
+      btnReview.addEventListener('click', () => {
+        renderReviewMistakes();
+      });
+    }
+
+    // Recommencer
+    container.querySelector('#btnRestartQuiz').addEventListener('click', () => {
+      currentIndex = 0;
+      userAnswers = {};
+      userMistakes = [];
+      currentScore = 0;
+      renderCurrentQuestion();
+    });
+
+    // Terminer
+    container.querySelector('#btnFinishLesson').addEventListener('click', () => {
+      if (onComplete) onComplete();
+    });
+  }
+
+  function renderReviewMistakes() {
+    container.innerHTML = `
+      <div class="quiz-header">
+        <div class="quiz-title">🔍 Revue détaillée de vos erreurs (${userMistakes.length})</div>
+        <button class="btn-quiz-action" style="padding:0.35rem 0.85rem; font-size:0.8rem;" id="btnBackToScore">
+          ← Retour au score
+        </button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:1rem;">
+        ${userMistakes.map((qIdx) => {
+          const q = quizData[qIdx];
+          const userChoice = userAnswers[qIdx];
+          return `
+            <div style="background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem;">
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:0.75rem;">
+                Question ${qIdx + 1} : ${q.question}
+              </div>
+              <div style="font-size:0.85rem; color:var(--danger); margin-bottom:0.35rem;">
+                ✕ Votre réponse : <strong>${q.options[userChoice]}</strong>
+              </div>
+              <div style="font-size:0.85rem; color:var(--success); margin-bottom:0.65rem;">
+                ✓ Réponse correcte : <strong>${q.options[q.correctAnswer]}</strong>
+              </div>
+              <div style="font-size:0.82rem; color:var(--text-muted); background:var(--bg-surface-elevated); padding:0.65rem; border-radius:var(--radius-sm);">
+                💡 <strong>Explication :</strong> ${q.explanation}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+
+    container.querySelector('#btnBackToScore').addEventListener('click', () => {
+      renderFinalScore();
+    });
+  }
+
+  renderCurrentQuestion();
+  return container;
+}
+
+
+// ==================== src/components/navigation.js ====================
+// Swiss Electrical Academy — Composant de Navigation (V1.1)
+// Sidebar permanente desktop, bottom-nav mobile, bandeau supérieur avec XP, réseau & PWA
+
+
+function setupNavigation(container, onNavigate) {
+  let deferredPrompt = null;
+
+  // Créer le shell HTML de base
+  container.innerHTML = `
+    <!-- Sidebar Desktop Permanente -->
+    <aside class="sidebar" id="appSidebar" role="navigation" aria-label="Navigation principale">
+      <div class="sidebar-header">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="256,76 396,156 396,316 256,396 116,316 116,156" stroke="#38BDF8" stroke-width="20" fill="none"/>
+            <path d="M256,120 L360,180 L360,290 C360,350 256,400 256,400 C256,400 152,350 152,290 L152,180 Z" fill="#172033" stroke="#38BDF8" stroke-width="8"/>
+            <path d="M272,185 L196,285 L248,285 L236,365 L316,265 L264,265 Z" fill="#38BDF8"/>
+          </svg>
+        </div>
+        <div class="brand-title">
+          <span>Swiss Electrical</span>
+          <span class="brand-subtitle">Academy</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div>
+          <div class="nav-group-title">Navigation</div>
+          <ul class="nav-links">
+            <li>
+              <a href="#/" class="nav-link" data-route="home">
+                <span class="nav-link-icon">🏠</span>
+                <span>Accueil</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/formations" class="nav-link" data-route="formations">
+                <span class="nav-link-icon">📚</span>
+                <span>Formations</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/progression" class="nav-link" data-route="progression">
+                <span class="nav-link-icon">📊</span>
+                <span>Progression</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/formateur" class="nav-link" data-route="formateur">
+                <span class="nav-link-icon">👨‍🏫</span>
+                <span>Espace Formateur</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/profil" class="nav-link" data-route="profil">
+                <span class="nav-link-icon">👤</span>
+                <span>Profil</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-group-title">Les Cinq Modules Officiels</div>
+          <ul class="nav-links">
+            ${ACADEMY_MODULES.map(mod => `
+              <li>
+                <a href="#/formations/${mod.id}" class="nav-link" data-route="module-${mod.id}">
+                  <span class="nav-link-icon">${mod.id}</span>
+                  <span>${mod.title}</span>
+                  <span class="module-nav-badge">${mod.formations.length}</span>
+                </a>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div style="font-weight:600; color:var(--text-secondary); margin-bottom:0.2rem;">Édition V1.1 — Suisse</div>
+        <div>« Apprendre les règles. Comprendre les risques. Maîtriser la pratique. »</div>
+      </div>
+    </aside>
+
+    <!-- Corps Principal (Main Wrapper) -->
+    <div class="main-wrapper">
+      <!-- En-tête supérieur -->
+      <header class="app-header" role="banner">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" id="btnToggleSidebar" aria-label="Ouvrir le menu de navigation">
+            ☰
+          </button>
+          <div class="header-tagline">
+            Plateforme e-learning officielle des règles techniques électriques en Suisse
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Indicateur d'état réseau -->
+          <div class="network-pill" id="networkPill">
+            <span class="network-dot"></span>
+            <span id="networkLabel">En ligne</span>
+          </div>
+
+          <!-- Bouton installation PWA -->
+          <button class="btn-install-pwa" id="btnInstallPwa" style="display:none;" aria-label="Installer l'application sur votre appareil">
+            📲 <span>Installer</span>
+          </button>
+
+          <!-- Indicateur XP -->
+          <div class="header-xp-badge" id="headerXpBadge" title="Points d'expérience acquis">
+            ⚡ <span id="headerXpVal">${StorageService.getXp()}</span> <span>XP</span>
+          </div>
+
+          <!-- Sélecteur de Thème -->
+          <select class="theme-select" id="themeSelector" aria-label="Choisir le thème visuel">
+            <option value="dark">🌙 Sombre</option>
+            <option value="light">☀️ Clair</option>
+            <option value="system">💻 Système</option>
+          </select>
+
+          <!-- Avatar Profil -->
+          <div class="user-avatar-pill" id="headerProfileBtn" role="button" tabindex="0" aria-label="Accéder à votre profil">
+            <div class="user-avatar-circle">👨‍🔧</div>
+            <span class="user-name-label">Alex</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Conteneur de page dynamique -->
+      <main class="main-content" id="pageContainer" role="main"></main>
+    </div>
+
+    <!-- Navigation Inférieure Mobile (Section 7) -->
+    <nav class="bottom-nav" role="navigation" aria-label="Navigation mobile">
+      <a href="#/" class="bottom-nav-item" data-route="home">
+        <span class="bottom-nav-icon">🏠</span>
+        <span>Accueil</span>
+      </a>
+      <a href="#/formations" class="bottom-nav-item" data-route="formations">
+        <span class="bottom-nav-icon">📚</span>
+        <span>Formations</span>
+      </a>
+      <a href="#/progression" class="bottom-nav-item" data-route="progression">
+        <span class="bottom-nav-icon">📊</span>
+        <span>Progrès</span>
+      </a>
+      <a href="#/profil" class="bottom-nav-item" data-route="profil">
+        <span class="bottom-nav-icon">👤</span>
+        <span>Profil</span>
+      </a>
+    </nav>
+  `;
+
+  // Gestion du réseau (En ligne / Hors ligne)
+  const networkPill = container.querySelector('#networkPill');
+  const networkLabel = container.querySelector('#networkLabel');
+
+  function updateNetworkStatus() {
+    if (navigator.onLine) {
+      networkPill.classList.remove('offline');
+      networkLabel.textContent = 'En ligne';
+    } else {
+      networkPill.classList.add('offline');
+      networkLabel.textContent = 'Mode hors-ligne';
+    }
+  }
+
+  window.addEventListener('online', updateNetworkStatus);
+  window.addEventListener('offline', updateNetworkStatus);
+  updateNetworkStatus();
+
+  // Gestion du bouton PWA d'installation
+  const btnInstall = container.querySelector('#btnInstallPwa');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    btnInstall.style.display = 'inline-flex';
+  });
+
+  btnInstall.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log('[PWA] Choix utilisateur :', outcome);
+    deferredPrompt = null;
+    btnInstall.style.display = 'none';
+  });
+
+  // Gestion du Thème (Dark / Light / System) sans rechargement (AC-P1-015, AC-P1-016)
+  const themeSelect = container.querySelector('#themeSelector');
+  const savedTheme = StorageService.getTheme();
+  themeSelect.value = savedTheme;
+  applyTheme(savedTheme);
+
+  themeSelect.addEventListener('change', (e) => {
+    const selected = e.target.value;
+    StorageService.setTheme(selected);
+    applyTheme(selected);
+  });
+
+  function applyTheme(theme) {
+    if (theme === 'system') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  }
+
+  // Toggle Sidebar sur mobile
+  const sidebar = container.querySelector('#appSidebar');
+  const btnToggleSidebar = container.querySelector('#btnToggleSidebar');
+  btnToggleSidebar.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+
+  // Profil click
+  container.querySelector('#headerProfileBtn').addEventListener('click', () => {
+    location.hash = '#/profil';
+  });
+
+  // Mise à jour de l'indicateur XP
+  window.updateHeaderXp = function() {
+    const xpVal = container.querySelector('#headerXpVal');
+    if (xpVal) {
+      xpVal.textContent = StorageService.getXp();
+    }
+  };
+
+  // Fermer la sidebar mobile lors d'un clic sur un lien
+  container.querySelectorAll('.nav-link, .bottom-nav-item').forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+  });
+}
+
+// Mise en surbrillance du lien actif
+function updateActiveNav(route) {
+  document.querySelectorAll('.nav-link, .bottom-nav-item').forEach(el => {
+    el.classList.remove('active');
+  });
+
+  if (route === '/' || route === '') {
+    document.querySelectorAll('[data-route="home"]').forEach(el => el.classList.add('active'));
+  } else if (route.startsWith('/formations')) {
+    document.querySelectorAll('[data-route="formations"]').forEach(el => el.classList.add('active'));
+  } else if (route === '/progression') {
+    document.querySelectorAll('[data-route="progression"]').forEach(el => el.classList.add('active'));
+  } else if (route === '/formateur') {
+    document.querySelectorAll('[data-route="formateur"]').forEach(el => el.classList.add('active'));
+  } else if (route === '/profil') {
+    document.querySelectorAll('[data-route="profil"]').forEach(el => el.classList.add('active'));
+  }
+}
+
+
+// ==================== src/pages/dashboard.js ====================
+// Swiss Electrical Academy — Page Dashboard (V1.1)
+// Accueil, progression globale, continuer la formation, et les 5 modules officiels (A, B, N, E, F)
+
+
+function renderDashboard(container) {
+  const stats = StorageService.getProgressStats();
+  const lastActivity = StorageService.getLastActivity() || {
+    moduleId: "A",
+    formationId: "pyramide-lois",
+    title: "Pyramide des lois",
+    code: "Pyramide des lois",
+    subtitle: "1.2 Base : Hiérarchie des lois et prescriptions suisses"
+  };
+
+  container.innerHTML = `
+    <!-- Hero Banner (Section 8) -->
+    <section class="dashboard-hero" aria-labelledby="heroTitle">
+      <div style="font-size:0.8rem; font-weight:700; color:var(--electric-blue); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">
+        ${ACADEMY_INFO.institution}
+      </div>
+      <h1 class="hero-greeting" id="heroTitle">Bienvenue dans Swiss Electrical Academy 👋</h1>
+      <div class="hero-tagline">« ${ACADEMY_INFO.baseline} »</div>
+
+      <!-- Métriques de progression globale -->
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <span class="metric-value" style="color:var(--electric-blue);">${stats.globalPercentage}%</span>
+          <span class="metric-label">Progression globale</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value" style="color:var(--warning);">⚡ ${stats.xp}</span>
+          <span class="metric-label">Points d'expérience (XP)</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value">${stats.completedFormations} / ${stats.totalFormations}</span>
+          <span class="metric-label">Formations validées</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-value" style="color:var(--success);">🏆 ${stats.badgesCount} / ${stats.totalBadgesCount}</span>
+          <span class="metric-label">Badges débloqués</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Continuer la formation (Section 8) -->
+    <section class="continue-section" aria-labelledby="continueHeading">
+      <div class="section-heading" id="continueHeading">
+        <span>⚡</span> Continuer votre apprentissage
+      </div>
+      <div class="continue-card">
+        <div class="continue-info">
+          <span class="continue-badge">Dernière activité • Module ${lastActivity.moduleId}</span>
+          <div class="continue-title">${lastActivity.code} — ${lastActivity.title}</div>
+          <div class="continue-desc">${lastActivity.subtitle || 'Reprendre là où vous vous étiez arrêté.'}</div>
+        </div>
+        <button class="btn-continue" id="btnResumeLearning">
+          <span>Reprendre la leçon</span>
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Les Cinq Modules Officiels (Section 6 & 9) -->
+    <section aria-labelledby="modulesHeading">
+      <div class="section-heading" id="modulesHeading">
+        <span>📚</span> Les 5 modules de formation
+      </div>
+      <div class="modules-grid">
+        ${ACADEMY_MODULES.map(mod => {
+          const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+          return `
+            <article class="module-card" data-module-id="${mod.id}">
+              <div>
+                <div class="module-card-top">
+                  <div class="module-code-badge badge-${mod.id}">
+                    ${mod.code}
+                  </div>
+                  <span class="module-count-tag">${mod.countLabel}</span>
+                </div>
+                <h2 class="module-title">${mod.title}</h2>
+                <p class="module-desc">${mod.description}</p>
+              </div>
+
+              <div>
+                <div class="module-progress-wrapper">
+                  <div class="progress-labels">
+                    <span>Progression</span>
+                    <span>${modStats.percentage}% (${modStats.completed}/${modStats.total})</span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: ${modStats.percentage}%;"></div>
+                  </div>
+                </div>
+
+                <button class="btn-module-open" data-module-id="${mod.id}">
+                  <span>Explorer le module</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+      </div>
+    </section>
+  `;
+
+  // Gestion du bouton Reprendre
+  container.querySelector('#btnResumeLearning').addEventListener('click', () => {
+    location.hash = `#/formations/${lastActivity.moduleId}/${lastActivity.formationId}`;
+  });
+
+  // Gestion des clics sur cartes modules
+  container.querySelectorAll('.btn-module-open, .module-card').forEach(el => {
+    el.addEventListener('click', (e) => {
+      // Éviter double déclenchement si clic sur bouton interne
+      const moduleId = el.getAttribute('data-module-id') || el.closest('.module-card')?.getAttribute('data-module-id');
+      if (moduleId) {
+        location.hash = `#/formations/${moduleId}`;
+      }
+    });
+  });
+}
+
+
+// ==================== src/pages/module-view.js ====================
+// Swiss Electrical Academy — Vue d'un Module (V1.1)
+// Détail du module, progression spécifique et liste ordonnée des leçons/chapitres
+
+
+function renderModuleView(container, moduleId) {
+  const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
+
+  if (!mod) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:3rem 1rem;">
+        <h2>Module introuvable</h2>
+        <p style="color:var(--text-muted); margin-top:0.5rem;">Le module demandé n'existe pas dans le référentiel officiel.</p>
+        <button class="btn-continue" style="margin-top:1.5rem;" onclick="location.hash='#/'">← Retour à l'accueil</button>
+      </div>
+    `;
+    return;
+  }
+
+  const completed = StorageService.getCompletedLessons();
+  const completedCount = mod.formations.filter(f => completed.includes(f.id)).length;
+  const modPercentage = mod.formations.length > 0 ? Math.round((completedCount / mod.formations.length) * 100) : 0;
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <span>Module ${mod.id}</span>
+    </nav>
+
+    <header class="module-view-header">
+      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+        <div class="module-code-badge badge-${mod.id}" style="width:48px; height:48px; font-size:1.4rem;">
+          ${mod.code}
+        </div>
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:var(--electric-blue); text-transform:uppercase; letter-spacing:0.08em;">
+            Module ${mod.id}
+          </div>
+          <h1 style="font-size:1.6rem; font-weight:800; color:var(--text-primary);">${mod.title}</h1>
+        </div>
+      </div>
+
+      <p style="color:var(--text-secondary); max-width:700px; line-height:1.5; margin-bottom:1.5rem;">
+        ${mod.description}
+      </p>
+
+      <div style="max-width:480px;">
+        <div class="progress-labels">
+          <span>Progression du module</span>
+          <span>${modPercentage}% (${completedCount} sur ${mod.formations.length} terminés)</span>
+        </div>
+        <div class="progress-bar-bg" style="height:8px;">
+          <div class="progress-bar-fill" style="width: ${modPercentage}%;"></div>
+        </div>
+      </div>
+    </header>
+
+    <section aria-label="Liste des formations du module">
+      <div class="section-heading">
+        <span>📑</span> Contenu de la formation (${mod.countLabel})
+      </div>
+      <div class="formations-list">
+        ${mod.formations.map(formation => {
+          const isDone = completed.includes(formation.id);
+          const isAvailable = formation.status === "Disponible";
+
+          return `
+            <article class="formation-item-card" data-formation-id="${formation.id}">
+              <div class="formation-code-col">
+                <span class="formation-code-tag">${formation.code}</span>
+              </div>
+
+              <div class="formation-title-col">
+                <div class="formation-item-title">
+                  ${formation.title} ${isDone ? '✓' : ''}
+                </div>
+                <div class="formation-item-subtitle">${formation.subtitle || ''}</div>
+              </div>
+
+              <div style="display:flex; align-items:center; gap:0.85rem;">
+                <span style="font-size:0.75rem; color:var(--text-muted);">${formation.duration}</span>
+                <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">
+                  ${formation.status}
+                </span>
+                <span style="color:var(--electric-blue); font-size:1.1rem;">→</span>
+              </div>
+            </article>
+          `;
+        }).join('')}
+      </div>
+    </section>
+  `;
+
+  // Événements de clic sur chaque formation
+  container.querySelectorAll('.formation-item-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const formationId = card.getAttribute('data-formation-id');
+      location.hash = `#/formations/${mod.id}/${formationId}`;
+    });
+  });
+}
+
+
+// ==================== src/pages/lesson-view.js ====================
+// Swiss Electrical Academy — Vue d'une Leçon (V1.1)
+// Respect strict de la séquence pédagogique : Titre -> Objectif -> Intro -> Contenu -> Illustration/Widget -> Cas pratique -> Point important -> Quiz -> Synthèse
+
+
+function renderLessonView(container, moduleId, formationId) {
+  const result = findFormation(moduleId, formationId);
+
+  if (!result) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:3rem 1rem;">
+        <h2>Formation introuvable</h2>
+        <p style="color:var(--text-muted); margin-top:0.5rem;">Cette référence pédagogique n'a pas été trouvée dans le module ${moduleId}.</p>
+        <button class="btn-continue" style="margin-top:1.5rem;" onclick="location.hash='#/formations/${moduleId}'">← Retour au module</button>
+      </div>
+    `;
+    return;
+  }
+
+  const { module: mod, formation } = result;
+
+  // Enregistrer comme dernière activité pour le bouton « Continuer »
+  StorageService.setLastActivity({
+    moduleId: mod.id,
+    formationId: formation.id,
+    title: formation.title,
+    code: formation.code,
+    subtitle: formation.subtitle
+  });
+
+  const isAvailable = formation.status === "Disponible";
+  const isDone = StorageService.isLessonCompleted(formation.id);
+
+  container.innerHTML = `
+    <div class="lesson-container">
+      <!-- Fil d'ariane -->
+      <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+        <a href="#/" class="breadcrumb-link">Accueil</a>
+        <span>/</span>
+        <a href="#/formations/${mod.id}" class="breadcrumb-link">Module ${mod.id} — ${mod.title}</a>
+        <span>/</span>
+        <span>${formation.code}</span>
+      </nav>
+
+      <!-- En-tête de leçon (Titre) -->
+      <header class="lesson-header-card">
+        <div class="lesson-badges-row">
+          <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
+            ${mod.id}
+          </span>
+          <span class="formation-code-tag">${formation.code}</span>
+          <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
+          ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}
+          <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">⏳ ${formation.duration}</span>
+        </div>
+
+        <h1 class="lesson-h1">${formation.title}</h1>
+        ${formation.subtitle ? `<div class="lesson-subtitle">${formation.subtitle}</div>` : ''}
+      </header>
+
+      ${isAvailable ? `
+        <!-- Objectif Pédagogique -->
+        <section class="objective-box" aria-label="Objectif pédagogique">
+          <div class="box-icon">🎯</div>
+          <div>
+            <div class="box-title">Objectif pédagogique</div>
+            <div class="box-text">${formation.objective}</div>
+          </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-article" aria-label="Introduction">
+          <div class="section-title">Introduction</div>
+          <div class="section-body">${formation.introduction}</div>
+        </section>
+
+        <!-- Contenu Détaillé -->
+        <section class="content-article" aria-label="Contenu détaillé">
+          ${formation.contentSections.map(sec => `
+            <div style="margin-bottom:1.5rem;">
+              <h2 class="section-title" style="font-size:1.05rem; margin-bottom:0.75rem;">${sec.title}</h2>
+              <div class="section-body">${sec.text}</div>
+            </div>
+          `).join('')}
+        </section>
+
+        <!-- Illustration / Composant Interactif Dédié -->
+        <section id="interactiveWidgetSlot" aria-label="Illustration interactive"></section>
+
+        <!-- Exemple Pratique -->
+        ${formation.practicalExample ? `
+          <section class="case-study-box" aria-label="Exemple pratique">
+            <div class="box-icon">💡</div>
+            <div>
+              <div class="box-title">Cas pratique sur le terrain</div>
+              <div class="box-text">${formation.practicalExample}</div>
+            </div>
+          </section>
+        ` : ''}
+
+        <!-- Point Important -->
+        ${formation.importantPoint ? `
+          <section class="important-box" aria-label="Point important">
+            <div class="box-icon">⚠️</div>
+            <div>
+              <div class="box-title">Règle incontournable & sécurité</div>
+              <div class="box-text">${formation.importantPoint}</div>
+            </div>
+          </section>
+        ` : ''}
+
+        <!-- Moteur de Quiz Dédié -->
+        <section id="quizSlot" aria-label="Quiz d'évaluation"></section>
+
+        <!-- Synthèse -->
+        ${formation.synthesis ? `
+          <section class="synthesis-box" aria-label="Synthèse">
+            <div class="box-icon">📋</div>
+            <div>
+              <div class="box-title">Synthèse de la leçon</div>
+              <div class="box-text">${formation.synthesis}</div>
+            </div>
+          </section>
+        ` : ''}
+
+      ` : `
+        <!-- Contenu en cours de développement (Section 5 & 42) -->
+        <section class="content-article" style="text-align:center; padding:3rem 1.5rem;">
+          <div style="font-size:3rem; margin-bottom:1rem;">🔒</div>
+          <h2 style="font-size:1.3rem; font-weight:700; margin-bottom:0.5rem;">Contenu en préparation</h2>
+          <p style="color:var(--text-secondary); max-width:560px; margin:0 auto 1.5rem; line-height:1.5;">
+            Cette formation dédiée au sujet <strong>${formation.title}</strong> fait actuellement l'objet d'une formalisation technique et réglementaire rigoureuse.
+          </p>
+          <div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:var(--radius-md); padding:1.25rem; max-width:560px; margin:0 auto; text-align:left;">
+            <div style="font-weight:700; font-size:0.85rem; color:var(--electric-blue); margin-bottom:0.35rem;">Cadre réglementaire de cette fiche :</div>
+            <div style="font-size:0.82rem; color:var(--text-muted);">${formation.objective}</div>
+          </div>
+          <div style="margin-top:2rem;">
+            <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'">
+              ← Retour aux chapitres du Module ${mod.id}
+            </button>
+          </div>
+        </section>
+      `}
+
+      <!-- Barre de navigation bas de leçon -->
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0; border-top:1px solid var(--border-subtle);">
+        <button class="btn-quiz-action" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);" onclick="location.hash='#/formations/${mod.id}'">
+          ← Retour au Module ${mod.id}
+        </button>
+        <button class="btn-quiz-action" onclick="location.hash='#/progression'">
+          Voir ma progression 📊
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Insertion du widget interactif
+  if (isAvailable && formation.interactiveWidget) {
+    const slot = container.querySelector('#interactiveWidgetSlot');
+    if (slot) {
+      if (formation.interactiveWidget === 'pyramid-widget') {
+        slot.appendChild(createPyramidWidget());
+      } else if (formation.interactiveWidget === 'danger-widget') {
+        slot.appendChild(createDangerWidget());
+      } else if (formation.interactiveWidget === 'nibt-widget') {
+        slot.appendChild(createNibtWidget());
+      }
+    }
+  }
+
+  // Insertion du quiz
+  if (isAvailable && formation.quiz) {
+    const quizSlot = container.querySelector('#quizSlot');
+    if (quizSlot) {
+      const quizEl = createQuizEngine(formation, () => {
+        // Callback lors de la complétion
+        if (window.updateHeaderXp) window.updateHeaderXp();
+        location.hash = `#/formations/${mod.id}`;
+      });
+      quizSlot.appendChild(quizEl);
+    }
+  }
+}
+
+
+// ==================== src/pages/progress-view.js ====================
+// Swiss Electrical Academy — Page Progression & Gamification (V1.1)
+// Progression globale, progression par module (A, B, N, E, F), XP et badges déblocables
+
+
+function renderProgressView(container) {
+  const stats = StorageService.getProgressStats();
+  const unlockedBadges = StorageService.getUnlockedBadges();
+
+  container.innerHTML = `
+    <header style="margin-bottom:2rem;">
+      <h1 style="font-size:1.7rem; font-weight:800; color:var(--text-primary); margin-bottom:0.4rem;">
+        Tableau de bord de votre progression
+      </h1>
+      <p style="color:var(--text-secondary); font-size:0.92rem;">
+        Suivi de vos acquis, validation des chapitres normatifs et badges de compétences professionnelles.
+      </p>
+    </header>
+
+    <!-- Cartes résumé -->
+    <div class="progress-grid">
+      <div class="metric-card" style="padding:1.25rem;">
+        <span class="metric-label">Progression globale</span>
+        <span class="metric-value" style="color:var(--electric-blue); font-size:2rem; margin:0.35rem 0;">
+          ${stats.globalPercentage}%
+        </span>
+        <div class="progress-bar-bg" style="height:6px;">
+          <div class="progress-bar-fill" style="width:${stats.globalPercentage}%;"></div>
+        </div>
+      </div>
+
+      <div class="metric-card" style="padding:1.25rem;">
+        <span class="metric-label">Points d'expérience cumulés</span>
+        <span class="metric-value" style="color:var(--warning); font-size:2rem; margin:0.35rem 0;">
+          ⚡ ${stats.xp} XP
+        </span>
+        <span style="font-size:0.75rem; color:var(--text-muted);">Acquis par validation des quiz techniques</span>
+      </div>
+
+      <div class="metric-card" style="padding:1.25rem;">
+        <span class="metric-label">Formations validées</span>
+        <span class="metric-value" style="font-size:2rem; margin:0.35rem 0;">
+          ${stats.completedFormations} / ${stats.totalFormations}
+        </span>
+        <span style="font-size:0.75rem; color:var(--text-muted);">Sur les 5 modules de l'Académie</span>
+      </div>
+    </div>
+
+    <!-- Détail par Module (A, B, N, E, F) (Section 23) -->
+    <section style="margin-bottom:2.5rem;" aria-labelledby="modulesProgressHeading">
+      <div class="section-heading" id="modulesProgressHeading">
+        <span>📊</span> Progression détaillée par module officiel
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        ${ACADEMY_MODULES.map(mod => {
+          const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+          return `
+            <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; display:flex; flex-direction:column; gap:0.6rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; align-items:center; gap:0.75rem;">
+                  <span class="module-code-badge badge-${mod.id}" style="width:32px; height:32px; font-size:0.95rem;">
+                    ${mod.code}
+                  </span>
+                  <div>
+                    <strong style="color:var(--text-primary); font-size:0.95rem;">Module ${mod.id} — ${mod.title}</strong>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">${mod.countLabel}</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">${modStats.percentage}%</span>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">${modStats.completed} sur ${modStats.total}</div>
+                </div>
+              </div>
+              <div class="progress-bar-bg" style="height:6px;">
+                <div class="progress-bar-fill" style="width:${modStats.percentage}%;"></div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </section>
+
+    <!-- Référentiel des Badges (Section 25) -->
+    <section aria-labelledby="badgesHeading">
+      <div class="section-heading" id="badgesHeading">
+        <span>🏆</span> Badges de compétences (${stats.badgesCount} débloqués sur ${stats.totalBadgesCount})
+      </div>
+      <div class="badges-grid">
+        ${OFFICIAL_BADGES.map(badge => {
+          const isUnlocked = unlockedBadges.includes(badge.id);
+          return `
+            <div class="badge-card ${isUnlocked ? 'unlocked' : 'locked'}">
+              <div class="badge-icon-box">${badge.icon}</div>
+              <div>
+                <div class="badge-name">${badge.name}</div>
+                <div class="badge-desc">${badge.description}</div>
+                <div style="margin-top:0.4rem; font-size:0.7rem; font-weight:700; color:${isUnlocked ? 'var(--success)' : 'var(--text-muted)'};">
+                  ${isUnlocked ? '✓ Débloqué' : '🔒 À débloquer'}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </section>
+  `;
+}
+
+
+// ==================== src/pages/trainer-view.js ====================
+// Swiss Electrical Academy — Espace Formateur Démonstration (V1.1)
+// Statistiques de cohorte, suivi des apprenants et tableau de bord pédagogique
+
+
+function renderTrainerView(container) {
+  const { stats, students } = TRAINER_DEMO;
+
+  container.innerHTML = `
+    <header style="margin-bottom:2rem;">
+      <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--electric-blue); background:var(--primary-subtle); padding:0.2rem 0.6rem; border-radius:var(--radius-sm); margin-bottom:0.5rem;">
+        ESPACE FORMATEUR & ENTREPRISE
+      </div>
+      <h1 style="font-size:1.7rem; font-weight:800; color:var(--text-primary); margin-bottom:0.4rem;">
+        Tableau de bord de suivi pédagogique
+      </h1>
+      <p style="color:var(--text-secondary); font-size:0.92rem;">
+        Supervisez en temps réel l'avancement de vos apprentis et techniciens sur les prescriptions suisses.
+      </p>
+    </header>
+
+    <!-- Métriques Clés de la cohorte (Section 27) -->
+    <div class="trainer-stats-row">
+      <div class="metric-card">
+        <span class="metric-label">Apprenants suivis</span>
+        <span class="metric-value" style="color:var(--electric-blue); font-size:1.8rem;">${stats.studentsCount}</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">Inscrits dans votre groupe</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Progression moyenne</span>
+        <span class="metric-value" style="font-size:1.8rem;">${stats.avgProgress}%</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">Sur l'ensemble des modules</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Quiz validés</span>
+        <span class="metric-value" style="color:var(--warning); font-size:1.8rem;">${stats.quizzesCompleted}</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">Évaluations terminées</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Taux de réussite</span>
+        <span class="metric-value" style="color:var(--success); font-size:1.8rem;">${stats.successRate}%</span>
+        <span style="font-size:0.72rem; color:var(--text-muted);">Score moyen aux quiz</span>
+      </div>
+    </div>
+
+    <!-- Tableau des Apprenants -->
+    <section aria-labelledby="studentsTableHeading" style="margin-bottom:2.5rem;">
+      <div class="section-heading" id="studentsTableHeading">
+        <span>👥</span> Suivi individuel des apprenants
+      </div>
+      <div class="trainer-table-wrapper">
+        <table class="trainer-table">
+          <thead>
+            <tr>
+              <th>Apprenant</th>
+              <th>Progression</th>
+              <th>Dernière activité</th>
+              <th>Score moyen</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${students.map(s => `
+              <tr>
+                <td><strong>${s.name}</strong></td>
+                <td style="min-width:140px;">
+                  <div style="display:flex; align-items:center; gap:0.5rem;">
+                    <div class="progress-bar-bg" style="flex:1; height:6px;">
+                      <div class="progress-bar-fill" style="width:${s.progress}%;"></div>
+                    </div>
+                    <span style="font-size:0.78rem; font-weight:700;">${s.progress}%</span>
+                  </div>
+                </td>
+                <td style="color:var(--text-secondary);">${s.lastActivity}</td>
+                <td><strong style="color:${s.score >= 80 ? 'var(--success)' : 'var(--warning)'};">${s.score}%</strong></td>
+                <td>
+                  <span class="status-badge status-available" style="font-size:0.7rem;">${s.status}</span>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Évolutions futures LMS (Section 27 & 66) -->
+    <section style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:1.75rem;">
+      <h2 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:0.5rem;">
+        🚀 Évolutions LMS Entreprise & École
+      </h2>
+      <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.55; margin-bottom:1rem;">
+        Cette démonstration préfigure la version LMS connectée. L'architecture technique est conçue pour intégrer prochainement :
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.85rem;">
+        <div style="background:var(--bg-app); padding:0.85rem; border-radius:var(--radius-sm); font-size:0.82rem; border:1px solid var(--border-subtle);">
+          📁 <strong>Gestion des cohortes</strong> : Création de classes d'apprentissage et assignation de modules spécifiques.
+        </div>
+        <div style="background:var(--bg-app); padding:0.85rem; border-radius:var(--radius-sm); font-size:0.82rem; border:1px solid var(--border-subtle);">
+          📜 <strong>Certificats officiels</strong> : Génération automatisée d'attestations de formation continue conformes à l'OIBT art. 8.
+        </div>
+        <div style="background:var(--bg-app); padding:0.85rem; border-radius:var(--radius-sm); font-size:0.82rem; border:1px solid var(--border-subtle);">
+          📊 <strong>Exports statistiques</strong> : Rapports PDF et CSV pour le suivi des obligations légales de formation.
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+
+// ==================== src/pages/profile-view.js ====================
+// Swiss Electrical Academy — Page Profil Apprenant (V1.1)
+// Identité, avatar, statistiques personnelles, gestion du thème et persistance
+
+
+function renderProfileView(container) {
+  const stats = StorageService.getProgressStats();
+  const currentTheme = StorageService.getTheme();
+
+  container.innerHTML = `
+    <div class="profile-card">
+      <div class="profile-user-header">
+        <div class="profile-large-avatar">${DEFAULT_USER.avatar}</div>
+        <div>
+          <h1 style="font-size:1.4rem; font-weight:800; color:var(--text-primary); margin-bottom:0.2rem;">
+            ${DEFAULT_USER.name}
+          </h1>
+          <div style="font-size:0.85rem; color:var(--electric-blue); font-weight:600;">
+            ${DEFAULT_USER.role}
+          </div>
+          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">
+            ${DEFAULT_USER.level}
+          </div>
+        </div>
+      </div>
+
+      <!-- Métriques Apprenant -->
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.75rem; background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem; text-align:center;">
+        <div>
+          <div style="font-size:1.4rem; font-weight:800; color:var(--electric-blue);">${stats.globalPercentage}%</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">Progression</div>
+        </div>
+        <div>
+          <div style="font-size:1.4rem; font-weight:800; color:var(--warning);">⚡ ${stats.xp}</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">XP Total</div>
+        </div>
+        <div>
+          <div style="font-size:1.4rem; font-weight:800; color:var(--success);">🏆 ${stats.badgesCount}</div>
+          <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">Badges</div>
+        </div>
+      </div>
+
+      <!-- Préférences d'affichage & Thème (Sections 29, 30, 50) -->
+      <div>
+        <h2 style="font-size:0.95rem; font-weight:700; color:var(--text-primary); margin-bottom:0.65rem;">
+          Thème visuel (Par défaut : Sombre natif)
+        </h2>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.65rem;" id="profileThemeButtons">
+          <button class="btn-quiz-action ${currentTheme === 'dark' ? '' : 'inactive-theme'}" style="padding:0.65rem; font-size:0.82rem;" data-theme-val="dark">
+            🌙 Sombre
+          </button>
+          <button class="btn-quiz-action ${currentTheme === 'light' ? '' : 'inactive-theme'}" style="padding:0.65rem; font-size:0.82rem;" data-theme-val="light">
+            ☀️ Clair
+          </button>
+          <button class="btn-quiz-action ${currentTheme === 'system' ? '' : 'inactive-theme'}" style="padding:0.65rem; font-size:0.82rem;" data-theme-val="system">
+            💻 Système
+          </button>
+        </div>
+      </div>
+
+      <!-- Réinitialisation des données locales pour tests -->
+      <div style="border-top:1px solid var(--border-subtle); padding-top:1.25rem;">
+        <h3 style="font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-bottom:0.5rem; text-transform:uppercase;">
+          Données locales (localStorage)
+        </h3>
+        <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.45; margin-bottom:0.85rem;">
+          Toutes vos données (progrès, quiz, XP, badges) sont stockées localement dans votre navigateur sans cookie publicitaire.
+        </p>
+        <button class="btn-quiz-action" style="background:var(--danger-bg); color:var(--danger); border:1px solid rgba(239, 68, 68, 0.3); width:100%;" id="btnResetProgress">
+          🗑️ Réinitialiser ma progression locale
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Gestion des boutons de thème
+  container.querySelectorAll('#profileThemeButtons button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.getAttribute('data-theme-val');
+      StorageService.setTheme(selected);
+
+      // Appliquer au DOM
+      if (selected === 'system') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', selected);
+      }
+
+      // Mettre à jour le selecteur du header
+      const headerSelect = document.querySelector('#themeSelector');
+      if (headerSelect) headerSelect.value = selected;
+
+      // Re-render
+      renderProfileView(container);
+    });
+  });
+
+  // Réinitialiser
+  container.querySelector('#btnResetProgress').addEventListener('click', () => {
+    if (confirm('Voulez-vous vraiment réinitialiser l\'ensemble de votre progression locale et vos XP ?')) {
+      localStorage.clear();
+      StorageService.setTheme(currentTheme);
+      alert('Progression réinitialisée.');
+      if (window.updateHeaderXp) window.updateHeaderXp();
+      location.hash = '#/';
+    }
+  });
+}
+
+
+// ==================== src/main.js ====================
+// Swiss Electrical Academy — Point d'entrée applicatif (V1.1)
+// Initialisation du Shell, Enregistrement PWA Service Worker et Routeur Hash sans rechargement
+
+
+function initSEA() {
+  const appRoot = document.getElementById('app');
+  if (!appRoot) return;
+  if (appRoot.children.length > 0) return; // Déjà initialisé
+
+  // Création du shell de navigation
+  const appContainer = document.createElement('div');
+  appContainer.className = 'app-container';
+  appRoot.appendChild(appContainer);
+
+  setupNavigation(appContainer, (route) => {
+    location.hash = `#${route}`;
+  });
+
+  const pageContainer = document.getElementById('pageContainer');
+
+  // Enregistrement du Service Worker PWA (uniquement sur http/https, évite les erreurs sur file://)
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => console.log('[SEA] Service Worker enregistré avec succès :', reg.scope))
+        .catch((err) => console.warn('[SEA] Échec enregistrement Service Worker :', err));
+    });
+  }
+
+  // Routeur Hash sans rechargement
+  function handleRouting() {
+    // Normaliser le hash (ex: "#/formations/N/n0" -> "/formations/N/n0")
+    const hash = window.location.hash.slice(1) || '/';
+    const cleanPath = hash.split('?')[0];
+    const segments = cleanPath.split('/').filter(Boolean);
+
+    // Faire défiler la page vers le haut à chaque changement de route
+    if (pageContainer) {
+      pageContainer.scrollTop = 0;
+    }
+
+    // Mise à jour de la surbrillance dans les barres de menu
+    updateActiveNav(cleanPath);
+
+    // Règle absolue (Section 39) : Interdiction absolue des anciennes routes basées sur C
+    if (segments[0] === 'formations' && segments[1] === 'C') {
+      console.warn('[Router] Route Module C interdite. Redirection vers Module N (NIBT).');
+      location.hash = '#/formations/N';
+      return;
+    }
+
+    // 1. Accueil
+    if (segments.length === 0 || cleanPath === '/') {
+      renderDashboard(pageContainer);
+      return;
+    }
+
+    // 2. Formations (liste globale)
+    if (segments[0] === 'formations' && segments.length === 1) {
+      renderDashboard(pageContainer);
+      return;
+    }
+
+    // 3. Vue Module (ex: /formations/A, /formations/B, /formations/N, /formations/E, /formations/F)
+    if (segments[0] === 'formations' && segments.length === 2) {
+      const moduleId = segments[1].toUpperCase();
+      renderModuleView(pageContainer, moduleId);
+      return;
+    }
+
+    // 4. Vue Leçon (ex: /formations/A/pyramide-lois, /formations/N/n0, /formations/B/securite-electrique)
+    if (segments[0] === 'formations' && segments.length >= 3) {
+      const moduleId = segments[1].toUpperCase();
+      const formationId = segments[2];
+      renderLessonView(pageContainer, moduleId, formationId);
+      return;
+    }
+
+    // 5. Progression
+    if (segments[0] === 'progression') {
+      renderProgressView(pageContainer);
+      return;
+    }
+
+    // 6. Espace Formateur
+    if (segments[0] === 'formateur') {
+      renderTrainerView(pageContainer);
+      return;
+    }
+
+    // 7. Profil
+    if (segments[0] === 'profil') {
+      renderProfileView(pageContainer);
+      return;
+    }
+
+    // Fallback : Redirection Accueil
+    renderDashboard(pageContainer);
+  }
+
+  window.addEventListener('hashchange', handleRouting);
+  handleRouting();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSEA);
+} else {
+  initSEA();
+}
+
+
+})();

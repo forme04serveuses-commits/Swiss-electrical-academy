@@ -1,0 +1,28 @@
+# Dépendances
+node_modules/
+.pnp
+.pnp.js
+
+# Fichiers temporaires & environnement
+.tmp/
+.env
+.env.local
+.env.*.local
+credentials.json
+token.json
+
+# Logs & Système
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# IDE & Editeurs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
