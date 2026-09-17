@@ -114,12 +114,10 @@ export function setupNavigation(container, onNavigate) {
             ⚡ <span id="headerXpVal">${StorageService.getXp()}</span> <span>XP</span>
           </div>
 
-          <!-- Sélecteur de Thème -->
-          <select class="theme-select" id="themeSelector" aria-label="Choisir le thème visuel">
-            <option value="dark">🌙 Sombre</option>
-            <option value="light">☀️ Clair</option>
-            <option value="system">💻 Système</option>
-          </select>
+          <!-- Bouton de sélection de Thème basé sur une icône (🌙 → ☀️ → 🖥️ → 🌙) -->
+          <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Thème sombre" title="Thème sombre" data-tooltip="Thème sombre">
+            <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">🌙</span>
+          </button>
 
           <!-- Avatar Profil -->
           <div class="user-avatar-pill" id="headerProfileBtn" role="button" tabindex="0" aria-label="Accéder à votre profil">
@@ -189,26 +187,102 @@ export function setupNavigation(container, onNavigate) {
     btnInstall.style.display = 'none';
   });
 
-  // Gestion du Thème (Dark / Light / System) sans rechargement (AC-P1-015, AC-P1-016)
-  const themeSelect = container.querySelector('#themeSelector');
-  const savedTheme = StorageService.getTheme();
-  themeSelect.value = savedTheme;
-  applyTheme(savedTheme);
+  // Gestion du Thème cyclique basé sur une icône (Sombre 🌙 → Clair ☀️ → Système 🖥️ → Sombre 🌙)
+  const THEME_MODES = {
+    dark: {
+      next: 'light',
+      icon: '🌙',
+      label: 'Thème sombre'
+    },
+    light: {
+      next: 'system',
+      icon: '☀️',
+      label: 'Thème clair'
+    },
+    system: {
+      next: 'dark',
+      icon: '🖥️',
+      label: 'Thème système'
+    }
+  };
 
-  themeSelect.addEventListener('change', (e) => {
-    const selected = e.target.value;
-    StorageService.setTheme(selected);
-    applyTheme(selected);
-  });
+  const themeBtn = container.querySelector('#themeToggleBtn');
+  const themeIcon = container.querySelector('#themeToggleIcon');
 
-  function applyTheme(theme) {
-    if (theme === 'system') {
+  function applyTheme(theme, animate = false) {
+    const validTheme = THEME_MODES[theme] ? theme : 'dark';
+    const config = THEME_MODES[validTheme];
+
+    // 1. Appliquer data-theme sur documentElement
+    if (validTheme === 'system') {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
     } else {
-      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme', validTheme);
+    }
+
+    // 2. Mettre à jour l'icône, aria-label et tooltip du bouton
+    if (themeBtn && themeIcon) {
+      themeBtn.setAttribute('aria-label', config.label);
+      themeBtn.setAttribute('title', config.label);
+      themeBtn.setAttribute('data-tooltip', config.label);
+      themeBtn.setAttribute('data-theme-mode', validTheme);
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (animate && !reduceMotion) {
+        themeIcon.style.transform = 'scale(0.7) rotate(15deg)';
+        themeIcon.style.opacity = '0.5';
+        setTimeout(() => {
+          themeIcon.textContent = config.icon;
+          themeIcon.style.transform = 'scale(1) rotate(0deg)';
+          themeIcon.style.opacity = '1';
+        }, 120);
+      } else {
+        themeIcon.textContent = config.icon;
+        themeIcon.style.transform = 'none';
+        themeIcon.style.opacity = '1';
+      }
     }
   }
+
+  // Initialiser avec le thème sauvegardé (défaut: dark)
+  const savedTheme = StorageService.getTheme();
+  applyTheme(savedTheme, false);
+
+  // Clic sur le bouton : cycler vers le mode suivant
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const current = StorageService.getTheme() || 'dark';
+      const next = THEME_MODES[current] ? THEME_MODES[current].next : 'light';
+      StorageService.setTheme(next);
+      applyTheme(next, true);
+
+      // Synchroniser la page profil si elle est ouverte
+      const profileButtons = document.getElementById('profileThemeButtons');
+      if (profileButtons) {
+        profileButtons.querySelectorAll('button').forEach(b => {
+          if (b.getAttribute('data-theme-val') === next) {
+            b.classList.remove('inactive-theme');
+          } else {
+            b.classList.add('inactive-theme');
+          }
+        });
+      }
+    });
+  }
+
+  // Écouteur de changement de préférence système de l'OS (quand mode Système actif)
+  const systemSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  systemSchemeQuery.addEventListener('change', (e) => {
+    if (StorageService.getTheme() === 'system') {
+      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // Exposer globalement pour la vue profil
+  window.applyAppTheme = function(theme, animate = false) {
+    applyTheme(theme, animate);
+  };
 
   // Toggle Sidebar sur mobile
   const sidebar = container.querySelector('#appSidebar');

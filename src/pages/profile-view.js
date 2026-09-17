@@ -80,19 +80,19 @@ export function renderProfileView(container) {
       const selected = btn.getAttribute('data-theme-val');
       StorageService.setTheme(selected);
 
-      // Appliquer au DOM
-      if (selected === 'system') {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      // Appliquer au DOM et synchroniser le bouton d'en-tête
+      if (typeof window.applyAppTheme === 'function') {
+        window.applyAppTheme(selected, true);
       } else {
-        document.documentElement.setAttribute('data-theme', selected);
+        if (selected === 'system') {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', selected);
+        }
       }
 
-      // Mettre à jour le selecteur du header
-      const headerSelect = document.querySelector('#themeSelector');
-      if (headerSelect) headerSelect.value = selected;
-
-      // Re-render
+      // Re-render la vue profil pour refléter le bouton actif
       renderProfileView(container);
     });
   });
