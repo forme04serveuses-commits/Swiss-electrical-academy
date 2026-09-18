@@ -1,7 +1,7 @@
 // Electricité Learning Qualité | ELEQ — Service Worker V1.3
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'eleq-v1.3.9-cache';
+const CACHE_NAME = 'eleq-v1.3.10-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',

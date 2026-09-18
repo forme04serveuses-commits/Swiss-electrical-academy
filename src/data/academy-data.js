@@ -101,7 +101,7 @@ export const ACADEMY_MODULES = [
         title: "Pyramide des lois",
         subtitle: "Base",
         status: "Disponible",
-        duration: "6 min",
+        duration: "12 min",
         tag: "Droit fédéral",
         xpReward: 30,
         objective: "Maîtriser la hiérarchie juridique des normes électriques suisses, du Conseil fédéral aux règles techniques et directives, les références officielles (RS) et la structure des normes SN, SNR et SNG.",
