@@ -122,7 +122,7 @@ export function setupNavigation(container, onNavigate) {
           <!-- Avatar Profil -->
           <div class="user-avatar-pill" id="headerProfileBtn" role="button" tabindex="0" aria-label="Accéder à votre profil">
             <div class="user-avatar-circle">👨‍🔧</div>
-            <span class="user-name-label">Alex</span>
+            <span class="user-name-label">Tommy Flynn</span>
           </div>
         </div>
       </header>

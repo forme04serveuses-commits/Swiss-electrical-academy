@@ -18,7 +18,7 @@
 
   // Profil apprenant par défaut
   const DEFAULT_USER = {
-    name: "Alex",
+    name: "Tommy Flynn",
     role: "Installateur-électricien",
     avatar: "👨‍🔧",
     level: "Niveau 2 — Praticien qualifié"
@@ -75,7 +75,7 @@
       successRate: 86
     },
     students: [
-      { name: "Alex (Vous)", progress: 75, lastActivity: "N0 — Partie 0", score: 92, status: "En cours" },
+      { name: "Tommy Flynn (Vous)", progress: 75, lastActivity: "N0 — Partie 0", score: 92, status: "En cours" },
       { name: "Marc Dupond", progress: 85, lastActivity: "A00 — Pyramide", score: 95, status: "Actif" },
       { name: "Sophie Meier", progress: 60, lastActivity: "B00 — Sécurité", score: 88, status: "Actif" },
       { name: "Thomas Vuilleumier", progress: 42, lastActivity: "N0 — Partie 0", score: 78, status: "À relancer" },
@@ -1958,7 +1958,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           <!-- Avatar Profil -->
           <div class="user-avatar-pill" id="headerProfileBtn" role="button" tabindex="0" aria-label="Accéder à votre profil">
             <div class="user-avatar-circle">👨‍🔧</div>
-            <span class="user-name-label">Alex</span>
+            <span class="user-name-label">Tommy Flynn</span>
           </div>
         </div>
       </header>

@@ -68,7 +68,7 @@ Swiss Electrical Academy
 ## 3. Fonctionnalités Clés
 
 ### A. Dashboard & Progression en Temps Réel
-- Accueil personnalisé (**Alex 👋**).
+- Accueil personnalisé (**Tommy Flynn 👋**).
 - Statistiques globales (pourcentage global, XP, formations validées, badges débloqués).
 - Carte interactive **« Continuer la formation »** reprenant automatiquement la dernière activité.
 - Cartes détaillées des 5 modules avec barres de progression individuelles.
