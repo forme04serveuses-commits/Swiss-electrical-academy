@@ -15,6 +15,7 @@ export function createVideoPlayer(config) {
         class="video-element"
         preload="metadata"
         playsinline
+        webkit-playsinline
         aria-label="${config.title || 'Vidéo de formation'}"
       >
         <source src="${videoSrc}" type="video/mp4" />
@@ -118,6 +119,7 @@ export function createVideoPlayer(config) {
   const volumeSlider = container.querySelector('.video-volume-slider');
   const speedSelect = container.querySelector('.video-speed-select');
   const fullscreenBtn = container.querySelector('.btn-fullscreen');
+  const fullscreenIcon = fullscreenBtn ? fullscreenBtn.querySelector('.ctrl-icon') : null;
   const errorOverlay = container.querySelector('.video-error-overlay');
   const retryBtn = container.querySelector('.btn-video-retry');
 
@@ -237,24 +239,73 @@ export function createVideoPlayer(config) {
     video.playbackRate = parseFloat(speedSelect.value);
   });
 
-  // Plein écran
+  // Plein écran (support universel : standard Fullscreen API & WebKit iPhone/iOS)
+  function isFullscreenActive() {
+    return !!(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement ||
+      video.webkitDisplayingFullscreen
+    );
+  }
+
+  function updateFullscreenUI(isFullscreen) {
+    if (isFullscreen) {
+      fullscreenBtn.setAttribute('aria-label', 'Quitter le plein écran');
+      if (fullscreenIcon) fullscreenIcon.textContent = '⤓';
+      container.classList.add('is-fullscreen');
+    } else {
+      fullscreenBtn.setAttribute('aria-label', 'Activer le plein écran');
+      if (fullscreenIcon) fullscreenIcon.textContent = '⛶';
+      container.classList.remove('is-fullscreen');
+    }
+  }
+
   function toggleFullscreen() {
-    if (!document.fullscreenElement) {
+    if (!isFullscreenActive()) {
       if (mediaWrapper.requestFullscreen) {
-        mediaWrapper.requestFullscreen();
+        mediaWrapper.requestFullscreen().catch(() => {
+          if (video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
+          }
+        });
       } else if (mediaWrapper.webkitRequestFullscreen) {
         mediaWrapper.webkitRequestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        // Support natif iOS Safari / iPhone
+        if (video.paused) {
+          video.play().catch(() => {});
+        }
+        video.webkitEnterFullscreen();
+      } else if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => {});
       }
-      fullscreenBtn.setAttribute('aria-label', 'Quitter le plein écran');
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen();
+        document.exitFullscreen().catch(() => {});
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (video.webkitExitFullscreen) {
+        video.webkitExitFullscreen();
       }
-      fullscreenBtn.setAttribute('aria-label', 'Activer le plein écran');
     }
   }
 
   fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+  // Synchronisation des états plein écran (standard + iOS WebKit)
+  const onFullscreenChange = () => {
+    updateFullscreenUI(isFullscreenActive());
+  };
+  document.addEventListener('fullscreenchange', onFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+  video.addEventListener('webkitbeginfullscreen', () => updateFullscreenUI(true));
+  video.addEventListener('webkitendfullscreen', () => updateFullscreenUI(false));
 
   // Réessayer en cas d'erreur
   retryBtn.addEventListener('click', () => {

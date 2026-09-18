@@ -1913,6 +1913,15 @@ button, input, select {
   box-shadow: 0 0 0 3px var(--electric-blue);
 }
 
+.video-media-wrapper:fullscreen,
+.video-media-wrapper:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .video-element {
   width: 100%;
   height: 100%;
