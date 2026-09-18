@@ -102,12 +102,17 @@ export const ACADEMY_MODULES = [
         duration: "6 min",
         tag: "Droit fédéral",
         xpReward: 30,
-        objective: "Maîtriser la hiérarchie des lois, ordonnances et règles techniques suisses, les références légales officielles (RS) et la structure des normes SN, SNR et SNG.",
-        introduction: "*(Illustration : pyramide hiérarchique des lois, ordonnances et règles techniques suisses, du niveau le plus contraignant — Conseil fédéral — au niveau le moins contraignant — règles techniques / directives.)*",
+        objective: "Maîtriser la hiérarchie juridique des normes électriques suisses, du Conseil fédéral aux règles techniques et directives, les références officielles (RS) et la structure des normes SN, SNR et SNG.",
+        introduction: `Bienvenue dans la pyramide des normes électriques suisses… promis, on va vous éviter un coup de jus ! ;) 
+De la LIE aux ordonnances comme l’OIBT, jusqu’à la fameuse NIBT 2025, nous allons décortiquer ensemble la pyramide de lois étape par étape. Grâce à des explications simples et visuelles, vous comprendrez enfin la hiérarchie juridique sans vous mélanger les tournevis.
+Prêt à faire la lumière sur le cadre légal et à sécuriser votre travail ?`,
         contentSections: [
           {
-            title: "Abréviations et références légales :",
-            text: `<div style="overflow-x:auto; margin-top:0.5rem;">
+            title: "Pyramide des lois",
+            text: `<p style="margin-bottom:0.75rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
+Abréviations et références légales officielles :
+</p>
+<div style="overflow-x:auto; margin-top:0.5rem;">
 <table class="thresholds-table">
 <thead>
 <tr>
@@ -120,15 +125,15 @@ export const ACADEMY_MODULES = [
 <tr><td><strong>RS 734.0 - LIE</strong></td><td>Loi sur les installations électriques</td></tr>
 <tr><td><strong>RS 734.1 - OCFa</strong></td><td>Ordonnance sur les installations électriques à courant faible</td></tr>
 <tr><td><strong>RS 734.2 - OCFo</strong></td><td>Ordonnance sur les installations électriques à courant fort</td></tr>
-<tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l'Inspection fédérale des installations à courant fort</td></tr>
+<tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l’Inspection fédérale des installations à courant fort</td></tr>
 <tr><td><strong>RS 734.26 - OMBT</strong></td><td>Ordonnance sur les Matériels électriques à Basse Tension</td></tr>
 <tr><td><strong>RS 734.27 - OIBT</strong></td><td>Ordonnance sur les installations électriques à basse tension</td></tr>
-<tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l'Environnement, des Transports, de l'Energie et de la Communication)</td></tr>
+<tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l’Environnement, des Transports, de l’Energie et de la Communication)</td></tr>
 <tr><td><strong>RS 734.31 - OLEI</strong></td><td>Ordonnance sur les lignes électriques</td></tr>
 <tr><td><strong>RS 734.5 - OCEM</strong></td><td>Ordonnance sur la comptabilité électromagnétique</td></tr>
 <tr><td><strong>RS 784.10 - LTC</strong></td><td>Loi sur les télécommunications</td></tr>
 <tr><td><strong>RS 814.710 - ORNI</strong></td><td>Ordonnance sur la protection contre le rayonnement non ionisant</td></tr>
-<tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l'assurance-accidents</td></tr>
+<tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l’assurance-accidents</td></tr>
 <tr><td><strong>RS 832.30 - OPA</strong></td><td>Ordonnance sur la prévention des accidents et des maladies professionnelles</td></tr>
 <tr><td><strong>RS 930.11 - LSPro</strong></td><td>Loi fédérale du 12 juin 2009 sur la sécurité des produits</td></tr>
 <tr><td><strong>NIBT</strong></td><td>Norme sur les installations à basse tension (SN 411000 :2025)</td></tr>
@@ -136,16 +141,16 @@ export const ACADEMY_MODULES = [
 <tr><td><strong>SNR</strong></td><td>Règle Suisse</td></tr>
 <tr><td><strong>SNG</strong></td><td>Guide Suisse</td></tr>
 <tr><td><strong>ESTI</strong></td><td>Inspection fédérale des installations à courant fort</td></tr>
-<tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d'assurance incendie</td></tr>
-<tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d'assurance en cas d'accidents</td></tr>
-<tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d'électricité CH</td></tr>
+<tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d’assurance incendie</td></tr>
+<tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d’assurance en cas d’accidents</td></tr>
+<tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d’électricité CH</td></tr>
 </tbody>
 </table>
 </div>`
           },
           {
             title: "Structure et présentation des SN, SNR et SNG",
-            text: `Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d'origine européenne ou internationale et ont été transférées dans l'assortiment de normes suisses.
+            text: `Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d’origine européenne ou internationale et ont été transférées dans l’assortiment de normes suisses.
 
 <div style="overflow-x:auto; margin-top:0.75rem;">
 <table class="thresholds-table">
@@ -160,9 +165,9 @@ export const ACADEMY_MODULES = [
 <tbody>
 <tr>
 <td><strong>Définition</strong></td>
-<td>Publication normative préparée sous la direction d'un organisme de normalisation CH, EU ou internationale reconnus</td>
-<td>Publication préparée sous la direction d'un organisme de normalisation CH reconnu</td>
-<td>Publication chapotée par un organisme de normalisation CH indiquant des explications pour l'élaboration et l'utilisation de normes et de règles</td>
+<td>Publication normative préparée sous la direction d’un organisme de normalisation CH, EU ou internationale reconnus</td>
+<td>Publication préparée sous la direction d’un organisme de normalisation CH reconnu</td>
+<td>Publication chapotée par un organisme de normalisation CH indiquant des explications pour l’élaboration et l’utilisation de normes et de règles</td>
 </tr>
 <tr>
 <td><strong>Intégration à la norme CH</strong></td>
@@ -173,13 +178,13 @@ export const ACADEMY_MODULES = [
 <tr>
 <td><strong>Description</strong></td>
 <td>Norme classique</td>
-<td>Publication normative à un accord limité (sans procéder à un vote formel)</td>
+<td>Publication normative à un accord limité. (Sans procéder à un vote formel)</td>
 <td>Publication sans définition normative</td>
 </tr>
 <tr>
 <td><strong>Validité</strong></td>
 <td>Illimitée</td>
-<td>5 ans, possibilité de prolonger de 3 ans en cas ➜ en SN/SNG</td>
+<td>5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG</td>
 <td>Illimitée</td>
 </tr>
 </tbody>
@@ -188,79 +193,105 @@ export const ACADEMY_MODULES = [
           },
           {
             title: "Histoire",
-            text: `Avec la loi fédérale sur l'établissement de lignes téléphoniques et télégraphiques du 26 juin 1888, la Confédération a essayé de protéger car elle observait un danger dans l'alimentation à courant fort des installations de transmission.
+            text: `Avec la loi fédérale sur l’établissement de lignes téléphoniques et télégraphiques du 26 juin 1888, la Confédération a essayé de protéger car elle observait un danger dans l’alimentation à courant fort des installations de transmission.
 
-La création de l'Association Suisse des Électriciens ASE (Electrosuisse actuellement) a été faite à cause des difficultés à l'accroissement de l'alimentation en courant. L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort. Celles-ci ont formé la base de la LIE du 24 juin 1902.`
+La création de l’Association Suisse des Électriciens ASE (Electrosuisse actuellement) a été faite à cause des difficultés à l’accroissement de l’alimentation en courant. L’ASE a préparé les premières prescriptions pour la réalisation et l’exploitation des installations à courant fort. Celles-ci ont formé la base de la LIE du 24 juin 1902.`
           }
         ],
         interactiveWidget: "pyramid-widget",
-        importantPoint: "Hiérarchie des normes : les règles s'ordonnent du niveau le plus contraignant (Conseil fédéral) au niveau le moins contraignant (règles techniques / directives).",
-        synthesis: "En Suisse, les prescriptions s'articulent rigoureusement entre les lois et ordonnances fédérales (LIE, OCFa, OCFo, OIBT, O ESTI, OMBT, OLEI, OCEM, LTC, ORNI, LAA, OPA, LSPro), les ordonnances départementales (DETEC), les normes techniques ([SN], NIBT) et les règles et guides ([SNR], [SNG], ESTI, SUVA, AEAI, PDIE).",
+        importantPoint: "Hiérarchie juridique : les règles s’ordonnent du niveau le plus contraignant (Conseil fédéral au sommet) jusqu’aux règles techniques et directives à la base.",
+        synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
         quiz: [
           {
             id: "q_a00_1",
             type: "single",
-            question: "Quelle est la durée de validité d'une Règle Suisse [SNR] selon la structure des normes en Suisse ?",
+            question: "Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
             options: [
-              "Illimitée",
-              "5 ans, possibilité de prolonger de 3 ans en cas ➜ en SN/SNG",
-              "10 ans sans prolongation possible",
-              "1 an renouvelable"
+              "CF : Conseil fédéral",
+              "Règles techniques / Directives",
+              "Prescriptions des distributeurs d'électricité (PDIE)",
+              "Guides suisses [SNG]"
             ],
-            correctAnswer: 1,
-            explanation: "Dans la structure des normes en Suisse, une [SNR] a une validité de 5 ans, avec possibilité de prolonger de 3 ans en cas ➜ en SN/SNG."
+            correctAnswer: 0,
+            explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
           },
           {
             id: "q_a00_2",
             type: "single",
-            question: "Parmi les types de publications normatives suisses, lequel bénéficie d'une intégration à la norme CH ?",
+            question: "Actuellement en Suisse, sur environ 26'000 normes, combien sont des normes exclusivement suisses [SN] ?",
             options: [
-              "[SN]",
-              "[SNR]",
-              "[SNG]",
-              "Aucun des trois"
+              "Un millier",
+              "Les 25'000 restantes",
+              "La totalité (26'000)",
+              "Une cinquantaine"
             ],
             correctAnswer: 0,
-            explanation: "Seules les [SN] (Normes classiques) ont une intégration à la norme CH (Oui pour [SN], Non pour [SNR] et [SNG])."
+            explanation: "On compte environ 26'000 normes en Suisse, dont un millier de normes exclusivement suisses [SN], les 25'000 restantes étant d'origine européenne ou internationale."
           },
           {
             id: "q_a00_3",
             type: "single",
-            question: "Dans les références légales fédérales, que désigne l'abréviation RS 734.27 - OIBT ?",
+            question: "Quelle est la validité d'une Règle Suisse [SNR] selon la structure des normes en Suisse ?",
+            options: [
+              "5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG",
+              "Illimitée",
+              "10 ans sans prolongation possible",
+              "1 an renouvelable annuellement"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon le tableau officiel de structure des normes, la validité d'une [SNR] est de « 5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG »."
+          },
+          {
+            id: "q_a00_4",
+            type: "single",
+            question: "Parmi les publications [SN], [SNR] et [SNG], laquelle bénéficie d'une intégration à la norme CH ?",
+            options: [
+              "[SN]",
+              "[SNR]",
+              "[SNG]",
+              "Aucune d'entre elles"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon le tableau comparatif officiel, seule la [SN] bénéficie d'une intégration à la norme CH (Oui pour [SN], Non pour [SNR], Non pour [SNG])."
+          },
+          {
+            id: "q_a00_5",
+            type: "single",
+            question: "Quelle est la définition officielle d'un Guide Suisse [SNG] ?",
+            options: [
+              "Publication chapotée par un organisme de normalisation CH indiquant des explications pour l’élaboration et l’utilisation de normes et de règles",
+              "Publication normative à un accord limité. (Sans procéder à un vote formel)",
+              "Publication normative préparée sous la direction d’un organisme de normalisation CH, EU ou internationale reconnus",
+              "Ordonnance départementale d'application obligatoire"
+            ],
+            correctAnswer: 0,
+            explanation: "Le [SNG] est défini comme : « Publication chapotée par un organisme de normalisation CH indiquant des explications pour l’élaboration et l’utilisation de normes et de règles »."
+          },
+          {
+            id: "q_a00_6",
+            type: "single",
+            question: "Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
             options: [
               "Ordonnance sur les installations électriques à basse tension",
-              "Ordonnance sur les installations électriques à courant fort",
               "Ordonnance sur les Matériels électriques à Basse Tension",
-              "Ordonnance sur les lignes électriques"
+              "Ordonnance sur les installations électriques à courant fort",
+              "Ordonnance sur l’Inspection fédérale des installations à courant fort"
             ],
             correctAnswer: 0,
             explanation: "RS 734.27 - OIBT désigne l'Ordonnance sur les installations électriques à basse tension."
           },
           {
-            id: "q_a00_4",
+            id: "q_a00_7",
             type: "single",
-            question: "Quelle loi fédérale du 26 juin 1888 a marqué la première intervention de la Confédération face au danger du courant fort ?",
+            question: "Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
             options: [
-              "Loi fédérale sur l'établissement de lignes téléphoniques et télégraphiques",
-              "Loi sur les installations électriques (LIE)",
-              "Loi sur les télécommunications (LTC)",
-              "Loi fédérale sur la sécurité des produits (LSPro)"
+              "24 juin 1902",
+              "26 juin 1888",
+              "12 juin 2009",
+              "1er janvier 2025"
             ],
             correctAnswer: 0,
-            explanation: "Avec la loi fédérale sur l'établissement de lignes téléphoniques et télégraphiques du 26 juin 1888, la Confédération a essayé de protéger car elle observait un danger dans l'alimentation à courant fort des installations de transmission."
-          },
-          {
-            id: "q_a00_5",
-            type: "single",
-            question: "Quelles prescriptions ont formé la base de la LIE du 24 juin 1902 ?",
-            options: [
-              "Les premières prescriptions préparées par l'ASE pour la réalisation et l'exploitation des installations à courant fort",
-              "Les ordonnances du DETEC sur les télécommunications",
-              "Les prescriptions de protection incendie de l'AEAI",
-              "Les recommandations de la SUVA sur l'assurance-accidents"
-            ],
-            correctAnswer: 0,
-            explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort. Celles-ci ont formé la base de la LIE du 24 juin 1902."
+            explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
           }
         ]
       },

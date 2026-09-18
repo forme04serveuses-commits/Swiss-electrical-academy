@@ -8,35 +8,35 @@ export function createPyramidWidget() {
   const tiersData = [
     {
       level: 1,
-      name: "1er rang : Conseil fédéral (CF) — Lois et Ordonnances fédérales",
-      color: "tier-1",
+      name: "Sommet : Conseil fédéral (CF)",
       badge: "Conseil fédéral (CF)",
-      description: "Niveau le plus contraignant. Comprend les Lois fédérales et Ordonnances : RS 734.0 - LIE (Loi sur les installations électriques), RS 734.1 - OCFa (Courant faible), RS 734.2 - OCFo (Courant fort), RS 734.24 - O ESTI, RS 734.26 - OMBT, RS 734.27 - OIBT (Basse tension), RS 734.31 - OLEI (Lignes électriques), RS 734.5 - OCEM, RS 784.10 - LTC (Télécommunications), RS 814.710 - ORNI, RS 832.20 - LAA, RS 832.30 - OPA et RS 930.11 - LSPro.",
-      binding: "Niveau le plus contraignant — Droit fédéral édicté par l'Assemblée fédérale et le Conseil fédéral."
+      description: "Au sommet de la pyramide des lois, le Conseil fédéral représente le niveau suprême de l'autorité réglementaire fédérale suisse. Il édicte les ordonnances d'application des lois fédérales et garantit la sécurité des personnes et des installations.",
+      references: "CF : Conseil fédéral",
+      binding: "Juridiquement contraignant — Sommet de la hiérarchie normative suisse."
     },
     {
       level: 2,
-      name: "2e rang : Ordonnances des départements fédéraux (DETEC)",
-      color: "tier-2",
-      badge: "Département fédéral (DETEC)",
-      description: "RS 734.272 - O DETEC : Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l'Environnement, des Transports, de l'Energie et de la Communication).",
-      binding: "Ordonnance départementale d'application obligatoire."
+      name: "2e rang : Lois fédérales",
+      badge: "Lois fédérales",
+      description: "Textes législatifs fondateurs adoptés par l'Assemblée fédérale suisse régissant la sécurité, la responsabilité civile et la protection des personnes et des biens.",
+      references: "RS 734.0 - LIE (Loi sur les installations électriques) • RS 930.11 - LSPro (Loi fédérale du 12 juin 2009 sur la sécurité des produits) • RS 832.20 - LAA (Loi fédérale sur l’assurance-accidents) • RS 784.10 - LTC (Loi sur les télécommunications).",
+      binding: "Juridiquement contraignant — Force de loi obligatoire votée par le Parlement."
     },
     {
       level: 3,
-      name: "3e rang : Règles techniques reconnues",
-      color: "tier-3",
-      badge: "Normes & Règles techniques",
-      description: "NIBT : Norme sur les installations à basse tension (SN 411000:2025), SN EN (Norme Suisse Européenne Norme), et directives de l'ESTI (Inspection fédérale des installations à courant fort).",
-      binding: "Normes techniques et règles d'application reconnues."
+      name: "3e rang : Ordonnances fédérales et départementales",
+      badge: "Ordonnances",
+      description: "Ordonnances d'application exécutoires édictées par le Conseil fédéral et le Département fédéral de l'Environnement, des Transports, de l'Energie et de la Communication (DETEC).",
+      references: "RS 734.1 - OCFa • RS 734.2 - OCFo • RS 734.24 - O ESTI • RS 734.26 - OMBT • RS 734.27 - OIBT • RS 734.272 - O DETEC • RS 734.31 - OLEI • RS 734.5 - OCEM • RS 814.710 - ORNI • RS 832.30 - OPA.",
+      binding: "Juridiquement contraignant — Ordonnances d'exécution d'application obligatoire."
     },
     {
       level: 4,
-      name: "4e rang : Directives professionnelles, règles et guides",
-      color: "tier-4",
-      badge: "Règles, Guides & Directives",
-      description: "PDIE (Prescriptions des distributeurs d'électricité CH), SUVA (Caisse nationale suisse d'assurance en cas d'accidents), AEAI (Association des établissements cantonaux d'assurance incendie), SNR (Règle Suisse) et SNG (Guide Suisse).",
-      binding: "Niveau le moins contraignant — règles techniques / directives."
+      name: "4e rang : Règles techniques et Directives",
+      badge: "Règles techniques / Directives",
+      description: "Normes techniques suisses et européennes, règles, guides et prescriptions des organismes de normalisation reconnus (Electrosuisse / CES, CENELEC, CEI) et des institutions professionnelles.",
+      references: "NIBT (SN 411000 :2025) • SN EN (Norme Suisse Européenne Norme, ex: SN EN 61439, SN EN 60204) • SNR (Règle Suisse) • SNG (Guide Suisse) • ESTI • SUVA • AEAI • PDIE (Prescriptions des distributeurs d’électricité CH / CTR).",
+      binding: "Présomption de conformité à l'état de la technique et respect des règles de l'art."
     }
   ];
 
@@ -44,94 +44,76 @@ export function createPyramidWidget() {
   container.className = 'interactive-widget-wrapper';
   container.innerHTML = `
     <div class="widget-header">
-      <div class="widget-title">📐 Pyramide hiérarchique des lois, ordonnances et règles techniques suisses</div>
-      <div class="widget-desc">Du niveau le plus contraignant (Conseil fédéral) au niveau le moins contraignant (règles techniques / directives). Cliquez sur un étage pour explorer son niveau d'autorité juridique.</div>
+      <div class="widget-title">📐 Pyramide hiérarchique des normes électriques suisses</div>
+      <div class="widget-desc">Cliquez sur chaque étage de la pyramide pour visualiser son autorité juridique et ses textes de référence officiels.</div>
     </div>
+    
+    <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; margin-bottom:1.25rem; font-size:0.82rem; font-weight:700; color:var(--electric-blue); text-transform:uppercase; letter-spacing:0.05em; background:var(--primary-subtle); padding:0.4rem 0.8rem; border-radius:20px; width:fit-content; margin-left:auto; margin-right:auto;">
+      <span>⬆️ Juridiquement contraignant (vers le sommet)</span>
+    </div>
+
     <div class="pyramid-visual">
-      <div class="pyramid-tier tier-1 active" data-tier="0">1er rang : Conseil fédéral (LIE, OCFa, OCFo, OIBT, O ESTI, OMBT...)</div>
-      <div class="pyramid-tier tier-2" data-tier="1">2e rang : Ordonnances du DETEC (RS 734.272 - O DETEC)</div>
-      <div class="pyramid-tier tier-3" data-tier="2">3e rang : Règles techniques reconnues (NIBT SN 411000:2025, SN EN, ESTI)</div>
-      <div class="pyramid-tier tier-4" data-tier="3">4e rang : Directives & Guides (PDIE, SUVA, AEAI, SNR, SNG)</div>
-    </div>
-    <div class="pyramid-detail-card" id="pyramidDetailBox">
-      <div style="font-weight:700; font-size:1.05rem; color:var(--text-primary); margin-bottom:0.4rem;" id="pyramidDetailTitle">
-        ${tiersData[0].name}
+      <div class="pyramid-tier tier-1 active" data-tier="0" role="button" tabindex="0" aria-label="Étage 1 : Conseil fédéral (CF)">
+        1. Conseil fédéral (CF)
       </div>
-      <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--electric-blue); background:var(--primary-subtle); padding:0.2rem 0.5rem; border-radius:4px; margin-bottom:0.65rem;" id="pyramidDetailBadge">
-        ${tiersData[0].badge}
+      <div class="pyramid-tier tier-2" data-tier="1" role="button" tabindex="0" aria-label="Étage 2 : Lois (LIE, LSPro, LAA)">
+        2. Lois (LIE, LSPro, LAA)
       </div>
-      <p style="line-height:1.55; margin-bottom:0.65rem;" id="pyramidDetailDesc">${tiersData[0].description}</p>
-      <div style="font-size:0.8rem; color:var(--warning); font-weight:600;" id="pyramidDetailBinding">
-        ⚖️ ${tiersData[0].binding}
+      <div class="pyramid-tier tier-3" data-tier="2" role="button" tabindex="0" aria-label="Étage 3 : Ordonnances (OIBT, OCFo, OCFa, O ESTI, O DETEC...)">
+        3. Ordonnances (OIBT, OCFo, OCFa, O ESTI, O DETEC...)
+      </div>
+      <div class="pyramid-tier tier-4" data-tier="3" role="button" tabindex="0" aria-label="Étage 4 : Règles techniques et Directives (NIBT, SNR, SNG, ESTI, PDIE...)">
+        4. Règles techniques / Directives (NIBT 2025, SNR, SNG, ESTI, PDIE...)
       </div>
     </div>
 
-    <!-- Structure et présentation des SN, SNR et SNG -->
-    <div style="margin-top:1.5rem;">
-      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.35rem;">
-        Structure et présentation des SN, SNR et SNG
+    <div class="pyramid-detail-card" id="pyramidDetailBox" aria-live="polite">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem; flex-wrap:wrap; gap:0.5rem;">
+        <div style="font-weight:700; font-size:1.05rem; color:var(--text-primary);" id="pyramidDetailTitle">
+          ${tiersData[0].name}
+        </div>
+        <div style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--electric-blue); background:var(--primary-subtle); padding:0.2rem 0.5rem; border-radius:4px;" id="pyramidDetailBadge">
+          ${tiersData[0].badge}
+        </div>
       </div>
-      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem; line-height:1.5;">
-        Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d'origine européenne ou internationale et ont été transférées dans l'assortiment de normes suisses.
-      </p>
-      <div style="overflow-x:auto;">
-        <table class="thresholds-table">
-          <thead>
-            <tr>
-              <th style="min-width:130px;"></th>
-              <th style="min-width:180px;">[SN]</th>
-              <th style="min-width:180px;">[SNR]</th>
-              <th style="min-width:180px;">[SNG]</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Définition</strong></td>
-              <td>Publication normative préparée sous la direction d'un organisme de normalisation CH, EU ou internationale reconnus</td>
-              <td>Publication préparée sous la direction d'un organisme de normalisation CH reconnu</td>
-              <td>Publication chapotée par un organisme de normalisation CH indiquant des explications pour l'élaboration et l'utilisation de normes et de règles</td>
-            </tr>
-            <tr>
-              <td><strong>Intégration à la norme CH</strong></td>
-              <td>Oui</td>
-              <td>Non</td>
-              <td>Non</td>
-            </tr>
-            <tr>
-              <td><strong>Description</strong></td>
-              <td>Norme classique</td>
-              <td>Publication normative à un accord limité (sans procéder à un vote formel)</td>
-              <td>Publication sans définition normative</td>
-            </tr>
-            <tr>
-              <td><strong>Validité</strong></td>
-              <td>Illimitée</td>
-              <td>5 ans, possibilité de prolonger de 3 ans en cas ➜ en SN/SNG</td>
-              <td>Illimitée</td>
-            </tr>
-          </tbody>
-        </table>
+      <p style="line-height:1.55; margin-bottom:0.65rem;" id="pyramidDetailDesc">${tiersData[0].description}</p>
+      
+      <div style="font-size:0.85rem; color:var(--text-primary); background:var(--bg-surface-elevated); padding:0.6rem 0.75rem; border-radius:6px; margin-bottom:0.65rem; border-left:3px solid var(--electric-blue);" id="pyramidDetailRefs">
+        <strong>Textes de référence :</strong> <span id="pyramidDetailRefsText">${tiersData[0].references}</span>
+      </div>
+
+      <div style="font-size:0.82rem; color:var(--warning); font-weight:600;" id="pyramidDetailBinding">
+        ⚖️ ${tiersData[0].binding}
       </div>
     </div>
   `;
 
-  // Gestion de l'interactivité
+  // Gestion de l'interactivité (souris et clavier)
   const tiersElements = container.querySelectorAll('.pyramid-tier');
   const titleEl = container.querySelector('#pyramidDetailTitle');
   const badgeEl = container.querySelector('#pyramidDetailBadge');
   const descEl = container.querySelector('#pyramidDetailDesc');
+  const refsTextEl = container.querySelector('#pyramidDetailRefsText');
   const bindingEl = container.querySelector('#pyramidDetailBinding');
 
-  tiersElements.forEach(el => {
-    el.addEventListener('click', () => {
-      tiersElements.forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      const idx = parseInt(el.getAttribute('data-tier'), 10);
-      const item = tiersData[idx];
-      titleEl.textContent = item.name;
-      badgeEl.textContent = item.badge;
-      descEl.textContent = item.description;
-      bindingEl.textContent = `⚖️ ${item.binding}`;
+  function selectTier(idx) {
+    tiersElements.forEach(t => t.classList.remove('active'));
+    tiersElements[idx].classList.add('active');
+    const item = tiersData[idx];
+    titleEl.textContent = item.name;
+    badgeEl.textContent = item.badge;
+    descEl.textContent = item.description;
+    refsTextEl.textContent = item.references;
+    bindingEl.textContent = `⚖️ ${item.binding}`;
+  }
+
+  tiersElements.forEach((el, index) => {
+    el.addEventListener('click', () => selectTier(index));
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectTier(index);
+      }
     });
   });
 
