@@ -322,8 +322,8 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
       {
         id: "rs-734-0-lie",
         routeId: "rs-734-0-lie",
-        code: "LIE — Art. 1-15",
-        title: "LIE — Principes, Courant faible vs Fort & Câblage",
+        code: "RS 734.0 - LIE",
+        title: "Art. 1-15 — Principes, Courant faible vs Fort & Câblage",
         subtitle: "Champ d'application, surveillance fédérale, installations intérieures et règle du câblage souterrain",
         status: "Disponible",
         duration: "6 min",
