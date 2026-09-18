@@ -177,8 +177,8 @@ export const StorageService = {
         shouldUnlock = true;
       }
 
-      // Badge Normes suisses (Module F)
-      if (badge.id === 'badge-swiss-norms' && (currentModuleId === 'F' || completed.some(id => id.startsWith('sn-')))) {
+      // Badge Normes suisses (Module S)
+      if (badge.id === 'badge-swiss-norms' && (currentModuleId === 'S' || currentModuleId === 'F' || completed.some(id => id.startsWith('sn-')))) {
         shouldUnlock = true;
       }
 

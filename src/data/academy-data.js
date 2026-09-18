@@ -919,11 +919,11 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
   },
 
   // --------------------------------------------------------------------------
-  // MODULE F — Suisse Norme (Strictement nommé ainsi)
+  // MODULE S — Suisse Norme (Strictement nommé ainsi)
   // --------------------------------------------------------------------------
   {
-    id: "F",
-    code: "F",
+    id: "S",
+    code: "S",
     title: "Suisse Norme",
     countLabel: "3 normes",
     description: "Normes électrotechniques suisses spécifiques homologuées par Electrosuisse et l'Association suisse de normalisation (SNV).",
