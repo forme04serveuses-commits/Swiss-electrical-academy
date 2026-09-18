@@ -1652,3 +1652,336 @@ button, input, select {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Lecteur Vidéo Pédagogique & Bloc Vidéo (WCAG 2.2 AA & Responsive)
+   ========================================================================== */
+.video-pedagogical-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.video-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.video-box-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.video-duration-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--electric-blue);
+  background: var(--primary-subtle);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+}
+
+.video-box-intro {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.video-player-component {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.video-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  box-shadow: var(--shadow-card);
+}
+
+.video-media-wrapper:focus-visible {
+  box-shadow: 0 0 0 3px var(--electric-blue);
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.video-big-play-btn {
+  position: absolute;
+  z-index: 10;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.95);
+  border: none;
+  color: #0B1220;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+}
+
+.video-big-play-btn:hover {
+  transform: scale(1.1);
+  background: #38BDF8;
+}
+
+.video-big-play-btn:focus-visible {
+  outline: 3px solid #FFFFFF;
+}
+
+.big-play-icon {
+  margin-left: 4px;
+}
+
+.video-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 18, 32, 0.85) 30%, rgba(11, 18, 32, 0.98) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.video-media-wrapper:hover .video-controls-bar,
+.video-media-wrapper:focus-within .video-controls-bar,
+.video-player-component:not(.is-playing) .video-controls-bar {
+  opacity: 1;
+}
+
+.video-progress-container {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.video-seek-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+}
+
+.video-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--electric-blue);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.video-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.video-controls-left,
+.video-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.video-ctrl-btn {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.video-ctrl-btn:hover {
+  color: var(--electric-blue);
+}
+
+.video-ctrl-btn:focus-visible {
+  outline: 2px solid var(--electric-blue);
+}
+
+.video-time-display {
+  font-size: 0.8rem;
+  color: #F8FAFC;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.video-volume-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.video-volume-slider {
+  width: 55px;
+  height: 4px;
+  accent-color: var(--electric-blue);
+  cursor: pointer;
+}
+
+.video-speed-select {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.2rem 0.35rem;
+  cursor: pointer;
+}
+
+.video-speed-select:focus-visible {
+  outline: 2px solid var(--electric-blue);
+}
+
+.video-error-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(11, 18, 32, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.video-error-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-error-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--danger);
+}
+
+.video-error-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  max-width: 380px;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.btn-video-retry {
+  background: var(--electric-blue);
+  color: #0B1220;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.btn-video-retry:hover {
+  transform: translateY(-1px);
+}
+
+.video-keypoints-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--electric-blue);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.video-keypoints-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.video-keypoints-list {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .video-pedagogical-box {
+    padding: 1rem;
+  }
+
+  .video-controls-bar {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .video-volume-slider {
+    width: 35px;
+  }
+
+  .video-time-display {
+    font-size: 0.72rem;
+  }
+
+  .video-big-play-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.4rem;
+  }
+}
+

@@ -106,6 +106,19 @@ export const ACADEMY_MODULES = [
         introduction: `Bienvenue dans la pyramide des normes électriques suisses… promis, on va vous éviter un coup de jus ! ;) 
 De la LIE aux ordonnances comme l’OIBT, jusqu’à la fameuse NIBT 2025, nous allons décortiquer ensemble la pyramide de lois étape par étape. Grâce à des explications simples et visuelles, vous comprendrez enfin la hiérarchie juridique sans vous mélanger les tournevis.
 Prêt à faire la lumière sur le cadre légal et à sécuriser votre travail ?`,
+        video: {
+          id: "vid-pyramide-lois",
+          title: "À regarder — Comprendre la pyramide des lois",
+          description: "Cette vidéo pédagogique détaille l'organisation de la pyramide des normes électriques suisses, du Conseil fédéral aux règles techniques, pour vous repérer efficacement dans le cadre juridique.",
+          duration: "5 min 24 s",
+          src: "./public/media/videos/module-a/VID_20260918_pyramide_lois.mp4",
+          keyPoints: [
+            "Le Conseil fédéral (CF) constitue le niveau juridiquement le plus contraignant au sommet de la hiérarchie.",
+            "Les lois fédérales (LIE, LSPro, LAA) fixent les principes généraux et la responsabilité civile.",
+            "Les ordonnances (OIBT, OCFo, O DETEC...) rendent exécutoires les mesures de sécurité et les obligations techniques.",
+            "Les règles techniques (NIBT 2025, SN EN) et directives (SNR, SNG, ESTI, PDIE) matérialisent l'état de la technique reconnu."
+          ]
+        },
         contentSections: [
           {
             title: "Pyramide des lois",

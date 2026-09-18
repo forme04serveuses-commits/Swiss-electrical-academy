@@ -5,6 +5,7 @@ import { StorageService } from '../services/storage.js';
 import { findFormation } from '../data/academy-data.js';
 import { createPyramidWidget, createDangerWidget, createNibtWidget } from '../components/interactive-widgets.js';
 import { createQuizEngine } from '../components/quiz.js';
+import { createVideoPlayer } from '../components/video-player.js';
 
 export function renderLessonView(container, moduleId, formationId) {
   const result = findFormation(moduleId, formationId);
@@ -76,6 +77,30 @@ export function renderLessonView(container, moduleId, formationId) {
           <div class="section-title">Introduction</div>
           <div class="section-body">${formation.introduction}</div>
         </section>
+
+        <!-- Bloc Vidéo Pédagogique (juste sous le paragraphe de l'introduction) -->
+        ${formation.video ? `
+          <section class="video-pedagogical-box" aria-label="Vidéo pédagogique">
+            <div class="video-box-header">
+              <div class="video-box-title">🎬 ${formation.video.title}</div>
+              ${formation.video.duration ? `<span class="video-duration-tag">⏱️ ${formation.video.duration}</span>` : ''}
+            </div>
+            ${formation.video.description ? `
+              <p class="video-box-intro">${formation.video.description}</p>
+            ` : ''}
+
+            <div id="videoPlayerMount" class="video-player-mount"></div>
+
+            ${formation.video.keyPoints && formation.video.keyPoints.length > 0 ? `
+              <div class="video-keypoints-card">
+                <div class="video-keypoints-title">📌 À retenir :</div>
+                <ul class="video-keypoints-list">
+                  ${formation.video.keyPoints.map(kp => `<li>${kp}</li>`).join('')}
+                </ul>
+              </div>
+            ` : ''}
+          </section>
+        ` : ''}
 
         <!-- Contenu Détaillé -->
         <section class="content-article" aria-label="Contenu détaillé">
@@ -157,6 +182,14 @@ export function renderLessonView(container, moduleId, formationId) {
       </div>
     </div>
   `;
+
+  // Insertion du lecteur vidéo (si présent dans la leçon)
+  if (isAvailable && formation.video) {
+    const videoMount = container.querySelector('#videoPlayerMount');
+    if (videoMount) {
+      videoMount.appendChild(createVideoPlayer(formation.video));
+    }
+  }
 
   // Insertion du widget interactif
   if (isAvailable && formation.interactiveWidget) {

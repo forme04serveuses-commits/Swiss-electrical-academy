@@ -1,7 +1,7 @@
 // Swiss Electrical Academy — Service Worker V1.1
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'sea-v1.2.3-cache';
+const CACHE_NAME = 'sea-v1.2.4-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const STATIC_ASSETS = [
   './src/services/storage.js',
   './src/components/navigation.js',
   './src/components/interactive-widgets.js',
+  './src/components/video-player.js',
   './src/components/quiz.js',
   './src/pages/dashboard.js',
   './src/pages/module-view.js',
@@ -30,10 +31,8 @@ const STATIC_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Mise en cache des ressources statiques');
-      return cache.addAll(STATIC_ASSETS).catch((err) => {
-        console.warn('[SW] Certains fichiers statiques n’ont pu être pré-mis en cache :', err);
-      });
+      console.log('[SW] Pré-mise en cache des actifs essentiels SEA...');
+      return cache.addAll(STATIC_ASSETS);
     }).then(() => self.skipWaiting())
   );
 });
@@ -60,6 +59,11 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
+
+  // Bypasser les fichiers médias volumineux (vidéos) pour préserver le cache offline et supporter les Range headers (206)
+  if (url.pathname.endsWith('.mp4') || url.pathname.endsWith('.webm') || url.pathname.includes('/media/videos/')) {
+    return;
+  }
 
   // Pour les requêtes locales : Cache First avec Network Fallback
   if (url.origin === location.origin) {
