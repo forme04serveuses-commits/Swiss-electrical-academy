@@ -221,6 +221,12 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           interactiveWidget: "pyramid-widget",
           importantPoint: "Hiérarchie juridique : les règles s’ordonnent du niveau le plus contraignant (Conseil fédéral au sommet) jusqu’aux règles techniques et directives à la base.",
           synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
+          synthesisVisual: {
+            src: "./public/media/images/module-a/infographie_pyramide_lois.png",
+            alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
+            caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
+            source: "Illustration originale — Electricité Learning Qualité (ELEQ)"
+          },
           quiz: [
             {
               id: "q_a00_1",
@@ -918,11 +924,11 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
     },
 
     // --------------------------------------------------------------------------
-    // MODULE F — Suisse Norme (Strictement nommé ainsi)
+    // MODULE S — Suisse Norme (Strictement nommé ainsi)
     // --------------------------------------------------------------------------
     {
-      id: "F",
-      code: "F",
+      id: "S",
+      code: "S",
       title: "Suisse Norme",
       countLabel: "3 normes",
       description: "Normes électrotechniques suisses spécifiques homologuées par Electrosuisse et l'Association suisse de normalisation (SNV).",
@@ -1478,7 +1484,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
     retryBtn.addEventListener('click', () => {
       errorOverlay.style.display = 'none';
       video.load();
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     });
 
     // Raccourcis clavier accessibles
@@ -2854,9 +2860,31 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
         ${formation.synthesis ? `
           <section class="synthesis-box" aria-label="Synthèse">
             <div class="box-icon">📋</div>
-            <div>
+            <div class="synthesis-content-wrapper">
               <div class="box-title">Synthèse de la leçon</div>
               <div class="box-text">${formation.synthesis}</div>
+              ${formation.synthesisVisual ? `
+                <figure class="pedagogical-visual-card">
+                  <div class="pedagogical-visual-frame" role="button" tabindex="0" aria-label="Agrandir l'infographie pédagogique" title="Cliquer pour agrandir le visuel">
+                    <img src="${formation.synthesisVisual.src}" 
+                         alt="${formation.synthesisVisual.alt}" 
+                         class="pedagogical-visual-img"
+                         loading="lazy"/>
+                    <div class="visual-zoom-hint">
+                      <span>🔍 Cliquer pour agrandir</span>
+                    </div>
+                  </div>
+                  <figcaption class="pedagogical-visual-caption">
+                    <div class="caption-title-row">
+                      <span class="caption-badge">Infographie pédagogique</span>
+                      <strong class="caption-title">${formation.synthesisVisual.caption}</strong>
+                    </div>
+                    ${formation.synthesisVisual.source ? `
+                      <div class="caption-source">${formation.synthesisVisual.source}</div>
+                    ` : ''}
+                  </figcaption>
+                </figure>
+              ` : ''}
             </div>
           </section>
         ` : ''}
@@ -2926,6 +2954,52 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
         });
         quizSlot.appendChild(quizEl);
       }
+    }
+
+    // Gestion du zoom / agrandissement de l'infographie pédagogique
+    const visualFrame = container.querySelector('.pedagogical-visual-frame');
+    if (visualFrame && formation.synthesisVisual) {
+      const openLightbox = () => {
+        let modal = document.getElementById('visualLightboxModal');
+        if (!modal) {
+          modal = document.createElement('div');
+          modal.id = 'visualLightboxModal';
+          modal.className = 'visual-lightbox-backdrop';
+          modal.innerHTML = `
+            <div class="visual-lightbox-dialog" role="dialog" aria-modal="true" aria-label="${formation.synthesisVisual.caption}">
+              <button class="visual-lightbox-close" aria-label="Fermer l'agrandissement">&times;</button>
+              <img src="${formation.synthesisVisual.src}" alt="${formation.synthesisVisual.alt}" class="visual-lightbox-img" />
+              <div class="visual-lightbox-caption">${formation.synthesisVisual.caption}</div>
+            </div>
+          `;
+          document.body.appendChild(modal);
+
+          const closeModal = () => {
+            modal.classList.remove('active');
+          };
+
+          modal.querySelector('.visual-lightbox-close').addEventListener('click', closeModal);
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+        }
+        modal.classList.add('active');
+        const handleKey = (e) => {
+          if (e.key === 'Escape') {
+            modal.classList.remove('active');
+            document.removeEventListener('keydown', handleKey);
+          }
+        };
+        document.addEventListener('keydown', handleKey);
+      };
+
+      visualFrame.addEventListener('click', openLightbox);
+      visualFrame.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox();
+        }
+      });
     }
   }
 

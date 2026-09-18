@@ -144,9 +144,31 @@ export function renderLessonView(container, moduleId, formationId) {
         ${formation.synthesis ? `
           <section class="synthesis-box" aria-label="Synthèse">
             <div class="box-icon">📋</div>
-            <div>
+            <div class="synthesis-content-wrapper">
               <div class="box-title">Synthèse de la leçon</div>
               <div class="box-text">${formation.synthesis}</div>
+              ${formation.synthesisVisual ? `
+                <figure class="pedagogical-visual-card">
+                  <div class="pedagogical-visual-frame" role="button" tabindex="0" aria-label="Agrandir l'infographie pédagogique" title="Cliquer pour agrandir le visuel">
+                    <img src="${formation.synthesisVisual.src}" 
+                         alt="${formation.synthesisVisual.alt}" 
+                         class="pedagogical-visual-img"
+                         loading="lazy"/>
+                    <div class="visual-zoom-hint">
+                      <span>🔍 Cliquer pour agrandir</span>
+                    </div>
+                  </div>
+                  <figcaption class="pedagogical-visual-caption">
+                    <div class="caption-title-row">
+                      <span class="caption-badge">Infographie pédagogique</span>
+                      <strong class="caption-title">${formation.synthesisVisual.caption}</strong>
+                    </div>
+                    ${formation.synthesisVisual.source ? `
+                      <div class="caption-source">${formation.synthesisVisual.source}</div>
+                    ` : ''}
+                  </figcaption>
+                </figure>
+              ` : ''}
             </div>
           </section>
         ` : ''}
@@ -173,10 +195,10 @@ export function renderLessonView(container, moduleId, formationId) {
 
       <!-- Barre de navigation bas de leçon -->
       <div style="display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0; border-top:1px solid var(--border-subtle);">
-        <button class="btn-quiz-action" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);" onclick="location.hash='#/formations/${mod.id}'">
-          ← Retour au Module ${mod.id}
+        <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+          ← Retour au module
         </button>
-        <button class="btn-quiz-action" onclick="location.hash='#/progression'">
+        <button class="btn-continue" onclick="location.hash='#/progression'">
           Voir ma progression 📊
         </button>
       </div>
@@ -216,5 +238,51 @@ export function renderLessonView(container, moduleId, formationId) {
       });
       quizSlot.appendChild(quizEl);
     }
+  }
+
+  // Gestion du zoom / agrandissement de l'infographie pédagogique
+  const visualFrame = container.querySelector('.pedagogical-visual-frame');
+  if (visualFrame && formation.synthesisVisual) {
+    const openLightbox = () => {
+      let modal = document.getElementById('visualLightboxModal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'visualLightboxModal';
+        modal.className = 'visual-lightbox-backdrop';
+        modal.innerHTML = `
+          <div class="visual-lightbox-dialog" role="dialog" aria-modal="true" aria-label="${formation.synthesisVisual.caption}">
+            <button class="visual-lightbox-close" aria-label="Fermer l'agrandissement">&times;</button>
+            <img src="${formation.synthesisVisual.src}" alt="${formation.synthesisVisual.alt}" class="visual-lightbox-img" />
+            <div class="visual-lightbox-caption">${formation.synthesisVisual.caption}</div>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        const closeModal = () => {
+          modal.classList.remove('active');
+        };
+
+        modal.querySelector('.visual-lightbox-close').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      modal.classList.add('active');
+      const handleKey = (e) => {
+        if (e.key === 'Escape') {
+          modal.classList.remove('active');
+          document.removeEventListener('keydown', handleKey);
+        }
+      };
+      document.addEventListener('keydown', handleKey);
+    };
+
+    visualFrame.addEventListener('click', openLightbox);
+    visualFrame.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox();
+      }
+    });
   }
 }

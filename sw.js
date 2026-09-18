@@ -1,7 +1,7 @@
 // Electricité Learning Qualité (ELEQ) — Service Worker V1.3
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'eleq-v1.3.1-cache';
+const CACHE_NAME = 'eleq-v1.3.2-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -28,7 +28,8 @@ const STATIC_ASSETS = [
   './public/icons/icon-maskable-512.png',
   './public/icons/apple-touch-icon.png',
   './public/icons/favicon-32x32.png',
-  './public/icons/favicon-16x16.png'
+  './public/icons/favicon-16x16.png',
+  './public/media/images/module-a/infographie_pyramide_lois.png'
 ];
 
 // Installation : pré-chargement des ressources critiques
