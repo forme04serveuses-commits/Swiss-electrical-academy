@@ -8,7 +8,9 @@
   // Règle absolue : Aucune invention de référence technique. Données réelles ou « Contenu en préparation ».
 
   const ACADEMY_INFO = {
-    institution: "Swiss Electrical Academy",
+    institution: "Electricité Learning Qualité",
+    name: "Electricité Learning Qualité",
+    shortName: "ELEQ",
     baseline: "Apprendre les règles. Comprendre les risques. Maîtriser la pratique.",
     version: "1.1",
     themeColor: "#0B1220",
@@ -2164,15 +2166,11 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
     <aside class="sidebar" id="appSidebar" role="navigation" aria-label="Navigation principale">
       <div class="sidebar-header">
         <div class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="256,76 396,156 396,316 256,396 116,316 116,156" stroke="#38BDF8" stroke-width="20" fill="none"/>
-            <path d="M256,120 L360,180 L360,290 C360,350 256,400 256,400 C256,400 152,350 152,290 L152,180 Z" fill="#172033" stroke="#38BDF8" stroke-width="8"/>
-            <path d="M272,185 L196,285 L248,285 L236,365 L316,265 L264,265 Z" fill="#38BDF8"/>
-          </svg>
+          <img src="./public/icons/icon-192.png" alt="Logo ELEQ" width="34" height="34" style="border-radius:6px; object-fit:contain; display:block;"/>
         </div>
         <div class="brand-title">
-          <span>Swiss Electrical</span>
-          <span class="brand-subtitle">Academy</span>
+          <span style="font-size:0.92rem; font-weight:700; line-height:1.2;">Electricité Learning</span>
+          <span class="brand-subtitle">Qualité · ELEQ</span>
         </div>
       </div>
 
@@ -2504,7 +2502,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
       <div style="font-size:0.8rem; font-weight:700; color:var(--electric-blue); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">
         ${ACADEMY_INFO.institution}
       </div>
-      <h1 class="hero-greeting" id="heroTitle">Bienvenue dans Swiss Electrical Academy 👋</h1>
+      <h1 class="hero-greeting" id="heroTitle">Bienvenue sur Electricité Learning Qualité (ELEQ) 👋</h1>
       <div class="hero-tagline">« ${ACADEMY_INFO.baseline} »</div>
 
       <!-- Métriques de progression globale -->

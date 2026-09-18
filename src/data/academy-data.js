@@ -3,7 +3,9 @@
 // Règle absolue : Aucune invention de référence technique. Données réelles ou « Contenu en préparation ».
 
 export const ACADEMY_INFO = {
-  institution: "Swiss Electrical Academy",
+  institution: "Electricité Learning Qualité",
+  name: "Electricité Learning Qualité",
+  shortName: "ELEQ",
   baseline: "Apprendre les règles. Comprendre les risques. Maîtriser la pratique.",
   version: "1.1",
   themeColor: "#0B1220",

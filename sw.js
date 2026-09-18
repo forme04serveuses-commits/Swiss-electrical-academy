@@ -1,7 +1,7 @@
-// Swiss Electrical Academy — Service Worker V1.1
+// Electricité Learning Qualité (ELEQ) — Service Worker V1.3
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'sea-v1.2.4-cache';
+const CACHE_NAME = 'eleq-v1.3.0-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -24,14 +24,18 @@ const STATIC_ASSETS = [
   './src/pages/profile-view.js',
   './public/icons/icon.svg',
   './public/icons/icon-192.png',
-  './public/icons/icon-512.png'
+  './public/icons/icon-512.png',
+  './public/icons/icon-maskable-512.png',
+  './public/icons/apple-touch-icon.png',
+  './public/icons/favicon-32x32.png',
+  './public/icons/favicon-16x16.png'
 ];
 
 // Installation : pré-chargement des ressources critiques
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Pré-mise en cache des actifs essentiels SEA...');
+      console.log('[SW] Pré-mise en cache des actifs essentiels ELEQ...');
       return cache.addAll(STATIC_ASSETS);
     }).then(() => self.skipWaiting())
   );
