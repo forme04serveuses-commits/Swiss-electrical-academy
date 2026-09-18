@@ -90,7 +90,7 @@ export const ACADEMY_MODULES = [
     id: "A",
     code: "A",
     title: "Dispositions légales",
-    countLabel: "5 formations",
+    countLabel: "9 formations",
     description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
     badgeTheme: "legal",
     formations: [
@@ -316,22 +316,715 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           }
         ]
       },
+      // ----------------------------------------------------------------------
+      // LIE — Leçon 1 : Principes fondamentaux, Courant faible vs Fort & Câblage (Art. 1 à 15d)
+      // ----------------------------------------------------------------------
       {
         id: "rs-734-0-lie",
         routeId: "rs-734-0-lie",
-        code: "RS 734.0 - LIE",
-        title: "RS 734.0 — Loi sur les installations électriques",
-        subtitle: "Loi fédérale du 24 juin 1902 concernant les installations électriques à faible et à fort courant",
-        status: "En développement",
-        duration: "À venir",
+        code: "LIE — Art. 1-15",
+        title: "LIE — Principes, Courant faible vs Fort & Câblage",
+        subtitle: "Champ d'application, surveillance fédérale, installations intérieures et règle du câblage souterrain",
+        status: "Disponible",
+        duration: "6 min",
         tag: "Loi fédérale",
-        xpReward: 0,
-        objective: "Maîtriser les dispositions générales, le champ d'application de la LIE, la responsabilité civile de l'exploitant et les dispositions pénales.",
-        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
+        xpReward: 30,
+        objective: "Distinguer juridiquement les installations à faible courant et à fort courant selon le critère légal du danger (Art. 2), définir le cadre des installations intérieures (Art. 14) et appliquer la règle légale du câblage souterrain avec le facteur de surcoût maximal de 3.0 (Art. 15c).",
+        introduction: `Adoptée le 24 juin 1902, la <strong>Loi sur les installations électriques (LIE — RS 734.0)</strong> constitue le socle législatif de toute l'électrotechnique en Suisse. Elle place l'établissement et l'exploitation des installations sous la haute surveillance de la Confédération et fixe les distinctions fondamentales entre courant faible, courant fort, installations intérieures et réseau de transport.`,
         contentSections: [
           {
-            title: "🔒 Contenu en préparation",
-            text: "La fiche détaillée relative à la RS 734.0 (LIE) est en cours de formalisation technique d'après le Recueil systématique du droit fédéral."
+            title: "1. Haute surveillance et critère légal du danger (Art. 1 & 2 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 1 LIE</strong> soumet l'établissement et l'exploitation des installations à faible et à fort courant à la haute surveillance de la Confédération, le Conseil fédéral édictant les ordonnances d'exécution nécessaires.
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6;">
+La distinction entre faible courant et fort courant repose juridiquement sur un critère unique : <strong>le danger pour les personnes ou les choses</strong> (Art. 2) :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:180px;">Catégorie légale</th>
+<th>Définition selon l'Art. 2 LIE</th>
+<th>Arbitrage en cas de doute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installations à faible courant</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 2 al. 1)</span></td>
+<td>Installations qui produisent ou utilisent normalement des courants <strong>n'offrant aucun danger</strong> pour les personnes ou les choses (téléphonie, signalisation, réseaux informatiques).</td>
+<td rowspan="2" style="vertical-align:middle; text-align:center;">
+<strong>DETEC</strong><br/>
+<span style="font-size:0.8rem; color:var(--text-muted);">Département fédéral de l'environnement, des transports, de l'énergie et de la communication<br/>(statue en dernière instance, Art. 2 al. 3)</span>
+</td>
+</tr>
+<tr>
+<td><strong>Installations à fort courant</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 2 al. 2)</span></td>
+<td>Installations qui produisent ou utilisent des courants présentant dans certaines circonstances <strong>un danger pour les personnes ou les choses</strong> (BT, MT, HT).</td>
+</tr>
+</tbody>
+</table>
+</div>`
+          },
+          {
+            title: "2. Installations intérieures et terrain privé (Art. 13 & 14 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 14 LIE</strong> définit précisément les « installations intérieures » :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+« On entend par <strong>installations intérieures</strong> les ouvrages établis à l'intérieur des maisons, des locaux adjacents ou de leurs dépendances qui utilisent des tensions électriques ne dépassant pas celles autorisées par le Conseil fédéral. »
+</div>
+<p style="line-height:1.6;">
+En vertu de l'<strong>Art. 13 al. 2 LIE</strong>, les installations isolées n'empruntant que le terrain de celui qui les fait établir sont <strong>assimilées aux installations intérieures</strong> si elles respectent les tensions autorisées et ne risquent pas de causer de perturbations ou de dangers par suite de la proximité d'autres installations.
+</p>`
+          },
+          {
+            title: "3. Voisinage de lignes et absence de droit d'antériorité (Art. 15 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Lorsque des lignes à courant fort et à courant faible se côtoient ou se croisent (voisinage immédiat), l'<strong>Art. 15 LIE</strong> impose des règles strictes de sécurité technique et de partage des coûts :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Décision en cas de désaccord :</strong> Si aucune entente ne peut s'établir quant aux mesures techniques à prendre, le <strong>DETEC décide</strong> (Art. 15 al. 2).</li>
+<li><strong>Répartition des frais :</strong> Les frais sont supportés en commun et répartis en proportion de <strong>l'importance économique des lignes</strong> (Art. 15 al. 3 & 4).</li>
+<li><strong>Règle essentielle :</strong> Il n'y a <em>pas lieu de rechercher laquelle des lignes a été établie la première</em> (aucun privilège d'antériorité).</li>
+<li><strong>Non-application :</strong> Ces règles de voisinage ne s'appliquent pas aux installations intérieures (Art. 15 al. 6).</li>
+</ul>`
+          },
+          {
+            title: "4. Obligation de câblage souterrain & facteur de surcoût 3.0 (Art. 15c LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Introduit pour moderniser le réseau et préserver les paysages suisses, l'<strong>Art. 15c LIE</strong> fixe un principe fondamental pour la distribution électrique :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem; font-weight:700; color:var(--electric-blue);">
+<span>🔌 Règle légale du câblage souterrain (< 220 kV)</span>
+</div>
+<p style="font-size:0.92rem; line-height:1.6; margin-bottom:0.5rem;">
+Toute ligne (50 Hz) du réseau de distribution d'une <strong>tension nominale inférieure à 220 kV</strong> doit impérativement être réalisée sous forme de <strong>ligne souterraine</strong> si cela est possible techniquement et que les coûts totaux ne dépassent pas un <strong>facteur de surcoût</strong> donné par rapport à une ligne aérienne.
+</p>
+<p style="font-size:0.92rem; line-height:1.6; margin:0;">
+⚖️ <strong>Plafond légal :</strong> Le facteur de surcoût se monte à <strong>3.0 au maximum</strong> (Art. 15c al. 2). Au-delà, une ligne aérienne peut être admise à moins qu'un tiers ne prenne en charge le surcoût.
+</p>
+</div>`
+          }
+        ],
+        practicalExample: "Un distributeur planifie le raccordement moyenne tension 16 kV d'un éco-quartier. Une ligne aérienne coûterait 100'000 CHF, tandis que l'enfouissement en câble souterrain est chiffré à 240'000 CHF. Le ratio de coût est de 240'000 / 100'000 = 2.4. Ce facteur de 2.4 étant inférieur au plafond légal de 3.0 (Art. 15c LIE), le gestionnaire de réseau est légalement tenu de réaliser la ligne en souterrain.",
+        importantPoint: "En cas de doute sur le classement d'une installation en courant faible ou fort, c'est le DETEC qui statue en dernière instance (Art. 2 al. 3). Lors du voisinage de lignes, aucun droit d'antériorité ne protège la première ligne construite pour le partage des frais (Art. 15 al. 4).",
+        synthesis: "La LIE RS 734.0 régit toutes les installations électriques suisses sous l'égide de la Confédération. Le critère légal de dangerosité délimite le courant faible du courant fort (arbitrage DETEC). Les installations intérieures sont définies par l'Art. 14, et le réseau de distribution < 220 kV doit obligatoirement être enfoui si le surcoût ne dépasse pas un facteur de 3.0 (Art. 15c).",
+        quiz: [
+          {
+            id: "q_lie1_1",
+            type: "single",
+            question: "Selon l'Art. 2 de la LIE, quel est le critère juridique qui distingue une installation à faible courant d'une installation à fort courant ?",
+            options: [
+              "Le danger potentiel pour les personnes ou les choses",
+              "La fréquence du courant (50 Hz vs continu)",
+              "Le diamètre des conducteurs de phase",
+              "Le caractère public ou privé du terrain traversé"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 2 LIE dispose que les installations à faible courant n'offrent normalement aucun danger, alors que les installations à fort courant présentent dans certaines circonstances un danger pour les personnes ou les choses."
+          },
+          {
+            id: "q_lie1_2",
+            type: "single",
+            question: "S'il y a doute au sujet du classement d'une installation électrique, quelle autorité fédérale statue en dernière instance ?",
+            options: [
+              "Le DETEC (Département fédéral de l'environnement, des transports, de l'énergie et de la communication)",
+              "Le Conseil d'État cantonal",
+              "La préfecture du district",
+              "La commission communale d'urbanisme"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 2 al. 3 de la LIE confère expressément au DETEC la compétence de statuer en dernière instance en cas de doute sur le classement d'une installation."
+          },
+          {
+            id: "q_lie1_3",
+            type: "single",
+            question: "Selon l'Art. 15c al. 2 LIE, à combien se monte au maximum le facteur de surcoût pour obliger la réalisation d'une ligne de distribution (< 220 kV) sous forme souterraine ?",
+            options: [
+              "3.0 au maximum",
+              "1.5 au maximum",
+              "5.0 au maximum",
+              "10.0 au maximum"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 15c al. 2 LIE précise expressément : « Le facteur de surcoût se monte à 3.0 au maximum. »"
+          },
+          {
+            id: "q_lie1_4",
+            type: "single",
+            question: "Lors de travaux de sécurisation pour voisinage de lignes (Art. 15 LIE), comment sont répartis les frais entre les entreprises intéressées ?",
+            options: [
+              "En proportion de l'importance économique des lignes, sans égard à l'antériorité",
+              "Intégralement à la charge de la dernière ligne construite",
+              "À 100% par le canton où se situe le croisement",
+              "À parts égales entre tous les propriétaires riverains"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon l'Art. 15 al. 4 LIE, les frais sont répartis en proportion de l'importance économique des lignes, sans rechercher laquelle a été établie la première (aucun droit d'antériorité)."
+          }
+        ]
+      },
+
+      // ----------------------------------------------------------------------
+      // LIE — Leçon 2 : Approbation des plans, Procédures & Délais légaux (Art. 15e à 18d)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-0-lie-plans",
+        routeId: "rs-734-0-lie-plans",
+        code: "LIE — Art. 16-18",
+        title: "LIE — Approbation des plans, Procédures & Délais",
+        subtitle: "Compétences ESTI/OFEN, enquête publique 30 jours, caducité 3 ans et zones réservées",
+        status: "Disponible",
+        duration: "6 min",
+        tag: "Loi fédérale",
+        xpReward: 30,
+        objective: "Maîtriser la procédure fédérale d'approbation des plans d'installations électriques, identifier les rôles respectifs de l'ESTI et de l'OFEN, comprendre la primauté du droit fédéral sur le droit cantonal (Art. 16 al. 4) et retenir les délais légaux de mise à l'enquête et de caducité.",
+        introduction: `Aucune installation à fort courant ou à faible courant sensible ne peut être construite ou modifiée sans une autorisation officielle préalable. La LIE instaure la <strong>procédure d'approbation des plans</strong>, conçue selon le principe de concentration des décisions pour éviter la dispersion des permis cantonaux.`,
+        contentSections: [
+          {
+            title: "1. Autorités chargées de l'approbation des plans (Art. 16 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+En vertu de l'<strong>Art. 16 al. 1 LIE</strong>, une installation électrique à courant fort ne peut être mise en place ou modifiée que si les plans du projet ont été approuvés par l'autorité compétente :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>L'Inspection fédérale (ESTI) :</strong> Autorité d'approbation ordinaire pour les installations électriques à courant fort et faible (Art. 16 al. 2 let. a).</li>
+<li><strong>L'Office fédéral de l'énergie (OFEN) :</strong> Intervient dès lors que l'Inspection n'a pas réussi à régler les oppositions ou s'il existe des divergences non résolues entre autorités fédérales (Art. 16 al. 2 let. b et 16h al. 2).</li>
+<li><strong>L'autorité ferroviaire (OFT) :</strong> Compétente pour les installations destinées exclusivement ou principalement aux chemins de fer ou trolleybus.</li>
+</ul>`
+          },
+          {
+            title: "2. Primauté du droit fédéral et effet de concentration (Art. 16 al. 3 & 4 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+La LIE applique le principe de <strong>concentration des autorisations</strong> au niveau fédéral :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<p style="margin-bottom:0.5rem; line-height:1.6;">
+⚖️ <strong>Art. 16 al. 3 :</strong> « L'approbation des plans couvre toutes les autorisations requises par le droit fédéral. »
+</p>
+<p style="margin:0; line-height:1.6; color:var(--text-secondary);">
+⚖️ <strong>Art. 16 al. 4 :</strong> « <strong>Aucune autorisation ni aucun plan relevant du droit cantonal ne sont requis.</strong> Le droit cantonal est pris en compte dans la mesure où il n'entrave pas de manière disproportionnée l'accomplissement des tâches de l'entreprise. »
+</p>
+</div>
+<p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">
+Conséquence pratique : un projet électrique approuvé au niveau fédéral n'a pas besoin d'un permis de construire municipal ou cantonal.
+</p>`
+          },
+          {
+            title: "3. Piquetage, mise à l'enquête 30 jours et caducité sous 3 ans (Art. 16c à 16i LIE)",
+            text: `<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:160px;">Étape de procédure</th>
+<th>Exigence légale de la LIE</th>
+<th>Délai strict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Piquetage & gabarits</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 16c)</span></td>
+<td>Marquage sur le terrain par piquetage et pose de gabarits pour les bâtiments avant l'enquête.</td>
+<td>Avant la mise à l'enquête</td>
+</tr>
+<tr>
+<td><strong>Mise à l'enquête publique</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 16d al. 2 & 16f)</span></td>
+<td>Publication dans la feuille officielle des cantons et communes. Délai unique pour faire opposition.</td>
+<td><strong>30 jours</strong></td>
+</tr>
+<tr>
+<td><strong>Avis des cantons</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 16d al. 1)</span></td>
+<td>Transmission du dossier aux cantons concernés pour préavis officiel.</td>
+<td><strong>3 mois</strong></td>
+</tr>
+<tr>
+<td><strong>Caducité de la décision</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 16i al. 1)</span></td>
+<td>L'approbation devient caduque de plein droit si la réalisation du chantier n'a pas débuté.</td>
+<td><strong>3 ans</strong> après entrée en force</td>
+</tr>
+</tbody>
+</table>
+</div>`
+          },
+          {
+            title: "4. Procédure simplifiée et zones réservées (Art. 17 & 18 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 17 LIE</strong> autorise une procédure simplifiée (sans mise à l'enquête publique) pour les chantiers provisoires (< 3 ans), les modifications mineures sans impact pour les tiers/environnement, et les plans de détail d'un projet déjà approuvé.
+</p>
+<p style="line-height:1.6;">
+L'<strong>Art. 18 & 18a LIE</strong> permet à l'OFEN de fixer des <strong>zones réservées</strong> pour de futures lignes >= 220 kV. La durée maximale initiale est de <strong>5 ans</strong>, prolongeable de <strong>3 ans au plus</strong>. Les propriétaires touchés ont droit à une indemnité pleine et entière (Art. 18d).
+</p>`
+          }
+        ],
+        practicalExample: "Une société de réseau obtient l'approbation des plans de l'ESTI pour construire une sous-station 50 kV le 10 juin 2023. En raison de retards internes, le chantier n'a toujours pas débuté au 11 juin 2026. Conformément à l'Art. 16i al. 1 LIE, la décision est caduque : l'entreprise ne peut pas entamer les travaux et doit déposer une nouvelle demande d'approbation.",
+        importantPoint: "L'approbation fédérale des plans évince totalement les permis de construire cantonaux et communaux (Art. 16 al. 4). Si une opposition ne peut pas être réglée à l'amiable par l'ESTI, le dossier est obligatoirement transmis à l'OFEN pour décision formelle (Art. 16 al. 2 let. b).",
+        synthesis: "L'approbation des plans est délivrée par l'ESTI (ou l'OFEN en cas d'opposition). Elle couvre l'ensemble des autorisations fédérales sans permis cantonal (Art. 16 al. 4). L'enquête publique dure 30 jours, et l'autorisation devient caduque si les travaux ne démarrent pas sous 3 ans (Art. 16i).",
+        quiz: [
+          {
+            id: "q_lie2_1",
+            type: "single",
+            question: "En vertu de l'Art. 16 al. 2 let. b LIE, quelle autorité fédérale est chargée d'approuver les plans lorsque l'Inspection (ESTI) n'a pas réussi à régler les oppositions ?",
+            options: [
+              "L'OFEN (Office fédéral de l'énergie)",
+              "Le Tribunal de district",
+              "Le service cantonal des ponts et chaussées",
+              "L'Association des propriétaires fonciers"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 16 al. 2 let. b LIE confie expressément à l'OFEN l'approbation des plans pour les installations où l'Inspection n'a pas réussi à régler les oppositions ou supprimer les divergences."
+          },
+          {
+            id: "q_lie2_2",
+            type: "single",
+            question: "Selon l'Art. 16 al. 4 LIE, quelle est la règle concernant les autorisations relevant du droit cantonal pour un projet électrique approuvé ?",
+            options: [
+              "Aucune autorisation ni aucun plan relevant du droit cantonal ne sont requis",
+              "Un permis de construire cantonal reste toujours obligatoire en parallèle",
+              "L'autorisation cantonale prévaut toujours sur la décision fédérale",
+              "Une simple taxe communale remplace l'enquête fédérale"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 16 al. 4 LIE dispose formellement : « Aucune autorisation ni aucun plan relevant du droit cantonal ne sont requis. »"
+          },
+          {
+            id: "q_lie2_3",
+            type: "single",
+            question: "Pendant combien de jours une demande ordinaire d'approbation des plans doit-elle être mise à l'enquête publique (Art. 16d al. 2 LIE) ?",
+            options: [
+              "30 jours",
+              "10 jours",
+              "60 jours",
+              "90 jours"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon l'Art. 16d al. 2 LIE, la demande doit être publiée dans les organes officiels et mise à l'enquête pendant 30 jours."
+          },
+          {
+            id: "q_lie2_4",
+            type: "single",
+            question: "Selon l'Art. 16i al. 1 LIE, dans quel délai la réalisation du projet de construction doit-elle débuter après l'entrée en force de la décision, sous peine de caducité ?",
+            options: [
+              "Dans les trois ans",
+              "Dans les six mois",
+              "Dans les dix ans",
+              "Il n'existe aucune limite dans le temps"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 16i al. 1 LIE stipule : « L'approbation des plans est caduque si la réalisation du projet de construction n'a pas commencé dans les trois ans qui suivent l'entrée en force de la décision. »"
+          }
+        ]
+      },
+
+      // ----------------------------------------------------------------------
+      // LIE — Leçon 3 : Surveillance, Organes de contrôle & Installations intérieures (Art. 20 à 26a)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-0-lie-controle",
+        routeId: "rs-734-0-lie-controle",
+        code: "LIE — Art. 20-26",
+        title: "LIE — Surveillance, Organes de contrôle & Installations intérieures",
+        subtitle: "Responsabilité de l'exploitant, compétences OFT vs ESTI, recours au TAF et régime de l'Art. 26",
+        status: "Disponible",
+        duration: "5 min",
+        tag: "Loi fédérale",
+        xpReward: 30,
+        objective: "Identifier à qui incombe la surveillance des installations (l'exploitant, Art. 20), distinguer les organes de contrôle fédéraux (OFT vs ESTI, Art. 21), maîtriser les voies de recours au Tribunal administratif fédéral (Art. 23) et comprendre l'articulation de l'Art. 26 pour les installations intérieures (fondement de l'OIBT).",
+        introduction: `Pour garantir la sécurité et la fiabilité du réseau, la LIE organise les responsabilités opérationnelles : la surveillance quotidienne incombe à l'exploitant, l'État délègue les contrôles régaliens à des inspections officielles, et un mécanisme original régit les installations intérieures privées.`,
+        contentSections: [
+          {
+            title: "1. Devoir légal de surveillance de l'exploitant (Art. 20 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 20 al. 1 LIE</strong> pose le principe cardinal de la maintenance :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+« <strong>La surveillance des installations électriques et de leur bon état d'entretien incombe à l'exploitant</strong> (propriétaire, locataire, etc.). »
+</div>
+<p style="line-height:1.6; color:var(--text-secondary);">
+Ce devoir est permanent : l'exploitant ne peut pas se retrancher derrière l'absence de passage d'un inspecteur pour justifier le délabrement d'une installation électrique.
+</p>`
+          },
+          {
+            title: "2. Répartition des organes de contrôle fédéraux (Art. 21 & 22 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Le contrôle de l'exécution des prescriptions de sécurité est confié par la loi à deux entités bien distinctes :
+</p>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:1rem;">
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem;">
+<div style="font-weight:700; color:var(--electric-blue); margin-bottom:0.35rem;">🚆 Office fédéral des transports (OFT)</div>
+<div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+• Installations spécifiques aux chemins de fer<br/>
+• Installations nécessaires à la sécurité et fiabilité ferroviaire<br/>
+• Parties et systèmes électriques des véhicules ferroviaires (Art. 21 let. a).
+</div>
+</div>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem;">
+<div style="font-weight:700; color:var(--electric-blue); margin-bottom:0.35rem;">⚡ Inspection fédérale (ESTI)</div>
+<div style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+• Toutes les autres installations électriques à courant fort et faible<br/>
+• Surveillance du marché des matériels électriques (Art. 21 let. b).
+</div>
+</div>
+</div>`
+          },
+          {
+            title: "3. Recours au TAF et arbitrage du DETEC (Art. 23 & 24 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Contre les décisions de l'ESTI ou de l'OFT (ordres de mise en conformité, interdictions d'exploiter, décisions d'approbation des plans), un <strong>recours peut être formé devant le Tribunal administratif fédéral (TAF)</strong> à Saint-Gall (Art. 23 LIE).
+</p>
+<p style="line-height:1.6; color:var(--text-secondary);">
+En cas de désaccord direct entre les deux organes de contrôle (OFT et ESTI), c'est le <strong>DETEC</strong> qui tranche (Art. 24 LIE).
+</p>`
+          },
+          {
+            title: "4. Le régime de l'Art. 26 : Fondement de l'OIBT",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 26 LIE</strong> instaure une dissociation juridique fondamentale :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<p style="line-height:1.6; margin-bottom:0.5rem;">
+1. Le contrôle fédéral direct de l'ESTI <strong>ne s'étend pas aux installations intérieures</strong> privées.
+</p>
+<p style="line-height:1.6; margin:0; color:var(--electric-blue); font-weight:600;">
+2. En contrepartie, le FOURNISSEUR D'ÉNERGIE ÉLECTRIQUE est tenu de JUSTIFIER que les installations intérieures sont contrôlées d'une autre façon.
+</p>
+</div>
+<p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+Cet article a permis au Conseil fédéral d'édicter l'OIBT (RS 734.27), qui charge les distributeurs de tenir le registre des contrôles périodiques réalisés par des électriciens et organismes de contrôle indépendants certifiés.
+</p>`
+          }
+        ],
+        practicalExample: "Un distributeur d'électricité adresse à un propriétaire d'atelier un avis d'invitation à produire le Rapport de Sécurité (RaSi / RS) pour le contrôle périodique décennal. Cette obligation du distributeur d'exiger et de vérifier la preuve du contrôle découle directement de l'Art. 26 LIE.",
+        importantPoint: "La surveillance incombe légalement à l'exploitant (Art. 20). Les décisions de l'ESTI et de l'OFT peuvent faire l'objet d'un recours devant le Tribunal administratif fédéral (TAF, Art. 23 LIE).",
+        synthesis: "L'exploitant est légalement garant du bon entretien de ses installations (Art. 20). La surveillance étatique est déléguée à l'OFT (ferroviaire) et à l'ESTI (général), avec recours au TAF (Art. 23). Pour les installations intérieures, l'Art. 26 oblige les fournisseurs d'énergie à vérifier qu'un contrôle périodique certifié est effectué.",
+        quiz: [
+          {
+            id: "q_lie3_1",
+            type: "single",
+            question: "À qui incombe légalement la surveillance des installations électriques et de leur bon état d'entretien selon l'Art. 20 al. 1 LIE ?",
+            options: [
+              "À l'exploitant (propriétaire, locataire, etc.)",
+              "Exclusivement à l'inspecteur cantonal du travail",
+              "À l'entreprise ayant posé les câbles il y a 30 ans",
+              "À la police municipale"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 20 al. 1 LIE dispose clairement : « La surveillance des installations électriques et de leur bon état d'entretien incombe à l'exploitant (propriétaire, locataire, etc.). »"
+          },
+          {
+            id: "q_lie3_2",
+            type: "single",
+            question: "Quel organisme fédéral est compétent pour le contrôle des installations électriques spécifiques aux chemins de fer (Art. 21 let. a LIE) ?",
+            options: [
+              "L'Office fédéral des transports (OFT)",
+              "L'Office fédéral de l'environnement (OFEV)",
+              "Le Secrétariat d'État à l'économie (SECO)",
+              "L'Office fédéral de la santé publique (OFSP)"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon l'Art. 21 let. a LIE, le contrôle des installations spécifiques aux chemins de fer et des véhicules ferroviaires est confié à l'Office fédéral des transports (OFT)."
+          },
+          {
+            id: "q_lie3_3",
+            type: "single",
+            question: "Devant quelle juridiction peut-on former un recours contre les décisions de l'ESTI ou des autorités de plans selon l'Art. 23 LIE ?",
+            options: [
+              "Le Tribunal administratif fédéral (TAF)",
+              "Le tribunal civil de première instance",
+              "La chambre de conciliation cantonale",
+              "La Cour européenne de justice"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 23 LIE dispose : « Un recours peut être formé devant le Tribunal administratif fédéral contre les décisions des autorités chargées de l'approbation des plans [...] et contre celles des organes de contrôle. »"
+          },
+          {
+            id: "q_lie3_4",
+            type: "single",
+            question: "Selon l'Art. 26 LIE, que doit faire le fournisseur d'énergie électrique concernant les installations intérieures privées ?",
+            options: [
+              "Justifier qu'elles sont contrôlées d'une autre façon",
+              "Réaliser lui-même gratuitement tous les travaux de câblage",
+              "Interdire toute utilisation d'appareils de plus de 1000 W",
+              "Se substituer au propriétaire pour assumer l'entretien"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 26 LIE prévoit que si le contrôle étatique du chapitre IV ne s'étend pas aux installations intérieures, « le fournisseur d'énergie électrique sera tenu de justifier qu'elles sont contrôlées d'une autre façon » (fondement de l'OIBT)."
+          }
+        ]
+      },
+
+      // ----------------------------------------------------------------------
+      // LIE — Leçon 4 : Responsabilité causale de l'exploitant & Annonce d'accidents (Art. 27 à 41)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-0-lie-responsabilite",
+        routeId: "rs-734-0-lie-responsabilite",
+        code: "LIE — Art. 27-41",
+        title: "LIE — Responsabilité causale de l'exploitant & Annonce d'accidents",
+        subtitle: "Responsabilité causale objective, motifs libératoires stricts, déclaration immédiate et nullité des décharges",
+        status: "Disponible",
+        duration: "6 min",
+        tag: "Loi fédérale",
+        xpReward: 30,
+        objective: "Comprendre le régime de responsabilité civile causale objective pesant sur l'exploitant (Art. 27 LIE), maîtriser les trois motifs libératoires stricts, intégrer l'exclusion de la force majeure en cas de non-respect de l'Art. 3 (Art. 33), appliquer l'obligation de dénoncer immédiatement tout accident corporel (Art. 32) et retenir la nullité des décharges de responsabilité (Art. 39).",
+        introduction: `Le droit suisse protège vigoureusement le public contre les périls de l'électricité. La LIE instaure une <strong>responsabilité causale objective</strong> : en cas d'accident corporel ou de dommage matériel causé par une installation, l'exploitant est présumé responsable, même sans faute de sa part.`,
+        contentSections: [
+          {
+            title: "1. La responsabilité causale objective de l'exploitant (Art. 27 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 27 al. 1 LIE</strong> énonce la règle clé :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+« Lorsqu'une personne a été <strong>tuée ou blessée</strong> par l'exploitation d'une installation électrique à fort ou à faible courant, privée ou publique, <strong>l'exploitant est responsable du dommage causé</strong> [...]. »
+</div>
+<p style="line-height:1.6; color:var(--text-secondary);">
+L'al. 2 étend la même responsabilité aux <strong>dommages causés aux choses</strong> (hors perturbations d'exploitation). La victime n'a pas à prouver une négligence : la seule exploitation de l'installation engage la responsabilité.
+</p>`
+          },
+          {
+            title: "2. Les 3 seuls motifs d'exonération de l'exploitant (Art. 27 al. 1 in fine LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'exploitant ne peut échapper à sa responsabilité qu'en apportant la <strong>preuve stricte</strong> que l'accident est dû exclusivement à l'une de ces trois causes :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>1. Une force majeure :</strong> Événement naturel imprévisible, extraordinaire et irrésistible.</li>
+<li><strong>2. La faute ou négligence d'un tiers :</strong> Action extérieure imprévisible ayant provoqué le dommage.</li>
+<li><strong>3. La faute LOURDE de la victime :</strong> Comportement téméraire ou violation délibérée des règles élémentaires de survie par la personne lésée.</li>
+</ul>`
+          },
+          {
+            title: "3. Exclusion de la force majeure en cas de non-conformité (Art. 33 LIE)",
+            text: `<div style="background:rgba(239, 68, 68, 0.1); border:1px solid rgba(239, 68, 68, 0.3); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<div style="font-weight:700; color:#F87171; margin-bottom:0.4rem;">⚠️ Art. 33 LIE — Règle capitale :</div>
+<p style="margin:0; font-size:0.92rem; line-height:1.6; color:var(--text-primary);">
+« L'exception de force majeure dans le sens de la loi <strong>ne pourra être invoquée</strong> lorsque le dommage causé aurait pu être prévenu par des <strong>ouvrages conformes aux prescriptions</strong> prévues à l'art. 3. »
+</p>
+</div>
+<p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+Si un arbre touche une ligne pendant un orage mais que l'exploitant n'avait pas respecté les distances d'élagage réglementaires, il est privé du droit d'invoquer la force majeure !
+</p>`
+          },
+          {
+            title: "4. Dénonciation sans délai de tout accident corporel (Art. 32 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 32 LIE</strong> impose une obligation stricte et immédiate :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li>L'exploitant doit <strong>dénoncer sans délai à l'autorité locale</strong> tout accident corporel de quelque gravité ainsi que tout dommage important causé aux tiers (Art. 32 al. 1).</li>
+<li>L'autorité locale ouvre <strong>immédiatement une enquête officielle</strong> sur la cause et les conséquences, puis annonce au gouvernement cantonal qui en avise le <strong>DETEC</strong> (Art. 32 al. 2).</li>
+</ul>`
+          },
+          {
+            title: "5. Nullité absolue des décharges de responsabilité (Art. 39 & 41 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Selon l'<strong>Art. 39 LIE</strong>, sont <strong>sans valeur légale</strong> (nulles de plein droit) toutes les clauses contractuelles, règlements ou pancartes excluant ou limitant d'avance la responsabilité de l'exploitant.
+</p>
+<p style="line-height:1.6; color:var(--text-secondary);">
+L'<strong>Art. 41 LIE</strong> précise que le chapitre V de la LIE ne s'applique pas aux installations intérieures : celles-ci sont régies par la responsabilité du propriétaire d'ouvrage de l'<strong>art. 58 du Code des obligations (CO)</strong>.
+</p>`
+          }
+        ],
+        practicalExample: "Un poseur d'affiches subit une électrisation par arc électrique à proximité d'un transformateur dont la grille de protection était rouillée et ouverte. L'exploitant prétendait s'exonérer grâce à un panneau « Accès interdit sous peine de décharge de toute responsabilité ». En application de l'Art. 39 LIE, cette décharge est nulle. De plus, selon l'Art. 33 LIE, l'exploitant ne peut invoquer aucun événement extérieur puisque son installation n'était pas conforme aux règles de sécurité de l'Art. 3.",
+        importantPoint: "L'Art. 39 LIE interdit toute limitation de responsabilité par convention : les décharges sont nulles de plein droit. Tout accident corporel doit être dénoncé sans délai à l'autorité pour enquête officielle (Art. 32 LIE).",
+        synthesis: "La LIE instaure une responsabilité causale objective de l'exploitant (Art. 27). Seules la force majeure, la faute d'un tiers ou la faute lourde de la victime libèrent l'exploitant. La force majeure est inapplicable si les normes de sécurité n'étaient pas respectées (Art. 33). Tout accident corporel doit être dénoncé sans délai (Art. 32) et les clauses limitatives sont nulles (Art. 39).",
+        quiz: [
+          {
+            id: "q_lie4_1",
+            type: "single",
+            question: "Quelle est la nature juridique de la responsabilité de l'exploitant selon l'Art. 27 al. 1 LIE lorsqu'une personne est blessée par une installation électrique ?",
+            options: [
+              "Une responsabilité causale objective (l'exploitant répond du dommage même sans faute)",
+              "Une responsabilité pénale exclusivement réservée aux fabricants de câbles",
+              "Une responsabilité morale sans obligation financière d'indemnisation",
+              "Une responsabilité subsidiaire uniquement en cas de récidive"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 27 LIE institue une responsabilité causale objective : la victime n'a pas à prouver de faute, la responsabilité de l'exploitant découle de l'exploitation de l'ouvrage."
+          },
+          {
+            id: "q_lie4_2",
+            type: "single",
+            question: "Parmi les motifs suivants, lequel NE libère PAS l'exploitant selon l'Art. 27 al. 1 in fine LIE ?",
+            options: [
+              "La simple faute légère et involontaire de la victime",
+              "La faute lourde de la personne qui a été tuée ou blessée",
+              "La force majeure dûment établie",
+              "La faute exclusive d'un tiers"
+            ],
+            correctAnswer: 0,
+            explanation: "La loi exige la faute LOURDE de la victime pour libérer l'exploitant. Une simple imprudence ou faute légère de la victime ne suffit pas à dégager l'exploitant."
+          },
+          {
+            id: "q_lie4_3",
+            type: "single",
+            question: "Selon l'Art. 33 LIE, quand l'exploitant est-il privé du droit d'invoquer la force majeure ?",
+            options: [
+              "Lorsque le dommage aurait pu être prévenu par des ouvrages conformes aux prescriptions de sécurité de l'Art. 3",
+              "Dès que la facture d'électricité n'a pas été acquittée",
+              "Lorsque l'accident s'est produit un dimanche ou jour férié",
+              "Uniquement si l'installation a plus de 50 ans"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 33 LIE dispose formellement que l'exception de force majeure ne peut pas être invoquée lorsque le dommage causé aurait pu être évité par des ouvrages conformes aux prescriptions prévues à l'Art. 3."
+          },
+          {
+            id: "q_lie4_4",
+            type: "single",
+            question: "Quelle est la valeur juridique d'un règlement d'exploitation stipulant qu'une entreprise électrique décline d'avance toute responsabilité en cas de blessure (Art. 39 LIE) ?",
+            options: [
+              "Sans valeur légale (nul de plein droit)",
+              "Totalement valable et opposable à toute victime",
+              "Valable uniquement si le client a signé un contrat écrit",
+              "Valable si le montant du dommage dépasse 100'000 CHF"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 39 LIE dispose expressément : « Sont sans valeur légale les règlements, publications ou conventions spéciales qui excluraient ou limiteraient d'avance la responsabilité telle qu'elle résulte des dispositions de la présente loi. »"
+          }
+        ]
+      },
+
+      // ----------------------------------------------------------------------
+      // LIE — Leçon 5 : Dispositions pénales, Amendes & Sanctions (Art. 55 à 57)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-0-lie-penal",
+        routeId: "rs-734-0-lie-penal",
+        code: "LIE — Art. 55-57",
+        title: "LIE — Dispositions pénales, Amendes & Sanctions",
+        subtitle: "Amende jusqu'à 100'000 CHF, réenclenchement illégal d'installations dangereuses, infractions CEM et autorités",
+        status: "Disponible",
+        duration: "5 min",
+        tag: "Loi fédérale",
+        xpReward: 30,
+        objective: "Maîtriser le catalogue des infractions pénales de la LIE (Art. 55), connaître le montant des amendes pour actes intentionnels (jusqu'à 100'000 CHF), pour négligence (jusqu'à 20'000 CHF) et l'amende d'ordre (jusqu'à 5'000 CHF, Art. 56), identifier l'interdiction de réenclenchement d'une installation scellée et connaître les autorités pénales compétentes (OFEN, OFCOM, ESTI selon l'Art. 57 DPA).",
+        introduction: `En matière d'électricité, les manquements délibérés peuvent causer des électrocutions ou des incendies dévastateurs. Pour protéger la collectivité, le législateur a doté la LIE d'un volet pénal sévère : amendes jusqu'à 100'000 CHF, répression de la négligence et poursuite administrative fédérale.`,
+        contentSections: [
+          {
+            title: "1. Délit intentionnel : amende de 100'000 CHF au plus (Art. 55 al. 1 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 55 al. 1 LIE</strong> punit d'une <strong>amende de 100'000 francs au plus</strong> (sauf peine plus sévère du Code pénal) celui qui, intentionnellement :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.7; color:var(--text-secondary); font-size:0.92rem;">
+<li><strong>a. Travaux sans approbation :</strong> Construit ou modifie une installation électrique sans avoir fait approuver les plans (Art. 16) ;</li>
+<li><strong>b. Réenclenchement illégal :</strong> Remet ou fait remettre en service <em>de son propre chef</em> une installation mise hors circuit pour cause de <strong>défectuosité dangereuse</strong> par l'office de contrôle ;</li>
+<li><strong>c. Mise sur le marché CEM non conforme :</strong> Importe, offre ou met à disposition un appareil ne remplissant pas les exigences de compatibilité électromagnétique ;</li>
+<li><strong>d. Utilisation CEM non conforme :</strong> Met en service ou utilise un appareil ou une installation fixe ne remplissant pas les exigences CEM.</li>
+</ul>
+</div>`
+          },
+          {
+            title: "2. Répression de la négligence & amende d'entreprise (Art. 55 al. 2 & 2bis LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Même sans intention coupable, l'inobservation des règles de prudence est réprimée :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Négligence (Art. 55 al. 2) :</strong> Punie d'une amende de <strong>20'000 francs au plus</strong>.</li>
+<li><strong>Condamnation de l'entreprise (Art. 55 al. 2bis) :</strong> Lorsque l'amende n'excède pas 20'000 CHF et que l'enquête individuelle impliquerait des investigations disproportionnées, l'autorité peut renoncer à poursuivre les personnes physiques et <strong>condamner directement l'entreprise</strong> au paiement de l'amende (application de l'art. 7 DPA).</li>
+</ul>`
+          },
+          {
+            title: "3. L'amende d'ordre de 5'000 CHF pour désobéissance (Art. 56 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 56 LIE</strong> sanctionne le refus d'obtempérer aux décisions de l'autorité :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+Celui qui, en dépit d'un avertissement et sous menace de peine, ne se conforme pas à une disposition de la loi, à une ordonnance d'exécution ou à une décision officielle (sommation) est puni d'une <strong>amende d'ordre de 5'000 francs au plus</strong>.
+</div>
+<p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+L'al. 2 réserve expressément les poursuites devant le juge pénal pour insoumission ou violence contre l'autorité (art. 285 et 286 du Code pénal suisse).
+</p>`
+          },
+          {
+            title: "4. Autorités administratives compétentes de poursuite (Art. 57 LIE)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+La poursuite et le jugement des infractions pénales de la LIE s'effectuent selon la <strong>Loi fédérale sur le droit pénal administratif (DPA — RS 313.0)</strong> :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:180px;">Domaine d'infraction</th>
+<th>Autorité de poursuite compétente</th>
+<th>Délégation possible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installations & réenclenchement</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 55 al. 1 let. a & b)</span></td>
+<td><strong>OFEN</strong> (Office fédéral de l'énergie)</td>
+<td>Le DETEC peut déléguer l'instruction et le jugement à l'<strong>Inspection (ESTI)</strong>.</td>
+</tr>
+<tr>
+<td><strong>Appareils & CEM</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 55 al. 1 let. c & d)</span></td>
+<td><strong>OFCOM</strong> (Office fédéral de la communication)</td>
+<td>Non délégué à l'ESTI (compétence télécoms / CEM).</td>
+</tr>
+<tr>
+<td><strong>Chemins de fer</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 57 al. 4)</span></td>
+<td>Poursuite ouverte sur plainte de l'autorité de surveillance des chemins de fer (OFT).</td>
+<td>Régie par l'art. 88a de la loi sur les chemins de fer.</td>
+</tr>
+</tbody>
+</table>
+</div>`
+          }
+        ],
+        practicalExample: "Un atelier de mécanique industrielle subit un contrôle d'inspection de l'ESTI. Un départ de tableau présente un risque immédiat d'incendie et d'électrocution. L'inspecteur pose des scellés et ordonne la coupure. Le directeur de l'atelier fait briser les scellés pour continuer le travail. Cet acte constitue une infraction pénale intentionnelle au titre de l'Art. 55 al. 1 let. b LIE, passible d'une amende de 100'000 CHF prononcée par l'OFEN / l'ESTI.",
+        importantPoint: "Remettre en service de son propre chef une installation électrique mise hors circuit pour défectuosité dangereuse constitue un délit pénal puni d'une amende pouvant atteindre 100'000 CHF (Art. 55 al. 1 let. b). La négligence est punie de 20'000 CHF d'amende (Art. 55 al. 2).",
+        synthesis: "La LIE punit d'une amende jusqu'à 100'000 CHF les infractions intentionnelles majeures (travaux sans approbation, remise en service illégale d'installations dangereuses, manquements CEM) et jusqu'à 20'000 CHF la négligence (Art. 55). Une amende d'ordre jusqu'à 5'000 CHF sanctionne le refus d'obtempérer (Art. 56). La poursuite est menée par l'OFEN et l'OFCOM selon la DPA (Art. 57).",
+        quiz: [
+          {
+            id: "q_lie5_1",
+            type: "single",
+            question: "Quel est le montant maximal de l'amende pénale prévue à l'Art. 55 al. 1 LIE pour une infraction intentionnelle ?",
+            options: [
+              "100'000 francs",
+              "10'000 francs",
+              "5'000 francs",
+              "500'000 francs"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 55 al. 1 LIE prévoit expressément une amende de 100'000 francs au plus pour les infractions commises intentionnellement."
+          },
+          {
+            id: "q_lie5_2",
+            type: "single",
+            question: "Quelle infraction précise est visée par l'Art. 55 al. 1 let. b de la LIE ?",
+            options: [
+              "Remettre en service de son propre chef une installation mise hors circuit pour dangerosité par l'office de contrôle",
+              "Oublier d'éteindre les lampes d'un chantier le soir",
+              "Poser un disjoncteur 10 A au lieu d'un disjoncteur 13 A",
+              "Commander du matériel auprès d'un fournisseur étranger"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 55 al. 1 let. b LIE punit expressément celui qui remet ou fait remettre en service de son propre chef une installation mise hors circuit par l'office de contrôle pour cause de défectuosité dangereuse."
+          },
+          {
+            id: "q_lie5_3",
+            type: "single",
+            question: "À combien s'élève l'amende maximale en cas d'infraction commise par négligence selon l'Art. 55 al. 2 LIE ?",
+            options: [
+              "20'000 francs au plus",
+              "1'000 francs au plus",
+              "100'000 francs au plus",
+              "Aucune amende n'est prévue pour simple négligence"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 55 al. 2 LIE dispose formellement : « La négligence est punie d'une amende de 20 000 francs au plus. »"
+          },
+          {
+            id: "q_lie5_4",
+            type: "single",
+            question: "En vertu de l'Art. 57 al. 1 let. a et al. 2 LIE, quelle autorité administrative est compétente pour la poursuite des infractions de l'Art. 55 al. 1 let. a et b, avec délégation possible à l'ESTI ?",
+            options: [
+              "L'Office fédéral de l'énergie (OFEN)",
+              "Le Département fédéral de la défense",
+              "L'Office fédéral de la topographie",
+              "La chancellerie d'État cantonale"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 57 al. 1 let. a LIE désigne l'OFEN comme autorité compétente pour les infractions aux installations (Art. 55 al. 1 let. a et b), avec faculté de délégation à l'Inspection (ESTI) accordée au DETEC (al. 2)."
           }
         ]
       },
