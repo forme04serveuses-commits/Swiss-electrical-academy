@@ -326,11 +326,24 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
         title: "Art. 1-15 — Principes, courant faible vs fort & câblage",
         subtitle: "Champ d'application, surveillance fédérale, installations intérieures et règle du câblage souterrain",
         status: "Disponible",
-        duration: "6 min",
+        duration: "8 min",
         tag: "Loi fédérale",
         xpReward: 30,
         objective: "Distinguer juridiquement les installations à faible courant et à fort courant selon le critère légal du danger (Art. 2), définir le cadre des installations intérieures (Art. 14) et appliquer la règle légale du câblage souterrain avec le facteur de surcoût maximal de 3.0 (Art. 15c).",
         introduction: `Adoptée le 24 juin 1902, la <strong>Loi sur les installations électriques (LIE — RS 734.0)</strong> constitue le socle législatif de toute l'électrotechnique en Suisse. Elle place l'établissement et l'exploitation des installations sous la haute surveillance de la Confédération et fixe les distinctions fondamentales entre courant faible, courant fort, installations intérieures et réseau de transport.`,
+        video: {
+          id: "vid-lie-principes",
+          title: "À regarder — La loi sur l'électricité et ses principes fondateurs",
+          description: "Cette vidéo pédagogique présente la Loi sur les installations électriques (LIE — RS 734.0), le cadre légal de protection des personnes, les installations intérieures (Art. 14) et la conciliation entre sécurité et progrès technique.",
+          duration: "1 min 57 s",
+          src: "./public/media/videos/module-a/VID_20260918_LIE.mp4",
+          keyPoints: [
+            "La LIE (RS 734.0) garantit la protection des personnes et des choses contre les dangers de l'électricité sous la haute surveillance de la Confédération.",
+            "La distinction juridique entre faible et fort courant est fondée exclusivement sur le critère du danger (Art. 2 LIE).",
+            "L'installation intérieure désigne les ouvrages à l'intérieur des bâtiments utilisant des tensions autorisées (Art. 14 LIE).",
+            "Les frais occasionnés par le croisement ou le voisinage de lignes sont supportés en proportion de leur importance économique, sans droit d'antériorité (Art. 5 et 15 LIE)."
+          ]
+        },
         contentSections: [
           {
             title: "1. Haute surveillance et critère légal du danger (Art. 1 & 2 LIE)",
