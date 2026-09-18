@@ -429,6 +429,12 @@ Toute ligne (50 Hz) du réseau de distribution d'une <strong>tension nominale in
           practicalExample: "Un distributeur planifie le raccordement moyenne tension 16 kV d'un éco-quartier. Une ligne aérienne coûterait 100'000 CHF, tandis que l'enfouissement en câble souterrain est chiffré à 240'000 CHF. Le ratio de coût est de 240'000 / 100'000 = 2.4. Ce facteur de 2.4 étant inférieur au plafond légal de 3.0 (Art. 15c LIE), le gestionnaire de réseau est légalement tenu de réaliser la ligne en souterrain.",
           importantPoint: "En cas de doute sur le classement d'une installation en courant faible ou fort, c'est le DETEC qui statue en dernière instance (Art. 2 al. 3). Lors du voisinage de lignes, aucun droit d'antériorité ne protège la première ligne construite pour le partage des frais (Art. 15 al. 4).",
           synthesis: "La LIE RS 734.0 régit toutes les installations électriques suisses sous l'égide de la Confédération. Le critère légal de dangerosité délimite le courant faible du courant fort (arbitrage DETEC). Les installations intérieures sont définies par l'Art. 14, et le réseau de distribution < 220 kV doit obligatoirement être enfoui si le surcoût ne dépasse pas un facteur de 3.0 (Art. 15c).",
+          synthesisVisual: {
+            src: "./public/media/images/module-a/infographie_lie_art1_15.jpg",
+            alt: "Infographie synthétique en 6 volets sur la LIE (Art. 1 à 15) : 1) Classification faible vs fort courant selon le danger, 2) Haute surveillance fédérale et arbitrage du DETEC, 3) Régime des installations intérieures, 4) Prévention des dangers par le Conseil fédéral, 5) Mesures techniques de sécurité de voisinage, 6) Répartition équitable des frais selon l'importance économique sans priorité au premier installé.",
+            caption: "Figure A.2 — Synthèse visuelle : Classification, surveillance, installations intérieures, sécurité et répartition des frais (LIE Art. 1-15)",
+            source: "Illustration originale — Electricité Learning Qualité | ELEQ"
+          },
           quiz: [
             {
               id: "q_lie1_1",
