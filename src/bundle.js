@@ -2169,8 +2169,8 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           <img src="./public/icons/icon-192.png" alt="Logo ELEQ" width="34" height="34" style="border-radius:6px; object-fit:contain; display:block;"/>
         </div>
         <div class="brand-title">
-          <span style="font-size:0.92rem; font-weight:700; line-height:1.2;">Electricité Learning</span>
-          <span class="brand-subtitle">Qualité · ELEQ</span>
+          <span class="brand-name">Electricité Learning Qualité</span>
+          <span class="brand-subtitle">ELEQ</span>
         </div>
       </div>
 
