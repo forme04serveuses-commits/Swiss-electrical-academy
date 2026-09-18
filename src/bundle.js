@@ -2508,7 +2508,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
       <div style="font-size:0.8rem; font-weight:700; color:var(--electric-blue); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">
         ${ACADEMY_INFO.institution}
       </div>
-      <h1 class="hero-greeting" id="heroTitle">Bienvenue sur Electricité Learning Qualité (ELEQ) 👋</h1>
+      <h1 class="hero-greeting" id="heroTitle">Bienvenue sur Electricité Learning Qualité | ELEQ 👋</h1>
       <div class="hero-tagline">« ${ACADEMY_INFO.baseline} »</div>
 
       <!-- Métriques de progression globale -->
