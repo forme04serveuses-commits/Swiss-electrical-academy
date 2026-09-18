@@ -220,7 +220,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           src: "./public/media/images/module-a/infographie_pyramide_lois.png",
           alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
           caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
-          source: "Illustration originale — Electricité Learning Qualité (ELEQ)"
+          source: "Illustration originale — Electricité Learning Qualité | ELEQ"
         },
         quiz: [
           {
