@@ -2248,7 +2248,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             ☰
           </button>
           <div class="header-tagline">
-            Plateforme e-learning officielle des règles techniques électriques en Suisse
+            Plateforme e-learning des règles techniques électriques en Suisse
           </div>
         </div>
 

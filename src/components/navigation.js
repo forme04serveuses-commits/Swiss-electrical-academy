@@ -89,7 +89,7 @@ export function setupNavigation(container, onNavigate) {
             ☰
           </button>
           <div class="header-tagline">
-            Plateforme e-learning officielle des règles techniques électriques en Suisse
+            Plateforme e-learning des règles techniques électriques en Suisse
           </div>
         </div>
 
