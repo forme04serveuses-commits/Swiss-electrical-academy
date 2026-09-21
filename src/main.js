@@ -1,13 +1,14 @@
-// Swiss Electrical Academy — Point d'entrée applicatif (V1.1)
+// Swiss Electrical Academy — Point d'entrée applicatif (V2.0)
 // Initialisation du Shell, Enregistrement PWA Service Worker et Routeur Hash sans rechargement
 
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView } from './pages/module-view.js';
+import { renderModuleView, renderOcfoParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
 import { renderProfileView } from './pages/profile-view.js';
+import { initOcfoAnnexe4Visual } from './components/interactive-widgets.js';
 
 function initSEA() {
   const appRoot = document.getElementById('app');
@@ -36,7 +37,7 @@ function initSEA() {
 
   // Routeur Hash sans rechargement
   function handleRouting() {
-    // Normaliser le hash (ex: "#/formations/N/n0" -> "/formations/N/n0")
+    // Normaliser le hash (ex: "#/formations/A/rs-734-2/chapitre-1" -> "/formations/A/rs-734-2/chapitre-1")
     const hash = window.location.hash.slice(1) || '/';
     const cleanPath = hash.split('?')[0];
     const segments = cleanPath.split('/').filter(Boolean);
@@ -75,27 +76,53 @@ function initSEA() {
       return;
     }
 
-    // 4. Vue Leçon (ex: /formations/A/pyramide-lois, /formations/N/n0, /formations/B/securite-electrique)
-    if (segments[0] === 'formations' && segments.length >= 3) {
-      const moduleId = segments[1].toUpperCase();
-      const formationId = segments[2];
-      renderLessonView(pageContainer, moduleId, formationId);
+    // 4. Parcours dédié RS 734.2 (Hub des 7 chapitres) : /formations/A/RS-734-2 ou /formations/A/rs-734-2
+    if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
+      renderOcfoParcoursView(pageContainer);
       return;
     }
 
-    // 5. Progression
+    // 5. Vue Chapitre ou Leçon
+    if (segments[0] === 'formations' && segments.length >= 3) {
+      const moduleId = segments[1].toUpperCase();
+
+      // Sous-routes pour le parcours RS 734.2 (ex: /formations/A/rs-734-2/chapitre-1)
+      if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = `rs-734-2-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'rs-734-2-evaluation-finale';
+        } else if (slug === 'annexes' || slug === 'annexes-1-4' || slug === 'chapitre-8' || slug === 'lecon-8') {
+          targetId = 'rs-734-2-annexes';
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        setTimeout(() => {
+          initOcfoAnnexe4Visual(pageContainer);
+        }, 50);
+        return;
+      }
+
+      const formationId = segments[2];
+      renderLessonView(pageContainer, moduleId, formationId);
+      setTimeout(() => {
+        initOcfoAnnexe4Visual(pageContainer);
+      }, 50);
+      return;
+    }
+
+    // 6. Progression
     if (segments[0] === 'progression') {
       renderProgressView(pageContainer);
       return;
     }
 
-    // 6. Espace Formateur
+    // 7. Espace Formateur
     if (segments[0] === 'formateur') {
       renderTrainerView(pageContainer);
       return;
     }
 
-    // 7. Profil
+    // 8. Profil
     if (segments[0] === 'profil') {
       renderProfileView(pageContainer);
       return;

@@ -1,4 +1,4 @@
-// Swiss Electrical Academy — Vue d'une Leçon (V1.1)
+// Swiss Electrical Academy — Vue d'une Leçon (V2.0)
 // Respect strict de la séquence pédagogique : Titre -> Objectif -> Intro -> Contenu -> Illustration/Widget -> Cas pratique -> Point important -> Quiz -> Synthèse
 
 import { StorageService } from '../services/storage.js';
@@ -22,6 +22,7 @@ export function renderLessonView(container, moduleId, formationId) {
   }
 
   const { module: mod, formation } = result;
+  const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
 
   // Enregistrer comme dernière activité pour le bouton « Continuer »
   StorageService.setLastActivity({
@@ -35,6 +36,23 @@ export function renderLessonView(container, moduleId, formationId) {
   const isAvailable = formation.status === "Disponible";
   const isDone = StorageService.isLessonCompleted(formation.id);
 
+  // Déterminer les routes de navigation séquentielle
+  let nextRoute = null;
+  let nextLabel = null;
+  if (formation.nextChapterId) {
+    const nextNum = formation.chapterNumber + 1;
+    if (nextNum <= 7) {
+      nextRoute = `#/formations/A/rs-734-2/chapitre-${nextNum}`;
+      nextLabel = `Passer au Chapitre ${nextNum} / 8 →`;
+    } else if (nextNum === 8) {
+      nextRoute = `#/formations/A/rs-734-2/annexes`;
+      nextLabel = `Passer à la Leçon 8 (Annexes 1 à 4) →`;
+    } else {
+      nextRoute = `#/formations/A/rs-734-2/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  }
+
   container.innerHTML = `
     <div class="lesson-container">
       <!-- Fil d'ariane -->
@@ -42,17 +60,27 @@ export function renderLessonView(container, moduleId, formationId) {
         <a href="#/" class="breadcrumb-link">Accueil</a>
         <span>/</span>
         <a href="#/formations/${mod.id}" class="breadcrumb-link">Module ${mod.id} — ${mod.title}</a>
+        ${isOcfo ? `
+          <span>/</span>
+          <a href="#/formations/A/rs-734-2" class="breadcrumb-link">RS 734.2 — OCFo</a>
+        ` : ''}
         <span>/</span>
         <span>${formation.code}</span>
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card">
+      <header class="lesson-header-card ${isOcfo ? 'ocfo-lesson-header' : ''}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
           </span>
           <span class="formation-code-tag">${formation.code}</span>
+          ${isOcfo && formation.chapterNumber && formation.chapterNumber <= 8 ? `
+            <span class="ocfo-progression-pill">${formation.chapterNumber === 8 ? 'Leçon 8 / 8 · Annexes 1 à 4' : `Chapitre ${formation.chapterNumber} / 8`}</span>
+          ` : ''}
+          ${isOcfo && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (8 unités)</span>
+          ` : ''}
           <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
           ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}
           <span style="font-size:0.75rem; color:var(--text-muted); margin-left:auto;">⏳ ${formation.duration}</span>
@@ -60,6 +88,11 @@ export function renderLessonView(container, moduleId, formationId) {
 
         <h1 class="lesson-h1">${formation.title}</h1>
         ${formation.subtitle ? `<div class="lesson-subtitle">${formation.subtitle}</div>` : ''}
+        ${formation.articlesRange ? `
+          <div style="margin-top:0.5rem;">
+            <span class="legal-tag">Articles concernés : ${formation.articlesRange}</span>
+          </div>
+        ` : ''}
       </header>
 
       ${isAvailable ? `
@@ -78,7 +111,7 @@ export function renderLessonView(container, moduleId, formationId) {
           <div class="section-body">${formation.introduction}</div>
         </section>
 
-        <!-- Bloc Vidéo Pédagogique (juste sous le paragraphe de l'introduction) -->
+        <!-- Bloc Vidéo Pédagogique (si présent) -->
         ${formation.video ? `
           <section class="video-pedagogical-box" aria-label="Vidéo pédagogique">
             <div class="video-box-header">
@@ -105,8 +138,8 @@ export function renderLessonView(container, moduleId, formationId) {
         <!-- Contenu Détaillé -->
         <section class="content-article" aria-label="Contenu détaillé">
           ${formation.contentSections.map(sec => `
-            <div style="margin-bottom:1.5rem;">
-              <h2 class="section-title" style="font-size:1.05rem; margin-bottom:0.75rem;">${sec.title}</h2>
+            <div class="content-sub-block">
+              <h2 class="section-title">${sec.title}</h2>
               <div class="section-body">${sec.text}</div>
             </div>
           `).join('')}
@@ -118,9 +151,9 @@ export function renderLessonView(container, moduleId, formationId) {
         <!-- Exemple Pratique -->
         ${formation.practicalExample ? `
           <section class="case-study-box" aria-label="Exemple pratique">
-            <div class="box-icon">💡</div>
+            <div class="box-icon">⚡</div>
             <div>
-              <div class="box-title">Cas pratique sur le terrain</div>
+              <div class="box-title">Exemple pratique (Exemple pédagogique)</div>
               <div class="box-text">${formation.practicalExample}</div>
             </div>
           </section>
@@ -143,9 +176,9 @@ export function renderLessonView(container, moduleId, formationId) {
         <!-- Synthèse -->
         ${formation.synthesis ? `
           <section class="synthesis-box" aria-label="Synthèse">
-            <div class="box-icon">📋</div>
+            <div class="box-icon">💡</div>
             <div class="synthesis-content-wrapper">
-              <div class="box-title">Synthèse de la leçon</div>
+              <div class="box-title">À retenir</div>
               <div class="box-text">${formation.synthesis}</div>
               ${formation.synthesisVisual ? `
                 <figure class="pedagogical-visual-card">
@@ -174,7 +207,7 @@ export function renderLessonView(container, moduleId, formationId) {
         ` : ''}
 
       ` : `
-        <!-- Contenu en cours de développement (Section 5 & 42) -->
+        <!-- Contenu en cours de développement -->
         <section class="content-article" style="text-align:center; padding:3rem 1.5rem;">
           <div style="font-size:3rem; margin-bottom:1rem;">🔒</div>
           <h2 style="font-size:1.3rem; font-weight:700; margin-bottom:0.5rem;">Contenu en préparation</h2>
@@ -194,18 +227,32 @@ export function renderLessonView(container, moduleId, formationId) {
       `}
 
       <!-- Barre de navigation bas de leçon -->
-      <div style="display:flex; justify-content:space-between; align-items:center; padding:1.5rem 0; border-top:1px solid var(--border-subtle);">
-        <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-          ← Retour au module
-        </button>
-        <button class="btn-continue" onclick="location.hash='#/progression'">
-          Voir ma progression 📊
-        </button>
+      <div class="lesson-footer-nav">
+        <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
+          ${isOcfo ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+              ← Sommaire des 8 leçons OCFo
+            </button>
+          ` : `
+            <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+              ← Retour au module
+            </button>
+          `}
+          <button class="btn-continue" onclick="location.hash='#/progression'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+            Voir ma progression 📊
+          </button>
+        </div>
+
+        ${nextRoute ? `
+          <button class="btn-continue" onclick="location.hash='${nextRoute}'" style="display:inline-flex; align-items:center; gap:0.5rem;">
+            <span>${nextLabel}</span>
+          </button>
+        ` : ''}
       </div>
     </div>
   `;
 
-  // Insertion du lecteur vidéo (si présent dans la leçon)
+  // Insertion du lecteur vidéo (si présent)
   if (isAvailable && formation.video) {
     const videoMount = container.querySelector('#videoPlayerMount');
     if (videoMount) {
@@ -227,7 +274,7 @@ export function renderLessonView(container, moduleId, formationId) {
     }
   }
 
-  // Initialisation du visuel interactif OCFo Annexe 4
+  // Initialisation du visuel interactif OCFo Annexe 4 (si présent dans le DOM)
   initOcfoAnnexe4Visual(container);
 
   // Insertion du quiz
@@ -237,7 +284,16 @@ export function renderLessonView(container, moduleId, formationId) {
       const quizEl = createQuizEngine(formation, () => {
         // Callback lors de la complétion
         if (window.updateHeaderXp) window.updateHeaderXp();
-        location.hash = `#/formations/${mod.id}`;
+        // Si c'est un chapitre OCFo et qu'un chapitre suivant existe, naviguer vers la suite ou le hub
+        if (isOcfo) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/A/rs-734-2';
+          }
+        } else {
+          location.hash = `#/formations/${mod.id}`;
+        }
       });
       quizSlot.appendChild(quizEl);
     }
