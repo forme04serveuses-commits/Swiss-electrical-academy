@@ -1,12 +1,68 @@
 /* ==========================================================================
-   Swiss Electrical Academy — Design Tokens & Thèmes (V1.1)
-   Couleurs officielles, mode sombre natif par défaut, contrastes WCAG 2.2 AA
+   ELECBOOK | EBOOK — Design Tokens & Thèmes (V2.0)
+   Typographie officielle de marque Goodly Geometric Rounded, contrastes WCAG 2.2 AA
    ========================================================================== */
+
+/* Typographie de Branding — Goodly Geometric Rounded */
+@font-face {
+  font-family: 'Goodly Geometric Rounded';
+  src: url('../../public/fonts/goodly/Goodly-Bold.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Goodly Geometric Rounded';
+  src: url('../../public/fonts/goodly/Goodly-Semibold.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Goodly Geometric Rounded';
+  src: url('../../public/fonts/goodly/Goodly-Regular.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Goodly';
+  src: url('../../public/fonts/goodly/Goodly-Bold.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Goodly';
+  src: url('../../public/fonts/goodly/Goodly-Semibold.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Goodly';
+  src: url('../../public/fonts/goodly/Goodly-Regular.woff') format('woff'),
+       url('../../public/fonts/goodly/Goodly-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Typographie */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-brand: 'Goodly Geometric Rounded', 'Goodly', var(--font-sans);
 
   /* Couleurs sémantiques universelles */
   --electric-blue: #38BDF8;

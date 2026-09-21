@@ -3,12 +3,11 @@
 // Règle absolue : Aucune invention de référence technique. Données réelles ou « Contenu en préparation ».
 
 export const ACADEMY_INFO = {
-  institution: "Electricité Learning Qualité",
-  name: "Electricité Learning Qualité",
-  shortName: "ELEQ",
+  name: "ELECBOOK",
+  shortName: "EBOOK",
   baseline: "Apprendre les règles. Comprendre les risques. Maîtriser la pratique.",
-  version: "1.1",
-  themeColor: "#0B1220",
+  version: "2.1",
+  themeColor: "#1F3D4A",
   accentElectric: "#38BDF8",
   accentRed: "#EF4444"
 };
@@ -220,7 +219,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
           src: "./public/media/images/module-a/infographie_pyramide_lois.png",
           alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
           caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
-          source: "Illustration originale — Electricité Learning Qualité | ELEQ"
+          source: "Illustration originale — ELECBOOK"
         },
         quiz: [
           {
@@ -428,7 +427,7 @@ Toute ligne (50 Hz) du réseau de distribution d'une <strong>tension nominale in
           src: "./public/media/images/module-a/infographie_lie_art1_15.jpg",
           alt: "Infographie synthétique en 6 volets sur la LIE (Art. 1 à 15) : 1) Classification faible vs fort courant selon le danger, 2) Haute surveillance fédérale et arbitrage du DETEC, 3) Régime des installations intérieures, 4) Prévention des dangers par le Conseil fédéral, 5) Mesures techniques de sécurité de voisinage, 6) Répartition équitable des frais selon l'importance économique sans priorité au premier installé.",
           caption: "Figure A.2 — Synthèse visuelle : Classification, surveillance, installations intérieures, sécurité et répartition des frais (LIE Art. 1-15)",
-          source: "Illustration originale — Electricité Learning Qualité | ELEQ"
+          source: "Illustration originale — ELECBOOK"
         },
         quiz: [
           {

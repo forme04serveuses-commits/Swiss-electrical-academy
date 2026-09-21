@@ -1,4 +1,4 @@
-# Swiss Electrical Academy — Plateforme E-Learning Officielle (V1.1)
+# ELECBOOK — Plateforme E-Learning Officielle (V2.1)
 
 > **« Apprendre les règles. Comprendre les risques. Maîtriser la pratique. »**
 

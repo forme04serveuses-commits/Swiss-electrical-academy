@@ -1,7 +1,7 @@
-// Electricité Learning Qualité | ELEQ — Service Worker V1.3
+// ELECBOOK | EBOOK — Service Worker V2.1
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'eleq-v1.4.1-cache';
+const CACHE_NAME = 'elecbook-v2.2.0-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -29,6 +29,15 @@ const STATIC_ASSETS = [
   './public/icons/apple-touch-icon.png',
   './public/icons/favicon-32x32.png',
   './public/icons/favicon-16x16.png',
+  './public/icons/favicon.png',
+  './public/fonts/goodly/Goodly-Bold.woff',
+  './public/fonts/goodly/Goodly-Semibold.woff',
+  './public/fonts/goodly/Goodly-Regular.woff',
+  './public/fonts/goodly/Goodly-Bold.ttf',
+  './public/fonts/goodly/Goodly-Semibold.ttf',
+  './public/fonts/goodly/Goodly-Regular.ttf',
+  './public/media/branding/logo-full.png',
+  './public/media/branding/logo-short.png',
   './public/media/images/module-a/infographie_pyramide_lois.png',
   './public/media/images/module-a/infographie_lie_art1_15.jpg'
 ];
@@ -37,7 +46,7 @@ const STATIC_ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Pré-mise en cache des actifs essentiels ELEQ...');
+      console.log('[SW] Pré-mise en cache des actifs essentiels ELECBOOK...');
       return cache.addAll(STATIC_ASSETS);
     }).then(() => self.skipWaiting())
   );

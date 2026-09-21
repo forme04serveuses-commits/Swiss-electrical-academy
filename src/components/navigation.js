@@ -13,11 +13,15 @@ export function setupNavigation(container, onNavigate) {
     <aside class="sidebar" id="appSidebar" role="navigation" aria-label="Navigation principale">
       <div class="sidebar-header">
         <div class="brand-icon" aria-hidden="true">
-          <img src="./public/icons/icon-192.png" alt="Logo ELEQ" width="34" height="34" style="border-radius:6px; object-fit:contain; display:block;"/>
+          <img src="./public/icons/icon-192.png" alt="Logo ELECBOOK" width="34" height="34" style="border-radius:6px; object-fit:contain; display:block;"/>
         </div>
-        <div class="brand-title">
-          <span class="brand-name">Electricité Learning Qualité</span>
-          <span class="brand-subtitle">ELEQ</span>
+        <div class="brand-title" aria-label="ELECBOOK EBOOK">
+          <div class="brand-name font-brand" aria-label="ELECBOOK">
+            <span class="brand-lead">e&#xF025;c</span><span class="brand-tail">b&#xF03A;k</span>
+          </div>
+          <div class="brand-subtitle font-brand" aria-label="EBOOK">
+            <span class="brand-lead">&#xF025;</span><span class="brand-tail">b&#xF03A;k</span>
+          </div>
         </div>
       </div>
 
@@ -88,6 +92,12 @@ export function setupNavigation(container, onNavigate) {
           <button class="mobile-menu-toggle" id="btnToggleSidebar" aria-label="Ouvrir le menu de navigation">
             ☰
           </button>
+          <div class="header-brand-mobile" aria-label="EBOOK">
+            <img src="./public/icons/icon-192.png" alt="Logo ELECBOOK" class="header-brand-mobile-logo" width="28" height="28"/>
+            <span class="header-brand-mobile-name font-brand" aria-label="EBOOK">
+              <span class="brand-lead">&#xF025;</span><span class="brand-tail">b&#xF03A;k</span>
+            </span>
+          </div>
           <div class="header-tagline">
             Plateforme e-learning des règles techniques électriques en Suisse
           </div>
