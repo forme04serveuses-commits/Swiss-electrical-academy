@@ -1664,31 +1664,34 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
 <!-- Visuel Pédagogique Interactif : Courbe temps-tension Annexe 4 OCFo (RS 734.2) -->
 <div class="ocfo-annexe4-widget" id="ocfoAnnexe4Widget" role="region" aria-label="Graphique interactif de la courbe temps-tension selon l'Annexe 4 OCFo">
   <div class="ocfo-widget-header">
-    <div class="ocfo-widget-title">
-      <span>📈</span> <span>Courbe de sécurité temps-tension — Annexe 4 OCFo (RS 734.2)</span>
+    <div class="ocfo-widget-title-row">
+      <div class="ocfo-widget-title">
+        <span>📈</span> <span>Courbe de sécurité temps-tension — Annexe 4 OCFo</span>
+      </div>
+      <span class="ocfo-widget-tag">RS 734.2 • Art. 54</span>
     </div>
     <div class="ocfo-widget-desc">
-      Déplacez le curseur de durée ou cliquez sur un palier pour explorer dynamiquement la tension de contact limite admise et son analyse physiologique selon l'Art. 54 OCFo.
+      Déplacez le curseur de durée ou cliquez directement sur le graphique / les paliers pour simuler en temps réel la tension de contact maximale admissible (Ut) et son analyse physiologique.
     </div>
     <div class="ocfo-mode-selector" role="group" aria-label="Sélection du type de courant">
-      <button type="button" class="ocfo-mode-btn active" data-mode="all" aria-pressed="true">Comparatif AC & DC</button>
-      <button type="button" class="ocfo-mode-btn" data-mode="ac" aria-pressed="false">⚡ Alternatif AC (15-100 Hz)</button>
-      <button type="button" class="ocfo-mode-btn" data-mode="dc" aria-pressed="false">🔋 Continu DC</button>
+      <button type="button" class="ocfo-mode-btn active" data-mode="all" aria-pressed="true">⚡ Comparatif AC & DC</button>
+      <button type="button" class="ocfo-mode-btn" data-mode="ac" aria-pressed="false">🔹 Alternatif AC (15-100 Hz)</button>
+      <button type="button" class="ocfo-mode-btn" data-mode="dc" aria-pressed="false">🔸 Continu DC (lisse)</button>
     </div>
   </div>
 
   <!-- Conteneur SVG du graphique -->
   <div class="ocfo-svg-container">
-    <svg id="ocfoSvgPlot" viewBox="0 0 680 380" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; display:block;" aria-label="Graphique vectoriel de la courbe temps-tension Annexe 4 OCFo">
+    <svg id="ocfoSvgPlot" viewBox="0 0 710 380" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; display:block;" aria-label="Graphique vectoriel de la courbe temps-tension Annexe 4 OCFo">
       <defs>
         <!-- Dégradé Zone Admissible (Sécurité) -->
         <linearGradient id="ocfoSafeGrad" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stop-color="#22C55E" stop-opacity="0.18"/>
+          <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.08"/>
         </linearGradient>
         <!-- Dégradé Zone Danger -->
         <linearGradient id="ocfoDangerGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#EF4444" stop-opacity="0.22"/>
+          <stop offset="0%" stop-color="#EF4444" stop-opacity="0.24"/>
           <stop offset="100%" stop-color="#EF4444" stop-opacity="0.04"/>
         </linearGradient>
         <!-- Glow filtres -->
@@ -1696,99 +1699,106 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
           <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#38BDF8" flood-opacity="0.6"/>
         </filter>
         <filter id="ocfoGlowDc" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#EE8C00" flood-opacity="0.6"/>
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#F59E0B" flood-opacity="0.6"/>
         </filter>
       </defs>
 
       <!-- Grille horizontale (Tension) -->
-      <line x1="65" y1="53" x2="635" y2="53" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="57" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="end">700 V</text>
+      <line x1="75" y1="53.7" x2="665" y2="53.7" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="57" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="end">700 V</text>
 
-      <line x1="65" y1="89" x2="635" y2="89" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="93" fill="#94A3B8" font-size="11" text-anchor="end">600 V</text>
+      <line x1="75" y1="91.0" x2="665" y2="91.0" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="95" fill="#94A3B8" font-size="11" text-anchor="end">600 V</text>
 
-      <line x1="65" y1="125" x2="635" y2="125" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="129" fill="#94A3B8" font-size="11" text-anchor="end">500 V</text>
+      <line x1="75" y1="128.3" x2="665" y2="128.3" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="132" fill="#94A3B8" font-size="11" text-anchor="end">500 V</text>
 
-      <line x1="65" y1="161" x2="635" y2="161" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="165" fill="#94A3B8" font-size="11" text-anchor="end">400 V</text>
+      <line x1="75" y1="165.7" x2="665" y2="165.7" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="170" fill="#94A3B8" font-size="11" text-anchor="end">400 V</text>
 
-      <line x1="65" y1="197" x2="635" y2="197" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="201" fill="#94A3B8" font-size="11" text-anchor="end">300 V</text>
+      <line x1="75" y1="203.0" x2="665" y2="203.0" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="207" fill="#94A3B8" font-size="11" text-anchor="end">300 V</text>
 
-      <line x1="65" y1="233" x2="635" y2="233" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="58" y="237" fill="#94A3B8" font-size="11" text-anchor="end">200 V</text>
+      <line x1="75" y1="240.3" x2="665" y2="240.3" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="67" y="244" fill="#94A3B8" font-size="11" text-anchor="end">200 V</text>
 
-      <line x1="65" y1="261.8" x2="635" y2="261.8" stroke="#EE8C00" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
-      <text x="58" y="265" fill="#EE8C00" font-size="10" font-weight="700" text-anchor="end">120 V DC</text>
+      <line x1="75" y1="270.2" x2="665" y2="270.2" stroke="#F59E0B" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
+      <text x="67" y="274" fill="#F59E0B" font-size="10" font-weight="700" text-anchor="end">120 V (DC)</text>
 
-      <line x1="65" y1="287" x2="635" y2="287" stroke="#38BDF8" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
-      <text x="58" y="291" fill="#38BDF8" font-size="10" font-weight="700" text-anchor="end">50 V AC</text>
+      <line x1="75" y1="296.3" x2="665" y2="296.3" stroke="#38BDF8" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
+      <text x="67" y="300" fill="#38BDF8" font-size="10" font-weight="700" text-anchor="end">50 V (AC)</text>
 
       <!-- Grille verticale (Durée) -->
-      <line x1="65" y1="35" x2="65" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="65" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">0,05s</text>
+      <line x1="75.0" y1="35" x2="75.0" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="75.0" y="333" fill="#94A3B8" font-size="11" text-anchor="middle">0,05s</text>
 
-      <line x1="150.8" y1="35" x2="150.8" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="150.8" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,1s</text>
+      <line x1="163.8" y1="35" x2="163.8" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="163.8" y="333" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,1s</text>
 
-      <line x1="236.6" y1="35" x2="236.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="236.6" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,2s</text>
+      <line x1="252.6" y1="35" x2="252.6" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="252.6" y="333" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,2s</text>
 
-      <line x1="322.4" y1="35" x2="322.4" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="322.4" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,4s</text>
+      <line x1="341.4" y1="35" x2="341.4" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="341.4" y="333" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,4s</text>
 
-      <line x1="372.6" y1="35" x2="372.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="372.6" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">0,6s</text>
+      <line x1="393.4" y1="35" x2="393.4" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="393.4" y="333" fill="#94A3B8" font-size="11" text-anchor="middle">0,6s</text>
 
-      <line x1="435.8" y1="35" x2="435.8" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="435.8" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">1,0s</text>
+      <line x1="458.8" y1="35" x2="458.8" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="458.8" y="333" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">1,0s</text>
 
-      <line x1="521.6" y1="35" x2="521.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="521.6" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">2,0s</text>
+      <line x1="547.6" y1="35" x2="547.6" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="547.6" y="333" fill="#94A3B8" font-size="11" text-anchor="middle">2,0s</text>
 
-      <line x1="635" y1="35" x2="635" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
-      <text x="635" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">≥ 5,0s</text>
+      <line x1="665.0" y1="35" x2="665.0" y2="315" stroke="#1E293B" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="665.0" y="333" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">≥ 5,0s</text>
 
       <!-- Axes principaux -->
-      <line x1="65" y1="305" x2="635" y2="305" stroke="#64748B" stroke-width="2"/>
-      <line x1="65" y1="35" x2="65" y2="305" stroke="#64748B" stroke-width="2"/>
+      <line x1="75" y1="315" x2="665" y2="315" stroke="#475569" stroke-width="2"/>
+      <line x1="75" y1="35" x2="75" y2="315" stroke="#475569" stroke-width="2"/>
 
       <!-- Titres des axes -->
-      <text x="350" y="348" fill="#CBD5E1" font-size="12" font-weight="700" text-anchor="middle">Durée maximale d'élimination du défaut t (secondes)</text>
-      <text x="18" y="170" fill="#CBD5E1" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 18 170)">Tension admissible Ut (V)</text>
+      <text x="75" y="22" fill="#CBD5E1" font-size="11" font-weight="700" text-anchor="end">Tension Ut [V]</text>
+      <text x="370" y="362" fill="#CBD5E1" font-size="11" font-weight="600" text-anchor="middle">Durée maximale d'élimination du défaut t [secondes] (échelle log)</text>
 
       <!-- Zone de danger (au-dessus de la courbe) -->
-      <path d="M 65.0 35.0 L 635.0 35.0 L 635.0 287.0 L 571.8 285.2 L 521.6 281.6 L 435.8 276.2 L 408.2 270.8 L 372.6 261.8 L 350.0 251.0 L 322.4 233.0 L 286.8 197.0 L 236.6 143.0 L 150.8 53.0 L 65.0 53.0 Z" fill="url(#ocfoDangerGrad)"/>
-      <text x="470" y="110" fill="#F87171" font-size="12" font-weight="700" letter-spacing="0.05em" opacity="0.8">ZONE DANGEREUSE (Non conforme)</text>
+      <path d="M 75.0 35.0 L 665.0 35.0 L 665.0 296.3 L 599.6 294.5 L 547.6 290.7 L 458.8 285.1 L 430.2 279.5 L 393.4 270.2 L 370.0 259.0 L 341.4 240.3 L 304.6 203.0 L 252.6 147.0 L 163.8 53.7 L 75.0 53.7 Z" fill="url(#ocfoDangerGrad)"/>
+      <text x="470" y="112" fill="#F87171" font-size="11" font-weight="700" letter-spacing="0.05em" opacity="0.85">ZONE DANGEREUSE (Non conforme)</text>
 
       <!-- Zone admissible (sous la courbe AC) -->
-      <path id="ocfoAreaAc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 143.0 L 286.8 197.0 L 322.4 233.0 L 350.0 251.0 L 372.6 261.8 L 408.2 270.8 L 435.8 276.2 L 521.6 281.6 L 571.8 285.2 L 635.0 287.0 L 635.0 305.0 L 65.0 305.0 Z" fill="url(#ocfoSafeGrad)"/>
-      <text x="210" y="275" fill="#4ADE80" font-size="12" font-weight="700" letter-spacing="0.05em" opacity="0.85">ZONE ADMISSIBLE (Sécurité assurée)</text>
+      <path id="ocfoAreaAc" d="M 75.0 53.7 L 163.8 53.7 L 252.6 147.0 L 304.6 203.0 L 341.4 240.3 L 370.0 259.0 L 393.4 270.2 L 430.2 279.5 L 458.8 285.1 L 547.6 290.7 L 599.6 294.5 L 665.0 296.3 L 665.0 315.0 L 75.0 315.0 Z" fill="url(#ocfoSafeGrad)"/>
+      <text x="180" y="285" fill="#34D399" font-size="11" font-weight="700" letter-spacing="0.05em" opacity="0.85">ZONE ADMISSIBLE (Sécurité assurée)</text>
 
       <!-- Courbe DC (Continu) -->
-      <path id="ocfoCurveDc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 89.0 L 286.8 125.0 L 322.4 161.0 L 350.0 179.0 L 372.6 197.0 L 408.2 218.6 L 435.8 233.0 L 521.6 251.0 L 571.8 258.2 L 635.0 261.8" fill="none" stroke="#EE8C00" stroke-width="3" stroke-dasharray="6 3" filter="url(#ocfoGlowDc)"/>
+      <path id="ocfoCurveDc" d="M 75.0 53.7 L 163.8 53.7 L 252.6 91.0 L 304.6 128.3 L 341.4 165.7 L 370.0 184.3 L 393.4 203.0 L 430.2 225.4 L 458.8 240.3 L 547.6 259.0 L 599.6 266.5 L 665.0 270.2" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="6 3" filter="url(#ocfoGlowDc)"/>
 
       <!-- Courbe AC (Alternatif 15-100 Hz) -->
-      <path id="ocfoCurveAc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 143.0 L 286.8 197.0 L 322.4 233.0 L 350.0 251.0 L 372.6 261.8 L 408.2 270.8 L 435.8 276.2 L 521.6 281.6 L 571.8 285.2 L 635.0 287.0" fill="none" stroke="#38BDF8" stroke-width="3.5" filter="url(#ocfoGlowAc)"/>
-
-      <!-- Réticule interactif dynamique -->
-      <line id="ocfoReticleLine" x1="236.6" y1="35" x2="236.6" y2="305" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.85"/>
-      <circle id="ocfoPointDc" cx="236.6" cy="89" r="6" fill="#EE8C00" stroke="#FFFFFF" stroke-width="2"/>
-      <circle id="ocfoPointAc" cx="236.6" cy="143" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
-
-      <text id="ocfoTagDc" x="248" y="85" fill="#EE8C00" font-size="11" font-weight="700">600 V DC</text>
-      <text id="ocfoTagAc" x="248" y="138" fill="#38BDF8" font-size="11" font-weight="700">450 V AC</text>
+      <path id="ocfoCurveAc" d="M 75.0 53.7 L 163.8 53.7 L 252.6 147.0 L 304.6 203.0 L 341.4 240.3 L 370.0 259.0 L 393.4 270.2 L 430.2 279.5 L 458.8 285.1 L 547.6 290.7 L 599.6 294.5 L 665.0 296.3" fill="none" stroke="#38BDF8" stroke-width="3.5" filter="url(#ocfoGlowAc)"/>
 
       <!-- Légende intégrée dans le graphique -->
-      <g transform="translate(420, 45)">
-        <rect x="0" y="0" width="205" height="52" rx="6" fill="#0B1220" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
-        <line x1="12" y1="18" x2="36" y2="18" stroke="#38BDF8" stroke-width="3"/>
-        <circle cx="24" cy="18" r="3" fill="#38BDF8"/>
-        <text x="44" y="22" fill="#E2E8F0" font-size="11" font-weight="600">Courant alternatif (AC)</text>
-        <line x1="12" y1="36" x2="36" y2="36" stroke="#EE8C00" stroke-width="2.5" stroke-dasharray="4 2"/>
-        <circle cx="24" cy="36" r="3" fill="#EE8C00"/>
-        <text x="44" y="40" fill="#E2E8F0" font-size="11" font-weight="600">Courant continu (DC)</text>
+      <g transform="translate(460, 42)">
+        <rect x="0" y="0" width="195" height="48" rx="6" fill="#070D18" fill-opacity="0.88" stroke="#334155" stroke-width="1"/>
+        <line x1="12" y1="17" x2="36" y2="17" stroke="#38BDF8" stroke-width="3"/>
+        <circle cx="24" cy="17" r="3" fill="#38BDF8"/>
+        <text x="44" y="21" fill="#E2E8F0" font-size="11" font-weight="600">Alternatif AC (15-100 Hz)</text>
+        <line x1="12" y1="34" x2="36" y2="34" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="4 2"/>
+        <circle cx="24" cy="34" r="3" fill="#F59E0B"/>
+        <text x="44" y="38" fill="#E2E8F0" font-size="11" font-weight="600">Continu DC (lisse)</text>
+      </g>
+
+      <!-- Réticule interactif dynamique -->
+      <line id="ocfoReticleLine" x1="252.6" y1="35" x2="252.6" y2="315" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.85"/>
+      <circle id="ocfoPointDc" cx="252.6" cy="91.0" r="6" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2"/>
+      <circle id="ocfoPointAc" cx="252.6" cy="147.0" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
+
+      <g id="ocfoBadgeDc" transform="translate(252.6, 91.0)">
+        <rect x="-40" y="-27" width="80" height="20" rx="4" fill="#070D18" stroke="#F59E0B" stroke-width="1.5"/>
+        <text id="ocfoBadgeDcText" x="0" y="-13" fill="#F59E0B" font-size="10.5" font-weight="800" text-anchor="middle">600 V DC</text>
+      </g>
+
+      <g id="ocfoBadgeAc" transform="translate(252.6, 147.0)">
+        <rect x="-40" y="-27" width="80" height="20" rx="4" fill="#070D18" stroke="#38BDF8" stroke-width="1.5"/>
+        <text id="ocfoBadgeAcText" x="0" y="-13" fill="#38BDF8" font-size="10.5" font-weight="800" text-anchor="middle">450 V AC</text>
       </g>
     </svg>
   </div>
@@ -1796,16 +1806,16 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
   <!-- Contrôle de durée : Slider et Présélections rapides -->
   <div class="ocfo-slider-wrapper">
     <div class="ocfo-slider-label">
-      <span>⏱️ Durée du défaut sélectionnée :</span>
-      <span id="ocfoSliderVal" style="color:var(--electric-blue); font-size:1.1rem; font-weight:800;">0.20 s</span>
+      <span>⏱️ Durée d'élimination du défaut (t) :</span>
+      <span id="ocfoSliderVal" class="ocfo-slider-badge">0.20 s</span>
     </div>
-    <input type="range" id="ocfoSliderDuration" class="ocfo-slider-input" min="0" max="100" value="30" step="0.5" aria-label="Régler la durée du défaut en secondes"/>
+    <input type="range" id="ocfoSliderDuration" class="ocfo-slider-input" min="0" max="100" value="30.1" step="0.2" aria-label="Régler la durée du défaut en secondes"/>
     
-    <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">Paliers réglementaires de l'Annexe 4 :</div>
+    <div class="ocfo-presets-header">Paliers réglementaires de l'Annexe 4 :</div>
     <div class="ocfo-presets-bar">
       <button type="button" class="ocfo-preset-btn" data-t="0.05">≤ 0,05 s</button>
       <button type="button" class="ocfo-preset-btn" data-t="0.10">0,10 s</button>
-      <button type="button" class="ocfo-preset-btn active" data-t="0.20">0,20 s</button>
+      <button type="button" class="ocfo-preset-btn active" data-t="0.20" aria-pressed="true">0,20 s</button>
       <button type="button" class="ocfo-preset-btn" data-t="0.40">0,40 s</button>
       <button type="button" class="ocfo-preset-btn" data-t="0.60">0,60 s</button>
       <button type="button" class="ocfo-preset-btn" data-t="1.00">1,00 s</button>
@@ -1817,17 +1827,17 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
   <!-- Carte d'Analyse et Physiologie Pédagogique -->
   <div class="ocfo-feedback-card">
     <div class="ocfo-metrics-grid">
-      <div class="ocfo-metric-box">
+      <div class="ocfo-metric-box" id="ocfoBoxTime">
         <div class="ocfo-metric-val" id="ocfoMetricTime" style="color:var(--text-primary);">0.20 s</div>
         <div class="ocfo-metric-lbl">Durée de coupure t</div>
       </div>
-      <div class="ocfo-metric-box">
+      <div class="ocfo-metric-box" id="ocfoBoxAc">
         <div class="ocfo-metric-val" id="ocfoMetricAc" style="color:var(--electric-blue);">450 V</div>
-        <div class="ocfo-metric-lbl">Max Alternatif AC</div>
+        <div class="ocfo-metric-lbl">Max Alternatif (AC)</div>
       </div>
-      <div class="ocfo-metric-box">
-        <div class="ocfo-metric-val" id="ocfoMetricDc" style="color:#EE8C00;">600 V</div>
-        <div class="ocfo-metric-lbl">Max Continu DC</div>
+      <div class="ocfo-metric-box" id="ocfoBoxDc">
+        <div class="ocfo-metric-val" id="ocfoMetricDc" style="color:#F59E0B;">600 V</div>
+        <div class="ocfo-metric-lbl">Max Continu (DC)</div>
       </div>
     </div>
 
@@ -1835,7 +1845,7 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
       <span>🛡️ Zone Admissible : Sécurité des personnes garantie si la coupure survient en ≤ 0.20 s (Art. 54 OCFo)</span>
     </div>
 
-    <div class="ocfo-explanation-text" id="ocfoExplanationText">
+    <div class="ocfo-explanation-box" id="ocfoExplanationText">
       Déclencheur rapide de ligne ou différentiel haute sensibilité. La tension de contact admissible chute à 450 V AC (600 V DC), seuil physiologique sans fibrillation cardiaque (Annexe 4 OCFo).
     </div>
   </div>
@@ -1843,9 +1853,11 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
   <!-- Légende et Source Officielle -->
   <div class="ocfo-caption-box">
     <div><strong>Figure A.3</strong> — Graphique interactif : Courbe de sécurité temps-tension admissible selon l'Annexe 4 OCFo (RS 734.2)</div>
-    <div>Illustration originale — ELECBOOK (Source : Annexe 4 OCFo)</div>
+    <div>Illustration originale — ELECBOOK (Source réglementaire : Annexe 4 OCFo)</div>
   </div>
 </div>
+
+<div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin:1.5rem 0 0.5rem;">📋 Tableau de référence des seuils réglementaires (Annexe 4 OCFo) :</div>
 <div style="overflow-x:auto; margin:0.75rem 0 1rem;">
 <table class="thresholds-table">
 <thead>
@@ -3791,7 +3803,7 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
   // 4. Graphique interactif : Courbe temps-tension Annexe 4 OCFo (RS 734.2)
   // ----------------------------------------------------------------------------
   function initOcfoAnnexe4Visual(root) {
-    const widget = root ? root.querySelector('#ocfoAnnexe4Widget') : document.getElementById('ocfoAnnexe4Widget');
+    const widget = root ? (root.querySelector ? root.querySelector('#ocfoAnnexe4Widget') : null) : document.getElementById('ocfoAnnexe4Widget');
     if (!widget) return;
     if (widget.dataset.initialized === 'true') return;
     widget.dataset.initialized = 'true';
@@ -3811,9 +3823,9 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
       { t: 5.00, ac: 50, dc: 120, desc: "Régime permanent (défaut non éliminé ≥ 5 s). L'Art. 54 al. 1 OCFo impose une tension de contact permanente strictement ≤ 50 V AC et ≤ 120 V DC." }
     ];
 
-    const plotW = 570;
-    const plotH = 270;
-    const x0 = 65;
+    const plotW = 590;
+    const plotH = 280;
+    const x0 = 75;
     const y0 = 35;
     const uMax = 750;
     const logMin = Math.log10(0.05);
@@ -3855,18 +3867,23 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
       return { ac: 50, dc: 120, desc: ocfoData[ocfoData.length - 1].desc };
     }
 
+    // Elements
     const slider = widget.querySelector('#ocfoSliderDuration');
     const sliderVal = widget.querySelector('#ocfoSliderVal');
     const metricTime = widget.querySelector('#ocfoMetricTime');
     const metricAc = widget.querySelector('#ocfoMetricAc');
     const metricDc = widget.querySelector('#ocfoMetricDc');
+    const boxAc = widget.querySelector('#ocfoBoxAc');
+    const boxDc = widget.querySelector('#ocfoBoxDc');
     const statusPill = widget.querySelector('#ocfoStatusPill');
     const explanation = widget.querySelector('#ocfoExplanationText');
     const reticleLine = widget.querySelector('#ocfoReticleLine');
     const pointAc = widget.querySelector('#ocfoPointAc');
     const pointDc = widget.querySelector('#ocfoPointDc');
-    const tagAc = widget.querySelector('#ocfoTagAc');
-    const tagDc = widget.querySelector('#ocfoTagDc');
+    const badgeAc = widget.querySelector('#ocfoBadgeAc');
+    const badgeDc = widget.querySelector('#ocfoBadgeDc');
+    const badgeAcText = widget.querySelector('#ocfoBadgeAcText');
+    const badgeDcText = widget.querySelector('#ocfoBadgeDcText');
     const svgPlot = widget.querySelector('#ocfoSvgPlot');
     const presetBtns = widget.querySelectorAll('.ocfo-preset-btn');
     const modeBtns = widget.querySelectorAll('.ocfo-mode-btn');
@@ -3875,6 +3892,40 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
     const areaAc = widget.querySelector('#ocfoAreaAc');
 
     let currentMode = 'all';
+
+    function applyModeVisibility() {
+      if (currentMode === 'all') {
+        if (curveAc) curveAc.style.display = '';
+        if (curveDc) curveDc.style.display = '';
+        if (areaAc) areaAc.style.display = '';
+        if (pointAc) pointAc.style.display = '';
+        if (pointDc) pointDc.style.display = '';
+        if (badgeAc) badgeAc.style.display = '';
+        if (badgeDc) badgeDc.style.display = '';
+        if (boxAc) boxAc.style.opacity = '1';
+        if (boxDc) boxDc.style.opacity = '1';
+      } else if (currentMode === 'ac') {
+        if (curveAc) curveAc.style.display = '';
+        if (curveDc) curveDc.style.display = 'none';
+        if (areaAc) areaAc.style.display = '';
+        if (pointAc) pointAc.style.display = '';
+        if (pointDc) pointDc.style.display = 'none';
+        if (badgeAc) badgeAc.style.display = '';
+        if (badgeDc) badgeDc.style.display = 'none';
+        if (boxAc) boxAc.style.opacity = '1';
+        if (boxDc) boxDc.style.opacity = '0.35';
+      } else if (currentMode === 'dc') {
+        if (curveAc) curveAc.style.display = 'none';
+        if (curveDc) curveDc.style.display = '';
+        if (areaAc) areaAc.style.display = 'none';
+        if (pointAc) pointAc.style.display = 'none';
+        if (pointDc) pointDc.style.display = '';
+        if (badgeAc) badgeAc.style.display = 'none';
+        if (badgeDc) badgeDc.style.display = '';
+        if (boxAc) boxAc.style.opacity = '0.35';
+        if (boxDc) boxDc.style.opacity = '1';
+      }
+    }
 
     function updateView(t, activePreset = null) {
       const vals = interpValues(t);
@@ -3910,23 +3961,32 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
         pointDc.setAttribute('cx', xPos);
         pointDc.setAttribute('cy', yDc);
       }
-      if (tagAc) {
-        tagAc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
-        tagAc.setAttribute('y', Math.max(50, yAc - 8));
-        tagAc.textContent = `${vals.ac} V AC`;
+
+      // Badges SVG avec tooltip fond contrasté
+      if (badgeAc) {
+        badgeAc.setAttribute('transform', `translate(${xPos}, ${yAc})`);
       }
-      if (tagDc) {
-        tagDc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
-        tagDc.setAttribute('y', Math.max(40, yDc - 8));
-        tagDc.textContent = `${vals.dc} V DC`;
+      if (badgeAcText) {
+        badgeAcText.textContent = `${vals.ac} V AC`;
       }
+
+      if (badgeDc) {
+        badgeDc.setAttribute('transform', `translate(${xPos}, ${yDc})`);
+      }
+      if (badgeDcText) {
+        badgeDcText.textContent = `${vals.dc} V DC`;
+      }
+
+      applyModeVisibility();
 
       presetBtns.forEach(btn => {
         const btnT = parseFloat(btn.dataset.t);
         if (activePreset !== null && Math.abs(btnT - t) < 0.02) {
           btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
         } else {
           btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
         }
       });
     }
@@ -3948,54 +4008,55 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
 
     modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        modeBtns.forEach(b => b.classList.remove('active'));
+        modeBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         currentMode = btn.dataset.mode;
-
-        if (currentMode === 'all') {
-          if (curveAc) curveAc.style.display = '';
-          if (curveDc) curveDc.style.display = '';
-          if (areaAc) areaAc.style.display = '';
-          if (pointAc) pointAc.style.display = '';
-          if (pointDc) pointDc.style.display = '';
-          if (tagAc) tagAc.style.display = '';
-          if (tagDc) tagDc.style.display = '';
-        } else if (currentMode === 'ac') {
-          if (curveAc) curveAc.style.display = '';
-          if (curveDc) curveDc.style.display = 'none';
-          if (areaAc) areaAc.style.display = '';
-          if (pointAc) pointAc.style.display = '';
-          if (pointDc) pointDc.style.display = 'none';
-          if (tagAc) tagAc.style.display = '';
-          if (tagDc) tagDc.style.display = 'none';
-        } else if (currentMode === 'dc') {
-          if (curveAc) curveAc.style.display = 'none';
-          if (curveDc) curveDc.style.display = '';
-          if (areaAc) areaAc.style.display = 'none';
-          if (pointAc) pointAc.style.display = 'none';
-          if (pointDc) pointDc.style.display = '';
-          if (tagAc) tagAc.style.display = 'none';
-          if (tagDc) tagDc.style.display = '';
-        }
+        applyModeVisibility();
       });
     });
 
     if (svgPlot) {
-      const handleSvgClick = (evt) => {
+      let isInteracting = false;
+      const handleCoord = (clientX) => {
         const rect = svgPlot.getBoundingClientRect();
-        const clientX = evt.clientX || (evt.touches && evt.touches[0] ? evt.touches[0].clientX : 0);
-        if (!clientX) return;
-        const svgX = ((clientX - rect.left) / rect.width) * 680;
+        const svgX = ((clientX - rect.left) / rect.width) * 710;
         if (svgX >= x0 && svgX <= x0 + plotW) {
           const t = xToT(svgX);
           updateView(t, null);
         }
       };
-      svgPlot.addEventListener('click', handleSvgClick);
-      svgPlot.addEventListener('touchmove', handleSvgClick, { passive: true });
+
+      svgPlot.addEventListener('pointerdown', (evt) => {
+        isInteracting = true;
+        svgPlot.setPointerCapture(evt.pointerId);
+        handleCoord(evt.clientX);
+      });
+
+      svgPlot.addEventListener('pointermove', (evt) => {
+        if (!isInteracting) return;
+        handleCoord(evt.clientX);
+      });
+
+      const stopInteracting = (evt) => {
+        if (!isInteracting) return;
+        isInteracting = false;
+        try { svgPlot.releasePointerCapture(evt.pointerId); } catch (e) {}
+      };
+
+      svgPlot.addEventListener('pointerup', stopInteracting);
+      svgPlot.addEventListener('pointercancel', stopInteracting);
+      svgPlot.addEventListener('pointerleave', stopInteracting);
     }
 
     updateView(0.2, 0.2);
+  }
+
+  if (typeof window !== 'undefined') {
+    window.initOcfoAnnexe4Visual = initOcfoAnnexe4Visual;
   }
 
 
@@ -5044,6 +5105,12 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
       }
     }
 
+    // Initialisation du visuel interactif OCFo Annexe 4
+    initOcfoAnnexe4Visual(container);
+    setTimeout(() => {
+      initOcfoAnnexe4Visual(container);
+    }, 10);
+
     // Insertion du quiz
     if (isAvailable && formation.quiz) {
       const quizSlot = container.querySelector('#quizSlot');
@@ -5510,6 +5577,9 @@ Les chantiers temporaires et installations provisoires (foires, chantiers, secou
         const moduleId = segments[1].toUpperCase();
         const formationId = segments[2];
         renderLessonView(pageContainer, moduleId, formationId);
+        setTimeout(() => {
+          initOcfoAnnexe4Visual(pageContainer);
+        }, 50);
         return;
       }
 

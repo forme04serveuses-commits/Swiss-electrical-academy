@@ -380,7 +380,7 @@ export function createNibtWidget() {
 // 4. Graphique interactif : Courbe temps-tension Annexe 4 OCFo (RS 734.2)
 // ----------------------------------------------------------------------------
 export function initOcfoAnnexe4Visual(root) {
-  const widget = root ? root.querySelector('#ocfoAnnexe4Widget') : document.getElementById('ocfoAnnexe4Widget');
+  const widget = root ? (root.querySelector ? root.querySelector('#ocfoAnnexe4Widget') : null) : document.getElementById('ocfoAnnexe4Widget');
   if (!widget) return;
   if (widget.dataset.initialized === 'true') return;
   widget.dataset.initialized = 'true';
@@ -400,9 +400,9 @@ export function initOcfoAnnexe4Visual(root) {
     { t: 5.00, ac: 50, dc: 120, desc: "Régime permanent (défaut non éliminé ≥ 5 s). L'Art. 54 al. 1 OCFo impose une tension de contact permanente strictement ≤ 50 V AC et ≤ 120 V DC." }
   ];
 
-  const plotW = 570;
-  const plotH = 270;
-  const x0 = 65;
+  const plotW = 590;
+  const plotH = 280;
+  const x0 = 75;
   const y0 = 35;
   const uMax = 750;
   const logMin = Math.log10(0.05);
@@ -450,13 +450,17 @@ export function initOcfoAnnexe4Visual(root) {
   const metricTime = widget.querySelector('#ocfoMetricTime');
   const metricAc = widget.querySelector('#ocfoMetricAc');
   const metricDc = widget.querySelector('#ocfoMetricDc');
+  const boxAc = widget.querySelector('#ocfoBoxAc');
+  const boxDc = widget.querySelector('#ocfoBoxDc');
   const statusPill = widget.querySelector('#ocfoStatusPill');
   const explanation = widget.querySelector('#ocfoExplanationText');
   const reticleLine = widget.querySelector('#ocfoReticleLine');
   const pointAc = widget.querySelector('#ocfoPointAc');
   const pointDc = widget.querySelector('#ocfoPointDc');
-  const tagAc = widget.querySelector('#ocfoTagAc');
-  const tagDc = widget.querySelector('#ocfoTagDc');
+  const badgeAc = widget.querySelector('#ocfoBadgeAc');
+  const badgeDc = widget.querySelector('#ocfoBadgeDc');
+  const badgeAcText = widget.querySelector('#ocfoBadgeAcText');
+  const badgeDcText = widget.querySelector('#ocfoBadgeDcText');
   const svgPlot = widget.querySelector('#ocfoSvgPlot');
   const presetBtns = widget.querySelectorAll('.ocfo-preset-btn');
   const modeBtns = widget.querySelectorAll('.ocfo-mode-btn');
@@ -465,6 +469,40 @@ export function initOcfoAnnexe4Visual(root) {
   const areaAc = widget.querySelector('#ocfoAreaAc');
 
   let currentMode = 'all';
+
+  function applyModeVisibility() {
+    if (currentMode === 'all') {
+      if (curveAc) curveAc.style.display = '';
+      if (curveDc) curveDc.style.display = '';
+      if (areaAc) areaAc.style.display = '';
+      if (pointAc) pointAc.style.display = '';
+      if (pointDc) pointDc.style.display = '';
+      if (badgeAc) badgeAc.style.display = '';
+      if (badgeDc) badgeDc.style.display = '';
+      if (boxAc) boxAc.style.opacity = '1';
+      if (boxDc) boxDc.style.opacity = '1';
+    } else if (currentMode === 'ac') {
+      if (curveAc) curveAc.style.display = '';
+      if (curveDc) curveDc.style.display = 'none';
+      if (areaAc) areaAc.style.display = '';
+      if (pointAc) pointAc.style.display = '';
+      if (pointDc) pointDc.style.display = 'none';
+      if (badgeAc) badgeAc.style.display = '';
+      if (badgeDc) badgeDc.style.display = 'none';
+      if (boxAc) boxAc.style.opacity = '1';
+      if (boxDc) boxDc.style.opacity = '0.35';
+    } else if (currentMode === 'dc') {
+      if (curveAc) curveAc.style.display = 'none';
+      if (curveDc) curveDc.style.display = '';
+      if (areaAc) areaAc.style.display = 'none';
+      if (pointAc) pointAc.style.display = 'none';
+      if (pointDc) pointDc.style.display = '';
+      if (badgeAc) badgeAc.style.display = 'none';
+      if (badgeDc) badgeDc.style.display = '';
+      if (boxAc) boxAc.style.opacity = '0.35';
+      if (boxDc) boxDc.style.opacity = '1';
+    }
+  }
 
   function updateView(t, activePreset = null) {
     const vals = interpValues(t);
@@ -500,23 +538,32 @@ export function initOcfoAnnexe4Visual(root) {
       pointDc.setAttribute('cx', xPos);
       pointDc.setAttribute('cy', yDc);
     }
-    if (tagAc) {
-      tagAc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
-      tagAc.setAttribute('y', Math.max(50, yAc - 8));
-      tagAc.textContent = `${vals.ac} V AC`;
+
+    // Badges SVG avec tooltip fond contrasté
+    if (badgeAc) {
+      badgeAc.setAttribute('transform', `translate(${xPos}, ${yAc})`);
     }
-    if (tagDc) {
-      tagDc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
-      tagDc.setAttribute('y', Math.max(40, yDc - 8));
-      tagDc.textContent = `${vals.dc} V DC`;
+    if (badgeAcText) {
+      badgeAcText.textContent = `${vals.ac} V AC`;
     }
+
+    if (badgeDc) {
+      badgeDc.setAttribute('transform', `translate(${xPos}, ${yDc})`);
+    }
+    if (badgeDcText) {
+      badgeDcText.textContent = `${vals.dc} V DC`;
+    }
+
+    applyModeVisibility();
 
     presetBtns.forEach(btn => {
       const btnT = parseFloat(btn.dataset.t);
       if (activePreset !== null && Math.abs(btnT - t) < 0.02) {
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
       } else {
         btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
       }
     });
   }
@@ -538,52 +585,53 @@ export function initOcfoAnnexe4Visual(root) {
 
   modeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      modeBtns.forEach(b => b.classList.remove('active'));
+      modeBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       currentMode = btn.dataset.mode;
-
-      if (currentMode === 'all') {
-        if (curveAc) curveAc.style.display = '';
-        if (curveDc) curveDc.style.display = '';
-        if (areaAc) areaAc.style.display = '';
-        if (pointAc) pointAc.style.display = '';
-        if (pointDc) pointDc.style.display = '';
-        if (tagAc) tagAc.style.display = '';
-        if (tagDc) tagDc.style.display = '';
-      } else if (currentMode === 'ac') {
-        if (curveAc) curveAc.style.display = '';
-        if (curveDc) curveDc.style.display = 'none';
-        if (areaAc) areaAc.style.display = '';
-        if (pointAc) pointAc.style.display = '';
-        if (pointDc) pointDc.style.display = 'none';
-        if (tagAc) tagAc.style.display = '';
-        if (tagDc) tagDc.style.display = 'none';
-      } else if (currentMode === 'dc') {
-        if (curveAc) curveAc.style.display = 'none';
-        if (curveDc) curveDc.style.display = '';
-        if (areaAc) areaAc.style.display = 'none';
-        if (pointAc) pointAc.style.display = 'none';
-        if (pointDc) pointDc.style.display = '';
-        if (tagAc) tagAc.style.display = 'none';
-        if (tagDc) tagDc.style.display = '';
-      }
+      applyModeVisibility();
     });
   });
 
   if (svgPlot) {
-    const handleSvgClick = (evt) => {
+    let isInteracting = false;
+    const handleCoord = (clientX) => {
       const rect = svgPlot.getBoundingClientRect();
-      const clientX = evt.clientX || (evt.touches && evt.touches[0] ? evt.touches[0].clientX : 0);
-      if (!clientX) return;
-      const svgX = ((clientX - rect.left) / rect.width) * 680;
+      const svgX = ((clientX - rect.left) / rect.width) * 710;
       if (svgX >= x0 && svgX <= x0 + plotW) {
         const t = xToT(svgX);
         updateView(t, null);
       }
     };
-    svgPlot.addEventListener('click', handleSvgClick);
-    svgPlot.addEventListener('touchmove', handleSvgClick, { passive: true });
+
+    svgPlot.addEventListener('pointerdown', (evt) => {
+      isInteracting = true;
+      svgPlot.setPointerCapture(evt.pointerId);
+      handleCoord(evt.clientX);
+    });
+
+    svgPlot.addEventListener('pointermove', (evt) => {
+      if (!isInteracting) return;
+      handleCoord(evt.clientX);
+    });
+
+    const stopInteracting = (evt) => {
+      if (!isInteracting) return;
+      isInteracting = false;
+      try { svgPlot.releasePointerCapture(evt.pointerId); } catch (e) {}
+    };
+
+    svgPlot.addEventListener('pointerup', stopInteracting);
+    svgPlot.addEventListener('pointercancel', stopInteracting);
+    svgPlot.addEventListener('pointerleave', stopInteracting);
   }
 
   updateView(0.2, 0.2);
+}
+
+if (typeof window !== 'undefined') {
+  window.initOcfoAnnexe4Visual = initOcfoAnnexe4Visual;
 }
