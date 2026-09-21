@@ -95,7 +95,7 @@
       id: "A",
       code: "A",
       title: "Dispositions légales",
-      countLabel: "9 formations",
+      countLabel: "13 formations",
       description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
       badgeTheme: "legal",
       formations: [
@@ -1052,25 +1052,964 @@ La poursuite et le jugement des infractions pénales de la LIE s'effectuent selo
             }
           ]
         },
-        {
-          id: "rs-734-2-ocfo",
-          routeId: "rs-734-2-ocfo",
-          code: "RS 734.2 - OCFo",
-          title: "RS 734.2 — Ordonnance sur le courant fort",
-          subtitle: "Ordonnance du Conseil fédéral sur les installations électriques à courant fort",
-          status: "En développement",
-          duration: "À venir",
-          tag: "Ordonnance",
-          xpReward: 0,
-          objective: "Comprendre les exigences de sécurité relatives à la construction, l'exploitation et la maintenance des installations à courant fort.",
-          introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
-          contentSections: [
-            {
-              title: "🔒 Contenu en préparation",
-              text: "La fiche technique relative à la RS 734.2 (OCFo) est en cours de rédaction."
-            }
-          ]
-        },
+        // ----------------------------------------------------------------------
+      // OCFo — Leçon 1 : Champ d'application, Définitions, Sécurité & Entretien (Art. 1 à 19)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-2-ocfo",
+        routeId: "rs-734-2-ocfo",
+        moduleId: "A",
+        code: "RS 734.2 - OCFo",
+        title: "Art. 1-19 — Champ d'application, définitions, sécurité & entretien",
+        subtitle: "Rétroactivité, 32 définitions clés, qualification des personnes et contrôle périodique (5 ans)",
+        status: "Disponible",
+        duration: "8 min",
+        tag: "Ordonnance",
+        xpReward: 30,
+        objective: "Maîtriser le champ d'application de l'OCFo et les conditions de rétroactivité aux installations existantes (Art. 1 al. 2), assimiler les définitions techniques clés suisses (BT ≤ 1000 V AC / 1500 V DC vs HT, personnes compétentes vs instruites Art. 3 & 11), respecter l'obligation d'annonce immédiate des accidents (Art. 16) et appliquer le devoir d'entretien et de contrôle périodique sous 5 ans maximum (Art. 17-19).",
+        introduction: `Édictée par le Conseil fédéral le 30 mars 1994 (État le 1er juin 2019), l'<strong>Ordonnance sur les installations électriques à courant fort (OCFo — RS 734.2)</strong> fixe les exigences de sécurité applicables à l'établissement, à l'exploitation et à l'entretien de toutes les installations à courant fort en Suisse. Elle pose les définitions techniques de base, le régime des compétences humaines et l'obligation de contrôle périodique.`,
+        contentSections: [
+          {
+            title: "1. Champ d'application et régime des installations existantes (Art. 1 & 2)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 1 al. 1 OCFo</strong> dispose que l'ordonnance s'applique à l'établissement, à l'exploitation et à l'entretien de l'ensemble des installations électriques à courant fort en Suisse (hors installations ferroviaires relevant de l'art. 42 al. 1 de l'ordonnance sur les chemins de fer).
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les dispositions relatives à l'établissement s'appliquent également aux <strong>installations existantes</strong> dans trois cas légaux précis (Art. 1 al. 2) :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>a. En cas de transformation complète</strong> de l'installation ;</li>
+<li><strong>b. En cas de modification importante</strong>, à condition que leur application n'exige pas un effort disproportionné et n'affecte pas notablement la sécurité ;</li>
+<li><strong>c. En cas de danger imminent</strong> pour l'homme ou l'environnement, ou si lesdites installations perturbent notablement d'autres installations électriques.</li>
+</ul>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+⚖️ <strong>Dérogations (Art. 1 al. 4) :</strong> En cas de sérieuses difficultés ou d'entrave au développement technique / protection de l'environnement, des dérogations motivées peuvent être accordées par le <strong>DETEC</strong> ou, dans les cas de moindre importance, par l'organe de contrôle compétent (<strong>ESTI</strong>, selon l'art. 21 LIE).
+</div>`
+          },
+          {
+            title: "2. Définitions réglementaires essentielles (Art. 3 OCFo)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'Art. 3 OCFo établit 32 définitions normatives incontournables. Les distinctions fondamentales de tension et d'appareillage comprennent :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:170px;">Terme officiel</th>
+<th>Définition selon l'Art. 3 OCFo</th>
+<th>Seuil ou Critère réglementaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installation à basse tension</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 10)</span></td>
+<td>Installation électrique ayant une tension nominale maximale ne dépassant pas les seuils fixés.</td>
+<td><strong>≤ 1000 V AC</strong> (courant alternatif)<br/><strong>≤ 1500 V DC</strong> (courant continu)</td>
+</tr>
+<tr>
+<td><strong>Installation à haute tension</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 13)</span></td>
+<td>Installation électrique dont la tension nominale est supérieure aux limites de la basse tension.</td>
+<td><strong>> 1000 V AC</strong> ou <strong>> 1500 V DC</strong></td>
+</tr>
+<tr>
+<td><strong>Installation blindée</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 14)</span></td>
+<td>Installation dans laquelle les parties qui, en service, sont sous tension sont entourées d'une <strong>enveloppe métallique mise à la terre</strong>.</td>
+<td>Enveloppe conductrice continue reliée à la terre</td>
+</tr>
+<tr>
+<td><strong>Sectionneur de terre</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 23)</span></td>
+<td>Dispositif de mise à la terre résistant aux courts-circuits, monté à demeure dans une installation, permettant la mise à la terre <strong>uniquement lorsque l'installation est hors tension</strong>.</td>
+<td>Interverrouillage obligatoire (manœuvre hors tension seule)</td>
+</tr>
+<tr>
+<td><strong>Court-circuiteur rapide de terre</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 6)</span></td>
+<td>Dispositif incorporé à une installation de couplage, résistant sans dommage au courant de court-circuit, <strong>également en cas de fermeture accidentelle sous tension</strong>.</td>
+<td>Pouvoir de fermeture sur court-circuit garanti</td>
+</tr>
+<tr>
+<td><strong>Zone d'exploitation</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 3 ch. 32)</span></td>
+<td>Zone présentant un danger accru dans l'installation électrique.</td>
+<td>Accès strictement restreint et balisé</td>
+</tr>
+</tbody>
+</table>
+</div>`
+          },
+          {
+            title: "3. Qualification du personnel et mesures de sécurité (Art. 4 à 13)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les installations doivent être conformes aux règles techniques reconnues (<strong>normes internationales CEI et européennes CENELEC</strong>, à défaut normes suisses SNV — Art. 4).
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'accès et les interventions reposent sur une hiérarchie stricte des qualifications (Art. 11 & 12) :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.7; color:var(--text-secondary);">
+<li><strong>Personne compétente (Art. 3 ch. 19 & Art. 11 al. 1) :</strong> Possède une formation électrotechnique de base (apprentissage, formation d'entreprise équivalente ou études) et de l'expérience. <em>Seules les personnes compétentes peuvent surveiller les travaux et prendre les mesures de sécurité.</em></li>
+<li><strong>Personne instruite (Art. 3 ch. 20 & Art. 11 al. 2) :</strong> N'a pas de formation de base mais a reçu une instruction spécifique pour des activités limitées et bien définies sur un site donné. Peut contrôler/commander et exécuter des travaux spéciaux.</li>
+<li><strong>Personnes étrangères au service (Art. 11 al. 3) :</strong> Leur liberté de mouvement est strictement confinée à leur lieu d'activité et à son couloir d'accès.</li>
+<li><strong>Visiteurs (Art. 13) :</strong> Doivent obligatoirement être accompagnés de personnes compétentes ou autorisées ; admission par <em>petits groupes</em> uniquement en présence de pièces sous tension.</li>
+</ul>
+</div>
+<p style="font-size:0.92rem; line-height:1.6;">
+L'exploitant doit instaurer un système de sécurité et répéter périodiquement l'instruction (Art. 12) portant sur les risques d'approche, les premiers secours, les voies de fuite et téléphones de secours, ainsi que le comportement incendie (normes <strong>AEAI</strong> — Art. 6). Les accès doivent obligatoirement être pourvus de <strong>signaux de danger indélébiles</strong> (Art. 8).
+</p>`
+          },
+          {
+            title: "4. Accidents, premiers secours et communication obligatoire (Art. 14 à 16)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'exploitant doit disposer d'une organisation de secours et instruire un nombre suffisant de personnes aux premiers secours (Art. 14-15).
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem; font-weight:700; color:var(--accent-red);">
+<span>🚨 Annonce obligatoire et préservation des lieux (Art. 16 OCFo)</span>
+</div>
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Annonce sans retard :</strong> Tout accident corporel dû à l'électricité ou tout dommage important doit être annoncé immédiatement à l'organe de contrôle compétent (ESTI).</li>
+<li><strong>Accident grave :</strong> Doit en outre être annoncé sans retard au <strong>service cantonal compétent</strong>.</li>
+<li><strong>Interdiction formelle de modification :</strong> « À moins qu'il s'agisse d'éviter un autre accident ou un autre sinistre ou que le maintien de l'exploitation l'exige, <strong>rien, en cas d'accident grave, ne doit être changé sur place</strong> avant que l'organe de contrôle ait établi les causes de l'accident » (Art. 16 al. 2).</li>
+</ul>
+</div>`
+          },
+          {
+            title: "5. Devoir de contrôle périodique et rapports (Art. 17 à 19)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'exploitant a l'obligation légale d'assurer en permanence l'entretien, le nettoyage et le contrôle périodique de ses installations à courant fort (Art. 17).
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:180px;">Obligation réglementaire</th>
+<th>Exigence légale OCFo</th>
+<th>Détails d'application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Périodicité maximale des contrôles</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 18 al. 2)</span></td>
+<td><strong>Ne doit pas excéder 5 ans</strong></td>
+<td>L'exploitant fixe la périodicité selon les conditions extérieures, le type d'installation et la sollicitation. Une période plus longue requiert l'accord exceptionnel de l'organe de contrôle.</td>
+</tr>
+<tr>
+<td><strong>Contenu du rapport de contrôle</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 19 al. 1)</span></td>
+<td>Rapport écrit officiel</td>
+<td>Consigne l'appréciation de l'état des installations, le réglage des protections, les schémas à jour, les mesures correctives, délais et date d'exécution effective.</td>
+</tr>
+<tr>
+<td><strong>Durée de conservation</strong><br/><span style="font-size:0.78rem; color:var(--text-muted);">(Art. 19 al. 2)</span></td>
+<td><strong>Au moins 2 périodes de contrôle</strong></td>
+<td>Les rapports doivent être conservés pendant au moins deux périodes complètes (soit 10 ans en règle générale) et présentés à l'organe de contrôle sur demande.</td>
+</tr>
+</tbody>
+</table>
+</div>`
+          }
+        ],
+        practicalExample: "Dans une fabrique de machines raccordée en 16 kV, l'exploitant planifie la maintenance de la cellule haute tension. Les opérations de manœuvre et la surveillance sont confiées à un électricien de réseau qualifié (personne compétente au sens de l'Art. 3 ch. 19). Le dernier contrôle complet datant de 4 ans et demi, l'exploitant mandate un organe de contrôle accrédité avant l'échéance légale maximale des 5 ans (Art. 18 al. 2) et archive le rapport écrit avec le précédent dans son registre de sécurité pour couvrir les 2 périodes réglementaires requises (Art. 19 al. 2).",
+        importantPoint: "En cas d'accident électrique corporel grave, rien ne doit être touché ou modifié sur le lieu du sinistre avant le constat officiel de l'organe de contrôle (Art. 16 al. 2). La périodicité des contrôles de toute installation à courant fort ne peut jamais excéder 5 ans sans autorisation expresse de l'ESTI (Art. 18 al. 2).",
+        synthesis: "L'OCFo (RS 734.2) encadre le courant fort suisse : seuil BT ≤ 1000 V AC / 1500 V DC, haute tension au-delà. Les travaux sont encadrés par des personnes compétentes ou instruites, les accidents corporels graves sont à déclarer sans délai avec gel du site, et les contrôles périodiques doivent obligatoirement intervenir tous les 5 ans au plus, avec archivage sur deux cycles de contrôle.",
+        quiz: [
+          {
+            id: "q_ocfo1_1",
+            type: "single",
+            question: "Selon l'Art. 3 ch. 10 et 13 de l'OCFo, quelle est la limite de tension nominale en courant alternatif (AC) séparant la basse tension de la haute tension ?",
+            options: [
+              "1000 volts AC (BT ≤ 1000 V, HT > 1000 V)",
+              "500 volts AC",
+              "230 volts AC",
+              "1500 volts AC"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 3 ch. 10 et 13 OCFo définit la basse tension jusqu'à 1000 V AC (et 1500 V DC) et la haute tension au-delà de 1000 V AC (et 1500 V DC)."
+          },
+          {
+            id: "q_ocfo1_2",
+            type: "single",
+            question: "En vertu de l'Art. 1 al. 2 de l'OCFo, dans quel cas les règles d'établissement s'appliquent-elles obligatoirement à une installation existante ?",
+            options: [
+              "En cas de transformation complète ou de danger imminent",
+              "Uniquement lors du changement de propriétaire",
+              "Tous les 20 ans de manière automatique sans travaux",
+              "Uniquement sur demande écrite de la commune"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 1 al. 2 OCFo impose l'application des règles d'établissement aux installations existantes en cas de transformation complète, de modification importante, ou si l'installation présente un danger imminent pour l'homme ou l'environnement."
+          },
+          {
+            id: "q_ocfo1_3",
+            type: "single",
+            question: "Quelle est la périodicité maximale légale des contrôles d'une installation à courant fort fixée par l'Art. 18 al. 2 OCFo ?",
+            options: [
+              "La périodicité ne doit pas excéder cinq ans",
+              "Dix ans pour toutes les installations",
+              "Un an renouvelable",
+              "Quinze ans pour les installations industrielles"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon l'Art. 18 al. 2 OCFo, la périodicité des contrôles fixée par l'exploitant ne doit pas excéder cinq ans, sauf dérogation exceptionnelle autorisée par l'organe de contrôle."
+          },
+          {
+            id: "q_ocfo1_4",
+            type: "single",
+            question: "Pendant combien de temps l'exploitant doit-il conserver les rapports de contrôle selon l'Art. 19 al. 2 OCFo ?",
+            options: [
+              "Pendant au moins deux périodes de contrôle",
+              "Pendant six mois après le contrôle",
+              "Pendant un an uniquement",
+              "Jusqu'à la fin de l'année civile en cours"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 19 al. 2 OCFo exige que les rapports de contrôle soient conservés pendant au moins deux périodes de contrôle (soit 10 ans dans le cas général) et présentés sur demande à l'organe de contrôle."
+          }
+        ]
+      },
+      // ----------------------------------------------------------------------
+      // OCFo — Leçon 2 : Installations de production/distribution, locaux & GIS (Art. 20 à 40)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-2-ocfo-art20-40",
+        routeId: "rs-734-2-ocfo-art20-40",
+        moduleId: "A",
+        code: "RS 734.2 - OCFo",
+        title: "Art. 20-40 — Installations de distribution, locaux & GIS",
+        subtitle: "Subdivision, voies de fuite, dimensions minimales en locaux (Annexes 1 & 2) et cellules SF6",
+        status: "Disponible",
+        duration: "9 min",
+        tag: "Ordonnance",
+        xpReward: 30,
+        objective: "Concevoir et exploiter les installations en locaux selon les règles de subdivision (Art. 21-22), appliquer les exigences de sécurité pour les couloirs et issues de secours (Art. 27 & 35, couloirs > 20 m à 2 issues), respecter scrupuleusement les dimensions et distances minimales en locaux des Annexes 1 et 2 (+14% par 1000 m d'altitude), et maîtriser la sécurité des installations blindées isolées au gaz SF6 (Art. 40).",
+        introduction: `Le Chapitre 3 (Sections 1 à 3) et les Annexes 1 et 2 de l'OCFo définissent les règles architecturales et constructives des installations de production et de distribution en locaux fermés, ainsi que la technologie des postes blindés isolés au gaz SF6 (GIS). L'accessibilité permanente et le gabarit des voies de fuite constituent la priorité absolue.`,
+        contentSections: [
+          {
+            title: "1. Subdivision du réseau et dispositifs sectionneurs (Art. 21 à 25)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les réseaux électriques doivent obligatoirement être subdivisés en <strong>secteurs bien définis</strong> au moyen de sectionneurs manœuvrables sous tension afin de pouvoir mettre ces secteurs complètement hors tension (Art. 21 al. 1).
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Interdiction des retours de tension :</strong> L'exploitant doit s'assurer que les réalimentations ou retours de tension ne soient pas possibles dans les parties mises hors tension (Art. 21 al. 2).</li>
+<li><strong>Dispositifs sectionneurs HT :</strong> Dimensionnés de façon qu'aucune décharge disruptive ne se produise entre contacts ouverts, même en cas de surtension (Art. 22 al. 1).</li>
+<li><strong>Indicateurs mécaniques sûrs :</strong> Si la distance de sectionnement n'est pas directement visible, les interrupteurs/sectionneurs doivent comporter un indicateur de position mû par un mécanisme rigide, robuste et indéformable (Art. 22 al. 3).</li>
+<li><strong>Point neutre HT :</strong> L'exploitant fixe le traitement du point neutre pour coordonner l'isolation du réseau (Art. 23 al. 1 & 2). Tout réseau galvaniquement séparable doit avoir son équipement de mesure pour déceler rapidement tout défaut ou court-circuit (Art. 23 al. 3).</li>
+</ul>`
+          },
+          {
+            title: "2. Voies de circulation et règles d'évacuation en locaux (Art. 27, 34 & 35)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les passages et couloirs techniques sont soumis à des exigences sévères de sécurité incendie et d'évacuation :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Voies de fuite permanentes :</strong> Les lieux de passage doivent pouvoir servir en tout temps de voies de fuite. <strong>On ne doit y entreposer AUCUN matériel</strong> (Art. 27 al. 2).</li>
+<li><strong>Interdiction d'empiètement :</strong> Aucun chariot de disjoncteur en position de sectionnement, aucune armoire ni fenêtre ouverte ne doit réduire le profil libre (Art. 27 al. 3).</li>
+<li><strong>Couloirs de plus de 20 mètres :</strong> Doivent obligatoirement être pourvus d'une <strong>issue à chaque extrémité</strong> (Art. 35 al. 3).</li>
+<li><strong>Sens d'ouverture des portes :</strong> Les portes de sortie doivent s'ouvrir vers l'extérieur. Les portes séparant deux locaux de service <strong>doivent s'ouvrir du local à plus haut risque potentiel vers le local à moindre risque</strong> (Art. 35 al. 4).</li>
+<li><strong>Issues de secours sans clé :</strong> Doivent pouvoir s'ouvrir de l'intérieur <strong>sans aucun moyen auxiliaire</strong> (barre anti-panique) et mener en plein air ou vers un lieu sûr (Art. 35 al. 5).</li>
+</ul>
+</div>`
+          },
+          {
+            title: "3. Dimensions minimales des passages et accès (Annexe 1 OCFo)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Annexe 1</strong> (Art. 27 et 35) prescrit les dimensions minimales obligatoires des passages et accès dans les installations en locaux :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th>Type de passage ou accès</th>
+<th style="min-width:140px;">Largeur libre (m)</th>
+<th style="min-width:140px;">Hauteur libre (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Couloirs de service — Basse tension</strong></td>
+<td><strong>0,8 m</strong></td>
+<td><strong>2,0 m</strong></td>
+</tr>
+<tr>
+<td><strong>1. Couloirs de service — Haute tension</strong></td>
+<td><strong>1,0 m</strong></td>
+<td><strong>2,1 m</strong></td>
+</tr>
+<tr>
+<td><strong>2. Couloirs de montage — BT ouvertes</strong></td>
+<td>0,7 m</td>
+<td>2,0 m</td>
+</tr>
+<tr>
+<td><strong>2. Couloirs de montage — Installations blindées</strong></td>
+<td>0,5 m</td>
+<td>2,0 m</td>
+</tr>
+<tr>
+<td><strong>3. Portes — Installations à basse tension</strong></td>
+<td>0,65 m</td>
+<td>1,95 m</td>
+</tr>
+<tr>
+<td><strong>3. Portes — Installations à haute tension</strong></td>
+<td>0,80 m</td>
+<td>1,95 m</td>
+</tr>
+<tr>
+<td><strong>3. Sorties de secours</strong></td>
+<td>0,60 m</td>
+<td>1,95 m</td>
+</tr>
+<tr>
+<td><strong>3. Puits d'accès</strong></td>
+<td colspan="2"><strong>Diamètre minimal ∅ 0,8 m</strong></td>
+</tr>
+</tbody>
+</table>
+</div>`
+          },
+          {
+            title: "4. Distances d'isolement et majoration d'altitude (Art. 36 & Annexe 2)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Annexe 2</strong> (Art. 36) fixe les distances d'éloignement aux éléments sous tension en fonction de la tension et de l'obstacle :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Hauteur des barrières :</strong> 0,5 m et 1,4 m en haute tension ; 1,2 m en basse tension.</li>
+<li><strong>Hauteur minimale des panneaux :</strong> 1,8 m au minimum.</li>
+<li><strong>Grillages :</strong> Maillage maximum de 40 mm, diamètre de fil minimal de 2 mm.</li>
+<li><strong>Hauteur minimale sous pièces sous tension non protégées :</strong> 2,3 m en BT (≤ 1 kV), 2,5 m de 3 à 20 kV, 2,6 m à 30 kV, 2,9 m à 60 kV.</li>
+</ul>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+🏔️ <strong>Règle essentielle d'altitude (Annexe 2 ch. 6) :</strong> Les distances indiquées sont valables pour les altitudes jusqu'à 1000 m. Au-dessus, en raison de la raréfaction de l'air diminuant la rigidité diélectrique, <strong>elles doivent être augmentées de façon linéaire de 14 % par 1000 m supplémentaires</strong>.
+</div>
+<p style="font-size:0.92rem; line-height:1.6;">
+<strong>Équipements et éclairage (Art. 38) :</strong> Armoires < 2,2 m fermées vers le haut. Aération aboutissant à l'extérieur avec grillages anti-rongeurs. Un <strong>éclairage de secours ou une lampe de remplacement</strong> doit être à portée de main dans toutes les zones d'exploitation et voies de fuite (Art. 38 al. 6).
+</p>`
+          },
+          {
+            title: "5. Installations isolées au gaz (GIS / SF6) (Art. 40)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les installations blindées compactes au gaz SF6 (GIS) sont régies par l'<strong>Art. 40 OCFo</strong> :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Surveillance continue :</strong> Les compartiments sous pression doivent être étanches et leur étanchéité surveillée (manostats/densimètres — Art. 40 al. 3).</li>
+<li><strong>Pièces de rupture (diaphragmes de sécurité) :</strong> Les compartiments doivent comporter des disques de rupture orientés de telle sorte que le rejet de gaz sous arc électrique ne fasse courir <strong>aucun danger au personnel</strong> (Art. 40 al. 4).</li>
+<li><strong>Produits de décomposition :</strong> Avant toute ouverture d'un carter, des mesures de sécurité doivent être prises pour éliminer sans risque les poudres et gaz toxiques de décomposition (Art. 40 al. 5).</li>
+<li><strong>Détecteurs de gaz :</strong> Les locaux doivent être équipés d'appareils de contrôle mesurant les fuites de gaz (Art. 40 al. 7).</li>
+</ul>
+</div>`
+          }
+        ],
+        practicalExample: "Aménagement d'une sous-station 16 kV située en station de montagne à 1800 m d'altitude. Le couloir de service haute tension mesure 22 m de long : deux portes de sortie sont donc obligatoirement aménagées à chaque extrémité (Art. 35 al. 3), s'ouvrant vers l'extérieur et sans clé. Le couloir a une largeur libre de 1,0 m et une hauteur libre de 2,1 m (Annexe 1). Pour l'altitude (800 m au-dessus de 1000 m), les distances d'isolement sous tension sont majorées de 0,8 × 14% = +11,2% (Annexe 2 ch. 6).",
+        importantPoint: "Pour tout couloir de plus de 20 m de long, deux issues sont obligatoires, et les portes entre deux locaux doivent impérativement s'ouvrir dans le sens de la fuite (du plus grand danger vers le moindre danger). Interdiction absolue d'entreposer du matériel dans les couloirs et voies de fuite (Art. 27 al. 2).",
+        synthesis: "Les locaux électriques exigent une subdivision claire sans retour de tension possible, des couloirs de service normalisés (BT 0,8m x 2,0m / HT 1,0m x 2,1m) toujours dégagés, deux issues si longueur > 20 m, et des distances d'isolement majorées de 14% par 1000 m d'altitude au-delà de 1000 m. Les cellules SF6 (GIS) doivent comporter une surveillance d'étanchéité et des diaphragmes de délestage orientés sans risque pour le personnel.",
+        quiz: [
+          {
+            id: "q_ocfo2_1",
+            type: "single",
+            question: "À partir de quelle longueur un couloir d'installation électrique doit-il obligatoirement être pourvu d'une issue de secours à chaque extrémité selon l'Art. 35 al. 3 OCFo ?",
+            options: [
+              "Plus de 20 mètres de longueur",
+              "Plus de 10 mètres de longueur",
+              "Plus de 50 mètres de longueur",
+              "Dès 5 mètres de longueur"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 35 al. 3 OCFo stipule formellement que les couloirs de plus de 20 mètres de longueur doivent être pourvus d'une issue à chaque extrémité."
+          },
+          {
+            id: "q_ocfo2_2",
+            type: "single",
+            question: "Selon l'Art. 35 al. 4 OCFo, dans quel sens les portes séparant deux locaux de service électrique doivent-elles obligatoirement s'ouvrir ?",
+            options: [
+              "Du local à plus haut risque potentiel vers le local à moindre risque",
+              "Toujours vers le local haute tension",
+              "Indifféremment dans les deux sens grâce à des portes battantes libres",
+              "Vers le local contenant les transformateurs d'huile"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 35 al. 4 OCFo impose que les portes séparant deux locaux s'ouvrent du local à plus haut risque potentiel vers le local à moindre risque (sens naturel de la fuite face au danger)."
+          },
+          {
+            id: "q_ocfo2_3",
+            type: "single",
+            question: "Quelles sont les dimensions minimales (largeur libre / hauteur libre) d'un couloir de service dans une installation à haute tension selon l'Annexe 1 de l'OCFo ?",
+            options: [
+              "Largeur libre 1,0 m et hauteur libre 2,1 m",
+              "Largeur libre 0,8 m et hauteur libre 2,0 m",
+              "Largeur libre 0,6 m et hauteur libre 1,8 m",
+              "Largeur libre 1,5 m et hauteur libre 2,5 m"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Annexe 1 OCFo (ch. 1) fixe pour les couloirs de service haute tension une largeur libre minimale de 1,0 m et une hauteur libre minimale de 2,1 m (contre 0,8 m / 2,0 m en basse tension)."
+          },
+          {
+            id: "q_ocfo2_4",
+            type: "single",
+            question: "En vertu de l'Annexe 2 ch. 6 de l'OCFo, comment les distances minimales en locaux doivent-elles être corrigées au-delà de 1000 m d'altitude ?",
+            options: [
+              "Augmentées de façon linéaire de 14 % par 1000 m supplémentaires",
+              "Diminuées de 10 % car l'air de montagne est plus sec",
+              "Maintenues identiques jusqu'à 3000 m",
+              "Augmentées de 50 % de manière forfaitaire dès 1500 m"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Annexe 2 ch. 6 dispose que les distances sont valables jusqu'à 1000 m et doivent être augmentées de façon linéaire de 14 % par 1000 m d'altitude supplémentaires."
+          }
+        ]
+      },
+      // ----------------------------------------------------------------------
+      // OCFo — Leçon 3 : Postes plein air, Transformateurs & Accumulateurs (Art. 41 à 52)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-2-ocfo-art41-52",
+        routeId: "rs-734-2-ocfo-art41-52",
+        moduleId: "A",
+        code: "RS 734.2 - OCFo",
+        title: "Art. 41-52 — Postes plein air, transformateurs & accumulateurs",
+        subtitle: "Enceintes extérieures (Annexe 3), stations transformatrices, poteaux et salles de batteries",
+        status: "Disponible",
+        duration: "8 min",
+        tag: "Ordonnance",
+        xpReward: 30,
+        objective: "Dimensionner les clôtures et passages des postes extérieurs en plein air (Art. 41-42), déterminer les hauteurs et distances de sécurité sous tension selon la formule de l'Annexe 3 (2,25 m + 0,01 m/kV), appliquer les règles de déconnexion et de protection des stations transformatrices et stations sur poteau (Art. 45-50), et sécuriser les locaux d'accumulateurs industriels (Art. 52).",
+        introduction: `Les installations extérieures à ciel ouvert (postes en plein air) et les stations de transformation sont soumises à des contraintes physiques particulières : intempéries, faune, décharges atmosphériques et risque d'accès par des tiers. L'OCFo fixe les gabarits d'enceinte (clôture 2,2 m), les distances d'approche (Annexe 3) et les impératifs de déconnexion individuelle.`,
+        contentSections: [
+          {
+            title: "1. Enceintes et passages des installations en plein air (Art. 41 & 42)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les postes à ciel ouvert doivent être protégés des intrusions et délimités conformément à l'<strong>Art. 41 OCFo</strong> :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Clôture périphérique :</strong> Hauteur minimale de <strong>2,2 m</strong> (augmentée en conséquence dans les régions très enneigées, Art. 41 al. 1).</li>
+<li><strong>Treillis grillagé :</strong> Mailles ne dépassant pas <strong>4 cm de largeur</strong> (Art. 41 al. 2).</li>
+<li><strong>Garde au sol :</strong> Ne doit pas excéder <strong>10 cm au maximum</strong> pour empêcher l'introduction de petits animaux (Art. 41 al. 2).</li>
+<li><strong>Passages de service intérieurs :</strong> Largeur minimale de <strong>1,2 m</strong> et hauteur libre d'au moins <strong>2,5 m</strong> (Art. 42).</li>
+</ul>
+</div>`
+          },
+          {
+            title: "2. Distances de sécurité verticales et formule de gabarit (Art. 43 & Annexe 3)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 43</strong> et l'<strong>Annexe 3</strong> définissent la hauteur minimale au-dessus du sol des conducteurs nus sous tension en installation extérieure :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+📐 <strong>Formule légale (Annexe 3 ch. 1) :</strong><br/>
+<strong style="color:var(--electric-blue); font-size:1.05rem;">H<sub>min</sub> = 2,25 m + 0,01 m par kV de tension nominale</strong> (avec un minimum absolu de 2,50 m).
+</div>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th>Tension nominale (Col. 1)</th>
+<th>Tension max exploitation (Col. 2)</th>
+<th>Hauteur minimale sous conducteurs (Col. 3)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>20 kV</strong></td><td>24 kV</td><td><strong>2,50 m</strong> (application du minimum légal)</td></tr>
+<tr><td><strong>30 kV</strong></td><td>36 kV</td><td><strong>2,55 m</strong></td></tr>
+<tr><td><strong>45 kV</strong></td><td>52 kV</td><td><strong>2,70 m</strong></td></tr>
+<tr><td><strong>60 kV</strong></td><td>72,5 kV</td><td><strong>2,85 m</strong></td></tr>
+<tr><td><strong>110 kV</strong></td><td>123 kV</td><td><strong>3,35 m</strong></td></tr>
+<tr><td><strong>132 kV</strong></td><td>145 kV</td><td><strong>3,57 m</strong></td></tr>
+<tr><td><strong>150 kV</strong></td><td>170 kV</td><td><strong>3,75 m</strong></td></tr>
+<tr><td><strong>220 kV</strong></td><td>245 kV</td><td><strong>4,45 m</strong></td></tr>
+<tr><td><strong>380 kV</strong></td><td>420 kV</td><td><strong>6,05 m</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.92rem; line-height:1.6;">
+<strong>Règles complémentaires (Art. 43 al. 3 & 4) :</strong> La base des isolateurs mise à la terre doit se situer à au moins <strong>2,25 m</strong> du sol. Le long de la clôture, une bande de recul de <em>1,6 m + 0,01 m/kV</em> doit rester libre de toute partie sous tension à moins de 6 m de hauteur (< 220 kV), 6,6 m (220 kV) ou 7,1 m (380 kV). Majoration d'altitude : +14% par 1000 m au-dessus de 1000 m.
+</p>`
+          },
+          {
+            title: "3. Stations transformatrices : déconnexion et protection (Art. 45 à 47)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'Art. 45 OCFo impose des règles strictes de coupure pour les stations transformatrices :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Déconnexion primaire et secondaire :</strong> « Tout transformateur doit pouvoir être déconnecté <strong>individuellement du côté primaire et du côté secondaire</strong> de l'installation » (Art. 45 al. 4).</li>
+<li><strong>Lignes d'amenée et départ :</strong> Doivent pouvoir être déconnectées individuellement et sous tension sur les barres HT et BT (sauf parafoudres et transformateurs de mesure, Art. 45 al. 5).</li>
+<li><strong>Alimentation en câble :</strong> Déconnexion à proximité immédiate des câbles et possibilité de déclencher les câbles d'amenée dans la station voisine interconnectée (Art. 45 al. 2).</li>
+<li><strong>Protection surintensités (Art. 47) :</strong> Les protections côté HT doivent assurer également la protection contre les courts-circuits <strong>jusque et y compris aux premiers organes de protection à basse tension</strong>.</li>
+</ul>
+</div>`
+          },
+          {
+            title: "4. Stations sur poteau et transformateurs secs (Art. 48 à 50)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Pour les stations de transformation montées sur supports aériens (stations sur poteau) :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Distance de sécurité :</strong> La distance verticale entre les organes restant sous tension lorsque l'interrupteur est ouvert et les parties d'installation les plus proches doit être de <strong>1,5 m au moins</strong> (Art. 48 al. 1).</li>
+<li><strong>Manoeuvre au sol :</strong> Dispositif de commande sur poteau relié à la terre ou mesures de protection assurant la sécurité de l'opérateur (Art. 59 al. 3).</li>
+<li><strong>Transformateurs secs (Art. 50 al. 2) :</strong> Les transformateurs secs sans enveloppe métallique mise à la terre nécessitent obligatoirement une protection mécanique contre les contacts fortuits.</li>
+</ul>`
+          },
+          {
+            title: "5. Installations d'accumulateurs et batteries industrielles (Art. 52)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les locaux abritant des batteries de secours, de commande ou de stockage sont régis par l'<strong>Art. 52 OCFo</strong> :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Ventilation efficace :</strong> Les locaux d'accumulateurs contenant des batteries non blindées ou ouvertes doivent être <strong>suffisamment ventilés</strong> afin d'évacuer l'hydrogène libéré pendant la charge (risque d'atmosphère explosive H2).</li>
+<li><strong>Protection anticorrosion :</strong> Le local et les structures supports doivent être protégés contre les agressions corrosives des vapeurs acides ou alcalines.</li>
+<li><strong>Déclenchement omnipolaire :</strong> Les batteries doivent pouvoir être déclenchées sur <strong>tous les pôles</strong> simultanément (Art. 52 al. 2).</li>
+<li><strong>Protection contacts > 250 V :</strong> L'exploitant doit impérativement faire en sorte que le contact fortuit avec des organes sous une tension de plus de 250 volts soit totalement impossible (Art. 52 al. 2).</li>
+</ul>
+</div>`
+          }
+        ],
+        practicalExample: "Conception d'un poste de distribution rural avec transformateur sur poteau 20 kV : vérification du dégagement minimal de 1,5 m au-dessus de la plateforme d'intervention lorsque l'interrupteur aérien est ouvert (Art. 48 al. 1). Pour un poste extérieur clôturé 60 kV : clôture de 2,2 m minimum avec garde au sol ≤ 10 cm et mailles ≤ 4 cm (Art. 41 al. 2) ; hauteur sous conducteurs nus fixée à 2,25 m + 0,01 × 60 = 2,85 m (Annexe 3).",
+        importantPoint: "Tout transformateur doit obligatoirement pouvoir être déconnecté individuellement tant du côté primaire que du côté secondaire (Art. 45 al. 4). Dans une salle de batteries d'accumulateurs, la coupure doit être omnipolaire et tout contact fortuit avec un élément sous tension supérieure à 250 V doit être impossible (Art. 52 al. 2).",
+        synthesis: "Les postes extérieurs sont ceints d'une clôture grillagée de 2,2 m min (mailles ≤ 4 cm, garde au sol ≤ 10 cm) avec une hauteur sous conducteurs régie par la formule Annexe 3 (2,25 m + 0,01 m/kV). Les transformateurs doivent être sectionnables au primaire et secondaire. Les locaux d'accumulateurs doivent être ventilés contre l'hydrogène avec coupure omnipolaire.",
+        quiz: [
+          {
+            id: "q_ocfo3_1",
+            type: "single",
+            question: "Quelles sont les exigences réglementaires pour la clôture d'une installation électrique en plein air selon l'Art. 41 de l'OCFo ?",
+            options: [
+              "Hauteur min 2,2 m, mailles max 4 cm et garde au sol max 10 cm",
+              "Hauteur min 1,5 m, mailles de 10 cm et aucune garde au sol",
+              "Hauteur libre 2,0 m avec simple fil de fer barbelé",
+              "Hauteur min 3,0 m avec mur maçonné plein obligatoire"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 41 al. 1 et 2 OCFo fixe une hauteur minimale de 2,2 m, un treillis de mailles ne dépassant pas 4 cm et une garde au sol maximale de 10 cm."
+          },
+          {
+            id: "q_ocfo3_2",
+            type: "single",
+            question: "Selon l'Annexe 3 de l'OCFo, quelle est la hauteur verticale minimale entre le sol et les conducteurs nus sous tension pour une installation plein air 60 kV ?",
+            options: [
+              "2,85 m (2,25 m + 0,01 m × 60)",
+              "2,50 m",
+              "3,50 m",
+              "6,05 m"
+            ],
+            correctAnswer: 0,
+            explanation: "D'après la formule de l'Annexe 3 (H = 2,25 m + 0,01 m par kV), pour 60 kV on obtient 2,25 + 0,60 = 2,85 m (valeur figurant en ligne 4 de la table)."
+          },
+          {
+            id: "q_ocfo3_3",
+            type: "single",
+            question: "En vertu de l'Art. 45 al. 4 de l'OCFo, comment un transformateur doit-il obligatoirement pouvoir être déconnecté ?",
+            options: [
+              "Individuellement du côté primaire et du côté secondaire",
+              "Uniquement par ouverture de la ligne moyenne tension amont",
+              "Uniquement côté basse tension",
+              "Ensemble avec tous les autres transformateurs du poste"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 45 al. 4 OCFo exige que tout transformateur puisse être déconnecté individuellement tant au côté primaire qu'au côté secondaire."
+          },
+          {
+            id: "q_ocfo3_4",
+            type: "single",
+            question: "Dans les locaux d'accumulateurs industriels contenant des batteries ouvertes, que prescrit l'Art. 52 al. 1 et 2 de l'OCFo ?",
+            options: [
+              "Ventilation suffisante, coupure sur tous les pôles et contact fortuit > 250 V impossible",
+              "Absence totale de ventilation pour éviter l'apport d'oxygène",
+              "Coupure sur le pôle positif uniquement",
+              "Installation autorisée sans protection jusqu'à 1000 V"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 52 OCFo impose une ventilation suffisante contre l'accumulation de gaz, une coupure omnipolaire (tous les pôles) et l'impossibilité de contact fortuit avec des pièces sous plus de 250 V."
+          }
+        ]
+      },
+      // ----------------------------------------------------------------------
+      // OCFo — Leçon 4 : Mise à la terre, Tensions de contact & Surintensités (Art. 53 à 65)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-2-ocfo-art53-65",
+        routeId: "rs-734-2-ocfo-art53-65",
+        moduleId: "A",
+        code: "RS 734.2 - OCFo",
+        title: "Art. 53-65 — Mise à la terre, tensions de contact & surintensités",
+        subtitle: "Tensions de contact (50V AC durable, Annexe 4), terre HT (2 lignes), régimes TN/TT et protection",
+        status: "Disponible",
+        duration: "10 min",
+        tag: "Ordonnance",
+        xpReward: 30,
+        objective: "Comprendre les principes fondamentaux de mise à la terre (Art. 53), maîtriser les tensions de contact admissibles (Art. 54-55, seuil durable 50 V AC / 120 V DC et courbe temps-tension Annexe 4), mettre en œuvre les règles de mise à la terre haute tension avec au moins 2 lignes indépendantes (Art. 57), dimensionner les systèmes TN et TT en basse tension (Art. 58), et assurer la tenue aux surintensités et surpressions d'arc (Art. 62-65).",
+        introduction: `Le Chapitre 4 de l'OCFo constitue la clé de voûte de la sécurité électrique suisse : l'écoulement maîtrisé des courants de défaut et la limitation des tensions de contact et de pas. Il définit les seuils de tension physiologiquement admissibles en fonction du temps de déclenchement (Annexe 4) et proscrit tout organe de coupure sur les lignes de terre.`,
+        contentSections: [
+          {
+            title: "1. Principes fondamentaux de mise à la terre (Art. 53)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+En vertu de l'<strong>Art. 53 OCFo</strong>, toutes les parties conductrices qui ne sont pas normalement sous tension doivent être mises à la terre :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Pour les personnes :</strong> Réduire le risque d'être soumises à des tensions de contact et des tensions de pas dangereuses.</li>
+<li><strong>Pour les choses :</strong> Réduire le risque d'incendie et de dégâts dus aux courants de défaut ou de court-circuit à la terre.</li>
+<li><strong>Limitation des surtensions :</strong> Les circuits électriques doivent être mis à la terre en permanence ou lors de défauts pour limiter les tensions dangereuses et protéger l'isolation (Art. 53 al. 2).</li>
+</ul>`
+          },
+          {
+            title: "2. Tensions de contact admissibles et courbe de sécurité (Art. 54 & Annexe 4)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+En cas de défaut unipolaire à la terre dans une installation à courant fort, l'Art. 54 al. 1 fixe des seuils stricts :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+⚡ <strong>Limites durables de tension de contact :</strong><br/>
+La tension de contact ne doit pas dépasser durablement <strong>50 volts en courant alternatif (AC)</strong> ou <strong>120 volts en courant continu (DC)</strong>.
+</div>
+<p style="font-size:0.92rem; line-height:1.6; margin-bottom:0.5rem;">
+<strong>Courbe temps-tension de l'Annexe 4 (durées ≤ 5 secondes) :</strong> Pour les défauts fugitifs éliminés rapidement par les protections, des tensions plus élevées sont admises selon la courbe officielle de sécurité :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th>Durée du défaut (s)</th>
+<th>Tension alternative admissible (15-100 Hz)</th>
+<th>Tension continue admissible (DC)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>≤ 0,1 s</strong></td><td>Jusqu'à <strong>700 V</strong></td><td>Jusqu'à 700 V</td>
+<tr><td><strong>0,2 s</strong></td><td>~ <strong>450 V</strong></td><td>~ 600 V</td>
+<tr><td><strong>0,4 s</strong></td><td>~ <strong>200 V</strong></td><td>~ 400 V</td>
+<tr><td><strong>0,6 s</strong></td><td>~ <strong>120 V</strong></td><td>~ 300 V</td>
+<tr><td><strong>1,0 s</strong></td><td>~ <strong>80 V</strong></td><td>~ 200 V</td>
+<tr><td><strong>≥ 5,0 s</strong></td><td><strong>50 V</strong> (seuil permanent)</td><td><strong>120 V</strong> (seuil permanent)</td>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+<strong>Supports métalliques de lignes HT (Art. 54 al. 2) :</strong> Zones de rassemblement = respect strict Annexe 4 ; zones habitées/chemins fréquents = dépassement toléré pendant 2 secondes max ; autres régions = dépassement de 50 V toléré quelques heures au plus.
+</p>`
+          },
+          {
+            title: "3. Tensions de contact en basse tension et maillage (Art. 55 & 56)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+En réseau basse tension (Art. 55 al. 1), tout contact de phase avec un conducteur de protection (PE ou PEN) doit provoquer une <strong>coupure sûre de l'alimentation</strong>.
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Terre de référence (Art. 55 al. 2) :</strong> Les exigences sont réputées remplies si la tension entre le conducteur de protection et la terre de référence hors zone d'influence ne dépasse pas <strong>100 V AC ou 240 V DC</strong>.</li>
+<li><strong>Mesures de réduction (Art. 56) :</strong> Priorité au <em>maillage équipotentiel</em> de toutes les masses conductrices. Si insuffisant : limitation du gradient de tension, sols isolés, barrières physiques, déclenchement ultra-rapide ou séparation galvanique.</li>
+</ul>`
+          },
+          {
+            title: "4. Mise à la terre dans les installations haute tension (Art. 57)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+La mise à la terre des postes haute tension répond à deux principes essentiels :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Deux lignes indépendantes :</strong> « Chaque terre générale doit être mise à la terre par <strong>au moins deux lignes de terre indépendantes</strong> » (Art. 57 al. 1).</li>
+<li><strong>Terre séparée en cas de surtension :</strong> Si lors d'un défaut à la terre unipolaire, la tension de la prise de terre générale dépasse les valeurs de l'Annexe 4, les circuits BT sortant de la zone d'influence doivent être isolés de la terre générale et reliés à une <strong>terre séparée</strong> (Art. 57 al. 2).</li>
+<li><strong>Niveau d'isolement requis :</strong> La séparation doit être isolée pour une tension d'au moins <strong>1,3 fois la tension de prise de terre la plus élevée, avec un minimum de 2 kV</strong> (Art. 57 al. 3).</li>
+</ul>
+</div>`
+          },
+          {
+            title: "5. Régimes de neutre BT, câbles et lignes de terre (Art. 58 à 61)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les réseaux BT triphasés doivent être mis à la terre directement à la source (point neutre du transformateur), selon les systèmes <strong>TN (mise au neutre)</strong> ou <strong>TT (mise à la terre directe)</strong> (Art. 58 al. 1).
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Exigences système TN (Art. 58 al. 3) :</strong> Mise à la terre obligatoire du conducteur PEN/PE au point de transition réseau/installation ; conductance et résistance mécanique du PEN/PE au moins égales à celles des phases.</li>
+<li><strong>Gaines de câbles métalliques (Art. 59 al. 5 & 6) :</strong> Les gaines métalliques des câbles HT et BT doivent être <strong>mises à la terre aux deux extrémités</strong>.</li>
+<li><strong>Règle d'or des lignes de terre (Art. 60 al. 1) :</strong> Doivent supporter sans dommage les contraintes dynamiques et thermiques maximales de court-circuit jusqu'au déclenchement. <strong>Elles ne doivent comporter NI INTERRUPTEURS NI COUPE-SURINTENSITÉ (fusibles).</strong></li>
+</ul>`
+          },
+          {
+            title: "6. Protection contre les surintensités, arcs et surpressions (Art. 62 à 65)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'Art. 62 OCFo exige que les installations soient construites pour résister aux sollicitations mécaniques et thermiques de court-circuit.
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Limitation des arcs électriques :</strong> Empêcher l'extension des arcs par des cloisons, coffrages et revêtements de protection (Art. 62 al. 2 & 3).</li>
+<li><strong>Surpression dans les bâtiments :</strong> « Les bâtiments doivent être construits de façon que <strong>la surpression engendrée en cas d'arcs ne mette en danger ni les personnes ni les choses</strong> » (Art. 62 al. 4).</li>
+<li><strong>Déclenchement automatique :</strong> Mise en place de dispositifs de déclenchement rapide limitant les détériorations résultant des surcharges et courts-circuits (Art. 63).</li>
+</ul>
+</div>`
+          }
+        ],
+        practicalExample: "Dans une sous-station HT 20 kV, la terre générale est reliée par deux lignes indépendantes en cuivre de 50 mm² (Art. 57 al. 1). Lors d'un défaut unipolaire à la terre, l'élévation de potentiel engendre une tension de contact calculée à 180 V. Pour respecter la courbe de l'Annexe 4, le relais de protection doit déclencher le disjoncteur en moins de 0,45 seconde. De plus, les circuits auxiliaires basse tension sortant du poste sont isolés par un transformateur de séparation galvanique testé à 2,5 kV (supérieur au minimum légal de 2 kV / 1,3 x Up, Art. 57 al. 3).",
+        importantPoint: "Les lignes de terre ne doivent comporter aucun interrupteur ni aucun coupe-surintensité (Art. 60 al. 1). La terre générale d'une installation HT doit être reliée par au moins deux lignes de terre indépendantes (Art. 57 al. 1).",
+        synthesis: "L'OCFo impose un seuil de tension de contact durable de 50 V AC (120 V DC), tolérant des tensions supérieures jusqu'à 5 secondes selon la courbe de l'Annexe 4. En haute tension, la terre générale exige 2 lignes indépendantes. En BT, les régimes TN et TT imposent une coupure sûre. Les lignes de terre ne doivent jamais être coupées ni protégées par fusibles.",
+        quiz: [
+          {
+            id: "q_ocfo4_1",
+            type: "single",
+            question: "Quelle est la valeur limite durable de la tension de contact en cas de défaut à la terre dans une installation à courant fort selon l'Art. 54 al. 1 de l'OCFo ?",
+            options: [
+              "50 volts en courant alternatif ou 120 volts en courant continu",
+              "230 volts en courant alternatif",
+              "12 volts en courant continu",
+              "100 volts en courant alternatif"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 54 al. 1 OCFo dispose que les tensions de contact ne doivent pas dépasser durablement 50 V AC ou 120 V DC."
+          },
+          {
+            id: "q_ocfo4_2",
+            type: "single",
+            question: "Combien de lignes de terre indépendantes sont obligatoires pour raccorder chaque terre générale d'une installation haute tension (Art. 57 al. 1) ?",
+            options: [
+              "Au moins deux lignes de terre indépendantes",
+              "Une seule ligne de forte section suffit",
+              "Trois lignes minimum pour le triphasé",
+              "Quatre lignes en carré"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 57 al. 1 OCFo énonce formellement : « Chaque terre générale doit être mise à la terre par au moins deux lignes de terre indépendantes »."
+          },
+          {
+            id: "q_ocfo4_3",
+            type: "single",
+            question: "Selon l'Art. 57 al. 3 de l'OCFo, quel doit être le niveau d'isolement minimal des parties reliées à une terre séparée par rapport à la terre générale ?",
+            options: [
+              "Au moins 1,3 fois la tension de prise de terre la plus élevée, et au minimum 2 kV",
+              "Exactement 500 V",
+              "Deux fois la tension nominale sans minimum",
+              "1 kV forfaitaire"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 57 al. 3 prescrit un isolement correspondant à au moins 1,3 fois la tension de terre la plus élevée, avec un seuil plancher absolu de 2 kV."
+          },
+          {
+            id: "q_ocfo4_4",
+            type: "single",
+            question: "Que prévoit l'Art. 60 al. 1 de l'OCFo concernant la présence d'organes de coupure sur les lignes de terre ?",
+            options: [
+              "Elles ne doivent comporter ni interrupteurs ni coupe-surintensité",
+              "Un coupe-circuit à fusible est obligatoire pour la sécurité",
+              "Un disjoncteur différentiel doit être intercalé",
+              "Un interrupteur cadenassable est exigé à chaque piquet"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 60 al. 1 OCFo interdit formellement d'intercaler des interrupteurs ou des coupe-surintensité (fusibles) sur les lignes de terre."
+          },
+          {
+            id: "q_ocfo4_5",
+            type: "single",
+            question: "Selon l'Art. 59 al. 5 et 6 de l'OCFo, comment les gaines métalliques des câbles électriques doivent-elles être mises à la terre en règle générale ?",
+            options: [
+              "Aux deux extrémités du câble",
+              "À une seule extrémité pour éviter les boucles",
+              "Au milieu du tracé par perçage",
+              "Uniquement du côté du tableau basse tension"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 59 al. 5 et 6 OCFo impose que les gaines métalliques des câbles soient mises à la terre aux deux extrémités (une dérogation à une seule extrémité n'étant admise en HT qu'en cas d'inconvénients techniques majeurs justifiés)."
+          }
+        ]
+      },
+      // ----------------------------------------------------------------------
+      // OCFo — Leçon 5 : Travaux hors tension, TST & Installations provisoires (Art. 66 à 86)
+      // ----------------------------------------------------------------------
+      {
+        id: "rs-734-2-ocfo-art66-86",
+        routeId: "rs-734-2-ocfo-art66-86",
+        moduleId: "A",
+        code: "RS 734.2 - OCFo",
+        title: "Art. 66-86 — Travaux hors tension, TST & installations provisoires",
+        subtitle: "Les 5 règles vitales de l'Art. 72 al. 1, travaux sous tension (3 méthodes, binôme) et chantiers temporaires",
+        status: "Disponible",
+        duration: "10 min",
+        tag: "Ordonnance",
+        xpReward: 30,
+        objective: "Définir juridiquement un travail sur installation à courant fort (Art. 66) et les prérequis de qualification (Art. 67-68), exécuter sans faille les 5 règles vitales de préparation de chantier hors tension selon l'Art. 72 al. 1 OCFo, appliquer les règles spécifiques aux travaux sous tension (Art. 75-79, travail en binôme obligatoire, interdiction de combinaison avec travaux hors tension), et assurer la sécurité et le démontage obligatoire des installations provisoires (Art. 81-83).",
+        introduction: `Le Chapitre 5 de l'OCFo régit les travaux sur les installations à courant fort. Il formule la base légale suisse des 5 règles vitales d'intervention hors tension (Art. 72 al. 1), encadre strictement les travaux sous tension (TST, travail en binôme obligatoire) et impose des exigences d'incombustibilité et de contrôle annuel pour les installations provisoires.`,
+        contentSections: [
+          {
+            title: "1. Définition légale du travail et responsabilités de chantier (Art. 66 à 71)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'<strong>Art. 66 OCFo</strong> définit juridiquement le travail sur installation à courant fort :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--electric-blue); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+« Est réputée <strong>travail sur une installation à courant fort</strong> toute activité dont l'accomplissement réclame des mesures protégeant les personnes et les choses du courant électrique. N'est pas un travail la commande d'une installation à partir d'un emplacement sûr et au moyen d'équipements construits à cet effet. »
+</div>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Responsable de chantier désigné (Art. 67 al. 2) :</strong> L'exploitant <strong>désigne pour chaque chantier une personne responsable</strong> des mesures de protection et de la sécurité d'exécution.</li>
+<li><strong>Équipement obligatoire (Art. 68) :</strong> EPI contre les contacts, arcs électriques et dangers mécaniques ; appareils de vérification d'absence de tension (VAT) ; dispositifs de mise à la terre capables de supporter le courant de court-circuit ; moyens de communication.</li>
+<li><strong>Arrêt en cas d'orage (Art. 70 al. 3) :</strong> Dès qu'un danger perceptible dû à des surtensions atmosphériques apparaît, les travaux doivent être interrompus immédiatement et le chantier sécurisé et évacué.</li>
+<li><strong>Verrouillage (Art. 71 al. 2) :</strong> Les sectionneurs doivent être verrouillés en position déclenchée et pourvus de marquages selon les règles de la technique.</li>
+</ul>`
+          },
+          {
+            title: "2. Travaux hors tension : Les 5 règles vitales (Art. 72 al. 1 OCFo)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Avant le début de tout travail sur une installation à haute tension, l'<strong>Art. 72 al. 1 OCFo</strong> impose au responsable de préparer le chantier selon <strong>cinq règles fondamentales ordonnées</strong> :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1.25rem; margin-bottom:1rem;">
+<div style="display:flex; flex-direction:column; gap:0.75rem;">
+<div style="display:flex; align-items:flex-start; gap:0.75rem;">
+<span style="background:var(--electric-blue); color:#0B1220; font-weight:800; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</span>
+<div><strong>Déclencher et ouvrir les sectionneurs de toutes parts (let. a) :</strong> Isoler totalement la section de toute source d'alimentation possible.</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:0.75rem;">
+<span style="background:var(--electric-blue); color:#0B1220; font-weight:800; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</span>
+<div><strong>Les assurer contre le réenclenchement (let. b) :</strong> Condamnation mécanique, cadenas de consignation et panneaux d'interdiction de manœuvre.</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:0.75rem;">
+<span style="background:var(--electric-blue); color:#0B1220; font-weight:800; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</span>
+<div><strong>Vérifier l'absence de tension (let. c) :</strong> Contrôle unipolaire sur chaque conducteur avec un VAT homologué et vérifié avant/après usage.</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:0.75rem;">
+<span style="background:var(--electric-blue); color:#0B1220; font-weight:800; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">4</span>
+<div><strong>Mettre à la terre et en court-circuit (let. d) :</strong> Relier à la terre puis court-circuiter de tous côtés du chantier (obligation en HT).</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:0.75rem;">
+<span style="background:var(--electric-blue); color:#0B1220; font-weight:800; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">5</span>
+<div><strong>Protéger contre les parties voisines restées sous tension (let. e) :</strong> Poser des écrans isolants, barrières, banderoles ou capuchons de protection.</div>
+</div>
+</div>
+</div>
+<p style="font-size:0.92rem; line-height:1.6;">
+<strong>Particularité GIS (Art. 72 al. 3) :</strong> Si le VAT direct est impossible en cellule SF6, vérifier le sectionnement complet et mettre à la terre via les courts-circuiteurs rapides incorporés.<br/>
+<strong>Basse tension (Art. 72 al. 4) :</strong> La mise à la terre/court-circuit peut être omise en BT uniquement s'il n'existe aucun risque de tension induite ni de retour d'alimentation.
+</p>`
+          },
+          {
+            title: "3. Pontage d'armures de câbles et condensateurs (Art. 73 & 74)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+L'Art. 73 impose deux règles de sécurité essentielles trop souvent méconnues sur le terrain :
+</p>
+<div style="background:var(--bg-surface-elevated); border-left:4px solid var(--accent-red); padding:0.85rem 1rem; border-radius:0 8px 8px 0; margin-bottom:0.85rem; font-size:0.92rem; line-height:1.6;">
+⚠️ <strong>Avant de sectionner un câble (Art. 73 al. 3) :</strong> « Avant de sectionner un câble, <strong>on pontera les armures conductrices des deux tronçons</strong> ». Cette mesure évite l'apparition d'un arc ou d'un potentiel dangereux entre les deux tronçons coupés si une circulation de courant résiduelle existe dans le blindage.
+</div>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Condensateurs (Art. 73 al. 4) :</strong> Doivent être déchargés, court-circuités et marqués au début des travaux, et <strong>rester court-circuités pendant toute la durée des travaux</strong>.</li>
+<li><strong>Réenclenchement (Art. 74) :</strong> Le responsable vérifie l'installation après achèvement. Il n'est autorisé à la déclarer prête à la remise en service que lorsqu'elle est prête à fonctionner et répond aux critères de sécurité.</li>
+</ul>`
+          },
+          {
+            title: "4. Travaux sous tension (TST) : 3 méthodes et binôme obligatoire (Art. 75 à 79)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les travaux sous tension en courant fort ne sont admis que si des méthodes de l'état de la technique sont applicables sans danger (Art. 75 al. 1) :
+</p>
+<div style="overflow-x:auto; margin:0.75rem 0 1rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th>Méthode TST légale</th>
+<th>Principe d'exécution</th>
+<th>Équipements requis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Manipulations à distance</strong></td>
+<td>L'opérateur reste à distance sécurisée des pièces nues sous tension.</td>
+<td>Perches isolantes certifiées adaptées à la tension nominale.</td>
+</tr>
+<tr>
+<td><strong>2. Travail au contact direct</strong></td>
+<td>L'opérateur intervient directement sur les éléments sous tension.</td>
+<td>Gants isolants, outillage isolé pour la plus haute tension, tapis isolants.</td>
+</tr>
+<tr>
+<td><strong>3. Travail sous potentiel</strong></td>
+<td>L'opérateur est porté au même potentiel électrique que le conducteur.</td>
+<td>Nacelle isolante, combinaison conductrice équipotentielle.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Interdiction absolue de combinaison (Art. 75 al. 2) :</strong> Interdiction formelle de combiner sur une personne des méthodes TST avec des travaux hors tension sur installations déclenchées !</li>
+<li><strong>Exemptions TST (Art. 75 al. 3) :</strong> Tensions < 50 V, circuits de commande/mesure, travaux de routine simples (mesures, vérifications).</li>
+<li><strong>Formation spécialisée (Art. 76) :</strong> Personnel qualifié justifiant d'une formation ciblée régulière avec exercices pratiques suffisants.</li>
+<li><strong>Règle du binôme obligatoire (Art. 79 al. 1) :</strong> « <strong>Deux personnes au moins doivent travailler sur chaque chantier</strong>, l'une d'elles doit être compétente et responsable de la conduite et de la surveillance des travaux. L'autre ou les autres doivent être au moins instruites ».</li>
+</ul>
+</div>`
+          },
+          {
+            title: "5. Installations provisoires et démontage obligatoire (Art. 81 à 83)",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6;">
+Les chantiers temporaires et installations provisoires (foires, chantiers, secours) relèvent du <strong>Chapitre 6 OCFo</strong> :
+</p>
+<div style="background:var(--bg-surface-elevated); border:1px solid var(--border-medium); border-radius:8px; padding:1rem; margin-bottom:0.85rem;">
+<ul style="margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary);">
+<li><strong>Niveau de sécurité équivalent (Art. 81) :</strong> Même niveau d'exigence que les installations permanentes. Mesures de substitution adaptées (barrières si surveillées, coffrages fixes si non surveillées).</li>
+<li><strong>Matériaux (Art. 82) :</strong> Matériaux résistant aux intempéries ; les matériaux combustibles ne sont admis que s'ils sont traités/revêtus contre l'inflammation et ne présentent aucun danger d'incendie pour le voisinage.</li>
+<li><strong>Démontage obligatoire (Art. 83 al. 1) :</strong> « Lorsqu'elles ne sont plus utilisées, les installations provisoires <strong>doivent être démontées</strong> ».</li>
+<li><strong>Contrôle annuel obligatoire (Art. 83 al. 2) :</strong> « La sécurité des installations provisoires maintenues pendant plusieurs années <strong>doit être vérifiée chaque année</strong> ».</li>
+</ul>
+</div>`
+          }
+        ],
+        practicalExample: "Consignation complète d'une cellule MT 16 kV pour remplacement d'un transformateur de mesure : 1) Déclencher et ouvrir les sectionneurs de toutes parts ; 2) Verrouiller contre le réenclenchement avec cadenas et signalisation ; 3) Vérifier l'absence de tension au moyen d'un VAT homologué testé avant et après ; 4) Mettre à la terre et en court-circuit au plus près du lieu de travail ; 5) Délimiter et poser des écrans isolants devant les cellules voisines restées sous tension. Avant de couper un câble de liaison, les armures métalliques des deux tronçons sont immédiatement pontées (Art. 73 al. 3).",
+        importantPoint: "L'ordre des 5 règles vitales de l'Art. 72 al. 1 doit être exécuté chronologiquement sans dérogation. Tout travail sous tension (TST) en courant fort exige au moins deux personnes (dont une compétente responsable, Art. 79 al. 1). Les installations provisoires doivent impérativement être démontées dès qu'elles ne sont plus utilisées, et vérifiées chaque année si elles durent plusieurs années (Art. 83).",
+        synthesis: "La sécurité des travaux en courant fort repose sur les 5 règles vitales de l'Art. 72 al. 1 (déclencher/ouvrir, condamner, vérifier absence de tension, mettre à la terre/court-circuit, protéger des parties voisines). Les TST requièrent 2 personnes qualifiées, des EPI anti-arc et interdisent tout cumul avec des travaux hors tension. Les installations provisoires sont démontées dès la fin d'usage et contrôlées annuellement.",
+        quiz: [
+          {
+            id: "q_ocfo5_1",
+            type: "single",
+            question: "Quel est l'ordre chronologique exact des cinq règles vitales de préparation de chantier sur une installation déclenchée (Art. 72 al. 1 OCFo) ?",
+            options: [
+              "1. Déclencher/ouvrir - 2. Assurer contre le réenclenchement - 3. Vérifier l'absence de tension - 4. Mettre à la terre/court-circuit - 5. Protéger contre parties voisines",
+              "1. Mettre à la terre - 2. Déclencher - 3. Vérifier absence de tension - 4. Condamner - 5. Poser des barrières",
+              "1. Vérifier absence de tension - 2. Déclencher - 3. Poser des écrans - 4. Condamner - 5. Court-circuiter",
+              "1. Déclencher - 2. Mettre à la terre - 3. Vérifier absence de tension - 4. Travailler - 5. Refermer"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 72 al. 1 OCFo énumère expressément : a. Déclencher et ouvrir les sectionneurs ; b. Assurer contre le réenclenchement ; c. Vérifier l'absence de tension ; d. Mettre à la terre et en court-circuit ; e. Protéger contre les parties voisines restées sous tension."
+          },
+          {
+            id: "q_ocfo5_2",
+            type: "single",
+            question: "En vertu de l'Art. 73 al. 3 de l'OCFo, quelle opération obligatoire doit être exécutée avant de sectionner un câble électrique ?",
+            options: [
+              "On pontera les armures conductrices des deux tronçons",
+              "On dénude complètement l'âme en cuivre",
+              "On arrose le câble d'eau savonneuse",
+              "On retire la prise de terre du poste"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 73 al. 3 OCFo stipule mot pour mot : « Avant de sectionner un câble, on pontera les armures conductrices des deux tronçons » afin de prévenir tout arc ou différence de potentiel dangereuse."
+          },
+          {
+            id: "q_ocfo5_3",
+            type: "single",
+            question: "Quelles sont les trois méthodes réglementaires autorisées pour les travaux sous tension (TST) selon l'Art. 75 al. 1 de l'OCFo ?",
+            options: [
+              "Manipulations à distance, travail au contact direct et travail sous potentiel",
+              "Travail à mains nues, travail sous eau et travail au sol",
+              "Travail avec perche, travail sous gaz SF6 et travail rapide",
+              "Travail par dérivation, travail de nuit et travail isolé"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 75 al. 1 OCFo mentionne expressément les 3 méthodes : manipulations à distance, travail au contact direct, travail sous potentiel."
+          },
+          {
+            id: "q_ocfo5_4",
+            type: "single",
+            question: "Selon l'Art. 79 al. 1 de l'OCFo, combien de personnes au minimum doivent travailler sur chaque chantier de travaux sous tension en courant fort ?",
+            options: [
+              "Deux personnes au moins (1 compétente responsable + 1 au moins instruite)",
+              "Une seule personne suffit si elle est très expérimentée",
+              "Trois personnes obligatoirement dont deux ingénieurs",
+              "Quatre personnes avec un représentant du syndicat"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 79 al. 1 OCFo impose formellement que deux personnes au moins travaillent sur chaque chantier (une compétente et responsable, l'autre au moins instruite)."
+          },
+          {
+            id: "q_ocfo5_5",
+            type: "single",
+            question: "Selon l'Art. 83 de l'OCFo, que deviennent les installations provisoires à la fin de leur usage et quelle est la règle si elles sont maintenues plusieurs années ?",
+            options: [
+              "Elles doivent être démontées à la fin de leur usage, et vérifiées chaque année si maintenues plusieurs années",
+              "Elles deviennent automatiquement permanentes après six mois",
+              "Elles sont laissées en place sans obligation de vérification",
+              "Elles doivent être contrôlées tous les cinq ans comme les installations fixes"
+            ],
+            correctAnswer: 0,
+            explanation: "L'Art. 83 al. 1 et 2 OCFo dispose que les installations provisoires doivent être démontées dès qu'elles ne sont plus utilisées, et que celles maintenues pendant plusieurs années doivent être vérifiées chaque année."
+          }
+        ]
+      },
         {
           id: "rs-734-27-oibt",
           routeId: "rs-734-27-oibt",

@@ -22,10 +22,10 @@ L'architecture des modules respecte rigoureusement la taxonomie officielle suiss
 ```text
 Swiss Electrical Academy
 │
-├── Module A — Dispositions légales (5 formations)
+├── Module A — Dispositions légales (13 formations)
 │   ├── Pyramide des lois (A00 — Disponible)
-│   ├── RS 734.0 - LIE (En préparation)
-│   ├── RS 734.2 - OCFo (En préparation)
+│   ├── RS 734.0 - LIE (5 leçons Art. 1-58 — Disponibles)
+│   ├── RS 734.2 - OCFo (5 leçons Art. 1-86 — Disponibles)
 │   ├── RS 734.27 - OIBT (En préparation)
 │   └── RS 814.710 - ORNI (En préparation)
 │
