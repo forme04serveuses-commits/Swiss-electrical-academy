@@ -40,7 +40,7 @@ export function createQuizEngine(formation, onComplete) {
     container.innerHTML = `
       <div class="quiz-header">
         <div class="quiz-title">📝 Quiz d'évaluation — ${formation.title}</div>
-        <div class="quiz-progress-pill">Question ${currentIndex + 1} / ${quizData.length}</div>
+        <div class="quiz-progress-pill">Question ${currentIndex + 1}&nbsp;/&nbsp;${quizData.length}</div>
       </div>
 
       <div class="question-card">

@@ -1436,6 +1436,7 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 0.85rem;
@@ -1445,6 +1446,8 @@ button, input, select {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .quiz-progress-pill {
@@ -1452,8 +1455,14 @@ button, input, select {
   font-weight: 700;
   color: var(--electric-blue);
   background-color: var(--primary-subtle);
-  padding: 0.25rem 0.65rem;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .question-card {
@@ -1842,6 +1851,11 @@ button, input, select {
 
   .header-xp-badge span:last-child {
     display: none;
+  }
+
+  .quiz-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
 
