@@ -1655,6 +1655,192 @@ La tension de contact ne doit pas dépasser durablement <strong>50 volts en cour
 <p style="font-size:0.92rem; line-height:1.6; margin-bottom:0.5rem;">
 <strong>Courbe temps-tension de l'Annexe 4 (durées ≤ 5 secondes) :</strong> Pour les défauts fugitifs éliminés rapidement par les protections, des tensions plus élevées sont admises selon la courbe officielle de sécurité :
 </p>
+
+<!-- Visuel Pédagogique Interactif : Courbe temps-tension Annexe 4 OCFo (RS 734.2) -->
+<div class="ocfo-annexe4-widget" id="ocfoAnnexe4Widget" role="region" aria-label="Graphique interactif de la courbe temps-tension selon l'Annexe 4 OCFo">
+  <div class="ocfo-widget-header">
+    <div class="ocfo-widget-title">
+      <span>📈</span> <span>Courbe de sécurité temps-tension — Annexe 4 OCFo (RS 734.2)</span>
+    </div>
+    <div class="ocfo-widget-desc">
+      Déplacez le curseur de durée ou cliquez sur un palier pour explorer dynamiquement la tension de contact limite admise et son analyse physiologique selon l'Art. 54 OCFo.
+    </div>
+    <div class="ocfo-mode-selector" role="group" aria-label="Sélection du type de courant">
+      <button type="button" class="ocfo-mode-btn active" data-mode="all" aria-pressed="true">Comparatif AC & DC</button>
+      <button type="button" class="ocfo-mode-btn" data-mode="ac" aria-pressed="false">⚡ Alternatif AC (15-100 Hz)</button>
+      <button type="button" class="ocfo-mode-btn" data-mode="dc" aria-pressed="false">🔋 Continu DC</button>
+    </div>
+  </div>
+
+  <!-- Conteneur SVG du graphique -->
+  <div class="ocfo-svg-container">
+    <svg id="ocfoSvgPlot" viewBox="0 0 680 380" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; display:block;" aria-label="Graphique vectoriel de la courbe temps-tension Annexe 4 OCFo">
+      <defs>
+        <!-- Dégradé Zone Admissible (Sécurité) -->
+        <linearGradient id="ocfoSafeGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#22C55E" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.08"/>
+        </linearGradient>
+        <!-- Dégradé Zone Danger -->
+        <linearGradient id="ocfoDangerGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EF4444" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#EF4444" stop-opacity="0.04"/>
+        </linearGradient>
+        <!-- Glow filtres -->
+        <filter id="ocfoGlowAc" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#38BDF8" flood-opacity="0.6"/>
+        </filter>
+        <filter id="ocfoGlowDc" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#EE8C00" flood-opacity="0.6"/>
+        </filter>
+      </defs>
+
+      <!-- Grille horizontale (Tension) -->
+      <line x1="65" y1="53" x2="635" y2="53" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="57" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="end">700 V</text>
+
+      <line x1="65" y1="89" x2="635" y2="89" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="93" fill="#94A3B8" font-size="11" text-anchor="end">600 V</text>
+
+      <line x1="65" y1="125" x2="635" y2="125" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="129" fill="#94A3B8" font-size="11" text-anchor="end">500 V</text>
+
+      <line x1="65" y1="161" x2="635" y2="161" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="165" fill="#94A3B8" font-size="11" text-anchor="end">400 V</text>
+
+      <line x1="65" y1="197" x2="635" y2="197" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="201" fill="#94A3B8" font-size="11" text-anchor="end">300 V</text>
+
+      <line x1="65" y1="233" x2="635" y2="233" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="58" y="237" fill="#94A3B8" font-size="11" text-anchor="end">200 V</text>
+
+      <line x1="65" y1="261.8" x2="635" y2="261.8" stroke="#EE8C00" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
+      <text x="58" y="265" fill="#EE8C00" font-size="10" font-weight="700" text-anchor="end">120 V DC</text>
+
+      <line x1="65" y1="287" x2="635" y2="287" stroke="#38BDF8" stroke-opacity="0.4" stroke-dasharray="2 2" stroke-width="1"/>
+      <text x="58" y="291" fill="#38BDF8" font-size="10" font-weight="700" text-anchor="end">50 V AC</text>
+
+      <!-- Grille verticale (Durée) -->
+      <line x1="65" y1="35" x2="65" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="65" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">0,05s</text>
+
+      <line x1="150.8" y1="35" x2="150.8" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="150.8" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,1s</text>
+
+      <line x1="236.6" y1="35" x2="236.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="236.6" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,2s</text>
+
+      <line x1="322.4" y1="35" x2="322.4" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="322.4" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">0,4s</text>
+
+      <line x1="372.6" y1="35" x2="372.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="372.6" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">0,6s</text>
+
+      <line x1="435.8" y1="35" x2="435.8" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="435.8" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">1,0s</text>
+
+      <line x1="521.6" y1="35" x2="521.6" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="521.6" y="324" fill="#94A3B8" font-size="11" text-anchor="middle">2,0s</text>
+
+      <line x1="635" y1="35" x2="635" y2="305" stroke="#334155" stroke-dasharray="3 3" stroke-width="1"/>
+      <text x="635" y="324" fill="#94A3B8" font-size="11" font-weight="600" text-anchor="middle">≥ 5,0s</text>
+
+      <!-- Axes principaux -->
+      <line x1="65" y1="305" x2="635" y2="305" stroke="#64748B" stroke-width="2"/>
+      <line x1="65" y1="35" x2="65" y2="305" stroke="#64748B" stroke-width="2"/>
+
+      <!-- Titres des axes -->
+      <text x="350" y="348" fill="#CBD5E1" font-size="12" font-weight="700" text-anchor="middle">Durée maximale d'élimination du défaut t (secondes)</text>
+      <text x="18" y="170" fill="#CBD5E1" font-size="12" font-weight="700" text-anchor="middle" transform="rotate(-90 18 170)">Tension admissible Ut (V)</text>
+
+      <!-- Zone de danger (au-dessus de la courbe) -->
+      <path d="M 65.0 35.0 L 635.0 35.0 L 635.0 287.0 L 571.8 285.2 L 521.6 281.6 L 435.8 276.2 L 408.2 270.8 L 372.6 261.8 L 350.0 251.0 L 322.4 233.0 L 286.8 197.0 L 236.6 143.0 L 150.8 53.0 L 65.0 53.0 Z" fill="url(#ocfoDangerGrad)"/>
+      <text x="470" y="110" fill="#F87171" font-size="12" font-weight="700" letter-spacing="0.05em" opacity="0.8">ZONE DANGEREUSE (Non conforme)</text>
+
+      <!-- Zone admissible (sous la courbe AC) -->
+      <path id="ocfoAreaAc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 143.0 L 286.8 197.0 L 322.4 233.0 L 350.0 251.0 L 372.6 261.8 L 408.2 270.8 L 435.8 276.2 L 521.6 281.6 L 571.8 285.2 L 635.0 287.0 L 635.0 305.0 L 65.0 305.0 Z" fill="url(#ocfoSafeGrad)"/>
+      <text x="210" y="275" fill="#4ADE80" font-size="12" font-weight="700" letter-spacing="0.05em" opacity="0.85">ZONE ADMISSIBLE (Sécurité assurée)</text>
+
+      <!-- Courbe DC (Continu) -->
+      <path id="ocfoCurveDc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 89.0 L 286.8 125.0 L 322.4 161.0 L 350.0 179.0 L 372.6 197.0 L 408.2 218.6 L 435.8 233.0 L 521.6 251.0 L 571.8 258.2 L 635.0 261.8" fill="none" stroke="#EE8C00" stroke-width="3" stroke-dasharray="6 3" filter="url(#ocfoGlowDc)"/>
+
+      <!-- Courbe AC (Alternatif 15-100 Hz) -->
+      <path id="ocfoCurveAc" d="M 65.0 53.0 L 150.8 53.0 L 236.6 143.0 L 286.8 197.0 L 322.4 233.0 L 350.0 251.0 L 372.6 261.8 L 408.2 270.8 L 435.8 276.2 L 521.6 281.6 L 571.8 285.2 L 635.0 287.0" fill="none" stroke="#38BDF8" stroke-width="3.5" filter="url(#ocfoGlowAc)"/>
+
+      <!-- Réticule interactif dynamique -->
+      <line id="ocfoReticleLine" x1="236.6" y1="35" x2="236.6" y2="305" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.85"/>
+      <circle id="ocfoPointDc" cx="236.6" cy="89" r="6" fill="#EE8C00" stroke="#FFFFFF" stroke-width="2"/>
+      <circle id="ocfoPointAc" cx="236.6" cy="143" r="7" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2"/>
+
+      <text id="ocfoTagDc" x="248" y="85" fill="#EE8C00" font-size="11" font-weight="700">600 V DC</text>
+      <text id="ocfoTagAc" x="248" y="138" fill="#38BDF8" font-size="11" font-weight="700">450 V AC</text>
+
+      <!-- Légende intégrée dans le graphique -->
+      <g transform="translate(420, 45)">
+        <rect x="0" y="0" width="205" height="52" rx="6" fill="#0B1220" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
+        <line x1="12" y1="18" x2="36" y2="18" stroke="#38BDF8" stroke-width="3"/>
+        <circle cx="24" cy="18" r="3" fill="#38BDF8"/>
+        <text x="44" y="22" fill="#E2E8F0" font-size="11" font-weight="600">Courant alternatif (AC)</text>
+        <line x1="12" y1="36" x2="36" y2="36" stroke="#EE8C00" stroke-width="2.5" stroke-dasharray="4 2"/>
+        <circle cx="24" cy="36" r="3" fill="#EE8C00"/>
+        <text x="44" y="40" fill="#E2E8F0" font-size="11" font-weight="600">Courant continu (DC)</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Contrôle de durée : Slider et Présélections rapides -->
+  <div class="ocfo-slider-wrapper">
+    <div class="ocfo-slider-label">
+      <span>⏱️ Durée du défaut sélectionnée :</span>
+      <span id="ocfoSliderVal" style="color:var(--electric-blue); font-size:1.1rem; font-weight:800;">0.20 s</span>
+    </div>
+    <input type="range" id="ocfoSliderDuration" class="ocfo-slider-input" min="0" max="100" value="30" step="0.5" aria-label="Régler la durée du défaut en secondes"/>
+    
+    <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.4rem;">Paliers réglementaires de l'Annexe 4 :</div>
+    <div class="ocfo-presets-bar">
+      <button type="button" class="ocfo-preset-btn" data-t="0.05">≤ 0,05 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="0.10">0,10 s</button>
+      <button type="button" class="ocfo-preset-btn active" data-t="0.20">0,20 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="0.40">0,40 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="0.60">0,60 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="1.00">1,00 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="2.00">2,00 s</button>
+      <button type="button" class="ocfo-preset-btn" data-t="5.00">≥ 5,00 s</button>
+    </div>
+  </div>
+
+  <!-- Carte d'Analyse et Physiologie Pédagogique -->
+  <div class="ocfo-feedback-card">
+    <div class="ocfo-metrics-grid">
+      <div class="ocfo-metric-box">
+        <div class="ocfo-metric-val" id="ocfoMetricTime" style="color:var(--text-primary);">0.20 s</div>
+        <div class="ocfo-metric-lbl">Durée de coupure t</div>
+      </div>
+      <div class="ocfo-metric-box">
+        <div class="ocfo-metric-val" id="ocfoMetricAc" style="color:var(--electric-blue);">450 V</div>
+        <div class="ocfo-metric-lbl">Max Alternatif AC</div>
+      </div>
+      <div class="ocfo-metric-box">
+        <div class="ocfo-metric-val" id="ocfoMetricDc" style="color:#EE8C00;">600 V</div>
+        <div class="ocfo-metric-lbl">Max Continu DC</div>
+      </div>
+    </div>
+
+    <div id="ocfoStatusPill" class="ocfo-status-pill safe">
+      <span>🛡️ Zone Admissible : Sécurité des personnes garantie si la coupure survient en ≤ 0.20 s (Art. 54 OCFo)</span>
+    </div>
+
+    <div class="ocfo-explanation-text" id="ocfoExplanationText">
+      Déclencheur rapide de ligne ou différentiel haute sensibilité. La tension de contact admissible chute à 450 V AC (600 V DC), seuil physiologique sans fibrillation cardiaque (Annexe 4 OCFo).
+    </div>
+  </div>
+
+  <!-- Légende et Source Officielle -->
+  <div class="ocfo-caption-box">
+    <div><strong>Figure A.3</strong> — Graphique interactif : Courbe de sécurité temps-tension admissible selon l'Annexe 4 OCFo (RS 734.2)</div>
+    <div>Illustration originale — ELECBOOK (Source : Annexe 4 OCFo)</div>
+  </div>
+</div>
 <div style="overflow-x:auto; margin:0.75rem 0 1rem;">
 <table class="thresholds-table">
 <thead>

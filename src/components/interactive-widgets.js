@@ -375,3 +375,215 @@ export function createNibtWidget() {
 
   return container;
 }
+
+// ----------------------------------------------------------------------------
+// 4. Graphique interactif : Courbe temps-tension Annexe 4 OCFo (RS 734.2)
+// ----------------------------------------------------------------------------
+export function initOcfoAnnexe4Visual(root) {
+  const widget = root ? root.querySelector('#ocfoAnnexe4Widget') : document.getElementById('ocfoAnnexe4Widget');
+  if (!widget) return;
+  if (widget.dataset.initialized === 'true') return;
+  widget.dataset.initialized = 'true';
+
+  const ocfoData = [
+    { t: 0.05, ac: 700, dc: 700, desc: "Déclenchement instantané ultra-rapide (fusibles HPC, disjoncteurs magnétiques). Tolérance maximale jusqu'à 700 V : le temps d'exposition est trop court pour coïncider avec la phase vulnérable du cycle cardiaque et induire une fibrillation ventriculaire." },
+    { t: 0.10, ac: 700, dc: 700, desc: "Temps d'élimination ultra-rapide (≤ 0,1 s). Limite supérieure de 700 V AC et DC admise pour les défauts fugitifs instantanés." },
+    { t: 0.20, ac: 450, dc: 600, desc: "Déclencheur rapide de ligne ou différentiel haute sensibilité. La tension de contact admissible chute à 450 V AC (600 V DC), seuil physiologique sans fibrillation cardiaque (Annexe 4 OCFo)." },
+    { t: 0.30, ac: 300, dc: 500, desc: "Palier intermédiaire d'action des protections. Tension limite admissible : 300 V AC / 500 V DC." },
+    { t: 0.40, ac: 200, dc: 400, desc: "Temps de coupure conventionnel requis en basse tension par la NIBT (circuits terminaux ≤ 32 A). Tension admissible limitée à 200 V AC / 400 V DC." },
+    { t: 0.50, ac: 150, dc: 350, desc: "Protection moyenne. La tension admissible décroît rapidement à 150 V AC / 350 V DC." },
+    { t: 0.60, ac: 120, dc: 300, desc: "Seuil de temporisation classique. Tension admissible : 120 V AC / 300 V DC." },
+    { t: 0.80, ac: 95, dc: 240, desc: "Temporisation de protection de secours. Tension admissible réduite à 95 V AC / 240 V DC." },
+    { t: 1.00, ac: 80, dc: 200, desc: "Défaut d'une seconde complète. La tension de contact ne doit pas excéder 80 V AC (200 V DC) pour prévenir l'asphyxie et les risques de brûlures internes." },
+    { t: 2.00, ac: 65, dc: 150, desc: "Durée maximale admise près des supports métalliques de lignes HT en zones habitées (Art. 54 al. 2 OCFo). Tension admissible : ~65 V AC." },
+    { t: 3.00, ac: 55, dc: 130, desc: "Palier d'alerte approchant le régime permanent. Tension admissible : 55 V AC / 130 V DC." },
+    { t: 5.00, ac: 50, dc: 120, desc: "Régime permanent (défaut non éliminé ≥ 5 s). L'Art. 54 al. 1 OCFo impose une tension de contact permanente strictement ≤ 50 V AC et ≤ 120 V DC." }
+  ];
+
+  const plotW = 570;
+  const plotH = 270;
+  const x0 = 65;
+  const y0 = 35;
+  const uMax = 750;
+  const logMin = Math.log10(0.05);
+  const logMax = Math.log10(5.0);
+  const logSpan = logMax - logMin;
+
+  function tToX(t) {
+    const clamped = Math.max(0.05, Math.min(5.0, t));
+    return x0 + ((Math.log10(clamped) - logMin) / logSpan) * plotW;
+  }
+
+  function xToT(x) {
+    const clampedX = Math.max(x0, Math.min(x0 + plotW, x));
+    const ratio = (clampedX - x0) / plotW;
+    return Math.pow(10, logMin + ratio * logSpan);
+  }
+
+  function uToY(u) {
+    return y0 + (1.0 - u / uMax) * plotH;
+  }
+
+  function interpValues(t) {
+    if (t <= ocfoData[0].t) return { ac: ocfoData[0].ac, dc: ocfoData[0].dc, desc: ocfoData[0].desc };
+    if (t >= ocfoData[ocfoData.length - 1].t) {
+      const last = ocfoData[ocfoData.length - 1];
+      return { ac: last.ac, dc: last.dc, desc: last.desc };
+    }
+    for (let i = 0; i < ocfoData.length - 1; i++) {
+      const d1 = ocfoData[i];
+      const d2 = ocfoData[i + 1];
+      if (t >= d1.t && t <= d2.t) {
+        const ratio = (Math.log10(t) - Math.log10(d1.t)) / (Math.log10(d2.t) - Math.log10(d1.t));
+        const ac = Math.round(d1.ac + ratio * (d2.ac - d1.ac));
+        const dc = Math.round(d1.dc + ratio * (d2.dc - d1.dc));
+        const desc = ratio < 0.5 ? d1.desc : d2.desc;
+        return { ac, dc, desc };
+      }
+    }
+    return { ac: 50, dc: 120, desc: ocfoData[ocfoData.length - 1].desc };
+  }
+
+  // Elements
+  const slider = widget.querySelector('#ocfoSliderDuration');
+  const sliderVal = widget.querySelector('#ocfoSliderVal');
+  const metricTime = widget.querySelector('#ocfoMetricTime');
+  const metricAc = widget.querySelector('#ocfoMetricAc');
+  const metricDc = widget.querySelector('#ocfoMetricDc');
+  const statusPill = widget.querySelector('#ocfoStatusPill');
+  const explanation = widget.querySelector('#ocfoExplanationText');
+  const reticleLine = widget.querySelector('#ocfoReticleLine');
+  const pointAc = widget.querySelector('#ocfoPointAc');
+  const pointDc = widget.querySelector('#ocfoPointDc');
+  const tagAc = widget.querySelector('#ocfoTagAc');
+  const tagDc = widget.querySelector('#ocfoTagDc');
+  const svgPlot = widget.querySelector('#ocfoSvgPlot');
+  const presetBtns = widget.querySelectorAll('.ocfo-preset-btn');
+  const modeBtns = widget.querySelectorAll('.ocfo-mode-btn');
+  const curveAc = widget.querySelector('#ocfoCurveAc');
+  const curveDc = widget.querySelector('#ocfoCurveDc');
+  const areaAc = widget.querySelector('#ocfoAreaAc');
+
+  let currentMode = 'all';
+
+  function updateView(t, activePreset = null) {
+    const vals = interpValues(t);
+    const xPos = tToX(t);
+    const yAc = uToY(vals.ac);
+    const yDc = uToY(vals.dc);
+
+    const sliderPercent = ((Math.log10(t) - logMin) / logSpan) * 100;
+    if (slider && document.activeElement !== slider) {
+      slider.value = sliderPercent;
+    }
+    if (sliderVal) sliderVal.textContent = `${t.toFixed(2)} s`;
+
+    if (metricTime) metricTime.textContent = `${t.toFixed(2)} s`;
+    if (metricAc) metricAc.textContent = `${vals.ac} V`;
+    if (metricDc) metricDc.textContent = `${vals.dc} V`;
+    if (explanation) explanation.textContent = vals.desc;
+
+    if (statusPill) {
+      statusPill.className = 'ocfo-status-pill safe';
+      statusPill.innerHTML = `<span>🛡️ Zone Admissible : Sécurité des personnes garantie si la coupure survient en ≤ ${t.toFixed(2)} s (Art. 54 OCFo)</span>`;
+    }
+
+    if (reticleLine) {
+      reticleLine.setAttribute('x1', xPos);
+      reticleLine.setAttribute('x2', xPos);
+    }
+    if (pointAc) {
+      pointAc.setAttribute('cx', xPos);
+      pointAc.setAttribute('cy', yAc);
+    }
+    if (pointDc) {
+      pointDc.setAttribute('cx', xPos);
+      pointDc.setAttribute('cy', yDc);
+    }
+    if (tagAc) {
+      tagAc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
+      tagAc.setAttribute('y', Math.max(50, yAc - 8));
+      tagAc.textContent = `${vals.ac} V AC`;
+    }
+    if (tagDc) {
+      tagDc.setAttribute('x', xPos > 480 ? xPos - 75 : xPos + 10);
+      tagDc.setAttribute('y', Math.max(40, yDc - 8));
+      tagDc.textContent = `${vals.dc} V DC`;
+    }
+
+    presetBtns.forEach(btn => {
+      const btnT = parseFloat(btn.dataset.t);
+      if (activePreset !== null && Math.abs(btnT - t) < 0.02) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  if (slider) {
+    slider.addEventListener('input', (e) => {
+      const pct = parseFloat(e.target.value) / 100;
+      const t = Math.pow(10, logMin + pct * logSpan);
+      updateView(t, null);
+    });
+  }
+
+  presetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const t = parseFloat(btn.dataset.t);
+      updateView(t, t);
+    });
+  });
+
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = btn.dataset.mode;
+
+      if (currentMode === 'all') {
+        if (curveAc) curveAc.style.display = '';
+        if (curveDc) curveDc.style.display = '';
+        if (areaAc) areaAc.style.display = '';
+        if (pointAc) pointAc.style.display = '';
+        if (pointDc) pointDc.style.display = '';
+        if (tagAc) tagAc.style.display = '';
+        if (tagDc) tagDc.style.display = '';
+      } else if (currentMode === 'ac') {
+        if (curveAc) curveAc.style.display = '';
+        if (curveDc) curveDc.style.display = 'none';
+        if (areaAc) areaAc.style.display = '';
+        if (pointAc) pointAc.style.display = '';
+        if (pointDc) pointDc.style.display = 'none';
+        if (tagAc) tagAc.style.display = '';
+        if (tagDc) tagDc.style.display = 'none';
+      } else if (currentMode === 'dc') {
+        if (curveAc) curveAc.style.display = 'none';
+        if (curveDc) curveDc.style.display = '';
+        if (areaAc) areaAc.style.display = 'none';
+        if (pointAc) pointAc.style.display = 'none';
+        if (pointDc) pointDc.style.display = '';
+        if (tagAc) tagAc.style.display = 'none';
+        if (tagDc) tagDc.style.display = '';
+      }
+    });
+  });
+
+  if (svgPlot) {
+    const handleSvgClick = (evt) => {
+      const rect = svgPlot.getBoundingClientRect();
+      const clientX = evt.clientX || (evt.touches && evt.touches[0] ? evt.touches[0].clientX : 0);
+      if (!clientX) return;
+      const svgX = ((clientX - rect.left) / rect.width) * 680;
+      if (svgX >= x0 && svgX <= x0 + plotW) {
+        const t = xToT(svgX);
+        updateView(t, null);
+      }
+    };
+    svgPlot.addEventListener('click', handleSvgClick);
+    svgPlot.addEventListener('touchmove', handleSvgClick, { passive: true });
+  }
+
+  updateView(0.2, 0.2);
+}

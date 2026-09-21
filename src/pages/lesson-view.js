@@ -3,7 +3,7 @@
 
 import { StorageService } from '../services/storage.js';
 import { findFormation } from '../data/academy-data.js';
-import { createPyramidWidget, createDangerWidget, createNibtWidget } from '../components/interactive-widgets.js';
+import { createPyramidWidget, createDangerWidget, createNibtWidget, initOcfoAnnexe4Visual } from '../components/interactive-widgets.js';
 import { createQuizEngine } from '../components/quiz.js';
 import { createVideoPlayer } from '../components/video-player.js';
 
@@ -226,6 +226,9 @@ export function renderLessonView(container, moduleId, formationId) {
       }
     }
   }
+
+  // Initialisation du visuel interactif OCFo Annexe 4
+  initOcfoAnnexe4Visual(container);
 
   // Insertion du quiz
   if (isAvailable && formation.quiz) {
