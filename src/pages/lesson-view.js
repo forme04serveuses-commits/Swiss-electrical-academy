@@ -22,6 +22,7 @@ export function renderLessonView(container, moduleId, formationId) {
   }
 
   const { module: mod, formation } = result;
+  const isLie = formation.parcoursId === 'rs-734-0' || formation.id.startsWith('rs-734-0-');
   const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
 
   // Enregistrer comme dernière activité pour le bouton « Continuer »
@@ -39,7 +40,16 @@ export function renderLessonView(container, moduleId, formationId) {
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
   let nextLabel = null;
-  if (formation.nextChapterId) {
+  if (isLie && formation.nextLessonId) {
+    if (formation.lessonNumber && formation.lessonNumber < 11) {
+      const nextNum = formation.lessonNumber + 1;
+      nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
+      nextLabel = `Passer à la Leçon ${nextNum} / 11 →`;
+    } else if (formation.lessonNumber === 11) {
+      nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  } else if (formation.nextChapterId) {
     const nextNum = formation.chapterNumber + 1;
     if (nextNum <= 7) {
       nextRoute = `#/formations/A/rs-734-2/chapitre-${nextNum}`;
@@ -60,6 +70,10 @@ export function renderLessonView(container, moduleId, formationId) {
         <a href="#/" class="breadcrumb-link">Accueil</a>
         <span>/</span>
         <a href="#/formations/${mod.id}" class="breadcrumb-link">Module ${mod.id} — ${mod.title}</a>
+        ${isLie ? `
+          <span>/</span>
+          <a href="#/formations/A/rs-734-0" class="breadcrumb-link">RS 734.0 — LIE</a>
+        ` : ''}
         ${isOcfo ? `
           <span>/</span>
           <a href="#/formations/A/rs-734-2" class="breadcrumb-link">RS 734.2 — OCFo</a>
@@ -69,12 +83,18 @@ export function renderLessonView(container, moduleId, formationId) {
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isOcfo ? 'ocfo-lesson-header' : ''}">
+      <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : '')}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
           </span>
           <span class="formation-code-tag">${formation.code}</span>
+          ${isLie && formation.lessonNumber && formation.lessonNumber <= 11 ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">Leçon ${formation.lessonNumber} / 11 · RS 734.0</span>
+          ` : ''}
+          ${isLie && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (11 parties)</span>
+          ` : ''}
           ${isOcfo && formation.chapterNumber && formation.chapterNumber <= 8 ? `
             <span class="ocfo-progression-pill">${formation.chapterNumber === 8 ? 'Leçon 8 / 8 · Annexes 1 à 4' : `Chapitre ${formation.chapterNumber} / 8`}</span>
           ` : ''}
@@ -229,7 +249,11 @@ export function renderLessonView(container, moduleId, formationId) {
       <!-- Barre de navigation bas de leçon -->
       <div class="lesson-footer-nav">
         <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
-          ${isOcfo ? `
+          ${isLie ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+              ← Sommaire des 11 leçons LIE
+            </button>
+          ` : isOcfo ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Sommaire des 8 leçons OCFo
             </button>
@@ -284,8 +308,14 @@ export function renderLessonView(container, moduleId, formationId) {
       const quizEl = createQuizEngine(formation, () => {
         // Callback lors de la complétion
         if (window.updateHeaderXp) window.updateHeaderXp();
-        // Si c'est un chapitre OCFo et qu'un chapitre suivant existe, naviguer vers la suite ou le hub
-        if (isOcfo) {
+        // Si c'est LIE ou OCFo et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+        if (isLie) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/A/rs-734-0';
+          }
+        } else if (isOcfo) {
           if (nextRoute) {
             location.hash = nextRoute;
           } else {

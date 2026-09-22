@@ -3270,3 +3270,138 @@ button, input, select {
   fill: #38BDF8 !important;
   font-weight: 800 !important;
 }
+
+/* ==========================================================================
+   Styles spécifiques Module A — RS 734.0 (LIE) & Composants Pédagogiques
+   ========================================================================== */
+.lie-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(56, 189, 248, 0.05) 100%), var(--bg-surface);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.lie-card-accent {
+  border-left: 3px solid #f59e0b !important;
+}
+
+.lie-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lie-featured-badge {
+  background: #f59e0b;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.lie-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #f59e0b;
+  font-size: 0.85rem;
+}
+
+.lie-featured-stats {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.lie-featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.lie-featured-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-width: 780px;
+}
+
+/* Bloc formel Article Abrogé */
+.ocfo-abroge-card {
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  border-left: 4px solid var(--accent-red);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.ocfo-abroge-badge {
+  display: inline-block;
+  background: var(--accent-red);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+/* Badge Référence Légale */
+.ocfo-legal-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--electric-blue);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+/* Tableau compact et dense */
+.ocfo-density-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  margin: 0.75rem 0;
+}
+
+.ocfo-density-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  background: var(--bg-surface);
+}
+
+.ocfo-density-table th {
+  background: var(--bg-surface-elevated);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.ocfo-density-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  vertical-align: top;
+}
+

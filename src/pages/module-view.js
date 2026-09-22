@@ -2,7 +2,7 @@
 // Détail du module, progression spécifique et liste ordonnée des leçons/chapitres
 
 import { StorageService } from '../services/storage.js';
-import { ACADEMY_MODULES, RS_734_2_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -22,7 +22,11 @@ export function renderModuleView(container, moduleId) {
   const completedCount = mod.formations.filter(f => completed.includes(f.id)).length;
   const modPercentage = mod.formations.length > 0 ? Math.round((completedCount / mod.formations.length) * 100) : 0;
 
-  // Si c'est le Module A, calculer les statistiques spécifiques au parcours RS 734.2
+  // Si c'est le Module A, calculer les statistiques spécifiques aux parcours RS 734.0 et RS 734.2
+  const lieLessons = RS_734_0_INFO ? RS_734_0_INFO.lessons : [];
+  const lieCompletedCount = lieLessons.filter(l => completed.includes(l.id)).length;
+  const liePercentage = lieLessons.length > 0 ? Math.round((lieCompletedCount / lieLessons.length) * 100) : 0;
+
   const ocfoChapters = RS_734_2_INFO.chapters;
   const ocfoCompletedCount = ocfoChapters.filter(c => completed.includes(c.id)).length;
   const ocfoPercentage = Math.round((ocfoCompletedCount / ocfoChapters.length) * 100);
@@ -65,6 +69,30 @@ export function renderModuleView(container, moduleId) {
     </header>
 
     ${moduleId === 'A' ? `
+      <!-- Carte Parcours Structuré RS 734.0 — LIE (Loi fédérale) -->
+      <section class="lie-featured-parcours-box" aria-labelledby="lieFeaturedTitle">
+        <div class="lie-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="lie-featured-badge">LOI FÉDÉRALE SUPRÊME</span>
+            <span class="lie-featured-code">RS 734.0 — LIE</span>
+          </div>
+          <span class="lie-featured-stats">${lieCompletedCount} / 11 leçons · ${liePercentage}%</span>
+        </div>
+        <h2 id="lieFeaturedTitle" class="lie-featured-title">Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)</h2>
+        <p class="lie-featured-desc">
+          Parcours structuré en 11 leçons officielles fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${liePercentage}%; background:#f59e0b;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenLieHub" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
+            <span>Explorer les 11 leçons LIE (Art. 1 à 64)</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
+
       <!-- Carte Parcours Structuré RS 734.2 — OCFo (Section 7) -->
       <section class="ocfo-featured-parcours-box" aria-labelledby="ocfoFeaturedTitle">
         <div class="ocfo-featured-top">
@@ -99,10 +127,11 @@ export function renderModuleView(container, moduleId) {
         ${mod.formations.map(formation => {
           const isDone = completed.includes(formation.id);
           const isAvailable = formation.status === "Disponible";
+          const isLie = formation.id.startsWith('rs-734-0-');
           const isOcfo = formation.id.startsWith('rs-734-2-');
 
           return `
-            <article class="formation-item-card ${isOcfo ? 'ocfo-card-accent' : ''}" data-formation-id="${formation.id}">
+            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : '')}" data-formation-id="${formation.id}">
               <div class="formation-code-col">
                 <span class="formation-code-tag">${formation.code}</span>
               </div>
@@ -128,6 +157,14 @@ export function renderModuleView(container, moduleId) {
     </section>
   `;
 
+  // Clic sur le bouton du parcours LIE
+  const btnOpenLieHub = container.querySelector('#btnOpenLieHub');
+  if (btnOpenLieHub) {
+    btnOpenLieHub.addEventListener('click', () => {
+      location.hash = '#/formations/A/rs-734-0';
+    });
+  }
+
   // Clic sur le bouton du parcours OCFo
   const btnOpenOcfoHub = container.querySelector('#btnOpenOcfoHub');
   if (btnOpenOcfoHub) {
@@ -140,7 +177,12 @@ export function renderModuleView(container, moduleId) {
   container.querySelectorAll('.formation-item-card').forEach(card => {
     card.addEventListener('click', () => {
       const formationId = card.getAttribute('data-formation-id');
-      if (formationId.startsWith('rs-734-2-chapitre-')) {
+      if (formationId.startsWith('rs-734-0-lecon-')) {
+        const leconNum = formationId.replace('rs-734-0-lecon-', '');
+        location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
+      } else if (formationId === 'rs-734-0-evaluation-finale') {
+        location.hash = `#/formations/A/rs-734-0/evaluation-finale`;
+      } else if (formationId.startsWith('rs-734-2-chapitre-')) {
         const chapNum = formationId.replace('rs-734-2-chapitre-', '');
         location.hash = `#/formations/A/rs-734-2/chapitre-${chapNum}`;
       } else if (formationId === 'rs-734-2-evaluation-finale') {
@@ -321,3 +363,181 @@ export function renderOcfoParcoursView(container) {
     });
   });
 }
+
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : RS 734.0 — LIE (11 Leçons officielles · Art. 1 à 64)
+// Source de vérité : 734.0_LIE.pdf (24 juin 1902, état au 1er avril 2026)
+// ----------------------------------------------------------------------------
+export function renderLieParcoursView(container) {
+  const completed = StorageService.getCompletedLessons();
+  const lessons = RS_734_0_INFO ? RS_734_0_INFO.lessons : [];
+  const completedCount = lessons.filter(l => completed.includes(l.id)).length;
+  const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
+  const finalEvalId = RS_734_0_INFO ? RS_734_0_INFO.finalEvaluation.id : 'rs-734-0-evaluation-finale';
+  const isFinalDone = completed.includes(finalEvalId);
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'lecon-1';
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.slug;
+      break;
+    }
+  }
+  if (completedCount === lessons.length && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/A" class="breadcrumb-link">Module A — Dispositions légales</a>
+      <span>/</span>
+      <span>RS 734.0 — LIE</span>
+    </nav>
+
+    <!-- Header Hero Card LIE -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #f59e0b;" role="region" aria-label="En-tête du parcours RS 734.0">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE · LOI-CADRE FONDAMENTALE</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">RS 734.0</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#f59e0b;">LIE (du 24 juin 1902 · État au 1er avril 2026)</div>
+          <h1 class="ocfo-hub-title">Loi fédérale concernant les installations électriques à faible et à fort courant</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${RS_734_0_INFO.description}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours LIE</span>
+          <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
+            ${percentage} % · ${completedCount} / 11 leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${percentage}%; background:#f59e0b;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumeLie" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === 11 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+            ← Retour au Module A
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Liste des 11 Leçons officielles (Parties I à VIII) -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 leçons LIE">
+      <div class="section-heading">
+        <span>📚</span> Les 11 leçons du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#f59e0b;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(245,158,11,0.3); color:#f59e0b;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(245,158,11,0.15); color:#f59e0b; border-color:rgba(245,158,11,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(245,158,11,0.3); color:#f59e0b; background:rgba(245,158,11,0.08);">${les.articles}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (16 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${RS_734_0_INFO.finalEvaluation.title}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag">Art. 1 à 64</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${RS_734_0_INFO.finalEvaluation.duration}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">16 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${RS_734_0_INFO.finalEvaluation.summary}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumeLie');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/A/rs-734-0/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.getAttribute('data-lesson-slug');
+      if (slug) {
+        location.hash = `#/formations/A/rs-734-0/${slug}`;
+      }
+    });
+  });
+}
+

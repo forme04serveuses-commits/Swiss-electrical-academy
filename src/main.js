@@ -3,7 +3,7 @@
 
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderOcfoParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -76,7 +76,13 @@ function initSEA() {
       return;
     }
 
-    // 4. Parcours dédié RS 734.2 (Hub des 7 chapitres) : /formations/A/RS-734-2 ou /formations/A/rs-734-2
+    // 4. Parcours dédié RS 734.0 (Hub des 11 leçons LIE) : /formations/A/rs-734-0 ou /formations/A/lie
+    if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
+      renderLieParcoursView(pageContainer);
+      return;
+    }
+
+    // 4bis. Parcours dédié RS 734.2 (Hub des 7 chapitres OCFo) : /formations/A/RS-734-2 ou /formations/A/rs-734-2
     if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
       renderOcfoParcoursView(pageContainer);
       return;
@@ -85,6 +91,17 @@ function initSEA() {
     // 5. Vue Chapitre ou Leçon
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
+
+      // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/lecon-1)
+      if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = `rs-734-0-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'rs-734-0-evaluation-finale';
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
 
       // Sous-routes pour le parcours RS 734.2 (ex: /formations/A/rs-734-2/chapitre-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
