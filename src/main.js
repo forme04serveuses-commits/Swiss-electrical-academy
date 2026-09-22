@@ -141,6 +141,22 @@ function initSEA() {
         return;
       }
 
+      // Sous-routes pour le parcours RS 734.27 (ex: /formations/A/rs-734-27/lecon-1 ou /lecon-2)
+      if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-27' || segments[2].toLowerCase() === 'oibt' || segments[2].toLowerCase() === 'rs-734-27-oibt')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = `rs-734-27-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'rs-734-27-evaluation-finale';
+        } else if (slug.startsWith('chapitre-')) {
+          const chapPart = slug.replace('chapitre-', '');
+          targetId = `rs-734-27-lecon-${chapPart}`;
+        } else if (slug === 'annexe' || slug === 'annexes') {
+          targetId = 'rs-734-27-lecon-7';
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
+
       const formationId = segments[2];
       renderLessonView(pageContainer, moduleId, formationId);
       setTimeout(() => {

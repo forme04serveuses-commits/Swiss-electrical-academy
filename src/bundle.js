@@ -7726,6 +7726,7 @@
     const { module: mod, formation } = result;
     const isLie = formation.parcoursId === 'rs-734-0' || formation.id.startsWith('rs-734-0-');
     const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
+    const isOibt = formation.parcoursId === 'rs-734-27' || formation.id.startsWith('rs-734-27-');
 
     // Enregistrer comme dernière activité pour le bouton « Continuer »
     StorageService.setLastActivity({
@@ -7749,6 +7750,15 @@
         nextLabel = `Passer au Chapitre suivant (${nextNum} / 11) →`;
       } else if (formation.lessonNumber === 11) {
         nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
+        nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+      }
+    } else if (isOibt && formation.nextLessonId) {
+      if (formation.lessonNumber && formation.lessonNumber < 7) {
+        const nextNum = formation.lessonNumber + 1;
+        nextRoute = `#/formations/A/rs-734-27/lecon-${nextNum}`;
+        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
+      } else if (formation.lessonNumber === 7) {
+        nextRoute = `#/formations/A/rs-734-27/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
       }
     } else if (formation.nextChapterId) {
@@ -7780,12 +7790,16 @@
             <span>/</span>
             <a href="#/formations/A/rs-734-2" class="breadcrumb-link">RS 734.2 — OCFo</a>
           ` : ''}
+          ${isOibt ? `
+            <span>/</span>
+            <a href="#/formations/A/rs-734-27" class="breadcrumb-link">RS 734.27 — OIBT</a>
+          ` : ''}
           <span>/</span>
           <span>${formation.code}</span>
         </nav>
 
         <!-- En-tête de leçon (Titre) -->
-        <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : '')}">
+        <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : ''))}">
           <div class="lesson-badges-row">
             <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
               ${mod.id}
@@ -7802,6 +7816,12 @@
             ` : ''}
             ${isOcfo && formation.isFinalEvaluation ? `
               <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (8 unités)</span>
+            ` : ''}
+            ${isOibt && formation.lessonNumber && formation.lessonNumber <= 7 ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+            ` : ''}
+            ${isOibt && formation.isFinalEvaluation ? `
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (7 unités)</span>
             ` : ''}
             <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
             ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}
@@ -7961,6 +7981,10 @@
               <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
                 ← Sommaire des 8 leçons OCFo
               </button>
+            ` : isOibt ? `
+              <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-27'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+                ← Sommaire des 7 leçons OIBT
+              </button>
             ` : `
               <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
                 ← Retour au module
@@ -8012,7 +8036,7 @@
         const quizEl = createQuizEngine(formation, () => {
           // Callback lors de la complétion
           if (window.updateHeaderXp) window.updateHeaderXp();
-          // Si c'est LIE ou OCFo et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+          // Si c'est LIE, OCFo ou OIBT et qu'une leçon suivante existe, naviguer vers la suite ou le hub
           if (isLie) {
             if (nextRoute) {
               location.hash = nextRoute;
@@ -8024,6 +8048,12 @@
               location.hash = nextRoute;
             } else {
               location.hash = '#/formations/A/rs-734-2';
+            }
+          } else if (isOibt) {
+            if (nextRoute) {
+              location.hash = nextRoute;
+            } else {
+              location.hash = '#/formations/A/rs-734-27';
             }
           } else {
             location.hash = `#/formations/${mod.id}`;
@@ -8543,6 +8573,22 @@
           setTimeout(() => {
             initOcfoAnnexe4Visual(pageContainer);
           }, 50);
+          return;
+        }
+
+        // Sous-routes pour le parcours RS 734.27 (ex: /formations/A/rs-734-27/lecon-1 ou /lecon-2)
+        if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-27' || segments[2].toLowerCase() === 'oibt' || segments[2].toLowerCase() === 'rs-734-27-oibt')) {
+          const slug = segments[3].toLowerCase();
+          let targetId = `rs-734-27-${slug}`;
+          if (slug === 'evaluation-finale' || slug === 'examen') {
+            targetId = 'rs-734-27-evaluation-finale';
+          } else if (slug.startsWith('chapitre-')) {
+            const chapPart = slug.replace('chapitre-', '');
+            targetId = `rs-734-27-lecon-${chapPart}`;
+          } else if (slug === 'annexe' || slug === 'annexes') {
+            targetId = 'rs-734-27-lecon-7';
+          }
+          renderLessonView(pageContainer, moduleId, targetId);
           return;
         }
 
