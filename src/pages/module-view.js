@@ -76,18 +76,18 @@ export function renderModuleView(container, moduleId) {
             <span class="lie-featured-badge">LOI FÉDÉRALE SUPRÊME</span>
             <span class="lie-featured-code">RS 734.0 — LIE</span>
           </div>
-          <span class="lie-featured-stats">${lieCompletedCount} / 11 leçons · ${liePercentage}%</span>
+          <span class="lie-featured-stats">${lieCompletedCount} / 11 chapitres · ${liePercentage}%</span>
         </div>
         <h2 id="lieFeaturedTitle" class="lie-featured-title">Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)</h2>
         <p class="lie-featured-desc">
-          Parcours structuré en 11 leçons officielles fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
+          Parcours structuré en 11 chapitres officiels fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
         </p>
         <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
           <div class="progress-bar-fill" style="width: ${liePercentage}%; background:#f59e0b;"></div>
         </div>
         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
           <button class="btn-continue" id="btnOpenLieHub" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
-            <span>Explorer les 11 leçons LIE (Art. 1 à 64)</span>
+            <span>Explorer les 11 chapitres LIE (Art. 1 à 64)</span>
             <span>→</span>
           </button>
         </div>
@@ -421,7 +421,7 @@ export function renderLieParcoursView(container) {
         <div class="progress-labels">
           <span style="font-weight:700; color:var(--text-primary);">Progression du parcours LIE</span>
           <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
-            ${percentage} % · ${completedCount} / 11 leçons
+            ${percentage} % · ${completedCount} / 11 chapitres
           </span>
         </div>
         <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
@@ -430,7 +430,7 @@ export function renderLieParcoursView(container) {
 
         <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
           <button class="btn-continue" id="btnResumeLie" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
-            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === 11 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>${completedCount === 0 ? 'Commencer le Chapitre I' : (completedCount === 11 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
             <span>→</span>
           </button>
           <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
@@ -440,10 +440,10 @@ export function renderLieParcoursView(container) {
       </div>
     </header>
 
-    <!-- Liste des 11 Leçons officielles (Parties I à VIII) -->
-    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 leçons LIE">
+    <!-- Liste des 11 Chapitres officiels (Parties I à VIII) -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 chapitres LIE">
       <div class="section-heading">
-        <span>📚</span> Les 11 leçons du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
+        <span>📚</span> Les 11 chapitres du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
       </div>
 
       <div class="ocfo-chapters-list">

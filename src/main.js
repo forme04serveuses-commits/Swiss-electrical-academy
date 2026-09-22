@@ -92,12 +92,17 @@ function initSEA() {
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
 
-      // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/lecon-1)
+      // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
         const slug = segments[3].toLowerCase();
         let targetId = `rs-734-0-${slug}`;
         if (slug === 'evaluation-finale' || slug === 'examen') {
           targetId = 'rs-734-0-evaluation-finale';
+        } else if (slug.startsWith('chapitre-')) {
+          const chapPart = slug.replace('chapitre-', '');
+          const romanMap = { 'i': '1', 'ii': '2', 'iii': '3', 'iiia': '4', 'iiib': '5', 'iiic': '6', 'iv': '7', 'v': '8', 'vi': '9', 'vii': '10', 'viii': '11' };
+          const mappedNum = romanMap[chapPart] || chapPart;
+          targetId = `rs-734-0-lecon-${mappedNum}`;
         }
         renderLessonView(pageContainer, moduleId, targetId);
         return;

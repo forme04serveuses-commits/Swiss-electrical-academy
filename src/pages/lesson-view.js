@@ -44,7 +44,7 @@ export function renderLessonView(container, moduleId, formationId) {
     if (formation.lessonNumber && formation.lessonNumber < 11) {
       const nextNum = formation.lessonNumber + 1;
       nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
-      nextLabel = `Passer à la Leçon ${nextNum} / 11 →`;
+      nextLabel = `Passer au Chapitre suivant (${nextNum} / 11) →`;
     } else if (formation.lessonNumber === 11) {
       nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
@@ -90,7 +90,7 @@ export function renderLessonView(container, moduleId, formationId) {
           </span>
           <span class="formation-code-tag">${formation.code}</span>
           ${isLie && formation.lessonNumber && formation.lessonNumber <= 11 ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">Leçon ${formation.lessonNumber} / 11 · RS 734.0</span>
+            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / 11</span>
           ` : ''}
           ${isLie && formation.isFinalEvaluation ? `
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (11 parties)</span>
@@ -251,7 +251,7 @@ export function renderLessonView(container, moduleId, formationId) {
         <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
           ${isLie ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-              ← Sommaire des 11 leçons LIE
+              ← Sommaire des 11 chapitres LIE
             </button>
           ` : isOcfo ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">

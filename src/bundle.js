@@ -85,7 +85,7 @@
     ]
   };
 
-  // Informations officielles et structure en 11 leçons de la RS 734.0 (LIE)
+  // Informations officielles et structure en 11 chapitres de la RS 734.0 (LIE)
   // Source de vérité : 734.0_LIE.pdf (24 juin 1902, état au 1er avril 2026)
   const RS_734_0_INFO = {
     "id": "rs-734-0",
@@ -97,8 +97,8 @@
       {
         "id": "rs-734-0-lecon-1",
         "slug": "lecon-1",
-        "number": "01",
-        "title": "Leçon 1 — I. Dispositions générales",
+        "number": "I",
+        "title": "Chapitre I — Dispositions générales",
         "articles": "Art. 1 à 3b",
         "duration": "7 min",
         "summary": "Haute surveillance de la Confédération, distinction légale entre faible et fort courant, prescriptions de sécurité et régime des émoluments."
@@ -106,8 +106,8 @@
       {
         "id": "rs-734-0-lecon-2",
         "slug": "lecon-2",
-        "number": "02",
-        "title": "Leçon 2 — II. Installations électriques à faible courant",
+        "number": "II",
+        "title": "Chapitre II — Installations électriques à faible courant",
         "articles": "Art. 4 à 12",
         "duration": "5 min",
         "summary": "Conditions précises d'assujettissement des installations à faible courant à la LIE, réserve de l'approbation des plans et historique des articles 5 à 12 abrogés."
@@ -115,8 +115,8 @@
       {
         "id": "rs-734-0-lecon-3",
         "slug": "lecon-3",
-        "number": "03",
-        "title": "Leçon 3 — III. Installations électriques à fort courant",
+        "number": "III",
+        "title": "Chapitre III — Installations électriques à fort courant",
         "articles": "Art. 13 à 15d",
         "duration": "9 min",
         "summary": "Assujettissement général du fort courant, définition légale des installations intérieures, délégation aux règles techniques et priorité au câblage souterrain (réforme 2017)."
@@ -124,8 +124,8 @@
       {
         "id": "rs-734-0-lecon-4",
         "slug": "lecon-4",
-        "number": "04",
-        "title": "Leçon 4 — IIIa. Procédure de plan sectoriel",
+        "number": "IIIa",
+        "title": "Chapitre IIIa — Procédure de plan sectoriel",
         "articles": "Art. 15e à 15k",
         "duration": "6 min",
         "summary": "Coordination avec l'aménagement du territoire (LAT), fixation du corridor de ligne, groupe d'accompagnement OFEN et décision finale du Conseil fédéral."
@@ -133,8 +133,8 @@
       {
         "id": "rs-734-0-lecon-5",
         "slug": "lecon-5",
-        "number": "05",
-        "title": "Leçon 5 — IIIb. Procédure d’approbation des plans",
+        "number": "IIIb",
+        "title": "Chapitre IIIb — Procédure d’approbation des plans",
         "articles": "Art. 16 à 17a",
         "duration": "10 min",
         "summary": "Obligation d'approbation préalable, répartition des compétences ESTI/OFEN, enquête publique de 30 jours, effet de concentration et procédure simplifiée."
@@ -142,8 +142,8 @@
       {
         "id": "rs-734-0-lecon-6",
         "slug": "lecon-6",
-        "number": "06",
-        "title": "Leçon 6 — IIIc. Zones réservées et alignements",
+        "number": "IIIc",
+        "title": "Chapitre IIIc — Zones réservées et alignements",
         "articles": "Art. 18 à 18d",
         "duration": "6 min",
         "summary": "Mesures de protection foncière anticipée pour futures lignes THT ≥ 220 kV, alignements, restrictions à la propriété et renvoi à l'expropriation matérielle."
@@ -151,8 +151,8 @@
       {
         "id": "rs-734-0-lecon-7",
         "slug": "lecon-7",
-        "number": "07",
-        "title": "Leçon 7 — IV. Contrôle",
+        "number": "IV",
+        "title": "Chapitre IV — Contrôle",
         "articles": "Art. 19 à 26a",
         "duration": "8 min",
         "summary": "Responsabilité primaire de l'exploitant (Art. 20), missions de l'Inspection fédérale ESTI, contrôles délégués et surveillance des installations intérieures (OIBT)."
@@ -160,8 +160,8 @@
       {
         "id": "rs-734-0-lecon-8",
         "slug": "lecon-8",
-        "number": "08",
-        "title": "Leçon 8 — V. Dispositions concernant la responsabilité",
+        "number": "V",
+        "title": "Chapitre V — Dispositions concernant la responsabilité civile",
         "articles": "Art. 27 à 41",
         "duration": "9 min",
         "summary": "Responsabilité causale sans faute de l'exploitant (Art. 27), motifs libératoires stricts (force majeure, faute de la victime), assurance obligatoire, nullité des décharges (Art. 39)."
@@ -169,8 +169,8 @@
       {
         "id": "rs-734-0-lecon-9",
         "slug": "lecon-9",
-        "number": "09",
-        "title": "Leçon 9 — VI. Expropriation",
+        "number": "VI",
+        "title": "Chapitre VI — Expropriation",
         "articles": "Art. 42 à 54",
         "duration": "6 min",
         "summary": "Titulaires du droit d'expropriation pour cause d'utilité publique, combinaison procédurale et identification des articles 42 et 46 à 54 abrogés."
@@ -178,8 +178,8 @@
       {
         "id": "rs-734-0-lecon-10",
         "slug": "lecon-10",
-        "number": "10",
-        "title": "Leçon 10 — VII. Dispositions pénales",
+        "number": "VII",
+        "title": "Chapitre VII — Dispositions pénales",
         "articles": "Art. 55 à 60",
         "duration": "7 min",
         "summary": "Amendes jusqu'à 100 000 CHF pour actes intentionnels et 40 000 CHF par négligence, sanctions d'entreprise (Art. 56) et application du DPA (Art. 57)."
@@ -187,8 +187,8 @@
       {
         "id": "rs-734-0-lecon-11",
         "slug": "lecon-11",
-        "number": "11",
-        "title": "Leçon 11 — VIII. Dispositions finales",
+        "number": "VIII",
+        "title": "Chapitre VIII — Dispositions finales",
         "articles": "Art. 61 à 64",
         "duration": "5 min",
         "summary": "Abrogation de la législation de 1889, gestion du droit transitoire des procédures en cours (Art. 63) et pérennité de la LIE jusqu'à son état au 1er avril 2026."
@@ -203,7 +203,7 @@
       "summary": "16 questions représentatives d'examen couvrant les 11 parties de la loi. Seuil de réussite à 80% requis pour valider le module et obtenir le badge Expert LIE."
     },
     "totalLessons": 11,
-    "subtitle": "11 leçons officielles · État au 1er avril 2026 · Structure officielle en 11 parties",
+    "subtitle": "11 chapitres officiels · État au 1er avril 2026 · Structure officielle en 11 parties",
     "tag": "Loi fédérale",
     "fullTitle": "Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)"
   };
@@ -538,7 +538,7 @@
             }
           ]
         },
-              // ======================================================================
+                    // ======================================================================
         // RS 734.0 — LIE : Loi fédérale sur les installations électriques
         // Parcours officiel structuré en 11 leçons conformes aux 11 parties du texte légal
         // (24 juin 1902, état au 1er avril 2026, Art. 1 à 64)
@@ -551,8 +551,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 1,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 1",
-                "title": "Leçon 1 — I. Dispositions générales",
+                "code": "RS 734.0 — Chapitre I",
+                "title": "Chapitre I — Dispositions générales",
                 "subtitle": "Haute surveillance fédérale, distinction faible/fort courant et émoluments (Art. 1 à 3b)",
                 "articlesRange": "Art. 1 à 3b",
                 "status": "Disponible",
@@ -628,8 +628,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 2,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 2",
-                "title": "Leçon 2 — II. Installations électriques à faible courant",
+                "code": "RS 734.0 — Chapitre II",
+                "title": "Chapitre II — Installations électriques à faible courant",
                 "subtitle": "Champ d'assujettissement des lignes à faible courant et dispositions abrogées (Art. 4 à 12)",
                 "articlesRange": "Art. 4 à 12",
                 "status": "Disponible",
@@ -698,8 +698,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 3,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 3",
-                "title": "Leçon 3 — III. Installations électriques à fort courant",
+                "code": "RS 734.0 — Chapitre III",
+                "title": "Chapitre III — Installations électriques à fort courant",
                 "subtitle": "Champ d'application, installations intérieures et règles de câblage souterrain (Art. 13 à 15d)",
                 "articlesRange": "Art. 13 à 15d",
                 "status": "Disponible",
@@ -772,8 +772,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 4,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 4",
-                "title": "Leçon 4 — IIIa. Procédure de plan sectoriel",
+                "code": "RS 734.0 — Chapitre IIIa",
+                "title": "Chapitre IIIa — Procédure de plan sectoriel",
                 "subtitle": "Planification territoriale stratégique des lignes THT ≥ 220 kV (Art. 15e à 15k)",
                 "articlesRange": "Art. 15e à 15k",
                 "status": "Disponible",
@@ -842,8 +842,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 5,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 5",
-                "title": "Leçon 5 — IIIb. Procédure d’approbation des plans",
+                "code": "RS 734.0 — Chapitre IIIb",
+                "title": "Chapitre IIIb — Procédure d’approbation des plans",
                 "subtitle": "Permis de construire, effet de concentration, oppositions et voies de droit (Art. 16 à 17a)",
                 "articlesRange": "Art. 16 à 17a",
                 "status": "Disponible",
@@ -932,8 +932,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 6,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 6",
-                "title": "Leçon 6 — IIIc. Zones réservées et alignements",
+                "code": "RS 734.0 — Chapitre IIIc",
+                "title": "Chapitre IIIc — Zones réservées et alignements",
                 "subtitle": "Réservation foncière, interdictions de bâtir et indemnisation LEx (Art. 18 à 18d)",
                 "articlesRange": "Art. 18 à 18d",
                 "status": "Disponible",
@@ -1002,8 +1002,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 7,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 7",
-                "title": "Leçon 7 — IV. Contrôle",
+                "code": "RS 734.0 — Chapitre IV",
+                "title": "Chapitre IV — Contrôle",
                 "subtitle": "Surveillance par l'exploitant, organes de contrôle, ESTI et OFEN (Art. 19 à 26a)",
                 "articlesRange": "Art. 19 à 26a",
                 "status": "Disponible",
@@ -1076,8 +1076,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 8,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 8",
-                "title": "Leçon 8 — V. Dispositions concernant la responsabilité",
+                "code": "RS 734.0 — Chapitre V",
+                "title": "Chapitre V — Dispositions concernant la responsabilité civile",
                 "subtitle": "Régime de responsabilité causale objective, assurance RC et prescription (Art. 27 à 41)",
                 "articlesRange": "Art. 27 à 41",
                 "status": "Disponible",
@@ -1150,8 +1150,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 9,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 9",
-                "title": "Leçon 9 — VI. Expropriation",
+                "code": "RS 734.0 — Chapitre VI",
+                "title": "Chapitre VI — Expropriation",
                 "subtitle": "Droit d'expropriation, utilité publique et renvoi à la LEx (Art. 42 à 54)",
                 "articlesRange": "Art. 42 à 54",
                 "status": "Disponible",
@@ -1220,8 +1220,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 10,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 10",
-                "title": "Leçon 10 — VII. Dispositions pénales",
+                "code": "RS 734.0 — Chapitre VII",
+                "title": "Chapitre VII — Dispositions pénales",
                 "subtitle": "Infractions, sanctions financières, responsabilité en entreprise et DPA (Art. 55 à 60)",
                 "articlesRange": "Art. 55 à 60",
                 "status": "Disponible",
@@ -1290,8 +1290,8 @@
                 "parcoursId": "rs-734-0",
                 "lessonNumber": 11,
                 "totalLessons": 11,
-                "code": "RS 734.0 — Leçon 11",
-                "title": "Leçon 11 — VIII. Dispositions finales",
+                "code": "RS 734.0 — Chapitre VIII",
+                "title": "Chapitre VIII — Dispositions finales",
                 "subtitle": "Abrogations antérieures, dispositions transitoires et réformes récentes (Art. 61 à 64)",
                 "articlesRange": "Art. 61 à 64",
                 "status": "Disponible",
@@ -3615,6 +3615,17 @@
       'lecon-9': 'rs-734-0-lecon-9',
       'lecon-10': 'rs-734-0-lecon-10',
       'lecon-11': 'rs-734-0-lecon-11',
+      'rs-734-0-chapitre-1': 'rs-734-0-lecon-1',
+      'rs-734-0-chapitre-2': 'rs-734-0-lecon-2',
+      'rs-734-0-chapitre-3': 'rs-734-0-lecon-3',
+      'rs-734-0-chapitre-4': 'rs-734-0-lecon-4',
+      'rs-734-0-chapitre-5': 'rs-734-0-lecon-5',
+      'rs-734-0-chapitre-6': 'rs-734-0-lecon-6',
+      'rs-734-0-chapitre-7': 'rs-734-0-lecon-7',
+      'rs-734-0-chapitre-8': 'rs-734-0-lecon-8',
+      'rs-734-0-chapitre-9': 'rs-734-0-lecon-9',
+      'rs-734-0-chapitre-10': 'rs-734-0-lecon-10',
+      'rs-734-0-chapitre-11': 'rs-734-0-lecon-11',
       'rs-734-0-evaluation-finale': 'rs-734-0-evaluation-finale',
       'rs-734-2': 'rs-734-2-chapitre-1',
       'RS-734-2': 'rs-734-2-chapitre-1',
@@ -6013,18 +6024,18 @@
               <span class="lie-featured-badge">LOI FÉDÉRALE SUPRÊME</span>
               <span class="lie-featured-code">RS 734.0 — LIE</span>
             </div>
-            <span class="lie-featured-stats">${lieCompletedCount} / 11 leçons · ${liePercentage}%</span>
+            <span class="lie-featured-stats">${lieCompletedCount} / 11 chapitres · ${liePercentage}%</span>
           </div>
           <h2 id="lieFeaturedTitle" class="lie-featured-title">Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)</h2>
           <p class="lie-featured-desc">
-            Parcours structuré en 11 leçons officielles fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
+            Parcours structuré en 11 chapitres officiels fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
             <div class="progress-bar-fill" style="width: ${liePercentage}%; background:#f59e0b;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenLieHub" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
-              <span>Explorer les 11 leçons LIE (Art. 1 à 64)</span>
+              <span>Explorer les 11 chapitres LIE (Art. 1 à 64)</span>
               <span>→</span>
             </button>
           </div>
@@ -6358,7 +6369,7 @@
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours LIE</span>
             <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
-              ${percentage} % · ${completedCount} / 11 leçons
+              ${percentage} % · ${completedCount} / 11 chapitres
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
@@ -6367,7 +6378,7 @@
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
             <button class="btn-continue" id="btnResumeLie" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700;">
-              <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === 11 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+              <span>${completedCount === 0 ? 'Commencer le Chapitre I' : (completedCount === 11 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
               <span>→</span>
             </button>
             <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
@@ -6377,10 +6388,10 @@
         </div>
       </header>
 
-      <!-- Liste des 11 Leçons officielles (Parties I à VIII) -->
-      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 leçons LIE">
+      <!-- Liste des 11 Chapitres officiels (Parties I à VIII) -->
+      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 chapitres LIE">
         <div class="section-heading">
-          <span>📚</span> Les 11 leçons du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
+          <span>📚</span> Les 11 chapitres du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
         </div>
 
         <div class="ocfo-chapters-list">
@@ -6522,7 +6533,7 @@
       if (formation.lessonNumber && formation.lessonNumber < 11) {
         const nextNum = formation.lessonNumber + 1;
         nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
-        nextLabel = `Passer à la Leçon ${nextNum} / 11 →`;
+        nextLabel = `Passer au Chapitre suivant (${nextNum} / 11) →`;
       } else if (formation.lessonNumber === 11) {
         nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
@@ -6568,7 +6579,7 @@
             </span>
             <span class="formation-code-tag">${formation.code}</span>
             ${isLie && formation.lessonNumber && formation.lessonNumber <= 11 ? `
-              <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">Leçon ${formation.lessonNumber} / 11 · RS 734.0</span>
+              <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / 11</span>
             ` : ''}
             ${isLie && formation.isFinalEvaluation ? `
               <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (11 parties)</span>
@@ -6729,7 +6740,7 @@
           <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
             ${isLie ? `
               <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-                ← Sommaire des 11 leçons LIE
+                ← Sommaire des 11 chapitres LIE
               </button>
             ` : isOcfo ? `
               <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
@@ -7271,12 +7282,17 @@
       if (segments[0] === 'formations' && segments.length >= 3) {
         const moduleId = segments[1].toUpperCase();
 
-        // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/lecon-1)
+        // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
           const slug = segments[3].toLowerCase();
           let targetId = `rs-734-0-${slug}`;
           if (slug === 'evaluation-finale' || slug === 'examen') {
             targetId = 'rs-734-0-evaluation-finale';
+          } else if (slug.startsWith('chapitre-')) {
+            const chapPart = slug.replace('chapitre-', '');
+            const romanMap = { 'i': '1', 'ii': '2', 'iii': '3', 'iiia': '4', 'iiib': '5', 'iiic': '6', 'iv': '7', 'v': '8', 'vi': '9', 'vii': '10', 'viii': '11' };
+            const mappedNum = romanMap[chapPart] || chapPart;
+            targetId = `rs-734-0-lecon-${mappedNum}`;
           }
           renderLessonView(pageContainer, moduleId, targetId);
           return;
