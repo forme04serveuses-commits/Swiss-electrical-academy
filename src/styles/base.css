@@ -3405,3 +3405,65 @@ button, input, select {
   vertical-align: top;
 }
 
+/* ==========================================================================
+   Styles spécifiques Module A — RS 734.27 (OIBT) & Composants Pédagogiques
+   ========================================================================== */
+.oibt-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.05) 100%), var(--bg-surface);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.oibt-card-accent {
+  border-left: 3px solid #10b981 !important;
+}
+
+.oibt-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.oibt-featured-badge {
+  background: #10b981;
+  color: #042f2e;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.oibt-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #10b981;
+  font-size: 0.85rem;
+}
+
+.oibt-featured-stats {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.oibt-featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.oibt-featured-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-width: 780px;
+}

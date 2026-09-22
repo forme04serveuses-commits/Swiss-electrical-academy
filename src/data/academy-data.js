@@ -299,6 +299,93 @@ export const RS_734_2_INFO = {
 };
 
 // Architecture officielle des 5 modules (A, B, N, E, F)
+// Informations officielles et structure en 7 leçons de la RS 734.27 (OIBT)
+// Source de vérité : 734.27_OIBT.pdf (7 novembre 2001, état au 31 octobre 2025)
+export const RS_734_27_INFO = {
+  "id": "rs-734-27",
+  "code": "RS 734.27",
+  "shortTitle": "OIBT",
+  "title": "RS 734.27 — OIBT",
+  "fullTitle": "Ordonnance sur les installations électriques à basse tension (OIBT)",
+  "subtitle": "7 leçons officielles · État au 31 octobre 2025 · Structure officielle complète et Annexe",
+  "description": "Ordonnance du Conseil fédéral du 7 novembre 2001 sur les installations électriques à basse tension (État le 31 octobre 2025). Cadre réglementaire suisse régissant les autorisations d'installer, l'exécution des travaux, les devoirs des propriétaires, les organes de contrôle indépendants, le rapport de sécurité (RaSi) et les périodicités officielles de contrôle.",
+  "tag": "Ordonnance fédérale",
+  "totalLessons": 7,
+  "lessons": [
+    {
+      "id": "rs-734-27-lecon-1",
+      "slug": "lecon-1",
+      "number": "1",
+      "title": "Chapitre 1 : Dispositions générales",
+      "articles": "Art. 1 à 5",
+      "duration": "8 min",
+      "summary": "Champ d'assujettissement des installations à basse tension, définitions fondamentales, exigences de sécurité et de compatibilité, et obligations légales pesant sur le propriétaire."
+    },
+    {
+      "id": "rs-734-27-lecon-2",
+      "slug": "lecon-2",
+      "number": "2",
+      "title": "Chapitre 2 : Autorisations pour travaux d’installation",
+      "articles": "Art. 6 à 21",
+      "duration": "12 min",
+      "summary": "Les 5 sections du Chapitre 2 : régime d'autorisation obligatoire (Art. 6), conditions pour personnes physiques et entreprises (Art. 7 à 11, 10a, 10b), autorisations limitées (Art. 12 à 15), travaux autorisés aux particuliers sans autorisation (Art. 16) et registre public ESTI (Art. 17 à 21)."
+    },
+    {
+      "id": "rs-734-27-lecon-3",
+      "slug": "lecon-3",
+      "number": "3",
+      "title": "Chapitre 3 : Exécution des travaux d’installation",
+      "articles": "Art. 22 à 25",
+      "duration": "9 min",
+      "summary": "Règles d'exécution sur le chantier : interdiction des travaux sous tension sauf exceptions (Art. 22), avis d'installation préalable aux gestionnaires de réseau (Art. 23), et obligations incontournables de la première vérification et du contrôle final propre à l'entreprise (Art. 24)."
+    },
+    {
+      "id": "rs-734-27-lecon-4",
+      "slug": "lecon-4",
+      "number": "4",
+      "title": "Chapitre 4 : Contrôle des installations",
+      "articles": "Art. 26 à 40",
+      "duration": "14 min",
+      "summary": "Les 4 sections du Chapitre 4 : les différents organes de contrôle et la stricte règle d'indépendance (Sec. 1, Art. 26 à 31), les missions respectives de l'ESTI, des gestionnaires de réseau et des organismes accrédités (Sec. 2, Art. 32 à 34), l'établissement, le contenu et la sommation du rapport de sécurité RaSi (Sec. 3, Art. 35 à 38), et les contrôles sporadiques et mesures de coupure en cas de défaut dangereux (Sec. 4, Art. 39 et 40)."
+    },
+    {
+      "id": "rs-734-27-lecon-5",
+      "slug": "lecon-5",
+      "number": "5",
+      "title": "Chapitre 5 : Émoluments et dispositions pénales",
+      "articles": "Art. 41 et 42",
+      "duration": "7 min",
+      "summary": "Émoluments officiels perçus par l'ESTI (Art. 41) et catalogue exhaustif des infractions pénales réprimées selon l'Art. 55 al. 3 LIE (Art. 42 : travaux sans autorisation, contrôles illégaux, violation de l'organisation d'entreprise, sous-traitance illicite, prête-nom, défaut de RaSi et remise d'installations dangereuses)."
+    },
+    {
+      "id": "rs-734-27-lecon-6",
+      "slug": "lecon-6",
+      "number": "6",
+      "title": "Chapitre 6 : Dispositions finales",
+      "articles": "Art. 43 à 45",
+      "duration": "8 min",
+      "summary": "Abrogation formelle de l'ancienne ordonnance de 1989 (Art. 43), dispositions transitoires initiales avec maintien des al. 1 et 2 abrogés (`1 et 2 …`) et gestion des anciens droits (Art. 44), dispositions transitoires issues de la révision majeure du 23 août 2017 (Art. 44a : règlements EIT.swiss, adaptation des entreprises en 3 ans, électriciens de montage CFC), et date d'entrée en vigueur au 1er janvier 2002 (Art. 45)."
+    },
+    {
+      "id": "rs-734-27-lecon-7",
+      "slug": "lecon-7",
+      "number": "7",
+      "title": "Annexe : Contrôles périodiques",
+      "articles": "Annexe (ch. 1 à 4)",
+      "duration": "15 min",
+      "summary": "L'Annexe officielle intégrale de l'OIBT dans ses 4 chapitres réels : installations spéciales soumises à organisme d'inspection accrédité (ch. 1), installations soumises à organe indépendant (ch. 2, de 1 an à 20 ans pour toutes les autres, avec préservation de 2.4.11 …), contrôles à chaque changement de propriétaire (ch. 3), et installations de production d'énergie (ch. 4)."
+    }
+  ],
+  "finalEvaluation": {
+    "id": "rs-734-27-evaluation-finale",
+    "slug": "evaluation-finale",
+    "title": "Évaluation finale — RS 734.27 (OIBT)",
+    "articles": "Art. 1 à 45 et Annexe",
+    "duration": "25 min",
+    "summary": "Examen représentatif de 16 questions d'examen couvrant les 7 leçons du module OIBT : champ d'application, autorisations d'installer, organisation d'entreprise, règles de chantier, organes de contrôle, RaSi, émoluments, droit pénal, dispositions transitoires et périodicités de l'Annexe. Seuil de réussite à 75% requis pour obtenir le badge Expert OIBT et 100 XP."
+  }
+};
+
 export const ACADEMY_MODULES = [
   // --------------------------------------------------------------------------
   // MODULE A — Dispositions légales
@@ -307,7 +394,7 @@ export const ACADEMY_MODULES = [
     id: "A",
     code: "A",
     title: "Dispositions légales",
-    countLabel: "24 formations",
+    countLabel: "31 formations",
     description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
     badgeTheme: "legal",
     formations: [
@@ -2976,26 +3063,906 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
         prevChapterId: "rs-734-2-annexes",
         nextChapterId: null
       },
+      // ======================================================================
+      // RS 734.27 — OIBT : Ordonnance sur les installations à basse tension
+      // Parcours officiel structuré en 7 leçons (7 chapitres/annexe) + évaluation finale
+      // Source de vérité : 734.27_OIBT.pdf (7 novembre 2001, état au 31 octobre 2025)
+      // ======================================================================
       {
-        id: "rs-734-27-oibt",
-        routeId: "rs-734-27-oibt",
-        code: "RS 734.27 - OIBT",
-        title: "RS 734.27 — Ordonnance sur les installations à basse tension",
-        subtitle: "Ordonnance du Conseil fédéral du 7 novembre 2001 sur les installations à basse tension",
-        status: "En développement",
-        duration: "À venir",
-        tag: "Ordonnance",
-        xpReward: 0,
-        objective: "Étudier les règles fondamentales régissant les autorisations d'installer, le devoir de diligence, les périodicités de contrôle et le rapport de sécurité (RS / RaSi).",
-        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
-        contentSections: [
-          {
-            title: "🔒 Contenu en préparation",
-            text: "La fiche technique relative à la RS 734.27 (OIBT) est en cours de formalisation."
-          }
-        ]
+              "id": "rs-734-27-lecon-1",
+              "routeId": "rs-734-27/lecon-1",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 1,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 1",
+              "title": "Chapitre 1 : Dispositions générales",
+              "subtitle": "Objet, champ d’application, définitions, sécurité, perturbations et devoirs du propriétaire (Art. 1 à 5)",
+              "articlesRange": "Art. 1 à 5",
+              "status": "Disponible",
+              "duration": "8 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 35,
+              "objective": "Maîtriser le champ d'application de l'OIBT, distinguer les installations intérieures et propres à l'entreprise, et assimiler les devoirs légaux du propriétaire (sécurité permanente, dossier technique et conservation du rapport de sécurité RaSi).",
+              "introduction": "Édictée par le Conseil fédéral le <strong>7 novembre 2001 (état au 31 octobre 2025)</strong>, l'<strong>Ordonnance sur les installations électriques à basse tension (OIBT — RS 734.27)</strong> régit les conditions applicables aux interventions sur les installations électriques à basse tension ainsi qu'au contrôle de ces ouvrages. Son <strong>Chapitre 1 (Dispositions générales — Art. 1 à 5)</strong> pose les définitions clés du droit basse tension suisse, consacre la primauté des règles techniques reconnues et définit la responsabilité directe du propriétaire foncier quant au maintien de la sécurité de ses installations.",
+              "contentSections": [
+                      {
+                              "title": "1. Art. 1 — Objet et champ d’application",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 1 • Champ d'application</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 1 al. 1 OIBT</strong> dispose que l'ordonnance règle les conditions applicables aux <strong>interventions sur les installations électriques à basse tension</strong> ainsi qu'au <strong>contrôle de ces installations</strong>.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚡ Installations assujetties à l'OIBT (Art. 1 al. 2)</div>\n  <ul style=\"margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n    <li>Les installations alimentées avec une <strong>tension nominale ne dépassant pas 1000 V en courant alternatif (AC) ou 1500 V en courant continu (DC)</strong>.</li>\n    <li>Les installations alimentées à partir d'installations à fort courant à basse tension ou d'installations à haute tension au moyen d'un transformateur.</li>\n    <li>Les installations à courant faible soumises à la LIE par l'Art. 4 al. 1 LIE (risques de perturbation ou emprise publique).</li>\n  </ul>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Exclusions du champ d'application (Art. 1 al. 3) :</strong> L'OIBT ne s'applique pas aux installations soumises à la législation sur les chemins de fer, aux installations de télécommunication et aux installations militaires soumises à des prescriptions fédérales de sécurité spécifiques.\n</p>"
+                      },
+                      {
+                              "title": "2. Art. 2 — Définitions réglementaires suisses",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 2 • Définitions officielles</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Terme réglementaire</th>\n        <th style=\"width:45%;\">Définition légale (Art. 2 OIBT)</th>\n        <th style=\"width:25%;\">Portée pratique</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Installations électriques</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 2 al. 1)</span></td>\n        <td>Installations intérieures et installations qui ne sont ni des installations de production d'énergie, ni des installations de transport ou de distribution au sens de la LIE.</td>\n        <td>Ensemble du parc basse tension terminal suisse.</td>\n      </tr>\n      <tr>\n        <td><strong>Installations intérieures</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 2 al. 2)</span></td>\n        <td>Installations situées en aval du point de raccordement au réseau de distribution (coupe-surintensité général de l'immeuble ou boîte de dérivation).</td>\n        <td>Bâtiments d'habitation, commerces, industries et artisanat.</td>\n      </tr>\n      <tr>\n        <td><strong>Installations propres à l'entreprise</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 2 al. 3)</span></td>\n        <td>Installations électriques situées dans des immeubles d'une entreprise ou sur son terrain, alimentées par ses propres transformateurs ou raccordées au réseau public.</td>\n        <td>Régime spécial d'autorisation pour travaux internes (Art. 13).</td>\n      </tr>\n      <tr>\n        <td><strong>Installations de production d’énergie</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 2 al. 4)</span></td>\n        <td>Installations de production d'électricité autonomes ou couplées au réseau (installations photovoltaïques, groupes électrogènes, éoliennes, micro-cogénération).</td>\n        <td>Raccordement et contrôle selon la même périodicité que le bâtiment (Annexe ch. 4).</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                      },
+                      {
+                              "title": "3. Art. 3 & 4 — Exigences fondamentales de sécurité et lutte contre les perturbations",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 3 & 4 • Règles de la technique</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Sécurité absolue (Art. 3 al. 1) :</strong> Les installations électriques doivent être établies, modifiées, entretenues et contrôlées selon les <strong>règles techniques reconnues</strong> de telle sorte qu'elles ne mettent en danger ni les personnes, ni les animaux, ni les choses.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📜 Présomption de conformité (Art. 3 al. 2)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Sont considérées comme règles techniques reconnues les <strong>normes harmonisées</strong> publiées par le Conseil fédéral ou l'Office fédéral de l'énergie (OFEN), ainsi que les normes internationales et européennes (CEI / CENELEC) et la <strong>Norme sur les installations à basse tension (NIBT)</strong> publiée par Electrosuisse.\n  </p>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Lutte contre les perturbations (Art. 4) :</strong> Les installations ne doivent pas causer de perturbations intolérables à d'autres installations électriques ou appareils électromagnétiques, et doivent présenter un niveau d'immunité adéquat aux perturbations prévisibles.\n</p>"
+                      },
+                      {
+                              "title": "4. Art. 5 — Devoirs impératifs du propriétaire d’une installation",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 5 • Responsabilité du propriétaire</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 5 OIBT</strong> établit le principe cardinal de la responsabilité de droit public en matière de sécurité électrique :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Maintien de la sécurité (al. 1) :</strong> Le propriétaire ou un représentant désigné par lui veille à ce que l'installation électrique réponde en tout temps aux exigences de sécurité des Art. 3 et 4.</li>\n  <li><strong>Dossier technique (al. 1) :</strong> Il conserve le dossier technique de l'installation (plans, schémas, descriptions) pendant toute la durée d'exploitation de celle-ci.</li>\n  <li><strong>Rapport de sécurité RaSi (al. 2) :</strong> Le propriétaire conserve le rapport de sécurité (RaSi) ainsi que les procès-verbaux de contrôle pendant toute la durée de la période de contrôle fixée dans l'Annexe.</li>\n  <li><strong>Élimination des défauts (al. 3) :</strong> Dès qu'un défaut est constaté, le propriétaire le fait éliminer <em>sans délai</em> par une personne titulaire d'une autorisation d'installer.</li>\n</ul>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 À RETENIR</div>\n  La charge légale de prouver la sécurité de l'installation pèse entièrement sur le propriétaire foncier. C'est à lui de mandater à ses frais un organe de contrôle indépendant périodique et de conserver le précieux Rapport de sécurité (RaSi).\n</div>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Vente immobilière et transmission du dossier électrique",
+                      "text": "Lors de la vente d'un immeuble d'habitation, le propriétaire vendeur doit remettre à l'acquéreur le dossier technique complet et le dernier rapport de sécurité (RaSi) en vigueur. Si l'installation date de plus de 5 ans dans une périodicité de 20 ans, le transfert de propriété déclenche l'obligation légale d'un nouveau contrôle périodique (Annexe ch. 3 OIBT)."
+              },
+              "importantPoint": {
+                      "title": "Principe de diligence permanente",
+                      "text": "Le propriétaire ne peut pas s'exonérer de sa responsabilité en prétextant ignorer l'état de son installation. S'il ne fait pas réparer un défaut signalé ou omet le contrôle périodique, le gestionnaire de réseau ou l'ESTI peut ordonner la coupure d'urgence de l'alimentation électrique (Art. 40 OIBT)."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Quels sont les seuils de tension nominale délimitant le champ d'application de l'OIBT selon l'Art. 1 al. 2 ?",
+                              "options": [
+                                      "Jusqu'à 230 V AC et 400 V DC",
+                                      "Au maximum 1000 V AC (alternatif) et 1500 V DC (continu)",
+                                      "De 50 V à 50 000 V indistinctement",
+                                      "Uniquement les installations au-delà de 1500 V AC"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 1 al. 2 let. a OIBT fixe expressément la limite supérieure de la basse tension à 1000 V en courant alternatif (AC) et 1500 V en courant continu (DC).",
+                              "articleRef": "OIBT — Art. 1 al. 2 let. a"
+                      },
+                      {
+                              "question": "2. Comment sont définies les installations intérieures selon l'Art. 2 al. 2 OIBT ?",
+                              "options": [
+                                      "Les installations situées exclusivement à l'intérieur des chambres à coucher",
+                                      "Les installations situées en aval du point de raccordement au réseau de distribution (coupe-surintensité général)",
+                                      "Uniquement les appareils mobiles raccordés à des prises murales",
+                                      "Les lignes aériennes de distribution du gestionnaire de réseau public"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 2 al. 2 OIBT définit les installations intérieures comme les installations situées en aval du point de raccordement au réseau de distribution.",
+                              "articleRef": "OIBT — Art. 2 al. 2"
+                      },
+                      {
+                              "question": "3. Pendant quelle durée le propriétaire d'une installation électrique doit-il conserver le rapport de sécurité (RaSi) selon l'Art. 5 al. 2 OIBT ?",
+                              "options": [
+                                      "Pendant 1 an seulement après la fin des travaux",
+                                      "Pendant toute la durée de la période de contrôle fixée dans l'annexe",
+                                      "Pendant 50 ans au registre foncier cantonal",
+                                      "Il n'est pas tenu de le conserver, seul l'électricien le garde"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 5 al. 2 OIBT impose au propriétaire de conserver le rapport de sécurité pendant toute la durée de la période de contrôle fixée dans l'annexe.",
+                              "articleRef": "OIBT — Art. 5 al. 2"
+                      },
+                      {
+                              "question": "4. Que doit faire le propriétaire lorsqu'un défaut est constaté sur son installation selon l'Art. 5 al. 3 OIBT ?",
+                              "options": [
+                                      "Attendre la fin de la période de contrôle de 20 ans",
+                                      "Le faire éliminer sans délai par une personne titulaire d'une autorisation d'installer",
+                                      "Remplacer lui-même les câbles défectueux sans contrôle ultérieur",
+                                      "Envoyer une réclamation écrite au Conseil fédéral"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 5 al. 3 OIBT stipule que le propriétaire fait éliminer sans délai les défauts par une personne titulaire d'une autorisation d'installer.",
+                              "articleRef": "OIBT — Art. 5 al. 3"
+                      }
+              ],
+              "nextLessonId": "rs-734-27-lecon-2"
       },
+
       {
+              "id": "rs-734-27-lecon-2",
+              "routeId": "rs-734-27/lecon-2",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 2,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 2",
+              "title": "Chapitre 2 : Autorisations pour travaux d’installation",
+              "subtitle": "Régime de l'autorisation, autorisation générale, autorisations limitées, travaux sans autorisation et dispositions communes (Art. 6 à 21)",
+              "articlesRange": "Art. 6 à 21",
+              "status": "Disponible",
+              "duration": "12 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 35,
+              "objective": "Comprendre les conditions d'octroi des autorisations d'installer générales et limitées, la qualification de personne du métier (Art. 8), les règles d'encadrement en entreprise (Art. 10, 10a, 10b) et les limites strictes des travaux réalisables sans autorisation par les particuliers (Art. 16).",
+              "introduction": "Le <strong>Chapitre 2 de l'OIBT (Art. 6 à 21)</strong> constitue le pilier professionnel de la sécurité électrique suisse. Il instaure un monopole d'exercice conditionné par l'obtention d'une autorisation officielle délivrée par l'Inspection fédérale des installations à courant fort (ESTI). Structuré en <strong>cinq sections réelles</strong>, il régit l'autorisation générale pour les personnes physiques et les entreprises d'installation, définit le statut de personne du métier, encadre les autorisations limitées pour l'industrie et la maintenance, et délimite strictement les rares travaux qu'un propriétaire peut réaliser sans autorisation.",
+              "contentSections": [
+                      {
+                              "title": "1. Section 1 : Régime de l’autorisation (Art. 6)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 6 • Obligation générale d'autorisation</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nSelon l'<strong>Art. 6 OIBT</strong>, celui qui établit, modifie ou entretient des installations électriques et celui qui veut y raccorder à demeure des appareils électriques fixes doit être <strong>titulaire d'une autorisation d'installer délivrée par l'Inspection (ESTI)</strong>.\n</p>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">⚖️ Portée juridique</div>\n  Toute intervention sur le réseau électrique basse tension suisse est illicite sans autorisation formelle de l'ESTI, sous réserve des exceptions strictement énumérées à l'Art. 16.\n</div>"
+                      },
+                      {
+                              "title": "2. Section 2 : Autorisation générale d’installer (Art. 7 à 11)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 7 à 11 • Personnes du métier & Entreprises</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Personnes physiques (Art. 7) :</strong> L'autorisation générale est accordée aux personnes physiques qui sont du métier et garantissent une exécution conforme aux prescriptions.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">🎓 Qui est légalement « personne du métier » ? (Art. 8 OIBT)</div>\n  <ul style=\"margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n    <li>Le titulaire de l'<strong>examen professionnel supérieur (EPS d'installateur-électricien diplômé / maîtrise fédérale)</strong>.</li>\n    <li>Le diplômé d'une haute école universitaire ou spécialisée (ingénieur HES/EPF) en électrotechnique justifiant de <strong>3 ans de pratique</strong> dans les travaux d'installation sous la surveillance d'une personne du métier et ayant réussi l'examen pratique (Art. 8 al. 1 let. b).</li>\n    <li>Le titulaire d'un brevet fédéral de conseiller en sécurité électrique ou électricien-chef de projet justifiant d'au moins <strong>5 ans de pratique</strong> et ayant réussi l'examen pratique.</li>\n  </ul>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Autorisation aux entreprises (Art. 9 & 10) :</strong> L'entreprise doit employer à plein temps (taux d'occupation minimal) une personne du métier responsable de la surveillance technique. Selon l'<strong>Art. 10 OIBT</strong>, la personne du métier doit pouvoir assurer effectivement la direction technique et la surveillance des chantiers.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Exécution par l'entreprise elle-même (Art. 10a) :</strong> Les travaux peuvent être exécutés par des personnes du métier, des électriciens de montage CFC ou installateurs-électriciens CFC, ou des apprentis encadrés.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Recours à d'autres entreprises ou particuliers (Art. 10b) :</strong> Encadre strictement la sous-traitance et le personnel temporaire, qui doivent être intégrés dans l'organisation de surveillance de l'entreprise titulaire.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Autorisation temporaire (Art. 11) :</strong> Si une entreprise n'emploie momentanément aucune personne du métier (décès, départ imprévu), l'ESTI peut accorder une autorisation temporaire de <strong>6 mois au maximum</strong> pour permettre son remplacement.\n</p>"
+                      },
+                      {
+                              "title": "3. Section 3 : Autorisations d’installer limitées (Art. 12 à 15)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 12 à 15 • Régimes limités</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'ESTI peut octroyer des autorisations d'installer limitées à des entreprises non-installatrices pour des besoins techniques spécifiques :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:28%;\">Type d'autorisation</th>\n        <th style=\"width:42%;\">Champ d'application exact</th>\n        <th style=\"width:30%;\">Exigences de qualification</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Installations propres à l'entreprise</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 13)</span></td>\n        <td>Entretien et modification d'installations dans les locaux et terrains propres d'une entreprise industrielle ou commerciale.</td>\n        <td>Présence d'une personne du métier ou d'un électricien de réseau/exploitation qualifié ayant réussi l'examen ESTI.</td>\n      </tr>\n      <tr>\n        <td><strong>Installations spéciales</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 14)</span></td>\n        <td>Travaux sur des installations spécifiques (ascenseurs, enseignes lumineuses, téléphériques, installations photovoltaïques, etc.).</td>\n        <td>Formation professionnelle correspondante + examen spécifique ESTI.</td>\n      </tr>\n      <tr>\n        <td><strong>Raccordement d'appareils</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 15)</span></td>\n        <td>Raccordement et remplacement d'appareils électriques et d'équipements spécifiques (chauffage, ventilation, pompes à chaleur, machines industrielles).</td>\n        <td>Professionnel de la branche technique (chauffagiste, mécanicien) ayant suivi la formation OIBT 15 et réussi l'examen ESTI.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                      },
+                      {
+                              "title": "4. Section 4 : Travaux d’installation sans autorisation (Art. 16)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 16 • Exceptions réservées aux particuliers</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 16 OIBT</strong> délimite de façon restrictive les seuls travaux qu'une personne physique peut réaliser <strong>sans autorisation d'installer</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Locaux d'habitation et locaux annexes occupés par le propriétaire (al. 1 let. a) :</strong> poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées existantes, protégées par un <strong>dispositif différentiel résiduel (DDR / FI ≤ 30 mA)</strong>.</li>\n  <li><strong>Personnes qualifiées dans leur propre logement (al. 1 let. b) :</strong> un électricien de montage CFC ou installateur-électricien CFC peut exécuter des travaux d'installation dans les locaux d'habitation et annexes qu'il habite en tant que propriétaire ou locataire.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle obligatoire pour les travaux sans autorisation (Art. 16 al. 2)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Les installations réalisées selon l'Art. 16 al. 1 let. b doivent <strong>obligatoirement faire l'objet d'un contrôle de réception par un organe de contrôle indépendant</strong>, lequel établit le rapport de sécurité (RaSi) transmis au gestionnaire de réseau !\n  </p>\n</div>"
+                      },
+                      {
+                              "title": "5. Section 5 : Dispositions communes (Art. 17 à 21)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 17 à 21 • Validité & Registre ESTI</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Teneur (Art. 17) :</strong> L'autorisation mentionne les personnes du métier et les personnes responsables de l'exécution technique.</li>\n  <li><strong>Durée et intransmissibilité (Art. 18) :</strong> L'autorisation est <strong>illimitée dans le temps</strong> mais strictement <strong>intransmissible</strong> (elle ne peut être cédée, vendue ou prêtée).</li>\n  <li><strong>Obligation d'annoncer les mutations (Art. 19) :</strong> Tout changement (départ de la personne du métier, changement d'adresse, modification de raison sociale) doit être annoncé à l'ESTI dans un délai de <strong>deux semaines</strong>.</li>\n  <li><strong>Registre public (Art. 20) :</strong> L'ESTI tient un registre officiel accessible au public répertoriant tous les titulaires d'autorisations d'installer en Suisse.</li>\n  <li><strong>Examens (Art. 21) :</strong> L'ESTI organise ou fait organiser les examens exigés pour l'octroi des autorisations.</li>\n</ul>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Un chauffagiste peut-il raccorder une pompe à chaleur ?",
+                      "text": "Oui, mais uniquement s'il est titulaire de l'autorisation de raccordement selon l'Art. 15 OIBT. Cette autorisation lui permet de raccorder à demeure la pompe à chaleur depuis le disjoncteur terminal prévu à cet effet, mais ne l'autorise en aucun cas à modifier le tableau principal ou à tirer de nouvelles lignes générales."
+              },
+              "importantPoint": {
+                      "title": "Prête-nom formellement interdit",
+                      "text": "La personne du métier ne peut pas prêter son nom pour 'couvrir' les chantiers d'une autre entreprise sans en assumer la direction et la surveillance effectives (Art. 10b et Art. 42 let. c ch. 3 OIBT, sanctionné pénalement)."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Quelle qualification confère de plein droit la qualité de personne du métier selon l'Art. 8 al. 1 let. a OIBT ?",
+                              "options": [
+                                      "Le certificat de capacité d'employé de commerce",
+                                      "L'examen professionnel supérieur (EPS d'installateur-électricien diplômé / maîtrise fédérale)",
+                                      "Un cours du soir d'initiation à l'électricité de 20 heures",
+                                      "Le permis de conduire pour véhicules lourds"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 8 al. 1 let. a OIBT dispose qu'est du métier une personne qui a réussi l'examen professionnel supérieur (EPS).",
+                              "articleRef": "OIBT — Art. 8 al. 1 let. a"
+                      },
+                      {
+                              "question": "2. Pendant quelle durée maximale l'ESTI peut-elle accorder une autorisation temporaire selon l'Art. 11 al. 1 OIBT ?",
+                              "options": [
+                                      "1 mois au maximum",
+                                      "6 mois au maximum",
+                                      "5 ans renouvelables",
+                                      "Indéfiniment jusqu'à la retraite du directeur"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11 al. 1 OIBT prévoit que si l'entreprise n'emploie momentanément aucune personne du métier, l'Inspection peut délivrer une autorisation temporaire valable pour six mois au plus.",
+                              "articleRef": "OIBT — Art. 11 al. 1"
+                      },
+                      {
+                              "question": "3. Quels travaux un particulier peut-il réaliser sans autorisation d'installer dans son propre logement selon l'Art. 16 al. 1 let. a OIBT ?",
+                              "options": [
+                                      "Modifier le raccordement au réseau de transport haute tension",
+                                      "Poser des luminaires et remplacer des interrupteurs/prises sur des circuits monophasés protégés par DDR (FI ≤ 30 mA)",
+                                      "Construire un poste de transformation à huile dans sa cave",
+                                      "Poser des compteurs d'énergie pour revendre du courant aux voisins"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 16 al. 1 let. a OIBT autorise uniquement le propriétaire occupant à poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées protégées par un DDR (FI ≤ 30 mA).",
+                              "articleRef": "OIBT — Art. 16 al. 1 let. a"
+                      },
+                      {
+                              "question": "4. Dans quel délai le titulaire d'une autorisation d'installer doit-il annoncer à l'Inspection tout changement de personne du métier selon l'Art. 19 al. 1 OIBT ?",
+                              "options": [
+                                      "Dans les deux semaines",
+                                      "Dans les six mois",
+                                      "Lors du contrôle périodique de 20 ans",
+                                      "Aucune annonce n'est requise"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 19 al. 1 OIBT impose au titulaire d'annoncer dans les deux semaines à l'Inspection toute modification des conditions ayant conduit à l'octroi de l'autorisation.",
+                              "articleRef": "OIBT — Art. 19 al. 1"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-1",
+              "nextLessonId": "rs-734-27-lecon-3"
+      },
+
+      {
+              "id": "rs-734-27-lecon-3",
+              "routeId": "rs-734-27/lecon-3",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 3,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 3",
+              "title": "Chapitre 3 : Exécution des travaux d’installation",
+              "subtitle": "Sécurité au travail, avis d'installation, première vérification et contrôle final propre à l'entreprise (Art. 22 à 25)",
+              "articlesRange": "Art. 22 à 25",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 35,
+              "objective": "Maîtriser la chronologie obligatoire des chantiers électriques en Suisse : sécurité d'intervention (Art. 22), obligation d'annonce préalable au gestionnaire de réseau (Art. 23), première vérification avant mise sous tension et contrôle final avec procès-verbal d'essais et protocole de mesure (Art. 24).",
+              "introduction": "Le <strong>Chapitre 3 de l'OIBT (Art. 22 à 25)</strong> encadre l'activité quotidienne des installateurs électriciens sur les chantiers. Il pose la règle absolue de travail hors tension et renvoie aux 5 règles vitales de sécurité. Il institue également une discipline de traçabilité stricte en exigeant l'annonce préalable des chantiers au gestionnaire de réseau (avis d'installation) ainsi qu'une procédure de double contrôle interne : la <strong>première vérification</strong> préalable à la mise en service et le <strong>contrôle final propre à l'entreprise</strong> consigné dans un rapport de sécurité.",
+              "contentSections": [
+                      {
+                              "title": "1. Art. 22 — Sécurité au travail et règles d'intervention",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 22 • Travaux hors tension & TST</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Règle fondamentale (Art. 22 al. 1) :</strong> En règle générale, les travaux sur des installations électriques <strong>ne doivent être entrepris que si l'installation est hors tension</strong>.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">🛡️ Les 5 règles de sécurité de l'Art. 22 al. 1 OIBT</div>\n  <ol style=\"margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n    <li><strong>Déclencher et couper</strong> l'alimentation sur tous les pôles.</li>\n    <li><strong>Assurer contre le réenclenchement</strong> inopiné (cadenassage, condamnation).</li>\n    <li><strong>Vérifier l'absence de tension</strong> à l'aide d'un vérificateur homologué.</li>\n    <li><strong>Mettre à la terre et en court-circuit</strong> (si requis par les caractéristiques de l'installation).</li>\n    <li><strong>Protéger contre les parties voisines</strong> restées sous tension (écrans, capuchons isolants).</li>\n  </ol>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Dérogations et Travaux sous tension - TST (Art. 22 al. 2 à 4) :</strong> Les travaux sur des installations sous tension ne sont admissibles qu'à titre exceptionnel, sous la responsabilité directe d'une personne du métier, avec un personnel spécialement formé, équipé d'EPI appropriés et toujours en <strong>binôme (présence permanente d'une 2e personne instruite)</strong>.\n</p>"
+                      },
+                      {
+                              "title": "2. Art. 23 — Obligation d’annoncer les travaux (Avis d'installation)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 23 • Avis d'installation</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nSelon l'<strong>Art. 23 OIBT</strong>, les titulaires d'une autorisation d'installer doivent <strong>annoncer au gestionnaire de réseau compétent</strong>, avant le début des travaux :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li>Les travaux nécessitant l'établissement, la modification ou le renforcement du raccordement au réseau.</li>\n  <li>Les travaux portant sur des installations dont la périodicité de contrôle est <strong>inférieure à 20 ans</strong> selon l'Annexe.</li>\n  <li>Les installations de production d'énergie (photovoltaïque, accumulateurs).</li>\n</ul>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<em>Notification a posteriori :</em> Pour les petites interventions urgentes, l'annonce doit intervenir au plus tard dans les 20 jours suivant l'intervention.\n</p>"
+                      },
+                      {
+                              "title": "3. Art. 24 — Première vérification et contrôle final propre à l’entreprise",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 24 • Vérification & Contrôle final</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Étape technique</th>\n        <th style=\"width:45%;\">Exigence réglementaire (Art. 24 OIBT)</th>\n        <th style=\"width:30%;\">Document obligatoire</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Première vérification</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 1)</span></td>\n        <td>Effectuée <em>avant</em> la mise en service de l'installation ou de la partie d'installation modifiée, pour s'assurer de l'absence de danger immédiat.</td>\n        <td>Procès-verbal de première vérification (mesures d'isolement, continuité du PE).</td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle final propre à l'entreprise</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 2)</span></td>\n        <td>Effectué par une personne du métier ou un conseiller en sécurité avant la remise de l'installation au propriétaire. Mesures complètes selon NIBT.</td>\n        <td><strong>Protocole de mesure</strong> et <strong>Rapport de sécurité (RaSi)</strong> signé par l'installateur.</td>\n      </tr>\n      <tr>\n        <td><strong>Remise du RaSi</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 3 & 4)</span></td>\n        <td>Le rapport de sécurité est remis au propriétaire ainsi qu'au gestionnaire de réseau compétent.</td>\n        <td>RaSi officiel remis sans délai.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                      },
+                      {
+                              "title": "4. Art. 25 — Obligation d’annonce pour les autorisations limitées",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 25 • Régime des autorisations limitées</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes titulaires d'une autorisation d'installer limitée (Art. 13, 14, 15) doivent consigner tous leurs travaux dans un <strong>registre de contrôle</strong> tenu à disposition de l'Inspection (ESTI).\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nIls procèdent également à la première vérification et remettent un rapport de sécurité spécifique attestant de la conformité du raccordement exécuté.\n</p>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Mise sous tension d'un nouveau tableau divisionnaire",
+                      "text": "Avant d'enclencher le disjoncteur général, l'électricien effectue la première vérification : inspection visuelle, mesure de résistance d'isolement (Riso ≥ 1 MΩ) et continuité des conducteurs de protection (Rpe ≤ 1 Ω). Une fois sous tension, il effectue le contrôle final complet (déclenchement des différentiels DDR en temps et courant, impédance de boucle de défaut Zs) et consigne les valeurs dans le protocole de mesure joint au RaSi."
+              },
+              "importantPoint": {
+                      "title": "Interdiction de mise en service sans vérification",
+                      "text": "Mettre en service une installation électrique sans première vérification préalable engage directement la responsabilité civile et pénale de l'installateur (Art. 42 let. c ch. 5 OIBT)."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Quelle est la règle générale concernant l'état d'une installation lors de l'exécution de travaux selon l'Art. 22 al. 1 OIBT ?",
+                              "options": [
+                                      "Les travaux doivent toujours être faits sous tension pour vérifier que le courant passe",
+                                      "En règle générale, les travaux ne doivent être entrepris que si l'installation est hors tension",
+                                      "La tension n'a aucune importance si l'ouvrier porte des chaussures de sécurité",
+                                      "L'installation doit être mise sous surtension de 10 000 V pour tester sa résistance"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 22 al. 1 OIBT pose le principe absolu : en règle générale, les travaux sur des installations électriques ne doivent être entrepris que si l'installation est hors tension.",
+                              "articleRef": "OIBT — Art. 22 al. 1"
+                      },
+                      {
+                              "question": "2. À quel moment la première vérification doit-elle obligatoirement être effectuée selon l'Art. 24 al. 1 OIBT ?",
+                              "options": [
+                                      "5 ans après l'emménagement du propriétaire",
+                                      "Avant la mise en service de l'installation ou de la partie d'installation modifiée",
+                                      "Uniquement en cas d'accident corporel",
+                                      "Lors de la démolition du bâtiment"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 24 al. 1 OIBT dispose expressément qu'une première vérification doit être effectuée avant la mise en service de l'installation.",
+                              "articleRef": "OIBT — Art. 24 al. 1"
+                      },
+                      {
+                              "question": "3. Qui doit exécuter le contrôle final propre à l'entreprise selon l'Art. 24 al. 2 OIBT ?",
+                              "options": [
+                                      "Un apprenti de première année seul sur le chantier",
+                                      "Une personne du métier ou un contrôleur / conseiller en sécurité qualifié",
+                                      "Le concierge de l'immeuble",
+                                      "La police cantonale"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 24 al. 2 OIBT exige que le contrôle final soit effectué par une personne du métier ou un titulaire du brevet de conseiller en sécurité.",
+                              "articleRef": "OIBT — Art. 24 al. 2"
+                      },
+                      {
+                              "question": "4. Quels documents essentiels constituent le dossier de contrôle remis au propriétaire selon l'Art. 24 al. 2 et 3 OIBT ?",
+                              "options": [
+                                      "Une simple facture acquittée",
+                                      "Le protocole de mesure complet et le Rapport de sécurité (RaSi)",
+                                      "Un certificat médical d'aptitude",
+                                      "Uniquement le bon de livraison du matériel"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 24 al. 2 et 3 OIBT exige la consignation des résultats dans un protocole de mesure et l'établissement d'un rapport de sécurité (RaSi).",
+                              "articleRef": "OIBT — Art. 24 al. 2 et 3"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-2",
+              "nextLessonId": "rs-734-27-lecon-4"
+      },
+
+      {
+              "id": "rs-734-27-lecon-4",
+              "routeId": "rs-734-27/lecon-4",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 4,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 4",
+              "title": "Chapitre 4 : Contrôle des installations",
+              "subtitle": "Organes de contrôle, indépendance, compétences, rapport de sécurité RaSi, contrôles sporadiques et élimination des défauts (Art. 26 à 40)",
+              "articlesRange": "Art. 26 à 40",
+              "status": "Disponible",
+              "duration": "14 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 40,
+              "objective": "Maîtriser le système de contrôle suisse à plusieurs niveaux : distinction entre organes indépendants et organismes accrédités (Art. 26), incompatibilité absolue entre installation et contrôle (Art. 31), procédure de sommation périodique (Art. 36), contenu obligatoire du RaSi (Art. 37) et traitement des défauts graves (Art. 40).",
+              "introduction": "Le <strong>Chapitre 4 de l'OIBT (Art. 26 à 40)</strong> est la clé de voûte de la sécurité des installations intérieures suisses. Il organise une séparation stricte des pouvoirs en instaurant des <strong>organes de contrôle indépendants</strong> et des <strong>organismes d'inspection accrédités</strong>. Structuré en <strong>quatre sections réelles</strong>, il régit l'autorisation de contrôler délivrée par l'ESTI, verrouille le principe d'incompatibilité (interdiction d'être juge et partie), fixe le contenu impératif du Rapport de sécurité (RaSi), détaille la procédure de sommation par les gestionnaires de réseau et prévoit la coupure d'urgence en cas de danger grave.",
+              "contentSections": [
+                      {
+                              "title": "1. Section 1 : Dispositions communes & Indépendance des contrôles (Art. 26 à 31)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 26 à 31 • Les acteurs du contrôle</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Les 4 catégories d'organes de contrôle (Art. 26 al. 1) :</strong>\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>a. Les organes de contrôle indépendants :</strong> titulaires d'une autorisation de contrôler délivrée par l'ESTI.</li>\n  <li><strong>b. Les organismes d'inspection accrédités :</strong> accrédités selon la norme ISO/CEI 17020 pour le contrôle des installations spéciales à haut risque (locaux médicaux groupe 2, zones Ex, mines, etc.).</li>\n  <li><strong>c. Les gestionnaires de réseau :</strong> dans leur propre zone de desserte (surveillance des délais et contrôles sporadiques).</li>\n  <li><strong>d. L'Inspection fédérale (ESTI) :</strong> haute surveillance et contrôles d'office.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚖️ Art. 31 OIBT — La règle d'incompatibilité absolue</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  <strong>« Celui qui a participé à la conception, à l'exécution, à la modification ou à la remise en état d'une installation électrique ne peut pas être chargé du contrôle de réception (art. 35 al. 3) ni du contrôle périodique (art. 36) de cette même installation. »</strong><br>\n  Cette interdiction s'étend aux personnes faisant partie de la même entreprise ou ayant des liens économiques directs avec l'installateur.\n  </p>\n</div>"
+                      },
+                      {
+                              "title": "2. Section 2 : Compétences et tâches des organes de contrôle (Art. 32 à 34)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 32 à 34 • Rôles institutionnels</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Contrôles techniques (Art. 32) :</strong> Les organismes d'inspection accrédités ont l'exclusivité du contrôle des installations spéciales énumérées au ch. 1 de l'Annexe (ouvrages classifiés, hôpitaux groupe 2, dépôts de carburants, etc.). Les organes indépendants contrôlent toutes les autres installations soumises aux ch. 2, 3 et 4.</li>\n  <li><strong>Tâches des gestionnaires de réseau (Art. 33) :</strong> Ils tiennent le registre des installations de leur réseau, surveillent les échéances de contrôle périodique et conservent les rapports de sécurité transmis par les propriétaires.</li>\n  <li><strong>Haute surveillance de l'ESTI (Art. 34) :</strong> L'Inspection supervise l'ensemble des organes de contrôle et des gestionnaires de réseau, procède à des audits et tranche les litiges techniques.</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Section 3 : Rapport de sécurité RaSi et sommations (Art. 35 à 38)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 35 à 38 • La procédure RaSi</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Prise en charge d'une installation neuve (Art. 35) :</strong>\nPour toute installation dont la période de contrôle est inférieure à 20 ans, le propriétaire doit faire effectuer un <strong>contrôle de réception indépendant</strong> dans les <strong>6 mois</strong> suivant la reprise de l'installation.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📅 Sommation périodique (Art. 36 OIBT)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  <strong>Six mois au moins</strong> avant l'expiration d'une période de contrôle fixée à l'Annexe, le gestionnaire de réseau invite par écrit le propriétaire à présenter le rapport de sécurité attestant de la conformité de son installation dans un délai de <strong>six mois</strong>.\n  </p>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Contenu obligatoire du Rapport de sécurité (Art. 37 OIBT) :</strong>\nEmplacement et désignation de l'installation, nom et adresse du propriétaire, description technique, périodicité de contrôle, nom et numéro d'autorisation de l'installateur et de l'organe de contrôle, résultats des mesures et mention expresse de conformité.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Refus des rapports incomplets (Art. 38) :</strong> Les gestionnaires de réseau refusent les rapports incomplets ou établis par des personnes non autorisées et impartissent un délai pour les rectifier.\n</p>"
+                      },
+                      {
+                              "title": "4. Section 4 : Contrôles sporadiques et élimination des défauts (Art. 39 & 40)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 39 & 40 • Contrôles inopinés & Défauts</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Contrôles ponctuels sporadiques (Art. 39) :</strong> L'ESTI et les gestionnaires de réseau contrôlent par sondage des installations déjà certifiées pour s'assurer de la qualité du travail des installateurs et des contrôleurs.\n</p>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">⚡ Traitement des défauts graves (Art. 40 OIBT)</div>\n  <ul style=\"margin:0 0 0 1.25rem; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n    <li>Les défauts qui présentent un danger direct pour les personnes ou les choses doivent être éliminés <strong>immédiatement</strong>.</li>\n    <li>En cas de danger imminent, l'organe de contrôle ou l'exploitant de réseau est tenu de <strong>couper immédiatement l'alimentation de l'installation</strong> ou de la partie dangereuse (Art. 40 al. 2).</li>\n    <li>Si le propriétaire ne donne pas suite aux sommations de mise en conformité, le dossier est transmis à l'ESTI qui ordonne le contrôle d'office aux frais du récalcitrant et peut infliger des sanctions.</li>\n  </ul>\n</div>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : L'installateur peut-il signer le RaSi périodique de son propre client ?",
+                      "text": "Non ! Même si l'installateur possède également un brevet de contrôleur, l'Art. 31 OIBT lui interdit formellement de signer le rapport de sécurité périodique ou de réception d'une installation qu'il a lui-même posée ou modifiée. Le propriétaire doit obligatoirement mandater un bureau de contrôle indépendant tiers."
+              },
+              "importantPoint": {
+                      "title": "Délai de sommation de 6 mois",
+                      "text": "Le gestionnaire de réseau doit avertir le propriétaire au moins 6 mois avant l'échéance légale de l'annexe (Art. 36 al. 1 OIBT). Si le propriétaire ne répond pas après rappels, l'affaire est transmise à l'ESTI pour procédure administrative contraignante."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Qui a l'interdiction formelle de réaliser le contrôle périodique d'une installation selon l'Art. 31 OIBT ?",
+                              "options": [
+                                      "Tout organisme possédant une accréditation fédérale",
+                                      "Celui qui a participé à la conception, à l'exécution, à la modification ou à la remise en état de cette installation",
+                                      "Les organes de contrôle ayant leur siège dans un autre canton",
+                                      "Les personnes ayant plus de 10 ans d'expérience dans le métier"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 31 OIBT pose le principe d'indépendance absolue : celui qui a participé à la conception, réalisation ou modification d'une installation ne peut pas effectuer son contrôle périodique ou de réception.",
+                              "articleRef": "OIBT — Art. 31"
+                      },
+                      {
+                              "question": "2. Combien de temps à l'avance le gestionnaire de réseau doit-il inviter le propriétaire à présenter le RaSi selon l'Art. 36 al. 1 OIBT ?",
+                              "options": [
+                                      "Deux jours avant l'échéance",
+                                      "Six mois au moins avant l'expiration de la période de contrôle",
+                                      "Cinq ans à l'avance",
+                                      "Uniquement après la survenue d'un court-circuit"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 36 al. 1 OIBT dispose que six mois au moins avant l'expiration d'une période de contrôle, les gestionnaires de réseau invitent par écrit les propriétaires à présenter le rapport de sécurité.",
+                              "articleRef": "OIBT — Art. 36 al. 1"
+                      },
+                      {
+                              "question": "3. Quelle mesure doit être prise en cas de défaut présentant un danger imminent selon l'Art. 40 al. 2 OIBT ?",
+                              "options": [
+                                      "Attendre le prochain renouvellement du bail à loyer",
+                                      "Couper immédiatement l'alimentation de l'installation électrique ou de la partie dangereuse",
+                                      "Poser une simple affiche d'avertissement en carton",
+                                      "Réduire la puissance du compteur de 10 %"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 40 al. 2 OIBT prescrit que les installations présentant un danger imminent pour les personnes ou les choses doivent être immédiatement déconnectées du réseau.",
+                              "articleRef": "OIBT — Art. 40 al. 2"
+                      },
+                      {
+                              "question": "4. Dans quel délai le propriétaire d'une installation dont la période est inférieure à 20 ans doit-il faire effectuer le contrôle de réception indépendant selon l'Art. 35 al. 3 OIBT ?",
+                              "options": [
+                                      "Dans les 6 mois suivant la reprise de l'installation",
+                                      "Dans les 10 ans",
+                                      "Le jour même avant midi",
+                                      "Aucun contrôle de réception n'est requis si l'installation est neuve"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "Selon l'Art. 35 al. 3 OIBT, pour les installations dont la période de contrôle est inférieure à 20 ans, le contrôle de réception par un organe indépendant doit intervenir dans les 6 mois.",
+                              "articleRef": "OIBT — Art. 35 al. 3"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-3",
+              "nextLessonId": "rs-734-27-lecon-5"
+      },
+
+      {
+              "id": "rs-734-27-lecon-5",
+              "routeId": "rs-734-27/lecon-5",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 5,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 5",
+              "title": "Chapitre 5 : Émoluments et dispositions pénales",
+              "subtitle": "Régime financier des prestations de l'Inspection et répression pénale selon l'Art. 55 al. 3 LIE (Art. 41 et 42)",
+              "articlesRange": "Art. 41 et 42",
+              "status": "Disponible",
+              "duration": "7 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 35,
+              "objective": "Connaître le régime des émoluments perçus par l'ESTI (Art. 41) et assimiler la liste précise des actes délictueux sanctionnés pénalement par l'Art. 42 OIBT en lien avec l'Art. 55 al. 3 LIE.",
+              "introduction": "Le <strong>Chapitre 5 de l'OIBT (Art. 41 et 42)</strong> fixe le cadre financier et répressif garantissant l'autorité des prescriptions fédérales. L'<strong>Art. 41</strong> règle les émoluments perçus par l'Inspection fédérale (ESTI) pour ses décisions et contrôles d'office. L'<strong>Art. 42</strong> dresse la liste rigoureuse des infractions pénales passibles d'amende selon l'Art. 55 al. 3 de la LIE, sanctionnant sévèrement le travail au noir, l'exercice sans autorisation, les complaisances d'organisations d'entreprise (prête-nom) et la mise en danger d'autrui.",
+              "contentSections": [
+                      {
+                              "title": "1. Art. 41 — Émoluments perçus par l'Inspection (ESTI)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 41 • Émoluments officiels</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 41 OIBT</strong> dispose que l'Inspection perçoit des <strong>émoluments pour les contrôles et les décisions prises</strong> en vertu de la présente ordonnance.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📋 Renvoi à l'Ordonnance sur l'Inspection (RS 734.24)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Le barème et le calcul de ces émoluments sont régis par les <strong>Art. 9 et 10 de l'ordonnance du 7 décembre 1992 sur l'Inspection fédérale des installations à courant fort (O-ESTI — RS 734.24)</strong>. Sont notamment facturés au temps consacré ou au forfait : l'octroi des autorisations d'installer et de contrôler, les examens professionnels d'admission et les contrôles d'office ordonnés en cas de défaillance d'un propriétaire.\n  </p>\n</div>"
+                      },
+                      {
+                              "title": "2. Art. 42 — Dispositions pénales (Renvoi à l'Art. 55 al. 3 LIE)",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 42 • Sanctions pénales</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 42 OIBT</strong> énumère limitativement les infractions punies des peines prévues à l'<strong>Art. 55 al. 3 LIE (amende pénale jusqu'à 100 000 CHF)</strong> :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:20%;\">Infraction (Art. 42)</th>\n        <th style=\"width:50%;\">Comportement punissable</th>\n        <th style=\"width:30%;\">Base légale liée</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Let. a</strong></td>\n        <td>Exécuter des travaux d'installation sans posséder l'autorisation requise.</td>\n        <td>Violation de l'Art. 6 OIBT</td>\n      </tr>\n      <tr>\n        <td><strong>Let. b</strong></td>\n        <td>Exécuter des contrôles d'installations sans posséder l'autorisation requise.</td>\n        <td>Violation de l'Art. 26 al. 2 OIBT</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 1</strong></td>\n        <td>Ne pas respecter les prescriptions concernant l'organisation de l'entreprise (taux d'occupation, absence de personne du métier).</td>\n        <td>Violation des Art. 10 et 10a</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 2</strong></td>\n        <td>Contrevenir aux prescriptions concernant le recours à d'autres entreprises et à des particuliers (sous-traitance opaque).</td>\n        <td>Violation de l'Art. 10b</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 3</strong></td>\n        <td><strong>Prête-nom :</strong> annoncer des travaux à réaliser par des personnes non intégrées dans l'entreprise ou achever de tels travaux par la délivrance consécutive d'un rapport de sécurité de complaisance (révision 2024).</td>\n        <td>Interdiction de couverture frauduleuse</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 4</strong></td>\n        <td>Négliger d'élaborer le rapport de sécurité ou de le remettre au propriétaire dans les délais requis.</td>\n        <td>Violation de l'Art. 24</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 5</strong></td>\n        <td>Négliger d'effectuer les contrôles prescrits ou les effectuer de façon gravement incorrecte.</td>\n        <td>Violation des Art. 24 et 25</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 6</strong></td>\n        <td>Violer l'obligation d'indépendance des contrôles (être juge et partie).</td>\n        <td>Violation de l'Art. 31</td>\n      </tr>\n      <tr>\n        <td><strong>Let. c ch. 7</strong></td>\n        <td>Remettre au propriétaire des installations électriques qui présentent des défauts dangereux.</td>\n        <td>Violation de l'Art. 3</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 À RETENIR</div>\n  La poursuite pénale relève du Droit pénal administratif (DPA) sous la compétence de l'OFEN et de l'Inspection, et peut être engagée contre l'électricien, le contrôleur complaisant, mais aussi contre le chef d'entreprise.\n</div>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Signer un RaSi pour un ami qui a fait son installation lui-même",
+                      "text": "Un électricien titulaire d'une autorisation qui signe un rapport de sécurité (RaSi) pour des travaux qu'il n'a pas exécutés ni surveillés directement commet l'infraction pénale de l'Art. 42 let. c ch. 3 OIBT (prête-nom). Il s'expose à une lourde amende pénale ainsi qu'au retrait immédiat de son autorisation d'installer par l'ESTI."
+              },
+              "importantPoint": {
+                      "title": "Double sanction administrative et pénale",
+                      "text": "Une infraction à l'OIBT entraîne non seulement une condamnation pénale (amende pouvant aller jusqu'à 100 000 CHF), mais également une sanction administrative de révocation temporaire ou définitive de l'autorisation d'exercer prononcée par l'ESTI."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Selon quelle loi fondamentale les infractions énumérées à l'Art. 42 OIBT sont-elles punies ?",
+                              "options": [
+                                      "Le code de la route suisse",
+                                      "L'Art. 55 al. 3 de la Loi fédérale sur les installations électriques (LIE — RS 734.0)",
+                                      "La loi sur les banques",
+                                      "Le droit ecclésiastique cantonal"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 42 OIBT débute par la mention expresse : 'Est puni selon l’art. 55, al. 3, LIE quiconque...'.",
+                              "articleRef": "OIBT — Art. 42"
+                      },
+                      {
+                              "question": "2. Que sanctionne expressément l'Art. 42 let. c ch. 3 OIBT (mis à jour en 2024) ?",
+                              "options": [
+                                      "Le fait d'utiliser un véhicule d'entreprise non lavé",
+                                      "Le fait d'annoncer des travaux réalisés par des personnes non intégrées dans l'entreprise ou d'achever de tels travaux par la délivrance d'un rapport de sécurité de complaisance (prête-nom)",
+                                      "Le fait de commander du matériel électrique en ligne",
+                                      "Le port d'un casque de chantier bleu au lieu de blanc"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 42 let. c ch. 3 OIBT incrimine très précisément la pratique du prête-nom et la couverture de travaux non encadrés par la remise d'un rapport de sécurité.",
+                              "articleRef": "OIBT — Art. 42 let. c ch. 3"
+                      },
+                      {
+                              "question": "3. Selon quel texte réglementaire l'Inspection perçoit-elle ses émoluments administratifs selon l'Art. 41 OIBT ?",
+                              "options": [
+                                      "L'ordonnance sur l'Inspection fédérale des installations à courant fort (RS 734.24)",
+                                      "Le barème des douanes suisses",
+                                      "Le tarif postal prioritaire",
+                                      "Le règlement communal de voirie"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 41 OIBT renvoie expressément aux Art. 9 et 10 de l'ordonnance du 7 décembre 1992 sur l'Inspection fédérale des installations à courant fort (RS 734.24).",
+                              "articleRef": "OIBT — Art. 41"
+                      },
+                      {
+                              "question": "4. Le fait de violer l'obligation d'indépendance des contrôles (Art. 31) constitue-t-il une infraction pénale selon l'OIBT ?",
+                              "options": [
+                                      "Non, c'est une simple maladresse administrative sans conséquence",
+                                      "Oui, c'est une infraction expressément punissable au sens de l'Art. 42 let. c ch. 6 OIBT",
+                                      "Uniquement si l'amende dépasse 1 million de francs",
+                                      "Seulement si l'installation a pris feu"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 42 let. c ch. 6 OIBT punit explicitement quiconque contrevient aux obligations en ne respectant pas l'obligation d'indépendance des contrôles (art. 31).",
+                              "articleRef": "OIBT — Art. 42 let. c ch. 6"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-4",
+              "nextLessonId": "rs-734-27-lecon-6"
+      },
+
+      {
+              "id": "rs-734-27-lecon-6",
+              "routeId": "rs-734-27/lecon-6",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 6,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 6",
+              "title": "Chapitre 6 : Dispositions finales",
+              "subtitle": "Abrogation du droit de 1989, dispositions transitoires (Art. 44 al. 1-2 abrogés, Art. 44a révision 2017) et entrée en vigueur (Art. 43 à 45)",
+              "articlesRange": "Art. 43 à 45",
+              "status": "Disponible",
+              "duration": "8 min",
+              "tag": "Ordonnance fédérale",
+              "xpReward": 35,
+              "objective": "Comprendre l'articulation transitoire de l'OIBT : abrogation de l'ancien droit de 1989, validité des attestations de personnes du métier, maintien visible des alinéas abrogés 44 al. 1 et 2, dispositions transitoires spécifiques de la réforme du 23 août 2017 (Art. 44a) et entrée en vigueur au 1er janvier 2002.",
+              "introduction": "Le <strong>Chapitre 6 de l'OIBT (Art. 43 à 45)</strong> clôt l'ordonnance par ses clauses d'exécution, d'abrogation et de transition. Conformément aux exigences de rigueur réglementaire de la Confédération, il assure la continuité des droits acquis sous l'empire de l'ancienne ordonnance du 6 septembre 1989 tout en organisant les transitions professionnelles. Il intègre également l'important <strong>Art. 44a</strong> issu de la révision du 23 août 2017, régissant la reconnaissance des règlements d'examen de l'EIT.swiss et l'adaptation organisationnelle des entreprises d'installation.",
+              "contentSections": [
+                      {
+                              "title": "1. Art. 43 — Abrogation du droit en vigueur",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 43 • Abrogation de l'ancien droit</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 43 OIBT</strong> prononce l'abrogation formelle du droit antérieur :\n</p>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« L’ordonnance du 6 septembre 1989 sur les installations électriques à basse tension est abrogée. »\n</blockquote>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette abrogation a marqué le passage historique de l'ancien système de concessions délivrées par les régies électriques locales à un <strong>régime d'autorisations fédérales unifié</strong> sous la surveillance de l'Inspection fédérale (ESTI).\n</p>"
+                      },
+                      {
+                              "title": "2. Art. 44 — Dispositions transitoires initiales",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 44 • Clauses transitoires</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nFidèlement à la source officielle, le texte de l'Art. 44 présente la structure suivante :\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📜 Statut visible des alinéas 1 et 2 (Art. 44 OIBT)</div>\n  <p style=\"margin:0 0 0.5rem 0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  <strong>Al. 1 et 2 … (Abrogés)</strong><br>\n  <span style=\"font-size:0.8rem; color:var(--text-muted);\">Note officielle 74 : Abrogés par le ch. IV 24 de l’O du 22 août 2007 relative à la mise à jour formelle du droit fédéral, avec effet au 1er janvier 2008 (RO 2007 4477).</span>\n  </p>\n</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Al. 3 :</strong> Les attestations de personnes du métier délivrées selon l'ancien droit restent valables.</li>\n  <li><strong>Al. 4 :</strong> Les personnes habilitées à contrôler selon l'ancien droit ont pu poursuivre leurs activités pendant 2 ans au plus jusqu'à l'octroi de l'autorisation fédérale.</li>\n  <li><strong>Al. 5 :</strong> L'Inspection a établi les registres des détenteurs d'autorisations d'installer et de contrôler dans les deux ans suivant l'entrée en vigueur.</li>\n  <li><strong>Al. 6 & 7 :</strong> Maintien des périodes de contrôle en cours (dans les 5 ans pour les périodes de 20 ans, dans les 2 ans pour les périodes inférieures à 20 ans) sous peine de contrôle d'office aux frais des exploitants retardataires.</li>\n  <li><strong>Al. 8 :</strong> Mesure transitoire de 6 mois pour les exploitants de réseau pour adapter leurs structures de contrôle indépendant.</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Art. 44a — Dispositions transitoires relatives à la modification du 23 août 2017",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 44a • Réforme 2017 / 2018</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nIntroduit lors de la refonte majeure de 2017 (en vigueur le 1er janvier 2018), l'<strong>Art. 44a OIBT</strong> précise :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Al. 1 — Maintien des attestations professionnelles :</strong> Les attestations de personne du métier et les autorisations de contrôler délivrées sur la base des règlements de l'association professionnelle <strong>EIT.swiss</strong> (règlements d'examens professionnels de 2003 et examen pratique de 2009) restent intégralement valables.</li>\n  <li><strong>Al. 2 — Délai d'adaptation des entreprises (3 ans) :</strong> Les entreprises déjà titulaires d'une autorisation ont disposé d'un délai de <strong>trois ans</strong> pour adapter leur organisation interne aux exigences accrues de l'Art. 9.</li>\n  <li><strong>Al. 3 — Électriciens de montage CFC antérieurs à 2015 :</strong> Les personnes titulaires d'un CFC d'électricien de montage ayant débuté leur formation avant 2015 ne peuvent mettre en service des installations (Art. 10a al. 2) que si elles justifient d'<strong>une année de pratique</strong> sous la surveillance d'une personne du métier et d'une formation complémentaire définie par EIT.swiss habilitant à la première vérification.</li>\n</ul>"
+                      },
+                      {
+                              "title": "4. Art. 45 — Entrée en vigueur de l'OIBT",
+                              "text": "<div class=\"ocfo-legal-badge\">RS 734.27 — Art. 45 • Date d'effet</div>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« La présente ordonnance entre en vigueur le 1er janvier 2002. »\n</blockquote>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'ordonnance du 7 novembre 2001 est en vigueur depuis le <strong>1<sup>er</sup> janvier 2002</strong>, et a fait l'objet de mises à jour successives jusqu'à son état officiel actuel au <strong>31 octobre 2025</strong> (intégrant notamment l'erratum RO 2025 671).\n</p>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Reconnaissance des maîtrises fédérales antérieures à 2018",
+                      "text": "Un installateur ayant obtenu sa maîtrise fédérale (diplôme d'installateur-électricien) sous l'ancien règlement de l'EIT.swiss conserve l'intégralité de ses prérogatives de personne du métier en vertu de l'Art. 44a al. 1 OIBT, sans avoir à repasser de nouvel examen pratique."
+              },
+              "importantPoint": {
+                      "title": "Préservation des alinéas abrogés",
+                      "text": "Conformément à la rigueur de légistique fédérale, les alinéas 1 et 2 de l'Art. 44 sont mentionnés comme abrogés par l'ordonnance du 22 août 2007 (RO 2007 4477). Ils ne doivent jamais être supprimés silencieusement des textes officiels."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Quelle ordonnance antérieure a été formellement abrogée par l'Art. 43 de l'OIBT ?",
+                              "options": [
+                                      "L'ordonnance du 6 septembre 1989 sur les installations électriques à basse tension",
+                                      "La loi sur les chemins de fer de 1872",
+                                      "L'ordonnance sur la poste de 1910",
+                                      "La loi sur le blé de 1932"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 43 OIBT énonce explicitement que l'ordonnance du 6 septembre 1989 sur les installations électriques à basse tension est abrogée.",
+                              "articleRef": "OIBT — Art. 43"
+                      },
+                      {
+                              "question": "2. Quel est le statut juridique des alinéas 1 et 2 de l'Art. 44 OIBT dans la source officielle ?",
+                              "options": [
+                                      "Ils sont applicables à compter de l'an 2050",
+                                      "Ils sont expressément abrogés depuis le 1er janvier 2008 (RO 2007 4477) et notés « 1 et 2 … »",
+                                      "Ils ont été transférés dans la Constitution fédérale",
+                                      "Ils ne concernent que le canton du Jura"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Les alinéas 1 et 2 de l'Art. 44 OIBT ont été abrogés par l'ordonnance du 22 août 2007 avec effet au 1er janvier 2008, et figurent sous la forme '1 et 2 …' dans le recueil officiel.",
+                              "articleRef": "OIBT — Art. 44 al. 1 et 2"
+                      },
+                      {
+                              "question": "3. Quel délai d'adaptation a été imparti aux entreprises pour se conformer à l'Art. 9 selon l'Art. 44a al. 2 OIBT (réforme 2017) ?",
+                              "options": [
+                                      "1 mois",
+                                      "Trois ans à compter de l'entrée en vigueur de la modification",
+                                      "Vingt-cinq ans",
+                                      "Aucun délai n'a été accordé"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 44a al. 2 OIBT précise que les entreprises titulaires d'une autorisation devaient adapter leur organisation dans un délai de trois ans.",
+                              "articleRef": "OIBT — Art. 44a al. 2"
+                      },
+                      {
+                              "question": "4. Quelle est la date initiale d'entrée en vigueur de l'OIBT fixée à l'Art. 45 ?",
+                              "options": [
+                                      "1er janvier 1902",
+                                      "1er janvier 2002",
+                                      "31 octobre 2025",
+                                      "1er août 1914"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 45 OIBT fixe l'entrée en vigueur au 1er janvier 2002.",
+                              "articleRef": "OIBT — Art. 45"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-5",
+              "nextLessonId": "rs-734-27-lecon-7"
+      },
+
+      {
+              "id": "rs-734-27-lecon-7",
+              "routeId": "rs-734-27/lecon-7",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "lessonNumber": 7,
+              "totalLessons": 7,
+              "code": "RS 734.27 — Leçon 7",
+              "title": "Annexe : Contrôles périodiques",
+              "subtitle": "Périodicités officielles (1 an, 3 ans, 5 ans, 10 ans, 20 ans), organismes accrédités, organes indépendants et cas spéciaux (Ch. 1 à 4)",
+              "articlesRange": "Annexe (ch. 1 à 4)",
+              "status": "Disponible",
+              "duration": "15 min",
+              "tag": "Annexe OIBT",
+              "xpReward": 40,
+              "objective": "Maîtriser exhaustivement la table des périodicités de contrôle de l'Annexe OIBT : identifier les locaux à 1, 3, 5, 10 ou 20 ans, savoir quand recourir à un organisme accrédité (ch. 1) ou à un organe indépendant (ch. 2), appliquer la clause de vente immobilière (ch. 3) et la règle des installations de production d'énergie (ch. 4).",
+              "introduction": "L'<strong>Annexe officielle de l'OIBT (RS 734.27)</strong>, dans sa teneur issue de la révision du 23 août 2017 et mise à jour jusqu'à l'<strong>erratum officiel du 31 octobre 2025 (RO 2025 671)</strong>, est l'un des documents les plus consultés de l'électrotechnique suisse. Elle détermine avec précision la fréquence impérative à laquelle chaque type de bâtiment et d'installation doit être réexaminé. Elle s'articule rigoureusement en <strong>quatre chapitres officiels</strong> que cette leçon présente dans leur intégralité sans fragmentation arbitraire.",
+              "contentSections": [
+                      {
+                              "title": "1. Chapitre 1 : Organismes d’inspection accrédités (Installations spéciales, art. 32 al. 2)",
+                              "text": "<div class=\"ocfo-legal-badge\">Annexe OIBT — Ch. 1 • Organismes accrédités</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes installations spéciales à haut risque technique ou sécuritaire ne peuvent être contrôlées que par un <strong>organisme d'inspection accrédité (norme ISO/CEI 17020)</strong> selon les périodicités suivantes :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:22%;\">Périodicité</th>\n        <th style=\"width:15%;\">Ch. Annexe</th>\n        <th style=\"width:63%;\">Installations électriques assujetties</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Contrôle annuel<br>(1 an)</strong></td>\n        <td>1.1.1 à 1.1.6</td>\n        <td>\n          • <strong>1.1.1 :</strong> Installations de transport par conduites sous surveillance fédérale.<br>\n          • <strong>1.1.2 :</strong> Ouvrages de munitions et dépôts de carburants militaires classifiés.<br>\n          • <strong>1.1.3 :</strong> <strong>Locaux à affectation médicale du groupe 2</strong> (salles d'opération, soins intensifs).<br>\n          • <strong>1.1.4 :</strong> Locaux de fabrication, traitement ou entreposage d'explosifs ou pyrotechnie.<br>\n          • <strong>1.1.5 :</strong> Installations électriques des mines.<br>\n          • <strong>1.1.6 :</strong> Installations construites, modifiées ou remises en état par le titulaire d'une autorisation pour installations propres à l'entreprise (art. 13).\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 3 ans</strong></td>\n        <td>1.2</td>\n        <td>\n          • <strong>1.2 :</strong> Installations situées dans les <strong>zones de protection contre les explosions 0 et 20 ainsi que 1 et 21</strong> définies par la SUVA (à l'exception des stations-service et ateliers de réparation de véhicules, relevant du ch. 2.2).\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 5 ans</strong></td>\n        <td>1.3.1 à 1.3.7</td>\n        <td>\n          • <strong>1.3.1 :</strong> Routes nationales de 1re et 2e classe (sécurité du trafic et exploitation).<br>\n          • <strong>1.3.2 :</strong> Bâtiments militaires classifiés non visés au ch. 1.1.<br>\n          • <strong>1.3.3 :</strong> Dépôts de carburants en zones de protection explosion 2 et 22 (SUVA).<br>\n          • <strong>1.3.4 :</strong> Installations ferroviaires non spécifiques au rail reliées à la terre ferroviaire (tunnels, ateliers, lavage).<br>\n          • <strong>1.3.5 :</strong> Installations construites/modifiées sous autorisation limitée (art. 14 et 15).<br>\n          • <strong>1.3.6 :</strong> <strong>Locaux médicaux du groupe 1</strong> (sauf cabinets dentaires et physiothérapie isolés hors clinique).<br>\n          • <strong>1.3.7 :</strong> Téléphonie mobile sur mâts à haute tension alimentée par le réseau général.\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 10 ans</strong></td>\n        <td>1.4.1 à 1.4.4</td>\n        <td>\n          • <strong>1.4.1 :</strong> Constructions de la protection civile équipées de production d'énergie ou protégées contre l'IEMN (impulsion électromagnétique nucléaire).<br>\n          • <strong>1.4.2 :</strong> Bateaux destinés au transport commercial de personnes ou de marchandises.<br>\n          • <strong>1.4.3 :</strong> Installations à haute tension alimentées par des installations électriques (filtres, sites d'essai, générateurs d'ozone, sauf néons et rayons X non médicaux).<br>\n          • <strong>1.4.4 :</strong> Installations d'exploitation ferroviaire non spécifiques reliées à la terre non visées au 1.3.4.\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                      },
+                      {
+                              "title": "2. Chapitre 2 : Organes de contrôle indépendants (Du contrôle annuel aux 20 ans)",
+                              "text": "<div class=\"ocfo-legal-badge\">Annexe OIBT — Ch. 2 • Organes de contrôle indépendants</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes installations courantes sont contrôlées par des <strong>organes de contrôle indépendants</strong> selon les périodicités suivantes :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:20%;\">Périodicité</th>\n        <th style=\"width:15%;\">Ch. Annexe</th>\n        <th style=\"width:65%;\">Installations électriques assujetties</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Contrôle annuel<br>(1 an)</strong></td>\n        <td>2.1</td>\n        <td>\n          • <strong>2.1 :</strong> <strong>Chantiers</strong> et <strong>marchés</strong> (installations foraines, foires, événements temporaires).\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 3 ans</strong></td>\n        <td>2.2</td>\n        <td>\n          • <strong>2.2 :</strong> <strong>Stations-service</strong> et <strong>ateliers de réparation de véhicules</strong> situés dans les zones de protection explosion 0, 20, 1, 21 définies par la SUVA (CNA) ainsi qu'en zones 2 et 22.\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 5 ans</strong></td>\n        <td>2.3.1 à 2.3.11</td>\n        <td>\n          • <strong>2.3.1 :</strong> Scènes de théâtre.<br>\n          • <strong>2.3.2 :</strong> Locaux exposés à des substances corrosives.<br>\n          • <strong>2.3.3 :</strong> <strong>Stations de recharge de véhicules électriques situées sur le domaine public</strong>.<br>\n          • <strong>2.3.4 :</strong> Locaux médicaux des groupes 0 et 1 non contrôlés sous 1.3.6.<br>\n          • <strong>2.3.5 :</strong> Ouvrages souterrains (tunnels et cavernes).<br>\n          • <strong>2.3.6 :</strong> Locaux industriels et commerciaux.<br>\n          • <strong>2.3.7 :</strong> Laboratoires ou locaux d'essai industriels, commerciaux, scolaires.<br>\n          • <strong>2.3.8 :</strong> <strong>Locaux recevant un grand nombre de personnes :</strong> grands magasins ou centres de bricolage <strong>surface de vente > 1200 m²</strong>, cinémas, hôtels, dancings, EMS, garderies, hôpitaux, casernes, établissements scolaires et hautes écoles.<br>\n          • <strong>2.3.9 :</strong> <strong>Petites entreprises de restauration :</strong> bistros, cafés, take-away (&lt; 1200 m² et ≤ 300 personnes).<br>\n          • <strong>2.3.10 :</strong> Terrains de camping et ports de plaisance.<br>\n          • <strong>2.3.11 :</strong> Installations comportant des éléments avec <strong>mise au neutre selon le schéma III</strong> (ancien TN-C généralisé).\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 10 ans</strong></td>\n        <td>2.4.1 à 2.4.13</td>\n        <td>\n          • <strong>2.4.1 :</strong> Locaux humides à usage commercial.<br>\n          • <strong>2.4.2 :</strong> Locaux à usage commercial présentant un danger d'incendie.<br>\n          • <strong>2.4.3 :</strong> Ateliers commerciaux.<br>\n          • <strong>2.4.4 :</strong> Locaux de vente non soumis au ch. 2.3.8 ni 2.3.9.<br>\n          • <strong>2.4.5 :</strong> <strong>Immeubles de bureaux</strong>.<br>\n          • <strong>2.4.6 :</strong> Églises.<br>\n          • <strong>2.4.7 :</strong> Arsenaux.<br>\n          • <strong>2.4.8 :</strong> <strong>Exploitations agricoles</strong>.<br>\n          • <strong>2.4.9 :</strong> Constructions de protection civile non soumises au 1.4.1.<br>\n          • <strong>2.4.10 :</strong> Bateaux de plaisance.<br>\n          • <strong>2.4.11 :</strong> <strong>…</strong> <span style=\"font-size:0.8rem; color:var(--text-muted);\">(Alinéa abrogé, strictement maintenu comme tel)</span>.<br>\n          • <strong>2.4.12 :</strong> Routes nationales 1re et 2e classe non soumises au 1.3.1.<br>\n          • <strong>2.4.13 :</strong> Téléphonie mobile sur bâtiments alimentée par le réseau général.\n        </td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle tous les 20 ans</strong></td>\n        <td>2.5</td>\n        <td>\n          • <strong>2.5 :</strong> <strong>Toutes les autres installations électriques</strong> (principalement les <strong>logements, appartements et maisons individuelles privées</strong>).\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                      },
+                      {
+                              "title": "3. Chapitre 3 : Installations soumises au contrôle tous les 10 ou 20 ans (Vente immobilière)",
+                              "text": "<div class=\"ocfo-legal-badge\">Annexe OIBT — Ch. 3 • Changement de propriétaire</div>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« Les installations électriques soumises au contrôle tous les 10 ou 20 ans doivent en outre être contrôlées à chaque changement de propriétaire, si le dernier contrôle effectué date de cinq ans. »\n</blockquote>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">🏡 Règle pratique de la transaction immobilière</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Lorsqu'une maison d'habitation (périodicité de 20 ans) est vendue, le notaire ou le gestionnaire de réseau vérifie la date du dernier RaSi. Si ce dernier a plus de 5 ans (ex. 6 ans), un contrôle complet par un organe indépendant doit être ordonné aux frais des parties avant ou immédiatement après la transaction.\n  </p>\n</div>"
+                      },
+                      {
+                              "title": "4. Chapitre 4 : Installations de production d’énergie",
+                              "text": "<div class=\"ocfo-legal-badge\">Annexe OIBT — Ch. 4 • Photovoltaïque & Production</div>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« Les installations de production d’énergie reliées ou non à un réseau de distribution à basse tension sont soumises à la même périodicité de contrôle que les installations électriques de l’objet auxquelles l’installation est raccordée. »\n</blockquote>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">☀️ Exemple pratique</div>\n  Une installation solaire photovoltaïque installée sur le toit d'une villa familiale (objet à 20 ans) suit une périodicité de contrôle de 20 ans. La même installation photovoltaïque posée sur le toit d'un grand magasin de plus de 1200 m² (objet soumis au ch. 2.3.8) doit être contrôlée tous les <strong>5 ans</strong> !\n</div>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Quelle périodicité pour un café-restaurant de 80 places ?",
+                      "text": "Un café de 80 places et moins de 1200 m² relève du Ch. 2.3.9 de l'Annexe OIBT ('petites entreprises de restauration telles que bistros, cafés, take-away... pouvant accueillir 300 personnes au maximum'). Sa périodicité légale est donc de 5 ans (et non de 20 ans comme pour un logement)."
+              },
+              "importantPoint": {
+                      "title": "La borne des 1200 m² et 300 personnes",
+                      "text": "Le seuil de 1200 m² de surface de vente sépare les grands magasins du Ch. 2.3.8 des petits commerces. Attention : les deux sont désormais contrôlés tous les 5 ans pour les restaurants (2.3.9), mais les locaux commerciaux simples ne présentant pas de risque particulier sont à 10 ans (2.4.4)."
+              },
+              "quiz": [
+                      {
+                              "question": "1. Quelle est la périodicité de contrôle obligatoire pour les installations de chantiers selon le Ch. 2.1 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Tous les 20 ans",
+                                      "Tous les 5 ans",
+                                      "Contrôle annuel (chaque année)",
+                                      "Aucun contrôle n'est obligatoire sur un chantier"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "Le Ch. 2.1 de l'Annexe OIBT dispose que les installations électriques des chantiers et des marchés sont soumises au contrôle annuel.",
+                              "articleRef": "Annexe OIBT — Ch. 2.1"
+                      },
+                      {
+                              "question": "2. Quelle est la périodicité de contrôle pour les locaux à affectation médicale du groupe 2 (salles d'opération) selon le Ch. 1.1.3 ?",
+                              "options": [
+                                      "Contrôle annuel (1 an) par un organisme d'inspection accrédité",
+                                      "Contrôle tous les 10 ans par le médecin-chef",
+                                      "Contrôle tous les 20 ans par l'électricien du village",
+                                      "Contrôle tous les 5 ans sans accréditation"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "Le Ch. 1.1.3 de l'Annexe OIBT classe les locaux médicaux du groupe 2 sous contrôle annuel (1 an) obligatoire par un organisme d'inspection accrédité.",
+                              "articleRef": "Annexe OIBT — Ch. 1.1.3"
+                      },
+                      {
+                              "question": "3. En cas de vente d'un logement (périodicité de 20 ans), à quelle condition un nouveau contrôle est-il exigé selon le Ch. 3 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Si le dernier contrôle date de plus de 5 ans",
+                                      "Uniquement si l'acheteur a moins de 30 ans",
+                                      "Si le dernier contrôle date de plus de 19 ans seulement",
+                                      "Aucun contrôle n'est jamais requis lors d'une vente"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "Le Ch. 3 de l'Annexe OIBT impose un nouveau contrôle à chaque changement de propriétaire si le dernier contrôle effectué date de cinq ans.",
+                              "articleRef": "Annexe OIBT — Ch. 3"
+                      },
+                      {
+                              "question": "4. Quelle est la périodicité de contrôle d'une installation photovoltaïque selon le Ch. 4 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Toujours 1 an indépendamment du lieu d'implantation",
+                                      "La même périodicité de contrôle que l'objet auquel l'installation est raccordée",
+                                      "Toujours 50 ans avec garantie constructeur",
+                                      "Elle n'est soumise à aucun contrôle périodique"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Le Ch. 4 de l'Annexe OIBT dispose que les installations de production d'énergie sont soumises à la même périodicité de contrôle que les installations de l'objet auquel elles sont raccordées.",
+                              "articleRef": "Annexe OIBT — Ch. 4"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-6",
+              "nextLessonId": "rs-734-27-evaluation-finale"
+      },
+
+      {
+              "id": "rs-734-27-evaluation-finale",
+              "routeId": "rs-734-27/evaluation-finale",
+              "moduleId": "A",
+              "parcoursId": "rs-734-27",
+              "isFinalEvaluation": true,
+              "code": "RS 734.27 — EXAMEN",
+              "title": "Évaluation finale — RS 734.27 (OIBT)",
+              "subtitle": "Certification officielle sur les 7 leçons et l'Annexe des contrôles périodiques",
+              "articlesRange": "Art. 1 à 45 et Annexe",
+              "status": "Disponible",
+              "duration": "25 min",
+              "tag": "Évaluation officielle",
+              "xpReward": 100,
+              "objective": "Valider formellement la maîtrise intégrale de l'Ordonnance sur les installations électriques à basse tension (RS 734.27, état au 31 octobre 2025).",
+              "introduction": "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie de l'<strong>Ordonnance sur les installations électriques à basse tension (OIBT — RS 734.27)</strong> dans son état officiel au 31 octobre 2025. Composée de <strong>16 questions à choix multiples</strong>, elle évalue rigoureusement votre compréhension des 7 leçons du programme : compétences de l'ESTI, régime de l'autorisation générale et des autorisations limitées, incompatibilités de contrôle (Art. 31), procédure du rapport de sécurité (RaSi), catalogue des infractions pénales (Art. 42) et tableau des périodicités de l'Annexe. Un score minimal de 75 % (12/16) est requis pour réussir la certification et obtenir le badge officiel ainsi que 100 XP.",
+              "contentSections": [
+                      {
+                              "title": "Instructions pour l'examen de certification OIBT",
+                              "text": "<div class=\"ocfo-legal-badge\">Examen officiel de certification • RS 734.27 OIBT</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette évaluation finale récapitule l'intégralité des <strong>7 leçons</strong> du module consacré à l'<strong>Ordonnance sur les installations à basse tension (OIBT — RS 734.27)</strong>, état au 31 octobre 2025.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Nombre de questions :</strong> 16 questions d'examen à choix unique.</li>\n  <li><strong>Couverture légale :</strong> Chapitres 1 à 6 de l'OIBT et l'intégralité de l'Annexe (ch. 1 à 4).</li>\n  <li><strong>Seuil de validation :</strong> 75 % de réponses exactes (12 sur 16).</li>\n  <li><strong>Récompense :</strong> 100 XP et attribution du badge « Expert RS 734.27 — OIBT ».</li>\n</ul>"
+                      }
+              ],
+              "quiz": [
+                      {
+                              "question": "1. Quel texte réglementaire constitue la base légale supérieure dont découle l'OIBT (RS 734.27) ?",
+                              "options": [
+                                      "Le Code civil suisse (CCS)",
+                                      "La Loi fédérale sur les installations électriques (LIE — RS 734.0, notamment ses Art. 1, 3 et 26)",
+                                      "La Loi sur l'énergie atomique",
+                                      "Le Règlement général des routes nationales"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'OIBT est une ordonnance d'exécution adoptée par le Conseil fédéral sur la base des délégations de compétence de la LIE (RS 734.0).",
+                              "articleRef": "OIBT — Préambule & LIE Art. 3"
+                      },
+                      {
+                              "question": "2. Jusqu'à quel point précis les installations intérieures s'étendent-elles selon l'Art. 2 al. 2 OIBT ?",
+                              "options": [
+                                      "Jusqu'au commutateur d'éclairage de l'entrée",
+                                      "En aval du point de raccordement au réseau de distribution (coupe-surintensité général de l'immeuble)",
+                                      "Jusqu'à la centrale de production hydraulique",
+                                      "Aux seules lignes enterrées sous la chaussée"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 2 al. 2 OIBT définit les installations intérieures comme les installations situées en aval du point de raccordement au réseau de distribution.",
+                              "articleRef": "OIBT — Art. 2 al. 2"
+                      },
+                      {
+                              "question": "3. Qui est légalement tenu de maintenir l'installation électrique en état de sécurité permanent selon l'Art. 5 al. 1 OIBT ?",
+                              "options": [
+                                      "Le gestionnaire de réseau public",
+                                      "Le propriétaire de l'installation (ou son représentant désigné)",
+                                      "Le fabricant des câbles électriques",
+                                      "L'électricien ayant posé la première prise 20 ans plus tôt"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 5 al. 1 OIBT pose le principe fondamental selon lequel c'est le propriétaire qui veille à ce que l'installation réponde en tout temps aux exigences de sécurité.",
+                              "articleRef": "OIBT — Art. 5 al. 1"
+                      },
+                      {
+                              "question": "4. Une entreprise peut-elle confier des travaux d'installation à du personnel temporaire selon l'Art. 10b OIBT ?",
+                              "options": [
+                                      "Non, le personnel temporaire est totalement prohibé dans le bâtiment",
+                                      "Oui, pour autant qu'il soit qualifié selon l'Art. 10a et placé sous la surveillance effective de la personne du métier de l'entreprise titulaire",
+                                      "Oui, sans aucune surveillance ni restriction",
+                                      "Uniquement le week-end et la nuit"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 10b OIBT autorise le recours à du personnel de location de services à condition qu'il réponde aux qualifications professionnelles de l'Art. 10a et soit surveillé par la personne du métier.",
+                              "articleRef": "OIBT — Art. 10b"
+                      },
+                      {
+                              "question": "5. Quelle autorisation limitée permet à un chauffagiste de brancher une chaudière ou une pompe à chaleur selon l'OIBT ?",
+                              "options": [
+                                      "L'autorisation pour installations propres à l'entreprise (Art. 13)",
+                                      "L'autorisation de raccordement selon l'Art. 15 OIBT",
+                                      "L'autorisation générale d'installer selon l'Art. 7",
+                                      "Le permis d'habiter délivré par la commune"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 15 OIBT régit l'autorisation de raccordement d'appareils et d'équipements électriques spécifiques.",
+                              "articleRef": "OIBT — Art. 15"
+                      },
+                      {
+                              "question": "6. Un propriétaire occupant son propre appartement peut-il remplacer lui-même une prise monophasée sans autorisation selon l'Art. 16 OIBT ?",
+                              "options": [
+                                      "Non, c'est strictement interdit sous peine de prison",
+                                      "Oui, dans des locaux d'habitation et annexes qu'il occupe, si le circuit est protégé par un DDR (FI ≤ 30 mA)",
+                                      "Oui, mais uniquement pour des prises en triphasé 400 V",
+                                      "Uniquement s'il a obtenu l'autorisation du Tribunal fédéral"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 16 al. 1 let. a OIBT autorise expressément le propriétaire occupant à remplacer des interrupteurs et prises dans des installations monophasées protégées par un DDR (FI ≤ 30 mA).",
+                              "articleRef": "OIBT — Art. 16 al. 1 let. a"
+                      },
+                      {
+                              "question": "7. Dans quel délai toute modification des conditions d'une autorisation d'installer doit-elle être annoncée à l'Inspection selon l'Art. 19 al. 1 OIBT ?",
+                              "options": [
+                                      "Dans les deux semaines",
+                                      "Dans les 6 mois",
+                                      "Dans l'année civile",
+                                      "Jamais"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 19 al. 1 OIBT impose au titulaire d'annoncer dans les deux semaines à l'Inspection toute modification des conditions d'autorisation.",
+                              "articleRef": "OIBT — Art. 19 al. 1"
+                      },
+                      {
+                              "question": "8. Quelle est la condition indispensable pour entreprendre des travaux sous tension (TST) selon l'Art. 22 OIBT ?",
+                              "options": [
+                                      "Travailler seul pour éviter de distraire ses collègues",
+                                      "Avoir été formé pour les TST, disposer d'EPI appropriés et travailler en binôme (avec une 2e personne instruite présente en permanence)",
+                                      "Ne porter aucun gant pour garder la sensibilité tactile",
+                                      "Brancher l'installation sur une prise sans disjoncteur"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 22 al. 3 et 4 OIBT prescrit que les travaux sous tension exigent des personnes formées, des équipements de protection et la présence permanente d'au moins une deuxième personne instruite.",
+                              "articleRef": "OIBT — Art. 22 al. 3 et 4"
+                      },
+                      {
+                              "question": "9. Quel document l'installateur doit-il obligatoirement joindre au rapport de sécurité (RaSi) lors du contrôle final selon l'Art. 24 al. 2 OIBT ?",
+                              "options": [
+                                      "Le catalogue des tarifs du grossiste",
+                                      "Le protocole de mesure consignant l'ensemble des essais et contrôles prescrits par la NIBT",
+                                      "La photo d'identité de l'électricien",
+                                      "Une attestation de non-faillite"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 24 al. 2 OIBT exige que les résultats du contrôle final soient consignés dans un protocole de mesure joint au rapport de sécurité.",
+                              "articleRef": "OIBT — Art. 24 al. 2"
+                      },
+                      {
+                              "question": "10. Selon l'Art. 31 OIBT, quelle est l'incompatibilité majeure régissant les organes de contrôle ?",
+                              "options": [
+                                      "Ils ne peuvent pas contrôler plus de 3 installations par jour",
+                                      "Celui qui a participé à la conception, réalisation ou modification d'une installation ne peut pas effectuer son contrôle périodique ou de réception",
+                                      "Ils doivent refuser les clients qui ne paient pas en espèces",
+                                      "Ils ne peuvent contrôler que des installations situées à plus de 50 km de leur domicile"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 31 OIBT interdit de manière impérative à toute personne ayant participé à la pose ou modification d'une installation d'en faire le contrôle de réception ou périodique.",
+                              "articleRef": "OIBT — Art. 31"
+                      },
+                      {
+                              "question": "11. À qui le gestionnaire de réseau doit-il transmettre le dossier si un propriétaire ne donne pas suite aux sommations de contrôle périodique (Art. 40 al. 3) ?",
+                              "options": [
+                                      "À l'Inspection fédérale des installations à courant fort (ESTI)",
+                                      "Au service des impôts communal",
+                                      "Au juge de paix pour expulsion immédiate",
+                                      "À l'armée suisse"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 40 al. 3 OIBT prévoit que si le propriétaire ne donne pas suite aux sommations, le gestionnaire de réseau transmet le dossier à l'Inspection pour décision d'office.",
+                              "articleRef": "OIBT — Art. 40 al. 3"
+                      },
+                      {
+                              "question": "12. Que risque pénalement une personne qui exécute des travaux d'installation électrique sans posséder l'autorisation requise selon l'Art. 42 let. a OIBT ?",
+                              "options": [
+                                      "Une simple remarque verbale sans suite",
+                                      "Une condamnation à une amende pénale selon l'Art. 55 al. 3 LIE pouvant s'élever jusqu'à 100 000 CHF",
+                                      "La confiscation de son véhicule privé",
+                                      "Une dispense de payer ses factures d'électricité"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 42 let. a OIBT réprime l'exercice sans autorisation par renvoi direct à l'Art. 55 al. 3 LIE (amende pénale jusqu'à 100 000 CHF).",
+                              "articleRef": "OIBT — Art. 42 let. a"
+                      },
+                      {
+                              "question": "13. Quelle est la périodicité de contrôle obligatoire pour les installations électriques des stations-service selon le Ch. 2.2 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Tous les 20 ans",
+                                      "Tous les 3 ans",
+                                      "Tous les 10 ans",
+                                      "Tous les 6 mois"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Le Ch. 2.2 de l'Annexe OIBT soumet au contrôle tous les 3 ans les stations-service et ateliers de réparation de véhicules situés dans des zones de protection contre les explosions.",
+                              "articleRef": "Annexe OIBT — Ch. 2.2"
+                      },
+                      {
+                              "question": "14. Quelle est la périodicité de contrôle légale d'un grand magasin d'une surface de vente supérieure à 1200 m² selon le Ch. 2.3.8 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Tous les 20 ans",
+                                      "Tous les 5 ans",
+                                      "Tous les 10 ans",
+                                      "Chaque semaine"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Le Ch. 2.3.8 de l'Annexe OIBT classe les magasins et centres de bricolage d'une surface supérieure à 1200 m² sous la périodicité de 5 ans.",
+                              "articleRef": "Annexe OIBT — Ch. 2.3.8"
+                      },
+                      {
+                              "question": "15. Quelle est la périodicité de contrôle de droit commun pour les logements et appartements privés selon le Ch. 2.5 de l'Annexe OIBT ?",
+                              "options": [
+                                      "Tous les 5 ans",
+                                      "Tous les 10 ans",
+                                      "Tous les 20 ans (toutes les autres installations électriques)",
+                                      "Le contrôle n'est jamais obligatoire pour les logements"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "Le Ch. 2.5 de l'Annexe OIBT dispose que toutes les autres installations électriques (dont les logements privés) sont soumises au contrôle tous les 20 ans.",
+                              "articleRef": "Annexe OIBT — Ch. 2.5"
+                      },
+                      {
+                              "question": "16. Selon l'Art. 44a al. 3 OIBT, à quelle condition un électricien de montage CFC formé avant 2015 peut-il mettre en service des installations ?",
+                              "options": [
+                                      "Sans aucune condition particulière",
+                                      "S'il justifie d'une année de pratique sous la surveillance d'une personne du métier et d'une formation complémentaire définie par EIT.swiss l'habilitant à la première vérification",
+                                      "Uniquement s'il a plus de 60 ans",
+                                      "C'est totalement interdit sans exception"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 44a al. 3 OIBT conditionne la mise en service par les électriciens de montage CFC d'avant 2015 à une année de pratique et à une formation complémentaire EIT.swiss.",
+                              "articleRef": "OIBT — Art. 44a al. 3"
+                      }
+              ],
+              "prevLessonId": "rs-734-27-lecon-7"
+      },
+
+
+{
         id: "rs-814-710-orni",
         routeId: "rs-814-710-orni",
         code: "RS 814.710 - ORNI",
@@ -3604,6 +4571,19 @@ export function findFormation(moduleId, formationId) {
 
   // Aliases pour rétrocompatibilité et accès fluide
   const aliases = {
+    'rs-734-27': 'rs-734-27-lecon-1',
+    'RS-734-27': 'rs-734-27-lecon-1',
+    'rs-734-27-oibt': 'rs-734-27-lecon-1',
+    'oibt': 'rs-734-27-lecon-1',
+    'rs-734-27-lecon-1': 'rs-734-27-lecon-1',
+    'rs-734-27-lecon-2': 'rs-734-27-lecon-2',
+    'rs-734-27-lecon-3': 'rs-734-27-lecon-3',
+    'rs-734-27-lecon-4': 'rs-734-27-lecon-4',
+    'rs-734-27-lecon-5': 'rs-734-27-lecon-5',
+    'rs-734-27-lecon-6': 'rs-734-27-lecon-6',
+    'rs-734-27-lecon-7': 'rs-734-27-lecon-7',
+    'rs-734-27-annexe': 'rs-734-27-lecon-7',
+    'rs-734-27-evaluation-finale': 'rs-734-27-evaluation-finale',
     'rs-734-0': 'rs-734-0-lecon-1',
     'RS-734-0': 'rs-734-0-lecon-1',
     'rs-734-0-lie': 'rs-734-0-lecon-1',

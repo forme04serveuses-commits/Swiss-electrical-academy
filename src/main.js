@@ -3,7 +3,7 @@
 
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -79,6 +79,12 @@ function initSEA() {
     // 4. Parcours dédié RS 734.0 (Hub des 11 leçons LIE) : /formations/A/rs-734-0 ou /formations/A/lie
     if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
       renderLieParcoursView(pageContainer);
+      return;
+    }
+
+    // 4ter. Parcours dédié RS 734.27 (Hub des 7 leçons OIBT) : /formations/A/rs-734-27 ou /formations/A/oibt
+    if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-27' || segments[2].toLowerCase() === 'oibt' || segments[2].toLowerCase() === 'rs-734-27-oibt')) {
+      renderOibtParcoursView(pageContainer);
       return;
     }
 

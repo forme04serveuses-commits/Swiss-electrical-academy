@@ -2,7 +2,7 @@
 // Détail du module, progression spécifique et liste ordonnée des leçons/chapitres
 
 import { StorageService } from '../services/storage.js';
-import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -30,6 +30,10 @@ export function renderModuleView(container, moduleId) {
   const ocfoChapters = RS_734_2_INFO.chapters;
   const ocfoCompletedCount = ocfoChapters.filter(c => completed.includes(c.id)).length;
   const ocfoPercentage = Math.round((ocfoCompletedCount / ocfoChapters.length) * 100);
+
+  const oibtLessons = RS_734_27_INFO ? RS_734_27_INFO.lessons : [];
+  const oibtCompletedCount = oibtLessons.filter(l => completed.includes(l.id)).length;
+  const oibtPercentage = oibtLessons.length > 0 ? Math.round((oibtCompletedCount / oibtLessons.length) * 100) : 0;
 
   container.innerHTML = `
     <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
@@ -117,6 +121,30 @@ export function renderModuleView(container, moduleId) {
           </button>
         </div>
       </section>
+
+      <!-- Carte Parcours Structuré RS 734.27 — OIBT (Ordonnance basse tension) -->
+      <section class="oibt-featured-parcours-box" aria-labelledby="oibtFeaturedTitle">
+        <div class="oibt-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="oibt-featured-badge">ORDONNANCE</span>
+            <span class="oibt-featured-code">RS 734.27 — OIBT</span>
+          </div>
+          <span class="oibt-featured-stats">${oibtCompletedCount} / 7 leçons · ${oibtPercentage}%</span>
+        </div>
+        <h2 id="oibtFeaturedTitle" class="oibt-featured-title">Ordonnance sur les installations électriques à basse tension (OIBT)</h2>
+        <p class="oibt-featured-desc">
+          Parcours complet restructuré en 7 leçons officielles (les 6 chapitres réglementaires et la Leçon 7 dédiée à l'Annexe des contrôles périodiques · Art. 1 à 45 et Annexe) et 1 évaluation finale certifiante de 16 questions.
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${oibtPercentage}%; background:#10b981;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenOibtHub" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700;">
+            <span>Explorer les 7 leçons OIBT (Art. 1 à 45 & Annexe)</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
     ` : ''}
 
     <section aria-label="Liste des formations du module">
@@ -128,10 +156,11 @@ export function renderModuleView(container, moduleId) {
           const isDone = completed.includes(formation.id);
           const isAvailable = formation.status === "Disponible";
           const isLie = formation.id.startsWith('rs-734-0-');
-          const isOcfo = formation.id.startsWith('rs-734-2-');
+          const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
+          const isOibt = formation.id.startsWith('rs-734-27-');
 
           return `
-            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : '')}" data-formation-id="${formation.id}">
+            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : ''))}" data-formation-id="${formation.id}">
               <div class="formation-code-col">
                 <span class="formation-code-tag">${formation.code}</span>
               </div>
@@ -182,6 +211,11 @@ export function renderModuleView(container, moduleId) {
         location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
       } else if (formationId === 'rs-734-0-evaluation-finale') {
         location.hash = `#/formations/A/rs-734-0/evaluation-finale`;
+      } else if (formationId.startsWith('rs-734-27-lecon-')) {
+        const leconNum = formationId.replace('rs-734-27-lecon-', '');
+        location.hash = `#/formations/A/rs-734-27/lecon-${leconNum}`;
+      } else if (formationId === 'rs-734-27-evaluation-finale') {
+        location.hash = `#/formations/A/rs-734-27/evaluation-finale`;
       } else if (formationId.startsWith('rs-734-2-chapitre-')) {
         const chapNum = formationId.replace('rs-734-2-chapitre-', '');
         location.hash = `#/formations/A/rs-734-2/chapitre-${chapNum}`;
@@ -541,3 +575,179 @@ export function renderLieParcoursView(container) {
   });
 }
 
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : RS 734.27 — OIBT (7 Leçons officielles · Art. 1 à 45 + Annexe)
+// Source de vérité : 734.27_OIBT.pdf (7 novembre 2001, état au 31 octobre 2025)
+// ----------------------------------------------------------------------------
+export function renderOibtParcoursView(container) {
+  const completed = StorageService.getCompletedLessons();
+  const lessons = RS_734_27_INFO ? RS_734_27_INFO.lessons : [];
+  const completedCount = lessons.filter(l => completed.includes(l.id)).length;
+  const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
+  const finalEvalId = RS_734_27_INFO ? RS_734_27_INFO.finalEvaluation.id : 'rs-734-27-evaluation-finale';
+  const isFinalDone = completed.includes(finalEvalId);
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'lecon-1';
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.slug;
+      break;
+    }
+  }
+  if (completedCount === lessons.length && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/A" class="breadcrumb-link">Module A — Dispositions légales</a>
+      <span>/</span>
+      <span>RS 734.27 — OIBT</span>
+    </nav>
+
+    <!-- Header Hero Card OIBT -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #10b981;" role="region" aria-label="En-tête du parcours RS 734.27">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag" style="background:rgba(16,185,129,0.15); color:#10b981;">DROIT FÉDÉRAL SUISSE · BASSE TENSION</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">RS 734.27</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#10b981;">OIBT (du 7 novembre 2001 · État au 31 octobre 2025)</div>
+          <h1 class="ocfo-hub-title">Ordonnance sur les installations électriques à basse tension</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${RS_734_27_INFO ? RS_734_27_INFO.description : ''}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours OIBT</span>
+          <span style="font-weight:800; color:#10b981; font-size:1rem;">
+            ${percentage} % · ${completedCount} / 7 leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${percentage}%; background:#10b981;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumeOibt" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700;">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === 7 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+            ← Retour au Module A
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Liste des 7 Leçons officielles (6 Chapitres + Leçon 7 Annexe) -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons OIBT">
+      <div class="section-heading">
+        <span>📚</span> Les 7 leçons du parcours (6 chapitres légaux & Annexe contrôles périodiques)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#10b981;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(16,185,129,0.3); color:#10b981;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(16,185,129,0.15); color:#10b981; border-color:rgba(16,185,129,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(16,185,129,0.3); color:#10b981; background:rgba(16,185,129,0.08);">${les.articles}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (16 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${RS_734_27_INFO ? RS_734_27_INFO.finalEvaluation.title : 'Évaluation Finale Certifiante'}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag">Art. 1 à 45 & Annexe</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${RS_734_27_INFO ? RS_734_27_INFO.finalEvaluation.duration : '30 min'}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">16 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${RS_734_27_INFO ? RS_734_27_INFO.finalEvaluation.summary : ''}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumeOibt');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/A/rs-734-27/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.getAttribute('data-lesson-slug');
+      if (slug) {
+        location.hash = `#/formations/A/rs-734-27/${slug}`;
+      }
+    });
+  });
+}
