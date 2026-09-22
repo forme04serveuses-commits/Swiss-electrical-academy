@@ -2,10 +2,11 @@
 // Identité, avatar, statistiques personnelles, gestion du thème et persistance
 
 import { StorageService } from '../services/storage.js';
+import { ProgressionService } from '../services/progression.js';
 import { DEFAULT_USER } from '../data/academy-data.js';
 
 export function renderProfileView(container) {
-  const stats = StorageService.getProgressStats();
+  const stats = ProgressionService.getGlobalProgress();
   const currentTheme = StorageService.getTheme();
 
   container.innerHTML = `
@@ -28,7 +29,7 @@ export function renderProfileView(container) {
       <!-- Métriques Apprenant -->
       <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.75rem; background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem; text-align:center;">
         <div>
-          <div style="font-size:1.4rem; font-weight:800; color:var(--electric-blue);">${stats.globalPercentage}%</div>
+          <div style="font-size:1.4rem; font-weight:800; color:var(--electric-blue);">${stats.globalPercentageFormatted}</div>
           <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">Progression</div>
         </div>
         <div>

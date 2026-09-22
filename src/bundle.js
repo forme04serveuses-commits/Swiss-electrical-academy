@@ -5836,17 +5836,22 @@
       });
     },
 
-    // Calcul des statistiques de progression
+    // Calcul des statistiques de progression (délégué au ProgressionService centralisé)
     getProgressStats() {
+      if (typeof ProgressionService !== 'undefined' && ProgressionService.getGlobalProgress) {
+        return ProgressionService.getGlobalProgress();
+      }
+
       const completed = this.getCompletedLessons();
       const moduleStats = {};
       let totalFormations = 0;
       let completedFormations = 0;
 
       ACADEMY_MODULES.forEach(mod => {
-        const modTotal = mod.formations.length;
+        const avail = mod.formations.filter(f => f.status === 'Disponible');
+        const modTotal = avail.length;
         totalFormations += modTotal;
-        const modCompleted = mod.formations.filter(f => completed.includes(f.id)).length;
+        const modCompleted = avail.filter(f => completed.includes(f.id)).length;
         completedFormations += modCompleted;
 
         const percentage = modTotal > 0 ? Math.round((modCompleted / modTotal) * 100) : 0;
@@ -5855,7 +5860,8 @@
           title: mod.title,
           total: modTotal,
           completed: modCompleted,
-          percentage
+          percentage,
+          percentageFormatted: `${percentage} %`
         };
       });
 
@@ -5863,6 +5869,7 @@
 
       return {
         globalPercentage,
+        globalPercentageFormatted: `${globalPercentage} %`,
         totalFormations,
         completedFormations,
         moduleStats,
@@ -5870,6 +5877,422 @@
         badgesCount: this.getUnlockedBadges().length,
         totalBadgesCount: OFFICIAL_BADGES.length
       };
+    }
+  };
+
+
+  // ==================== src/services/progression.js ====================
+  // Swiss Electrical Academy — Service Centralisé de Progression (V2.5.2)
+  // Source unique de vérité pour tous les calculs de progression (global, modules, parcours, leçons)
+  // Garantit la cohérence absolue, l'arrondi décimal précis, l'anti-farming et la persistance.
+
+
+  // Table de normalisation des anciens identifiants et alias pour migration déterministe
+  const LEGACY_ID_MAP = {
+    'rs-814-710': 'rs-814-710-lecon-1',
+    'RS-814-710': 'rs-814-710-lecon-1',
+    'rs-814-710-orni': 'rs-814-710-lecon-1',
+    'orni': 'rs-814-710-lecon-1',
+    'rs-734-27': 'rs-734-27-lecon-1',
+    'RS-734-27': 'rs-734-27-lecon-1',
+    'rs-734-27-oibt': 'rs-734-27-lecon-1',
+    'oibt': 'rs-734-27-lecon-1',
+    'rs-734-27-annexe': 'rs-734-27-lecon-7',
+    'rs-734-0': 'rs-734-0-lecon-1',
+    'RS-734-0': 'rs-734-0-lecon-1',
+    'rs-734-0-lie': 'rs-734-0-lecon-1',
+    'rs-734-0-lie-plans': 'rs-734-0-lecon-5',
+    'rs-734-0-lie-controle': 'rs-734-0-lecon-7',
+    'rs-734-0-lie-responsabilite': 'rs-734-0-lecon-8',
+    'rs-734-0-lie-penal': 'rs-734-0-lecon-10',
+    'rs-734-0-chapitre-1': 'rs-734-0-lecon-1',
+    'rs-734-0-chapitre-2': 'rs-734-0-lecon-2',
+    'rs-734-0-chapitre-3': 'rs-734-0-lecon-3',
+    'rs-734-0-chapitre-4': 'rs-734-0-lecon-4',
+    'rs-734-0-chapitre-5': 'rs-734-0-lecon-5',
+    'rs-734-0-chapitre-6': 'rs-734-0-lecon-6',
+    'rs-734-0-chapitre-7': 'rs-734-0-lecon-7',
+    'rs-734-0-chapitre-8': 'rs-734-0-lecon-8',
+    'rs-734-0-chapitre-9': 'rs-734-0-lecon-9',
+    'rs-734-0-chapitre-10': 'rs-734-0-lecon-10',
+    'rs-734-0-chapitre-11': 'rs-734-0-lecon-11',
+    'rs-734-2': 'rs-734-2-chapitre-1',
+    'RS-734-2': 'rs-734-2-chapitre-1',
+    'rs-734-2-ocfo': 'rs-734-2-chapitre-1',
+    'rs-734-2-annexe': 'rs-734-2-annexes',
+    'annexes': 'rs-734-2-annexes',
+    'lecon-8': 'rs-734-2-annexes',
+    'chapitre-8': 'rs-734-2-annexes',
+    'evaluation-finale': 'rs-734-2-evaluation-finale'
+  };
+
+  // Configuration formelle des 4 sous-parcours structurés de Module A
+  const PARCOURS_REGISTRY = {
+    'rs-734-0': {
+      id: 'rs-734-0',
+      shortCode: 'LIE',
+      title: 'RS 734.0 — LIE',
+      fullTitle: 'Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)',
+      typeLabel: 'Loi fédérale',
+      accentColor: '#f59e0b',
+      hubRoute: '#/formations/A/rs-734-0',
+      getLessons: () => (RS_734_0_INFO ? RS_734_0_INFO.lessons : []),
+      finalEvaluationId: 'rs-734-0-evaluation-finale'
+    },
+    'rs-734-2': {
+      id: 'rs-734-2',
+      shortCode: 'OCFo',
+      title: 'RS 734.2 — OCFo',
+      fullTitle: 'Ordonnance sur les installations électriques à courant fort (OCFo)',
+      typeLabel: 'Ordonnance fédérale',
+      accentColor: '#0284c7',
+      hubRoute: '#/formations/A/rs-734-2',
+      getLessons: () => (RS_734_2_INFO ? RS_734_2_INFO.chapters : []),
+      finalEvaluationId: 'rs-734-2-evaluation-finale'
+    },
+    'rs-734-27': {
+      id: 'rs-734-27',
+      shortCode: 'OIBT',
+      title: 'RS 734.27 — OIBT',
+      fullTitle: 'Ordonnance sur les installations électriques à basse tension (OIBT)',
+      typeLabel: 'Ordonnance fédérale',
+      accentColor: '#10b981',
+      hubRoute: '#/formations/A/rs-734-27',
+      getLessons: () => (RS_734_27_INFO ? RS_734_27_INFO.lessons : []),
+      finalEvaluationId: 'rs-734-27-evaluation-finale'
+    },
+    'rs-814-710': {
+      id: 'rs-814-710',
+      shortCode: 'ORNI',
+      title: 'RS 814.710 — ORNI',
+      fullTitle: 'Ordonnance sur la protection contre le rayonnement non ionisant (ORNI)',
+      typeLabel: 'Ordonnance fédérale',
+      accentColor: '#8b5cf6',
+      hubRoute: '#/formations/A/rs-814-710',
+      getLessons: () => (RS_814_710_INFO ? RS_814_710_INFO.lessons : []),
+      finalEvaluationId: 'rs-814-710-evaluation-finale'
+    }
+  };
+
+  const ProgressionService = {
+    /**
+     * Calcul numérique d'un pourcentage avec 1 décimale exacte si nécessaire.
+     * @param {number} count - Nombre d'éléments complétés
+     * @param {number} total - Total d'éléments
+     * @returns {number} Valeur entre 0 et 100 arrondie à 1 décimale
+     */
+    calculatePercentage(count, total) {
+      if (!total || total <= 0 || !count || count <= 0) return 0;
+      if (count >= total) return 100;
+      const raw = (count / total) * 100;
+      return Math.round(raw * 10) / 10;
+    },
+
+    /**
+     * Formatage soigné suisse/français des pourcentages.
+     * Règle stricte :
+     * - 0 -> "0 %"
+     * - 100 -> "100 %"
+     * - Entier -> "25 %", "50 %", "75 %"
+     * - Décimale -> "12,5 %", "37,5 %", "62,5 %", "87,5 %"
+     * @param {number} ratioOrCount - Ratio (0-1), count si total est fourni, ou valeur brute (0-100)
+     * @param {number} [total] - Optionnel si ratioOrCount est un compteur
+     * @returns {string} Chaîne formattée ex: "37,5 %"
+     */
+    formatPercentage(ratioOrCount, total) {
+      let value = 0;
+      if (typeof total === 'number') {
+        value = this.calculatePercentage(ratioOrCount, total);
+      } else if (ratioOrCount <= 1 && ratioOrCount > 0) {
+        value = Math.round(ratioOrCount * 1000) / 10;
+      } else {
+        value = Math.round(Number(ratioOrCount || 0) * 10) / 10;
+      }
+
+      if (value <= 0) return '0 %';
+      if (value >= 100) return '100 %';
+
+      if (value % 1 === 0) {
+        return `${Math.round(value)} %`;
+      }
+      return `${value.toString().replace('.', ',')} %`;
+    },
+
+    /**
+     * Ensemble de tous les identifiants valides de formation existant dans le catalogue
+     */
+    getAllValidFormationIds() {
+      const valid = new Set();
+      ACADEMY_MODULES.forEach(mod => {
+        mod.formations.forEach(f => {
+          if (f.id) valid.add(f.id);
+        });
+      });
+      return valid;
+    },
+
+    /**
+     * Ensemble de tous les identifiants de formations réellement disponibles (avec quiz ou contenu actif)
+     */
+    getAvailableFormationIds() {
+      const available = new Set();
+      ACADEMY_MODULES.forEach(mod => {
+        mod.formations.forEach(f => {
+          if (f.status === 'Disponible' && f.id) {
+            available.add(f.id);
+          }
+        });
+      });
+      return available;
+    },
+
+    /**
+     * Migration, normalisation et déduplication des données de persistance localStorage.
+     * Résout les doublons, corrige les anciens identifiants et élimine les orphelins.
+     * @returns {string[]} Liste dédupliquée et assainie des identifiants complétés.
+     */
+    migrateProgressionData() {
+      try {
+        const raw = localStorage.getItem('sea_completed_lessons');
+        if (!raw) return [];
+
+        let list;
+        try {
+          list = JSON.parse(raw);
+        } catch {
+          list = [];
+        }
+
+        if (!Array.isArray(list)) list = [];
+
+        const validIds = this.getAllValidFormationIds();
+        const cleaned = [];
+        const seen = new Set();
+
+        list.forEach(item => {
+          if (!item || typeof item !== 'string') return;
+          let targetId = item.trim();
+
+          // Normaliser via la table d'alias
+          if (LEGACY_ID_MAP[targetId]) {
+            targetId = LEGACY_ID_MAP[targetId];
+          }
+
+          // Valider l'existence dans le catalogue officiel
+          if (validIds.has(targetId) && !seen.has(targetId)) {
+            seen.add(targetId);
+            cleaned.push(targetId);
+          }
+        });
+
+        // Sauvegarder la liste nettoyée
+        localStorage.setItem('sea_completed_lessons', JSON.stringify(cleaned));
+
+        // Dédupliquer également les sources d'XP attribuées
+        const rawSources = localStorage.getItem('sea_awarded_xp_sources');
+        if (rawSources) {
+          try {
+            const sources = JSON.parse(rawSources);
+            if (Array.isArray(sources)) {
+              const uniqueSources = Array.from(new Set(sources));
+              localStorage.setItem('sea_awarded_xp_sources', JSON.stringify(uniqueSources));
+            }
+          } catch {
+            // ignore
+          }
+        }
+
+        return cleaned;
+      } catch (e) {
+        console.warn('[ProgressionService] Erreur lors de la migration :', e);
+        return [];
+      }
+    },
+
+    /**
+     * Progression spécifique pour un des 4 sous-parcours structurés (LIE, OCFo, OIBT, ORNI).
+     * @param {string} parcoursId - 'rs-734-0' | 'rs-734-2' | 'rs-734-27' | 'rs-814-710' (ou alias court 'lie', 'ocfo', etc.)
+     */
+    getParcoursProgress(parcoursId) {
+      let key = parcoursId;
+      if (key === 'lie' || key === 'LIE') key = 'rs-734-0';
+      if (key === 'ocfo' || key === 'OCFo') key = 'rs-734-2';
+      if (key === 'oibt' || key === 'OIBT') key = 'rs-734-27';
+      if (key === 'orni' || key === 'ORNI') key = 'rs-814-710';
+
+      const cfg = PARCOURS_REGISTRY[key];
+      if (!cfg) {
+        return {
+          id: parcoursId,
+          shortCode: '',
+          title: '',
+          lessonsTotal: 0,
+          lessonsCompleted: 0,
+          percentage: 0,
+          percentageFormatted: '0 %',
+          isFinalDone: false,
+          isCertified: false,
+          isLessonsCompleted: false,
+          status: 'not-started'
+        };
+      }
+
+      const completed = StorageService.getCompletedLessons();
+      const lessons = cfg.getLessons();
+      const lessonsTotal = lessons.length;
+      const lessonsCompleted = lessons.filter(l => completed.includes(l.id)).length;
+      const percentage = this.calculatePercentage(lessonsCompleted, lessonsTotal);
+      const percentageFormatted = this.formatPercentage(lessonsCompleted, lessonsTotal);
+
+      const isFinalDone = completed.includes(cfg.finalEvaluationId);
+      const isLessonsCompleted = lessonsTotal > 0 && lessonsCompleted === lessonsTotal;
+      const isCertified = isLessonsCompleted && isFinalDone;
+
+      let status = 'not-started';
+      if (isCertified) {
+        status = 'certified';
+      } else if (lessonsCompleted > 0 || isFinalDone) {
+        status = 'in-progress';
+      }
+
+      return {
+        id: cfg.id,
+        shortCode: cfg.shortCode,
+        title: cfg.title,
+        fullTitle: cfg.fullTitle,
+        typeLabel: cfg.typeLabel,
+        accentColor: cfg.accentColor,
+        hubRoute: cfg.hubRoute,
+        lessonsTotal,
+        lessonsCompleted,
+        percentage,
+        percentageFormatted,
+        isFinalDone,
+        isCertified,
+        isLessonsCompleted,
+        status
+      };
+    },
+
+    /**
+     * Progression complète pour un Module donné (A, B, N, E, S)
+     * @param {string} moduleId - Identifiant du module ('A', 'B', 'N', 'E', 'S')
+     */
+    getModuleProgress(moduleId) {
+      const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
+      if (!mod) {
+        return {
+          id: moduleId,
+          code: moduleId,
+          title: '',
+          totalAvailable: 0,
+          catalogTotal: 0,
+          completedCount: 0,
+          percentage: 0,
+          percentageFormatted: '0 %',
+          isModuleCompleted: false,
+          isInDevelopment: true
+        };
+      }
+
+      const completed = StorageService.getCompletedLessons();
+      const availableFormations = mod.formations.filter(f => f.status === 'Disponible');
+      const totalAvailable = availableFormations.length;
+      const catalogTotal = mod.formations.length;
+
+      const completedCount = availableFormations.filter(f => completed.includes(f.id)).length;
+      const percentage = this.calculatePercentage(completedCount, totalAvailable);
+      const percentageFormatted = this.formatPercentage(completedCount, totalAvailable);
+      const isModuleCompleted = totalAvailable > 0 && completedCount === totalAvailable;
+      const isInDevelopment = totalAvailable === 0;
+
+      let subParcours = null;
+      if (moduleId === 'A') {
+        subParcours = {
+          lie: this.getParcoursProgress('rs-734-0'),
+          ocfo: this.getParcoursProgress('rs-734-2'),
+          oibt: this.getParcoursProgress('rs-734-27'),
+          orni: this.getParcoursProgress('rs-814-710')
+        };
+      }
+
+      return {
+        id: mod.id,
+        code: mod.code,
+        title: mod.title,
+        description: mod.description,
+        countLabel: mod.countLabel,
+        totalAvailable,
+        catalogTotal,
+        completedCount,
+        percentage,
+        percentageFormatted,
+        isModuleCompleted,
+        isInDevelopment,
+        subParcours
+      };
+    },
+
+    /**
+     * Progression globale unifiée de l'Académie ELECBOOK.
+     * Calculée de façon rigoureuse sur les unités réellement disponibles (40 unités disponibles au total).
+     */
+    getGlobalProgress() {
+      // S'assurer que les données sont migrées et saines
+      const completed = StorageService.getCompletedLessons();
+      const availableIds = this.getAvailableFormationIds();
+
+      let totalAvailable = 0;
+      let completedCount = 0;
+      let catalogTotal = 0;
+      const moduleStats = {};
+
+      ACADEMY_MODULES.forEach(mod => {
+        const p = this.getModuleProgress(mod.id);
+        moduleStats[mod.id] = {
+          id: p.id,
+          code: p.code,
+          title: p.title,
+          total: p.totalAvailable,
+          totalAvailable: p.totalAvailable,
+          catalogTotal: p.catalogTotal,
+          completed: p.completedCount,
+          percentage: p.percentage,
+          percentageFormatted: p.percentageFormatted,
+          isCompleted: p.isModuleCompleted,
+          isInDevelopment: p.isInDevelopment,
+          subParcours: p.subParcours
+        };
+
+        totalAvailable += p.totalAvailable;
+        completedCount += p.completedCount;
+        catalogTotal += p.catalogTotal;
+      });
+
+      const globalPercentage = this.calculatePercentage(completedCount, totalAvailable);
+      const globalPercentageFormatted = this.formatPercentage(completedCount, totalAvailable);
+      const isGlobalCompleted = totalAvailable > 0 && completedCount === totalAvailable;
+
+      return {
+        globalPercentage,
+        globalPercentageFormatted,
+        completedFormations: completedCount,
+        totalFormations: totalAvailable,
+        catalogTotalFormations: catalogTotal,
+        moduleStats,
+        xp: StorageService.getXp(),
+        badgesCount: StorageService.getUnlockedBadges().length,
+        totalBadgesCount: OFFICIAL_BADGES.length,
+        isGlobalCompleted
+      };
+    },
+
+    /**
+     * Vérifie si une formation spécifique est terminée
+     */
+    isLessonCompleted(formationId) {
+      const list = StorageService.getCompletedLessons();
+      return list.includes(formationId);
     }
   };
 
@@ -7817,7 +8240,7 @@
 
 
   function renderDashboard(container) {
-    const stats = StorageService.getProgressStats();
+    const stats = ProgressionService.getGlobalProgress();
     const lastActivity = StorageService.getLastActivity() || {
       moduleId: "A",
       formationId: "pyramide-lois",
@@ -7835,7 +8258,7 @@
         <!-- Métriques de progression globale -->
         <div class="hero-metrics-grid">
           <div class="metric-card">
-            <span class="metric-value" style="color:var(--electric-blue);">${stats.globalPercentage}%</span>
+            <span class="metric-value" style="color:var(--electric-blue);">${stats.globalPercentageFormatted}</span>
             <span class="metric-label">Progression globale</span>
           </div>
           <div class="metric-card">
@@ -7878,7 +8301,11 @@
         </div>
         <div class="modules-grid">
           ${ACADEMY_MODULES.map(mod => {
-            const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+            const modStats = ProgressionService.getModuleProgress(mod.id);
+            const countDisplay = modStats.isInDevelopment
+              ? `En préparation (0/${modStats.catalogTotal})`
+              : `${modStats.percentageFormatted} (${modStats.completedCount}/${modStats.totalAvailable})`;
+
             return `
               <article class="module-card" data-module-id="${mod.id}">
                 <div>
@@ -7886,7 +8313,10 @@
                     <div class="module-code-badge badge-${mod.id}">
                       ${mod.code}
                     </div>
-                    <span class="module-count-tag">${mod.countLabel}</span>
+                    <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                      ${modStats.isModuleCompleted ? '<span style="font-size:0.75rem; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.4); padding:0.15rem 0.5rem; border-radius:12px; font-weight:700;">✓ Terminé</span>' : ''}
+                      <span class="module-count-tag">${mod.countLabel}</span>
+                    </div>
                   </div>
                   <h2 class="module-title">${mod.title}</h2>
                   <p class="module-desc">${mod.description}</p>
@@ -7896,7 +8326,7 @@
                   <div class="module-progress-wrapper">
                     <div class="progress-labels">
                       <span>Progression</span>
-                      <span>${modStats.percentage}% (${modStats.completed}/${modStats.total})</span>
+                      <span>${countDisplay}</span>
                     </div>
                     <div class="progress-bar-bg">
                       <div class="progress-bar-fill" style="width: ${modStats.percentage}%;"></div>
@@ -7952,26 +8382,11 @@
       return;
     }
 
-    const completed = StorageService.getCompletedLessons();
-    const completedCount = mod.formations.filter(f => completed.includes(f.id)).length;
-    const modPercentage = mod.formations.length > 0 ? Math.round((completedCount / mod.formations.length) * 100) : 0;
-
-    // Si c'est le Module A, calculer les statistiques spécifiques aux parcours RS 734.0 et RS 734.2
-    const lieLessons = RS_734_0_INFO ? RS_734_0_INFO.lessons : [];
-    const lieCompletedCount = lieLessons.filter(l => completed.includes(l.id)).length;
-    const liePercentage = lieLessons.length > 0 ? Math.round((lieCompletedCount / lieLessons.length) * 100) : 0;
-
-    const ocfoChapters = RS_734_2_INFO.chapters;
-    const ocfoCompletedCount = ocfoChapters.filter(c => completed.includes(c.id)).length;
-    const ocfoPercentage = Math.round((ocfoCompletedCount / ocfoChapters.length) * 100);
-
-    const oibtLessons = RS_734_27_INFO ? RS_734_27_INFO.lessons : [];
-    const oibtCompletedCount = oibtLessons.filter(l => completed.includes(l.id)).length;
-    const oibtPercentage = oibtLessons.length > 0 ? Math.round((oibtCompletedCount / oibtLessons.length) * 100) : 0;
-
-    const orniLessons = RS_814_710_INFO ? RS_814_710_INFO.lessons : [];
-    const orniCompletedCount = orniLessons.filter(l => completed.includes(l.id)).length;
-    const orniPercentage = orniLessons.length > 0 ? Math.round((orniCompletedCount / orniLessons.length) * 100) : 0;
+    const modProgress = ProgressionService.getModuleProgress(moduleId);
+    const lieProgress = ProgressionService.getParcoursProgress('rs-734-0');
+    const ocfoProgress = ProgressionService.getParcoursProgress('rs-734-2');
+    const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
+    const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
 
     container.innerHTML = `
       <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
@@ -8002,10 +8417,10 @@
         <div style="max-width:480px;">
           <div class="progress-labels">
             <span>Progression du module</span>
-            <span>${modPercentage}% (${completedCount} sur ${mod.formations.length} validés)</span>
+            <span>${modProgress.percentageFormatted} (${modProgress.completedCount} sur ${modProgress.totalAvailable} validés)</span>
           </div>
           <div class="progress-bar-bg" style="height:8px;">
-            <div class="progress-bar-fill" style="width: ${modPercentage}%;"></div>
+            <div class="progress-bar-fill" style="width: ${modProgress.percentage}%;"></div>
           </div>
         </div>
       </header>
@@ -8018,18 +8433,18 @@
               <span class="lie-featured-badge">LOI FÉDÉRALE</span>
               <span class="lie-featured-code">RS 734.0 — LIE</span>
             </div>
-            <span class="lie-featured-stats">${lieCompletedCount} / 11 leçons · ${liePercentage}%</span>
+            <span class="lie-featured-stats">${lieProgress.lessonsCompleted} / ${lieProgress.lessonsTotal} leçons · ${lieProgress.percentageFormatted}</span>
           </div>
           <h2 id="lieFeaturedTitle" class="lie-featured-title">Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)</h2>
           <p class="lie-featured-desc">
             Parcours structuré en 11 leçons officielles fidèles aux 11 parties du texte légal (du 24 juin 1902, état au 1er avril 2026, Art. 1 à 64) et 1 évaluation finale certifiante de 16 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${liePercentage}%; background:#f59e0b;"></div>
+            <div class="progress-bar-fill" style="width: ${lieProgress.percentage}%; background:#f59e0b;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenLieHub" onclick="location.hash='#/formations/A/rs-734-0'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
-              <span>Explorer les 11 leçons</span>
+              <span>Explorer les ${lieProgress.lessonsTotal} leçons</span>
               <span>→</span>
             </button>
           </div>
@@ -8042,7 +8457,7 @@
               <span class="ocfo-featured-badge">ORDONNANCE</span>
               <span class="ocfo-featured-code">RS 734.2 — OCFo</span>
             </div>
-            <span class="ocfo-featured-stats">${ocfoCompletedCount} / 8 leçons · ${ocfoPercentage}%</span>
+            <span class="ocfo-featured-stats">${ocfoProgress.lessonsCompleted} / ${ocfoProgress.lessonsTotal} leçons · ${ocfoProgress.percentageFormatted}</span>
           </div>
           <h2 id="ocfoFeaturedTitle" class="ocfo-featured-title">Ordonnance sur les installations électriques à courant fort</h2>
           <p class="ocfo-featured-desc">
@@ -8050,11 +8465,11 @@
             Des définitions fondamentales aux 5 règles vitales d'intervention, avec la visualisation interactive de l'Annexe 4.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${ocfoPercentage}%; background:#0284c7;"></div>
+            <div class="progress-bar-fill" style="width: ${ocfoProgress.percentage}%; background:#0284c7;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenOcfoHub" onclick="location.hash='#/formations/A/rs-734-2'" style="display:inline-flex; align-items:center; gap:0.5rem; cursor:pointer;">
-              <span>Explorer les 8 leçons</span>
+              <span>Explorer les ${ocfoProgress.lessonsTotal} leçons</span>
               <span>→</span>
             </button>
           </div>
@@ -8067,18 +8482,18 @@
               <span class="oibt-featured-badge">ORDONNANCE</span>
               <span class="oibt-featured-code">RS 734.27 — OIBT</span>
             </div>
-            <span class="oibt-featured-stats">${oibtCompletedCount} / 7 leçons · ${oibtPercentage}%</span>
+            <span class="oibt-featured-stats">${oibtProgress.lessonsCompleted} / ${oibtProgress.lessonsTotal} leçons · ${oibtProgress.percentageFormatted}</span>
           </div>
           <h2 id="oibtFeaturedTitle" class="oibt-featured-title">Ordonnance sur les installations électriques à basse tension (OIBT)</h2>
           <p class="oibt-featured-desc">
             Parcours complet restructuré en 7 leçons officielles (les 6 chapitres réglementaires et la Leçon 7 dédiée à l'Annexe des contrôles périodiques · Art. 1 à 45 et Annexe) et 1 évaluation finale certifiante de 16 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${oibtPercentage}%; background:#10b981;"></div>
+            <div class="progress-bar-fill" style="width: ${oibtProgress.percentage}%; background:#10b981;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenOibtHub" onclick="location.hash='#/formations/A/rs-734-27'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700; cursor:pointer;">
-              <span>Explorer les 7 leçons</span>
+              <span>Explorer les ${oibtProgress.lessonsTotal} leçons</span>
               <span>→</span>
             </button>
           </div>
@@ -8091,18 +8506,18 @@
               <span class="orni-featured-badge">ORDONNANCE</span>
               <span class="orni-featured-code">RS 814.710 — ORNI</span>
             </div>
-            <span class="orni-featured-stats">${orniCompletedCount} / 7 leçons · ${orniPercentage}%</span>
+            <span class="orni-featured-stats">${orniProgress.lessonsCompleted} / ${orniProgress.lessonsTotal} leçons · ${orniProgress.percentageFormatted}</span>
           </div>
           <h2 id="orniFeaturedTitle" class="orni-featured-title">Ordonnance sur la protection contre le rayonnement non ionisant (ORNI)</h2>
           <p class="orni-featured-desc">
             Parcours officiel structuré en 7 leçons conformes au texte légal (champs de 0 Hz à 300 GHz, LAUS, VLI préventive à 1 µT, courants déterminants, NIBT, téléphonie mobile) et 1 évaluation finale certifiante de 16 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${orniPercentage}%; background:#8b5cf6;"></div>
+            <div class="progress-bar-fill" style="width: ${orniProgress.percentage}%; background:#8b5cf6;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenOrniHub" onclick="location.hash='#/formations/A/rs-814-710'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#8b5cf6; color:#ffffff; font-weight:700; cursor:pointer;">
-              <span>Explorer les 7 leçons</span>
+              <span>Explorer les ${orniProgress.lessonsTotal} leçons</span>
               <span>→</span>
             </button>
           </div>
@@ -8217,21 +8632,22 @@
   // Conforme au design de la Section 7 du prompt utilisateur
   // ----------------------------------------------------------------------------
   function renderOcfoParcoursView(container) {
-    const completed = StorageService.getCompletedLessons();
+    const parcoursProgress = ProgressionService.getParcoursProgress('rs-734-2');
     const chapters = RS_734_2_INFO.chapters;
-    const completedCount = chapters.filter(c => completed.includes(c.id)).length;
-    const percentage = Math.round((completedCount / chapters.length) * 100);
-    const isFinalDone = completed.includes(RS_734_2_INFO.finalEvaluation.id);
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
 
     // Trouver le premier chapitre non validé pour le bouton "Continuer"
     let nextChapterSlug = 'chapitre-1';
+    const completed = StorageService.getCompletedLessons();
     for (const c of chapters) {
       if (!completed.includes(c.id)) {
         nextChapterSlug = c.slug;
         break;
       }
     }
-    if (completedCount === chapters.length && !isFinalDone) {
+    if (completedCount === totalLessons && !isFinalDone) {
       nextChapterSlug = 'evaluation-finale';
     }
 
@@ -8268,11 +8684,11 @@
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours</span>
             <span style="font-weight:800; color:var(--electric-blue); font-size:1rem;">
-              ${percentage} % · ${completedCount} / 8 leçons
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-            <div class="progress-bar-fill" style="width: ${percentage}%;"></div>
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%;"></div>
           </div>
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
@@ -8387,22 +8803,22 @@
   // Source de vérité : 734.0_LIE.pdf (24 juin 1902, état au 1er avril 2026)
   // ----------------------------------------------------------------------------
   function renderLieParcoursView(container) {
-    const completed = StorageService.getCompletedLessons();
+    const parcoursProgress = ProgressionService.getParcoursProgress('rs-734-0');
     const lessons = RS_734_0_INFO ? RS_734_0_INFO.lessons : [];
-    const completedCount = lessons.filter(l => completed.includes(l.id)).length;
-    const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
-    const finalEvalId = RS_734_0_INFO ? RS_734_0_INFO.finalEvaluation.id : 'rs-734-0-evaluation-finale';
-    const isFinalDone = completed.includes(finalEvalId);
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
 
     // Trouver la première leçon non validée
     let nextLessonSlug = 'lecon-1';
+    const completed = StorageService.getCompletedLessons();
     for (const l of lessons) {
       if (!completed.includes(l.id)) {
         nextLessonSlug = l.slug;
         break;
       }
     }
-    if (completedCount === lessons.length && !isFinalDone) {
+    if (completedCount === totalLessons && !isFinalDone) {
       nextLessonSlug = 'evaluation-finale';
     }
 
@@ -8439,11 +8855,11 @@
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours LIE</span>
             <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
-              ${percentage} % · ${completedCount} / 11 leçons
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-            <div class="progress-bar-fill" style="width: ${percentage}%; background:#f59e0b;"></div>
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#f59e0b;"></div>
           </div>
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
@@ -8564,22 +8980,22 @@
   // Source de vérité : 734.27_OIBT.pdf (7 novembre 2001, état au 31 octobre 2025)
   // ----------------------------------------------------------------------------
   function renderOibtParcoursView(container) {
-    const completed = StorageService.getCompletedLessons();
+    const parcoursProgress = ProgressionService.getParcoursProgress('rs-734-27');
     const lessons = RS_734_27_INFO ? RS_734_27_INFO.lessons : [];
-    const completedCount = lessons.filter(l => completed.includes(l.id)).length;
-    const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
-    const finalEvalId = RS_734_27_INFO ? RS_734_27_INFO.finalEvaluation.id : 'rs-734-27-evaluation-finale';
-    const isFinalDone = completed.includes(finalEvalId);
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
 
     // Trouver la première leçon non validée
     let nextLessonSlug = 'lecon-1';
+    const completed = StorageService.getCompletedLessons();
     for (const l of lessons) {
       if (!completed.includes(l.id)) {
         nextLessonSlug = l.slug;
         break;
       }
     }
-    if (completedCount === lessons.length && !isFinalDone) {
+    if (completedCount === totalLessons && !isFinalDone) {
       nextLessonSlug = 'evaluation-finale';
     }
 
@@ -8616,11 +9032,11 @@
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours OIBT</span>
             <span style="font-weight:800; color:#10b981; font-size:1rem;">
-              ${percentage} % · ${completedCount} / 7 leçons
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-            <div class="progress-bar-fill" style="width: ${percentage}%; background:#10b981;"></div>
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#10b981;"></div>
           </div>
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
@@ -8741,22 +9157,22 @@
   // Source de vérité : 814.710_ORNI.pdf (23 décembre 1999, état au 1er novembre 2023)
   // ----------------------------------------------------------------------------
   function renderOrniParcoursView(container) {
-    const completed = StorageService.getCompletedLessons();
+    const parcoursProgress = ProgressionService.getParcoursProgress('rs-814-710');
     const lessons = RS_814_710_INFO ? RS_814_710_INFO.lessons : [];
-    const completedCount = lessons.filter(l => completed.includes(l.id)).length;
-    const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
-    const finalEvalId = RS_814_710_INFO ? RS_814_710_INFO.finalEvaluation.id : 'rs-814-710-evaluation-finale';
-    const isFinalDone = completed.includes(finalEvalId);
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
 
     // Trouver la première leçon non validée
     let nextLessonSlug = 'lecon-1';
+    const completed = StorageService.getCompletedLessons();
     for (const l of lessons) {
       if (!completed.includes(l.id)) {
         nextLessonSlug = l.slug;
         break;
       }
     }
-    if (completedCount === lessons.length && !isFinalDone) {
+    if (completedCount === totalLessons && !isFinalDone) {
       nextLessonSlug = 'evaluation-finale';
     }
 
@@ -8793,11 +9209,11 @@
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours ORNI</span>
             <span style="font-weight:800; color:#a78bfa; font-size:1rem;">
-              ${percentage} % · ${completedCount} / 7 leçons
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-            <div class="progress-bar-fill" style="width: ${percentage}%; background:#8b5cf6;"></div>
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#8b5cf6;"></div>
           </div>
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
@@ -8952,44 +9368,49 @@
     const isAvailable = formation.status === "Disponible";
     const isDone = StorageService.isLessonCompleted(formation.id);
 
+    const totalLie = isLie ? ProgressionService.getParcoursProgress('rs-734-0').lessonsTotal : 11;
+    const totalOcfo = isOcfo ? ProgressionService.getParcoursProgress('rs-734-2').lessonsTotal : 8;
+    const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
+    const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
+
     // Déterminer les routes de navigation séquentielle
     let nextRoute = null;
     let nextLabel = null;
     if (isLie && formation.nextLessonId) {
-      if (formation.lessonNumber && formation.lessonNumber < 11) {
+      if (formation.lessonNumber && formation.lessonNumber < totalLie) {
         const nextNum = formation.lessonNumber + 1;
         nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
-        nextLabel = `Passer au Chapitre suivant (${nextNum} / 11) →`;
-      } else if (formation.lessonNumber === 11) {
+        nextLabel = `Passer au Chapitre suivant (${nextNum} / ${totalLie}) →`;
+      } else if (formation.lessonNumber === totalLie) {
         nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
       }
     } else if (isOibt && formation.nextLessonId) {
-      if (formation.lessonNumber && formation.lessonNumber < 7) {
+      if (formation.lessonNumber && formation.lessonNumber < totalOibt) {
         const nextNum = formation.lessonNumber + 1;
         nextRoute = `#/formations/A/rs-734-27/lecon-${nextNum}`;
-        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
-      } else if (formation.lessonNumber === 7) {
+        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalOibt}) →`;
+      } else if (formation.lessonNumber === totalOibt) {
         nextRoute = `#/formations/A/rs-734-27/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
       }
     } else if (isOrni && formation.nextLessonId) {
-      if (formation.lessonNumber && formation.lessonNumber < 7) {
+      if (formation.lessonNumber && formation.lessonNumber < totalOrni) {
         const nextNum = formation.lessonNumber + 1;
         nextRoute = `#/formations/A/rs-814-710/lecon-${nextNum}`;
-        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
-      } else if (formation.lessonNumber === 7) {
+        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalOrni}) →`;
+      } else if (formation.lessonNumber === totalOrni) {
         nextRoute = `#/formations/A/rs-814-710/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
       }
     } else if (formation.nextChapterId) {
       const nextNum = formation.chapterNumber + 1;
-      if (nextNum <= 7) {
+      if (nextNum < totalOcfo) {
         nextRoute = `#/formations/A/rs-734-2/chapitre-${nextNum}`;
-        nextLabel = `Passer au Chapitre ${nextNum} / 8 →`;
-      } else if (nextNum === 8) {
+        nextLabel = `Passer au Chapitre ${nextNum} / ${totalOcfo} →`;
+      } else if (nextNum === totalOcfo) {
         nextRoute = `#/formations/A/rs-734-2/annexes`;
-        nextLabel = `Passer à la Leçon 8 (Annexes 1 à 4) →`;
+        nextLabel = `Passer à la Leçon ${totalOcfo} (Annexes 1 à 4) →`;
       } else {
         nextRoute = `#/formations/A/rs-734-2/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
@@ -9030,26 +9451,26 @@
               ${mod.id}
             </span>
             <span class="formation-code-tag">${formation.code}</span>
-            ${isLie && formation.lessonNumber && formation.lessonNumber <= 11 ? `
-              <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / 11</span>
+            ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
             ` : ''}
             ${isLie && formation.isFinalEvaluation ? `
-              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (11 parties)</span>
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (${totalLie} parties)</span>
             ` : ''}
-            ${isOcfo && formation.chapterNumber && formation.chapterNumber <= 8 ? `
-              <span class="ocfo-progression-pill">${formation.chapterNumber === 8 ? 'Leçon 8 / 8 · Annexes 1 à 4' : `Chapitre ${formation.chapterNumber} / 8`}</span>
+            ${isOcfo && formation.chapterNumber && formation.chapterNumber <= totalOcfo ? `
+              <span class="ocfo-progression-pill">${formation.chapterNumber === totalOcfo ? `Leçon ${totalOcfo} / ${totalOcfo} · Annexes 1 à 4` : `Chapitre ${formation.chapterNumber} / ${totalOcfo}`}</span>
             ` : ''}
             ${isOcfo && formation.isFinalEvaluation ? `
-              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (8 unités)</span>
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (${totalOcfo} unités)</span>
             ` : ''}
-            ${isOibt && formation.lessonNumber && formation.lessonNumber <= 7 ? `
-              <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+            ${isOibt && formation.lessonNumber && formation.lessonNumber <= totalOibt ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalOibt}</span>
             ` : ''}
             ${isOibt && formation.isFinalEvaluation ? `
-              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (7 unités)</span>
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalOibt} unités)</span>
             ` : ''}
-            ${isOrni && formation.lessonNumber && formation.lessonNumber <= 7 ? `
-              <span class="ocfo-progression-pill" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+            ${isOrni && formation.lessonNumber && formation.lessonNumber <= totalOrni ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalOrni}</span>
             ` : ''}
             ${isOrni && formation.isFinalEvaluation ? `
               <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.15); color:var(--accent-red); border-color:rgba(239,68,68,0.3);">Examen final ORNI</span>
@@ -9358,7 +9779,7 @@
 
 
   function renderProgressView(container) {
-    const stats = StorageService.getProgressStats();
+    const stats = ProgressionService.getGlobalProgress();
     const unlockedBadges = StorageService.getUnlockedBadges();
 
     container.innerHTML = `
@@ -9376,7 +9797,7 @@
         <div class="metric-card" style="padding:1.25rem;">
           <span class="metric-label">Progression globale</span>
           <span class="metric-value" style="color:var(--electric-blue); font-size:2rem; margin:0.35rem 0;">
-            ${stats.globalPercentage}%
+            ${stats.globalPercentageFormatted}
           </span>
           <div class="progress-bar-bg" style="height:6px;">
             <div class="progress-bar-fill" style="width:${stats.globalPercentage}%;"></div>
@@ -9396,7 +9817,7 @@
           <span class="metric-value" style="font-size:2rem; margin:0.35rem 0;">
             ${stats.completedFormations} / ${stats.totalFormations}
           </span>
-          <span style="font-size:0.75rem; color:var(--text-muted);">Sur les 5 modules de l'Académie</span>
+          <span style="font-size:0.75rem; color:var(--text-muted);">Sur les formations actuellement disponibles</span>
         </div>
       </div>
 
@@ -9407,7 +9828,14 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:0.85rem;">
           ${ACADEMY_MODULES.map(mod => {
-            const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+            const modStats = ProgressionService.getModuleProgress(mod.id);
+            const countLabelDetail = modStats.isInDevelopment
+              ? `En préparation (0 sur ${modStats.catalogTotal})`
+              : `${modStats.completedCount} sur ${modStats.totalAvailable}`;
+            const percentLabel = modStats.isInDevelopment
+              ? `0 %`
+              : modStats.percentageFormatted;
+
             return `
               <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; display:flex; flex-direction:column; gap:0.6rem;">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -9417,12 +9845,12 @@
                     </span>
                     <div>
                       <strong style="color:var(--text-primary); font-size:0.95rem;">Module ${mod.id} — ${mod.title}</strong>
-                      <div style="font-size:0.75rem; color:var(--text-muted);">${mod.countLabel}</div>
+                      <div style="font-size:0.75rem; color:var(--text-muted);">${mod.countLabel} ${modStats.isModuleCompleted ? '· <span style="color:#10b981; font-weight:700;">✓ Terminé</span>' : ''}</div>
                     </div>
                   </div>
                   <div style="text-align:right;">
-                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">${modStats.percentage}%</span>
-                    <div style="font-size:0.72rem; color:var(--text-muted);">${modStats.completed} sur ${modStats.total}</div>
+                    <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">${percentLabel}</span>
+                    <div style="font-size:0.72rem; color:var(--text-muted);">${countLabelDetail}</div>
                   </div>
                 </div>
                 <div class="progress-bar-bg" style="height:6px;">
@@ -9576,7 +10004,7 @@
 
 
   function renderProfileView(container) {
-    const stats = StorageService.getProgressStats();
+    const stats = ProgressionService.getGlobalProgress();
     const currentTheme = StorageService.getTheme();
 
     container.innerHTML = `
@@ -9599,7 +10027,7 @@
         <!-- Métriques Apprenant -->
         <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.75rem; background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1rem; text-align:center;">
           <div>
-            <div style="font-size:1.4rem; font-weight:800; color:var(--electric-blue);">${stats.globalPercentage}%</div>
+            <div style="font-size:1.4rem; font-weight:800; color:var(--electric-blue);">${stats.globalPercentageFormatted}</div>
             <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase;">Progression</div>
           </div>
           <div>
@@ -9690,6 +10118,13 @@
     const appRoot = document.getElementById('app');
     if (!appRoot) return;
     if (appRoot.children.length > 0) return; // Déjà initialisé
+
+    // Migration et déduplication automatique des données de progression
+    try {
+      ProgressionService.migrateProgressionData();
+    } catch (e) {
+      console.warn('[SEA] Erreur migration progression :', e);
+    }
 
     // Création du shell de navigation
     const appContainer = document.createElement('div');
@@ -9893,5 +10328,13 @@
     initSEA();
   }
 
+
+  // Expose core services globally
+  if (typeof window !== 'undefined') {
+    window.StorageService = StorageService;
+    window.ProgressionService = ProgressionService;
+    window.ACADEMY_MODULES = ACADEMY_MODULES;
+    window.OFFICIAL_BADGES = OFFICIAL_BADGES;
+  }
 
 })();

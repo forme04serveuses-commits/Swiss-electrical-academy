@@ -193,17 +193,22 @@ export const StorageService = {
     });
   },
 
-  // Calcul des statistiques de progression
+  // Calcul des statistiques de progression (délégué au ProgressionService centralisé)
   getProgressStats() {
+    if (typeof ProgressionService !== 'undefined' && ProgressionService.getGlobalProgress) {
+      return ProgressionService.getGlobalProgress();
+    }
+
     const completed = this.getCompletedLessons();
     const moduleStats = {};
     let totalFormations = 0;
     let completedFormations = 0;
 
     ACADEMY_MODULES.forEach(mod => {
-      const modTotal = mod.formations.length;
+      const avail = mod.formations.filter(f => f.status === 'Disponible');
+      const modTotal = avail.length;
       totalFormations += modTotal;
-      const modCompleted = mod.formations.filter(f => completed.includes(f.id)).length;
+      const modCompleted = avail.filter(f => completed.includes(f.id)).length;
       completedFormations += modCompleted;
 
       const percentage = modTotal > 0 ? Math.round((modCompleted / modTotal) * 100) : 0;
@@ -212,7 +217,8 @@ export const StorageService = {
         title: mod.title,
         total: modTotal,
         completed: modCompleted,
-        percentage
+        percentage,
+        percentageFormatted: `${percentage} %`
       };
     });
 
@@ -220,6 +226,7 @@ export const StorageService = {
 
     return {
       globalPercentage,
+      globalPercentageFormatted: `${globalPercentage} %`,
       totalFormations,
       completedFormations,
       moduleStats,

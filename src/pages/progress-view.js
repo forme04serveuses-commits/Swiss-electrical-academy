@@ -2,10 +2,11 @@
 // Progression globale, progression par module (A, B, N, E, F), XP et badges déblocables
 
 import { StorageService } from '../services/storage.js';
+import { ProgressionService } from '../services/progression.js';
 import { OFFICIAL_BADGES, ACADEMY_MODULES } from '../data/academy-data.js';
 
 export function renderProgressView(container) {
-  const stats = StorageService.getProgressStats();
+  const stats = ProgressionService.getGlobalProgress();
   const unlockedBadges = StorageService.getUnlockedBadges();
 
   container.innerHTML = `
@@ -23,7 +24,7 @@ export function renderProgressView(container) {
       <div class="metric-card" style="padding:1.25rem;">
         <span class="metric-label">Progression globale</span>
         <span class="metric-value" style="color:var(--electric-blue); font-size:2rem; margin:0.35rem 0;">
-          ${stats.globalPercentage}%
+          ${stats.globalPercentageFormatted}
         </span>
         <div class="progress-bar-bg" style="height:6px;">
           <div class="progress-bar-fill" style="width:${stats.globalPercentage}%;"></div>
@@ -43,7 +44,7 @@ export function renderProgressView(container) {
         <span class="metric-value" style="font-size:2rem; margin:0.35rem 0;">
           ${stats.completedFormations} / ${stats.totalFormations}
         </span>
-        <span style="font-size:0.75rem; color:var(--text-muted);">Sur les 5 modules de l'Académie</span>
+        <span style="font-size:0.75rem; color:var(--text-muted);">Sur les formations actuellement disponibles</span>
       </div>
     </div>
 
@@ -54,7 +55,14 @@ export function renderProgressView(container) {
       </div>
       <div style="display:flex; flex-direction:column; gap:0.85rem;">
         ${ACADEMY_MODULES.map(mod => {
-          const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+          const modStats = ProgressionService.getModuleProgress(mod.id);
+          const countLabelDetail = modStats.isInDevelopment
+            ? `En préparation (0 sur ${modStats.catalogTotal})`
+            : `${modStats.completedCount} sur ${modStats.totalAvailable}`;
+          const percentLabel = modStats.isInDevelopment
+            ? `0 %`
+            : modStats.percentageFormatted;
+
           return `
             <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; display:flex; flex-direction:column; gap:0.6rem;">
               <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -64,12 +72,12 @@ export function renderProgressView(container) {
                   </span>
                   <div>
                     <strong style="color:var(--text-primary); font-size:0.95rem;">Module ${mod.id} — ${mod.title}</strong>
-                    <div style="font-size:0.75rem; color:var(--text-muted);">${mod.countLabel}</div>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">${mod.countLabel} ${modStats.isModuleCompleted ? '· <span style="color:#10b981; font-weight:700;">✓ Terminé</span>' : ''}</div>
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">${modStats.percentage}%</span>
-                  <div style="font-size:0.72rem; color:var(--text-muted);">${modStats.completed} sur ${modStats.total}</div>
+                  <span style="font-weight:700; font-size:1.05rem; color:var(--text-primary);">${percentLabel}</span>
+                  <div style="font-size:0.72rem; color:var(--text-muted);">${countLabelDetail}</div>
                 </div>
               </div>
               <div class="progress-bar-bg" style="height:6px;">

@@ -2,6 +2,7 @@
 // Respect strict de la séquence pédagogique : Titre -> Objectif -> Intro -> Contenu -> Illustration/Widget -> Cas pratique -> Point important -> Quiz -> Synthèse
 
 import { StorageService } from '../services/storage.js';
+import { ProgressionService } from '../services/progression.js';
 import { findFormation } from '../data/academy-data.js';
 import { createPyramidWidget, createDangerWidget, createNibtWidget, initOcfoAnnexe4Visual } from '../components/interactive-widgets.js';
 import { createQuizEngine } from '../components/quiz.js';
@@ -39,44 +40,49 @@ export function renderLessonView(container, moduleId, formationId) {
   const isAvailable = formation.status === "Disponible";
   const isDone = StorageService.isLessonCompleted(formation.id);
 
+  const totalLie = isLie ? ProgressionService.getParcoursProgress('rs-734-0').lessonsTotal : 11;
+  const totalOcfo = isOcfo ? ProgressionService.getParcoursProgress('rs-734-2').lessonsTotal : 8;
+  const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
+  const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
+
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
   let nextLabel = null;
   if (isLie && formation.nextLessonId) {
-    if (formation.lessonNumber && formation.lessonNumber < 11) {
+    if (formation.lessonNumber && formation.lessonNumber < totalLie) {
       const nextNum = formation.lessonNumber + 1;
       nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
-      nextLabel = `Passer au Chapitre suivant (${nextNum} / 11) →`;
-    } else if (formation.lessonNumber === 11) {
+      nextLabel = `Passer au Chapitre suivant (${nextNum} / ${totalLie}) →`;
+    } else if (formation.lessonNumber === totalLie) {
       nextRoute = `#/formations/A/rs-734-0/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (isOibt && formation.nextLessonId) {
-    if (formation.lessonNumber && formation.lessonNumber < 7) {
+    if (formation.lessonNumber && formation.lessonNumber < totalOibt) {
       const nextNum = formation.lessonNumber + 1;
       nextRoute = `#/formations/A/rs-734-27/lecon-${nextNum}`;
-      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
-    } else if (formation.lessonNumber === 7) {
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalOibt}) →`;
+    } else if (formation.lessonNumber === totalOibt) {
       nextRoute = `#/formations/A/rs-734-27/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (isOrni && formation.nextLessonId) {
-    if (formation.lessonNumber && formation.lessonNumber < 7) {
+    if (formation.lessonNumber && formation.lessonNumber < totalOrni) {
       const nextNum = formation.lessonNumber + 1;
       nextRoute = `#/formations/A/rs-814-710/lecon-${nextNum}`;
-      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
-    } else if (formation.lessonNumber === 7) {
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalOrni}) →`;
+    } else if (formation.lessonNumber === totalOrni) {
       nextRoute = `#/formations/A/rs-814-710/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (formation.nextChapterId) {
     const nextNum = formation.chapterNumber + 1;
-    if (nextNum <= 7) {
+    if (nextNum < totalOcfo) {
       nextRoute = `#/formations/A/rs-734-2/chapitre-${nextNum}`;
-      nextLabel = `Passer au Chapitre ${nextNum} / 8 →`;
-    } else if (nextNum === 8) {
+      nextLabel = `Passer au Chapitre ${nextNum} / ${totalOcfo} →`;
+    } else if (nextNum === totalOcfo) {
       nextRoute = `#/formations/A/rs-734-2/annexes`;
-      nextLabel = `Passer à la Leçon 8 (Annexes 1 à 4) →`;
+      nextLabel = `Passer à la Leçon ${totalOcfo} (Annexes 1 à 4) →`;
     } else {
       nextRoute = `#/formations/A/rs-734-2/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
@@ -117,26 +123,26 @@ export function renderLessonView(container, moduleId, formationId) {
             ${mod.id}
           </span>
           <span class="formation-code-tag">${formation.code}</span>
-          ${isLie && formation.lessonNumber && formation.lessonNumber <= 11 ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / 11</span>
+          ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
           ` : ''}
           ${isLie && formation.isFinalEvaluation ? `
-            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (11 parties)</span>
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (${totalLie} parties)</span>
           ` : ''}
-          ${isOcfo && formation.chapterNumber && formation.chapterNumber <= 8 ? `
-            <span class="ocfo-progression-pill">${formation.chapterNumber === 8 ? 'Leçon 8 / 8 · Annexes 1 à 4' : `Chapitre ${formation.chapterNumber} / 8`}</span>
+          ${isOcfo && formation.chapterNumber && formation.chapterNumber <= totalOcfo ? `
+            <span class="ocfo-progression-pill">${formation.chapterNumber === totalOcfo ? `Leçon ${totalOcfo} / ${totalOcfo} · Annexes 1 à 4` : `Chapitre ${formation.chapterNumber} / ${totalOcfo}`}</span>
           ` : ''}
           ${isOcfo && formation.isFinalEvaluation ? `
-            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (8 unités)</span>
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem;">Examen final (${totalOcfo} unités)</span>
           ` : ''}
-          ${isOibt && formation.lessonNumber && formation.lessonNumber <= 7 ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+          ${isOibt && formation.lessonNumber && formation.lessonNumber <= totalOibt ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalOibt}</span>
           ` : ''}
           ${isOibt && formation.isFinalEvaluation ? `
-            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (7 unités)</span>
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalOibt} unités)</span>
           ` : ''}
-          ${isOrni && formation.lessonNumber && formation.lessonNumber <= 7 ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+          ${isOrni && formation.lessonNumber && formation.lessonNumber <= totalOrni ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalOrni}</span>
           ` : ''}
           ${isOrni && formation.isFinalEvaluation ? `
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.15); color:var(--accent-red); border-color:rgba(239,68,68,0.3);">Examen final ORNI</span>

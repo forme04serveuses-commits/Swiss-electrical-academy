@@ -2,10 +2,11 @@
 // Accueil, progression globale, continuer la formation, et les 5 modules officiels (A, B, N, E, F)
 
 import { StorageService } from '../services/storage.js';
+import { ProgressionService } from '../services/progression.js';
 import { ACADEMY_INFO, ACADEMY_MODULES } from '../data/academy-data.js';
 
 export function renderDashboard(container) {
-  const stats = StorageService.getProgressStats();
+  const stats = ProgressionService.getGlobalProgress();
   const lastActivity = StorageService.getLastActivity() || {
     moduleId: "A",
     formationId: "pyramide-lois",
@@ -23,7 +24,7 @@ export function renderDashboard(container) {
       <!-- Métriques de progression globale -->
       <div class="hero-metrics-grid">
         <div class="metric-card">
-          <span class="metric-value" style="color:var(--electric-blue);">${stats.globalPercentage}%</span>
+          <span class="metric-value" style="color:var(--electric-blue);">${stats.globalPercentageFormatted}</span>
           <span class="metric-label">Progression globale</span>
         </div>
         <div class="metric-card">
@@ -66,7 +67,11 @@ export function renderDashboard(container) {
       </div>
       <div class="modules-grid">
         ${ACADEMY_MODULES.map(mod => {
-          const modStats = stats.moduleStats[mod.id] || { percentage: 0, completed: 0, total: mod.formations.length };
+          const modStats = ProgressionService.getModuleProgress(mod.id);
+          const countDisplay = modStats.isInDevelopment
+            ? `En préparation (0/${modStats.catalogTotal})`
+            : `${modStats.percentageFormatted} (${modStats.completedCount}/${modStats.totalAvailable})`;
+
           return `
             <article class="module-card" data-module-id="${mod.id}">
               <div>
@@ -74,7 +79,10 @@ export function renderDashboard(container) {
                   <div class="module-code-badge badge-${mod.id}">
                     ${mod.code}
                   </div>
-                  <span class="module-count-tag">${mod.countLabel}</span>
+                  <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                    ${modStats.isModuleCompleted ? '<span style="font-size:0.75rem; background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.4); padding:0.15rem 0.5rem; border-radius:12px; font-weight:700;">✓ Terminé</span>' : ''}
+                    <span class="module-count-tag">${mod.countLabel}</span>
+                  </div>
                 </div>
                 <h2 class="module-title">${mod.title}</h2>
                 <p class="module-desc">${mod.description}</p>
@@ -84,7 +92,7 @@ export function renderDashboard(container) {
                 <div class="module-progress-wrapper">
                   <div class="progress-labels">
                     <span>Progression</span>
-                    <span>${modStats.percentage}% (${modStats.completed}/${modStats.total})</span>
+                    <span>${countDisplay}</span>
                   </div>
                   <div class="progress-bar-bg">
                     <div class="progress-bar-fill" style="width: ${modStats.percentage}%;"></div>

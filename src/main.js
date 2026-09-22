@@ -2,6 +2,7 @@
 // Initialisation du Shell, Enregistrement PWA Service Worker et Routeur Hash sans rechargement
 
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
+import { ProgressionService } from './services/progression.js';
 import { renderDashboard } from './pages/dashboard.js';
 import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
@@ -14,6 +15,13 @@ function initSEA() {
   const appRoot = document.getElementById('app');
   if (!appRoot) return;
   if (appRoot.children.length > 0) return; // Déjà initialisé
+
+  // Migration et déduplication automatique des données de progression
+  try {
+    ProgressionService.migrateProgressionData();
+  } catch (e) {
+    console.warn('[SEA] Erreur migration progression :', e);
+  }
 
   // Création du shell de navigation
   const appContainer = document.createElement('div');
