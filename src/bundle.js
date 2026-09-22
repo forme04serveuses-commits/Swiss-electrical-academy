@@ -313,7 +313,7 @@
     "title": "RS 734.27 — OIBT",
     "fullTitle": "Ordonnance sur les installations électriques à basse tension (OIBT)",
     "subtitle": "7 leçons officielles · État au 31 octobre 2025 · Structure officielle complète et Annexe",
-    "description": "Ordonnance du Conseil fédéral du 7 novembre 2001 sur les installations électriques à basse tension (État le 31 octobre 2025). Cadre réglementaire suisse régissant les autorisations d'installer, l'exécution des travaux, les devoirs des propriétaires, les organes de contrôle indépendants, le rapport de sécurité (RaSi) et les périodicités officielles de contrôle.",
+    "description": "Ordonnance du Conseil fédéral du 7 novembre 2001 sur les installations électriques à basse tension (État le 31 octobre 2025). Cadre réglementaire suisse régissant les autorisations d'installer, l'exécution des travaux, les devoirs des propriétaires, les organes de contrôle indépendants, le rapport de sécurité (RS) et les périodicités officielles de contrôle.",
     "tag": "Ordonnance fédérale",
     "totalLessons": 7,
     "lessons": [
@@ -351,7 +351,7 @@
         "title": "Chapitre 4 : Contrôle des installations",
         "articles": "Art. 26 à 40",
         "duration": "14 min",
-        "summary": "Les 4 sections du Chapitre 4 : les différents organes de contrôle et la stricte règle d'indépendance (Sec. 1, Art. 26 à 31), les missions respectives de l'ESTI, des gestionnaires de réseau et des organismes accrédités (Sec. 2, Art. 32 à 34), l'établissement, le contenu et la sommation du rapport de sécurité RaSi (Sec. 3, Art. 35 à 38), et les contrôles sporadiques et mesures de coupure en cas de défaut dangereux (Sec. 4, Art. 39 et 40)."
+        "summary": "Les 4 sections du Chapitre 4 : les différents organes de contrôle et la stricte règle d'indépendance (Sec. 1, Art. 26 à 31), les missions respectives de l'ESTI, des gestionnaires de réseau et des organismes accrédités (Sec. 2, Art. 32 à 34), l'établissement, le contenu et la sommation du rapport de sécurité RS (Sec. 3, Art. 35 à 38), et les contrôles sporadiques et mesures de coupure en cas de défaut dangereux (Sec. 4, Art. 39 et 40)."
       },
       {
         "id": "rs-734-27-lecon-5",
@@ -360,7 +360,7 @@
         "title": "Chapitre 5 : Émoluments et dispositions pénales",
         "articles": "Art. 41 et 42",
         "duration": "7 min",
-        "summary": "Émoluments officiels perçus par l'ESTI (Art. 41) et catalogue exhaustif des infractions pénales réprimées selon l'Art. 55 al. 3 LIE (Art. 42 : travaux sans autorisation, contrôles illégaux, violation de l'organisation d'entreprise, sous-traitance illicite, prête-nom, défaut de RaSi et remise d'installations dangereuses)."
+        "summary": "Émoluments officiels perçus par l'ESTI (Art. 41) et catalogue exhaustif des infractions pénales réprimées selon l'Art. 55 al. 3 LIE (Art. 42 : travaux sans autorisation, contrôles illégaux, violation de l'organisation d'entreprise, sous-traitance illicite, prête-nom, défaut de RS et remise d'installations dangereuses)."
       },
       {
         "id": "rs-734-27-lecon-6",
@@ -387,7 +387,7 @@
       "title": "Évaluation finale — RS 734.27 (OIBT)",
       "articles": "Art. 1 à 45 et Annexe",
       "duration": "25 min",
-      "summary": "Examen représentatif de 16 questions d'examen couvrant les 7 leçons du module OIBT : champ d'application, autorisations d'installer, organisation d'entreprise, règles de chantier, organes de contrôle, RaSi, émoluments, droit pénal, dispositions transitoires et périodicités de l'Annexe. Seuil de réussite à 75% requis pour obtenir le badge Expert OIBT et 100 XP."
+      "summary": "Examen représentatif de 16 questions d'examen couvrant les 7 leçons du module OIBT : champ d'application, autorisations d'installer, organisation d'entreprise, règles de chantier, organes de contrôle, RS, émoluments, droit pénal, dispositions transitoires et périodicités de l'Annexe. Seuil de réussite à 75% requis pour obtenir le badge Expert OIBT et 100 XP."
     }
   };
 
@@ -3088,7 +3088,7 @@
                 "duration": "8 min",
                 "tag": "Ordonnance fédérale",
                 "xpReward": 35,
-                "objective": "Maîtriser le champ d'application de l'OIBT, distinguer les installations intérieures et propres à l'entreprise, et assimiler les devoirs légaux du propriétaire (sécurité permanente, dossier technique et conservation du rapport de sécurité RaSi).",
+                "objective": "Maîtriser le champ d'application de l'OIBT, distinguer les installations intérieures et propres à l'entreprise, et assimiler les devoirs légaux du propriétaire (sécurité permanente, dossier technique et conservation du rapport de sécurité RS).",
                 "introduction": "Édictée par le Conseil fédéral le <strong>7 novembre 2001 (état au 31 octobre 2025)</strong>, l'<strong>Ordonnance sur les installations électriques à basse tension (OIBT — RS 734.27)</strong> régit les conditions applicables aux interventions sur les installations électriques à basse tension ainsi qu'au contrôle de ces ouvrages. Son <strong>Chapitre 1 (Dispositions générales — Art. 1 à 5)</strong> pose les définitions clés du droit basse tension suisse, consacre la primauté des règles techniques reconnues et définit la responsabilité directe du propriétaire foncier quant au maintien de la sécurité de ses installations.",
                 "contentSections": [
                         {
@@ -3105,18 +3105,18 @@
                         },
                         {
                                 "title": "4. Art. 5 — Devoirs impératifs du propriétaire d’une installation",
-                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 5 • Responsabilité du propriétaire</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 5 OIBT</strong> établit le principe cardinal de la responsabilité de droit public en matière de sécurité électrique :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Maintien de la sécurité (al. 1) :</strong> Le propriétaire ou un représentant désigné par lui veille à ce que l'installation électrique réponde en tout temps aux exigences de sécurité des Art. 3 et 4.</li>\n  <li><strong>Dossier technique (al. 1) :</strong> Il conserve le dossier technique de l'installation (plans, schémas, descriptions) pendant toute la durée d'exploitation de celle-ci.</li>\n  <li><strong>Rapport de sécurité RaSi (al. 2) :</strong> Le propriétaire conserve le rapport de sécurité (RaSi) ainsi que les procès-verbaux de contrôle pendant toute la durée de la période de contrôle fixée dans l'Annexe.</li>\n  <li><strong>Élimination des défauts (al. 3) :</strong> Dès qu'un défaut est constaté, le propriétaire le fait éliminer <em>sans délai</em> par une personne titulaire d'une autorisation d'installer.</li>\n</ul>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 À RETENIR</div>\n  La charge légale de prouver la sécurité de l'installation pèse entièrement sur le propriétaire foncier. C'est à lui de mandater à ses frais un organe de contrôle indépendant périodique et de conserver le précieux Rapport de sécurité (RaSi).\n</div>"
+                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 5 • Responsabilité du propriétaire</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 5 OIBT</strong> établit le principe cardinal de la responsabilité de droit public en matière de sécurité électrique :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Maintien de la sécurité (al. 1) :</strong> Le propriétaire ou un représentant désigné par lui veille à ce que l'installation électrique réponde en tout temps aux exigences de sécurité des Art. 3 et 4.</li>\n  <li><strong>Dossier technique (al. 1) :</strong> Il conserve le dossier technique de l'installation (plans, schémas, descriptions) pendant toute la durée d'exploitation de celle-ci.</li>\n  <li><strong>Rapport de sécurité RS (al. 2) :</strong> Le propriétaire conserve le rapport de sécurité (RS) ainsi que les procès-verbaux de contrôle pendant toute la durée de la période de contrôle fixée dans l'Annexe.</li>\n  <li><strong>Élimination des défauts (al. 3) :</strong> Dès qu'un défaut est constaté, le propriétaire le fait éliminer <em>sans délai</em> par une personne titulaire d'une autorisation d'installer.</li>\n</ul>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 À RETENIR</div>\n  La charge légale de prouver la sécurité de l'installation pèse entièrement sur le propriétaire foncier. C'est à lui de mandater à ses frais un organe de contrôle indépendant périodique et de conserver le précieux Rapport de sécurité (RS).\n</div>"
                         }
                 ],
                 "practicalExample": {
                         "title": "Cas concret : Vente immobilière et transmission du dossier électrique",
-                        "text": "Lors de la vente d'un immeuble d'habitation, le propriétaire vendeur doit remettre à l'acquéreur le dossier technique complet et le dernier rapport de sécurité (RaSi) en vigueur. Si l'installation date de plus de 5 ans dans une périodicité de 20 ans, le transfert de propriété déclenche l'obligation légale d'un nouveau contrôle périodique (Annexe ch. 3 OIBT)."
+                        "text": "Lors de la vente d'un immeuble d'habitation, le propriétaire vendeur doit remettre à l'acquéreur le dossier technique complet et le dernier rapport de sécurité (RS) en vigueur. Si l'installation date de plus de 5 ans dans une périodicité de 20 ans, le transfert de propriété déclenche l'obligation légale d'un nouveau contrôle périodique (Annexe ch. 3 OIBT)."
                 },
                 "importantPoint": {
                         "title": "Principe de diligence permanente",
                         "text": "Le propriétaire ne peut pas s'exonérer de sa responsabilité en prétextant ignorer l'état de son installation. S'il ne fait pas réparer un défaut signalé ou omet le contrôle périodique, le gestionnaire de réseau ou l'ESTI peut ordonner la coupure d'urgence de l'alimentation électrique (Art. 40 OIBT)."
                 },
-                "synthesis": "L'OIBT régit l'ensemble du parc basse tension suisse (≤ 1000 V AC / 1500 V DC). Les installations doivent satisfaire aux règles techniques reconnues (NIBT 2025) sans mettre en péril personnes et biens. La responsabilité juridique du maintien de la sécurité et de la conservation du RaSi pèse entièrement sur le propriétaire.",
+                "synthesis": "L'OIBT régit l'ensemble du parc basse tension suisse (≤ 1000 V AC / 1500 V DC). Les installations doivent satisfaire aux règles techniques reconnues (NIBT 2025) sans mettre en péril personnes et biens. La responsabilité juridique du maintien de la sécurité et de la conservation du RS pèse entièrement sur le propriétaire.",
                 "quiz": [
                         {
                                 "question": "1. Quels sont les seuils de tension nominale délimitant le champ d'application de l'OIBT selon l'Art. 1 al. 2 ?",
@@ -3143,7 +3143,7 @@
                                 "articleRef": "OIBT — Art. 2 al. 2"
                         },
                         {
-                                "question": "3. Pendant quelle durée le propriétaire d'une installation électrique doit-il conserver le rapport de sécurité (RaSi) selon l'Art. 5 al. 2 OIBT ?",
+                                "question": "3. Pendant quelle durée le propriétaire d'une installation électrique doit-il conserver le rapport de sécurité (RS) selon l'Art. 5 al. 2 OIBT ?",
                                 "options": [
                                         "Pendant 1 an seulement après la fin des travaux",
                                         "Pendant toute la durée de la période de contrôle fixée dans l'annexe",
@@ -3202,7 +3202,7 @@
                         },
                         {
                                 "title": "4. Section 4 : Travaux d’installation sans autorisation (Art. 16)",
-                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 16 • Exceptions réservées aux particuliers</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 16 OIBT</strong> délimite de façon restrictive les seuls travaux qu'une personne physique peut réaliser <strong>sans autorisation d'installer</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Locaux d'habitation et locaux annexes occupés par le propriétaire (al. 1 let. a) :</strong> poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées existantes, protégées par un <strong>dispositif différentiel résiduel (DDR / FI ≤ 30 mA)</strong>.</li>\n  <li><strong>Personnes qualifiées dans leur propre logement (al. 1 let. b) :</strong> un électricien de montage CFC ou installateur-électricien CFC peut exécuter des travaux d'installation dans les locaux d'habitation et annexes qu'il habite en tant que propriétaire ou locataire.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle obligatoire pour les travaux sans autorisation (Art. 16 al. 2)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Les installations réalisées selon l'Art. 16 al. 1 let. b doivent <strong>obligatoirement faire l'objet d'un contrôle de réception par un organe de contrôle indépendant</strong>, lequel établit le rapport de sécurité (RaSi) transmis au gestionnaire de réseau !\n  </p>\n</div>"
+                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 16 • Exceptions réservées aux particuliers</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 16 OIBT</strong> délimite de façon restrictive les seuls travaux qu'une personne physique peut réaliser <strong>sans autorisation d'installer</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Locaux d'habitation et locaux annexes occupés par le propriétaire (al. 1 let. a) :</strong> poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées existantes, protégées par un <strong>dispositif différentiel résiduel (DDR / FI ≤ 30 mA)</strong>.</li>\n  <li><strong>Personnes qualifiées dans leur propre logement (al. 1 let. b) :</strong> un électricien de montage CFC ou installateur-électricien CFC peut exécuter des travaux d'installation dans les locaux d'habitation et annexes qu'il habite en tant que propriétaire ou locataire.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle obligatoire pour les travaux sans autorisation (Art. 16 al. 2)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Les installations réalisées selon l'Art. 16 al. 1 let. b doivent <strong>obligatoirement faire l'objet d'un contrôle de réception par un organe de contrôle indépendant</strong>, lequel établit le rapport de sécurité (RS) transmis au gestionnaire de réseau !\n  </p>\n</div>"
                         },
                         {
                                 "title": "5. Section 5 : Dispositions communes (Art. 17 à 21)",
@@ -3300,7 +3300,7 @@
                         },
                         {
                                 "title": "3. Art. 24 — Première vérification et contrôle final propre à l’entreprise",
-                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 24 • Vérification & Contrôle final</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Étape technique</th>\n        <th style=\"width:45%;\">Exigence réglementaire (Art. 24 OIBT)</th>\n        <th style=\"width:30%;\">Document obligatoire</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Première vérification</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 1)</span></td>\n        <td>Effectuée <em>avant</em> la mise en service de l'installation ou de la partie d'installation modifiée, pour s'assurer de l'absence de danger immédiat.</td>\n        <td>Procès-verbal de première vérification (mesures d'isolement, continuité du PE).</td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle final propre à l'entreprise</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 2)</span></td>\n        <td>Effectué par une personne du métier ou un conseiller en sécurité avant la remise de l'installation au propriétaire. Mesures complètes selon NIBT.</td>\n        <td><strong>Protocole de mesure</strong> et <strong>Rapport de sécurité (RaSi)</strong> signé par l'installateur.</td>\n      </tr>\n      <tr>\n        <td><strong>Remise du RaSi</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 3 & 4)</span></td>\n        <td>Le rapport de sécurité est remis au propriétaire ainsi qu'au gestionnaire de réseau compétent.</td>\n        <td>RaSi officiel remis sans délai.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 24 • Vérification & Contrôle final</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Étape technique</th>\n        <th style=\"width:45%;\">Exigence réglementaire (Art. 24 OIBT)</th>\n        <th style=\"width:30%;\">Document obligatoire</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Première vérification</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 1)</span></td>\n        <td>Effectuée <em>avant</em> la mise en service de l'installation ou de la partie d'installation modifiée, pour s'assurer de l'absence de danger immédiat.</td>\n        <td>Procès-verbal de première vérification (mesures d'isolement, continuité du PE).</td>\n      </tr>\n      <tr>\n        <td><strong>Contrôle final propre à l'entreprise</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 2)</span></td>\n        <td>Effectué par une personne du métier ou un conseiller en sécurité avant la remise de l'installation au propriétaire. Mesures complètes selon NIBT.</td>\n        <td><strong>Protocole de mesure</strong> et <strong>Rapport de sécurité (RS)</strong> signé par l'installateur.</td>\n      </tr>\n      <tr>\n        <td><strong>Remise du RS</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Art. 24 al. 3 & 4)</span></td>\n        <td>Le rapport de sécurité est remis au propriétaire ainsi qu'au gestionnaire de réseau compétent.</td>\n        <td>RS officiel remis sans délai.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
                         },
                         {
                                 "title": "4. Art. 25 — Obligation d’annonce pour les autorisations limitées",
@@ -3309,7 +3309,7 @@
                 ],
                 "practicalExample": {
                         "title": "Cas concret : Mise sous tension d'un nouveau tableau divisionnaire",
-                        "text": "Avant d'enclencher le disjoncteur général, l'électricien effectue la première vérification : inspection visuelle, mesure de résistance d'isolement (Riso ≥ 1 MΩ) et continuité des conducteurs de protection (Rpe ≤ 1 Ω). Une fois sous tension, il effectue le contrôle final complet (déclenchement des différentiels DDR en temps et courant, impédance de boucle de défaut Zs) et consigne les valeurs dans le protocole de mesure joint au RaSi."
+                        "text": "Avant d'enclencher le disjoncteur général, l'électricien effectue la première vérification : inspection visuelle, mesure de résistance d'isolement (Riso ≥ 1 MΩ) et continuité des conducteurs de protection (Rpe ≤ 1 Ω). Une fois sous tension, il effectue le contrôle final complet (déclenchement des différentiels DDR en temps et courant, impédance de boucle de défaut Zs) et consigne les valeurs dans le protocole de mesure joint au RS."
                 },
                 "importantPoint": {
                         "title": "Interdiction de mise en service sans vérification",
@@ -3357,12 +3357,12 @@
                                 "question": "4. Quels documents essentiels constituent le dossier de contrôle remis au propriétaire selon l'Art. 24 al. 2 et 3 OIBT ?",
                                 "options": [
                                         "Une simple facture acquittée",
-                                        "Le protocole de mesure complet et le Rapport de sécurité (RaSi)",
+                                        "Le protocole de mesure complet et le Rapport de sécurité (RS)",
                                         "Un certificat médical d'aptitude",
                                         "Uniquement le bon de livraison du matériel"
                                 ],
                                 "correctAnswer": 1,
-                                "explanation": "L'Art. 24 al. 2 et 3 OIBT exige la consignation des résultats dans un protocole de mesure et l'établissement d'un rapport de sécurité (RaSi).",
+                                "explanation": "L'Art. 24 al. 2 et 3 OIBT exige la consignation des résultats dans un protocole de mesure et l'établissement d'un rapport de sécurité (RS).",
                                 "articleRef": "OIBT — Art. 24 al. 2 et 3"
                         }
                 ],
@@ -3379,14 +3379,14 @@
                 "totalLessons": 7,
                 "code": "RS 734.27 — Leçon 4",
                 "title": "Chapitre 4 : Contrôle des installations",
-                "subtitle": "Organes de contrôle, indépendance, compétences, rapport de sécurité RaSi, contrôles sporadiques et élimination des défauts (Art. 26 à 40)",
+                "subtitle": "Organes de contrôle, indépendance, compétences, rapport de sécurité RS, contrôles sporadiques et élimination des défauts (Art. 26 à 40)",
                 "articlesRange": "Art. 26 à 40",
                 "status": "Disponible",
                 "duration": "14 min",
                 "tag": "Ordonnance fédérale",
                 "xpReward": 40,
-                "objective": "Maîtriser le système de contrôle suisse à plusieurs niveaux : distinction entre organes indépendants et organismes accrédités (Art. 26), incompatibilité absolue entre installation et contrôle (Art. 31), procédure de sommation périodique (Art. 36), contenu obligatoire du RaSi (Art. 37) et traitement des défauts graves (Art. 40).",
-                "introduction": "Le <strong>Chapitre 4 de l'OIBT (Art. 26 à 40)</strong> est la clé de voûte de la sécurité des installations intérieures suisses. Il organise une séparation stricte des pouvoirs en instaurant des <strong>organes de contrôle indépendants</strong> et des <strong>organismes d'inspection accrédités</strong>. Structuré en <strong>quatre sections réelles</strong>, il régit l'autorisation de contrôler délivrée par l'ESTI, verrouille le principe d'incompatibilité (interdiction d'être juge et partie), fixe le contenu impératif du Rapport de sécurité (RaSi), détaille la procédure de sommation par les gestionnaires de réseau et prévoit la coupure d'urgence en cas de danger grave.",
+                "objective": "Maîtriser le système de contrôle suisse à plusieurs niveaux : distinction entre organes indépendants et organismes accrédités (Art. 26), incompatibilité absolue entre installation et contrôle (Art. 31), procédure de sommation périodique (Art. 36), contenu obligatoire du RS (Art. 37) et traitement des défauts graves (Art. 40).",
+                "introduction": "Le <strong>Chapitre 4 de l'OIBT (Art. 26 à 40)</strong> est la clé de voûte de la sécurité des installations intérieures suisses. Il organise une séparation stricte des pouvoirs en instaurant des <strong>organes de contrôle indépendants</strong> et des <strong>organismes d'inspection accrédités</strong>. Structuré en <strong>quatre sections réelles</strong>, il régit l'autorisation de contrôler délivrée par l'ESTI, verrouille le principe d'incompatibilité (interdiction d'être juge et partie), fixe le contenu impératif du Rapport de sécurité (RS), détaille la procédure de sommation par les gestionnaires de réseau et prévoit la coupure d'urgence en cas de danger grave.",
                 "contentSections": [
                         {
                                 "title": "1. Section 1 : Dispositions communes & Indépendance des contrôles (Art. 26 à 31)",
@@ -3397,8 +3397,8 @@
                                 "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 32 à 34 • Rôles institutionnels</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Contrôles techniques (Art. 32) :</strong> Les organismes d'inspection accrédités ont l'exclusivité du contrôle des installations spéciales énumérées au ch. 1 de l'Annexe (ouvrages classifiés, hôpitaux groupe 2, dépôts de carburants, etc.). Les organes indépendants contrôlent toutes les autres installations soumises aux ch. 2, 3 et 4.</li>\n  <li><strong>Tâches des gestionnaires de réseau (Art. 33) :</strong> Ils tiennent le registre des installations de leur réseau, surveillent les échéances de contrôle périodique et conservent les rapports de sécurité transmis par les propriétaires.</li>\n  <li><strong>Haute surveillance de l'ESTI (Art. 34) :</strong> L'Inspection supervise l'ensemble des organes de contrôle et des gestionnaires de réseau, procède à des audits et tranche les litiges techniques.</li>\n</ul>"
                         },
                         {
-                                "title": "3. Section 3 : Rapport de sécurité RaSi et sommations (Art. 35 à 38)",
-                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 35 à 38 • La procédure RaSi</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Prise en charge d'une installation neuve (Art. 35) :</strong>\nPour toute installation dont la période de contrôle est inférieure à 20 ans, le propriétaire doit faire effectuer un <strong>contrôle de réception indépendant</strong> dans les <strong>6 mois</strong> suivant la reprise de l'installation.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📅 Sommation périodique (Art. 36 OIBT)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  <strong>Six mois au moins</strong> avant l'expiration d'une période de contrôle fixée à l'Annexe, le gestionnaire de réseau invite par écrit le propriétaire à présenter le rapport de sécurité attestant de la conformité de son installation dans un délai de <strong>six mois</strong>.\n  </p>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Contenu obligatoire du Rapport de sécurité (Art. 37 OIBT) :</strong>\nEmplacement et désignation de l'installation, nom et adresse du propriétaire, description technique, périodicité de contrôle, nom et numéro d'autorisation de l'installateur et de l'organe de contrôle, résultats des mesures et mention expresse de conformité.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Refus des rapports incomplets (Art. 38) :</strong> Les gestionnaires de réseau refusent les rapports incomplets ou établis par des personnes non autorisées et impartissent un délai pour les rectifier.\n</p>"
+                                "title": "3. Section 3 : Rapport de sécurité RS et sommations (Art. 35 à 38)",
+                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 35 à 38 • La procédure RS</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Prise en charge d'une installation neuve (Art. 35) :</strong>\nPour toute installation dont la période de contrôle est inférieure à 20 ans, le propriétaire doit faire effectuer un <strong>contrôle de réception indépendant</strong> dans les <strong>6 mois</strong> suivant la reprise de l'installation.\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📅 Sommation périodique (Art. 36 OIBT)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  <strong>Six mois au moins</strong> avant l'expiration d'une période de contrôle fixée à l'Annexe, le gestionnaire de réseau invite par écrit le propriétaire à présenter le rapport de sécurité attestant de la conformité de son installation dans un délai de <strong>six mois</strong>.\n  </p>\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Contenu obligatoire du Rapport de sécurité (Art. 37 OIBT) :</strong>\nEmplacement et désignation de l'installation, nom et adresse du propriétaire, description technique, périodicité de contrôle, nom et numéro d'autorisation de l'installateur et de l'organe de contrôle, résultats des mesures et mention expresse de conformité.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Refus des rapports incomplets (Art. 38) :</strong> Les gestionnaires de réseau refusent les rapports incomplets ou établis par des personnes non autorisées et impartissent un délai pour les rectifier.\n</p>"
                         },
                         {
                                 "title": "4. Section 4 : Contrôles sporadiques et élimination des défauts (Art. 39 & 40)",
@@ -3406,7 +3406,7 @@
                         }
                 ],
                 "practicalExample": {
-                        "title": "Cas concret : L'installateur peut-il signer le RaSi périodique de son propre client ?",
+                        "title": "Cas concret : L'installateur peut-il signer le RS périodique de son propre client ?",
                         "text": "Non ! Même si l'installateur possède également un brevet de contrôleur, l'Art. 31 OIBT lui interdit formellement de signer le rapport de sécurité périodique ou de réception d'une installation qu'il a lui-même posée ou modifiée. Le propriétaire doit obligatoirement mandater un bureau de contrôle indépendant tiers."
                 },
                 "importantPoint": {
@@ -3428,7 +3428,7 @@
                                 "articleRef": "OIBT — Art. 31"
                         },
                         {
-                                "question": "2. Combien de temps à l'avance le gestionnaire de réseau doit-il inviter le propriétaire à présenter le RaSi selon l'Art. 36 al. 1 OIBT ?",
+                                "question": "2. Combien de temps à l'avance le gestionnaire de réseau doit-il inviter le propriétaire à présenter le RS selon l'Art. 36 al. 1 OIBT ?",
                                 "options": [
                                         "Deux jours avant l'échéance",
                                         "Six mois au moins avant l'expiration de la période de contrôle",
@@ -3496,8 +3496,8 @@
                         }
                 ],
                 "practicalExample": {
-                        "title": "Cas concret : Signer un RaSi pour un ami qui a fait son installation lui-même",
-                        "text": "Un électricien titulaire d'une autorisation qui signe un rapport de sécurité (RaSi) pour des travaux qu'il n'a pas exécutés ni surveillés directement commet l'infraction pénale de l'Art. 42 let. c ch. 3 OIBT (prête-nom). Il s'expose à une lourde amende pénale ainsi qu'au retrait immédiat de son autorisation d'installer par l'ESTI."
+                        "title": "Cas concret : Signer un RS pour un ami qui a fait son installation lui-même",
+                        "text": "Un électricien titulaire d'une autorisation qui signe un rapport de sécurité (RS) pour des travaux qu'il n'a pas exécutés ni surveillés directement commet l'infraction pénale de l'Art. 42 let. c ch. 3 OIBT (prête-nom). Il s'expose à une lourde amende pénale ainsi qu'au retrait immédiat de son autorisation d'installer par l'ESTI."
                 },
                 "importantPoint": {
                         "title": "Double sanction administrative et pénale",
@@ -3684,7 +3684,7 @@
                         },
                         {
                                 "title": "3. Chapitre 3 : Installations soumises au contrôle tous les 10 ou 20 ans (Vente immobilière)",
-                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Annexe Ch. 3 • Changement de propriétaire</div>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« Les installations électriques soumises au contrôle tous les 10 ou 20 ans doivent en outre être contrôlées à chaque changement de propriétaire, si le dernier contrôle effectué date de cinq ans. »\n</blockquote>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">🏡 Règle pratique de la transaction immobilière</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Lorsqu'une maison d'habitation (périodicité de 20 ans) est vendue, le notaire ou le gestionnaire de réseau vérifie la date du dernier RaSi. Si ce dernier a plus de 5 ans (ex. 6 ans), un contrôle complet par un organe indépendant doit être ordonné aux frais des parties avant ou immédiatement après la transaction.\n  </p>\n</div>"
+                                "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Annexe Ch. 3 • Changement de propriétaire</div>\n<blockquote style=\"margin:0 0 0.85rem 1rem; padding-left:0.75rem; border-left:3px solid var(--primary-accent); color:var(--text-secondary); font-style:italic;\">\n« Les installations électriques soumises au contrôle tous les 10 ou 20 ans doivent en outre être contrôlées à chaque changement de propriétaire, si le dernier contrôle effectué date de cinq ans. »\n</blockquote>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">🏡 Règle pratique de la transaction immobilière</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Lorsqu'une maison d'habitation (périodicité de 20 ans) est vendue, le notaire ou le gestionnaire de réseau vérifie la date du dernier RS. Si ce dernier a plus de 5 ans (ex. 6 ans), un contrôle complet par un organe indépendant doit être ordonné aux frais des parties avant ou immédiatement après la transaction.\n  </p>\n</div>"
                         },
                         {
                                 "title": "4. Chapitre 4 : Installations de production d’énergie",
@@ -3699,7 +3699,7 @@
                         "title": "La borne des 1200 m² et 300 personnes",
                         "text": "Le seuil de 1200 m² de surface de vente sépare les grands magasins du Ch. 2.3.8 des petits commerces. Attention : les deux sont désormais contrôlés tous les 5 ans pour les restaurants (2.3.9), mais les locaux commerciaux simples ne présentant pas de risque particulier sont à 10 ans (2.4.4)."
                 },
-                "synthesis": "Les périodicités sont fixées par affectation : 1 an (chantiers, hôpitaux groupe 2), 3 ans (zones explosion, stations-service), 5 ans (bornes de recharge publiques, magasins > 1200 m²), 10 ans (bureaux, fermes, alinéa 2.4.11 … abrogé maintenu), 20 ans (logements). Changement de propriétaire : contrôle obligatoire si le dernier RaSi date de plus de 5 ans. Le photovoltaïque suit la périodicité de l'objet hôte.",
+                "synthesis": "Les périodicités sont fixées par affectation : 1 an (chantiers, hôpitaux groupe 2), 3 ans (zones explosion, stations-service), 5 ans (bornes de recharge publiques, magasins > 1200 m²), 10 ans (bureaux, fermes, alinéa 2.4.11 … abrogé maintenu), 20 ans (logements). Changement de propriétaire : contrôle obligatoire si le dernier RS date de plus de 5 ans. Le photovoltaïque suit la périodicité de l'objet hôte.",
                 "quiz": [
                         {
                                 "question": "1. Quelle est la périodicité de contrôle obligatoire pour les installations de chantiers selon le Ch. 2.1 de l'Annexe OIBT ?",
@@ -3769,7 +3769,7 @@
                 "tag": "Évaluation officielle",
                 "xpReward": 100,
                 "objective": "Valider formellement la maîtrise intégrale de l'Ordonnance sur les installations électriques à basse tension (RS 734.27, état au 31 octobre 2025).",
-                "introduction": "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie de l'<strong>Ordonnance sur les installations électriques à basse tension (OIBT — RS 734.27)</strong> dans son état officiel au 31 octobre 2025. Composée de <strong>16 questions à choix multiples</strong>, elle évalue rigoureusement votre compréhension des 7 leçons du programme : compétences de l'ESTI, régime de l'autorisation générale et des autorisations limitées, incompatibilités de contrôle (Art. 31), procédure du rapport de sécurité (RaSi), catalogue des infractions pénales (Art. 42) et tableau des périodicités de l'Annexe. Un score minimal de 75 % (12/16) est requis pour réussir la certification et obtenir le badge officiel ainsi que 100 XP.",
+                "introduction": "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie de l'<strong>Ordonnance sur les installations électriques à basse tension (OIBT — RS 734.27)</strong> dans son état officiel au 31 octobre 2025. Composée de <strong>16 questions à choix multiples</strong>, elle évalue rigoureusement votre compréhension des 7 leçons du programme : compétences de l'ESTI, régime de l'autorisation générale et des autorisations limitées, incompatibilités de contrôle (Art. 31), procédure du rapport de sécurité (RS), catalogue des infractions pénales (Art. 42) et tableau des périodicités de l'Annexe. Un score minimal de 75 % (12/16) est requis pour réussir la certification et obtenir le badge officiel ainsi que 100 XP.",
                 "contentSections": [
                         {
                                 "title": "Instructions pour l'examen de certification OIBT",
@@ -3877,7 +3877,7 @@
                                 "articleRef": "OIBT — Art. 22 al. 3 et 4"
                         },
                         {
-                                "question": "9. Quel document l'installateur doit-il obligatoirement joindre au rapport de sécurité (RaSi) lors du contrôle final selon l'Art. 24 al. 2 OIBT ?",
+                                "question": "9. Quel document l'installateur doit-il obligatoirement joindre au rapport de sécurité (RS) lors du contrôle final selon l'Art. 24 al. 2 OIBT ?",
                                 "options": [
                                         "Le catalogue des tarifs du grossiste",
                                         "Le protocole de mesure consignant l'ensemble des essais et contrôles prescrits par la NIBT",
