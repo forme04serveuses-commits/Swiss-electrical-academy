@@ -3197,7 +3197,7 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
                       },
                       {
                               "title": "4. Section 4 : Travaux d’installation sans autorisation (Art. 16)",
-                              "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 16 • Exceptions réservées aux particuliers</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 16 OIBT</strong> délimite de façon restrictive les seuls travaux qu'une personne physique peut réaliser <strong>sans autorisation d'installer</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Locaux d'habitation et locaux annexes occupés par le propriétaire (al. 1 let. a) :</strong> poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées existantes, protégées par un <strong>dispositif différentiel résiduel (DDR / FI ≤ 30 mA)</strong>.</li>\n  <li><strong>Personnes qualifiées dans leur propre logement (al. 1 let. b) :</strong> un électricien de montage CFC ou installateur-électricien CFC peut exécuter des travaux d'installation dans les locaux d'habitation et annexes qu'il habite en tant que propriétaire ou locataire.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle obligatoire pour les travaux sans autorisation (Art. 16 al. 2)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Les installations réalisées selon l'Art. 16 al. 1 let. b doivent <strong>obligatoirement faire l'objet d'un contrôle de réception par un organe de contrôle indépendant</strong>, lequel établit le rapport de sécurité (RS) transmis au gestionnaire de réseau !\n  </p>\n</div>"
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 734.27 — Art. 16 • Travaux d’installation sans autorisation</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'<strong>Art. 16 OIBT</strong> délimite strictement les cas où des travaux d'installation électrique peuvent être exécutés <strong>sans autorisation d'installer</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Personnes qualifiées dans leur propre logement (Art. 16 al. 1) :</strong> Ne doivent pas demander d'autorisation pour les travaux d'installation dans les locaux d'habitation et les locaux annexes qu'elles habitent ou dont elles sont propriétaires :\n    <ul style=\"margin-top:0.35rem; margin-bottom:0.35rem;\">\n      <li>a. les personnes du métier visées à l'art. 8 ;</li>\n      <li>b. les personnes autorisées à contrôler visées à l'art. 27, al. 1 ;</li>\n      <li>c. les installateurs-électriciens CFC ;</li>\n      <li>d. les électriciens de montage CFC habilités à effectuer la première vérification.</li>\n    </ul>\n  </li>\n  <li><strong>Travaux autorisés sans autorisation à tout occupant dans son propre logement (Art. 16 al. 2) :</strong> L'autorisation n'est en outre pas nécessaire pour :\n    <ul style=\"margin-top:0.35rem; margin-bottom:0.35rem;\">\n      <li><strong>let. a :</strong> l'installation de prises et d'interrupteurs effectuée sur des équipements existants dans le logement occupé en propre ou les locaux annexes à celui-ci sur des circuits terminaux monophasés précédés d'un coupe-surintensité divisionnaire, <strong>à condition que les installations soient protégées par un disjoncteur à courant différentiel-résiduel de 30 mA au maximum</strong> ;</li>\n      <li><strong>let. b :</strong> le raccordement ou le débranchement des <strong>luminaires</strong> ou le remplacement des <strong>interrupteurs</strong> dans le logement occupé en propre ou les locaux annexes à celui-ci.</li>\n    </ul>\n  </li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle obligatoire et rapport de sécurité RS (Art. 16 al. 3)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Selon l'<strong>Art. 16 al. 3 OIBT</strong>, les installations électriques selon les <strong>al. 1</strong> et <strong>al. 2, let. a</strong>, <strong>doivent être contrôlées par le titulaire d’une autorisation de contrôler</strong>. Cette personne <strong>remettra le rapport de sécurité (RS) au propriétaire de l’installation</strong>.\n  <br><br>\n  <em>Remarque : les travaux visés à l'al. 2 let. b (pose/débranchement de luminaires et remplacement d'interrupteurs) ne nécessitent pas ce contrôle de réception.</em>\n  </p>\n</div>"
                       },
                       {
                               "title": "5. Section 5 : Dispositions communes (Art. 17 à 21)",
@@ -3239,16 +3239,16 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
                               "articleRef": "OIBT — Art. 11 al. 1"
                       },
                       {
-                              "question": "3. Quels travaux un particulier peut-il réaliser sans autorisation d'installer dans son propre logement selon l'Art. 16 al. 1 let. a OIBT ?",
+                              "question": "3. Quels travaux un occupant peut-il exécuter sans autorisation dans son propre logement selon l'Art. 16 al. 2 OIBT ?",
                               "options": [
                                       "Modifier le raccordement au réseau de transport haute tension",
-                                      "Poser des luminaires et remplacer des interrupteurs/prises sur des circuits monophasés protégés par DDR (FI ≤ 30 mA)",
+                                      "Poser/débrancher des luminaires, remplacer des interrupteurs (let. b) et installer des prises/interrupteurs avec DDR ≤ 30 mA (let. a)",
                                       "Construire un poste de transformation à huile dans sa cave",
                                       "Poser des compteurs d'énergie pour revendre du courant aux voisins"
                               ],
                               "correctAnswer": 1,
-                              "explanation": "L'Art. 16 al. 1 let. a OIBT autorise uniquement le propriétaire occupant à poser des luminaires et remplacer des interrupteurs et prises dans des installations monophasées protégées par un DDR (FI ≤ 30 mA).",
-                              "articleRef": "OIBT — Art. 16 al. 1 let. a"
+                              "explanation": "L'Art. 16 al. 2 OIBT autorise l'occupant en propre à raccorder/débrancher des luminaires, remplacer des interrupteurs (let. b) et poser des prises/interrupteurs sur des circuits terminaux monophasés protégés par un DDR ≤ 30 mA (let. a).",
+                              "articleRef": "OIBT — Art. 16 al. 2"
                       },
                       {
                               "question": "4. Dans quel délai le titulaire d'une autorisation d'installer doit-il annoncer à l'Inspection tout changement de personne du métier selon l'Art. 19 al. 1 OIBT ?",
@@ -3836,16 +3836,16 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
                               "articleRef": "OIBT — Art. 15"
                       },
                       {
-                              "question": "6. Un propriétaire occupant son propre appartement peut-il remplacer lui-même une prise monophasée sans autorisation selon l'Art. 16 OIBT ?",
+                              "question": "6. Selon l'Art. 16 al. 2 et 3 OIBT, un propriétaire occupant son propre logement peut-il installer une prise monophasée sans autorisation, et quel contrôle s'applique ?",
                               "options": [
-                                      "Non, c'est strictement interdit sous peine de prison",
-                                      "Oui, dans des locaux d'habitation et annexes qu'il occupe, si le circuit est protégé par un DDR (FI ≤ 30 mA)",
-                                      "Oui, mais uniquement pour des prises en triphasé 400 V",
-                                      "Uniquement s'il a obtenu l'autorisation du Tribunal fédéral"
+                                      "Non, c'est strictement interdit sous peine d'emprisonnement",
+                                      "Oui, si le circuit est protégé par un DDR ≤ 30 mA (al. 2 let. a), mais l'installation doit obligatoirement être contrôlée par le titulaire d'une autorisation de contrôler qui remet le RS au propriétaire (al. 3)",
+                                      "Oui, mais uniquement pour des prises en triphasé 400 V sans aucun contrôle",
+                                      "Uniquement s'il a obtenu l'accord écrit préalable du Tribunal fédéral"
                               ],
                               "correctAnswer": 1,
-                              "explanation": "L'Art. 16 al. 1 let. a OIBT autorise expressément le propriétaire occupant à remplacer des interrupteurs et prises dans des installations monophasées protégées par un DDR (FI ≤ 30 mA).",
-                              "articleRef": "OIBT — Art. 16 al. 1 let. a"
+                              "explanation": "Art. 16 al. 2 let. a et al. 3 OIBT : l'installation de prises sur un circuit terminal monophasé protégé par un DDR ≤ 30 mA est autorisée sans autorisation d'installer, mais elle doit obligatoirement faire l'objet d'un contrôle par le titulaire d'une autorisation de contrôler, qui remet le rapport de sécurité (RS) au propriétaire.",
+                              "articleRef": "OIBT — Art. 16 al. 2 let. a & al. 3"
                       },
                       {
                               "question": "7. Dans quel délai toute modification des conditions d'une autorisation d'installer doit-elle être annoncée à l'Inspection selon l'Art. 19 al. 1 OIBT ?",
@@ -3970,6 +3970,7 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
               ],
               "prevLessonId": "rs-734-27-lecon-7"
       },
+
 
 
 
