@@ -3,7 +3,7 @@
 
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -99,6 +99,12 @@ function initSEA() {
       return;
     }
 
+    // 4quater. Parcours dédié RS 814.710 (Hub des 7 leçons ORNI) : /formations/A/rs-814-710 ou /formations/A/orni
+    if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-814-710' || segments[2].toLowerCase() === 'orni' || segments[2].toLowerCase() === 'rs-814-710-orni')) {
+      renderOrniParcoursView(pageContainer);
+      return;
+    }
+
     // 4bis. Parcours dédié RS 734.2 (Hub des 7 chapitres OCFo) : /formations/A/RS-734-2 ou /formations/A/rs-734-2
     if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
       renderOcfoParcoursView(pageContainer);
@@ -152,6 +158,20 @@ function initSEA() {
           targetId = `rs-734-27-lecon-${chapPart}`;
         } else if (slug === 'annexe' || slug === 'annexes') {
           targetId = 'rs-734-27-lecon-7';
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
+
+      // Sous-routes pour le parcours RS 814.710 (ex: /formations/A/rs-814-710/lecon-1 ou /lecon-2)
+      if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-814-710' || segments[2].toLowerCase() === 'orni' || segments[2].toLowerCase() === 'rs-814-710-orni')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = `rs-814-710-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'rs-814-710-evaluation-finale';
+        } else if (slug.startsWith('chapitre-')) {
+          const chapPart = slug.replace('chapitre-', '');
+          targetId = `rs-814-710-lecon-${chapPart}`;
         }
         renderLessonView(pageContainer, moduleId, targetId);
         return;

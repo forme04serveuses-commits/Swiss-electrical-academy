@@ -25,6 +25,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const isLie = formation.parcoursId === 'rs-734-0' || formation.id.startsWith('rs-734-0-');
   const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
   const isOibt = formation.parcoursId === 'rs-734-27' || formation.id.startsWith('rs-734-27-');
+  const isOrni = formation.parcoursId === 'rs-814-710' || formation.id.startsWith('rs-814-710-');
 
   // Enregistrer comme dernière activité pour le bouton « Continuer »
   StorageService.setLastActivity({
@@ -57,6 +58,15 @@ export function renderLessonView(container, moduleId, formationId) {
       nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
     } else if (formation.lessonNumber === 7) {
       nextRoute = `#/formations/A/rs-734-27/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  } else if (isOrni && formation.nextLessonId) {
+    if (formation.lessonNumber && formation.lessonNumber < 7) {
+      const nextNum = formation.lessonNumber + 1;
+      nextRoute = `#/formations/A/rs-814-710/lecon-${nextNum}`;
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / 7) →`;
+    } else if (formation.lessonNumber === 7) {
+      nextRoute = `#/formations/A/rs-814-710/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (formation.nextChapterId) {
@@ -92,12 +102,16 @@ export function renderLessonView(container, moduleId, formationId) {
           <span>/</span>
           <a href="#/formations/A/rs-734-27" class="breadcrumb-link">RS 734.27 — OIBT</a>
         ` : ''}
+        ${isOrni ? `
+          <span>/</span>
+          <a href="#/formations/A/rs-814-710" class="breadcrumb-link">RS 814.710 — ORNI</a>
+        ` : ''}
         <span>/</span>
         <span>${formation.code}</span>
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : ''))}">
+      <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : '')))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
@@ -120,6 +134,12 @@ export function renderLessonView(container, moduleId, formationId) {
           ` : ''}
           ${isOibt && formation.isFinalEvaluation ? `
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (7 unités)</span>
+          ` : ''}
+          ${isOrni && formation.lessonNumber && formation.lessonNumber <= 7 ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">${formation.code} · ${formation.lessonNumber} / 7</span>
+          ` : ''}
+          ${isOrni && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.15); color:var(--accent-red); border-color:rgba(239,68,68,0.3);">Examen final ORNI</span>
           ` : ''}
           <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
           ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}
@@ -283,6 +303,10 @@ export function renderLessonView(container, moduleId, formationId) {
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-27'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Sommaire des 7 leçons OIBT
             </button>
+          ` : isOrni ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/A/rs-814-710'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+              ← Sommaire des 7 leçons ORNI
+            </button>
           ` : `
             <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Retour au module
@@ -334,7 +358,7 @@ export function renderLessonView(container, moduleId, formationId) {
       const quizEl = createQuizEngine(formation, () => {
         // Callback lors de la complétion
         if (window.updateHeaderXp) window.updateHeaderXp();
-        // Si c'est LIE, OCFo ou OIBT et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+        // Si c'est LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
         if (isLie) {
           if (nextRoute) {
             location.hash = nextRoute;
@@ -352,6 +376,12 @@ export function renderLessonView(container, moduleId, formationId) {
             location.hash = nextRoute;
           } else {
             location.hash = '#/formations/A/rs-734-27';
+          }
+        } else if (isOrni) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/A/rs-814-710';
           }
         } else {
           location.hash = `#/formations/${mod.id}`;

@@ -3514,6 +3514,73 @@ button, input, select {
 }
 
 /* ==========================================================================
+   Styles spécifiques Module A — RS 814.710 (ORNI) & Composants Pédagogiques
+   ========================================================================== */
+.orni-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%), var(--bg-surface);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.orni-card-accent {
+  border-left: 3px solid #8b5cf6 !important;
+}
+
+.orni-lesson-header {
+  border-left: 4px solid #8b5cf6 !important;
+}
+
+.orni-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.orni-featured-badge {
+  background: #8b5cf6;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.orni-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #a78bfa;
+  font-size: 0.85rem;
+}
+
+.orni-featured-stats {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.orni-featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.orni-featured-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-width: 780px;
+}
+
+/* ==========================================================================
    Distinction formelle Section 7 : Texte légal / Explication / À retenir / Référence
    ========================================================================== */
 .legal-text-card {

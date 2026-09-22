@@ -2,7 +2,7 @@
 // Détail du module, progression spécifique et liste ordonnée des leçons/chapitres
 
 import { StorageService } from '../services/storage.js';
-import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -34,6 +34,10 @@ export function renderModuleView(container, moduleId) {
   const oibtLessons = RS_734_27_INFO ? RS_734_27_INFO.lessons : [];
   const oibtCompletedCount = oibtLessons.filter(l => completed.includes(l.id)).length;
   const oibtPercentage = oibtLessons.length > 0 ? Math.round((oibtCompletedCount / oibtLessons.length) * 100) : 0;
+
+  const orniLessons = RS_814_710_INFO ? RS_814_710_INFO.lessons : [];
+  const orniCompletedCount = orniLessons.filter(l => completed.includes(l.id)).length;
+  const orniPercentage = orniLessons.length > 0 ? Math.round((orniCompletedCount / orniLessons.length) * 100) : 0;
 
   container.innerHTML = `
     <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
@@ -145,6 +149,30 @@ export function renderModuleView(container, moduleId) {
           </button>
         </div>
       </section>
+
+      <!-- Carte Parcours Structuré RS 814.710 — ORNI (Ordonnance rayonnement non ionisant) -->
+      <section class="orni-featured-parcours-box" aria-labelledby="orniFeaturedTitle">
+        <div class="orni-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="orni-featured-badge">ORDONNANCE</span>
+            <span class="orni-featured-code">RS 814.710 — ORNI</span>
+          </div>
+          <span class="orni-featured-stats">${orniCompletedCount} / 7 leçons · ${orniPercentage}%</span>
+        </div>
+        <h2 id="orniFeaturedTitle" class="orni-featured-title">Ordonnance sur la protection contre le rayonnement non ionisant (ORNI)</h2>
+        <p class="orni-featured-desc">
+          Parcours officiel structuré en 7 leçons conformes au texte légal (champs de 0 Hz à 300 GHz, LAUS, VLI préventive à 1 µT, courants déterminants, NIBT, téléphonie mobile) et 1 évaluation finale certifiante de 16 questions.
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${orniPercentage}%; background:#8b5cf6;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenOrniHub" onclick="location.hash='#/formations/A/rs-814-710'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#8b5cf6; color:#ffffff; font-weight:700; cursor:pointer;">
+            <span>Explorer les 7 leçons</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
     ` : ''}
 
     <section aria-label="Liste des formations du module">
@@ -158,9 +186,10 @@ export function renderModuleView(container, moduleId) {
           const isLie = formation.id.startsWith('rs-734-0-');
           const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
           const isOibt = formation.id.startsWith('rs-734-27-');
+          const isOrni = formation.id.startsWith('rs-814-710-');
 
           return `
-            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : ''))}" data-formation-id="${formation.id}">
+            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : '')))}" data-formation-id="${formation.id}">
               <div class="formation-code-col">
                 <span class="formation-code-tag">${formation.code}</span>
               </div>
@@ -210,6 +239,14 @@ export function renderModuleView(container, moduleId) {
     });
   }
 
+  // Clic sur le bouton du parcours ORNI
+  const btnOpenOrniHub = container.querySelector('#btnOpenOrniHub');
+  if (btnOpenOrniHub) {
+    btnOpenOrniHub.addEventListener('click', () => {
+      location.hash = '#/formations/A/rs-814-710';
+    });
+  }
+
   // Événements de clic sur chaque formation
   container.querySelectorAll('.formation-item-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -224,6 +261,11 @@ export function renderModuleView(container, moduleId) {
         location.hash = `#/formations/A/rs-734-27/lecon-${leconNum}`;
       } else if (formationId === 'rs-734-27-evaluation-finale') {
         location.hash = `#/formations/A/rs-734-27/evaluation-finale`;
+      } else if (formationId.startsWith('rs-814-710-lecon-')) {
+        const leconNum = formationId.replace('rs-814-710-lecon-', '');
+        location.hash = `#/formations/A/rs-814-710/lecon-${leconNum}`;
+      } else if (formationId === 'rs-814-710-evaluation-finale') {
+        location.hash = `#/formations/A/rs-814-710/evaluation-finale`;
       } else if (formationId.startsWith('rs-734-2-chapitre-')) {
         const chapNum = formationId.replace('rs-734-2-chapitre-', '');
         location.hash = `#/formations/A/rs-734-2/chapitre-${chapNum}`;
@@ -759,3 +801,181 @@ export function renderOibtParcoursView(container) {
     });
   });
 }
+
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : RS 814.710 — ORNI (7 Leçons officielles · Art. 1 à 21 + Annexes 1-2)
+// Source de vérité : 814.710_ORNI.pdf (23 décembre 1999, état au 1er novembre 2023)
+// ----------------------------------------------------------------------------
+export function renderOrniParcoursView(container) {
+  const completed = StorageService.getCompletedLessons();
+  const lessons = RS_814_710_INFO ? RS_814_710_INFO.lessons : [];
+  const completedCount = lessons.filter(l => completed.includes(l.id)).length;
+  const percentage = lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
+  const finalEvalId = RS_814_710_INFO ? RS_814_710_INFO.finalEvaluation.id : 'rs-814-710-evaluation-finale';
+  const isFinalDone = completed.includes(finalEvalId);
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'lecon-1';
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.slug;
+      break;
+    }
+  }
+  if (completedCount === lessons.length && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/A" class="breadcrumb-link">Module A — Dispositions légales</a>
+      <span>/</span>
+      <span>RS 814.710 — ORNI</span>
+    </nav>
+
+    <!-- Header Hero Card ORNI -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #8b5cf6;" role="region" aria-label="En-tête du parcours RS 814.710">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag" style="background:rgba(139,92,246,0.15); color:#a78bfa;">DROIT FÉDÉRAL SUISSE · ENVIRONNEMENT & RNI</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">RS 814.710</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#a78bfa;">ORNI (du 23 décembre 1999 · État au 1er novembre 2023)</div>
+          <h1 class="ocfo-hub-title">Ordonnance sur la protection contre le rayonnement non ionisant</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${RS_814_710_INFO ? RS_814_710_INFO.description : ''}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours ORNI</span>
+          <span style="font-weight:800; color:#a78bfa; font-size:1rem;">
+            ${percentage} % · ${completedCount} / 7 leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${percentage}%; background:#8b5cf6;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumeOrni" style="display:inline-flex; align-items:center; gap:0.5rem; background:#8b5cf6; color:#ffffff; font-weight:700; cursor:pointer;">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === 7 ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+            ← Retour au Module A
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Liste des 7 Leçons officielles -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons ORNI">
+      <div class="section-heading">
+        <span>📚</span> Les 7 leçons du parcours (Art. 1 à 21 & Annexes 1 et 2)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#8b5cf6;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(139,92,246,0.3); color:#a78bfa;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(139,92,246,0.15); color:#a78bfa; border-color:rgba(139,92,246,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(139,92,246,0.3); color:#a78bfa; background:rgba(139,92,246,0.08);">${les.articles}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (16 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${RS_814_710_INFO ? RS_814_710_INFO.finalEvaluation.title : 'Évaluation Finale Certifiante'}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag">Art. 1 à 21 & Annexes 1-2</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${RS_814_710_INFO ? RS_814_710_INFO.finalEvaluation.duration : '20 min'}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">16 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${RS_814_710_INFO ? RS_814_710_INFO.finalEvaluation.summary : ''}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumeOrni');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/A/rs-814-710/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.getAttribute('data-lesson-slug');
+      if (slug) {
+        location.hash = `#/formations/A/rs-814-710/${slug}`;
+      }
+    });
+  });
+}
+

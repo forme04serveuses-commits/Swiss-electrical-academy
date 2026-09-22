@@ -386,6 +386,92 @@ export const RS_734_27_INFO = {
   }
 };
 
+// Informations officielles et structure en 7 leçons de la RS 814.710 (ORNI)
+// Source de vérité : 814.710_ORNI.pdf (23 décembre 1999, état au 1er novembre 2023, RO 2000 213)
+export const RS_814_710_INFO = {
+  "id": "rs-814-710",
+  "code": "RS 814.710",
+  "shortTitle": "ORNI",
+  "fullTitle": "Ordonnance sur la protection contre le rayonnement non ionisant (ORNI)",
+  "subtitle": "7 leçons officielles · État au 1er novembre 2023 · Structure officielle complète et Annexes",
+  "description": "Ordonnance du Conseil fédéral du 23 décembre 1999 sur la protection contre le rayonnement non ionisant (État le 1er novembre 2023, RO 2000 213). Cadre légal suisse régissant les émissions stationnaires de 0 Hz à 300 GHz, la valeur limite de 1 µT pour les réseaux électriques et transformateurs dans les lieux à utilisation sensible (LAUS), la référence NIBT, les stations de téléphonie mobile et les règles de sommation des immissions.",
+  "tag": "Ordonnance fédérale",
+  "totalLessons": 7,
+  "lessons": [
+    {
+      "id": "rs-814-710-lecon-1",
+      "slug": "lecon-1",
+      "number": 1,
+      "title": "Chapitre 1 : Dispositions générales & Définitions",
+      "articles": "Art. 1 à 3",
+      "duration": "10 min",
+      "summary": "L'ORNI protège l'homme contre le rayonnement non ionisant (0 Hz à 300 GHz) émis par les installations stationnaires. Les appareils domestiques usuels et les dispositifs médicaux sont exclus. Les lieux à utilisation sensible (LAUS) bénéficient d'une protection préventive renforcée par les valeurs limites de l'installation (VLI)."
+    },
+    {
+      "id": "rs-814-710-lecon-2",
+      "slug": "lecon-2",
+      "number": 2,
+      "title": "Chapitre 2 : Émissions & Assainissement",
+      "articles": "Art. 4 à 9",
+      "duration": "9 min",
+      "summary": "Les installations doivent respecter les limitations préventives de l'Annexe 1. Si les limites d'immissions de l'Annexe 2 risquent d'être dépassées, des mesures complémentaires sont imposées. Les anciennes installations non conformes doivent être assainies dans un délai fixé par l'Annexe 1 ou de 5 ans au plus."
+    },
+    {
+      "id": "rs-814-710-lecon-3",
+      "slug": "lecon-3",
+      "number": 3,
+      "title": "Chapitre 2 (Section 4) : Fiche de données & Contrôles",
+      "articles": "Art. 10 à 12",
+      "duration": "9 min",
+      "summary": "Le détenteur doit remettre une fiche spécifique au site avant toute construction ou modification (hors électricité domestique). Pour les antennes mobiles, les données d'exploitation sont transmises à l'OFCOM tous les 14 jours. L'autorité effectue des mesures et vérifie dans les 6 mois la conformité des installations dérogatoires."
+    },
+    {
+      "id": "rs-814-710-lecon-4",
+      "slug": "lecon-4",
+      "number": 4,
+      "title": "Chapitres 3 à 5 : Immissions, Zones à bâtir & Exécution",
+      "articles": "Art. 13 à 21",
+      "duration": "9 min",
+      "summary": "Les valeurs limites d'immissions (Annexe 2) s'appliquent partout où des personnes peuvent séjourner. De nouvelles zones à bâtir ne peuvent être créées que si les valeurs limites de l'installation sont respectées. Les cantons sont chargés de l'exécution, sous réserve des compétences fédérales."
+    },
+    {
+      "id": "rs-814-710-lecon-5",
+      "slug": "lecon-5",
+      "number": 5,
+      "title": "Annexe 1 (Partie 1) : Réseau électrique, Transformateurs & NIBT",
+      "articles": "Annexe 1, ch. 1 à 5",
+      "duration": "10 min",
+      "summary": "La VLI pour les lignes > 1000 V, transformateurs, sous-stations et chemins de fer est de 1 µT dans les LAUS. Le courant déterminant est calculé à 40 °C avec vent de 0.5 m/s ou selon l'IEC 60287. Pour les installations domestiques, la conformité à la NIBT (SN 411000) vaut respect de l'état de la technique."
+    },
+    {
+      "id": "rs-814-710-lecon-6",
+      "slug": "lecon-6",
+      "number": 6,
+      "title": "Annexe 1 (Partie 2) : Téléphonie mobile, Radiodiffusion & Radars",
+      "articles": "Annexe 1, ch. 6 à 8",
+      "duration": "9 min",
+      "summary": "Pour la téléphonie mobile, les VLI dans les LAUS sont de 4,0 V/m (≤ 900 MHz), 6,0 V/m (≥ 1800 MHz) et 5,0 V/m (autres fréquences). Le périmètre de coordination se calcule par r = F · √(ERP90). Les antennes adaptatives bénéficient de facteurs de correction KAA selon leurs sous-réseaux."
+    },
+    {
+      "id": "rs-814-710-lecon-7",
+      "slug": "lecon-7",
+      "number": 7,
+      "title": "Annexe 2 : Valeurs limites d’immissions & Sommation",
+      "articles": "Annexe 2",
+      "duration": "10 min",
+      "summary": "À 50 Hz, la valeur limite d'immission générale est de 100 µT (contre 1 µT pour la VLI dans les LAUS). L'Annexe 2 plafonne le courant de fuite à 45 mA et le courant de contact de 0.5 à 20 mA. Lorsque plusieurs fréquences coexistent, la somme normalisée des immissions ne doit jamais excéder 1."
+    }
+  ],
+  "finalEvaluation": {
+    "id": "rs-814-710-evaluation-finale",
+    "slug": "evaluation-finale",
+    "title": "Évaluation finale : Examen certifiant ORNI (RS 814.710)",
+    "articles": "Art. 1 à 21 & Annexes 1-2",
+    "duration": "20 min",
+    "summary": "L'ORNI est le pilier suisse de la protection de la population contre les champs électromagnétiques stationnaires. Maîtriser ses 21 articles et ses deux annexes est indispensable pour concevoir, installer et contrôler des ouvrages électriques conformes."
+  }
+};
+
 export const ACADEMY_MODULES = [
   // --------------------------------------------------------------------------
   // MODULE A — Dispositions légales
@@ -394,7 +480,7 @@ export const ACADEMY_MODULES = [
     id: "A",
     code: "A",
     title: "Dispositions légales",
-    countLabel: "31 formations",
+    countLabel: "38 formations",
     description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
     badgeTheme: "legal",
     formations: [
@@ -3970,28 +4056,913 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
               ],
               "prevLessonId": "rs-734-27-lecon-7"
       },
+      // ======================================================================
+      // RS 814.710 — ORNI : Protection contre le rayonnement non ionisant
+      // Parcours officiel structuré en 7 leçons (Art. 1 à 21 + Annexes 1-2) + évaluation finale
+      // Source de vérité : 814.710_ORNI.pdf (23 décembre 1999, état au 1er novembre 2023)
+      // ======================================================================
+      {
+              "id": "rs-814-710-lecon-1",
+              "routeId": "rs-814-710/lecon-1",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 1,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 1",
+              "title": "Chapitre 1 : Dispositions générales & Définitions",
+              "subtitle": "But de protection, champ d'application (0 Hz à 300 GHz) et notions fondamentales",
+              "articlesRange": "Art. 1 à 3",
+              "status": "Disponible",
+              "duration": "10 min",
+              "tag": "Dispositions générales",
+              "xpReward": 30,
+              "objective": "Maîtriser le champ d'application de l'ORNI, identifier les sources exclues et assimiler les définitions juridiques fondamentales, notamment la notion de lieu à utilisation sensible (LAUS).",
+              "introduction": "Le <strong>Chapitre 1 de l'ORNI (Art. 1 à 3)</strong> pose le socle juridique suisse de la protection de l'être humain contre les champs électromagnétiques stationnaires. Il fixe une distinction capitale entre installations anciennes et nouvelles, et définit le concept clé de <em>Lieu à Utilisation Sensible (LAUS)</em> qui gouverne l'ensemble des valeurs limites préventives.",
+              "contentSections": [
+                      {
+                              "title": "1. But et champ d'application (Art. 1 et 2)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 1 & 2 • But & Champ d’application</div>\n<div class=\"legal-quote-box\">\n  <strong>Art. 1 But :</strong> La présente ordonnance a pour but de protéger l’homme contre le rayonnement non ionisant nuisible ou incommodant.\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'ordonnance régit trois domaines fondamentaux (Art. 2 al. 1) :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>a. Limitation des émissions :</strong> champs électriques et magnétiques générés par des <strong>installations stationnaires</strong> dans une gamme de fréquence de <strong>0 Hz à 300 GHz</strong> (rayonnement) ;</li>\n  <li><strong>b. Immissions :</strong> détermination et évaluation des immissions de rayonnement ;</li>\n  <li><strong>c. Aménagement du territoire :</strong> exigences posées à la définition des zones à bâtir.</li>\n</ul>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Exclusions expresses du champ d'application (Art. 2 al. 2 & 3)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  L'ORNI ne régit <strong>pas</strong> :\n  <br>• Les sources professionnelles en entreprise dans la mesure où le personnel y est exposé ;\n  <br>• L'utilisation médicale de dispositifs médicaux (RS 812.213) ;\n  <br>• Les installations militaires n'agissant que sur la troupe ;\n  <br>• Les appareils électriques courants : <strong>fours micro-ondes, cuisinières, outils électriques, téléphones portables</strong> ;\n  <br>• Les effets sur les dispositifs médicaux auxiliaires comme les <strong>stimulateurs cardiaques</strong>.\n  </p>\n</div>"
+                      },
+                      {
+                              "title": "2. Anciennes et nouvelles installations (Art. 3 al. 1 et 2)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 3 al. 1 & 2 • Statut des installations</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa qualification juridique d'une installation conditionne les exigences et délais d'assainissement applicables :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Ancienne installation (al. 1) :</strong> installation dont la décision permettant d'entamer les travaux de construction ou la mise en service avait <strong>force de chose jugée au moment de l'entrée en vigueur</strong> de l'ordonnance (1er février 2000). Pour les installations à plusieurs lignes électriques, l'autorisation d'au moins une ligne devait être définitive.</li>\n  <li><strong>Nouvelle installation (al. 2) :</strong> installation qui ne remplit pas les conditions d'ancienne installation, ou qui est <strong>réinstallée sur un autre site</strong>, ou <strong>remplacée sur son site actuel</strong> (les chemins de fer font exception selon l'annexe 1 ch. 5).</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Lieux à utilisation sensible — LAUS (Art. 3 al. 3)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 3 al. 3 • Notion clé de LAUS / LUS</div>\n<div class=\"legal-quote-box\">\n  <strong>Par lieu à utilisation sensible (LAUS), on entend :</strong>\n  <br><strong>a.</strong> Les locaux situés à l’intérieur d’un bâtiment dans lesquels des personnes séjournent régulièrement durant une période prolongée (chambres à coucher, séjours, bureaux, salles de classe, crèches, hôpitaux) ;\n  <br><strong>b.</strong> Les places de jeux publiques ou privées, définies dans un plan d’aménagement ;\n  <br><strong>c.</strong> Les parties de terrains non bâtis sur lesquelles de telles activités sont permises.\n</div>\n<p style=\"margin-top:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<em>À l'inverse, les garages, couloirs, caves, combles non aménagés ou balcons ne constituent pas des LAUS au sens de l'ORNI.</em>\n</p>"
+                      },
+                      {
+                              "title": "4. Définitions techniques et grandeurs physiques (Art. 3 al. 4 à 9)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 3 al. 4 à 9 • Critères & Grandeurs</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Réalisables techniquement (al. 4) :</strong> mesures ayant fait leurs preuves sur des installations comparables en Suisse ou à l'étranger, ou appliquées avec succès lors d'essais transposables.</li>\n  <li><strong>Économiquement supportables (al. 5) :</strong> mesures acceptables pour une <strong>entreprise moyenne, économiquement saine</strong>, de la branche concernée.</li>\n  <li><strong>Valeur limite de l'installation - VLI (al. 6) :</strong> limitation des émissions concernant le rayonnement émis par une installation donnée (mesure préventive stricte).</li>\n  <li><strong>Courant de contact (al. 7) :</strong> courant circulant lorsqu'une personne touche un objet conducteur non relié à une source de tension qui se charge dans un champ électrique ou magnétique.</li>\n  <li><strong>Courant de fuite (al. 8) :</strong> courant circulant d'une personne située dans un champ électrique vers la terre sans contact avec un objet conducteur.</li>\n  <li><strong>Puissance apparente rayonnée - ERP (al. 9) :</strong> puissance transmise à une antenne multipliée par son gain dans la direction principale, rapportée au dipôle demi-onde.</li>\n</ul>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Une terrasse ou un balcon est-il un LAUS ?",
+                      "text": "Non. Le Tribunal fédéral a confirmé que les balcons et terrasses extérieurs ne sont pas des locaux situés à l'intérieur d'un bâtiment et ne sont pas considérés comme des lieux à utilisation sensible (LAUS) au sens de l'Art. 3 al. 3 let. a, même s'ils font partie d'un logement."
+              },
+              "importantPoint": {
+                      "title": "Principe de précaution : VLI vs Valeur limite d'immission",
+                      "text": "La valeur limite de l'installation (VLI) est une valeur préventive beaucoup plus sévère que la valeur limite d'immission générale. Par exemple, à 50 Hz, la VLI pour les lignes et transformateurs dans un LAUS est de 1 µT, alors que la limite d'immission générale pour la santé humaine est de 100 µT !"
+              },
+              "synthesis": "L'ORNI protège l'homme contre le rayonnement non ionisant (0 Hz à 300 GHz) émis par les installations stationnaires. Les appareils domestiques usuels et les dispositifs médicaux sont exclus. Les lieux à utilisation sensible (LAUS) bénéficient d'une protection préventive renforcée par les valeurs limites de l'installation (VLI).",
+              "quiz": [
+                      {
+                              "question": "1. Quelle est la gamme de fréquence régie par l'ORNI selon l'Art. 2 al. 1 let. a ?",
+                              "options": [
+                                      "De 50 Hz à 1000 Hz uniquement",
+                                      "De 0 Hz à 300 GHz",
+                                      "De 10 kHz à 300 MHz",
+                                      "De 1 GHz à 100 GHz"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 2 al. 1 let. a ORNI fixe expressément le champ d'application aux installations stationnaires générant des champs de 0 Hz à 300 GHz.",
+                              "articleRef": "ORNI — Art. 2 al. 1 let. a"
+                      },
+                      {
+                              "question": "2. Quel équipement est expressément exclu du champ d'application selon l'Art. 2 al. 2 let. d ORNI ?",
+                              "options": [
+                                      "Les lignes de transport d'énergie électrique",
+                                      "Les fours micro-ondes, cuisinières, outils électriques et téléphones portables",
+                                      "Les sous-stations et transformateurs haute tension",
+                                      "Les antennes relais de téléphonie mobile"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 2 al. 2 let. d ORNI exclut de son champ d'application les appareils électriques d'usage courant comme les fours micro-ondes, cuisinières, outils électriques ou téléphones portables.",
+                              "articleRef": "ORNI — Art. 2 al. 2 let. d"
+                      },
+                      {
+                              "question": "3. Selon l'Art. 3 al. 3 ORNI, lequel des lieux suivants est un lieu à utilisation sensible (LAUS) ?",
+                              "options": [
+                                      "Un garage souterrain pour véhicules automobiles",
+                                      "Une chambre à coucher dans laquelle des personnes séjournent régulièrement durant une période prolongée",
+                                      "Un couloir de distribution d'un immeuble",
+                                      "Un grenier non aménagé servant de dépôt"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 3 al. 3 let. a ORNI définit les LAUS comme les locaux à l'intérieur d'un bâtiment où des personnes séjournent régulièrement durant une période prolongée (logements, chambres, bureaux, écoles).",
+                              "articleRef": "ORNI — Art. 3 al. 3 let. a"
+                      },
+                      {
+                              "question": "4. Comment se définit le courant de fuite selon l'Art. 3 al. 8 ORNI ?",
+                              "options": [
+                                      "Le courant de court-circuit circulant dans le conducteur de protection PE",
+                                      "Le courant circulant d'une personne dans un champ électrique vers la terre sans qu'un objet conducteur soit touché",
+                                      "Le courant résiduel déclenchant un disjoncteur différentiel 30 mA",
+                                      "Le courant circulant dans un parafoudre en l'absence de surtension"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Selon l'Art. 3 al. 8 ORNI, le courant de fuite est le courant électrique qui circule d'une personne se trouvant dans un champ électrique vers la terre sans qu'un objet conducteur soit touché.",
+                              "articleRef": "ORNI — Art. 3 al. 8"
+                      }
+              ],
+              "nextLessonId": "rs-814-710-lecon-2"
+      },
 
+      {
+              "id": "rs-814-710-lecon-2",
+              "routeId": "rs-814-710/lecon-2",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 2,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 2",
+              "title": "Chapitre 2 : Émissions & Assainissement",
+              "subtitle": "Limitations préventives, limitations plus sévères et délais d'assainissement",
+              "articlesRange": "Art. 4 à 9",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Émissions & Délais",
+              "xpReward": 30,
+              "objective": "Comprendre les principes de limitation préventive (Annexe 1) et complémentaire (Annexe 2), le régime des nouvelles installations et les obligations strictes d'assainissement des anciennes installations.",
+              "introduction": "Le <strong>Chapitre 2 (Sections 1 à 3, Art. 4 à 9)</strong> organise le contrôle à la source des rayonnements. Il articule deux niveaux de protection : la limitation préventive (Annexe 1) et, si nécessaire, une limitation plus sévère pour garantir le respect des valeurs d'immissions (Annexe 2). Il impose également l'assainissement obligatoire des installations non conformes.",
+              "contentSections": [
+                      {
+                              "title": "1. Prescriptions communes aux installations (Art. 4 et 5)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 4 & 5 • Limitation préventive et plus sévère</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Limitation préventive (Art. 4 al. 1) :</strong> Les installations doivent être construites et exploitées de façon à ne pas dépasser les <strong>limitations préventives des émissions définies à l’annexe 1</strong>.</li>\n  <li><strong>Absence de prescriptions dans l'annexe 1 (Art. 4 al. 2) :</strong> L'autorité fixe les limitations dans la mesure de l'état de la technique et pour autant que cela soit économiquement supportable.</li>\n  <li><strong>Limitation complémentaire ou plus sévère (Art. 5 al. 1 & 2) :</strong> Si une installation entraîne, seule ou combinée à d'autres, des immissions dépassant l'<strong>annexe 2</strong>, l'autorité impose des restrictions plus sévères jusqu'à ce que les valeurs limites d'immissions ne soient plus dépassées.</li>\n  <li><strong>Dépassement du courant de contact (Art. 5 al. 3) :</strong> L'autorité ordonne en priorité des mesures portant sur les objets conducteurs en cause.</li>\n</ul>"
+                      },
+                      {
+                              "title": "2. Nouvelles installations et modifications (Art. 6)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 6 • Nouvelles installations</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nSelon l'<strong>Art. 6 ORNI</strong>, si après sa mise en service, une nouvelle installation est modifiée au sens de l'annexe 1, les prescriptions relatives aux limitations d'émissions concernant les <strong>nouvelles installations</strong> lui demeurent intégralement applicables.\n</p>"
+                      },
+                      {
+                              "title": "3. Obligation et délais d'assainissement (Art. 7 et 8)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 7 & 8 • Assainissement obligatoire</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'autorité veille à ce que les anciennes installations ne satisfaisant pas aux art. 4 et 5 soient assainies :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Mesures de contrainte (Art. 7 al. 2) :</strong> L'autorité peut imposer une réduction de l'activité pour la durée de l'assainissement ou prononcer l'arrêt de l'installation.</li>\n  <li><strong>Renonciation à l'assainissement (Art. 7 al. 3) :</strong> Le détenteur peut renoncer aux travaux s'il s'engage formellement à arrêter l'exploitation avant l'échéance du délai.</li>\n  <li><strong>Délai préventif (Art. 8 al. 1) :</strong> Déterminé par l'annexe 1 (ex: 3 ans pour les lignes électriques). À défaut, le délai est de <strong>5 ans au plus</strong>. Une prolongation de la moitié au maximum peut être accordée pour des motifs économiques.</li>\n  <li><strong>Délai pour limitation plus sévère (Art. 8 al. 2) :</strong> Au maximum <strong>3 ans</strong> (réduit à un minimum de 3 mois lorsque les mesures ne requièrent pas d'investissements majeurs).</li>\n</ul>"
+                      },
+                      {
+                              "title": "4. Modification d'anciennes installations (Art. 9)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 9 • Bascule vers le régime des nouvelles installations</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLorsqu'une ancienne installation est modifiée conformément aux critères de l'annexe 1, les dispositions relatives à la limitation des émissions pour les <strong>nouvelles installations</strong> lui deviennent immédiatement applicables, sauf dérogation expresse prévue par l'annexe 1.\n</p>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Assainissement d'une ligne moyenne tension ancienne",
+                      "text": "Si une ligne électrique existante génère une densité de flux supérieure à 1 µT dans les chambres d'une habitation voisine, l'exploitant du réseau doit assainir l'installation dans le délai de 3 ans prévu à l'Annexe 1 ch. 16, notamment en optimisant l'ordre des phases des conducteurs."
+              },
+              "importantPoint": {
+                      "title": "Priorité aux objets conducteurs pour le courant de contact",
+                      "text": "Selon l'Art. 5 al. 3 ORNI, lorsqu'un courant de contact dangereux est constaté sur une clôture métallique ou un toit de tôle sous une ligne HT, l'autorité ordonne en premier lieu des mesures directes sur ces objets (mise à la terre, coupure de continuité) avant d'exiger la modification de la ligne électrique."
+              },
+              "synthesis": "Les installations doivent respecter les limitations préventives de l'Annexe 1. Si les limites d'immissions de l'Annexe 2 risquent d'être dépassées, des mesures complémentaires sont imposées. Les anciennes installations non conformes doivent être assainies dans un délai fixé par l'Annexe 1 ou de 5 ans au plus.",
+              "quiz": [
+                      {
+                              "question": "1. Quel est l'objet de l'Annexe 1 auquel renvoie l'Art. 4 al. 1 ORNI ?",
+                              "options": [
+                                      "Définir les sanctions pénales applicables en cas d'infraction",
+                                      "Définir les limitations préventives des émissions pour chaque type d'installation stationnaire",
+                                      "Fixer le tarif des émoluments perçus par l'ESTI",
+                                      "Énumérer les diplômes requis pour devenir installateur-électricien"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 4 al. 1 ORNI dispose que les installations doivent être construites et exploitées de façon à ne pas dépasser les limitations préventives d'émissions de l'Annexe 1.",
+                              "articleRef": "ORNI — Art. 4 al. 1"
+                      },
+                      {
+                              "question": "2. À quel moment l'autorité impose-t-elle une limitation d'émissions complémentaire selon l'Art. 5 al. 1 ORNI ?",
+                              "options": [
+                                      "Uniquement en cas de panne totale du réseau électrique",
+                                      "Dès lors qu'une installation entraîne des immissions dépassant les valeurs limites de l'Annexe 2",
+                                      "Tous les 20 ans de manière automatique sans mesure préalable",
+                                      "Uniquement sur demande écrite du syndic de la commune"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 5 al. 1 ORNI prescrit l'imposition de limitations complémentaires dès qu'une installation risque de dépasser les valeurs limites d'immissions de l'Annexe 2.",
+                              "articleRef": "ORNI — Art. 5 al. 1"
+                      },
+                      {
+                              "question": "3. Quel est le délai d'assainissement maximal fixé par l'Art. 8 al. 1 si l'Annexe 1 ne contient pas de prescriptions ?",
+                              "options": [
+                                      "6 mois",
+                                      "Cinq ans au plus",
+                                      "Dix ans fermes",
+                                      "Vingt ans"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Selon l'Art. 8 al. 1 ORNI, si l'Annexe 1 ne prévoit pas de délai spécifique, le délai d'assainissement est de cinq ans au plus.",
+                              "articleRef": "ORNI — Art. 8 al. 1"
+                      },
+                      {
+                              "question": "4. Que prévoit l'Art. 9 ORNI lorsqu'une ancienne installation est modifiée au sens de l'Annexe 1 ?",
+                              "options": [
+                                      "Elle conserve indéfiniment son statut d'ancienne installation sans aucune contrainte",
+                                      "Les dispositions relatives à la limitation des émissions pour les nouvelles installations lui deviennent applicables",
+                                      "Elle doit être démontée immédiatement dans les 24 heures",
+                                      "Elle est exemptée de tout contrôle futur"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 9 ORNI dispose que lorsqu'une ancienne installation est modifiée conformément à l'Annexe 1, les dispositions pour nouvelles installations lui sont applicables, sauf mention contraire.",
+                              "articleRef": "ORNI — Art. 9"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-1",
+              "nextLessonId": "rs-814-710-lecon-3"
+      },
 
+      {
+              "id": "rs-814-710-lecon-3",
+              "routeId": "rs-814-710/lecon-3",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 3,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 3",
+              "title": "Chapitre 2 (Section 4) : Fiche de données & Contrôles",
+              "subtitle": "Fiche spécifique au site, obligations envers l'OFCOM et vérifications sur le terrain",
+              "articlesRange": "Art. 10 à 12",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Fiche de données & OFCOM",
+              "xpReward": 30,
+              "objective": "Comprendre les obligations de renseigner du détenteur, le contenu de la fiche de données spécifique au site (Art. 11), le système de notification OFCOM (Art. 11a/b) et les modalités de contrôle à 6 mois.",
+              "introduction": "La <strong>Section 4 du Chapitre 2 (Art. 10 à 12)</strong> régit les obligations déclaratives des exploitants d'installations émettrices. Tout projet de construction ou de modification exige le dépôt d'une fiche de données spécifique au site. Pour la téléphonie mobile, un système d'information centralisé est géré par l'OFCOM avec mise à jour bimensuelle obligatoire.",
+              "contentSections": [
+                      {
+                              "title": "1. Obligation de collaborer (Art. 10)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 10 • Devoir d'information</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLe détenteur d’une installation est tenu de fournir à l’autorité, à la demande de cette dernière, tous les renseignements nécessaires à l’exécution de l'ordonnance. S’il le faut, il est <strong>tenu de procéder à des mesures ou à d’autres enquêtes, ou de les tolérer</strong>.\n</p>"
+                      },
+                      {
+                              "title": "2. Fiche de données spécifique au site (Art. 11)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 11 • Fiche obligatoire de données de site</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nAvant qu'une installation de l'annexe 1 soit construite, réinstallée, remplacée ou modifiée, le détenteur remet une fiche de données spécifique au site. <strong>Les installations électriques domestiques font exception (annexe 1 ch. 4)</strong>.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nContenu légal obligatoire de la fiche (Art. 11 al. 2) :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>a.</strong> Données techniques et d'exploitation déterminantes pour l'émission ;</li>\n  <li><strong>b.</strong> Mode d'exploitation déterminant selon l'annexe 1 ;</li>\n  <li><strong>c.</strong> Données de rayonnement sur trois points stratégiques :\n    <br>1. Sur le lieu accessible où le rayonnement est le plus fort ;\n    <br>2. <strong>Sur les trois lieux à utilisation sensible (LAUS) où le rayonnement est le plus fort</strong> ;\n    <br>3. Sur tous les LAUS où la valeur limite de l'installation est dépassée ;</li>\n  <li><strong>d.</strong> Un plan d'ensemble présentant visuellement ces informations.</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Téléphonie mobile et registre électronique OFCOM (Art. 11a et 11b)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 11a & 11b • Dispositif centralisé OFCOM</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Transmission à l'OFCOM (Art. 11a al. 1) :</strong> Le détenteur d'une station émettrice de téléphonie mobile ou sans fil communique les données dans un délai de <strong>14 jours</strong> après clôture de la procédure d'autorisation/notification, la date de mise en service, et ses <strong>données d'exploitation actuelles au moins tous les 14 jours</strong>.</li>\n  <li><strong>Système d'information électronique (Art. 11b) :</strong> L'OFCOM exploite la plateforme électronique nationale. Les autorités de protection de l'environnement, les organes de contrôle et les exploitants y disposent d'un accès en ligne sécurisé pour accomplir leurs missions légales.</li>\n</ul>"
+                      },
+                      {
+                              "title": "4. Surveillance et contrôle sur le terrain (Art. 12)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 12 • Contrôles par l'autorité</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'autorité veille au respect des limitations d'émissions. Elle procède à des mesures ou calculs, ou s'appuie sur des données de tiers selon les méthodes recommandées par l'Office fédéral de l'environnement (OFEV).\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚠️ Contrôle dans les 6 mois après mise en service (Art. 12 al. 3)</div>\n  <p style=\"margin:0; line-height:1.6; color:var(--text-secondary); font-size:0.88rem;\">\n  Si une nouvelle installation ou une installation modifiée bénéficie d'une dérogation permettant de dépasser la valeur limite, l'autorité effectue des mesures périodiques et doit <strong>contrôler au plus tard 6 mois après sa mise en service</strong> l'exactitude des données d'exploitation et l'application stricte des prescriptions arrêtées.\n  </p>\n</div>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Ajout d'antennes 5G sur un mât existant",
+                      "text": "L'opérateur doit déposer une fiche de données spécifique au site modifiée détaillant les 3 LAUS les plus exposés, transmettre ses paramètres à l'OFCOM sous 14 jours et alimenter le système d'information de l'OFCOM tous les 14 jours au minimum avec la puissance d'émission réelle."
+              },
+              "importantPoint": {
+                      "title": "Dispense pour les installations domestiques",
+                      "text": "L'Art. 11 al. 1 ORNI dispense expressément les installations électriques domestiques (au sens de l'Art. 14 LIE / Annexe 1 ch. 4) de l'établissement d'une fiche de données spécifique au site."
+              },
+              "synthesis": "Le détenteur doit remettre une fiche spécifique au site avant toute construction ou modification (hors électricité domestique). Pour les antennes mobiles, les données d'exploitation sont transmises à l'OFCOM tous les 14 jours. L'autorité effectue des mesures et vérifie dans les 6 mois la conformité des installations dérogatoires.",
+              "quiz": [
+                      {
+                              "question": "1. Quelles installations sont formellement dispensées de la fiche spécifique au site selon l'Art. 11 al. 1 ORNI ?",
+                              "options": [
+                                      "Les lignes de transport d'énergie de 380 kV",
+                                      "Les installations électriques domestiques (annexe 1 ch. 4)",
+                                      "Les stations de transformation de quartier",
+                                      "Les émetteurs de radiodiffusion FM de haute puissance"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11 al. 1 ORNI dispose explicitement que 'Les installations électriques domestiques font exception (annexe 1, ch. 4)'.",
+                              "articleRef": "ORNI — Art. 11 al. 1"
+                      },
+                      {
+                              "question": "2. Combien de lieux à utilisation sensible (LAUS) les plus exposés doivent figurer sur la fiche de site (Art. 11 al. 2 let. c ch. 2) ?",
+                              "options": [
+                                      "Un seul lieu",
+                                      "Les trois lieux à utilisation sensible où le rayonnement est le plus fort",
+                                      "Dix lieux obligatoires",
+                                      "Aucun si le propriétaire est d'accord"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11 al. 2 let. c ch. 2 ORNI exige des informations détaillées sur les trois lieux à utilisation sensible où ce rayonnement est le plus fort.",
+                              "articleRef": "ORNI — Art. 11 al. 2 let. c ch. 2"
+                      },
+                      {
+                              "question": "3. À quelle fréquence minimale les données d'exploitation des antennes mobiles doivent-elles être transmises à l'OFCOM (Art. 11a al. 1 let. c) ?",
+                              "options": [
+                                      "Une fois par an lors du bilan annuel",
+                                      "Au moins tous les 14 jours",
+                                      "Tous les cinq ans lors du contrôle périodique",
+                                      "Uniquement en cas de réclamation de riverains"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11a al. 1 let. c ORNI impose la communication des données d'exploitation actuelles dans l'intervalle fixé par l'OFCOM, mais au moins tous les 14 jours.",
+                              "articleRef": "ORNI — Art. 11a al. 1 let. c"
+                      },
+                      {
+                              "question": "4. Dans quel délai l'autorité doit-elle contrôler une installation bénéficiant d'une dérogation après sa mise en service (Art. 12 al. 3) ?",
+                              "options": [
+                                      "Au plus tard un mois après",
+                                      "Au plus tard six mois après leur mise en service",
+                                      "Dans les 5 ans révolus",
+                                      "Après la fin de la période de garantie décennale"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Selon l'Art. 12 al. 3 ORNI, l'autorité contrôle au plus tard six mois après leur mise en service si les indications d'exploitation sont exactes et si les prescriptions sont appliquées.",
+                              "articleRef": "ORNI — Art. 12 al. 3"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-2",
+              "nextLessonId": "rs-814-710-lecon-4"
+      },
 
+      {
+              "id": "rs-814-710-lecon-4",
+              "routeId": "rs-814-710/lecon-4",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 4,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 4",
+              "title": "Chapitres 3 à 5 : Immissions, Zones à bâtir & Exécution",
+              "subtitle": "Immissions globales, aménagement du territoire et répartition Confédération/Cantons",
+              "articlesRange": "Art. 13 à 21",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Immissions & Aménagement",
+              "xpReward": 30,
+              "objective": "Connaître le champ d'application des valeurs limites d'immissions, les contraintes sur les zones à bâtir (Art. 16) et la répartition des compétences d'exécution entre Cantons, Confédération, OFEV et OFCOM.",
+              "introduction": "Les <strong>Chapitres 3, 4 et 5 (Art. 13 à 21)</strong> régissent l'exposition générale de la population dans l'environnement, l'articulation obligatoire avec l'aménagement du territoire (droit de construire) et l'exécution fédérale coordonnée entre les cantons, l'OFEV et l'OFCOM.",
+              "contentSections": [
+                      {
+                              "title": "1. Immissions et méthodes d'évaluation (Art. 13 à 15)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 13 à 15 • Immissions générales</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application (Art. 13 al. 1) :</strong> Les valeurs limites d’immissions de l’annexe 2 <strong>doivent être respectées partout où des personnes peuvent séjourner</strong> (chemins, champs, rues, bâtiments, espaces publics).</li>\n  <li><strong>Corps entier (Art. 13 al. 2) :</strong> Elles s'appliquent au rayonnement agissant de manière uniforme sur l'ensemble du corps humain.</li>\n  <li><strong>Détermination (Art. 14) :</strong> Mesures ou calculs pour le mode d'exploitation le plus émissif. Les sources internes aux entreprises ne sont pas comptées.</li>\n  <li><strong>Moyenne quadratique (Art. 14 al. 5) :</strong> Si une durée d'appréciation figure à l'annexe 2 (ex: 6 minutes), la valeur s'exprime par la moyenne quadratique ; sinon, la valeur efficace maximale est déterminante.</li>\n</ul>"
+                      },
+                      {
+                              "title": "2. Exigences posées aux zones à bâtir (Art. 16)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 16 • Coordination avec l'urbanisme</div>\n<div class=\"legal-quote-box\">\n  <strong>Art. 16 Définition des zones à bâtir :</strong>\n  Les zones à bâtir ne doivent être définies que là où les valeurs limites de l’installation au sens de l’annexe 1 sont respectées, ou peuvent l’être grâce à des mesures de planification ou de construction. Sont à considérer les installations existantes ainsi que les projets établis conformément au droit de l’aménagement du territoire.\n</div>\n<p style=\"margin-top:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<em>Cet article interdit formellement de créer des zones résidentielles directement sous des lignes à très haute tension ou à proximité immédiate de transformateurs si le champ magnétique y dépasse 1 µT.</em>\n</p>"
+                      },
+                      {
+                              "title": "3. Répartition des compétences d'exécution (Art. 17 à 19b)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 17 à 19b • Cantons & Confédération</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Cantons (Art. 17) :</strong> Les cantons exécutent l'ordonnance dans leur domaine ordinaire de police des constructions et de protection environnementale.</li>\n  <li><strong>Confédération (Art. 18) :</strong> Les autorités fédérales (OFEN, ESTI, OFT) exécutent l'ordonnance lorsqu'elles appliquent d'autres lois fédérales (chemins de fer, transport d'électricité, concessions de radiocommunication).</li>\n  <li><strong>Autorité de coordination (Art. 19) :</strong> Désignée lorsque des dépassements impliquent plusieurs installations relevant d'autorités distinctes.</li>\n  <li><strong>Information du public (Art. 19b) :</strong> L'OFEV publie périodiquement une vue d'ensemble nationale de l'exposition au rayonnement et l'OFCOM publie les données de téléphonie mobile.</li>\n</ul>"
+                      },
+                      {
+                              "title": "4. Dispositions transitoires et entrée en vigueur (Art. 20 et 21)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 RS 814.710 — Art. 20 & 21 • Validité légale</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n• <strong>Art. 20 (Disposition transitoire de 2009) :</strong> Les installations approuvées avant l'entrée en vigueur de la modification du 1er juillet 2009 doivent respecter l'annexe 1 dès qu'elles sont remplacées, réinstallées ou modifiées.\n<br>• <strong>Art. 21 (Entrée en vigueur initiale) :</strong> L'ordonnance est entrée en vigueur le <strong>1er février 2000</strong>.\n</p>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Nouveau plan de quartier près d'une sous-station",
+                      "text": "Lorsqu'une commune suisse révise son plan d'affectation des zones pour ouvrir un secteur au logement, elle doit prouver, calculs à l'appui, que la future zone résidentielle respecte la VLI de 1 µT émise par la sous-station électrique adjacente (Art. 16 ORNI)."
+              },
+              "importantPoint": {
+                      "title": "Portée universelle des valeurs limites d'immissions",
+                      "text": "Contrairement aux valeurs limites d'installation (VLI) qui ne s'appliquent que dans les LAUS, les valeurs limites d'immissions de l'Annexe 2 doivent être respectées sans exception partout où des êtres humains peuvent séjourner (Art. 13 al. 1)."
+              },
+              "synthesis": "Les valeurs limites d'immissions (Annexe 2) s'appliquent partout où des personnes peuvent séjourner. De nouvelles zones à bâtir ne peuvent être créées que si les valeurs limites de l'installation sont respectées. Les cantons sont chargés de l'exécution, sous réserve des compétences fédérales.",
+              "quiz": [
+                      {
+                              "question": "1. Où les valeurs limites d'immissions de l'Annexe 2 doivent-elles être respectées selon l'Art. 13 al. 1 ORNI ?",
+                              "options": [
+                                      "Uniquement dans les salles d'opération des hôpitaux",
+                                      "Partout où des personnes peuvent séjourner",
+                                      "Exclusivement à l'intérieur des chambres à coucher",
+                                      "Seulement dans les zones industrielles de plus de 10 hectares"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 13 al. 1 ORNI dispose clairement : 'Les valeurs limites d’immissions au sens de l’annexe 2 doivent être respectées partout où des personnes peuvent séjourner'.",
+                              "articleRef": "ORNI — Art. 13 al. 1"
+                      },
+                      {
+                              "question": "2. Que prescrit l'Art. 16 ORNI pour la définition de nouvelles zones à bâtir ?",
+                              "options": [
+                                      "Les zones à bâtir peuvent être créées librement quel que soit le rayonnement",
+                                      "Elles ne doivent être définies que là où les valeurs limites de l'installation de l'Annexe 1 sont respectées ou peuvent l'être",
+                                      "Il est obligatoire de construire un mur en plomb de 2 mètres de hauteur autour de la zone",
+                                      "Seuls les bâtiments en bois sont autorisés dans un rayon de 500 mètres"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 16 ORNI impose que les zones à bâtir ne soient définies que là où les valeurs limites de l'installation (Annexe 1) sont respectées ou garanties par des mesures de planification/construction.",
+                              "articleRef": "ORNI — Art. 16"
+                      },
+                      {
+                              "question": "3. Qui exécute l'ORNI en règle générale selon l'Art. 17 ?",
+                              "options": [
+                                      "L'armée suisse",
+                                      "Les cantons (sous réserve des compétences fédérales de l'art. 18)",
+                                      "Interpol",
+                                      "Les compagnies privées d'assurance incendie"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 17 ORNI pose la règle générale : 'Les cantons exécutent la présente ordonnance sous réserve de l’art. 18'.",
+                              "articleRef": "ORNI — Art. 17"
+                      },
+                      {
+                              "question": "4. Quel office fédéral publie périodiquement la vue d'ensemble nationale de l'exposition au rayonnement selon l'Art. 19b al. 1 ?",
+                              "options": [
+                                      "L'Office fédéral de la statistique (OFS)",
+                                      "L'Office fédéral de l'environnement (OFEV)",
+                                      "L'Office fédéral de l'agriculture (OFAG)",
+                                      "La Banque nationale suisse (BNS)"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 19b al. 1 ORNI charge expressément l'OFEV de publier périodiquement la vue d'ensemble nationale de l'exposition de la population au rayonnement.",
+                              "articleRef": "ORNI — Art. 19b al. 1"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-3",
+              "nextLessonId": "rs-814-710-lecon-5"
+      },
 
+      {
+              "id": "rs-814-710-lecon-5",
+              "routeId": "rs-814-710/lecon-5",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 5,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 5",
+              "title": "Annexe 1 (Partie 1) : Réseau électrique, Transformateurs & NIBT",
+              "subtitle": "Lignes de transport > 1000 V, sous-stations, courant déterminant et conformité NIBT",
+              "articlesRange": "Annexe 1, ch. 1 à 5",
+              "status": "Disponible",
+              "duration": "10 min",
+              "tag": "Annexe 1 · Énergie électrique",
+              "xpReward": 30,
+              "objective": "Maîtriser les valeurs limites de l'installation de 1 µT pour les lignes de transport, transformateurs et chemins de fer, la définition du courant déterminant et le statut normatif de la NIBT.",
+              "introduction": "La **première partie de l'Annexe 1 (ch. 1 à 5)** constitue le cœur technique de l'ORNI pour les professionnels de la branche électrique suisse. Elle fixe la **valeur limite de l'installation de 1 µT** pour la densité de flux magnétique dans les LAUS, détaille les calculs de courant déterminant et consacre formellement la **NIBT (SN 411000)** comme état de la technique pour les installations domestiques.",
+              "contentSections": [
+                      {
+                              "title": "1. Lignes électriques de transport > 1000 V (Annexe 1 ch. 1)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 1 • Lignes aériennes et câbles HT</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application (ch. 11) :</strong> Installations à courant alternatif de <strong>tension nominale supérieure à 1000 V</strong> (lignes aériennes et câbles monoconducteurs dans tubes distincts).</li>\n  <li><strong>Définitions (ch. 12) :</strong> Conducteur de phase, terne (L1-L2-L3 ou U-V), zone de voisinage (espace où la densité de flux dépasse la VLI).</li>\n  <li><strong>Courant déterminant (ch. 13) :</strong> Courant permanent maximal admissible calculé à <strong>40 °C avec un vent de 0,5 m/s</strong> pour les lignes aériennes, et selon la norme <strong>IEC 60287</strong> pour les câbles souterrains. Respecté pendant au moins 98 % du temps sur l'année.</li>\n  <li><strong>Valeur limite de l'installation (ch. 14) :</strong> <strong>1 µT</strong> pour la valeur efficace de la densité de flux magnétique dans les lieux à utilisation sensible (LAUS).</li>\n  <li><strong>Assainissement (ch. 16) :</strong> Délai d'assainissement de <strong>3 ans au plus</strong> avec optimisation obligatoire de l'ordre des phases.</li>\n  <li><strong>Mesures interdites (ch. 17 al. 3) :</strong> Il est interdit de câbler ou de déplacer les ternes d'une tension nominale ≥ 220 kV ou à fréquence de 16,7 Hz.</li>\n</ul>"
+                      },
+                      {
+                              "title": "2. Stations de transformation, sous-stations et couplage (Annexe 1 ch. 2 et 3)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 2 & 3 • Postes de transformation et couplage</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Stations de transformation (ch. 2) :</strong> Transformation haute tension vers basse tension (HT -> BT). L'installation comprend toutes les parties conductrices, liaisons BT et distributeur BT inclus.</li>\n  <li><strong>Sous-stations et postes de couplage (ch. 3) :</strong> Transformation entre deux niveaux de haute tension (ex: 220 kV / 132 kV ou 50 kV).</li>\n  <li><strong>Mode d'exploitation déterminant :</strong> Exploitation à la <strong>puissance nominale</strong>.</li>\n  <li><strong>Valeur limite de l'installation (VLI) :</strong> <strong>1 µT</strong> pour la valeur efficace de la densité de flux magnétique dans les LAUS.</li>\n  <li><strong>Dérogations :</strong> Accordées si le détenteur prouve que toutes les mesures possibles ont été prises (blindages magnétiques, éloignement) et sont économiquement supportables.</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Installations électriques domestiques & Référence NIBT (Annexe 1 ch. 4)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 4 • Installations domestiques & Norme NIBT</div>\n<div class=\"legal-quote-box\">\n  <strong>Annexe 1 ch. 4 Installations électriques domestiques :</strong>\n  <br><strong>1.</strong> Les dispositions du présent chiffre s'appliquent aux installations domestiques au sens de l'art. 14 de la loi du 24 juin 1902 sur les installations électriques (LIE, RS 734.0), à l'exclusion du matériel électrique à connexion fixe et stationnaire connecté par prise.\n  <br><strong>2.</strong> Les installations domestiques doivent être réalisées selon l'état reconnu de la technique de manière à réduire autant que possible la densité de flux magnétique dans les lieux à utilisation sensible.\n  <br><strong>3.</strong> Sont en particulier considérées comme état reconnu de la technique les prescriptions de la <strong>norme sur les installations à basse tension (NIBT / SN 411000)</strong>.\n</div>"
+                      },
+                      {
+                              "title": "4. Chemins de fer à courant alternatif (Annexe 1 ch. 5)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 5 • Installations ferroviaires</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application (ch. 51 & 52) :</strong> Ligne de contact, installations de retour de courant de traction et mise à la terre.</li>\n  <li><strong>Mode d'exploitation déterminant (ch. 53) :</strong> Trafic voyageurs et fret avec courant injecté <strong>moyenné sur 24 heures</strong>.</li>\n  <li><strong>Valeur limite de l'installation (ch. 54) :</strong> <strong>1 µT</strong> moyennée sur 24 heures dans les LAUS.</li>\n  <li><strong>Conducteur de retour (ch. 55 al. 2 let. a & ch. 56) :</strong> Obligation d'installer un <strong>conducteur de retour au plus près des conducteurs d'alimentation</strong> pour compenser le champ magnétique par opposition de phase.</li>\n</ul>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Pose d'un tableau de distribution dans une maison",
+                      "text": "En application de l'Annexe 1 ch. 4 et de la NIBT, l'installateur évitera de placer le tableau principal de distribution ou la colonne montante immédiatement derrière la tête de lit d'une chambre à coucher (qui constitue un LAUS), afin de limiter le champ magnétique basse fréquence permanent."
+              },
+              "importantPoint": {
+                      "title": "Valeur universelle : 1 µT pour la basse fréquence (50 Hz)",
+                      "text": "Retenez ce chiffre fondamental pour tous vos examens électriques suisses : pour toutes les installations de production, transport et distribution d'énergie électrique (lignes, transformateurs, sous-stations, voies ferrées), la valeur limite de l'installation (VLI) est de 1 µT dans les LAUS !"
+              },
+              "synthesis": "La VLI pour les lignes > 1000 V, transformateurs, sous-stations et chemins de fer est de 1 µT dans les LAUS. Le courant déterminant est calculé à 40 °C avec vent de 0.5 m/s ou selon l'IEC 60287. Pour les installations domestiques, la conformité à la NIBT (SN 411000) vaut respect de l'état de la technique.",
+              "quiz": [
+                      {
+                              "question": "1. Quelle est la valeur limite de l'installation (VLI) pour les lignes électriques et transformateurs dans les LAUS (Annexe 1 ch. 14 et 24) ?",
+                              "options": [
+                                      "0,1 µT",
+                                      "1 µT (pour la valeur efficace de la densité de flux magnétique)",
+                                      "10 µT",
+                                      "100 µT"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 chiffres 14, 24 et 34 fixe uniformément la valeur limite de l'installation à 1 µT pour la valeur efficace de la densité de flux magnétique dans les LAUS.",
+                              "articleRef": "Annexe 1 ch. 14, 24, 34"
+                      },
+                      {
+                              "question": "2. Quelles conditions climatiques conventionnelles définissent le courant déterminant d'une ligne aérienne selon le ch. 13 al. 2 let. a ?",
+                              "options": [
+                                      "Température ambiante de 0 °C avec vent de 10 m/s",
+                                      "Température ambiante de 40 °C avec un vent de 0,5 m/s",
+                                      "Température ambiante de 20 °C sous pluie battante",
+                                      "Conditions de gel à -10 °C sans vent"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 13 al. 2 let. a définit le courant permanent maximal admissible calculé à une température ambiante de 40 °C avec un vent de 0,5 m/s.",
+                              "articleRef": "Annexe 1 ch. 13 al. 2 let. a"
+                      },
+                      {
+                              "question": "3. Quelle norme technique suisse est formellement consacrée comme état de la technique à l'Annexe 1 ch. 4 al. 3 pour les installations domestiques ?",
+                              "options": [
+                                      "La norme SIA 380/1",
+                                      "Les prescriptions de la norme sur les installations à basse tension (NIBT / SN 411000)",
+                                      "L'ordonnance sur les appareils à gaz",
+                                      "Le règlement de la SUVA sur le travail en hauteur"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 4 al. 3 ORNI énonce expressément que sont en particulier considérées comme état reconnu de la technique les prescriptions de la norme sur les installations à basse tension (NIBT).",
+                              "articleRef": "Annexe 1 ch. 4 al. 3"
+                      },
+                      {
+                              "question": "4. Quelle mesure technique spécifique est imposée aux chemins de fer pour réduire le champ magnétique (Annexe 1 ch. 55 et 56) ?",
+                              "options": [
+                                      "L'installation d'un conducteur de retour au plus près des conducteurs d'alimentation",
+                                      "L'arrêt complet de la circulation des trains de nuit",
+                                      "La réduction de la vitesse des convois à 20 km/h en gare",
+                                      "L'interdiction des locomotives électriques"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 1 ch. 55 al. 2 let. a et ch. 56 prescrit que l'installation soit munie d'un conducteur de retour installé aussi près que possible des conducteurs d'alimentation.",
+                              "articleRef": "Annexe 1 ch. 55 al. 2 & ch. 56"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-4",
+              "nextLessonId": "rs-814-710-lecon-6"
+      },
 
-{
-        id: "rs-814-710-orni",
-        routeId: "rs-814-710-orni",
-        code: "RS 814.710 - ORNI",
-        title: "RS 814.710 — Protection contre le rayonnement non ionisant",
-        subtitle: "Ordonnance du 23 décembre 1999 sur la protection contre le rayonnement non ionisant",
-        status: "En développement",
-        duration: "À venir",
-        tag: "Santé et environnement",
-        xpReward: 0,
-        objective: "Connaître les valeurs limites d'immission et les valeurs limites de l'installation pour les champs magnétiques à basse fréquence (50 Hz).",
-        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux sources officielles suisses.",
-        contentSections: [
-          {
-            title: "🔒 Contenu en préparation",
-            text: "La fiche technique relative à l'ORNI (RS 814.710) est en cours de structuration pédagogique."
-          }
+      {
+              "id": "rs-814-710-lecon-6",
+              "routeId": "rs-814-710/lecon-6",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 6,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 6",
+              "title": "Annexe 1 (Partie 2) : Téléphonie mobile, Radiodiffusion & Radars",
+              "subtitle": "Limites de champ électrique en V/m, formule du périmètre et antennes adaptatives",
+              "articlesRange": "Annexe 1, ch. 6 à 8",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Annexe 1 · Télécommunications",
+              "xpReward": 30,
+              "objective": "Maîtriser les valeurs limites d'installation en intensité de champ électrique (V/m), la formule du périmètre d'antennes et les règles régissant les antennes adaptatives 5G.",
+              "introduction": "La **seconde partie de l'Annexe 1 (ch. 6 à 8)** traite des installations émettrices de radiocommunication à haute fréquence (téléphonie mobile, radiodiffusion et radars). Les valeurs limites d'installation ne s'y expriment plus en microteslas (µT) mais en **volts par mètre (V/m)** pour l'intensité efficace de champ électrique.",
+              "contentSections": [
+                      {
+                              "title": "1. Stations émettrices de téléphonie mobile (Annexe 1 ch. 6)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 6 • Téléphonie cellulaire & Sans fil</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application (ch. 61) :</strong> Réseaux mobiles et liaisons sans fil. Sont exclues : liaisons à faisceaux hertziens, antennes intérieures avec ERP ≤ 6 W, et antennes émettant moins de 800 heures par an.</li>\n  <li><strong>Périmètre d'un groupe d'antennes (ch. 62 al. 4) :</strong> Surface horizontale formée de cercles de rayon <em>r</em> autour de chaque antenne :\n    <br><strong style=\"color:var(--electric-blue); font-size:1rem;\">r = F · √(ERP₉₀)</strong>\n    <br>• <strong>F = 2,63</strong> pour les fréquences autour de 900 MHz ou plus basses ;\n    <br>• <strong>F = 1,76</strong> pour les fréquences autour de 1800 MHz ou plus élevées ;\n    <br>• <strong>F = 2,10</strong> pour les autres gammes de fréquence ;\n    <br>• <strong>ERP₉₀ :</strong> puissance apparente rayonnée cumulée dans le secteur azimutal le plus émissif de 90°.</li>\n</ul>"
+                      },
+                      {
+                              "title": "2. Valeurs limites d'installation en téléphonie mobile (Annexe 1 ch. 64)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 64 • VLI en champ électrique (V/m)</div>\n<div class=\"legal-quote-box\">\n  <strong>Valeurs limites d’installation dans les LAUS (valeur efficace de champ électrique) :</strong>\n  <br>• <strong>4,0 V/m :</strong> pour les installations émettant exclusivement autour de <strong>900 MHz ou fréquences plus basses</strong> ;\n  <br>• <strong>6,0 V/m :</strong> pour les installations émettant exclusivement autour de <strong>1800 MHz ou fréquences plus élevées</strong> ;\n  <br>• <strong>5,0 V/m :</strong> pour toutes les autres installations (fréquences mixtes).\n</div>"
+                      },
+                      {
+                              "title": "3. Antennes adaptatives et facteur de correction KAA (Annexe 1 ch. 63)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 63 • Antennes adaptatives (Beamforming 5G)</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes antennes adaptatives adaptent automatiquement leur diagramme vers l'utilisateur. Pour les antennes possédant au moins 8 sous-ensembles (<em>sub arrays</em>) avec limitation automatique de puissance sur 6 minutes, un facteur de correction <strong>K<sub>AA</sub></strong> est appliqué à l'ERP maximale :\n</p>\n<table class=\"ocfo-norm-table\" style=\"margin-bottom:0.85rem;\">\n  <thead>\n    <tr>\n      <th>Nombre de sub arrays</th>\n      <th>Facteur de correction K<sub>AA</sub></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr><td>64 et plus</td><td><strong>≥ 0,10</strong></td></tr>\n    <tr><td>32 à 63</td><td><strong>≥ 0,13</strong></td></tr>\n    <tr><td>16 à 31</td><td><strong>≥ 0,20</strong></td></tr>\n    <tr><td>8 à 15</td><td><strong>≥ 0,40</strong></td></tr>\n  </tbody>\n</table>"
+                      },
+                      {
+                              "title": "4. Stations de radiodiffusion et radars (Annexe 1 ch. 7 et 8)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 1 ch. 7 & 8 • Émetteurs radio, TV et radars</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Radiodiffusion (ch. 74) :</strong> Émetteurs de plus de 6 W émettant ≥ 800 h/an :\n    <br>• <strong>8,5 V/m :</strong> pour les émetteurs à ondes longues et ondes moyennes ;\n    <br>• <strong>3,0 V/m :</strong> pour tous les autres émetteurs (FM, DAB+, télévision).</li>\n  <li><strong>Stations radars (ch. 84) :</strong> Émetteurs radars avec ERP moyenne > 6 W sur cycle de balayage (≥ 800 h/an) :\n    <br>• <strong>5,5 V/m :</strong> mesuré en tant que moyenne pendant un cycle de balayage complet.</li>\n</ul>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Détermination de la VLI d'une antenne mobile à 800 MHz et 2100 MHz",
+                      "text": "Lorsqu'une station émettrice combine simultanément plusieurs bandes de fréquences (ex: bande LTE 800 MHz et bande 5G à 2100 MHz), la valeur limite d'installation applicable dans les LAUS voisins est la valeur intermédiaire de 5,0 V/m selon le ch. 64 let. c."
+              },
+              "importantPoint": {
+                      "title": "Périmètre de protection : r = F · √(ERP90)",
+                      "text": "Cette formule permet aux autorités cantonales et communales de déterminer la zone de coordination spatiale dans laquelle deux groupes d'antennes doivent être évalués ensemble comme une seule et unique installation."
+              },
+              "synthesis": "Pour la téléphonie mobile, les VLI dans les LAUS sont de 4,0 V/m (≤ 900 MHz), 6,0 V/m (≥ 1800 MHz) et 5,0 V/m (autres fréquences). Le périmètre de coordination se calcule par r = F · √(ERP90). Les antennes adaptatives bénéficient de facteurs de correction KAA selon leurs sous-réseaux.",
+              "quiz": [
+                      {
+                              "question": "1. Quelle est la valeur limite de l'installation pour une antenne mobile émettant à 900 MHz (Annexe 1 ch. 64 let. a) ?",
+                              "options": [
+                                      "1,0 V/m",
+                                      "4,0 V/m",
+                                      "6,0 V/m",
+                                      "8,5 V/m"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 64 let. a fixe la VLI à 4,0 V/m pour les installations émettant exclusivement autour de 900 MHz ou fréquences plus basses.",
+                              "articleRef": "Annexe 1 ch. 64 let. a"
+                      },
+                      {
+                              "question": "2. Quelle est la VLI pour une station de téléphonie mobile émettant exclusivement à 1800 MHz ou plus (Annexe 1 ch. 64 let. b) ?",
+                              "options": [
+                                      "3,0 V/m",
+                                      "5,0 V/m",
+                                      "6,0 V/m",
+                                      "12,0 V/m"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "L'Annexe 1 ch. 64 let. b fixe la VLI à 6,0 V/m pour les installations émettant exclusivement autour de 1800 MHz ou dans des gammes plus élevées.",
+                              "articleRef": "Annexe 1 ch. 64 let. b"
+                      },
+                      {
+                              "question": "3. Quel est le facteur de correction KAA pour une antenne adaptative possédant 64 sous-ensembles (sub arrays) selon le ch. 63 al. 3 ?",
+                              "options": [
+                                      "≥ 0,10",
+                                      "≥ 0,40",
+                                      "≥ 0,75",
+                                      "1,00 (aucun facteur)"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "Le tableau du ch. 63 al. 3 ORNI attribue un facteur de correction KAA ≥ 0,10 pour les antennes adaptatives comportant 64 sub arrays et plus.",
+                              "articleRef": "Annexe 1 ch. 63 al. 3"
+                      },
+                      {
+                              "question": "4. Quelle est la VLI pour un émetteur de radiodiffusion FM ou télévision selon l'Annexe 1 ch. 74 let. b ?",
+                              "options": [
+                                      "1,0 V/m",
+                                      "3,0 V/m",
+                                      "5,5 V/m",
+                                      "8,5 V/m"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 74 let. b fixe la VLI à 3,0 V/m pour tous les émetteurs de radiodiffusion autres que les émetteurs à ondes longues et moyennes.",
+                              "articleRef": "Annexe 1 ch. 74 let. b"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-5",
+              "nextLessonId": "rs-814-710-lecon-7"
+      },
+
+      {
+              "id": "rs-814-710-lecon-7",
+              "routeId": "rs-814-710/lecon-7",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "lessonNumber": 7,
+              "totalLessons": 7,
+              "code": "RS 814.710 — Leçon 7",
+              "title": "Annexe 2 : Valeurs limites d’immissions & Sommation",
+              "subtitle": "Protection générale de la santé humaine, courants de contact et sommation de fréquences",
+              "articlesRange": "Annexe 2",
+              "status": "Disponible",
+              "duration": "10 min",
+              "tag": "Annexe 2 · Immissions globales",
+              "xpReward": 30,
+              "objective": "Comprendre les valeurs limites d'immissions générales pour l'ensemble du corps, les limites de courant de contact/fuite et la formule mathématique de sommation pour fréquences multiples.",
+              "introduction": "L'**Annexe 2 de l'ORNI** fixe les **valeurs limites d'immissions (VLI générales)** qui protègent la population suisse contre les effets thermiques et neurologiques avérés à court terme. Elles doivent être respectées partout où des personnes peuvent séjourner. L'Annexe définit également des formules strictes de sommation lorsque plusieurs fréquences se cumulent dans l'environnement.",
+              "contentSections": [
+                      {
+                              "title": "1. Valeurs limites d'immissions par gamme de fréquences (Annexe 2 ch. 11)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 2 ch. 11 • Seuils d'immissions corps entier</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes valeurs limites de l'Annexe 2 visent à empêcher tout effet biologique nocif (stimulation des tissus nerveux à basse fréquence et réchauffement thermique à haute fréquence) :\n</p>\n<table class=\"ocfo-norm-table\" style=\"margin-bottom:0.85rem;\">\n  <thead>\n    <tr>\n      <th>Fréquence</th>\n      <th>Champ électrique E (V/m)</th>\n      <th>Densité de flux B (µT)</th>\n      <th>Durée</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr><td>< 1 Hz</td><td>–</td><td>40 000 µT</td><td>Valeur max</td></tr>\n    <tr><td>8–25 Hz</td><td>10 000 V/m</td><td>5000 / f µT</td><td>Valeur max</td></tr>\n    <tr><td><strong>50 Hz (réseau suisse)</strong></td><td><strong>5 000 V/m</strong></td><td><strong>100 µT</strong> (5000/50)</td><td>Valeur max</td></tr>\n    <tr><td>10–400 MHz</td><td>28 V/m</td><td>0,092 µT</td><td>6 min</td></tr>\n    <tr><td>900 MHz (téléphonie)</td><td>41,25 V/m</td><td>0,138 µT</td><td>6 min</td></tr>\n    <tr><td>1800 MHz (téléphonie)</td><td>58,3 V/m</td><td>0,195 µT</td><td>6 min</td></tr>\n    <tr><td>2–10 GHz</td><td>61 V/m</td><td>0,20 µT</td><td>6 min</td></tr>\n  </tbody>\n</table>"
+                      },
+                      {
+                              "title": "2. Courants de fuite et courants de contact (Annexe 2 ch. 12 et 13)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 2 ch. 12 & 13 • Courants induits et de contact</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Courant de fuite traversant un membre (ch. 12) :</strong> Pour les fréquences de 10 à 110 MHz, la valeur limite d'immission est de <strong>45 mA</strong> pour la valeur efficace moyennée sur 6 minutes.</li>\n  <li><strong>Courant de contact (ch. 13) :</strong> Valeur limite efficace :\n    <br>• <strong>0,5 mA :</strong> pour f < 2,5 kHz (évite la sensation de choc douloureux) ;\n    <br>• <strong>0,2 · f mA :</strong> pour 2,5 kHz ≤ f ≤ 100 kHz ;\n    <br>• <strong>20 mA :</strong> pour 0,1 MHz à 110 MHz (évite les brûlures de contact).</li>\n</ul>"
+                      },
+                      {
+                              "title": "3. Immissions de fréquences multiples et sommation (Annexe 2 ch. 2)",
+                              "text": "<div class=\"legal-ref-badge\">🔎 Annexe 2 ch. 2 • Règles mathématiques de sommation</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLorsqu'un lieu est exposé simultanément à plusieurs sources de fréquences différentes :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Principe (ch. 21) :</strong> Les immissions sont déterminées séparément pour chaque fréquence, pondérées par un facteur spécifique et sommées.</li>\n  <li><strong>Règle d'or :</strong> La valeur limite d'immissions vaut <strong>1</strong> pour chaque somme calculée selon les formules des chiffres 221 à 225 :\n    <br><strong style=\"color:var(--accent-red); font-size:1.05rem;\">Somme pondérée ≤ 1</strong></li>\n  <li>Si la somme dépasse 1, l'autorité doit ordonner une limitation plus sévère conformément à l'Art. 5 al. 1.</li>\n</ul>"
+                      }
+              ],
+              "practicalExample": {
+                      "title": "Cas concret : Pourquoi 100 µT d'immission générale et 1 µT de VLI à 50 Hz ?",
+                      "text": "100 µT est la limite internationale (ICNIRP) en dessous de laquelle aucun effet nocif immédiat sur le système nerveux n'est scientifiquement constaté pour une personne traversant la rue. 1 µT est la limite préventive suisse (VLI) imposée pour protéger le sommeil et l'exposition chronique 24h/24 des habitants dans leurs logements."
+              },
+              "importantPoint": {
+                      "title": "Règle de sommation obligatoire",
+                      "text": "Le fait que chaque antenne ou chaque ligne respecte individuellement sa propre valeur limite ne suffit pas : la somme pondérée de toutes les fréquences présentes simultanément ne doit jamais excéder la valeur normalisée de 1 (Annexe 2 ch. 21 al. 3)."
+              },
+              "synthesis": "À 50 Hz, la valeur limite d'immission générale est de 100 µT (contre 1 µT pour la VLI dans les LAUS). L'Annexe 2 plafonne le courant de fuite à 45 mA et le courant de contact de 0.5 à 20 mA. Lorsque plusieurs fréquences coexistent, la somme normalisée des immissions ne doit jamais excéder 1.",
+              "quiz": [
+                      {
+                              "question": "1. À la fréquence industrielle de 50 Hz, quelle est la valeur limite d'immission générale selon l'Annexe 2 ch. 11 ?",
+                              "options": [
+                                      "1 µT",
+                                      "10 µT",
+                                      "100 µT (calculée par 5000 / 50)",
+                                      "1000 µT"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "Pour la fréquence de 50 Hz (plage 8-25 Hz / 0.025-0.8 kHz), la formule 5000 / f donne une valeur limite d'immission générale de 100 µT.",
+                              "articleRef": "Annexe 2 ch. 11"
+                      },
+                      {
+                              "question": "2. Quelle est la valeur limite d'immission pour le courant de fuite traversant un membre selon l'Annexe 2 ch. 12 ?",
+                              "options": [
+                                      "5 mA",
+                                      "45 mA (pour des fréquences de 10 à 110 MHz sur 6 minutes)",
+                                      "100 mA",
+                                      "500 mA"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 2 ch. 12 fixe la valeur limite d'immissions pour le courant électrique traversant un membre à 45 mA pour des fréquences de 10 à 110 MHz sur une durée d'appréciation de 6 minutes.",
+                              "articleRef": "Annexe 2 ch. 12"
+                      },
+                      {
+                              "question": "3. Quelle est la valeur limite du courant de contact pour les très basses fréquences (< 2,5 kHz) selon l'Annexe 2 ch. 13 ?",
+                              "options": [
+                                      "0,5 mA",
+                                      "10 mA",
+                                      "30 mA",
+                                      "50 mA"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 2 ch. 13 fixe la valeur limite du courant de contact à 0,5 mA pour les fréquences inférieures à 2,5 kHz.",
+                              "articleRef": "Annexe 2 ch. 13"
+                      },
+                      {
+                              "question": "4. Selon l'Annexe 2 ch. 21 al. 3, à quelle valeur maximale la somme pondérée des immissions de plusieurs fréquences doit-elle être inférieure ou égale ?",
+                              "options": [
+                                      "Elle ne doit pas dépasser 1",
+                                      "Elle ne doit pas dépasser 10",
+                                      "Elle ne doit pas dépasser 100",
+                                      "Il n'y a pas de limite pour le cumul"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 2 ch. 21 al. 3 dispose : 'La valeur limite d’immissions vaut 1 pour chaque somme calculée selon le ch. 22'. La somme ne doit donc jamais dépasser 1.",
+                              "articleRef": "Annexe 2 ch. 21 al. 3"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-6",
+              "nextLessonId": "rs-814-710-evaluation-finale"
+      },
+
+      {
+              "id": "rs-814-710-evaluation-finale",
+              "routeId": "rs-814-710/evaluation-finale",
+              "moduleId": "A",
+              "parcoursId": "rs-814-710",
+              "isFinalEvaluation": true,
+              "code": "RS 814.710 — EXAMEN",
+              "title": "Évaluation finale : Examen certifiant ORNI (RS 814.710)",
+              "subtitle": "Contrôle global des connaissances sur l'Ordonnance sur le rayonnement non ionisant",
+              "articlesRange": "Art. 1 à 21 & Annexes 1-2",
+              "status": "Disponible",
+              "duration": "20 min",
+              "tag": "Évaluation officielle",
+              "xpReward": 100,
+              "objective": "Valider l'assimilation globale de l'ORNI : champ d'application, LAUS, VLI à 1 µT, courants déterminants, règles de téléphonie mobile, NIBT et valeurs limites d'immissions.",
+              "introduction": "Bienvenue à l'<strong>Examen certifiant officiel RS 814.710 — ORNI</strong>. Cette évaluation comporte 16 questions à choix multiples balayant l'ensemble des 7 leçons du module. Une note minimale de 80 % est exigée pour obtenir l'attestation et remporter 100 XP.",
+              "contentSections": [
+                      {
+                              "title": "Instructions pour l'examen final",
+                              "text": "<div class=\"legal-ref-badge\">🎯 RS 814.710 • Validation certifiante</div>\n<p style=\"line-height:1.6; color:var(--text-secondary);\">\nCet examen officiel teste votre maîtrise complète des aspects juridiques et techniques de l'ORNI :\n<br>• Champ d'application et exclusions formelles (Art. 1 & 2) ;\n<br>• Définition stricte des lieux à utilisation sensible (LAUS) et statut des installations (Art. 3) ;\n<br>• Régime des émissions, assainissement et délais légaux (Art. 4 à 9) ;\n<br>• Fiche de données spécifique au site, obligations OFCOM et contrôles (Art. 10 à 12) ;\n<br>• Immissions générales et contraintes d'aménagement des zones à bâtir (Art. 13 à 21) ;\n<br>• Valeur limite de l'installation de 1 µT, courant déterminant et NIBT (Annexe 1 ch. 1 à 5) ;\n<br>• Téléphonie mobile, périmètre r et antennes adaptatives (Annexe 1 ch. 6 à 8) ;\n<br>• Valeurs limites d'immissions corps entier et formule de sommation (Annexe 2).\n</p>"
+                      }
+              ],
+              "practicalExample": "",
+              "importantPoint": "",
+              "synthesis": "L'ORNI est le pilier suisse de la protection de la population contre les champs électromagnétiques stationnaires. Maîtriser ses 21 articles et ses deux annexes est indispensable pour concevoir, installer et contrôler des ouvrages électriques conformes.",
+              "quiz": [
+                      {
+                              "question": "1. Quel est le but officiel de l'ORNI selon son Article 1 ?",
+                              "options": [
+                                      "Fixer le prix de vente de l'électricité basse tension en Suisse",
+                                      "Protéger l’homme contre le rayonnement non ionisant nuisible ou incommodant",
+                                      "Interdire totalement l'utilisation des smartphones en public",
+                                      "Remplacer les disjoncteurs différentiels par des fusibles"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 1 ORNI énonce expressément : 'La présente ordonnance a pour but de protéger l’homme contre le rayonnement non ionisant nuisible ou incommodant'.",
+                              "articleRef": "ORNI — Art. 1"
+                      },
+                      {
+                              "question": "2. Laquelle des sources suivantes est exclue du champ d'application de l'ORNI selon l'Art. 2 al. 2 ?",
+                              "options": [
+                                      "Une ligne aérienne de transport à 220 kV",
+                                      "Un transformateur de quartier 16 kV / 400 V",
+                                      "Un four micro-ondes ou un téléphone portable d'un particulier",
+                                      "Une sous-station électrique de couplage"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "L'Art. 2 al. 2 let. d ORNI exclut formellement les appareils électriques tels que les fours micro-ondes, cuisinières, outils électriques ou téléphones portables.",
+                              "articleRef": "ORNI — Art. 2 al. 2 let. d"
+                      },
+                      {
+                              "question": "3. Lequel des espaces suivants constitue un Lieu à Utilisation Sensible (LAUS) selon l'Art. 3 al. 3 ORNI ?",
+                              "options": [
+                                      "Une salle de séjour dans un logement d'habitation",
+                                      "Un parking souterrain non ventilé",
+                                      "Un local à vélos dans les sous-sols",
+                                      "Une cage d'ascenseur fermée"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Art. 3 al. 3 let. a ORNI classe comme LAUS les locaux à l'intérieur d'un bâtiment dans lesquels des personnes séjournent régulièrement durant une période prolongée.",
+                              "articleRef": "ORNI — Art. 3 al. 3 let. a"
+                      },
+                      {
+                              "question": "4. Quel est le délai d'assainissement de droit commun prévu par l'Art. 8 al. 1 si l'Annexe 1 ne fixe pas de durée spécifique ?",
+                              "options": [
+                                      "Un an au plus",
+                                      "Cinq ans au plus",
+                                      "Dix ans fermes",
+                                      "Vingt-cinq ans"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 8 al. 1 ORNI dispose que si l'annexe 1 ne contient pas de prescriptions, le délai d'assainissement est de cinq ans au plus.",
+                              "articleRef": "ORNI — Art. 8 al. 1"
+                      },
+                      {
+                              "question": "5. Quelles installations sont formellement dispensées d'établir une fiche spécifique au site selon l'Art. 11 al. 1 ORNI ?",
+                              "options": [
+                                      "Les installations de téléphonie mobile 5G",
+                                      "Les installations électriques domestiques (annexe 1 ch. 4)",
+                                      "Les lignes de transport à haute tension",
+                                      "Les stations radars météorologiques"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11 al. 1 ORNI précise expressément : 'Les installations électriques domestiques font exception (annexe 1, ch. 4)'.",
+                              "articleRef": "ORNI — Art. 11 al. 1"
+                      },
+                      {
+                              "question": "6. À quelle fréquence minimale les données réelles d'exploitation des stations de téléphonie mobile doivent-elles être transmises à l'OFCOM (Art. 11a al. 1 let. c) ?",
+                              "options": [
+                                      "Chaque jour à minuit",
+                                      "Au moins tous les 14 jours",
+                                      "Tous les 6 mois",
+                                      "Une fois tous les deux ans"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 11a al. 1 let. c ORNI impose la communication des données d'exploitation actuelles à l'OFCOM au moins tous les 14 jours.",
+                              "articleRef": "ORNI — Art. 11a al. 1 let. c"
+                      },
+                      {
+                              "question": "7. Que prescrit l'Art. 16 ORNI pour la création de nouvelles zones à bâtir ?",
+                              "options": [
+                                      "Toute construction est libre sans égard aux lignes électriques",
+                                      "Les zones à bâtir ne doivent être définies que là où les valeurs limites de l'installation (Annexe 1) sont respectées ou peuvent l'être",
+                                      "Il faut une dérogation ministérielle pour toute maison",
+                                      "Seules les zones industrielles peuvent accueillir des transformateurs"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Art. 16 ORNI pose le principe d'inconstructibilité dans les zones où la valeur limite de l'installation (Annexe 1) ne peut pas être respectée.",
+                              "articleRef": "ORNI — Art. 16"
+                      },
+                      {
+                              "question": "8. Quelle est la valeur limite de l'installation (VLI) pour une ligne aérienne ou un câble de transport > 1000 V dans un LAUS (Annexe 1 ch. 14) ?",
+                              "options": [
+                                      "0,5 µT",
+                                      "1 µT (valeur efficace de la densité de flux magnétique)",
+                                      "5 µT",
+                                      "100 µT"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 14 ORNI fixe la valeur limite de l'installation à 1 µT pour la valeur efficace de la densité de flux magnétique.",
+                              "articleRef": "Annexe 1 ch. 14"
+                      },
+                      {
+                              "question": "9. Quel est le délai d'assainissement maximal d'une ancienne ligne électrique dépassant la VLI selon l'Annexe 1 ch. 16 al. 2 ?",
+                              "options": [
+                                      "Trois ans au plus",
+                                      "Sept ans",
+                                      "Dix ans",
+                                      "Aucun délai n'est fixé"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 1 ch. 16 al. 2 ORNI prescrit expressément : 'Le délai d’assainissement au sens de l’art. 8, al. 1, est de trois ans au plus'.",
+                              "articleRef": "Annexe 1 ch. 16 al. 2"
+                      },
+                      {
+                              "question": "10. Quelle norme technique est expressément citée à l'Annexe 1 ch. 4 al. 3 comme état reconnu de la technique pour les installations domestiques ?",
+                              "options": [
+                                      "La norme allemande DIN VDE 0100",
+                                      "La norme sur les installations à basse tension (NIBT / SN 411000)",
+                                      "La norme NF C 15-100",
+                                      "Le code électrique américain NEC"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 4 al. 3 ORNI cite directement la norme sur les installations à basse tension (NIBT / SN 411000).",
+                              "articleRef": "Annexe 1 ch. 4 al. 3"
+                      },
+                      {
+                              "question": "11. Quelle exigence technique est imposée aux chemins de fer pour limiter le champ magnétique (Annexe 1 ch. 55 et 56) ?",
+                              "options": [
+                                      "L'installation d'un conducteur de retour au plus près des conducteurs d'alimentation",
+                                      "L'abaissement de la tension de ligne à 230 V",
+                                      "L'obligation de peindre les rails en blanc",
+                                      "Le remplacement des voies par du béton armé"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 1 ch. 55 al. 2 let. a et ch. 56 impose l'installation d'un conducteur de retour aussi près que possible des conducteurs d'alimentation.",
+                              "articleRef": "Annexe 1 ch. 55 al. 2 & ch. 56"
+                      },
+                      {
+                              "question": "12. Quelle est la VLI en champ électrique pour une antenne de téléphonie mobile émettant à 900 MHz (Annexe 1 ch. 64 let. a) ?",
+                              "options": [
+                                      "2,0 V/m",
+                                      "4,0 V/m",
+                                      "6,0 V/m",
+                                      "10,0 V/m"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 1 ch. 64 let. a fixe la VLI à 4,0 V/m pour les installations émettant autour de 900 MHz ou fréquences plus basses.",
+                              "articleRef": "Annexe 1 ch. 64 let. a"
+                      },
+                      {
+                              "question": "13. Quelle formule régit le calcul du rayon r du périmètre d'antennes de téléphonie selon le ch. 62 al. 4 ?",
+                              "options": [
+                                      "r = F · √(ERP90)",
+                                      "r = 2 · π · ERP",
+                                      "r = ERP / F²",
+                                      "r = 50 · F"
+                              ],
+                              "correctAnswer": 0,
+                              "explanation": "L'Annexe 1 ch. 62 al. 4 énonce la formule officielle : r = F · √(ERP90).",
+                              "articleRef": "Annexe 1 ch. 62 al. 4"
+                      },
+                      {
+                              "question": "14. Quelle est la valeur limite d'immission générale fixée à 50 Hz par l'Annexe 2 ch. 11 ?",
+                              "options": [
+                                      "1 µT",
+                                      "10 µT",
+                                      "100 µT (calculée selon 5000 / 50)",
+                                      "1000 µT"
+                              ],
+                              "correctAnswer": 2,
+                              "explanation": "À 50 Hz, la valeur limite d'immission générale pour la santé humaine est de 100 µT (contre 1 µT en VLI pour les LAUS).",
+                              "articleRef": "Annexe 2 ch. 11"
+                      },
+                      {
+                              "question": "15. Quelle est la limite d'immission pour le courant de fuite traversant un membre selon l'Annexe 2 ch. 12 ?",
+                              "options": [
+                                      "10 mA",
+                                      "45 mA (pour 10 à 110 MHz sur 6 minutes)",
+                                      "100 mA",
+                                      "300 mA"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "L'Annexe 2 ch. 12 fixe la limite pour le courant électrique traversant un membre à 45 mA pour les fréquences de 10 à 110 MHz.",
+                              "articleRef": "Annexe 2 ch. 12"
+                      },
+                      {
+                              "question": "16. Quel est le principe de la règle de sommation pour fréquences multiples selon l'Annexe 2 ch. 21 al. 3 ?",
+                              "options": [
+                                      "On ne retient que la fréquence la plus élevée sans additionner",
+                                      "La somme pondérée des quotients des immissions sur leurs limites ne doit jamais excéder 1",
+                                      "On additionne les puissances brutes sans tenir compte de la fréquence",
+                                      "La limite maximale est multipliée par le nombre d'émetteurs"
+                              ],
+                              "correctAnswer": 1,
+                              "explanation": "Selon l'Annexe 2 ch. 21 al. 3, la valeur limite d'immissions vaut 1 pour chaque somme calculée selon le ch. 22 : le cumul pondéré ne doit donc jamais dépasser 1.",
+                              "articleRef": "Annexe 2 ch. 21 al. 3"
+                      }
+              ],
+              "prevLessonId": "rs-814-710-lecon-7"
+      }
         ]
       }
     ]
@@ -4584,6 +5555,18 @@ export function findFormation(moduleId, formationId) {
 
   // Aliases pour rétrocompatibilité et accès fluide
   const aliases = {
+    'rs-814-710': 'rs-814-710-lecon-1',
+    'RS-814-710': 'rs-814-710-lecon-1',
+    'rs-814-710-orni': 'rs-814-710-lecon-1',
+    'orni': 'rs-814-710-lecon-1',
+    'rs-814-710-lecon-1': 'rs-814-710-lecon-1',
+    'rs-814-710-lecon-2': 'rs-814-710-lecon-2',
+    'rs-814-710-lecon-3': 'rs-814-710-lecon-3',
+    'rs-814-710-lecon-4': 'rs-814-710-lecon-4',
+    'rs-814-710-lecon-5': 'rs-814-710-lecon-5',
+    'rs-814-710-lecon-6': 'rs-814-710-lecon-6',
+    'rs-814-710-lecon-7': 'rs-814-710-lecon-7',
+    'rs-814-710-evaluation-finale': 'rs-814-710-evaluation-finale',
     'rs-734-27': 'rs-734-27-lecon-1',
     'RS-734-27': 'rs-734-27-lecon-1',
     'rs-734-27-oibt': 'rs-734-27-lecon-1',
