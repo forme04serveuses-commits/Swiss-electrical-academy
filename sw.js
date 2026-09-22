@@ -1,7 +1,7 @@
 // ELECBOOK | EBOOK — Service Worker V2.1
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'elecbook-v2.4.8-cache';
+const CACHE_NAME = 'elecbook-v2.4.9-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
