@@ -24,6 +24,7 @@ export function renderModuleView(container, moduleId) {
   const ocfoProgress = ProgressionService.getParcoursProgress('rs-734-2');
   const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
   const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
+  const completed = StorageService.getCompletedLessons();
 
   container.innerHTML = `
     <nav class="breadcrumb-nav" aria-label="Fil d'ariane">

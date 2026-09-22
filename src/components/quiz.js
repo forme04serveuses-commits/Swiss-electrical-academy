@@ -195,18 +195,24 @@ export function createQuizEngine(formation, onComplete) {
     }
 
     // Recommencer
-    container.querySelector('#btnRestartQuiz').addEventListener('click', () => {
-      currentIndex = 0;
-      userAnswers = {};
-      userMistakes = [];
-      currentScore = 0;
-      renderCurrentQuestion();
-    });
+    const btnRestart = container.querySelector('#btnRestartQuiz');
+    if (btnRestart) {
+      btnRestart.addEventListener('click', () => {
+        currentIndex = 0;
+        userAnswers = {};
+        userMistakes = [];
+        currentScore = 0;
+        renderCurrentQuestion();
+      });
+    }
 
     // Terminer
-    container.querySelector('#btnFinishLesson').addEventListener('click', () => {
-      if (onComplete) onComplete();
-    });
+    const btnFinish = container.querySelector('#btnFinishLesson');
+    if (btnFinish) {
+      btnFinish.addEventListener('click', () => {
+        if (onComplete) onComplete();
+      });
+    }
   }
 
   function renderReviewMistakes() {
@@ -241,9 +247,12 @@ export function createQuizEngine(formation, onComplete) {
       </div>
     `;
 
-    container.querySelector('#btnBackToScore').addEventListener('click', () => {
-      renderFinalScore();
-    });
+    const btnBack = container.querySelector('#btnBackToScore');
+    if (btnBack) {
+      btnBack.addEventListener('click', () => {
+        renderFinalScore();
+      });
+    }
   }
 
   renderCurrentQuestion();

@@ -99,13 +99,16 @@ export function renderProfileView(container) {
   });
 
   // Réinitialiser
-  container.querySelector('#btnResetProgress').addEventListener('click', () => {
-    if (confirm('Voulez-vous vraiment réinitialiser l\'ensemble de votre progression locale et vos XP ?')) {
-      localStorage.clear();
-      StorageService.setTheme(currentTheme);
-      alert('Progression réinitialisée.');
-      if (window.updateHeaderXp) window.updateHeaderXp();
-      location.hash = '#/';
-    }
-  });
+  const btnReset = container.querySelector('#btnResetProgress');
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      if (confirm('Voulez-vous vraiment réinitialiser l\'ensemble de votre progression locale et vos XP ?')) {
+        localStorage.clear();
+        StorageService.setTheme(currentTheme);
+        alert('Progression réinitialisée.');
+        if (window.updateHeaderXp) window.updateHeaderXp();
+        location.hash = '#/';
+      }
+    });
+  }
 }

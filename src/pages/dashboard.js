@@ -112,9 +112,12 @@ export function renderDashboard(container) {
   `;
 
   // Gestion du bouton Reprendre
-  container.querySelector('#btnResumeLearning').addEventListener('click', () => {
-    location.hash = `#/formations/${lastActivity.moduleId}/${lastActivity.formationId}`;
-  });
+  const btnResumeLearning = container.querySelector('#btnResumeLearning');
+  if (btnResumeLearning) {
+    btnResumeLearning.addEventListener('click', () => {
+      location.hash = `#/formations/${lastActivity.moduleId}/${lastActivity.formationId}`;
+    });
+  }
 
   // Gestion des clics sur cartes modules
   container.querySelectorAll('.btn-module-open, .module-card').forEach(el => {

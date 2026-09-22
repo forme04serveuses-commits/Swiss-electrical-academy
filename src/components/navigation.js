@@ -163,6 +163,7 @@ export function setupNavigation(container, onNavigate) {
   const networkLabel = container.querySelector('#networkLabel');
 
   function updateNetworkStatus() {
+    if (!networkPill || !networkLabel) return;
     if (navigator.onLine) {
       networkPill.classList.remove('offline');
       networkLabel.textContent = 'En ligne';
@@ -181,17 +182,19 @@ export function setupNavigation(container, onNavigate) {
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    btnInstall.style.display = 'inline-flex';
+    if (btnInstall) btnInstall.style.display = 'inline-flex';
   });
 
-  btnInstall.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log('[PWA] Choix utilisateur :', outcome);
-    deferredPrompt = null;
-    btnInstall.style.display = 'none';
-  });
+  if (btnInstall) {
+    btnInstall.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('[PWA] Choix utilisateur :', outcome);
+      deferredPrompt = null;
+      btnInstall.style.display = 'none';
+    });
+  }
 
   // Gestion du Thème cyclique basé sur une icône (Sombre 🌙 → Clair ☀️ → Système 🖥️ → Sombre 🌙)
   const THEME_MODES = {
@@ -278,12 +281,24 @@ export function setupNavigation(container, onNavigate) {
   }
 
   // Écouteur de changement de préférence système de l'OS (quand mode Système actif)
-  const systemSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  systemSchemeQuery.addEventListener('change', (e) => {
-    if (StorageService.getTheme() === 'system') {
-      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+  if (typeof window.matchMedia === 'function') {
+    const systemSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    if (systemSchemeQuery) {
+      if (systemSchemeQuery.addEventListener) {
+        systemSchemeQuery.addEventListener('change', (e) => {
+          if (StorageService.getTheme() === 'system') {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          }
+        });
+      } else if (systemSchemeQuery.addListener) {
+        systemSchemeQuery.addListener((e) => {
+          if (StorageService.getTheme() === 'system') {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          }
+        });
+      }
     }
-  });
+  }
 
   // Exposer globalement pour la vue profil
   window.applyAppTheme = function(theme, animate = false) {
@@ -293,14 +308,19 @@ export function setupNavigation(container, onNavigate) {
   // Toggle Sidebar sur mobile
   const sidebar = container.querySelector('#appSidebar');
   const btnToggleSidebar = container.querySelector('#btnToggleSidebar');
-  btnToggleSidebar.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-  });
+  if (btnToggleSidebar && sidebar) {
+    btnToggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  }
 
   // Profil click
-  container.querySelector('#headerProfileBtn').addEventListener('click', () => {
-    location.hash = '#/profil';
-  });
+  const headerProfileBtn = container.querySelector('#headerProfileBtn');
+  if (headerProfileBtn) {
+    headerProfileBtn.addEventListener('click', () => {
+      location.hash = '#/profil';
+    });
+  }
 
   // Mise à jour de l'indicateur XP
   window.updateHeaderXp = function() {
@@ -313,7 +333,7 @@ export function setupNavigation(container, onNavigate) {
   // Fermer la sidebar mobile lors d'un clic sur un lien
   container.querySelectorAll('.nav-link, .bottom-nav-item').forEach(link => {
     link.addEventListener('click', () => {
-      sidebar.classList.remove('open');
+      if (sidebar) sidebar.classList.remove('open');
     });
   });
 }

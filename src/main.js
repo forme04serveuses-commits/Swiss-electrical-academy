@@ -126,7 +126,7 @@ function initSEA() {
       // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
         const slug = segments[3].toLowerCase();
-        let targetId = `rs-734-0-${slug}`;
+        let targetId = slug.startsWith('rs-734-0-') ? slug : `rs-734-0-${slug}`;
         if (slug === 'evaluation-finale' || slug === 'examen') {
           targetId = 'rs-734-0-evaluation-finale';
         } else if (slug.startsWith('chapitre-')) {
@@ -142,7 +142,7 @@ function initSEA() {
       // Sous-routes pour le parcours RS 734.2 (ex: /formations/A/rs-734-2/chapitre-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
         const slug = segments[3].toLowerCase();
-        let targetId = `rs-734-2-${slug}`;
+        let targetId = slug.startsWith('rs-734-2-') ? slug : `rs-734-2-${slug}`;
         if (slug === 'evaluation-finale' || slug === 'examen') {
           targetId = 'rs-734-2-evaluation-finale';
         } else if (slug === 'annexes' || slug === 'annexes-1-4' || slug === 'chapitre-8' || slug === 'lecon-8') {
@@ -158,7 +158,7 @@ function initSEA() {
       // Sous-routes pour le parcours RS 734.27 (ex: /formations/A/rs-734-27/lecon-1 ou /lecon-2)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-27' || segments[2].toLowerCase() === 'oibt' || segments[2].toLowerCase() === 'rs-734-27-oibt')) {
         const slug = segments[3].toLowerCase();
-        let targetId = `rs-734-27-${slug}`;
+        let targetId = slug.startsWith('rs-734-27-') ? slug : `rs-734-27-${slug}`;
         if (slug === 'evaluation-finale' || slug === 'examen') {
           targetId = 'rs-734-27-evaluation-finale';
         } else if (slug.startsWith('chapitre-')) {
@@ -174,7 +174,7 @@ function initSEA() {
       // Sous-routes pour le parcours RS 814.710 (ex: /formations/A/rs-814-710/lecon-1 ou /lecon-2)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-814-710' || segments[2].toLowerCase() === 'orni' || segments[2].toLowerCase() === 'rs-814-710-orni')) {
         const slug = segments[3].toLowerCase();
-        let targetId = `rs-814-710-${slug}`;
+        let targetId = slug.startsWith('rs-814-710-') ? slug : `rs-814-710-${slug}`;
         if (slug === 'evaluation-finale' || slug === 'examen') {
           targetId = 'rs-814-710-evaluation-finale';
         } else if (slug.startsWith('chapitre-')) {
@@ -185,7 +185,7 @@ function initSEA() {
         return;
       }
 
-      const formationId = segments[2];
+      const formationId = segments.length >= 4 ? segments[segments.length - 1] : segments[2];
       renderLessonView(pageContainer, moduleId, formationId);
       setTimeout(() => {
         initOcfoAnnexe4Visual(pageContainer);

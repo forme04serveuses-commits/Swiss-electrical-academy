@@ -7839,18 +7839,24 @@
       }
 
       // Recommencer
-      container.querySelector('#btnRestartQuiz').addEventListener('click', () => {
-        currentIndex = 0;
-        userAnswers = {};
-        userMistakes = [];
-        currentScore = 0;
-        renderCurrentQuestion();
-      });
+      const btnRestart = container.querySelector('#btnRestartQuiz');
+      if (btnRestart) {
+        btnRestart.addEventListener('click', () => {
+          currentIndex = 0;
+          userAnswers = {};
+          userMistakes = [];
+          currentScore = 0;
+          renderCurrentQuestion();
+        });
+      }
 
       // Terminer
-      container.querySelector('#btnFinishLesson').addEventListener('click', () => {
-        if (onComplete) onComplete();
-      });
+      const btnFinish = container.querySelector('#btnFinishLesson');
+      if (btnFinish) {
+        btnFinish.addEventListener('click', () => {
+          if (onComplete) onComplete();
+        });
+      }
     }
 
     function renderReviewMistakes() {
@@ -7885,9 +7891,12 @@
         </div>
       `;
 
-      container.querySelector('#btnBackToScore').addEventListener('click', () => {
-        renderFinalScore();
-      });
+      const btnBack = container.querySelector('#btnBackToScore');
+      if (btnBack) {
+        btnBack.addEventListener('click', () => {
+          renderFinalScore();
+        });
+      }
     }
 
     renderCurrentQuestion();
@@ -8059,6 +8068,7 @@
     const networkLabel = container.querySelector('#networkLabel');
 
     function updateNetworkStatus() {
+      if (!networkPill || !networkLabel) return;
       if (navigator.onLine) {
         networkPill.classList.remove('offline');
         networkLabel.textContent = 'En ligne';
@@ -8077,17 +8087,19 @@
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      btnInstall.style.display = 'inline-flex';
+      if (btnInstall) btnInstall.style.display = 'inline-flex';
     });
 
-    btnInstall.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      console.log('[PWA] Choix utilisateur :', outcome);
-      deferredPrompt = null;
-      btnInstall.style.display = 'none';
-    });
+    if (btnInstall) {
+      btnInstall.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('[PWA] Choix utilisateur :', outcome);
+        deferredPrompt = null;
+        btnInstall.style.display = 'none';
+      });
+    }
 
     // Gestion du Thème cyclique basé sur une icône (Sombre 🌙 → Clair ☀️ → Système 🖥️ → Sombre 🌙)
     const THEME_MODES = {
@@ -8174,12 +8186,24 @@
     }
 
     // Écouteur de changement de préférence système de l'OS (quand mode Système actif)
-    const systemSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    systemSchemeQuery.addEventListener('change', (e) => {
-      if (StorageService.getTheme() === 'system') {
-        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    if (typeof window.matchMedia === 'function') {
+      const systemSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      if (systemSchemeQuery) {
+        if (systemSchemeQuery.addEventListener) {
+          systemSchemeQuery.addEventListener('change', (e) => {
+            if (StorageService.getTheme() === 'system') {
+              document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            }
+          });
+        } else if (systemSchemeQuery.addListener) {
+          systemSchemeQuery.addListener((e) => {
+            if (StorageService.getTheme() === 'system') {
+              document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            }
+          });
+        }
       }
-    });
+    }
 
     // Exposer globalement pour la vue profil
     window.applyAppTheme = function(theme, animate = false) {
@@ -8189,14 +8213,19 @@
     // Toggle Sidebar sur mobile
     const sidebar = container.querySelector('#appSidebar');
     const btnToggleSidebar = container.querySelector('#btnToggleSidebar');
-    btnToggleSidebar.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
+    if (btnToggleSidebar && sidebar) {
+      btnToggleSidebar.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+      });
+    }
 
     // Profil click
-    container.querySelector('#headerProfileBtn').addEventListener('click', () => {
-      location.hash = '#/profil';
-    });
+    const headerProfileBtn = container.querySelector('#headerProfileBtn');
+    if (headerProfileBtn) {
+      headerProfileBtn.addEventListener('click', () => {
+        location.hash = '#/profil';
+      });
+    }
 
     // Mise à jour de l'indicateur XP
     window.updateHeaderXp = function() {
@@ -8209,7 +8238,7 @@
     // Fermer la sidebar mobile lors d'un clic sur un lien
     container.querySelectorAll('.nav-link, .bottom-nav-item').forEach(link => {
       link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
+        if (sidebar) sidebar.classList.remove('open');
       });
     });
   }
@@ -8346,9 +8375,12 @@
     `;
 
     // Gestion du bouton Reprendre
-    container.querySelector('#btnResumeLearning').addEventListener('click', () => {
-      location.hash = `#/formations/${lastActivity.moduleId}/${lastActivity.formationId}`;
-    });
+    const btnResumeLearning = container.querySelector('#btnResumeLearning');
+    if (btnResumeLearning) {
+      btnResumeLearning.addEventListener('click', () => {
+        location.hash = `#/formations/${lastActivity.moduleId}/${lastActivity.formationId}`;
+      });
+    }
 
     // Gestion des clics sur cartes modules
     container.querySelectorAll('.btn-module-open, .module-card').forEach(el => {
@@ -8387,6 +8419,7 @@
     const ocfoProgress = ProgressionService.getParcoursProgress('rs-734-2');
     const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
     const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
+    const completed = StorageService.getCompletedLessons();
 
     container.innerHTML = `
       <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
@@ -9747,7 +9780,8 @@
             modal.classList.remove('active');
           };
 
-          modal.querySelector('.visual-lightbox-close').addEventListener('click', closeModal);
+          const closeBtn = modal.querySelector('.visual-lightbox-close');
+          if (closeBtn) closeBtn.addEventListener('click', closeModal);
           modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
           });
@@ -10097,15 +10131,18 @@
     });
 
     // Réinitialiser
-    container.querySelector('#btnResetProgress').addEventListener('click', () => {
-      if (confirm('Voulez-vous vraiment réinitialiser l\'ensemble de votre progression locale et vos XP ?')) {
-        localStorage.clear();
-        StorageService.setTheme(currentTheme);
-        alert('Progression réinitialisée.');
-        if (window.updateHeaderXp) window.updateHeaderXp();
-        location.hash = '#/';
-      }
-    });
+    const btnReset = container.querySelector('#btnResetProgress');
+    if (btnReset) {
+      btnReset.addEventListener('click', () => {
+        if (confirm('Voulez-vous vraiment réinitialiser l\'ensemble de votre progression locale et vos XP ?')) {
+          localStorage.clear();
+          StorageService.setTheme(currentTheme);
+          alert('Progression réinitialisée.');
+          if (window.updateHeaderXp) window.updateHeaderXp();
+          location.hash = '#/';
+        }
+      });
+    }
   }
 
 
@@ -10229,7 +10266,7 @@
         // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
           const slug = segments[3].toLowerCase();
-          let targetId = `rs-734-0-${slug}`;
+          let targetId = slug.startsWith('rs-734-0-') ? slug : `rs-734-0-${slug}`;
           if (slug === 'evaluation-finale' || slug === 'examen') {
             targetId = 'rs-734-0-evaluation-finale';
           } else if (slug.startsWith('chapitre-')) {
@@ -10245,7 +10282,7 @@
         // Sous-routes pour le parcours RS 734.2 (ex: /formations/A/rs-734-2/chapitre-1)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-2' || segments[2].toLowerCase() === 'ocfo')) {
           const slug = segments[3].toLowerCase();
-          let targetId = `rs-734-2-${slug}`;
+          let targetId = slug.startsWith('rs-734-2-') ? slug : `rs-734-2-${slug}`;
           if (slug === 'evaluation-finale' || slug === 'examen') {
             targetId = 'rs-734-2-evaluation-finale';
           } else if (slug === 'annexes' || slug === 'annexes-1-4' || slug === 'chapitre-8' || slug === 'lecon-8') {
@@ -10261,7 +10298,7 @@
         // Sous-routes pour le parcours RS 734.27 (ex: /formations/A/rs-734-27/lecon-1 ou /lecon-2)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-27' || segments[2].toLowerCase() === 'oibt' || segments[2].toLowerCase() === 'rs-734-27-oibt')) {
           const slug = segments[3].toLowerCase();
-          let targetId = `rs-734-27-${slug}`;
+          let targetId = slug.startsWith('rs-734-27-') ? slug : `rs-734-27-${slug}`;
           if (slug === 'evaluation-finale' || slug === 'examen') {
             targetId = 'rs-734-27-evaluation-finale';
           } else if (slug.startsWith('chapitre-')) {
@@ -10277,7 +10314,7 @@
         // Sous-routes pour le parcours RS 814.710 (ex: /formations/A/rs-814-710/lecon-1 ou /lecon-2)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-814-710' || segments[2].toLowerCase() === 'orni' || segments[2].toLowerCase() === 'rs-814-710-orni')) {
           const slug = segments[3].toLowerCase();
-          let targetId = `rs-814-710-${slug}`;
+          let targetId = slug.startsWith('rs-814-710-') ? slug : `rs-814-710-${slug}`;
           if (slug === 'evaluation-finale' || slug === 'examen') {
             targetId = 'rs-814-710-evaluation-finale';
           } else if (slug.startsWith('chapitre-')) {
@@ -10288,7 +10325,7 @@
           return;
         }
 
-        const formationId = segments[2];
+        const formationId = segments.length >= 4 ? segments[segments.length - 1] : segments[2];
         renderLessonView(pageContainer, moduleId, formationId);
         setTimeout(() => {
           initOcfoAnnexe4Visual(pageContainer);
@@ -10335,6 +10372,16 @@
     window.ProgressionService = ProgressionService;
     window.ACADEMY_MODULES = ACADEMY_MODULES;
     window.OFFICIAL_BADGES = OFFICIAL_BADGES;
+    window.renderDashboard = renderDashboard;
+    window.renderModuleView = renderModuleView;
+    window.renderLessonView = renderLessonView;
+    window.renderLieParcoursView = renderLieParcoursView;
+    window.renderOcfoParcoursView = renderOcfoParcoursView;
+    window.renderOibtParcoursView = renderOibtParcoursView;
+    window.renderOrniParcoursView = renderOrniParcoursView;
+    window.renderProgressView = renderProgressView;
+    window.renderTrainerView = renderTrainerView;
+    window.renderProfileView = renderProfileView;
   }
 
 })();

@@ -419,7 +419,8 @@ export function renderLessonView(container, moduleId, formationId) {
           modal.classList.remove('active');
         };
 
-        modal.querySelector('.visual-lightbox-close').addEventListener('click', closeModal);
+        const closeBtn = modal.querySelector('.visual-lightbox-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
           if (e.target === modal) closeModal();
         });
