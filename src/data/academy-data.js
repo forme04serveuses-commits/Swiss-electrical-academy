@@ -4963,8 +4963,6 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
               ],
               "prevLessonId": "rs-814-710-lecon-7"
       }
-        ]
-      }
     ]
   },
 
