@@ -1,7 +1,7 @@
 // ELECBOOK | EBOOK — Service Worker V2.1
 // Mode hors-ligne et mise en cache des actifs essentiels
 
-const CACHE_NAME = 'elecbook-v2.3.0-cache';
+const CACHE_NAME = 'elecbook-v2.4.0-cache';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -69,7 +69,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // Stratégie Réseau avec fallback sur Cache (Network First avec mise à jour du Cache)
-// Pour les fichiers statiques déjà mis en cache, Cache First avec revalidation
+// Garantit que les mises à jour GitHub Pages sont reçues immédiatement dès rafraîchissement
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
@@ -80,36 +80,26 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Pour les requêtes locales : Cache First avec Network Fallback
+  // Pour les requêtes locales : Network First avec fallback sur Cache
   if (url.origin === location.origin) {
     event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {
-        if (cachedResponse) {
-          // Revalider en arrière-plan
-          fetch(event.request).then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse.clone()));
-            }
-          }).catch(() => {/* Hors ligne, ignorer l'erreur */});
-          return cachedResponse;
-        }
-
-        return fetch(event.request).then((networkResponse) => {
-          if (!networkResponse || networkResponse.status !== 200) {
-            return networkResponse;
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseToCache));
           }
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
           return networkResponse;
-        }).catch(() => {
-          // Fallback hors-ligne pour la navigation HTML
-          if (event.request.headers.get('accept')?.includes('text/html')) {
-            return caches.match('./index.html');
-          }
-        });
-      })
+        })
+        .catch(() => {
+          // Hors ligne : servir depuis le cache
+          return caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) return cachedResponse;
+            if (event.request.headers.get('accept')?.includes('text/html')) {
+              return caches.match('./index.html');
+            }
+          });
+        })
     );
   } else {
     // Requêtes externes (ex: polices Google Fonts) : Network First avec cache

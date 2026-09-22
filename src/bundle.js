@@ -8435,8 +8435,19 @@
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-          .then((reg) => console.log('[SEA] Service Worker enregistré avec succès :', reg.scope))
+          .then((reg) => {
+            console.log('[SEA] Service Worker enregistré avec succès :', reg.scope);
+            reg.update();
+          })
           .catch((err) => console.warn('[SEA] Échec enregistrement Service Worker :', err));
+      });
+
+      let isRefreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!isRefreshing) {
+          isRefreshing = true;
+          window.location.reload();
+        }
       });
     }
 
