@@ -7063,10 +7063,10 @@
             Des définitions fondamentales aux 5 règles vitales d'intervention, avec la visualisation interactive de l'Annexe 4.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${ocfoPercentage}%;"></div>
+            <div class="progress-bar-fill" style="width: ${ocfoPercentage}%; background:#0284c7;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-            <button class="btn-continue" id="btnOpenOcfoHub" style="display:inline-flex; align-items:center; gap:0.5rem;">
+            <button class="btn-continue" id="btnOpenOcfoHub" onclick="location.hash='#/formations/A/rs-734-2'" style="display:inline-flex; align-items:center; gap:0.5rem; cursor:pointer;">
               <span>Explorer les 8 leçons (0/8 → 8/8)</span>
               <span>→</span>
             </button>

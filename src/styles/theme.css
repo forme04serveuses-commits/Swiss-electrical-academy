@@ -154,6 +154,9 @@
   --primary-hover: #0369A1;
   --primary-subtle: rgba(2, 132, 199, 0.08);
 
+  --electric-blue: #0284C7;
+  --electric-blue-light: #0369A1;
+
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.1);

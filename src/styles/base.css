@@ -2784,14 +2784,19 @@ button, input, select {
 
 /* Carte mise en avant sur la page Module A */
 .ocfo-featured-parcours-box {
-  background: linear-gradient(135deg, rgba(31, 61, 74, 0.45) 0%, rgba(15, 23, 42, 0.85) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(56, 189, 248, 0.04) 100%), var(--bg-surface);
+  border: 1px solid rgba(2, 132, 199, 0.28);
   border-radius: var(--radius-lg);
-  padding: var(--space-4);
+  padding: var(--space-4) var(--space-5);
   margin-bottom: var(--space-4);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
+}
+
+[data-theme="dark"] .ocfo-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%), var(--bg-surface);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 .ocfo-featured-top {
@@ -2800,50 +2805,86 @@ button, input, select {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .ocfo-featured-badge {
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--electric-blue);
-  font-size: 0.72rem;
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  padding: 0.25rem 0.65rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
   text-transform: uppercase;
 }
 
+[data-theme="dark"] .ocfo-featured-badge {
+  background: #38bdf8;
+  color: #042f2e;
+}
+
 .ocfo-featured-code {
+  font-family: monospace;
   font-weight: 800;
-  color: var(--text-primary);
-  font-size: 0.95rem;
+  color: #0284c7;
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .ocfo-featured-code {
+  color: #38bdf8;
 }
 
 .ocfo-featured-stats {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--electric-blue);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .ocfo-featured-title {
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .ocfo-featured-desc {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.55;
-  max-width: 720px;
-  margin-bottom: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-width: 780px;
 }
 
 .ocfo-card-accent {
-  border-left: 3px solid var(--electric-blue) !important;
+  border-left: 3px solid #0284c7 !important;
+}
+
+[data-theme="dark"] .ocfo-card-accent {
+  border-left: 3px solid #38bdf8 !important;
+}
+
+#btnOpenOcfoHub,
+#btnResumeOcfo {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#btnOpenOcfoHub:hover,
+#btnResumeOcfo:hover {
+  background-color: #0369a1;
+}
+
+[data-theme="dark"] #btnOpenOcfoHub,
+[data-theme="dark"] #btnResumeOcfo {
+  background-color: #38bdf8;
+  color: #042f2e;
+}
+
+[data-theme="dark"] #btnOpenOcfoHub:hover,
+[data-theme="dark"] #btnResumeOcfo:hover {
+  background-color: #7dd3fc;
 }
 
 /* En-tête Hub RS 734.2 (Section 7) */
