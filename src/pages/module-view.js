@@ -139,7 +139,7 @@ export function renderModuleView(container, moduleId) {
           <div class="progress-bar-fill" style="width: ${oibtPercentage}%; background:#10b981;"></div>
         </div>
         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <button class="btn-continue" id="btnOpenOibtHub" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700;">
+          <button class="btn-continue" id="btnOpenOibtHub" onclick="location.hash='#/formations/A/rs-734-27'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700; cursor:pointer;">
             <span>Explorer les 7 leçons OIBT (Art. 1 à 45 & Annexe)</span>
             <span>→</span>
           </button>
@@ -199,6 +199,14 @@ export function renderModuleView(container, moduleId) {
   if (btnOpenOcfoHub) {
     btnOpenOcfoHub.addEventListener('click', () => {
       location.hash = '#/formations/A/rs-734-2';
+    });
+  }
+
+  // Clic sur le bouton du parcours OIBT
+  const btnOpenOibtHub = container.querySelector('#btnOpenOibtHub');
+  if (btnOpenOibtHub) {
+    btnOpenOibtHub.addEventListener('click', () => {
+      location.hash = '#/formations/A/rs-734-27';
     });
   }
 
