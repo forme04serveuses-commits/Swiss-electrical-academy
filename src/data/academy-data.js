@@ -198,7 +198,7 @@ export const RS_734_0_INFO = {
     "summary": "16 questions représentatives d'examen couvrant les 11 parties de la loi. Seuil de réussite à 80% requis pour valider le module et obtenir le badge Expert LIE."
   },
   "totalLessons": 11,
-  "subtitle": "11 chapitres officiels · État au 1er avril 2026 · Structure officielle en 11 parties",
+  "subtitle": "11 leçons officielles · État au 1er avril 2026 · Structure officielle en 11 parties",
   "tag": "Loi fédérale",
   "fullTitle": "Loi fédérale concernant les installations électriques à faible et à fort courant (LIE)"
 };

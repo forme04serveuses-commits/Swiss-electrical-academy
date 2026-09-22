@@ -273,7 +273,7 @@ export function renderLessonView(container, moduleId, formationId) {
         <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
           ${isLie ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-              ← Sommaire des 11 chapitres LIE
+              ← Sommaire des 11 leçons LIE
             </button>
           ` : isOcfo ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-2'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
