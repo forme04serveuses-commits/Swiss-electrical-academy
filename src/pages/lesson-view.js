@@ -175,8 +175,8 @@ export function renderLessonView(container, moduleId, formationId) {
           <section class="case-study-box" aria-label="Exemple pratique">
             <div class="box-icon">⚡</div>
             <div>
-              <div class="box-title">Exemple pratique (Exemple pédagogique)</div>
-              <div class="box-text">${formation.practicalExample}</div>
+              <div class="box-title">${typeof formation.practicalExample === 'object' && formation.practicalExample.title ? formation.practicalExample.title : 'Exemple pratique (Exemple pédagogique)'}</div>
+              <div class="box-text">${typeof formation.practicalExample === 'object' ? formation.practicalExample.text : formation.practicalExample}</div>
             </div>
           </section>
         ` : ''}
@@ -186,8 +186,8 @@ export function renderLessonView(container, moduleId, formationId) {
           <section class="important-box" aria-label="Point important">
             <div class="box-icon">⚠️</div>
             <div>
-              <div class="box-title">Règle incontournable & sécurité</div>
-              <div class="box-text">${formation.importantPoint}</div>
+              <div class="box-title">${typeof formation.importantPoint === 'object' && formation.importantPoint.title ? formation.importantPoint.title : 'Règle incontournable & sécurité'}</div>
+              <div class="box-text">${typeof formation.importantPoint === 'object' ? formation.importantPoint.text : formation.importantPoint}</div>
             </div>
           </section>
         ` : ''}

@@ -3467,3 +3467,90 @@ button, input, select {
   margin-bottom: 0.85rem;
   max-width: 780px;
 }
+
+/* ==========================================================================
+   Distinction formelle Section 7 : Texte légal / Explication / À retenir / Référence
+   ========================================================================== */
+.legal-text-card {
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-left: 4px solid #10b981;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.85rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+.legal-text-card .legal-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #10b981;
+  margin-bottom: 0.4rem;
+}
+
+.explanation-card {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-left: 4px solid var(--electric-blue);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.85rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.explanation-card .explanation-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--electric-blue);
+  margin-bottom: 0.4rem;
+}
+
+.to-remember-card {
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin: 0.85rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.to-remember-card .to-remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f59e0b;
+  margin-bottom: 0.4rem;
+}
+
+.legal-ref-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 0.78rem;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+}
