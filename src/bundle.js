@@ -6057,7 +6057,7 @@
         <section class="ocfo-featured-parcours-box" aria-labelledby="ocfoFeaturedTitle">
           <div class="ocfo-featured-top">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <span class="ocfo-featured-badge">PARCOURS OFFICIEL</span>
+              <span class="ocfo-featured-badge">ORDONNANCE</span>
               <span class="ocfo-featured-code">RS 734.2 — OCFo</span>
             </div>
             <span class="ocfo-featured-stats">${ocfoCompletedCount} / 8 leçons · ${ocfoPercentage}%</span>
