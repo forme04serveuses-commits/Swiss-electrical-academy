@@ -7067,7 +7067,7 @@
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
             <button class="btn-continue" id="btnOpenOcfoHub" onclick="location.hash='#/formations/A/rs-734-2'" style="display:inline-flex; align-items:center; gap:0.5rem; cursor:pointer;">
-              <span>Explorer les 8 leçons (0/8 → 8/8)</span>
+              <span>Explorer les 8 leçons</span>
               <span>→</span>
             </button>
           </div>
