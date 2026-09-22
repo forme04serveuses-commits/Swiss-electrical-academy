@@ -6033,7 +6033,7 @@
         <section class="lie-featured-parcours-box" aria-labelledby="lieFeaturedTitle">
           <div class="lie-featured-top">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <span class="lie-featured-badge">LOI FÉDÉRALE SUPRÊME</span>
+              <span class="lie-featured-badge">LOI FÉDÉRALE</span>
               <span class="lie-featured-code">RS 734.0 — LIE</span>
             </div>
             <span class="lie-featured-stats">${lieCompletedCount} / 11 chapitres · ${liePercentage}%</span>
