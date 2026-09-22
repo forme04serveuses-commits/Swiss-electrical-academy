@@ -538,7 +538,7 @@
             }
           ]
         },
-                          // ======================================================================
+                                // ======================================================================
         // RS 734.0 — LIE : Loi fédérale sur les installations électriques
         // Parcours officiel structuré en 11 leçons conformes aux 11 parties du texte légal
         // (24 juin 1902, état au 1er avril 2026, Art. 1 à 64)
@@ -560,6 +560,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Maîtriser les principes fondateurs de la LIE : haute surveillance de la Confédération, critère de dangerosité séparant le faible et le fort courant, arbitrage du DETEC et régime des émoluments.",
+                "introduction": "La <strong>Loi fédérale concernant les installations électriques à faible et à fort courant (LIE — RS 734.0)</strong> du 24 juin 1902 (état au 1<sup>er</sup> avril 2026) constitue le fondement juridique suprême régissant la sécurité, la planification et l'exploitation des installations électriques en Suisse. Son <strong>Chapitre I (Dispositions générales — Art. 1 à 3b)</strong> place l'ensemble du secteur sous la haute surveillance de la Confédération, définit le critère légal de distinction entre faible et fort courant fondé sur la dangerosité pour les personnes ou les choses, et encadre le régime des émoluments perçus pour les décisions et prestations officielles.",
                 "contentSections": [
                         {
                                 "title": "Introduction & Rôle fondamental de la LIE",
@@ -637,6 +638,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Identifier avec exactitude les 3 cas où une installation à faible courant tombe sous le coup de la LIE, comprendre l'application de la procédure d'approbation des plans et connaître le statut des articles 5 à 12 abrogés.",
+                "introduction": "Le <strong>Chapitre II de la LIE (Art. 4 à 12)</strong> encadre les installations à faible courant, caractérisées par des courants n'offrant normalement aucun danger corporel ou matériel. La loi réserve l'intervention fédérale aux situations spécifiques où ces lignes empruntent le domaine public ou ferroviaire (Art. 4), ou lorsqu'elles risquent d'interférer avec des ouvrages à fort courant. Cette leçon met en évidence la coexistence physique des réseaux de télécommunication et d'énergie, ainsi que l'historique des dispositions abrogées lors de la libéralisation du marché des télécoms.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 4 — Les 3 critères d'assujettissement du faible courant à la LIE",
@@ -707,6 +709,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Maîtriser le champ d'assujettissement universel du fort courant, la frontière légale des installations intérieures (Art. 14), et appliquer rigoureusement les principes de câblage souterrain en distribution (Art. 15b) et transport (Art. 15c).",
+                "introduction": "Pilier technique fondamental du droit électrique suisse, le <strong>Chapitre III de la LIE (Art. 13 à 15d)</strong> s'applique à toute installation produisant ou utilisant des courants susceptibles de présenter un danger. Il impose une conception et une exploitation strictement conformes aux règles reconnues de la sécurité et de la technique, assujettit les installations intérieures aux prescriptions fédérales et consacre le principe moderne de primauté du câblage souterrain pour les lignes à très haute tension, équilibrant impératifs techniques, protection du paysage et coûts économiques.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 13 et 14 — Champ d'application et définition des installations intérieures",
@@ -781,6 +784,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Comprendre les étapes et les compétences de la procédure de plan sectoriel pour les grands projets de lignes à très haute tension (≥ 220 kV) reliant la production au réseau national.",
+                "introduction": "Introduit pour moderniser et accélérer le développement des infrastructures énergétiques, le <strong>Chapitre IIIa (Art. 15e à 15k)</strong> régit la procédure fédérale de plan sectoriel pour les lignes de transport à très haute tension (tension nominale ≥ 220 kV). Sous le pilotage de l'Office fédéral de l'énergie (OFEN) et avec la participation étroite d'un groupe d'accompagnement cantonal, cette démarche territoriale stratégique arrête le corridor de tracé et la technologie de ligne (aérienne ou souterraine) bien avant toute demande d'approbation des plans.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 15e et 15f — Champ d'application et assujettissement",
@@ -851,6 +855,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Comprendre et maîtriser la procédure d'approbation des plans (permis de construire fédéral des installations électriques), la portée de l'effet de concentration (Art. 16b) et la distinction entre procédure ordinaire, simplifiée et dispense.",
+                "introduction": "Le <strong>Chapitre IIIb de la LIE (Art. 16 à 17a)</strong> régit l'approbation des plans, véritable autorisation de construire fédérale indispensable pour toute création ou modification d'installation électrique à courant fort. Reposant sur le principe d'effet de concentration du droit fédéral, cette procédure coordonnée réunit en une seule décision l'ensemble des autorisations fédérales et cantonales requises. Cette leçon détaille les rôles respectifs de l'ESTI et de l'OFEN, la procédure simplifiée pour les ouvrages secondaires, le traitement des oppositions et les voies de recours.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 16 — Principe général et autorités compétentes",
@@ -941,6 +946,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Comprendre les instruments de sauvegarde foncière préventive de la LIE (zones réservées et alignements) et leur régime d'indemnisation financière pour expropriation matérielle.",
+                "introduction": "Le <strong>Chapitre IIIc (Art. 18 à 18d)</strong> met à disposition de la Confédération et des gestionnaires de réseau deux outils de planification spatiale protecteurs : les zones réservées et les alignements. Ces servitudes de droit public permettent de geler l'affectation des terrains nécessaires aux futurs ouvrages électriques et d'empêcher les constructions incompatibles avec la sécurité d'exploitation. La leçon traite des durées maximales de validité, des restrictions au droit de propriété et du droit à une indemnisation équitable en cas d'expropriation matérielle.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 18 — Fixation des zones réservées",
@@ -1011,6 +1017,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Distinguer sans équivoque la responsabilité de surveillance de l'exploitant de celle des organes d'inspection officiels, maîtriser les attributions de l'ESTI et le cadre de contrôle des installations intérieures.",
+                "introduction": "La remarquable sécurité des réseaux électriques suisses repose sur l'organisation des contrôles instaurée par le <strong>Chapitre IV de la LIE (Art. 19 à 26a)</strong>. La loi consacre une responsabilité en cascade : surveillance continue et autocontrôle par les exploitants de réseau (Art. 19), contrôles périodiques indépendants délégués (OIBT), et haute surveillance assurée par l'Inspection fédérale des installations à courant fort (ESTI) sous la tutelle de l'OFEN. La leçon explicite également l'obligation légale de déclaration sans délai des accidents graves et les compétences consultatives de l'office fédéral.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 20 — Responsabilité première de surveillance de l'exploitant",
@@ -1085,6 +1092,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Maîtriser le régime civil suisse de responsabilité causale objective lié à l'électricité, identifier les conditions d'exonération draconiennes, la prescription et la nullité absolue des clauses limitatives.",
+                "introduction": "Le <strong>Chapitre V (Art. 27 à 41)</strong> instaure l'un des régimes juridiques les plus protecteurs du droit suisse : la responsabilité civile causale objective de l'exploitant d'une installation à courant fort. L'exploitant répond de plein droit des dommages corporels et matériels provoqués par l'électricité sans qu'une faute doive être prouvée. La leçon détaille les motifs très stricts de libération (force majeure, faute exclusive de la victime ou d'un tiers), l'obligation impérative d'assurance responsabilité civile (Art. 38) et les délais légaux de prescription.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 27 — Le principe fondamental de la responsabilité causale objective",
@@ -1159,6 +1167,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Identifier les bénéficiaires et les conditions d'exercice du droit d'expropriation pour les infrastructures de réseau électrique et comprendre le renvoi vers la Loi fédérale sur l'expropriation (LEx).",
+                "introduction": "Considérant l'approvisionnement électrique comme un intérêt public national prépondérant, le <strong>Chapitre VI de la LIE (Art. 42 à 54)</strong> octroie aux exploitants le droit d'expropriation pour les ouvrages nécessaires au transport et à la distribution de l'énergie. Renvoyant directement à la Loi fédérale sur l'expropriation (LEx), cette leçon expose l'acquisition des droits réels (servitudes de passage de ligne, emprises de pylônes), la fixation de la pleine indemnité et la prérogative légale d'accès d'urgence aux fonds voisins en cas d'avarie (Art. 47 LIE).",
                 "contentSections": [
                         {
                                 "title": "1. Art. 43 à 45 — Titulaires et exercice du droit d'expropriation",
@@ -1229,6 +1238,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Connaître le barème précis des sanctions pénales prévues par la LIE, les comportements réprimés (construction sans permis, mise en service dangereuse), et l'application du Droit pénal administratif (DPA).",
+                "introduction": "Pour assurer l'application effective des normes de sécurité, le <strong>Chapitre VII (Art. 55 à 60)</strong> réprime pénalement les infractions et manquements graves aux dispositions de la LIE. Qu'il s'agisse de violations intentionnelles ou par négligence, la loi prévoit des peines d'amende pouvant s'élever jusqu'à 100 000 CHF. Cette leçon détaille l'articulation avec la Loi fédérale sur le droit pénal administratif (DPA), la responsabilité pénale au sein des entreprises et la répartition des compétences de poursuite entre l'OFEN et les tribunaux cantonaux.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 55 — Les infractions et le barème des peines d'amende",
@@ -1299,6 +1309,7 @@
                 "tag": "Loi fédérale",
                 "xpReward": 30,
                 "objective": "Comprendre l'historique et les dispositions transitoires de la LIE, le traitement des dossiers d'approbation des plans pendants et la pérennité du socle légal électrique suisse.",
+                "introduction": "Le <strong>Chapitre VIII de la LIE (Art. 61 à 64)</strong> clôt la loi par ses dispositions finales. Il régit l'abrogation des anciennes législations cantonales et fédérales, garantit la sécurité juridique par des dispositions transitoires protégeant les installations existantes conformes et confère au Conseil fédéral la délégation de compétence pour édicter les ordonnances d'exécution (OCFo, OIBT, OTEM, etc.). Cette leçon résume également les réformes contemporaines intégrées dans le texte légal jusqu'à son état officiel en vigueur au 1<sup>er</sup> avril 2026.",
                 "contentSections": [
                         {
                                 "title": "1. Art. 61 à 64 — Abrogations et droit transitoire",
@@ -1368,6 +1379,7 @@
                 "tag": "Évaluation officielle",
                 "xpReward": 100,
                 "objective": "Valider formellement la maîtrise globale de la Loi fédérale sur les installations électriques (RS 734.0, état au 1er avril 2026).",
+                "introduction": "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie de la <strong>Loi fédérale sur les installations électriques (LIE — RS 734.0)</strong>, état au 1<sup>er</sup> avril 2026. Composée de 16 questions d'examen rigoureuses à choix multiples, elle couvre l'intégralité des 11 chapitres de la loi : surveillance fédérale, délimitation faible/fort courant, plans sectoriels et approbation des plans, zones réservées, contrôles officiels ESTI, responsabilité civile causale objective, expropriation et droit pénal de l'électricité. Un score minimal de 75 % (12/16) est requis pour réussir la certification et obtenir vos 100 XP.",
                 "contentSections": [
                         {
                                 "title": "Instructions pour l'évaluation finale",
@@ -6615,10 +6627,12 @@
           </section>
 
           <!-- Introduction -->
+          ${formation.introduction ? `
           <section class="content-article" aria-label="Introduction">
             <div class="section-title">Introduction</div>
             <div class="section-body">${formation.introduction}</div>
           </section>
+          ` : ''}
 
           <!-- Bloc Vidéo Pédagogique (si présent) -->
           ${formation.video ? `

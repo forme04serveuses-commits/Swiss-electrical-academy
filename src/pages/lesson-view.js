@@ -126,10 +126,12 @@ export function renderLessonView(container, moduleId, formationId) {
         </section>
 
         <!-- Introduction -->
+        ${formation.introduction ? `
         <section class="content-article" aria-label="Introduction">
           <div class="section-title">Introduction</div>
           <div class="section-body">${formation.introduction}</div>
         </section>
+        ` : ''}
 
         <!-- Bloc Vidéo Pédagogique (si présent) -->
         ${formation.video ? `
