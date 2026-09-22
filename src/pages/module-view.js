@@ -97,9 +97,9 @@ export function renderModuleView(container, moduleId) {
           </div>
           <span class="ocfo-featured-stats">${ocfoProgress.lessonsCompleted} / ${ocfoProgress.lessonsTotal} leçons · ${ocfoProgress.percentageFormatted}</span>
         </div>
-        <h2 id="ocfoFeaturedTitle" class="ocfo-featured-title">Ordonnance sur les installations électriques à courant fort</h2>
+        <h2 id="ocfoFeaturedTitle" class="ocfo-featured-title">Ordonnance sur les installations électriques à courant fort (OCFo)</h2>
         <p class="ocfo-featured-desc">
-          Parcours complet restructuré fidèlement en 8 leçons (les 7 chapitres légaux et la Leçon 8 regroupant les Annexes 1 à 4).
+          Parcours complet restructuré fidèlement en 8 leçons (les 7 chapitres légaux et la Leçon 8 regroupant les Annexes 1 à 4 · État au 1er juin 2019).
           Des définitions fondamentales aux 5 règles vitales d'intervention, avec la visualisation interactive de l'Annexe 4.
         </p>
         <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
@@ -303,13 +303,13 @@ export function renderOcfoParcoursView(container) {
     <!-- Header Hero Card OCFo (Section 7) -->
     <header class="ocfo-hub-hero" role="region" aria-label="En-tête du parcours RS 734.2">
       <div class="ocfo-hub-badge-row">
-        <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE</span>
+        <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE · COURANT FORT</span>
         <span class="ocfo-hub-ref">RS 734.2</span>
       </div>
 
       <div class="ocfo-hub-title-row">
         <div>
-          <div class="ocfo-hub-short">OCFo</div>
+          <div class="ocfo-hub-short">OCFo (du 30 mars 1994 · État au 1er juin 2019)</div>
           <h1 class="ocfo-hub-title">Ordonnance sur les installations électriques à courant fort</h1>
         </div>
       </div>
@@ -320,7 +320,7 @@ export function renderOcfoParcoursView(container) {
 
       <div class="ocfo-hub-progress-card">
         <div class="progress-labels">
-          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours</span>
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours OCFo</span>
           <span style="font-weight:800; color:var(--electric-blue); font-size:1rem;">
             ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
           </span>

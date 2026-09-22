@@ -204,13 +204,14 @@ export const RS_734_0_INFO = {
 };
 
 // Informations officielles et structure en 7 chapitres de la RS 734.2 (OCFo)
+// Source de vérité : 734.2_OCFo.pdf (30 mars 1994, état au 1er juin 2019, RO 1994 1199)
 export const RS_734_2_INFO = {
   id: "rs-734-2",
   code: "RS 734.2",
   shortCode: "OCFo",
   title: "Ordonnance sur les installations électriques à courant fort",
-  subtitle: "7 chapitres officiels · Sécurité, règles de l'art, contrôles et travaux",
-  description: "Réglementation fédérale suisse du Conseil fédéral fixant les exigences de sécurité applicables à l'établissement, à l'exploitation et à l'entretien de toutes les installations à courant fort en Suisse.",
+  subtitle: "8 leçons officielles · État au 1er juin 2019 · Structure officielle complète et Annexes 1 à 4",
+  description: "Ordonnance du Conseil fédéral du 30 mars 1994 sur les installations électriques à courant fort (État le 1er juin 2019). Réglementation fédérale suisse fixant les exigences de sécurité applicables à l'établissement, à l'exploitation et à l'entretien de toutes les installations à courant fort en Suisse.",
   tag: "Ordonnance fédérale",
   totalChapters: 8,
   chapters: [

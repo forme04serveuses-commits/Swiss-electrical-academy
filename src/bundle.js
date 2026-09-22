@@ -209,13 +209,14 @@
   };
 
   // Informations officielles et structure en 7 chapitres de la RS 734.2 (OCFo)
+  // Source de vérité : 734.2_OCFo.pdf (30 mars 1994, état au 1er juin 2019, RO 1994 1199)
   const RS_734_2_INFO = {
     id: "rs-734-2",
     code: "RS 734.2",
     shortCode: "OCFo",
     title: "Ordonnance sur les installations électriques à courant fort",
-    subtitle: "7 chapitres officiels · Sécurité, règles de l'art, contrôles et travaux",
-    description: "Réglementation fédérale suisse du Conseil fédéral fixant les exigences de sécurité applicables à l'établissement, à l'exploitation et à l'entretien de toutes les installations à courant fort en Suisse.",
+    subtitle: "8 leçons officielles · État au 1er juin 2019 · Structure officielle complète et Annexes 1 à 4",
+    description: "Ordonnance du Conseil fédéral du 30 mars 1994 sur les installations électriques à courant fort (État le 1er juin 2019). Réglementation fédérale suisse fixant les exigences de sécurité applicables à l'établissement, à l'exploitation et à l'entretien de toutes les installations à courant fort en Suisse.",
     tag: "Ordonnance fédérale",
     totalChapters: 8,
     chapters: [
@@ -8492,9 +8493,9 @@
             </div>
             <span class="ocfo-featured-stats">${ocfoProgress.lessonsCompleted} / ${ocfoProgress.lessonsTotal} leçons · ${ocfoProgress.percentageFormatted}</span>
           </div>
-          <h2 id="ocfoFeaturedTitle" class="ocfo-featured-title">Ordonnance sur les installations électriques à courant fort</h2>
+          <h2 id="ocfoFeaturedTitle" class="ocfo-featured-title">Ordonnance sur les installations électriques à courant fort (OCFo)</h2>
           <p class="ocfo-featured-desc">
-            Parcours complet restructuré fidèlement en 8 leçons (les 7 chapitres légaux et la Leçon 8 regroupant les Annexes 1 à 4).
+            Parcours complet restructuré fidèlement en 8 leçons (les 7 chapitres légaux et la Leçon 8 regroupant les Annexes 1 à 4 · État au 1er juin 2019).
             Des définitions fondamentales aux 5 règles vitales d'intervention, avec la visualisation interactive de l'Annexe 4.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
@@ -8698,13 +8699,13 @@
       <!-- Header Hero Card OCFo (Section 7) -->
       <header class="ocfo-hub-hero" role="region" aria-label="En-tête du parcours RS 734.2">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE</span>
+          <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE · COURANT FORT</span>
           <span class="ocfo-hub-ref">RS 734.2</span>
         </div>
 
         <div class="ocfo-hub-title-row">
           <div>
-            <div class="ocfo-hub-short">OCFo</div>
+            <div class="ocfo-hub-short">OCFo (du 30 mars 1994 · État au 1er juin 2019)</div>
             <h1 class="ocfo-hub-title">Ordonnance sur les installations électriques à courant fort</h1>
           </div>
         </div>
@@ -8715,7 +8716,7 @@
 
         <div class="ocfo-hub-progress-card">
           <div class="progress-labels">
-            <span style="font-weight:700; color:var(--text-primary);">Progression du parcours</span>
+            <span style="font-weight:700; color:var(--text-primary);">Progression du parcours OCFo</span>
             <span style="font-weight:800; color:var(--electric-blue); font-size:1rem;">
               ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
