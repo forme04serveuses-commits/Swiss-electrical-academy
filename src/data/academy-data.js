@@ -92,7 +92,7 @@ export const PYRAMIDE_LOIS_INFO = {
     {
       id: "pyr-01",
       slug: "lecon-1",
-      number: "I",
+      number: "1",
       code: "PYR-01",
       title: "Histoire et Genèse des Lois Électriques (1888–1902)",
       subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
@@ -103,7 +103,7 @@ export const PYRAMIDE_LOIS_INFO = {
     {
       id: "pyr-02",
       slug: "lecon-2",
-      number: "II",
+      number: "2",
       code: "PYR-02",
       title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
       subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
@@ -114,7 +114,7 @@ export const PYRAMIDE_LOIS_INFO = {
     {
       id: "pyr-03",
       slug: "lecon-3",
-      number: "III",
+      number: "3",
       code: "PYR-03",
       title: "Règles Techniques et Organismes d'Application",
       subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
@@ -125,7 +125,7 @@ export const PYRAMIDE_LOIS_INFO = {
     {
       id: "pyr-04",
       slug: "lecon-4",
-      number: "IV",
+      number: "4",
       code: "PYR-04",
       title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
       subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
