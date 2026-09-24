@@ -54,7 +54,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
   const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
   const totalEsti221 = isEsti221 ? ProgressionService.getParcoursProgress('esti-221').lessonsTotal : 4;
-  const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 7;
+  const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 13;
 
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
@@ -391,7 +391,7 @@ export function renderLessonView(container, moduleId, formationId) {
             </button>
           ` : isEsti407 ? `
             <button class="btn-continue" onclick="location.hash='#/formations/E/esti-407'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-              ← Sommaire des 7 leçons ESTI 407
+              ← Sommaire des 13 leçons ESTI 407
             </button>
           ` : `
             <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">

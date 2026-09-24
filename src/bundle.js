@@ -618,84 +618,126 @@
     "code": "ESTI 407",
     "title": "Directive ESTI n° 407",
     "shortTitle": "ESTI 407",
-    "description": "Directive ESTI n° 407 / Version 0526 — Activités sur des installations électriques ou à proximité de celles-ci (Valable dès le 1er mai 2026). Référentiel officiel suisse fixant les règles de sécurité, les qualifications professionnelles, les 4 procédures de travail, la méthode S-T-O-P, les distances limites et les 4 niveaux de protection contre les arcs électriques.",
+    "description": "Directive ESTI n° 407 / Version 0526 — Activités sur des installations électriques ou à proximité de celles-ci (Valable dès le 1er mai 2026). Référentiel officiel suisse structuré en 13 chapitres : champ d'application universel, but, bases légales, ouvrages de référence, 3 objectifs de protection, obligations, définitions, principes généraux et méthode STOP, mesurage et essais, les 4 procédures de travail, courant continu, équipements de protection individuelle et études de cas pratiques.",
     "lessons": [
       {
         "id": "esti-407-lecon-1",
         "slug": "lecon-1",
         "number": "1",
-        "title": "Chapitres A à 7 — Cadre légal, champ d'application et obligations de sécurité",
-        "sectionsRange": "Chapitres A à 7",
-        "duration": "8 min",
-        "summary": "Entrée en vigueur au 01.05.2026, champ d'application universel (TBT, BT, HT, DC), bases légales (LIE, LAA, OPA, OCFo, OIBT, OLEI), 3 objectifs de protection impératifs et responsabilités juridiques."
+        "title": "Chapitre 1 — Champ d'application",
+        "sectionsRange": "Chapitre 1",
+        "duration": "7 min",
+        "summary": "Le Chapitre 1 établit le périmètre universel de la Directive ESTI n° 407 (Version 0526). Elle s'applique à tous les niveaux de tension, du continu à l'alternatif, et autorise les entreprises à adapter leurs mesures de protection à leurs spécificités sans déroger aux principes fondamentaux."
       },
       {
         "id": "esti-407-lecon-2",
         "slug": "lecon-2",
         "number": "2",
-        "title": "Chapitres 8.1 & 8.2 — Principes de sécurité, méthode S-T-O-P et qualification du personnel",
-        "sectionsRange": "Chapitres 8.1 & 8.2",
-        "duration": "9 min",
-        "summary": "Évaluation obligatoire des risques (SN EN 50110-1), méthode STOP, limites du système (Tableau 1), les 3 parcours d'accès au statut de personne compétente (Tableau 2), personne instruite, qualifiée et avertie."
+        "title": "Chapitre 2 — But",
+        "sectionsRange": "Chapitre 2",
+        "duration": "6 min",
+        "summary": "Le Chapitre 2 explicite la finalité de la directive : définir les exigences minimales nécessaires à la protection de la sécurité et de la santé des personnes au travail, en cohérence avec les règles fédérales et européennes."
       },
       {
         "id": "esti-407-lecon-3",
         "slug": "lecon-3",
         "number": "3",
-        "title": "Chapitres 8.3 à 8.5 — Organisation, surveillances et détermination des distances",
-        "sectionsRange": "Chapitres 8.3 à 8.5",
-        "duration": "8 min",
-        "summary": "Mandats clairs, droit d'objection pour raison de sécurité, surveillance de zone vs particulière, distance ergonomique (E), majoration d'équipement (L) et Tableau 3 officiel des distances DL et DV."
+        "title": "Chapitre 3 — Bases légales et normatives",
+        "sectionsRange": "Chapitre 3",
+        "duration": "9 min",
+        "summary": "Le Chapitre 3 recense l'ensemble du socle juridique et normatif applicable aux activités électriques en Suisse. Il détaille les articles de la LIE, de la LAA, de l'OCFo et de l'OIBT ainsi que les normes européennes homologuées."
       },
       {
         "id": "esti-407-lecon-4",
         "slug": "lecon-4",
         "number": "4",
-        "title": "Chapitres 9, 10.1, 10.3 & 11 — Procédures d'exploitation, arbres décisionnels & courant continu",
-        "sectionsRange": "Chapitres 9, 10.1, 10.3, 11",
-        "duration": "9 min",
-        "summary": "Mesurages, essais et vérifications. Processus commande vs travail (art. 66 OCFo), arbres décisionnels BT et HT, réduction du risque BT (fusibles gR/gTr) et risques majeurs du courant continu (absence d'extinction au zéro)."
+        "title": "Chapitre 4 — Ouvrages de référence",
+        "sectionsRange": "Chapitre 4",
+        "duration": "6 min",
+        "summary": "Le Chapitre 4 liste les guides professionnels, recommandations internationales et dépliants de sécurité qui complètent la directive pour l'évaluation des risques et la protection thermique contre les arcs électriques."
       },
       {
         "id": "esti-407-lecon-5",
         "slug": "lecon-5",
         "number": "5",
-        "title": "Chapitre 10.2 — Les quatre procédures de travail (Hors tension, Voisinage, TST)",
-        "sectionsRange": "Chapitre 10.2",
-        "duration": "10 min",
-        "summary": "Procédure 1 (5 règles de sécurité, dérogation BT, détecteurs EN 61243), Procédure 2 (maintien de DWV), Procédure 3 (écrans IP2X/IPXXB ou IP3X/IPXXC) et Procédure 4 (distinction suisse Tst 1 seul sans modif vs Tst 2 à deux avec modifications)."
+        "title": "Chapitre 5 — Objectifs de protection",
+        "sectionsRange": "Chapitre 5",
+        "duration": "7 min",
+        "summary": "Le Chapitre 5 définit les trois objectifs de protection cardinaux qui doivent obligatoirement être garantis lors de toute activité : empêcher le passage de courant, protéger contre l'énergie de l'arc et prévenir les dommages consécutifs."
       },
       {
         "id": "esti-407-lecon-6",
         "slug": "lecon-6",
         "number": "6",
-        "title": "Chapitre 12 — Équipements de protection individuelle (EPI) & Niveaux de protection",
-        "sectionsRange": "Chapitre 12",
-        "duration": "9 min",
-        "summary": "Normes des EPI (EN 61482, EN 50365, GS-ET-29, EN 60903, EN 60900), Box-test vs Arc ouvert (interdiction de combiner), Tableau 7 des 4 niveaux suisses de protection contre les arcs et limitation du courant coupé ID."
+        "title": "Chapitre 6 — Obligations",
+        "sectionsRange": "Chapitre 6",
+        "duration": "8 min",
+        "summary": "Le Chapitre 6 explicite la répartition des responsabilités juridiques entre propriétaires, exploitants, employeurs et exécutants. Il consacre le droit d'objection et le devoir impératif d'interrompre une opération en cas de danger non maîtrisé."
       },
       {
         "id": "esti-407-lecon-7",
         "slug": "lecon-7",
         "number": "7",
-        "title": "Chapitre 13 — Exigences pratiques & Études de cas illustrées (BT & HT)",
+        "title": "Chapitre 7 — Définitions",
+        "sectionsRange": "Chapitre 7",
+        "duration": "8 min",
+        "summary": "Le Chapitre 7 établit la terminologie normalisée : qualifications professionnelles, géométrie des zones électriques autour des pièces nues sous tension et classification des activités."
+      },
+      {
+        "id": "esti-407-lecon-8",
+        "slug": "lecon-8",
+        "number": "8",
+        "title": "Chapitre 8 — Principes généraux",
+        "sectionsRange": "Chapitre 8",
+        "duration": "14 min",
+        "summary": "Le Chapitre 8 est le cœur méthodologique de la directive : évaluation préalable des risques, méthode STOP, limites d'intervention, critères de qualification du personnel, organisation de chantier, types de surveillances et tableau officiel des distances DL et DV."
+      },
+      {
+        "id": "esti-407-lecon-9",
+        "slug": "lecon-9",
+        "number": "9",
+        "title": "Chapitre 9 — Procédures d'exploitation",
+        "sectionsRange": "Chapitre 9",
+        "duration": "8 min",
+        "summary": "Le Chapitre 9 encadre les opérations d'exploitation technique : le mesurage électrique, les essais de mise en service et les vérifications réglementaires, avec un accent rigoureux sur la sécurité des instruments de mesure."
+      },
+      {
+        "id": "esti-407-lecon-10",
+        "slug": "lecon-10",
+        "number": "10",
+        "title": "Chapitre 10 — Procédures de travail",
+        "sectionsRange": "Chapitre 10",
+        "duration": "15 min",
+        "summary": "Le Chapitre 10 détaille les processus décisionnels en basse et haute tension, l'application rigoureuse des 4 procédures de travail de l'ESTI et les mesures de limitation d'énergie d'arc (fusibles gR/gTr)."
+      },
+      {
+        "id": "esti-407-lecon-11",
+        "slug": "lecon-11",
+        "number": "11",
+        "title": "Chapitre 11 — Installations en courant continu",
+        "sectionsRange": "Chapitre 11",
+        "duration": "7 min",
+        "summary": "Le Chapitre 11 traite des risques majeurs propres aux installations en courant continu (DC) : photovoltaïque, stockage stationnaire par batteries et réseaux de traction, où l'absence de passage par zéro amplifie la gravité des arcs électriques."
+      },
+      {
+        "id": "esti-407-lecon-12",
+        "slug": "lecon-12",
+        "number": "12",
+        "title": "Chapitre 12 — Équipement de protection individuelle (EPI)",
+        "sectionsRange": "Chapitre 12",
+        "duration": "12 min",
+        "summary": "Le Chapitre 12 définit les exigences techniques relatives aux EPI contre les dangers électriques : normes de conformité, méthodes d'essai d'arc, classification suisse en 4 niveaux de protection et courants coupés admissibles."
+      },
+      {
+        "id": "esti-407-lecon-13",
+        "slug": "lecon-13",
+        "number": "13",
+        "title": "Chapitre 13 — Exemples pratiques d'évaluation des risques",
         "sectionsRange": "Chapitre 13",
-        "duration": "10 min",
-        "summary": "Liste de contrôle terrain en 8 points, matrices d'exigences BT et HT, analyses étape par étape de cas concrets (coffrets abonnés, compteurs, fusibles HPC, armoires ouvertes, cellules MT SN EN CEI 62271-200)."
+        "duration": "15 min",
+        "summary": "Le Chapitre 13 est le guide d'application pratique de la directive. Il propose une liste de contrôle en 8 étapes et passe en revue des dizaines de situations professionnelles réelles en basse et haute tension."
       }
-    ],
-    "finalEvaluation": {
-      "id": "esti-407-evaluation-finale",
-      "slug": "evaluation-finale",
-      "title": "Évaluation finale — Directive ESTI n° 407",
-      "sectionsRange": "Chapitres 1 à 13",
-      "duration": "20 min",
-      "summary": "10 questions représentatives d'examen validant la maîtrise intégrale de la directive ESTI 407 (Version 0526). Score minimal de 80% (8/10) requis pour valider le module et débloquer le badge Expert ESTI 407."
-    },
-    "totalLessons": 7,
-    "subtitle": "7 leçons officielles · Version 0526 · Valable dès le 1er mai 2026",
-    "tag": "Directive ESTI",
-    "fullTitle": "Directive ESTI n° 407 — Activités sur des installations électriques ou à proximité de celles-ci"
+    ]
   };
 
   const ACADEMY_MODULES = [
@@ -6012,7 +6054,7 @@
       id: "E",
       code: "E",
       title: "ESTI directives",
-      countLabel: "13 unités (2 directives disponibles)",
+      countLabel: "21 unités (2 directives disponibles)",
       description: "Directives de l'Inspection fédérale des installations à courant fort (ESTI) précisant les obligations de sécurité, d'autorisation et de contrôle technique.",
       badgeTheme: "esti",
       formations: [
@@ -6444,632 +6486,1133 @@
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 1,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 1",
-          "title": "Chapitres A à 7 — Cadre légal, champ d'application et obligations de sécurité",
-          "subtitle": "Entrée en vigueur, bases légales LIE/LAA/OPA/OCFo/OIBT, objectifs de protection et responsabilités juridiques",
-          "sectionsRange": "Chapitres A à 7",
+          "title": "Chapitre 1 — Champ d'application",
+          "subtitle": "Périmètre universel de la directive, niveaux de tension et règles d'adaptation en entreprise",
+          "sectionsRange": "Chapitre 1",
           "status": "Disponible",
-          "duration": "8 min",
+          "duration": "7 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Maîtriser le champ d'application universel de la directive ESTI 407, les bases légales suisses applicables, les 3 objectifs de protection impératifs et les responsabilités juridiques des exploitants, employeurs et travailleurs.",
-          "introduction": "La <strong>Directive ESTI n° 407 (Version 0526)</strong>, édictée par l'Inspection fédérale des installations à courant fort ESTI avec la contribution d'EIT.swiss, Electrosuisse, de la Suva, de l'AES et de l'ASCE, entre en vigueur le <strong>1<sup>er</sup> mai 2026</strong> en remplacement de la version 0720. Elle constitue le texte suisse de référence régissant la sécurité de toutes les activités exécutées sur ou à proximité d'installations électriques.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "La directive est valable pour toutes les activités effectuées sur des installations électriques ou à proximité de celles-ci.",
+                  "Elle couvre tous les niveaux de tension : très basse tension (TBT), basse tension (BT) et haute tension (HT / MT / THT).",
+                  "Elle s'applique de manière égale aux installations en courant alternatif (AC) et en courant continu (DC).",
+                  "Entrée en vigueur le 1er mai 2026, avec une période transitoire d'un an avec l'ancienne version 0720."
+          ],
+          "summary": "Le Chapitre 1 établit le périmètre universel de la Directive ESTI n° 407 (Version 0526). Elle s'applique à tous les niveaux de tension, du continu à l'alternatif, et autorise les entreprises à adapter leurs mesures de protection à leurs spécificités sans déroger aux principes fondamentaux.",
           "contentSections": [
                   {
-                          "title": "1. Chapitres A, 1 & 2 — Entrée en vigueur, statut réglementaire & champ d'application",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres A, 1 & 2 • Statut officiel & Champ d'application</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa présente directive entre en vigueur le <strong>1<sup>er</sup> mai 2026</strong>. Une <strong>période transitoire d'un an</strong> à compter de sa publication permet d'exécuter les activités selon l'ancienne directive n° 407 / version 0720.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Champ d'application universel :</strong> La directive est valable pour toutes les activités effectuées sur des installations électriques ou à proximité de celles-ci et relevant de l'<strong>Ordonnance sur le courant fort (RS 734.2)</strong> ou de l'<strong>Ordonnance sur les installations à basse tension (OIBT ; RS 734.27)</strong>. Elle s'applique <em>par analogie à toutes les autres installations électriques</em>.\n</p>\n<div class=\"ocfo-summary-box\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"box-title\">⚡ NIVEAUX DE TENSION & COURANT CONTINU</div>\n  Cela inclut les installations de <strong>tous les niveaux de tension</strong> : très basse tension (courant fort), basse tension et haute tension (englobant la moyenne et la très haute tension). Les mesures de protection applicables aux installations exploitées en <strong>courant continu (DC)</strong> sont exactement les mêmes que pour le <strong>courant alternatif (AC)</strong>.\n</div>"
+                          "title": "1.1 Domaine d'application universel et niveaux de tension",
+                          "badge": "Champ universel",
+                          "content": "<p>La Directive ESTI n° 407 s'applique à <strong>toutes les activités effectuées sur des installations électriques ou à proximité de celles-ci</strong>, ainsi que par analogie à toutes les autres installations électriques en Suisse.</p><div class=\"legal-callout\"><p><strong>Périmètre complet des tensions couvertes :</strong></p><ul><li><strong>Très basse tension (TBT / courant fort) :</strong> installations de commande, photovoltaïque basse tension, batteries.</li><li><strong>Basse tension (BT) :</strong> installations d'usage, tertiaires et industrielles (≤ 1 000 V AC / ≤ 1 500 V DC).</li><li><strong>Haute tension (HT) :</strong> englobe la moyenne tension (MT), la haute tension et la très haute tension (THT jusqu'à 700 kV).</li><li><strong>Courant continu (DC) :</strong> les mesures de protection sont pleinement applicables aux réseaux et installations à courant continu.</li></ul></div>"
                   },
                   {
-                          "title": "2. Chapitres 3, 4 & 5 — Bases légales, normes & 3 objectifs de protection impératifs",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 3, 4 & 5 • Fondements juridiques & Protection</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Niveau réglementaire</th>\n        <th style=\"width:70%;\">Textes et normes de référence</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Lois et ordonnances</strong></td>\n        <td>LIE (RS 734.0), LAA (RS 832.20), OPA (RS 832.30), Ordonnance sur le courant fort (RS 734.2), OMBT (RS 734.26), OIBT (RS 734.27), OLEI (RS 734.31), OEPI (RS 930.115).</td>\n      </tr>\n      <tr>\n        <td><strong>Normes majeures</strong></td>\n        <td>SN EN 50110-1:2023 (Exploitation), SN EN 50365 (Casques), SN EN 61482-1-2 / -2 (Vêtements arc), SN EN 60903 (Gants isolants), SN EN 60900 (Outils isolés), NIBT (SN 411000:2025).</td>\n      </tr>\n      <tr>\n        <td><strong>Ouvrages de référence</strong></td>\n        <td>ISSA (EPI arc & qualification), DGUV 203-077, GS-ET-29, Manuel de sécurité AES, publications Suva 66138, 88814 et 84042 (5+5 règles vitales).</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-warning-box\">\n  <strong>🎯 Les 3 objectifs de protection impératifs (Chapitre 5) :</strong><br>\n  1. <strong>Protection contre le passage du courant à travers le corps</strong> (électrisation) ;<br>\n  2. <strong>Protection contre les arcs électriques</strong> (chaleur, rayonnement, éblouissement) ;<br>\n  3. <strong>Protection contre les dommages consécutifs</strong> (chute de hauteur, incendie, projection, panique).\n</div>"
+                          "title": "1.2 Règles d'adaptation par les entreprises & Principe de non-régression",
+                          "badge": "Adaptation entreprise",
+                          "content": "<p>Les entreprises peuvent adapter les mesures de protection de la présente directive aux spécificités de chaque installation, <strong>à la condition stricte que cela ne contrevienne pas aux principes fondamentaux</strong> de la directive.</p><p>Ces règles sont fondées sur la législation fédérale en vigueur et <em>ne peuvent être complétées que par des prescriptions équivalentes ou plus restrictives</em>. Aucun employeur ni exploitant ne peut abaisser le niveau de sécurité fixé par l'ESTI.</p>"
                   },
                   {
-                          "title": "3. Chapitres 6 & 7 — Obligations légales des employeurs, exploitants et travailleurs",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 6 & 7 • Obligations légales (LAA, LIE, OCFo, OIBT)</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Obligations de l'employeur (art. 82 LAA) :</strong> Prendre toutes les mesures préventives nécessaires dont l'expérience a démontré la nécessité et que l'état de la technique permet d'appliquer. Faire collaborer les travailleurs.</li>\n  <li><strong>Obligations des travailleurs (art. 82 al. 3 LAA) :</strong> Seconder l'employeur dans l'application des règles, utiliser scrupuleusement les équipements de protection individuelle (EPI) et ne jamais modifier ni retirer les dispositifs de sécurité.</li>\n  <li><strong>Surveillance par l'exploitant (art. 20 al. 1 LIE) :</strong> La surveillance des installations et de leur bon état d'entretien incombe à l'exploitant (propriétaire, locataire).</li>\n  <li><strong>Responsabilité causale objective (art. 27 LIE) :</strong> En cas de décès ou de blessure par l'exploitation d'une installation électrique, l'exploitant répond du dommage sauf s'il prouve la force majeure, la faute d'un tiers ou la faute lourde de la victime.</li>\n  <li><strong>Instruction du personnel (art. 12 OCFo) :</strong> L'exploitant doit instruire périodiquement toute personne accédant aux zones d'exploitation ou effectuant des manœuvres.</li>\n  <li><strong>Organisation des premiers secours (art. 15 OCFo) :</strong> Former un nombre suffisant de personnes aptes aux premiers secours et tenir des spécialistes à disposition des services de secours.</li>\n  <li><strong>Autorisation d'installer (art. 6 OIBT) :</strong> Obligation d'être titulaire d'une autorisation de l'ESTI pour toute création, modification ou entretien.</li>\n</ul>"
+                          "title": "1.3 Entrée en vigueur et période transitoire officielle",
+                          "badge": "Calendrier légal",
+                          "content": "<p>La présente Directive ESTI n° 407 (Version 0526) entre en vigueur le <strong>1er mai 2026</strong>. Pour permettre aux entreprises et professionnels d'adapter leurs règlements internes et leurs équipements :</p><ul><li><strong>Période transitoire d'un an :</strong> l'ancienne Directive ESTI n° 407 (version 0720) peut continuer à être appliquée en parallèle pendant 12 mois.</li><li><strong>Application exclusive :</strong> dès le 1er mai 2027, seule la version 0526 fera foi lors des contrôles et expertises de l'ESTI.</li></ul>"
                   }
           ],
-          "practicalExample": "Lors d'une intervention sur un tableau basse tension industriel alimenté en courant continu (DC 650 V), une entreprise applique strictement les mêmes règles et distances de sécurité que pour une installation triphasée 400 V alternatif. L'exploitant et l'employeur vérifient que les intervenants sont équipés des EPI requis et qu'un dispositif de secours (art. 15 OCFo) est opérationnel.",
-          "importantPoint": "La Directive ESTI 407 (Version 0526) s'applique sans distinction à tous les niveaux de tension (TBT, BT, HT) et impose les mêmes mesures de protection en courant alternatif qu'en courant continu. Trois objectifs doivent être garantis : protection contre l'électrisation, contre les arcs et contre les dommages consécutifs.",
           "quiz": [
                   {
-                          "question": "1. Quelle est la date d'entrée en vigueur de la directive ESTI 407 (Version 0526) et quelle est la période transitoire accordée ?",
+                          "question": "1. Quel est le champ d'application de la Directive ESTI n° 407 ?",
                           "options": [
-                                  "1er janvier 2025, sans période transitoire",
-                                  "1er mai 2026, avec une période transitoire d'un an (durant laquelle la version 0720 peut être appliquée)",
-                                  "1er juillet 2026, avec une période transitoire de 6 mois",
-                                  "1er mai 2027, avec application rétroactive"
+                                  "Uniquement les installations industrielles à haute tension",
+                                  "Toutes les activités sur ou à proximité de toute installation électrique (TBT, BT, HT, AC et DC)",
+                                  "Exclusivement les travaux sous tension en courant continu",
+                                  "Seulement les installations domestiques régies par la NIBT"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Chapitre A dispose expressément que la directive entre en vigueur le 1er mai 2026 et prévoit une période transitoire d'un an à compter de sa publication."
+                          "explanation": "Le Chapitre 1 stipule que la directive est valable pour toutes les activités effectuées sur des installations électriques ou à proximité de celles-ci, à tous les niveaux de tension (TBT, BT, HT, AC et DC)."
                   },
                   {
-                          "question": "2. Quels sont les 3 objectifs de protection impératifs fixés au Chapitre 5 de la directive ESTI 407 ?",
+                          "question": "2. Une entreprise peut-elle adapter les mesures de protection à ses installations spécifiques ?",
                           "options": [
-                                  "Protection contre les surtensions, contre la poussière et contre le vandalisme",
-                                  "Protection contre le passage du courant (électrisation), contre les arcs électriques et contre les dommages consécutifs (chute, incendie)",
-                                  "Protection contre les bruits électromagnétiques, contre l'humidité et contre la corrosion",
-                                  "Protection de l'outillage, protection des transformateurs et continuité de fourniture"
+                                  "Non, aucune adaptation locale n'est autorisée par l'ESTI",
+                                  "Oui, mais uniquement pour alléger les règles et réduire les coûts d'EPI",
+                                  "Oui, tant que cela ne contrevient pas aux principes fondamentaux de la directive et par des prescriptions équivalentes ou plus restrictives",
+                                  "Oui, sur simple décision verbale du chef d'équipe"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "Le Chapitre 5 liste impérativement ces 3 objectifs : 1. Passage du courant à travers le corps (électrisation) ; 2. Arcs électriques (chaleur, éblouissement) ; 3. Dommages consécutifs (chute, incendie, etc.)."
+                          "correctAnswer": 2,
+                          "explanation": "L'adaptation est permise pour tenir compte des spécificités techniques, à condition absolue de respecter les principes fondamentaux et sans jamais dégrader le niveau de sécurité légal."
                   },
                   {
-                          "question": "3. Selon l'art. 27 de la Loi sur les installations électriques (LIE), quel est le régime de responsabilité civile de l'exploitant en cas d'accident corporel ?",
+                          "question": "3. Quelle est la durée de la période transitoire prévue pour la mise en œuvre de la version 0526 ?",
                           "options": [
-                                  "Une responsabilité contractuelle limitée au montant des franchises d'assurance",
-                                  "Une responsabilité causale objective où l'exploitant répond du dommage causé, sauf force majeure, faute d'un tiers ou faute lourde de la victime",
-                                  "Une exonération automatique si l'installation a été contrôlée il y a moins de 5 ans",
-                                  "Une responsabilité subsidiaire uniquement si l'installateur est insolvable"
+                                  "Aucune période transitoire",
+                                  "Une période transitoire d'une année (jusqu'au 1er mai 2027)",
+                                  "Une période transitoire de 3 ans",
+                                  "Une période transitoire de 5 ans pour les installateurs CFC"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "L'art. 27 al. 1 LIE établit une responsabilité objective de l'exploitant pour tout dommage corporel causé par l'exploitation de l'installation, sauf s'il démontre la force majeure, la faute d'un tiers ou la faute lourde de la personne lésée."
+                          "explanation": "Le Chapitre A prévoit une période transitoire d'une année durant laquelle la version antérieure (0720) peut encore être appliquée transitoirement."
                   }
           ],
           "prevLessonId": null,
           "nextLessonId": "esti-407-lecon-2"
   },
-  {
+
+        {
           "id": "esti-407-lecon-2",
           "routeId": "esti-407/lecon-2",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 2,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 2",
-          "title": "Chapitres 8.1 & 8.2 — Principes de sécurité, méthode S-T-O-P et qualification du personnel",
-          "subtitle": "Évaluation des risques, limites du système et rôles (personne compétente, instruite, qualifiée, avertie)",
-          "sectionsRange": "Chapitres 8.1 & 8.2",
+          "title": "Chapitre 2 — But",
+          "subtitle": "Objectifs fondamentaux de sécurité, harmonisation technique et protection de la santé",
+          "sectionsRange": "Chapitre 2",
           "status": "Disponible",
-          "duration": "9 min",
+          "duration": "6 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Comprendre l'obligation d'évaluation préalable des risques (SN EN 50110-1), maîtriser le principe de prévention S-T-O-P, les limites du système (Tableau 1) et les exigences précises de qualification professionnelle (personne compétente, instruite, qualifiée, avertie).",
-          "introduction": "Le Chapitre 8 pose le socle de l'exploitation sécurisée : aucune activité ne peut débuter sans une évaluation préalable des risques électriques. Il définit la hiérarchie des mesures selon le principe <strong>S-T-O-P</strong>, délimite les responsabilités par niveau de réseau (Tableau 1) et détaille les parcours d'accès aux qualifications professionnelles reconnues en Suisse.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Le but fondamental est de définir les exigences minimales pour assurer la sécurité et la santé des personnes.",
+                  "La directive vise à éliminer ou minimiser les dangers inhérents à l'électricité (électrisation, arc électrique, brûlures).",
+                  "Elle assure l'harmonisation technique entre les ordonnances fédérales suisses et la norme européenne SN EN 50110-1.",
+                  "Elle fixe des critères clairs pour la planification, l'encadrement et l'exécution sécurisée des interventions."
+          ],
+          "summary": "Le Chapitre 2 explicite la finalité de la directive : définir les exigences minimales nécessaires à la protection de la sécurité et de la santé des personnes au travail, en cohérence avec les règles fédérales et européennes.",
           "contentSections": [
                   {
-                          "title": "1. Chapitre 8.1 — Exploitation en toute sécurité & Méthode de prévention S-T-O-P",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 8.1 • Évaluation des dangers & Principe S-T-O-P</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n« Avant d'effectuer toute exploitation d'une installation électrique, une évaluation des risques électriques doit être réalisée. S'il est déterminé que le travail ne peut pas être effectué comme planifié, <strong>le travail doit être immédiatement interrompu ou ne doit pas être commencé</strong>. Tout défaut dangereux doit être immédiatement signalé au responsable de l'installation électrique (IM). » (Chap. 4.1 SN EN 50110-1).\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:15%; text-align:center;\">S</th>\n        <th style=\"width:30%;\">T (Technique)</th>\n        <th style=\"width:30%;\">O (Organisationnel)</th>\n        <th style=\"width:25%;\">P (Personnel)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td style=\"font-weight:700; text-align:center; color:#10b981;\">Substitution</td>\n        <td>Mesures techniques (cloisonnement, capotage, mise hors tension)</td>\n        <td>Mesures organisationnelles (mandats, planification, consignation)</td>\n        <td>Mesures de protection individuelles (EPI)</td>\n      </tr>\n      <tr>\n        <td colspan=\"2\" style=\"background:rgba(16,185,129,0.1); font-weight:700; color:#10b981;\">FORT IMPACT — Mesures de protection collectives</td>\n        <td colspan=\"2\" style=\"background:rgba(239,68,68,0.1); font-weight:700; color:var(--accent-red);\">FAIBLE IMPACT — Mesures individuelles</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <strong>Règle d'or CFST :</strong> Il convient de manière générale de <strong>privilégier les mesures de protection collectives</strong> (Substitution et Mesures techniques) avant de recourir aux mesures individuelles.\n</div>"
+                          "title": "2.1 Protection de la sécurité et de la santé des travailleurs",
+                          "badge": "Objectif premier",
+                          "content": "<p>La Directive ESTI n° 407 a pour <strong>but principal de définir les exigences de sécurité minimales</strong> auxquelles doivent satisfaire les personnes qui exercent des activités sur ou à proximité d'installations électriques.</p><p>Elle vise à prévenir les accidents corporels en imposant une préparation méthodique, des compétences vérifiées et des moyens de protection infaillibles.</p>"
                   },
                   {
-                          "title": "2. Chapitre 8.2.1 — Limites du système : Réseau, Installation et Matériel (Tableau 1)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 8.2.1 • Tableau 1 : Limites du système</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLe Tableau 1 structure le domaine électrique suisse en trois sous-ensembles articulés autour du <strong>coupe-surintensité général (point de transition)</strong> :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Réseau électrique (niveaux 1 à 7) :</strong> Installations de production, transport et distribution. Régis par l'Ordonnance sur le courant fort [4], l'OLEI [7], les normes Cenelec et la SN EN 50110-1. Personnel : personne compétente, personne instruite, visiteur.</li>\n  <li><strong>Installation intérieure (en aval du coupe-surintensité général) :</strong> Régie par l'Ordonnance sur le courant fort, l'OIBT [6] et la norme NIBT [21]. Personnel : personne du métier (art. 8 OIBT), personne autorisée à contrôler (art. 27 OIBT), installateur-électricien CFC, électricien de montage CFC, apprenti ou auxiliaire.</li>\n  <li><strong>Matériel et machines :</strong> Régis par l'Ordonnance sur le courant fort, l'OMBT [5] et les normes CEI/Cenelec. Personnel : personne compétente, personne instruite.</li>\n</ul>"
+                          "title": "2.2 Harmonisation avec les normes suisses et européennes",
+                          "badge": "Convergence",
+                          "content": "<p>La directive concrétise en droit suisse les principes de la norme européenne <strong>SN EN 50110-1:2023</strong> (Exploitation des installations électriques) et les prescriptions de la Suva, en les adaptant à la législation fédérale (LIE, OCFo, OIBT, OPA).</p>"
                   },
                   {
-                          "title": "3. Chapitre 8.2.2 — Qualifications du personnel : Personne compétente, instruite, qualifiée & avertie",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 8.2.2 • Définitions & Tableau 2 (3 voies d'accès)</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Qualification</th>\n        <th style=\"width:70%;\">Définition et exigences officielles</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Personne compétente</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">Art. 3 ch. 23 & art. 11 al. 1 OCFo</span></td>\n        <td>Personne possédant une formation de base en électrotechnique et expérimentée dans le maniement des dispositifs. Seules ces personnes peuvent être employées à <strong>surveiller les travaux</strong> et <strong>prendre les mesures de sécurité</strong>.<br>\n        <strong>3 voies d'accès (Tableau 2) :</strong><br>\n        1. <em>Formation initiale (CFC) :</em> Électricien de réseau, Installateur-électricien, Électricien de montage, Automaticien + pratique suffisante + nomination écrite.<br>\n        2. <em>Formation supérieure :</em> Diplôme achevé auprès d'une haute école ou école technique supérieure.<br>\n        3. <em>Formation interne d'entreprise équivalente :</em> Au moins <strong>5 ans de pratique</strong> sous la direction d'une personne compétente, formation théorique et pratique + <strong>examen théorique et pratique réussi</strong> avec attestation écrite.</td>\n      </tr>\n      <tr>\n        <td><strong>Personne instruite</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">Art. 3 ch. 15 OCFo</span></td>\n        <td>Sans formation électrotechnique de base, mais formée pour exercer des activités limitées et bien définies en connaissant les risques locaux. Peut surveiller des personnes ordinaires hors zone de voisinage. En cas de situation inconnue : <em>arrêt immédiat et appel à une personne compétente</em>.</td>\n      </tr>\n      <tr>\n        <td><strong>Personne qualifiée</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">SN EN 50110-1 chap. 3.2.5</span></td>\n        <td>Personne ayant l'instruction, la connaissance et l'expérience appropriées pour lui permettre d'analyser les risques et d'éviter les dangers de l'électricité.</td>\n      </tr>\n      <tr>\n        <td><strong>Personne avertie</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">SN EN 50110-1 chap. 3.2.6</span></td>\n        <td>Personne suffisamment informée par une personne qualifiée pour percevoir les risques et éviter les phénomènes dangereux.</td>\n      </tr>\n      <tr>\n        <td><strong>Ordres de manœuvre</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">Chapitre 8.2.2.6</span></td>\n        <td>Personne autorisée à donner des ordres de manœuvre : au minimum <strong>personne compétente</strong>. Personne autorisée à manœuvrer : au minimum <strong>personne instruite</strong>.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                          "title": "2.3 Cadre d'exécution opérationnel",
+                          "badge": "Exigences minimales",
+                          "content": "<p>Le but est également de donner aux exploitants d'installations, aux employeurs et aux monteurs un référentiel univoque :</p><ul><li>Critères d'attribution des mandats de travail.</li><li>Règles d'évaluation préalable des risques.</li><li>Choix rigoureux entre travail hors tension, voisinage et travail sous tension.</li></ul>"
                   }
           ],
-          "practicalExample": "Un monteur sans CFC électrotechnique travaille depuis 6 ans dans une régie électrique sous la direction d'un chef d'exploitation. Pour être nommé « personne compétente » selon le Tableau 2, l'employeur dispense une formation théorique et technique complète, puis lui fait passer avec succès un examen pratique et théorique faisant l'objet d'une attestation écrite formelle.",
-          "importantPoint": "Le principe S-T-O-P accorde la priorité absolue aux mesures collectives (Substitution et Technique). Pour être reconnue « personne compétente » sans formation initiale diplômante, au moins 5 années de pratique encadrée et un examen théorique/pratique officiel avec attestation écrite sont requis.",
           "quiz": [
                   {
-                          "question": "1. Dans le principe de prévention S-T-O-P (Glossaire CFST), quel est l'ordre de priorité et d'impact des mesures ?",
+                          "question": "1. Quel est le but premier de la Directive ESTI n° 407 ?",
                           "options": [
-                                  "Les mesures personnelles (P) ont le plus fort impact et doivent primer sur la technique",
-                                  "La Substitution (S) et les mesures techniques (T) constituent des mesures collectives à fort impact à privilégier absolument",
-                                  "Toutes les mesures ont une efficacité statistique strictement identique",
-                                  "Les mesures organisationnelles (O) remplacent systématiquement les mesures techniques"
+                                  "Calculer le rendement économique des installations électriques",
+                                  "Définir les exigences minimales pour garantir la sécurité et la santé des personnes lors d'activités électriques",
+                                  "Fixer le tarif de vente de l'électricité sur le marché libre",
+                                  "Remplacer l'ensemble des ordonnances du Conseil fédéral"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Selon le chapitre 8.1.1, la Substitution (S) et les mesures techniques (T) sont des mesures de protection collectives à fort impact qui doivent de manière générale être privilégiées par rapport aux mesures individuelles."
+                          "explanation": "Le Chapitre 2 définit comme but premier d'établir les exigences minimales de sécurité et de santé pour toute personne intervenant sur ou près d'installations électriques."
                   },
                   {
-                          "question": "2. Selon le Tableau 2 de la directive ESTI 407, quelles conditions permettent à un collaborateur d'accéder au statut de « personne compétente » par la voie interne de l'entreprise ?",
+                          "question": "2. Comment la Directive ESTI 407 se positionne-t-elle par rapport à la norme SN EN 50110-1 ?",
                           "options": [
-                                  "Avoir travaillé au moins 1 an dans l'entreprise et suivi une demi-journée d'information",
-                                  "Au moins 5 ans de pratique sous la direction d'une personne compétente, avec formation théorique/pratique et réussite d'un examen avec attestation écrite",
-                                  "Obtenir une dérogation verbale de l'inspecteur cantonal",
-                                  "Être titulaire d'un permis de conduire pour nacelle élévatrice"
+                                  "Elle la contredit et l'interdit en Suisse",
+                                  "Elle harmonise et concrétise ses prescriptions dans le cadre juridique suisse",
+                                  "Elle ne s'y réfère jamais",
+                                  "Elle ne s'applique qu'en cas de litige judiciaire"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Tableau 2 stipule expressément : au moins 5 ans de pratique sous la direction d'une personne compétente, incluant formation théorique, technique et pratique ainsi qu'un examen à la discrétion de l'exploitant avec attestation écrite."
+                          "explanation": "La directive adapte et harmonise les principes de la norme européenne SN EN 50110-1 avec les ordonnances suisses (OCFo, OIBT, OPA)."
                   },
                   {
-                          "question": "3. Selon le chapitre 8.2.2.6, quelle est la qualification minimale exigée pour une personne autorisée à donner des ordres de manœuvre ?",
+                          "question": "3. Les exigences de la Directive ESTI 407 constituent-elles un maximum ou un minimum ?",
                           "options": [
-                                  "Personne ordinaire formée aux premiers secours",
-                                  "Au minimum personne instruite",
-                                  "Au minimum personne compétente au sens de l'ordonnance sur le courant fort",
-                                  "Exclusivement ingénieur électricien EPF"
+                                  "Un plafond maximal qu'il est interdit de dépasser",
+                                  "Des exigences minimales qui peuvent être complétées par des mesures d'entreprise plus strictes",
+                                  "De simples recommandations sans valeur d'exigence",
+                                  "Des règles optionnelles réservées aux grandes entreprises"
                           ],
-                          "correctAnswer": 2,
-                          "explanation": "Le chapitre 8.2.2.6 précise sans équivoque que « les personnes autorisées à donner des ordres de manœuvre doivent au minimum être formées comme des personnes compétentes »."
+                          "correctAnswer": 1,
+                          "explanation": "La directive définit des exigences minimales de sécurité. Les entreprises ont le devoir d'instaurer des mesures équivalentes ou plus strictes si leur analyse de risque le requiert."
                   }
           ],
           "prevLessonId": "esti-407-lecon-1",
           "nextLessonId": "esti-407-lecon-3"
   },
-  {
+
+        {
           "id": "esti-407-lecon-3",
           "routeId": "esti-407/lecon-3",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 3,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 3",
-          "title": "Chapitres 8.3 à 8.5 — Organisation, surveillances et détermination des distances",
-          "subtitle": "Mandats clairs, objections de sécurité, types de surveillance et calcul des distances DL, DV, DWV, DWL",
-          "sectionsRange": "Chapitres 8.3 à 8.5",
+          "title": "Chapitre 3 — Bases légales et normatives",
+          "subtitle": "Lois fédérales (LIE, LAA), ordonnances (OPA, OCFo, OIBT) et normes techniques suisses",
+          "sectionsRange": "Chapitre 3",
           "status": "Disponible",
-          "duration": "8 min",
+          "duration": "9 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Maîtriser les exigences d'organisation du travail, le droit d'objection pour motif de sécurité, les 2 régimes de surveillance et la méthodologie de calcul des distances de sécurité (DL, DV, DWV, DWL) de la basse tension à 700 kV.",
-          "introduction": "Un travail sécurisé repose sur une organisation rigoureuse, la liberté d'émettre des objections de sécurité sans sanction, un type de surveillance adapté au niveau de risque, et le calcul mathématique précis des distances d'approche autour des pièces sous tension.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Lois fédérales : LIE (RS 734.0, art. 20 et 27) et LAA (RS 832.20, art. 82 sur la prévention des accidents).",
+                  "Ordonnances clés : OPA (RS 832.30), OCFo (RS 734.2, art. 12, 15, 66, 70, 72-79), OIBT (RS 734.27, art. 6, 22).",
+                  "Normes techniques majeures : SN EN 50110-1:2023, NIBT SN 411000:2025, SN EN 50365, SN EN 61482.",
+                  "Distinction formelle dans le document : textes légaux en retrait gris vs commentaires explicatifs de l'ESTI."
+          ],
+          "summary": "Le Chapitre 3 recense l'ensemble du socle juridique et normatif applicable aux activités électriques en Suisse. Il détaille les articles de la LIE, de la LAA, de l'OCFo et de l'OIBT ainsi que les normes européennes homologuées.",
           "contentSections": [
                   {
-                          "title": "1. Chapitres 8.3 & 8.4 — Organisation, objections de sécurité et types de surveillance",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 8.3 & 8.4 • Organisation & Surveillance</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Organisation (8.3) :</strong> Les travaux doivent faire l'objet d'une planification rigoureuse comprenant des mandats clairs, une évaluation écrite des dangers et la discussion détaillée des opérations avec les intervenants. Seules les installations dûment contrôlées peuvent être mises en service.\n</p>\n<div class=\"ocfo-summary-box\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"box-title\">🛡️ DROIT ET DEVOIR D'OBJECTION DE SÉCURITÉ (Chap. 4.3.7 SN EN 50110-1)</div>\n  Tout travailleur qui émet des objections pour raison de sécurité concernant l'exécution d'instructions ou d'opérations doit pouvoir en faire part <strong>immédiatement</strong> au chargé de travaux. Ce dernier a l'obligation d'étudier le problème et, si nécessaire, de consulter une autorité supérieure avant toute décision.\n</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:35%;\">Régime de surveillance</th>\n        <th style=\"width:65%;\">Conditions d'exercice strictes (Chap. 4.10 SN EN 50110-1)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Surveillance de la zone de travail</strong></td>\n        <td>La personne chargée de la surveillance ne peut réaliser elle-même une opération <em>que si celle-ci ne compromet pas la surveillance</em>.</td>\n      </tr>\n      <tr>\n        <td><strong>Surveillance particulière</strong></td>\n        <td>La personne chargée de la surveillance <strong>ne doit réaliser aucun autre travail en parallèle</strong>. Présence et vigilance exclusives.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                          "title": "3.1 Lois et ordonnances suisses applicables",
+                          "badge": "Bases légales",
+                          "content": "<p>L'assise juridique de la directive repose sur des textes fédéraux de rang supérieur :</p><table class=\"matrix-table\"><thead><tr><th>Acte légal</th><th>RS</th><th>Articles clés cités</th></tr></thead><tbody><tr><td><strong>LIE</strong></td><td>734.0</td><td>Art. 20 (entretien des installations), Art. 27 (responsabilité civile de l'exploitant)</td></tr><tr><td><strong>LAA</strong></td><td>832.20</td><td>Art. 82 (obligation générale de l'employeur et des travailleurs d'appliquer les mesures de sécurité)</td></tr><tr><td><strong>OPA</strong></td><td>832.30</td><td>Art. 6 (information du personnel), Art. 8 & 10 (équipements de travail et surveillance)</td></tr><tr><td><strong>OCFo</strong></td><td>734.2</td><td>Art. 12, 15, 66 (manœuvre vs travaux), 70 (consignation), 72-74 (voisinage), 75-79 (TST)</td></tr><tr><td><strong>OIBT</strong></td><td>734.27</td><td>Art. 6 (obligation d'autorisation pour installer/modifier), Art. 22 (travaux sous tension BT)</td></tr><tr><td><strong>OEPI</strong></td><td>930.115</td><td>Exigences de mise sur le marché et conformité des équipements de protection individuelle</td></tr></tbody></table>"
                   },
                   {
-                          "title": "2. Chapitres 8.5.1 & 8.5.2 — Détermination de la distance ergonomique (E) et des zones limites",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 8.5 • Méthodologie d'évaluation des distances</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'évaluation doit être effectuée par une <strong>personne compétente</strong>. Le responsable d'installation fixe les mesures avec le chargé de travaux.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Distance ergonomique (E, Figure 1) :</strong> Somme des <em>mouvements volontaires/intentionnels</em> requis pour la tâche et d'une marge couvrant les <em>mouvements involontaires et erreurs d'appréciation</em> = zone de mouvements résultante.</li>\n  <li><strong>Majoration liée à l'équipement (L) :</strong> Tient compte des outils, échelles, nacelles élévatrices, câbles, tubes et barres de tirage.</li>\n  <li><strong>Définition géométrique des enveloppes (Figures 2 & 3) :</strong><br>\n  • <strong>U :</strong> Partie nue sous tension.<br>\n  • <strong>DL :</strong> Distance minimale déterminant la limite extérieure de la zone de travail sous tension.<br>\n  • <strong>DV :</strong> Distance minimale déterminant la limite extérieure de la zone de voisinage.<br>\n  • <strong>DWV :</strong> Distance minimale de travail en dehors de la zone de voisinage (DWV = DV + L + E).<br>\n  • <strong>DWL :</strong> Distance minimale de travail à l'intérieur de la zone de voisinage (DWL = DL + L + E).</li>\n</ul>"
-                  },
-                  {
-                          "title": "3. Chapitre 8.5.3 — Tableau 3 officiel des distances dans l'air DL et DV (SN EN 50110-1)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 8.5.3 • Tableau 3 : Distances dans l'air recommandées</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Tension nominale UN (RMS)</th>\n        <th style=\"width:35%;\">Limite sous tension DL</th>\n        <th style=\"width:35%;\">Limite zone voisinage DV</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>UN ≤ 1 kV (Basse tension)</strong></td>\n        <td><strong>Pas de contact</strong></td>\n        <td><strong>300 mm (0,30 m)</strong></td>\n      </tr>\n      <tr>\n        <td><strong>3 kV / 6 kV</strong></td>\n        <td>60 mm / 90 mm</td>\n        <td>1120 mm (1,12 m)</td>\n      </tr>\n      <tr>\n        <td><strong>10 kV / 15 kV</strong></td>\n        <td>120 mm / 160 mm</td>\n        <td>1150 mm / 1160 mm</td>\n      </tr>\n      <tr>\n        <td><strong>20 kV / 30 kV / 36 kV</strong></td>\n        <td>220 mm / 320 mm / 380 mm</td>\n        <td>1220 mm / 1320 mm / 1380 mm</td>\n      </tr>\n      <tr>\n        <td><strong>45 kV / 60 kV / 70 kV</strong></td>\n        <td>480 mm / 630 mm / 750 mm</td>\n        <td>1480 mm / 1630 mm / 1750 mm</td>\n      </tr>\n      <tr>\n        <td><strong>110 kV / 132 kV / 150 kV</strong></td>\n        <td>1000 mm / 1100 mm / 1200 mm</td>\n        <td>2000 mm / 3000 mm / 3000 mm</td>\n      </tr>\n      <tr>\n        <td><strong>220 kV / 380 kV</strong></td>\n        <td>1600 mm / 2500 mm</td>\n        <td>3000 mm / 4000 mm</td>\n      </tr>\n      <tr>\n        <td><strong>700 kV</strong></td>\n        <td>5300 mm</td>\n        <td>8400 mm</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-warning-box\">\n  <strong>⚡ Règle pour le Courant Continu (DC) :</strong> En l'absence de formule de calcul spécifique, les valeurs de DL et DV du courant alternatif sont <strong>directement applicables aux systèmes à courant continu jusqu'à 70 kV inclus</strong> (chap. 4.11.2.2 SN EN 50110-1:2023).\n</div>"
+                          "title": "3.2 Normes et directives techniques de référence",
+                          "badge": "Normes EN/SN",
+                          "content": "<p>Les normes suivantes font partie intégrante des règles de l'art suisses :</p><ul><li><strong>SN EN 50110-1:2023 :</strong> Exploitation des installations électriques — Exigences générales.</li><li><strong>NIBT SN 411000:2025 :</strong> Norme sur les installations à basse tension.</li><li><strong>SN EN 50365:2023 :</strong> Casques électriquement isolants pour basse et moyenne tension.</li><li><strong>SN EN 60900:2018 :</strong> Outils à main pour travaux sous tension jusqu'à 1000 V AC et 1500 V DC.</li><li><strong>SN EN 60903:2003 :</strong> Gants isolants en matériau élastomère.</li><li><strong>SN EN 61482-1-2 / EN 61482-2 :</strong> Protection thermique contre les dangers d'un arc électrique.</li></ul>"
                   }
           ],
-          "practicalExample": "Sur une installation basse tension triphasée 400 V (UN ≤ 1 kV), la zone de travail sous tension est définie par l'absence de contact direct (DL = pas de contact), et la zone de voisinage s'étend jusqu'à 300 mm (DV = 300 mm). Toute approche avec des outils à moins de 300 mm fait entrer l'opérateur en Procédure 3 (travail à l'intérieur de la zone de voisinage).",
-          "importantPoint": "En basse tension (≤ 1 kV), DL correspond à « pas de contact » et DV est fixé à 300 mm. La surveillance particulière impose à la personne surveillante de ne réaliser aucun autre travail en parallèle.",
           "quiz": [
                   {
-                          "question": "1. En basse tension (UN ≤ 1 kV), quelles sont les valeurs officielles des distances limites DL et DV selon le Tableau 3 de la norme SN EN 50110-1 ?",
+                          "question": "1. Quel article de l'Ordonnance sur le courant fort (OCFo) régit spécifiquement les travaux sous tension (Tst) ?",
                           "options": [
-                                  "DL = 50 mm et DV = 500 mm",
-                                  "DL = « Pas de contact » et DV = 300 mm",
-                                  "DL = 100 mm et DV = 1000 mm",
-                                  "DL = Pas de contact et DV = 1120 mm"
+                                  "L'article 20",
+                                  "L'article 66",
+                                  "L'article 75",
+                                  "L'article 100"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "Le Tableau 3 de la directive ESTI 407 indique clairement pour UN ≤ 1 kV : DL = Pas de contact, et DV = 300 mm."
+                          "correctAnswer": 2,
+                          "explanation": "L'article 75 OCFo (RS 734.2) régit précisément les conditions strictes d'autorisation et d'exécution des travaux sous tension en Suisse."
                   },
                   {
-                          "question": "2. Quelle contrainte absolue s'applique à un surveillant dans le cadre d'une « surveillance particulière » (chapitre 8.4) ?",
+                          "question": "2. Quel article de la loi LAA oblige l'employeur à prendre toutes les mesures nécessaires de prévention ?",
                           "options": [
-                                  "Il peut effectuer des mesures simples en même temps s'il porte des gants isolants",
-                                  "Il ne doit réaliser aucun autre travail en parallèle pour consacrer 100 % de sa vigilance à la sécurité",
-                                  "Il doit obligatoirement être ingénieur ETS/HES",
-                                  "Il doit rédiger le procès-verbal de réception pendant l'opération"
+                                  "L'art. 27 LAA",
+                                  "L'art. 82 LAA",
+                                  "L'art. 6 LAA",
+                                  "L'art. 15 LAA"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Selon le chapitre 8.4, dans le cas d'une surveillance particulière, la personne chargée de la surveillance ne doit réaliser aucun autre travail en parallèle."
+                          "explanation": "L'article 82 de la Loi fédérale sur l'assurance-accidents (LAA) est le fondement juridique obligeant l'employeur à appliquer toutes les mesures de sécurité appropriées."
                   },
                   {
-                          "question": "3. Que prévoit la directive ESTI 407 pour les distances limites DL et DV des réseaux en courant continu jusqu'à 70 kV ?",
+                          "question": "3. Quelle norme européenne constitue le document socle pour l'exploitation des installations électriques ?",
                           "options": [
-                                  "Il faut doubler systématiquement toutes les distances du courant alternatif",
-                                  "Les distances DL et DV du courant alternatif s'appliquent directement aux installations à courant continu jusqu'à 70 kV inclus",
-                                  "Le courant continu est exempté de zone de voisinage",
-                                  "Les distances doivent être réduites de moitié en raison de l'absence de fréquence"
+                                  "ISO 9001",
+                                  "SN EN 50110-1:2023",
+                                  "EN 388",
+                                  "SIA 118"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le chapitre 8.5.3 précise qu'en l'absence de méthode de calcul propre au DC, les valeurs en courant alternatif peuvent être utilisées pour des systèmes à courant continu jusqu'à 70 kV inclus."
+                          "explanation": "La norme SN EN 50110-1:2023 est la norme européenne fondamentale sur l'exploitation des installations électriques citée dans l'ESTI 407."
                   }
           ],
           "prevLessonId": "esti-407-lecon-2",
           "nextLessonId": "esti-407-lecon-4"
   },
-  {
+
+        {
           "id": "esti-407-lecon-4",
           "routeId": "esti-407/lecon-4",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 4,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 4",
-          "title": "Chapitres 9, 10.1, 10.3 & 11 — Procédures d'exploitation, arbres décisionnels & courant continu",
-          "subtitle": "Mesurages, essais, vérifications, processus commande vs travail, réduction du risque BT et spécificités DC",
-          "sectionsRange": "Chapitres 9, 10.1, 10.3, 11",
+          "title": "Chapitre 4 — Ouvrages de référence",
+          "subtitle": "Publications Suva, guides internationaux sur l'arc électrique et manuels de branche",
+          "sectionsRange": "Chapitre 4",
           "status": "Disponible",
-          "duration": "9 min",
+          "duration": "6 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Distinguer une commande d'installation d'un travail (art. 66 OCFo), exploiter les arbres décisionnels BT et HT, appliquer les mesures de réduction du courant de court-circuit et appréhender les risques thermiques majeurs du courant continu.",
-          "introduction": "Une mauvaise qualification de l'activité est la cause première des accidents d'arc. Cette unité décortique le processus de décision réglementaire (art. 66 OCFo) séparant une commande d'exploitation ordinaire d'un travail nécessitant des mesures de protection, ainsi que les parades techniques permettant de brider l'énergie d'arc.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Publications Suva essentielles : Suva 66138 (lignes aériennes), Suva 88814 et dépliant Suva 84042.",
+                  "Guides de référence sur l'arc électrique : ISSA (choix des EPI contre l'arc), DGUV 203-077, DGUV Test GS-ET-29.",
+                  "Normes et méthodes de calcul internationales : IEEE 1584:2018 et NFPA 70E (édition 2024).",
+                  "Publications nationales : Directive ESTI n° 100 (termes et définitions) et Manuel de sécurité de l'AES."
+          ],
+          "summary": "Le Chapitre 4 liste les guides professionnels, recommandations internationales et dépliants de sécurité qui complètent la directive pour l'évaluation des risques et la protection thermique contre les arcs électriques.",
           "contentSections": [
                   {
-                          "title": "1. Chapitre 9 — Procédures d'exploitation : Mesurages, Essais et Vérifications",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 9 • Manœuvres, Mesurages, Essais & Vérifications</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes procédures d'exploitation regroupent quatre types d'actes qui doivent faire l'objet de l'accord préalable du responsable de l'installation électrique (IM) :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Mesurages (9.2) :</strong> Mesure de grandeurs physiques effectuée par des <em>personnes qualifiées ou averties</em>. Les instruments doivent être appropriés, sûrs et vérifiés avant et après usage. Port d'EPI obligatoire en cas de risque de contact avec des parties nues.</li>\n  <li><strong>Essais (9.3) :</strong> Activités visant à vérifier le fonctionnement ou l'état électrique, mécanique ou thermique d'une installation, ainsi que l'efficacité des circuits de sécurité. Peuvent comporter des mesurages.</li>\n  <li><strong>Vérifications (9.4) :</strong> S'assurer de la conformité aux réglementations et normes. Comprennent les <em>vérifications préalables à la mise en service</em> (nouvelles installations, extensions) et les <em>vérifications périodiques</em> destinées à déceler les défauts survenus en exploitation.</li>\n</ul>"
+                          "title": "4.1 Publications Suva incontournables",
+                          "badge": "Suva",
+                          "content": "<p>La Caisse nationale suisse d'assurance en cas d'accidents (Suva) édite des notices de sécurité qui s'appliquent directement sur le terrain :</p><ul><li><strong>Suva 66138 :</strong> « Attention, danger électrique ! Travaux à proximité de lignes aériennes ». Définit les distances minimales d'approche lors de l'utilisation d'engins de chantier (grues, pelles, échafaudages).</li><li><strong>Suva 88814 :</strong> Support pédagogique pour la formation à la sécurité électrique.</li><li><strong>Suva 84042 :</strong> Dépliant mémo sur les 5 règles vitales d'intervention.</li></ul>"
                   },
                   {
-                          "title": "2. Chapitre 10.1 — Processus de décision : Commande vs Travail (Figure 4, 5 & 6)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 10.1 • Processus décisionnels (Art. 66 OCFo)</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:35%;\">Les 3 questions de contrôle (Figure 4)</th>\n        <th style=\"width:65%;\">Issue réglementaire</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>1. Mon emplacement est-il sûr ?<br>\n        2. Moyens auxiliaires conçus à cet effet ?<br>\n        3. Applicables sans danger sans autres mesures de protection ?</td>\n        <td>• <strong>3 réponses « OUI » : COMMANDE (art. 66.2 OCFo)</strong><br>\n        Activité autorisée sans EPI particulier, exécutable par une <em>personne ordinaire</em> (ex : disjoncteur ou fusible Diazed en armoire fermée IP2X).<br>\n        • <strong>Au moins 1 réponse « NON » : TRAVAIL (art. 66.1 OCFo)</strong><br>\n        Bascule obligatoire vers les procédures de travail (Figure 5 en BT ou Figure 6 en HT).</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-warning-box\">\n  <strong>⚠️ Règle fondamentale de l'Arbre Basse Tension (Figure 5) :</strong><br>\n  La protection par « distance de sécurité et surveillance » est <strong>IMPOSSIBLE À METTRE EN ŒUVRE DE MANIÈRE FIABLE EN BASSE TENSION</strong>. En BT, si l'on ne peut mettre hors tension ni poser d'écran isolant, l'opération est automatiquement requalifiée en <strong>Travail Sous Tension (Tst 1 ou Tst 2)</strong>.\n</div>"
-                  },
-                  {
-                          "title": "3. Chapitres 10.3 & 11 — Réduction du risque BT & Spécificités du Courant Continu",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 10.3 & 11 • Brider l'arc BT & Dangers du Courant Continu</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Fusibles de protection de travail (10.3) :</strong> Les fusibles ultra-rapides <strong>gR</strong> peuvent remplacer temporairement des fusibles gG pour le travail sous tension : ils réduisent drastiquement le courant coupé limité ID et la durée d'action de l'arc. Possibilité d'utiliser des fusibles HPC <strong>gTr</strong>.</li>\n  <li><strong>Déclenchement de transformateurs :</strong> Lors de transformateurs montés en parallèle, déclencher l'un des transformateurs divise le courant de court-circuit présumé.</li>\n  <li><strong>Groupe électrogène de secours :</strong> Remplacer le transformateur du réseau par un générateur de chantier pour abaisser l'énergie de court-circuit lors des TST.</li>\n  <li><strong>Dangers critiques du Courant Continu (Chapitre 11) :</strong> Tout comme le courant alternatif, il engendre fibrillations ventriculaires, arrêts cardiaques et brûlures profondes. Cependant, <strong>en courant continu, il n'y a aucun passage naturel par zéro de la tension</strong>. Lors de l'ouverture d'un circuit ou du débranchement d'une prise sous charge, l'arc électrique s'étire et ne s'éteint pas spontanément, provoquant des explosions thermiques destructrices.</li>\n</ul>"
+                          "title": "4.2 Guides internationaux sur le risque d'arc électrique",
+                          "badge": "Arc flash",
+                          "content": "<p>Pour l'évaluation thermique et le choix des EPI anti-arc :</p><ul><li><strong>ISSA (AISS) :</strong> Guide pour la sélection des équipements de protection individuelle contre les effets thermiques d'un arc électrique de défaut.</li><li><strong>DGUV Information 203-077 :</strong> Risque thermique dû aux arcs électriques de défaut (Box-Test APC).</li><li><strong>DGUV Test GS-ET-29 :</strong> Principes d'essai et de certification des écrans faciaux de protection pour électriciens.</li><li><strong>IEEE 1584 & NFPA 70E :</strong> Modèles de calcul de l'énergie incidente (cal/cm²) en arc ouvert.</li></ul>"
                   }
           ],
-          "practicalExample": "Avant de remplacer des fusibles dans un coffret de distribution générale, un électricien constate que le capot de protection est manquant (< IP2X). À la question 'Applicables sans danger sans autres mesures de protection ?', la réponse est NON. L'activité n'est pas une simple commande : elle bascule en TRAVAIL SOUS TENSION (Tst 1), imposant le port du casque à visière et de gants isolants.",
-          "importantPoint": "Trois réponses OUI aux points de contrôle de l'art. 66 OCFo sont indispensables pour qualifier une manœuvre de 'commande'. En basse tension, la protection par simple distance et surveillance est formellement rejetée car non fiable : des écrans de protection ou la procédure TST sont requis.",
           "quiz": [
                   {
-                          "question": "1. Selon le processus décisionnel de la Figure 4 (art. 66 OCFo), à quelle condition formelle une manœuvre est-elle qualifiée de « commande » ?",
+                          "question": "1. Quelle publication Suva fixe les règles lors de travaux avec des engins de levage à proximité de lignes aériennes ?",
                           "options": [
-                                  "Dès lors que l'opérateur est un installateur-électricien diplômé",
-                                  "Si les 3 points de contrôle sont validés par OUI : emplacement sûr, moyens conçus à cet effet et applicables sans danger sans autres mesures de protection",
-                                  "Si le courant de court-circuit est inférieur à 100 A",
-                                  "Si l'activité dure moins de deux minutes"
+                                  "Suva 44094",
+                                  "Suva 66138",
+                                  "Suva 11000",
+                                  "Suva 221"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Selon la Figure 4, si la réponse aux trois premières questions est OUI, l'activité est classée comme COMMANDE (art. 66.2 OCFo) et peut être exécutée sans mesures de travail supplémentaires."
+                          "explanation": "La publication Suva 66138 (« Attention, danger électrique ! Travaux à proximité de lignes aériennes ») est la référence explicite du Chapitre 4."
                   },
                   {
-                          "question": "2. Pourquoi la protection par « distance de sécurité et surveillance » est-elle déclarée impossible en basse tension dans l'arbre décisionnel (Figure 5) ?",
+                          "question": "2. Quel document allemand sert de référence d'essai pour les visières faciales anti-arc avec mentonnière ?",
                           "options": [
-                                  "Parce que la législation interdit la surveillance en dessous de 1000 V",
-                                  "Parce que la distance de voisinage en BT est très réduite (DV = 300 mm) et qu'un mouvement réflexe involontaire ne peut y être maîtrisé de manière fiable",
-                                  "Parce que les détecteurs de tension ne fonctionnent pas en basse tension",
-                                  "Parce que les gants isolants sont obligatoires en permanence"
+                                  "DIN 4102",
+                                  "DGUV Test GS-ET-29",
+                                  "VDE 0100",
+                                  "EN 166 seul"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "La Figure 5 porte la mention expresse : « Protection par distance de sécurité et surveillance : Impossible à mettre en œuvre de manière fiable [en basse tension] » en raison de la proximité immédiate des pièces actives."
+                          "explanation": "Le principe d'essai DGUV Test GS-ET-29 certifie les visières et protections faciales contre les effets thermiques et de pression de l'arc électrique."
                   },
                   {
-                          "question": "3. Pourquoi le courant continu (DC) présente-t-il un risque d'arc électrique particulièrement violent lors du débranchement d'un connecteur sous charge ?",
+                          "question": "3. Quel document de l'ESTI contient la terminologie technique et les ordres de manœuvre en Suisse ?",
                           "options": [
-                                  "Parce que le courant continu a une tension efficace toujours négative",
-                                  "En raison de l'absence de passage naturel par zéro du courant, qui empêche l'extinction naturelle de l'arc électrique",
-                                  "Parce que le courant continu ne peut pas être mesuré avec un appareil étalonné",
-                                  "Parce que les câbles DC ne possèdent pas d'isolation synthétique"
+                                  "La Directive ESTI n° 100",
+                                  "L'ordonnance OLEI",
+                                  "Le règlement communal",
+                                  "La notice NIBT"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "Le Chapitre 11 explique que l'absence de passage à zéro en courant continu maintient l'ionisation du milieu et fait persister l'arc lors de la séparation des contacts, contrairement au courant alternatif dont le passage à zéro favorise l'extinction."
+                          "correctAnswer": 0,
+                          "explanation": "La Directive ESTI n° 100 (« Termes et définitions techniques, mandats de travail et ordres de manœuvre ») est l'ouvrage de référence terminologique."
                   }
           ],
           "prevLessonId": "esti-407-lecon-3",
           "nextLessonId": "esti-407-lecon-5"
   },
-  {
+
+        {
           "id": "esti-407-lecon-5",
           "routeId": "esti-407/lecon-5",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 5,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 5",
-          "title": "Chapitre 10.2 — Les quatre procédures de travail (Hors tension, Voisinage, TST)",
-          "subtitle": "Les 5 règles de sécurité, dérogation BT, détecteurs EN 61243, travail en voisinage et TST 1 vs TST 2",
-          "sectionsRange": "Chapitre 10.2",
+          "title": "Chapitre 5 — Objectifs de protection",
+          "subtitle": "Les 3 objectifs de protection impératifs contre les dangers de l'électricité",
+          "sectionsRange": "Chapitre 5",
           "status": "Disponible",
-          "duration": "10 min",
+          "duration": "7 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Maîtriser l'application exacte des 4 procédures de travail de la directive ESTI 407 : les 5 règles de sécurité suisses, les détecteurs EN 61243, le travail au voisinage avec protecteurs isolants, et la distinction fondamentale entre Tst 1 et Tst 2.",
-          "introduction": "Chaque opération électrique relève obligatoirement de l'une des quatre procédures officielles de travail. Cette unité détaille le protocole des 5 règles de sécurité suisses, les conditions de renonciation à la mise à la terre en basse tension, et les critères légaux stricts qui séparent le TST 1 (opéré seul) du TST 2 (exigeant impérativement une équipe de deux personnes).",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Objectif 1 : Protection absolue contre le passage du courant à travers le corps humain (électrisation / électrocution).",
+                  "Objectif 2 : Protection contre les arcs électriques de court-circuit (chaleur jusqu'à 20 000 °C, rayonnement, souffle).",
+                  "Objectif 3 : Protection contre les dommages consécutifs (chutes de hauteur, projection d'éclats, incendie, panique).",
+                  "Les rayonnements non ionisants font l'objet de réglementations séparées (ORNI RS 814.710)."
+          ],
+          "summary": "Le Chapitre 5 définit les trois objectifs de protection cardinaux qui doivent obligatoirement être garantis lors de toute activité : empêcher le passage de courant, protéger contre l'énergie de l'arc et prévenir les dommages consécutifs.",
           "contentSections": [
                   {
-                          "title": "1. Chapitre 10.2.1 — Procédure de travail 1 : Travail hors tension & Les 5 règles de sécurité",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 10.2.1 • Les 5 règles de sécurité suisses</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLe poste de travail doit impérativement être préparé d'après les <strong>5 règles de sécurité</strong> :\n</p>\n<ol style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Déclencher et ouvrir les sectionneurs de toutes parts</strong></li>\n  <li><strong>Assurer contre le réenclenchement</strong></li>\n  <li><strong>Vérifier l'absence de tension</strong></li>\n  <li><strong>Mettre à la terre et en court-circuit*</strong></li>\n  <li><strong>Protéger contre les parties voisines restées sous tension</strong></li>\n</ol>\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>* Dérogation légale en Basse Tension :</strong> Lors de travaux sur des installations à basse tension, <strong>il est possible de renoncer au point 4 (mise à la terre et en court-circuit)</strong> pour autant qu'il n'existe <em>aucun risque de tension induite ni d'alimentation en retour</em> !\n</div>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">🚫 INTERDICTION DES MULTIMÈTRES ORDINAIRES (10.2.1.1)</div>\n  La vérification de l'absence de tension doit être effectuée avec des détecteurs de tension ou systèmes VDS/VDIS conformes aux normes <strong>EN 61243-1, EN 61243-2, EN 61243-3, EN 61243-5 ou EN CEI 62271-213</strong>. <strong>Les multimètres qui reposent uniquement sur les normes les concernant ne doivent pas être utilisés</strong>. Les détecteurs doivent être vérifiés immédiatement avant et si possible après utilisation.\n</div>"
+                          "title": "5.1 Les trois objectifs cardinaux de l'ESTI 407",
+                          "badge": "Objectifs impératifs",
+                          "content": "<div class=\"legal-callout\"><p><strong>Les 3 objectifs de protection suivants doivent impérativement être garantis :</strong></p><ol><li><strong>Protection contre le passage du courant à travers le corps :</strong> éviter toute électrisation directe ou indirecte capable d'engendrer tétanisation, arrêt respiratoire ou fibrillation ventriculaire fatale.</li><li><strong>Protection contre les arcs électriques :</strong> préserver les intervenants contre la chaleur extrême, l'onde de pression sonore, l'éblouissement optique et les projections métalliques en fusion.</li><li><strong>Protection contre les dommages consécutifs :</strong> prévenir les accidents secondaires déclenchés par une surprise électrique (chute d'un escabeau, collision mécanique, brûlures chimiques).</li></ol></div>"
                   },
                   {
-                          "title": "2. Chapitres 10.2.2 & 10.2.3 — Procédures 2 et 3 : Travail en dehors et à l'intérieur du voisinage",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 10.2.2 & 10.2.3 • Zones de voisinage</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Procédure 2 — Travail en dehors de la zone de voisinage (10.2.2) :</strong> Le travail se déroule au-delà de DV. La distance minimale DWV doit être déterminée et maintenue en tout temps et en toute situation. À proximité de lignes aériennes par des personnes ordinaires : respecter les prescriptions de la publication Suva 66138.</li>\n  <li><strong>Procédure 3 — Travail à l'intérieur de la zone de voisinage (10.2.3) :</strong> L'intervenant pénètre dans la zone de voisinage DV sans pénétrer dans la zone sous tension DL. Deux méthodes de sécurité :<br>\n  • <em>Protection par écran, barrière ou protecteur isolant (10.2.3.2) :</em> Dispositifs testés pour la tension. Degré de protection requis : <strong>≥ IP2X ou IPXXB en basse tension</strong> ; <strong>≥ IP3X ou IPXXC en haute tension</strong>. Lorsque ces protections sont en place, l'activité est requalifiée comme effectuée en dehors du voisinage et peut être réalisée par des personnes ordinaires.<br>\n  • <em>Protection par distance de sécurité et surveillance (10.2.3.3) :</em> <strong>STRICTEMENT RÉSERVÉE À LA HAUTE TENSION</strong>. Comprend une distance ≥ DL, des critères stricts de désignation et des procédures interdisant l'accès à la zone sous tension.</li>\n</ul>"
-                  },
-                  {
-                          "title": "3. Chapitre 10.2.4 — Procédure 4 : Travail sous tension — Distinction suisse Tst 1 vs Tst 2",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 10.2.4 • Travaux Sous Tension (Art. 75 OCFo & Art. 22 OIBT)</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nEn Suisse, la législation et la directive ESTI 407 opèrent une distinction fondamentale entre le Tst 1 et le Tst 2 :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Caractéristique</th>\n        <th style=\"width:35%;\">Travail sous tension 1 (Tst 1)</th>\n        <th style=\"width:35%;\">Travail sous tension 2 (Tst 2)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Effectif requis</strong></td>\n        <td><strong>1 seule personne</strong> qualifiée/compétente ou instruite (2e personne recommandée pour secours).</td>\n        <td><strong>2 personnes au moins</strong> obligatoires sur chaque chantier (art. 79 al. 1 OCFo, art. 22 al. 3 OIBT).</td>\n      </tr>\n      <tr>\n        <td><strong>Rôles de l'équipe</strong></td>\n        <td>Opérateur seul équipé.</td>\n        <td>L'une compétente et responsable de la conduite/surveillance ; l'autre au moins instruite. <strong>Surveillance particulière</strong> (aucun autre travail en parallèle).</td>\n      </tr>\n      <tr>\n        <td><strong>Nature des activités</strong></td>\n        <td>Mesures, essais, vérification de l'absence de tension, mise en place/retrait de protections si le risque de contact ne peut être exclu.</td>\n        <td>Travail délibéré dans la zone sous tension, transformateurs de mesure/régulation, raccordement, extension ou modification directe de parties actives.</td>\n      </tr>\n      <tr>\n        <td><strong>Modification physique</strong></td>\n        <td><strong>N'entraîne AUCUN changement</strong> sur des pièces sous tension ou conductrices.</td>\n        <td><strong>Entraîne des modifications</strong> directes sur des parties actives sous tension.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <strong>Exigence de qualification OIBT (art. 22 al. 2) :</strong> Sont seuls autorisés à exécuter des travaux sous tension Tst 2 sur les installations soumises à l'OIBT les <strong>installateurs-électriciens CFC</strong> ou les personnes justifiant d'une formation équivalente, spécialement instruits et équipés.\n</div>"
+                          "title": "5.2 Analyse des risques physiques associés",
+                          "badge": "Dangers physiques",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Objectif</th><th>Mécanisme dangereux</th><th>Conséquence physique évitée</th></tr></thead><tbody><tr><td><strong>1. Courant corporel</strong></td><td>Contact avec pièces nues actives</td><td>Fibrillation ventriculaire, asystolie, tétanisation musculaire</td></tr><tr><td><strong>2. Arc électrique</strong></td><td>Court-circuit entre phases ou phase-terre</td><td>Brûlures thermiques au 2e et 3e degré, blast pulmonaire, cécité temporaire</td></tr><tr><td><strong>3. Dommages consécutifs</strong></td><td>Réaction involontaire / sursaut réflexe</td><td>Chute de hauteur mortelle, traumatisme crânien, incendie du local</td></tr></tbody></table>"
                   }
           ],
-          "practicalExample": "Lors du raccordement sous tension d'un nouveau départ de câble dans un tableau général basse tension en service, l'opération entraîne une modification physique des parties actives : il s'agit obligatoirement d'un TST 2. Deux monteurs doivent intervenir : un installateur-électricien CFC responsable de la sécurité assurant une surveillance particulière continue sans toucher aux outils, et un exécutant qualifié effectuant le raccordement.",
-          "importantPoint": "En basse tension, on peut renoncer à la mise à la terre si aucun retour ou induction n'est possible. Les multimètres ordinaires sont formellement interdits pour la vérification d'absence de tension. Le Tst 1 est réalisé par 1 personne et ne modifie rien ; le Tst 2 exige 2 personnes dont un surveillant dédié et permet des modifications actives.",
           "quiz": [
                   {
-                          "question": "1. Lors de l'application des 5 règles de sécurité en basse tension, à quelle condition précise peut-on déroger à la règle 4 (mise à la terre et en court-circuit) ?",
+                          "question": "1. Quels sont les trois objectifs de protection impératifs énumérés au Chapitre 5 ?",
                           "options": [
-                                  "Dès lors que le chantier est éclairé par la lumière du jour",
-                                  "Pour autant qu'il n'existe aucun risque de tension induite ni d'alimentation en retour",
-                                  "Si le fusible amont a un calibre inférieur ou égal à 63 A",
-                                  "Uniquement si l'on travaille avec une perche isolante"
+                                  "Rentabilité de l'installation, vitesse d'exécution et esthétique des câbles",
+                                  "Protection contre le passage du courant, protection contre les arcs électriques et protection contre les dommages consécutifs",
+                                  "Protection contre le vol de matériel, baisse de tension et vieillissement des isolants",
+                                  "Sécurité incendie, propreté des locaux et recyclage des métaux"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "La note sous le chapitre 10.2.1 précise formellement : « Lors de travaux sur des installations à basse tension, il est possible de renoncer à ce point pour autant qu'il n'existe aucun risque de tension induite ni d'alimentation en retour. »"
+                          "explanation": "L'ESTI 407 formule 3 objectifs stricts : protéger contre le choc électrique corporel, protéger contre l'arc électrique et éviter tout dommage consécutif."
                   },
                   {
-                          "question": "2. Pourquoi l'utilisation de multimètres ordinaires est-elle expressément proscrite pour vérifier l'absence de tension (chapitre 10.2.1.1) ?",
+                          "question": "2. Qu'entend-on par « dommage consécutif » dans le contexte électrique ?",
                           "options": [
-                                  "Parce qu'ils fonctionnent sur pile et risquent de s'éteindre prématurément",
-                                  "Parce que les multimètres ordinaires ne répondent pas aux normes spécifiques des détecteurs de tension (EN 61243) et présentent un risque critique en cas d'erreur de calibre ou de choc capacitif",
-                                  "Parce que l'ESTI interdit tous les appareils numériques sur les chantiers",
-                                  "Parce que leur écran LCD n'est pas lisible en plein soleil"
+                                  "Une facture de réparation élevée",
+                                  "Un accident secondaire provoqué par un sursaut ou une secousse (ex. chute d'une échelle, lâcher d'outil lourd)",
+                                  "Une coupure de courant générale dans le quartier",
+                                  "L'usure normale d'un interrupteur"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le chapitre 6.2.4.1 de la SN EN 50110-1 cité au point 10.2.1.1 stipule expressément : « Les multimètres qui reposent uniquement sur les normes les concernant ne doivent pas être utilisés. » Seuls les détecteurs EN 61243 garantissent l'absence de risque d'amorçage interne."
+                          "explanation": "Un dommage consécutif est une blessure indirecte causée par l'effet de surprise du choc électrique, notamment une chute de hauteur."
                   },
                   {
-                          "question": "3. Selon les chapitres 10.2.4.2 et 10.2.4.3, quelle est la règle d'effectif et d'impact séparant le travail sous tension Tst 1 du Tst 2 ?",
+                          "question": "3. La protection contre le rayonnement électromagnétique non ionisant est-elle traitée par l'ESTI 407 ?",
                           "options": [
-                                  "Le Tst 1 exige 3 personnes et le Tst 2 exige 4 personnes",
-                                  "Le Tst 1 est exécuté par 1 personne et n'entraîne aucune modification sur les pièces sous tension ; le Tst 2 exige obligatoirement au moins 2 personnes (dont un surveillant dédié) et entraîne des modifications actives",
-                                  "Le Tst 1 s'applique en haute tension et le Tst 2 en basse tension",
-                                  "Le Tst 1 concerne les lignes aériennes et le Tst 2 les câbles souterrains"
+                                  "Oui, au chapitre 5",
+                                  "Non, elle est spécifiquement réglementée dans d'autres ordonnances (comme l'ORNI — RS 814.710)",
+                                  "Elle n'est pas réglementée en Suisse",
+                                  "Elle dépend uniquement de la Suva"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "La directive distingue le Tst 1 (1 personne, sans modifications de pièces conductrices, ex. mesures/essais) et le Tst 2 (au moins 2 personnes dont une dédiée à la surveillance particulière sans autre tâche en parallèle, avec modifications sur parties actives)."
+                          "explanation": "Le Chapitre 5 précise expressément que le rayonnement non ionisant relève d'ordonnances spécifiques, en particulier l'ORNI."
                   }
           ],
           "prevLessonId": "esti-407-lecon-4",
           "nextLessonId": "esti-407-lecon-6"
   },
-  {
+
+        {
           "id": "esti-407-lecon-6",
           "routeId": "esti-407/lecon-6",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 6,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 6",
-          "title": "Chapitre 12 — Équipements de protection individuelle (EPI) & Niveaux de protection",
-          "subtitle": "Normes des EPI, méthodes d'évaluation d'arc (Box-test vs Arc ouvert), Tableau 7 des 4 niveaux suisses et limitation ID",
-          "sectionsRange": "Chapitre 12",
+          "title": "Chapitre 6 — Obligations",
+          "subtitle": "Obligations légales de l'exploitant, de l'employeur, du chargé de travaux et des monteurs",
+          "sectionsRange": "Chapitre 6",
           "status": "Disponible",
-          "duration": "9 min",
+          "duration": "8 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Maîtriser les normes applicables aux EPI électriques, comprendre l'interdiction de combiner les méthodes d'arc ouvert et de box-test, appliquer rigoureusement le Tableau 7 des 4 niveaux de protection suisses et exploiter le rôle protecteur du courant coupé limité ID.",
-          "introduction": "Face à l'arc électrique, dont la température dépasse 10 000 °C, les vêtements ordinaires en fibres fusibles s'enflamment et collent à la peau. Le Chapitre 12 définit les exigences d'examen de type des EPI, détaille les méthodes normatives internationales et consacre le Tableau 7 suisse fixant les 4 niveaux de protection en fonction du courant de court-circuit et du calibre des fusibles.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "L'exploitant d'installation (art. 20/27 LIE) est responsable de l'état sûr et doit instruire toute personne accédant aux ouvrages.",
+                  "L'employeur (art. 82 LAA) doit mettre à disposition les EPI nécessaires et s'assurer que le personnel est qualifié et instruit.",
+                  "Les travailleurs (art. 82 al. 3 LAA) ont l'obligation stricte d'utiliser les EPI fournis et de suivre les instructions de sécurité.",
+                  "Droit et devoir d'interruption : le travailleur doit immédiatement stopper ou refuser les travaux si les conditions de sécurité ne sont pas réunies."
+          ],
+          "summary": "Le Chapitre 6 explicite la répartition des responsabilités juridiques entre propriétaires, exploitants, employeurs et exécutants. Il consacre le droit d'objection et le devoir impératif d'interrompre une opération en cas de danger non maîtrisé.",
           "contentSections": [
                   {
-                          "title": "1. Chapitres 12.1 & 12.2 — Exigences relatives aux vêtements et normes des EPI électriques",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 12.1 & 12.2 • Règles sur les vêtements & Normes EPI</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes EPI dans le domaine électrique protègent contre les <strong>électrisations</strong> et les <strong>effets thermiques des arcs électriques</strong>. Ils doivent faire l'objet d'un examen de type certifié.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Règles sur les vêtements :</strong> Vêtements couvrant le haut du corps jusqu'aux hanches, à manches longues et portés fermés. En présence de danger venant du bas, compléter par un pantalon de protection. <strong>Pour le travail sous tension (Tst 2), les pantalons de protection longs sont obligatoires</strong>. La couche de base ne doit être <em>ni fusible ni facilement inflammable</em> (proscription des fibres synthétiques fusibles).</li>\n  <li><strong>Tableau 4 — Normes EPI électriques clés :</strong><br>\n  • Vêtements anti-arc : <strong>SN EN 61482-1-2</strong> et <strong>SN EN 61482-2</strong> (Classe 1, 4 kA, APC 1 ; Classe 2, 7 kA, APC 2).<br>\n  • Casques électriquement isolants : <strong>SN EN 50365</strong> (jusqu'à 1000 V AC en classe 00+0 ; jusqu'à 17 kV AC en classes 1+2 ; calotte fermée sans aération).<br>\n  • Visières et cagoules : <strong>DGUV GS-ET-29</strong> (classe 2, 7 kA, APC 2).<br>\n  • Gants isolants : <strong>SN EN 60903</strong> (1000 V AC en classe 00+0 ; jusqu'à 36 kV AC en classes 1 à 4).</li>\n  <li><strong>Tableau 5 — Moyens auxiliaires isolants :</strong> Outils isolés TST 1000 V AC / 1500 V DC selon <strong>SN EN 60900</strong> ; tapis isolants <strong>SN EN 61111</strong> ; nappes isolantes <strong>SN EN 61112</strong>.</li>\n</ul>"
+                          "title": "6.1 Responsabilités de l'exploitant de l'installation (LIE art. 20 & 27)",
+                          "badge": "Exploitant (IM)",
+                          "content": "<p>L'exploitant a la garde technique de l'ouvrage électrique. Selon la LIE :</p><ul><li><strong>Art. 20 LIE :</strong> obligation de maintenir l'installation en état sûr en tout temps, d'éliminer les défauts sans retard et de conserver la documentation technique à jour.</li><li><strong>Art. 27 LIE :</strong> responsabilité civile causale de l'exploitant pour tout dommage corporel ou matériel causé par l'installation, sauf force majeure ou faute lourde de la victime/tiers.</li><li><strong>Instruction d'accès :</strong> l'exploitant doit instruire préalablement toute personne admise dans les locaux de service électrique.</li></ul>"
                   },
                   {
-                          "title": "2. Chapitre 12.2 (Tableau 6) — Comparaison des 2 méthodes d'évaluation du risque d'arc",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Tableau 6 • Arc ouvert vs Box-Test</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Élément</th>\n        <th style=\"width:37%;\">Méthode 1 : Arc électrique ouvert</th>\n        <th style=\"width:38%;\">Méthode 2 : Enceinte d'essai (Box-Test)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Bases de calcul</strong></td>\n        <td>IEEE 1584, NFPA 70E.</td>\n        <td>Information DGUV 203-077 (feuille Excel DGUV basée sur SN EN 61482-2).</td>\n      </tr>\n      <tr>\n        <td><strong>Méthode d'essai & grandeur</strong></td>\n        <td>SN EN CEI 61482-1-1 : Détermination des valeurs d'Arc-Rating (ELIM, ATPV, EBT) en <strong>kJ/m² ou cal/cm²</strong> (1 kJ/m² = 0,0239 cal/cm²).</td>\n        <td>SN EN 61482-1-2 : Essai en boîte fermée par arc dirigé.<br>\n        Deux classes de protection :<br>\n        • <strong>APC 1 :</strong> 168 kJ, 4 kA<br>\n        • <strong>APC 2 :</strong> 320 kJ, 7 kA</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-warning-box\">\n  <strong>⛔ RÈGLE FORMELLE DU TABLEAU 6 :</strong> Les méthodes de calcul et d'essai ne peuvent pas être comparées. <strong>Il n'est donc PAS PERMIS DE COMBINER LES DEUX MÉTHODES</strong>. On choisit une méthode de calcul et on utilise impérativement les EPI certifiés selon la norme d'essai correspondante.\n</div>"
+                          "title": "6.2 Obligations de l'employeur et des travailleurs (LAA art. 82)",
+                          "badge": "LAA art. 82",
+                          "content": "<div class=\"legal-callout\"><p><strong>Obligations croisées de sécurité au travail :</strong></p><ul><li><strong>L'employeur :</strong> doit appliquer toutes les mesures de prévention requises par l'expérience et la technique. Il fournit gratuitement des EPI certifiés et adaptés, organise la formation continue et désigne les responsables compétents.</li><li><strong>Le travailleur :</strong> doit seconder l'employeur dans l'application des prescriptions. Il a l'obligation formelle d'utiliser les EPI et dispositifs de protection mis à sa disposition.</li></ul></div>"
                   },
                   {
-                          "title": "3. Chapitres 12.3 & 12.4 — Tableau 7 des 4 niveaux suisses de protection & Limitation ID",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitres 12.3 & 12.4 • Tableau 7 : Niveaux de protection suisses</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Critère de décision (Ik ou Fusible In)</th>\n        <th style=\"width:15%; text-align:center;\">Niveau</th>\n        <th style=\"width:20%;\">Couche de base</th>\n        <th style=\"width:35%;\">Vêtements de protection anti-arc</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>a) Ik ≤ 1 kA <em>OU</em> b) Fusible ≤ 16 A</td>\n        <td style=\"text-align:center; font-weight:700;\">Base (G)</td>\n        <td>X (Manches longues)</td>\n        <td>— (Protection corps assurée)</td>\n      </tr>\n      <tr>\n        <td>a) Ik ≤ 7 kA <em>OU</em> b) Fusible ≤ 80 A</td>\n        <td style=\"text-align:center; font-weight:700; color:#10b981;\">Niveau 1 (①)</td>\n        <td>X (Manches longues/courtes)</td>\n        <td><strong>1 couche Classe 1 (APC 1)</strong></td>\n      </tr>\n      <tr>\n        <td>a) Ik ≤ 15 kA <em>OU</em> b) Fusible ≤ 200 A</td>\n        <td style=\"text-align:center; font-weight:700; color:#f59e0b;\">Niveau 2 (②)</td>\n        <td>X (Manches longues/courtes)</td>\n        <td><strong>2 couches APC 1</strong> <em>OU</em> <strong>1 couche Classe 2 (APC 2)</strong></td>\n      </tr>\n      <tr>\n        <td>a) Ik ≤ 20 kA <em>OU</em> b) Fusible ≤ 315 A</td>\n        <td style=\"text-align:center; font-weight:700; color:var(--accent-red);\">Niveau 3 (③)</td>\n        <td>X (Manches longues/courtes)</td>\n        <td><strong>1 couche APC 1 + 1 couche APC 2</strong> (superposées)</td>\n      </tr>\n      <tr>\n        <td>a) Ik > 20 kA <em>OU</em> b) Fusible > 315 A</td>\n        <td colspan=\"3\" style=\"background:rgba(239,68,68,0.15); color:var(--accent-red); font-weight:700; text-align:center;\">\n          ⚠️ DÉCLENCHER l'installation ou mise en œuvre de mesures selon l'évaluation formelle des dangers !\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <strong>Compléments indispensables :</strong> Le niveau de base doit être complété par un casque avec visière (DGUV GS-ET-29) ou cagoule, et par des gants isolants avec sous-gants ou gants anti-arc.<br>\n  <strong>Rôle des fusibles (12.4, Tableaux 8 à 11) :</strong> Les fusibles limitent le courant de court-circuit instantané à une valeur de crête <strong>ID</strong> très inférieure au courant présumé Ik du transformateur, ce qui permet de calibrer les EPI d'après le courant assigné In du fusible amont sans devoir calculer toutes les impédances du réseau.\n</div>"
+                          "title": "6.3 Droit et devoir d'interruption du travail (Droit de retrait)",
+                          "badge": "Stop danger",
+                          "content": "<p>L'ESTI 407 consacre formellement le principe de sécurité : <strong>« S'il est déterminé que le travail ne peut pas être effectué comme il a été planifié, le travail doit être immédiatement interrompu ou ne doit pas être commencé. »</strong></p><p>Le travailleur a non seulement le droit mais <em>l'obligation légale de dire STOP</em> si sa sécurité ou celle de ses collègues est compromise.</p>"
                   }
           ],
-          "practicalExample": "Sur un coffret de distribution générale alimenté en amont par des fusibles NH de 160 A (sans mesure de Ik disponible), l'installateur consulte le Tableau 7 : le calibre 160 A s'inscrit dans la plage 'Fusible ≤ 200 A'. L'intervention requiert impérativement un équipement de Niveau 2 (couche de base + vêtement de protection APC 2 ou double APC 1, visière anti-arc et gants adaptés).",
-          "importantPoint": "Le Tableau 7 suisse échelonne la protection thermique en 4 niveaux : Base (≤ 1 kA / 16 A), Niveau 1 (≤ 7 kA / 80 A), Niveau 2 (≤ 15 kA / 200 A), Niveau 3 (≤ 20 kA / 315 A). Au-delà de 20 kA ou 315 A, le travail sous tension est interdit sans déclenchement préalable ou mesures spéciales d'ingénierie.",
           "quiz": [
                   {
-                          "question": "1. Selon le Tableau 7 officiel de la directive ESTI 407, quelle est la protection requise pour le Niveau 3 (courant Ik ≤ 20 kA ou fusible amont ≤ 315 A) ?",
+                          "question": "1. Quelle est l'obligation légale du travailleur selon l'art. 82 al. 3 de la LAA ?",
                           "options": [
-                                  "Une simple veste en coton à manches longues",
-                                  "Niveau de base + une couche APC 1 et une couche APC 2 superposées, complétées par casque avec visière ou cagoule et gants appropriés",
-                                  "Deux couches APC 2 superposées",
-                                  "Aucun vêtement spécifique si la durée d'intervention est inférieure à 5 minutes"
+                                  "Acheter lui-même son outillage isolant",
+                                  "Utiliser obligatoirement les équipements de protection individuelle fournis et respecter les consignes de sécurité",
+                                  "Rédiger seul le rapport de conformité OIBT",
+                                  "Travailler sous tension même s'il ne dispose pas de la qualification requise"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Tableau 7 stipule pour le Niveau 3 : Niveau de base sous vêtements de protection + 1 vêtement de classe de protection 1 (APC 1) + 1 vêtement de classe de protection 2 (APC 2)."
+                          "explanation": "L'art. 82 al. 3 LAA impose expressément aux travailleurs d'utiliser les dispositifs de sécurité et les EPI mis à disposition par l'employeur."
                   },
                   {
-                          "question": "2. Pourquoi le Tableau 6 interdit-il formellement de combiner la méthode d'arc ouvert (IEEE 1584 / NFPA 70E) et la méthode du Box-Test (DGUV 203-077 / SN EN 61482-1-2) ?",
+                          "question": "2. Que doit faire un intervenant si les conditions sur place ne permettent pas d'appliquer les mesures de sécurité prévues ?",
                           "options": [
-                                  "Parce que les deux méthodes proviennent de pays parlant des langues différentes",
-                                  "Parce que les principes physiques d'essai (arc ouvert vs arc dirigé en enceinte close) et les grandeurs de calcul ne sont pas comparables",
-                                  "Parce que le Box-Test n'est valable qu'en très haute tension",
-                                  "Parce que l'IEEE 1584 ne s'applique qu'au courant continu"
+                                  "Poursuivre le travail en allant plus vite",
+                                  "Interrompre immédiatement le travail ou ne pas le commencer, et informer le responsable d'installation",
+                                  "Demander l'avis d'une personne ordinaire présente",
+                                  "Ignorer les risques si le client est pressé"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Tableau 6 indique expressément : « Les méthodes de calcul et d'essai ne peuvent pas être comparées. Il n'est donc pas permis de combiner les deux méthodes. »"
+                          "explanation": "L'ESTI 407 exige l'arrêt immédiat des travaux si la sécurité planifiée ne peut être garantie."
                   },
                   {
-                          "question": "3. Que prescrit impérativement la directive ESTI 407 lorsque le courant de court-circuit dépasse 20 kA ou que le fusible amont dépasse 315 A ?",
+                          "question": "3. Selon l'art. 27 de la LIE, quelle est la nature de la responsabilité de l'exploitant d'installation à courant fort ?",
                           "options": [
-                                  "Porter trois couches de vêtements APC 2",
-                                  "Déclencher l'installation ou mettre en œuvre des mesures selon une évaluation approfondie des dangers",
-                                  "Doubler l'épaisseur des gants isolants",
-                                  "Faire exécuter l'activité par un apprenti sous surveillance"
+                                  "Une responsabilité sans faute (causale), sauf preuve de force majeure ou faute lourde d'un tiers/de la victime",
+                                  "Une responsabilité morale sans conséquence juridique",
+                                  "Une responsabilité uniquement financière limitée à 500 CHF",
+                                  "Une exonération automatique si l'installation a plus de 5 ans"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "La dernière ligne du Tableau 7 dispose sans équivoque pour Ik > 20 kA ou fusible > 315 A : « Déclencher ou mise en œuvre des mesures selon l'évaluation des dangers »."
+                          "correctAnswer": 0,
+                          "explanation": "L'art. 27 LIE institue une responsabilité civile causale stricte pour l'exploitant de l'installation électrique."
                   }
           ],
           "prevLessonId": "esti-407-lecon-5",
           "nextLessonId": "esti-407-lecon-7"
   },
-  {
+
+        {
           "id": "esti-407-lecon-7",
           "routeId": "esti-407/lecon-7",
           "moduleId": "E",
           "parcoursId": "esti-407",
           "lessonNumber": 7,
-          "totalLessons": 7,
+          "totalLessons": 13,
           "code": "ESTI 407 — Leçon 7",
-          "title": "Chapitre 13 — Exigences pratiques & Études de cas illustrées (BT & HT)",
-          "subtitle": "Arbre d'évaluation de terrain en 8 étapes, grilles d'activités BT/HT et analyse des situations concrètes",
-          "sectionsRange": "Chapitre 13",
+          "title": "Chapitre 7 — Définitions",
+          "subtitle": "Vocabulaire officiel ESTI 100, qualifications du personnel et délimitations des zones",
+          "sectionsRange": "Chapitre 7",
           "status": "Disponible",
-          "duration": "10 min",
+          "duration": "8 min",
           "tag": "Directive ESTI",
-          "xpReward": 30,
-          "objective": "Appliquer la liste de contrôle terrain en 8 points d'évaluation, maîtriser les matrices d'exigences BT (Tableau 13.1) et HT (Tableau 13.2) et déterminer avec exactitude la procédure, les EPI et la qualification requise pour chaque cas de figure pratique.",
-          "introduction": "Le Chapitre 13 constitue le guide opérationnel de terrain de la directive ESTI 407. À travers une liste de contrôle en 8 questions et de nombreuses études de cas photographiées (coffrets d'abonnés, compteurs, fusibles HPC, armoires de distribution, cellules moyenne tension), il traduit la théorie en décisions de sécurité infaillibles.",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Les définitions de la Directive ESTI n° 100 et du Vocabulaire Électrotechnique International (CEI 60050) sont applicables.",
+                  "Trois statuts de personnes : personne qualifiée (compétente), personne avertie (instruite) et personne ordinaire.",
+                  "Notions d'espaces : zone sous tension (distance limite DL) et zone de voisinage (distance limite DV).",
+                  "Distinction juridique fondamentale entre commande d'exploitation et travail d'installation."
+          ],
+          "summary": "Le Chapitre 7 établit la terminologie normalisée : qualifications professionnelles, géométrie des zones électriques autour des pièces nues sous tension et classification des activités.",
           "contentSections": [
                   {
-                          "title": "1. Chapitre 13 — La Liste de contrôle terrain en 8 points d'évaluation (Page 33)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 13 • Arbre décisionnel de terrain en 8 points</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:15%;\">Étape</th>\n        <th style=\"width:45%;\">Question de contrôle</th>\n        <th style=\"width:40%;\">Décision réglementaire</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>1 à 3</strong></td>\n        <td>1. Mon emplacement est-il sûr ?<br>2. Moyens conçus à cet effet ?<br>3. Applicables sans danger sans autres mesures ?</td>\n        <td>Questions éliminatoires de base.</td>\n      </tr>\n      <tr>\n        <td><strong>4</strong></td>\n        <td>Les réponses 1 à 3 sont toutes <strong>OUI</strong> ?</td>\n        <td>➔ <strong>COMMANDE :</strong> L'activité peut être exécutée sans EPI spécifique (personne ordinaire O).</td>\n      </tr>\n      <tr>\n        <td><strong>5</strong></td>\n        <td>Au moins une réponse est <strong>NON</strong> ?</td>\n        <td>➔ <strong>TRAVAIL :</strong> Passer immédiatement au point 6.</td>\n      </tr>\n      <tr>\n        <td><strong>6</strong></td>\n        <td>Toute pénétration dans la zone de voisinage pendant le travail est-elle exclue ?</td>\n        <td>• <strong>OUI</strong> ➔ Exécuter l'activité (Procédure 2).<br>• <strong>NON</strong> ➔ Continuer avec le point 7.</td>\n      </tr>\n      <tr>\n        <td><strong>7</strong></td>\n        <td>Un dispositif de protection empêche-t-il la pénétration dans la zone sous tension ?</td>\n        <td>• <strong>OUI</strong> ➔ Poser l'écran et exécuter l'activité.<br>• <strong>NON</strong> ➔ Continuer avec le point 8.</td>\n      </tr>\n      <tr>\n        <td><strong>8</strong></td>\n        <td>Pénétration dans la zone sous tension impossible à exclure :</td>\n        <td>➔ <strong>TRAVAIL SOUS TENSION :</strong> Décider s'il s'agit d'un <strong>Tst 1</strong> (sans modif) ou <strong>Tst 2</strong> (avec modif, 2 personnes requises).</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                          "title": "7.1 Statuts et qualifications des personnes",
+                          "badge": "Qualifications",
+                          "content": "<p>La directive et la norme SN EN 50110-1 distinguent rigoureusement trois catégories de personnes :</p><ul><li><strong>Personne qualifiée (au sens OCFo : personne compétente) :</strong> personne ayant une formation électrotechnique reconnue, des connaissances approfondies et une expérience lui permettant d'évaluer les risques et d'éviter les dangers.</li><li><strong>Personne avertie (au sens OCFo : personne instruite) :</strong> personne suffisamment informée ou surveillée par des personnes qualifiées pour être à même d'éviter les dangers électriques dans des tâches circonscrites.</li><li><strong>Personne ordinaire :</strong> personne qui n'est ni une personne qualifiée ni une personne avertie (utilisateurs, ouvriers du bâtiment non électriciens).</li></ul>"
                   },
                   {
-                          "title": "2. Chapitre 13.1 — Synthèse des exigences en Basse Tension (Tableau 13.1 & Études de cas)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 13.1 • Situations pratiques en Basse Tension</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Maniement disjoncteur ou fusible Diazed (≥ IP2X) [13.1.1.2 & 13.1.1.4] :</strong> COMMANDE. EPI : 0. Qualification : <strong>O (Personne ordinaire)</strong>.</li>\n  <li><strong>Recherche de défauts en coffret ouvert (< IP2X) [13.1.1.1] :</strong> Procédure 4, Tst 1. EPI : Gants isolants, casque avec visière, EPI arc selon Ik. Qualification : <strong>C (Personne compétente)</strong>.</li>\n  <li><strong>Changement fusible Diazed dans coffret ouvert (< IP2X) [13.1.1.3] :</strong> Procédure 4, Tst 1. EPI arc + visière + gants isolants. Qualification : <strong>I (Personne instruite)</strong>.</li>\n  <li><strong>Changement d'un fusible HPC [13.1.1.5 & 13.1.1.13] :</strong> Procédure 4, Tst 1. Danger d'arc électrique lors de la manœuvre. EPI : Gants isolants ou chaleur, casque avec visière, EPI arc selon Ik. Qualification : <strong>I</strong>.</li>\n  <li><strong>Remplacement compteur avec borne enfichable (≥ IP2X) [13.1.1.6] :</strong> COMMANDE. EPI : 0. Qualification : <strong>I</strong>.</li>\n  <li><strong>Remplacement compteur avec borne de raccordement (< IP2X) [13.1.1.7] :</strong> Procédure 4, Tst 1 (si contact fortuit exclu) ou Tst 2 (si contact possible). Qualification : <strong>I ou C+I</strong>.</li>\n  <li><strong>Raccordement câble GKN sous nappe isolante IP2X [13.1.1.9] :</strong> Procédure 2 (travail hors voisinage avec dispositif). EPI : 0. Qualification : <strong>I</strong>.</li>\n  <li><strong>Démontage/raccordement câble GKN en armoire ouverte [13.1.1.10] :</strong> Procédure 4, Tst 2. Matériel contrôlé, outils isolés, gants isolants, EPI arc. Qualification : <strong>C + I</strong> (2 personnes obligatoires).</li>\n  <li><strong>Vérification d'absence de tension dans une prise murale [13.1.1.11] :</strong> Sans mesure particulière. EPI : 0. Qualification : <strong>I</strong>.</li>\n</ul>"
-                  },
-                  {
-                          "title": "3. Chapitre 13.2 — Synthèse des exigences en Haute Tension (Tableau 13.2 & Cas MT)",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Chapitre 13.2 • Situations pratiques en Haute Tension</div>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Cellules MT fermées métalliques (SN EN CEI 62271-200) [Tableau 13.2 & 13.2.1.2] :</strong> Manœuvres et mise à la terre : Niveau de protection 1. Vérification d'absence de tension sur prise capacitive adaptée : COMMANDE, EPI 0, qualification I.</li>\n  <li><strong>Installations MT ouvertes non conformes SN EN CEI 62271-200 :</strong> Manœuvres et mise à la terre : Niveau de protection 2 en 1-36 kV (Niveau 1 en > 36 kV). Qualification : <strong>I</strong>.</li>\n  <li><strong>Réglage du relais de protection primaire MUT en service [13.2.1.1] :</strong> Procédure 4, Tst 1. Pénétration en zone sous tension impossible à exclure. EPI : Perche de réglage isolée, gants chaleur, casque avec visière, EPI arc. Qualification : <strong>I</strong>.</li>\n  <li><strong>Manœuvre d'une cellule MT résistante aux arcs (13.2.1.3) :</strong> Manœuvre. EPI : Arc niveau 1, casque avec visière et gants de protection résistant à la chaleur. Qualification : <strong>I</strong>.</li>\n  <li><strong>Lignes aériennes HT :</strong> Manœuvres, VAT et mise à la terre : Niveau de protection 1*, qualification I. (*visière/gants selon évaluation).</li>\n  <li><strong>Travail sous tension Tst 2 en haute tension (Page 48) :</strong> Extension, entretien sur parties actives HT : Mesures de protection isolantes vérifiées (II), qualification minimale <strong>C + I</strong>.</li>\n</ul>"
+                          "title": "7.2 Géométrie des zones autour des pièces actives nues",
+                          "badge": "Zones électriques",
+                          "content": "<div class=\"legal-callout\"><p><strong>Découpage spatial autour d'un conducteur nu sous tension (U) :</strong></p><ul><li><strong>Zone sous tension :</strong> espace délimité par la distance limite <strong>DL</strong> autour de la pièce active nue. Pénétrer dans cette zone équivaut techniquement à un contact électrique direct (Tst).</li><li><strong>Zone de voisinage :</strong> espace compris entre la distance limite sous tension <strong>DL</strong> et la distance limite de voisinage <strong>DV</strong>. Tout travail y requiert des protections (écrans) ou une surveillance.</li><li><strong>Hors zone de voisinage :</strong> au-delà de la distance limite <strong>DV</strong>. Les travaux électriques ou non électriques s'y déroulent sans contrainte d'approche directe.</li></ul></div>"
                   }
           ],
-          "practicalExample": "Lors du remplacement d'un jeu de fusibles HPC dans une armoire de distribution générale ouverte, l'électricien applique la liste de contrôle du Chapitre 13 : le danger d'arc au retrait du fusible amène une réponse 'NON' au point 3. L'opération est un Travail sous tension Tst 1 (pas de modification de pièces actives). L'opérateur (personne instruite) doit revêtir les gants isolants, le casque avec visière et les vêtements anti-arc adaptés à l'énergie de court-circuit.",
-          "importantPoint": "Une personne ordinaire (O) ne peut effectuer qu'une commande sur appareillage protégé (≥ IP2X). Tout démontage ou raccordement en armoire ouverte sans protection fiable est un Tst 2 imposant une équipe de deux personnes (C + I) avec EPI complets contre les arcs.",
           "quiz": [
                   {
-                          "question": "1. Selon la liste de contrôle du Chapitre 13, comment est qualifié le remplacement de fusibles Diazed dans un tableau résidentiel conforme au degré IP2X ?",
+                          "question": "1. Qu'est-ce qu'une « personne ordinaire » au sens du Chapitre 7 et de la norme SN EN 50110-1 ?",
                           "options": [
-                                  "Travail sous tension Tst 2 nécessitant deux monteurs",
-                                  "Commande d'installation, ne nécessitant aucun EPI particulier et pouvant être effectuée par une personne ordinaire (O)",
-                                  "Travail hors tension exigeant la coupure générale du quartier",
-                                  "Travail à l'intérieur de la zone de voisinage"
+                                  "Un apprenti électricien en 4e année",
+                                  "Une personne qui n'est ni qualifiée ni avertie dans le domaine électrotechnique",
+                                  "Un installateur-électricien titulaire du CFC",
+                                  "Un inspecteur de l'ESTI"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "L'étude de cas 13.1.1.2 et 13.1.1.4 classe le maniement d'un disjoncteur ou fusible Diazed sous enveloppe ≥ IP2X en COMMANDE, sans EPI, accessible à une personne ordinaire (O)."
+                          "explanation": "La personne ordinaire est définie par exclusion : toute personne ne possédant ni les qualifications ni l'instruction suffisante pour prévenir les risques électriques."
                   },
                   {
-                          "question": "2. Pour le démontage et raccordement d'un nouveau câble dans une armoire de distribution basse tension ouverte sans protection fiable (cas 13.1.1.10), quelles sont les exigences ?",
+                          "question": "2. Comment s'appelle la zone comprise entre la limite DL et la limite DV autour d'une pièce nue sous tension ?",
                           "options": [
-                                  "Procédure 1 exécutée par un auxiliaire seul",
-                                  "Procédure 4 (Tst 2) avec qualification C + I (deux personnes), outillage isolé, gants isolants et EPI anti-arc",
-                                  "Commande simple sans EPI",
-                                  "Procédure 2 sans matériel de protection"
+                                  "La zone de repos",
+                                  "La zone de voisinage",
+                                  "La zone hors tension",
+                                  "La zone d'exclusion totale"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le cas 13.1.1.10 conclut sans équivoque : Procédure de travail 4 (Tst 2), EPI complets (matériel contrôlé, outils isolés, gants isolants, EPI arc selon Ik), qualification du personnel C + I (2 personnes)."
+                          "explanation": "L'espace compris entre la distance limite sous tension (DL) et la distance limite de voisinage (DV) est la zone de voisinage."
                   },
                   {
-                          "question": "3. Dans une installation moyenne tension sous enveloppe métallique fermée conforme à la norme SN EN CEI 62271-200, comment la vérification de l'absence de tension est-elle classée (cas 13.2.1.2) ?",
+                          "question": "3. Quelle source terminologique internationale s'applique pour les termes non définis dans la directive ?",
                           "options": [
-                                  "Travail sous tension Tst 2 avec perche de 3 mètres",
-                                  "Commande, sans EPI requis, réalisée à l'aide d'un testeur de tension avec adaptateur pour prise capacitive par une personne instruite (I)",
-                                  "Procédure 3 avec gants 36 kV",
-                                  "Opération interdite sous tension"
+                                  "Le dictionnaire Larousse",
+                                  "Le Vocabulaire Électrotechnique International (CEI 60050)",
+                                  "Le code pénal suisse",
+                                  "Le guide touristique fédéral"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "L'étude de cas 13.2.1.2 précise que sur cellule fermée conforme avec prise capacitive, les 3 questions sont OUI : résultat = COMMANDE, EPI = aucun, qualification = I."
+                          "explanation": "Le Chapitre 7 renvoie explicitement à la Directive ESTI n° 100 et au Vocabulaire Électrotechnique International (CEI 60050)."
                   }
           ],
           "prevLessonId": "esti-407-lecon-6",
-          "nextLessonId": null
+          "nextLessonId": "esti-407-lecon-8"
   },
-  {
+
+        {
+          "id": "esti-407-lecon-8",
+          "routeId": "esti-407/lecon-8",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 8,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 8",
+          "title": "Chapitre 8 — Principes généraux",
+          "subtitle": "Exploitation sûre, méthode S-T-O-P, compétences (Tableau 2), surveillances et distances limites (Tableau 3)",
+          "sectionsRange": "Chapitre 8",
+          "status": "Disponible",
+          "duration": "14 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Évaluation obligatoire des risques (chap. 4.1 SN EN 50110-1) et hiérarchie S-T-O-P (priorité absolue au collectif).",
+                  "Tableau 2 : 3 parcours d'accès au statut de personne compétente (CFC électricien, diplôme supérieur, ou formation interne ≥ 5 ans pratique + examen).",
+                  "Surveillances : surveillance de zone vs surveillance particulière (exclusive, dédiée à 100 % à la sécurité).",
+                  "Tableau 3 des distances : en BT (≤ 1 000 V), DL = aucun contact et DV = 300 mm ; jusqu'à 700 kV et courant continu."
+          ],
+          "summary": "Le Chapitre 8 est le cœur méthodologique de la directive : évaluation préalable des risques, méthode STOP, limites d'intervention, critères de qualification du personnel, organisation de chantier, types de surveillances et tableau officiel des distances DL et DV.",
+          "contentSections": [
+                  {
+                          "title": "8.1 Évaluation des dangers et principe S-T-O-P",
+                          "badge": "Méthode STOP",
+                          "content": "<p>Avant toute intervention, une <strong>évaluation des risques électriques est obligatoire</strong>. Les mesures de protection doivent suivre la hiérarchie STOP :</p><ol><li><strong>S — Substitution :</strong> éliminer le danger (travailler hors tension plutôt que sous tension).</li><li><strong>T — Mesures techniques :</strong> écrans de protection isolants IP2X/IP3X, verrouillage physique, barrières.</li><li><strong>O — Mesures organisationnelles :</strong> consignes écrites, surveillances, limitation du temps d'exposition.</li><li><strong>P — Mesures personnelles :</strong> équipements de protection individuelle (EPI) adaptés au risque résiduel.</li></ol>"
+                  },
+                  {
+                          "title": "8.2 Qualification du personnel (Tableau 2 officiel)",
+                          "badge": "Compétences",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Statut</th><th>Bases de formation requises (Tableau 2)</th><th>Activités autorisées</th></tr></thead><tbody><tr><td><strong>Personne compétente</strong><br>(art. 3 ch. 23 & 11 al. 1 OCFo)</td><td>1. Installateur-électricien CFC ou équivalent.<br>2. Diplôme d'ingénieur ou technicien ES.<br>3. Formation interne avec ≥ 5 ans d'expérience pratique + examen réussi.</td><td>Tous travaux électriques, direction de chantier, travaux sous tension (Tst 1 & Tst 2 avec formation spécifique).</td></tr><tr><td><strong>Personne instruite</strong><br>(art. 3 ch. 15 & 11 al. 2 OCFo)</td><td>Instruction formelle sur les dangers d'une installation spécifique et les mesures de prévention requises.</td><td>Activités limitées, manœuvres désignées, assistance sous la conduite d'une personne compétente.</td></tr></tbody></table>"
+                  },
+                  {
+                          "title": "8.3 Surveillances et Tableau officiel des distances (Tableau 3)",
+                          "badge": "Distances DL / DV",
+                          "content": "<p>Deux types de surveillances sont distingués : <strong>surveillance de zone</strong> (le surveillant peut exécuter d'autres travaux légers) et <strong>surveillance particulière</strong> (la personne surveillante ne fait <em>aucun autre travail</em> et surveille en continu).</p><table class=\"matrix-table\"><thead><tr><th>Niveau de tension nominale (Un)</th><th>Distance limite sous tension (DL)</th><th>Distance limite de voisinage (DV)</th></tr></thead><tbody><tr><td><strong>Basse tension (≤ 1 000 V AC / ≤ 1 500 V DC)</strong></td><td>Pas de contact direct</td><td><strong>300 mm</strong></td></tr><tr><td><strong>10 kV</strong></td><td>120 mm</td><td>1 150 mm</td></tr><tr><td><strong>50 kV</strong></td><td>430 mm</td><td>1 500 mm</td></tr><tr><td><strong>220 kV</strong></td><td>1 600 mm</td><td>3 000 mm</td></tr><tr><td><strong>380 kV</strong></td><td>2 900 mm</td><td>4 000 mm</td></tr></tbody></table>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Quelle est la valeur de la distance limite de voisinage (DV) en basse tension (≤ 1 000 V AC) selon le Tableau 3 ?",
+                          "options": [
+                                  "50 mm",
+                                  "150 mm",
+                                  "300 mm",
+                                  "1 000 mm"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Le Tableau 3 fixe la distance limite de voisinage DV à 300 mm en basse tension (≤ 1 kV AC et ≤ 1,5 kV DC)."
+                  },
+                  {
+                          "question": "2. Selon le principe S-T-O-P, quelle mesure est prioritaire sur les équipements de protection individuelle (P) ?",
+                          "options": [
+                                  "Aucune, les EPI sont toujours la priorité absolue",
+                                  "Les mesures techniques collectives (T) et de substitution (S)",
+                                  "La vitesse d'exécution des monteurs",
+                                  "Le port de vêtements ordinaires en coton"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La hiérarchie STOP place les mesures de substitution (S), techniques collectives (T) et organisationnelles (O) avant les mesures personnelles (P/EPI)."
+                  },
+                  {
+                          "question": "3. Quelle est la particularité d'une « surveillance particulière » selon le chapitre 8.4 ?",
+                          "options": [
+                                  "Le surveillant peut téléphoner ou ranger son véhicule",
+                                  "Le surveillant se consacre exclusivement à la surveillance de sécurité sans effectuer aucun autre travail",
+                                  "Elle peut être effectuée à distance par caméra sans personne sur place",
+                                  "Elle n'est nécessaire qu'en courant continu"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La surveillance particulière requiert que la personne dédiée se concentre exclusivement sur la sécurité des exécutants, sans réaliser aucun travail technique."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-7",
+          "nextLessonId": "esti-407-lecon-9"
+  },
+
+        {
+          "id": "esti-407-lecon-9",
+          "routeId": "esti-407/lecon-9",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 9,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 9",
+          "title": "Chapitre 9 — Procédures d'exploitation",
+          "subtitle": "Mesurage, essais et vérifications : sécurité des instruments CAT III/IV et protocoles",
+          "sectionsRange": "Chapitre 9",
+          "status": "Disponible",
+          "duration": "8 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Procédures d'exploitation : mesurage, essais et vérifications sur les installations sous tension ou hors tension.",
+                  "Mesurage : utilisation impérative d'instruments de mesure homologués (EN 61010, CAT III / CAT IV) et pointes sécurisées.",
+                  "Essais : mise sous tension expérimentale sous balisage et surveillance stricte pour vérifier le fonctionnement.",
+                  "Vérifications : contrôles préalables à la mise en service et périodiques (examens visuels, continuités, isolements)."
+          ],
+          "summary": "Le Chapitre 9 encadre les opérations d'exploitation technique : le mesurage électrique, les essais de mise en service et les vérifications réglementaires, avec un accent rigoureux sur la sécurité des instruments de mesure.",
+          "contentSections": [
+                  {
+                          "title": "9.1 Mesurage électrique et sécurité des appareils",
+                          "badge": "Mesurage",
+                          "content": "<p>Le mesurage consiste à quantifier des grandeurs physiques (tension, courant, résistance, puissance) :</p><ul><li><strong>Catégories de surtension (EN 61010-1) :</strong> les appareils doivent être conformes à l'emplacement de mesure (ex. <em>CAT IV 600 V</em> pour l'origine de l'installation, <em>CAT III 1000 V</em> pour les tableaux de distribution).</li><li><strong>Cordons et pointes de touche :</strong> isolés, avec protection anti-court-circuit (longueur de pointe métallique nue ≤ 4 mm, idéalement ≤ 2 mm ou rétractable).</li><li><strong>Protection personnelle :</strong> port obligatoire de la visière et de vêtements ignifugés lors de mesures sur des jeux de barres sous tension.</li></ul>"
+                  },
+                  {
+                          "title": "9.2 Essais fonctionnels et balisage",
+                          "badge": "Essais",
+                          "content": "<p>Les essais comprennent toutes les activités visant à vérifier le bon fonctionnement électrique, mécanique ou thermique :</p><ul><li>Ils doivent être exécutés par des <strong>personnes compétentes ou instruites sous surveillance</strong>.</li><li>Lorsque des circuits d'essai sont alimentés, <strong>un balisage de sécurité</strong> et des signaux d'avertissement doivent empêcher toute approche de tiers.</li></ul>"
+                  },
+                  {
+                          "title": "9.3 Vérifications préalables et périodiques",
+                          "badge": "Vérifications",
+                          "content": "<p>L'objet des vérifications est de s'assurer de la conformité de l'installation avec les règles de la technique (NIBT / OIBT) :</p><ol><li><strong>Examen visuel :</strong> vérifier les dispositifs de coupure, l'état des isolants, la séparation des circuits.</li><li><strong>Mesures et essais :</strong> continuité des conducteurs de protection (PE), résistance d'isolement, impédance de boucle, temps et courant de déclenchement des RCD.</li><li><strong>Documentation :</strong> établissement du rapport de sécurité (RS) et du protocole de mesure.</li></ol>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Quelle catégorie minimale de surtension (norme EN 61010) doit posséder un multimètre utilisé sur un tableau général basse tension ?",
+                          "options": [
+                                  "CAT I",
+                                  "CAT II",
+                                  "CAT III ou CAT IV selon l'emplacement",
+                                  "Aucune homologation requise"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Les mesures sur tableaux de distribution exigent des instruments certifiés CAT III ou CAT IV pour résister aux surtensions transitoires sans éclatement."
+                  },
+                  {
+                          "question": "2. Quelle précaution physique doit présenter la pointe de touche d'un appareil de mesure en basse tension pour éviter les courts-circuits ?",
+                          "options": [
+                                  "Avoir une partie métallique nue la plus longue possible (> 20 mm)",
+                                  "Avoir une partie conductrice dénudée courte (≤ 4 mm) ou pourvue d'un fourreau isolant rétractable",
+                                  "Être entièrement en cuivre non isolé",
+                                  "Être humidifiée avant la mesure"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Les pointes à partie métallique réduite (≤ 4 mm) empêchent de court-circuiter accidentellement deux phases voisines lors du contact."
+                  },
+                  {
+                          "question": "3. Que doit-on impérativement mettre en œuvre lors d'essais électriques sur des conducteurs ouverts alimentés ?",
+                          "options": [
+                                  "Couper l'éclairage de l'atelier",
+                                  "Un balisage et une signalisation de sécurité interdisant l'accès à toute personne non autorisée",
+                                  "Inviter le personnel non qualifié à observer de près",
+                                  "Réaliser l'essai sans aucun équipement de protection"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le chapitre 9.3 exige un balisage visible et une surveillance pour interdire tout accès lors d'essais avec présence de tension."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-8",
+          "nextLessonId": "esti-407-lecon-10"
+  },
+
+        {
+          "id": "esti-407-lecon-10",
+          "routeId": "esti-407/lecon-10",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 10,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 10",
+          "title": "Chapitre 10 — Procédures de travail",
+          "subtitle": "Arbres de décision, les 4 procédures officielles (Hors tension, Voisinage, TST) et réduction des risques BT",
+          "sectionsRange": "Chapitre 10",
+          "status": "Disponible",
+          "duration": "15 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Processus de décision : distinction entre commande d'exploitation et travail d'installation (art. 66 OCFo).",
+                  "Procédure 1 (Hors tension) : application stricte des 5 règles suisses (dérogation mise à terre en BT sans risque).",
+                  "Procédure 3 (Voisinage) : pose d'écrans isolants IP2X/IP3X pour éliminer la zone de voisinage.",
+                  "Procédure 4 (TST) : distinction suisse entre Tst 1 (1 personne, sans modification) et Tst 2 (2 personnes obligatoires, responsable formé TST)."
+          ],
+          "summary": "Le Chapitre 10 détaille les processus décisionnels en basse et haute tension, l'application rigoureuse des 4 procédures de travail de l'ESTI et les mesures de limitation d'énergie d'arc (fusibles gR/gTr).",
+          "contentSections": [
+                  {
+                          "title": "10.1 Les arbres de décision BT et HT",
+                          "badge": "Arbres décisionnels",
+                          "content": "<p>Avant tout travail, l'intervenant suit l'arbre décisionnel officiel (Figures 5 et 6) :</p><ol><li>L'installation peut-elle être mise hors tension ? <strong>OUI → Procédure 1 (Travail hors tension)</strong>.</li><li>Si NON, des pièces sous tension sont-elles dans la zone de voisinage (DV) ? <strong>OUI → Procédure 3 (Pose d'écrans)</strong>.</li><li>S'il s'agit d'un travail sur pièces actives : <strong>Procédure 4 (Travail sous tension)</strong> selon les critères de l'art. 75 OCFo et de l'art. 22 OIBT.</li></ol>"
+                  },
+                  {
+                          "title": "10.2 Procédure 1 : Travail hors tension (Les 5 règles de sécurité)",
+                          "badge": "Les 5 règles",
+                          "content": "<div class=\"legal-callout\"><p><strong>Les 5 règles de sécurité suisses :</strong></p><ol><li><strong>Déclencher et séparer</strong> sur tous les pôles.</li><li><strong>Verrouiller</strong> contre le réenclenchement (cadenassage + panneau d'interdiction).</li><li><strong>Vérifier l'absence de tension</strong> sur tous les pôles au moyen d'un détecteur conforme (EN 61243).</li><li><strong>Mettre à la terre et en court-circuit</strong> (obligatoire en HT ; dérogation possible en BT s'il n'y a aucun risque de réalimentation ou d'induction).</li><li><strong>Protéger contre les pièces voisines</strong> restées sous tension (écrans, capuchons isolants).</li></ol></div>"
+                  },
+                  {
+                          "title": "10.3 Procédure 4 : Travail sous tension (Tst 1 vs Tst 2)",
+                          "badge": "Tst 1 / Tst 2",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Critère</th><th>Tst 1 (Niveau 1)</th><th>Tst 2 (Niveau 2)</th></tr></thead><tbody><tr><td><strong>Nombre d'intervenants</strong></td><td>1 personne (2e personne recommandée si risque d'arc)</td><td><strong>2 personnes obligatoires</strong> (1 responsable + 1 surveillant)</td></tr><tr><td><strong>Nature des activités</strong></td><td>Mesures, remplacements de fusibles, appareillages protégés sans modification de pièces actives</td><td>Déconnexion/reconnexion de conducteurs nus sous tension, travaux en tableau ouvert</td></tr><tr><td><strong>Qualification requise</strong></td><td>Personne compétente ou instruite selon la tâche</td><td><strong>Installateur-électricien CFC ayant suivi une formation TST reconnue</strong></td></tr></tbody></table>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Combien de personnes sont obligatoires en Suisse pour exécuter des travaux sous tension de niveau Tst 2 (art. 75 OCFo) ?",
+                          "options": [
+                                  "Une seule personne suffit",
+                                  "Deux personnes au minimum (un responsable compétent formé TST et une 2e personne pour la surveillance)",
+                                  "Trois personnes obligatoirement",
+                                  "Cinq personnes avec un ingénieur"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "L'art. 75 OCFo et le chapitre 10.2.4.3 imposent strictement 2 personnes compétentes ou instruites pour les travaux Tst 2."
+                  },
+                  {
+                          "question": "2. Dans quel cas la 4e règle de sécurité (mise à la terre et en court-circuit) peut-elle faire l'objet d'une dérogation en basse tension ?",
+                          "options": [
+                                  "Jamais, elle est toujours obligatoire",
+                                  "S'il n'existe aucun risque de réalimentation, de retour de tension ou de tension induite",
+                                  "Uniquement si l'on a oublié son équipement de mise à la terre",
+                                  "Si le travail dure moins de 5 minutes"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "En basse tension, la mise à la terre peut être omise s'il n'y a aucun risque de tension induite ou de retour par un groupe de secours ou PV."
+                  },
+                  {
+                          "question": "3. Quel moyen permet de transformer une intervention en zone de voisinage (Procédure 3) en travail sécurisé ?",
+                          "options": [
+                                  "Mettre des bouchons d'oreilles",
+                                  "Poser des écrans ou barrières isolantes assurant un degré de protection minimal IP2X / IPXXB",
+                                  "Fermer les yeux lors du passage près des barres",
+                                  "Travailler plus rapidement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La pose d'écrans ou nappes isolantes au moins IP2X élimine la zone de voisinage en empêchant tout contact involontaire."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-9",
+          "nextLessonId": "esti-407-lecon-11"
+  },
+
+        {
+          "id": "esti-407-lecon-11",
+          "routeId": "esti-407/lecon-11",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 11,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 11",
+          "title": "Chapitre 11 — Installations en courant continu",
+          "subtitle": "Spécificités physiques du courant continu (DC), arcs persistants et sécurité photovoltaïque/batteries",
+          "sectionsRange": "Chapitre 11",
+          "status": "Disponible",
+          "duration": "7 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Le courant continu ne passe pas par zéro : absence d'extinction naturelle de l'arc électrique.",
+                  "L'arc continu peut s'étirer sur de grandes longueurs et persister jusqu'à destruction complète des matériels.",
+                  "Effets physiologiques sévères : brûlures électrolytiques internes profondes et seuil de non-lâcher plus bas.",
+                  "Interdiction formelle de débrancher sous charge des connecteurs DC (type MC4) non prévus pour la coupure."
+          ],
+          "summary": "Le Chapitre 11 traite des risques majeurs propres aux installations en courant continu (DC) : photovoltaïque, stockage stationnaire par batteries et réseaux de traction, où l'absence de passage par zéro amplifie la gravité des arcs électriques.",
+          "contentSections": [
+                  {
+                          "title": "11.1 Risques spécifiques de l'arc en courant continu (DC)",
+                          "badge": "Physique du DC",
+                          "content": "<p>En courant alternatif (AC), la tension passe par zéro 100 fois par seconde (à 50 Hz), ce qui favorise l'extinction naturelle de l'arc. En <strong>courant continu (DC)</strong> :</p><ul><li><strong>Aucun passage par zéro :</strong> l'arc électrique s'auto-maintient très facilement et ne s'éteint que si la distance d'étirement devient très importante ou par soufflage magnétique.</li><li><strong>Énergie thermique concentrée :</strong> fusion accélérée des conducteurs en cuivre et risques accrus d'incendie instantané.</li><li><strong>Interrupteurs DC obligatoires :</strong> seuls des sectionneurs certifiés avec chambres de coupure et aimants de soufflage peuvent couper un courant continu sous charge.</li></ul>"
+                  },
+                  {
+                          "title": "11.2 Effets physiologiques et consignes de manœuvre PV / Batteries",
+                          "badge": "Effets corporels",
+                          "content": "<div class=\"legal-callout\"><p><strong>Dangers corporels et règles pratiques :</strong></p><ul><li><strong>Brûlures électrolytiques :</strong> le passage du continu provoque une électrolyse des tissus et des brûlures internes profondes nécessitant une prise en charge hospitalière immédiate.</li><li><strong>Fibrillation cardiaque :</strong> dépend de la polarité et de la phase du cycle cardiaque traversé.</li><li><strong>Règle d'or photovoltaïque :</strong> il est <em>strictement interdit de déconnecter des fiches ou connecteurs de chaînes solaires (MC4) en charge</em> sans avoir préalablement ouvert le sectionneur DC ou l'onduleur.</li></ul></div>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Pourquoi un arc électrique en courant continu (DC) est-il plus difficile à éteindre qu'en courant alternatif (AC) ?",
+                          "options": [
+                                  "Parce que les câbles sont plus épais",
+                                  "Parce que le courant continu ne passe jamais par zéro, empêchant l'extinction naturelle de l'arc",
+                                  "Parce que la tension DC est toujours supérieure à 10 000 V",
+                                  "Parce que les électrons se déplacent plus lentement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "L'absence d'alternance et de passage par zéro de la tension empêche l'extinction périodique naturelle propre au courant alternatif."
+                  },
+                  {
+                          "question": "2. Que risque un électricien s'il déconnecte un connecteur photovoltaïque (MC4) sous courant de charge ?",
+                          "options": [
+                                  "Rien si les mains sont sèches",
+                                  "L'amorçage d'un arc électrique continu persistant causant de graves brûlures aux mains et aux yeux",
+                                  "Une simple décharge statique",
+                                  "L'annulation de la garantie de l'onduleur uniquement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Débrancher un connecteur DC sous charge crée un arc électrique continu violent qui détruit la fiche et blesse grièvement l'opérateur."
+                  },
+                  {
+                          "question": "3. Quelles conséquences physiologiques internes le courant continu provoque-t-il spécifiquement ?",
+                          "options": [
+                                  "Une baisse de la vue sans blessure",
+                                  "Une électrolyse du sang et des tissus provoquant des brûlures chimiques et thermiques profondes",
+                                  "Des engourdissements bénins",
+                                  "Une accélération temporaire de la digestion"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le courant continu induit des réactions électrolytiques chimiques dégradant les cellules et les vaisseaux sanguins en profondeur."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-10",
+          "nextLessonId": "esti-407-lecon-12"
+  },
+
+        {
+          "id": "esti-407-lecon-12",
+          "routeId": "esti-407/lecon-12",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 12,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 12",
+          "title": "Chapitre 12 — Équipement de protection individuelle (EPI)",
+          "subtitle": "Choix des EPI, normes d'arc, Box-test vs Arc ouvert, les 4 niveaux suisses et limite à 315 A",
+          "sectionsRange": "Chapitre 12",
+          "status": "Disponible",
+          "duration": "12 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Vêtements de protection ignifugés (EN 61482-2) : interdiction absolue de sous-vêtements en synthétique fusible.",
+                  "Casque isolant (EN 50365) et écran facial anti-arc avec mentonnière (DGUV GS-ET-29 / EN 166).",
+                  "Deux méthodes d'essai d'arc distinctes : Box-test (APC 1: 168 kJ / APC 2: 320 kJ) et Arc ouvert (cal/cm²) — interdiction de mixer.",
+                  "Les 4 niveaux suisses : Base G (≤ 1 kA/16 A), Niveau 1 (≤ 7 kA/80 A), Niveau 2 (≤ 15 kA/200 A), Niveau 3 (≤ 20 kA/315 A). Coupure obligatoire au-delà."
+          ],
+          "summary": "Le Chapitre 12 définit les exigences techniques relatives aux EPI contre les dangers électriques : normes de conformité, méthodes d'essai d'arc, classification suisse en 4 niveaux de protection et courants coupés admissibles.",
+          "contentSections": [
+                  {
+                          "title": "12.1 Normes européennes des EPI d'électricien",
+                          "badge": "Normes EPI",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Équipement</th><th>Norme européenne</th><th>Exigences spécifiques</th></tr></thead><tbody><tr><td><strong>Vêtements anti-arc</strong></td><td>SN EN 61482-2</td><td>Ininflammables, manches longues, fermeture hermétique, couvre tout le corps.</td></tr><tr><td><strong>Casque de sécurité</strong></td><td>SN EN 50365</td><td>Isolant électrique jusqu'à 1000 V AC / 1500 V DC, pas de pièces métalliques traversantes.</td></tr><tr><td><strong>Visière faciale</strong></td><td>DGUV GS-ET-29</td><td>Protection de classe 1 ou 2 contre l'arc de court-circuit, avec mentonnière enveloppante.</td></tr><tr><td><strong>Gants isolants</strong></td><td>SN EN 60903</td><td>Classes 00 (500 V), 0 (1000 V) jusqu'à classe 4. Doivent être protégés par des surgants en cuir.</td></tr><tr><td><strong>Outils isolés</strong></td><td>SN EN 60900</td><td>Testés à 10 000 V, utilisables jusqu'à 1000 V AC / 1500 V DC.</td></tr></tbody></table>"
+                  },
+                  {
+                          "title": "12.2 Box-Test (APC) vs Arc ouvert (cal/cm²)",
+                          "badge": "Méthodes d'arc",
+                          "content": "<p>Deux méthodes d'évaluation de la protection thermique contre l'arc électrique existent :</p><ul><li><strong>Box-Test (EN 61482-1-2 / DGUV 203-077) :</strong> méthode européenne standard. Deux classes : <em>APC 1</em> (168 kJ / 4 kA) et <em>APC 2</em> (320 kJ / 7 kA).</li><li><strong>Arc ouvert (IEEE 1584 / NFPA 70E) :</strong> méthode quantitative attribuant une valeur ATPV ou ELIM en cal/cm² ou kJ/m².</li><li><strong>Règle suisse d'or :</strong> <em>interdiction absolue de mélanger ou d'additionner mathématiquement les valeurs des deux méthodes</em>.</li></ul>"
+                  },
+                  {
+                          "title": "12.3 Les 4 niveaux de protection suisses (Tableau 7 officiel)",
+                          "badge": "Niveaux suisses",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Niveau</th><th>Courant présumé / Calibre</th><th>Équipements requis pour le haut du corps</th></tr></thead><tbody><tr><td><strong>Niveau G (Base)</strong></td><td>≤ 1 kA / ≤ 16 A</td><td>Vêtements de travail en fibres naturelles ininflammables (coton ≥ 300 g/m²).</td></tr><tr><td><strong>Niveau 1</strong></td><td>≤ 7 kA / ≤ 80 A</td><td>Vêtements de protection APC 1 (168 kJ) + casque avec visière anti-arc classe 1 + gants d'électricien.</td></tr><tr><td><strong>Niveau 2</strong></td><td>≤ 15 kA / ≤ 200 A</td><td>Vêtements de protection APC 2 (320 kJ) + casque avec visière anti-arc classe 2 + gants isolants avec surgants cuir.</td></tr><tr><td><strong>Niveau 3</strong></td><td>≤ 20 kA / ≤ 315 A</td><td>Vêtements APC 2 + sous-vêtements ignifugés + cagoule anti-arc APC 2 sous le casque avec visière classe 2.</td></tr><tr><td><strong>Au-delà de 20 kA ou fusible > 315 A</strong></td><td colspan=\"2\"><strong>TRAVAIL SOUS TENSION INTERDIT : Déclenchement et mise hors tension obligatoires !</strong></td></tr></tbody></table>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Quelle matière est formellement interdite pour les sous-vêtements portés sous des vêtements de protection contre l'arc électrique ?",
+                          "options": [
+                                  "Le coton pur 100 %",
+                                  "La laine naturelle",
+                                  "Les fibres synthétiques fusibles (polyester, polyamide, nylon non traité)",
+                                  "La soie naturelle"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Les matières synthétiques fusibles fondent sous la chaleur de l'arc et collent à la peau, provoquant des brûlures extrêmement graves."
+                  },
+                  {
+                          "question": "2. Quel est le calibre maximal de fusible amont permettant encore de travailler sous tension avec des EPI de Niveau 3 ?",
+                          "options": [
+                                  "63 A",
+                                  "160 A",
+                                  "315 A (ou 20 kA de court-circuit)",
+                                  "1 000 A"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Le Tableau 7 fixe la limite supérieure absolue du Niveau 3 à 315 A (ou 20 kA). Au-delà, le travail sous tension est prohibé : déclenchement obligatoire."
+                  },
+                  {
+                          "question": "3. Peut-on additionner la valeur calorifique d'un tissu (cal/cm²) avec une classe APC (Box-test) ?",
+                          "options": [
+                                  "Oui, par une simple formule de proportionnalité",
+                                  "Non, il est strictement interdit de combiner ou mélanger les résultats des deux méthodes d'essai",
+                                  "Oui, si la Suva donne une dérogation orale",
+                                  "Oui, uniquement pour les gants isolants"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "L'ESTI 407 interdit expressément de mélanger les valeurs de l'arc ouvert (cal/cm²) et du box-test (APC), car leurs physiques d'essai sont totalement différentes."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-11",
+          "nextLessonId": "esti-407-lecon-13"
+  },
+
+        {
+          "id": "esti-407-lecon-13",
+          "routeId": "esti-407/lecon-13",
+          "moduleId": "E",
+          "parcoursId": "esti-407",
+          "lessonNumber": 13,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Leçon 13",
+          "title": "Chapitre 13 — Exemples pratiques d'évaluation des risques",
+          "subtitle": "Checklist terrain en 8 étapes, études de cas basse tension (13.1) et haute tension (13.2)",
+          "sectionsRange": "Chapitre 13",
+          "status": "Disponible",
+          "duration": "15 min",
+          "tag": "Directive ESTI",
+          "xpReward": 35,
+          "keyPoints": [
+                  "Checklist d'évaluation terrain en 8 étapes systématiques avant d'engager toute tâche électrique.",
+                  "Études de cas BT (13.1) : compteurs embrochables vs raccordement à vis, fusibles Diazed vs couteaux HPC.",
+                  "Études de cas HT (13.2) : cellules métalliques MT fermées EN 62271-200, vérification par prises capacitives.",
+                  "Matrice de décision concrète associant : qualification requise (O, I ou C), procédure (1 à 4) et niveau d'EPI."
+          ],
+          "summary": "Le Chapitre 13 est le guide d'application pratique de la directive. Il propose une liste de contrôle en 8 étapes et passe en revue des dizaines de situations professionnelles réelles en basse et haute tension.",
+          "contentSections": [
+                  {
+                          "title": "13.1 Liste de contrôle pratique en 8 étapes (Checklist terrain)",
+                          "badge": "Checklist 8 étapes",
+                          "content": "<p>Avant chaque intervention, l'intervenant applique la méthode en 8 étapes :</p><ol><li><strong>1. Identification :</strong> Quelle est l'installation exacte et quel est son état ?</li><li><strong>2. Mesures préalables :</strong> Peut-on déclencher et travailler hors tension (Procédure 1) ?</li><li><strong>3. Données de court-circuit :</strong> Quel est le courant de court-circuit présumé et le fusible amont ?</li><li><strong>4. Détermination des distances :</strong> Quelles sont les zones DL et DV selon le Tableau 3 ?</li><li><strong>5. Choix de la procédure :</strong> Procédure 1, 2, 3 ou 4 ?</li><li><strong>6. Qualification requise :</strong> Personne compétente (C), instruite (I) ou ordinaire (O) ? Nombre d'intervenants ?</li><li><strong>7. Choix des EPI :</strong> Quel niveau de protection (G, 1, 2 ou 3) selon le Tableau 7 ?</li><li><strong>8. Validation finale :</strong> Si un doute subsiste, STOP et signalement à l'exploitant (IM).</li></ol>"
+                  },
+                  {
+                          "title": "13.2 Cas pratiques basse tension (Tableau 13.1)",
+                          "badge": "Cas réels BT",
+                          "content": "<table class=\"matrix-table\"><thead><tr><th>Situation pratique</th><th>Procédure</th><th>EPI requis</th><th>Qualification</th></tr></thead><tbody><tr><td><strong>Remplacement compteur embrochable</strong> (socle IP2X)</td><td>Commande / Tst 1</td><td>Niveau G ou 1 + lunettes</td><td>Personne instruite (I) ou compétente (C)</td></tr><tr><td><strong>Remplacement compteur à bornes vissées nues</strong></td><td>Tst 2 (2 personnes)</td><td>Niveau 2 ou 3 + visière + gants isolants</td><td>Personne compétente CFC avec formation TST</td></tr><tr><td><strong>Extraction fusible HPC taille 00 à 3</strong></td><td>Procédure 4 / Manœuvre</td><td>Poignée de manœuvre avec manchette cuir + visière GS-ET-29</td><td>Personne instruite ou compétente</td></tr><tr><td><strong>Mesure d'isolement sur armoire industrielle</strong></td><td>Procédure 1 (Hors tension)</td><td>EPI de base + VAT conforme</td><td>Personne compétente (C)</td></tr></tbody></table>"
+                  },
+                  {
+                          "title": "13.3 Cas pratiques haute tension (Tableau 13.2)",
+                          "badge": "Cas réels HT",
+                          "content": "<p>En haute tension (MT / HT) :</p><ul><li><strong>Cellules modernes sous enveloppe métallique (SN EN CEI 62271-200) :</strong> la vérification de l'absence de tension s'effectue via les systèmes intégrés de détection (prises capacitives avec comparateur certifié).</li><li><strong>Mise à la terre et en court-circuit :</strong> réalisée prioritairement au moyen du sectionneur de mise à la terre intégré à commande rapide, ou avec des perches isolées homologuées.</li><li><strong>Surveillance particulière obligatoire :</strong> tout travail de maintenance en cellule ouverte requiert une 2e personne compétente assurant une surveillance continue exclusive.</li></ul>"
+                  }
+          ],
+          "quiz": [
+                  {
+                          "question": "1. Lors de l'extraction d'un fusible basse tension à couteaux (HPC) dans un coffret de distribution, quel moyen auxiliaire est impératif ?",
+                          "options": [
+                                  "Une pince multiprise ordinaire",
+                                  "Une poignée de manœuvre homologuée avec manchette de protection en cuir enveloppante et une visière faciale",
+                                  "Un tournevis d'électricien",
+                                  "Des gants en laine de chantier"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La manœuvre de fusibles HPC exige impérativement une poignée de préhension certifiée avec bavolet/manchette cuir et visière anti-arc."
+                  },
+                  {
+                          "question": "2. Pourquoi le remplacement d'un compteur à bornes nues sous tension est-il classé en Tst 2 (2 personnes) alors qu'un compteur embrochable relève du Tst 1 ?",
+                          "options": [
+                                  "Parce que le compteur à bornes nues est plus lourd",
+                                  "Parce que le raccordement direct expose des conducteurs nus sous tension avec modification physique des liaisons, ce qui impose une surveillance dédiée",
+                                  "Parce que le client doit obligatoirement être présent",
+                                  "Pour diviser le temps de travail par deux"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La présence de pièces nues actives et le vissage/dévissage de conducteurs créent un risque élevé d'arc et de contact direct, imposant le niveau Tst 2 à 2 personnes."
+                  },
+                  {
+                          "question": "3. Dans une cellule haute tension moderne fermée (SN EN CEI 62271-200), comment vérifie-t-on l'absence de tension en toute sécurité ?",
+                          "options": [
+                                  "En touchant la carcasse avec un tournevis testeur",
+                                  "Au moyen des prises capacitives d'indication de présence de tension avec un vérificateur homologué",
+                                  "En écoutant si l'installation bourdonne",
+                                  "En attendant 24 heures après la coupure"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Les cellules modernes sous enveloppe métallique disposent de prises capacitives normalisées permettant de tester la présence/absence de tension porte fermée."
+                  }
+          ],
+          "prevLessonId": "esti-407-lecon-12",
+          "nextLessonId": "esti-407-evaluation-finale"
+  },
+
+        {
           "id": "esti-407-evaluation-finale",
           "routeId": "esti-407/evaluation-finale",
           "moduleId": "E",
           "parcoursId": "esti-407",
-          "isFinalEvaluation": true,
-          "code": "ESTI 407 — Examen final",
-          "title": "Évaluation finale — Directive ESTI n° 407",
-          "subtitle": "Certification officielle sur les activités sur des installations électriques ou à proximité de celles-ci (Version 0526)",
+          "lessonNumber": 14,
+          "totalLessons": 13,
+          "code": "ESTI 407 — Examen",
+          "title": "Évaluation finale certifiante — Directive ESTI n° 407",
+          "subtitle": "Examen officiel de certification couvrant les 13 chapitres de la Directive ESTI n° 407 (Version 0526)",
           "sectionsRange": "Chapitres 1 à 13",
           "status": "Disponible",
-          "duration": "20 min",
-          "tag": "Directive ESTI",
+          "duration": "25 min",
+          "tag": "Examen officiel",
           "xpReward": 100,
-          "objective": "Valider formellement la maîtrise intégrale de la Directive ESTI 407 (Version 0526, en vigueur dès le 1er mai 2026).",
-          "introduction": "Cette <strong>évaluation finale officielle</strong> valide votre maîtrise approfondie de la <strong>Directive ESTI n° 407 (Version 0526)</strong>. Composée de 10 questions d'examen représentatives couvrant l'ensemble du texte réglementaire, elle porte sur le champ d'application, les objectifs de protection, la méthode S-T-O-P, les qualifications professionnelles, les distances limites, les 4 procédures de travail, les règles de TST 1 / TST 2, les EPI et les 4 niveaux suisses de protection contre les arcs électriques. Un score minimal de <strong>80 % (8/10)</strong> est requis pour valider l'examen et remporter le badge Expert ESTI 407 avec 100 XP.",
+          "isFinalEvaluation": true,
+          "badgeEarned": "badge-esti-407",
+          "summary": "Évaluation finale certifiante du parcours Directive ESTI n° 407. Validez 80 % de réponses correctes (8/10) pour débloquer le badge officiel d'Expert ESTI 407 et attester de votre maîtrise des règles de sécurité suisses.",
+          "keyPoints": [
+                  "10 questions transversales couvrant l'intégralité des 13 chapitres de la directive.",
+                  "Seuil de certification fixé à 80 % (8/10).",
+                  "Récompense : 100 XP et attribution du badge certifiant officiel ESTI 407.",
+                  "Questions conformes aux exigences d'audit et d'inspection de l'ESTI."
+          ],
           "contentSections": [
                   {
-                          "title": "Consignes de l'évaluation finale",
-                          "text": "<div class=\"ocfo-legal-badge\">ESTI 407 — Certification officielle • Examen final</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'évaluation finale est constituée de <strong>10 questions à choix multiples</strong> couvrant l'intégralité des 13 chapitres de la directive ESTI 407 / Version 0526 :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application & Entrée en vigueur :</strong> 01.05.2026, période transitoire d'un an, application à tous niveaux de tension et au courant continu.</li>\n  <li><strong>Les 3 objectifs de protection :</strong> Électrisation, arcs électriques et dommages consécutifs.</li>\n  <li><strong>Méthode S-T-O-P :</strong> Priorité aux mesures de protection collectives (Substitution, Technique).</li>\n  <li><strong>Qualification du personnel :</strong> Les 3 parcours d'accès au statut de personne compétente (CFC, formation supérieure, interne ≥ 5 ans + examen).</li>\n  <li><strong>Distances limites de sécurité :</strong> Basse tension (DL = pas de contact, DV = 300 mm) et application au courant continu jusqu'à 70 kV.</li>\n  <li><strong>Surveillance de chantier :</strong> Surveillance de zone vs surveillance particulière (sans travail en parallèle).</li>\n  <li><strong>Les 5 règles de sécurité suisses :</strong> Dérogation de mise à la terre en BT et proscription formelle des multimètres ordinaires (EN 61243).</li>\n  <li><strong>Régimes de travail sous tension :</strong> Tst 1 seul sans modif vs Tst 2 à 2 personnes avec modifications sur parties actives (art. 79 OCFo, art. 22 OIBT).</li>\n  <li><strong>Protection thermique & Tableau 7 :</strong> Les 4 niveaux suisses de protection contre les arcs (Base G, 1, 2, 3) et déclenchement > 20 kA / > 315 A.</li>\n  <li><strong>Décision de terrain (Chapitre 13) :</strong> Arbre en 8 points séparant commande et travail sous tension.</li>\n</ul>\n<div class=\"ocfo-warning-box\">\n  <strong>🎯 Critère de certification :</strong> Seuil d'admission fixé à <strong>80 % (8 bonnes réponses sur 10)</strong>. Vous pouvez recommencer l'évaluation en cas d'échec sans pénalité.\n</div>"
+                          "title": "Consignes de l'évaluation finale certifiante",
+                          "badge": "Examen certifiant",
+                          "content": "<p>Cet examen valide l'ensemble des connaissances acquises dans les 13 chapitres de la Directive ESTI n° 407 :</p><ul><li>Champ d'application et bases légales (LIE, LAA, OCFo, OIBT).</li><li>Les 3 objectifs de protection et obligations juridiques.</li><li>Méthode STOP, qualifications et distances limites DL/DV (Tableau 3).</li><li>Procédures de travail (1, 2, 3 et 4) et règles TST.</li><li>Spécificités du courant continu (DC) et prévention des arcs.</li><li>Choix des EPI (Tableau 7) et limite de coupure à 315 A.</li></ul><p><em>Prenez le temps d'analyser chaque situation avant de valider votre réponse.</em></p>"
                   }
           ],
           "quiz": [
                   {
-                          "question": "1. À quel type d'installations électriques la directive ESTI 407 (Version 0526) s'applique-t-elle selon ses chapitres 2 et 11 ?",
+                          "question": "1. Quel est le champ d'application de la Directive ESTI n° 407 (Chapitre 1) ?",
                           "options": [
-                                  "Uniquement aux installations industrielles en courant alternatif triphasé 400 V",
-                                  "À toutes les installations électriques (TBT, BT, HT) en courant alternatif comme en courant continu",
-                                  "Exclusivement aux lignes aériennes à haute tension de l'AES",
-                                  "Uniquement aux réseaux ferroviaires des CFF"
+                                  "Uniquement les lignes aériennes de distribution publique",
+                                  "Toutes les activités effectuées sur des installations électriques ou à proximité de celles-ci, de la TBT à la très haute tension, en AC et DC",
+                                  "Exclusivement les travaux domestiques régis par l'OIBT",
+                                  "Les installations privées de télécommunications uniquement"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Chapitre 2 et le Chapitre 11 précisent que la directive est valable pour tous les niveaux de tension (TBT, BT, HT) et que les mesures s'appliquent de manière identique en courant continu et en alternatif."
+                          "explanation": "Le Chapitre 1 confère un champ universel à la directive, couvrant toutes les activités sur ou près d'installations électriques, à tous niveaux de tension."
                   },
                   {
-                          "question": "2. Quels sont les 3 objectifs de protection impérativement imposés au Chapitre 5 de la directive ESTI 407 ?",
+                          "question": "2. Quels sont les 3 objectifs de protection impératifs énoncés au Chapitre 5 ?",
                           "options": [
-                                  "Protection de l'isolation, équilibrage des phases et protection différentielle",
-                                  "Protection contre le passage du courant à travers le corps (électrisation), contre les arcs électriques et contre les dommages consécutifs",
-                                  "Protection contre la foudre, les surintensités et les baisses de tension",
-                                  "Protection mécanique, étanchéité IP et tenue au feu"
+                                  "Protection contre le passage du courant, protection contre les arcs électriques et protection contre les dommages consécutifs",
+                                  "Rentabilité économique, rapidité d'exécution et esthétique du réseau",
+                                  "Économie d'énergie, diminution du bruit et propreté des chantiers",
+                                  "Protection juridique de l'assureur, baisse des impôts et sécurité incendie uniquement"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "Le Chapitre 5 définit expressément ces trois objectifs fondamentaux : protection contre l'électrisation, contre les arcs électriques et contre les dommages consécutifs (chute, incendie)."
+                          "correctAnswer": 0,
+                          "explanation": "Le Chapitre 5 pose trois piliers : protection corporelle contre le choc, protection thermique contre l'arc et prévention des accidents secondaires consécutifs."
                   },
                   {
-                          "question": "3. Dans le principe de prévention S-T-O-P (chapitre 8.1.1), quel niveau de mesure possède le plus fort impact et doit être privilégié en priorité ?",
+                          "question": "3. Selon l'art. 82 al. 3 de la LAA (Chapitre 6), quelle obligation stricte incombe au travailleur ?",
                           "options": [
-                                  "Les mesures personnelles (EPI)",
-                                  "La Substitution (S) et les mesures techniques (T), qui constituent des mesures de protection collectives",
-                                  "Les consignes verbales données le matin au vestiaire",
-                                  "Les panneaux d'avertissement adhésifs"
+                                  "Fournir lui-même les équipements collectifs de chantier",
+                                  "Utiliser obligatoirement les équipements de protection individuelle (EPI) mis à disposition par l'employeur",
+                                  "Modifier les installations sans autorisation si cela va plus vite",
+                                  "Refuser systématiquement tout ordre de son supérieur"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Chapitre 8.1.1 stipule que la Substitution et les mesures techniques constituent des mesures collectives à fort impact à privilégier absolument avant les mesures individuelles."
+                          "explanation": "La LAA art. 82 al. 3 oblige légalement le travailleur à porter et utiliser les EPI prescrits par l'employeur."
                   },
                   {
-                          "question": "4. Selon le Tableau 2 de la directive ESTI 407, quel parcours professionnel permet d'obtenir la qualification de « personne compétente » par la voie interne de l'entreprise ?",
+                          "question": "4. Quelle est la valeur de la distance limite de voisinage (DV) en basse tension (≤ 1 000 V AC) selon le Tableau 3 du Chapitre 8 ?",
                           "options": [
-                                  "Avoir accompli 6 mois de stage d'observation",
-                                  "Au moins 5 ans de pratique sous la direction d'une personne compétente, avec formation théorique/pratique et examen réussi avec attestation écrite",
-                                  "Une simple recommandation orale du contremaître",
-                                  "La possession du permis cariste et nacelle"
+                                  "50 mm",
+                                  "150 mm",
+                                  "300 mm",
+                                  "1 000 mm"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "Le Tableau 2 fixe comme exigence interne : au moins cinq ans de pratique sous la direction d'une personne compétente, formation théorique et pratique, et examen réussi avec attestation écrite."
+                          "correctAnswer": 2,
+                          "explanation": "Le Tableau 3 de l'ESTI 407 fixe formellement DV = 300 mm en basse tension (≤ 1 000 V AC / ≤ 1 500 V DC)."
                   },
                   {
-                          "question": "5. En basse tension (UN ≤ 1 kV), quelles sont les distances limites dans l'air DL et DV fixées par le Tableau 3 officiel ?",
+                          "question": "5. En quoi consiste une « surveillance particulière » au sens du Chapitre 8.4 ?",
                           "options": [
-                                  "DL = 100 mm et DV = 500 mm",
-                                  "DL = Pas de contact et DV = 300 mm",
-                                  "DL = 50 mm et DV = 1120 mm",
-                                  "DL = Pas de contact et DV = 1000 mm"
+                                  "Une personne qui surveille le chantier tout en réalisant le câblage",
+                                  "Une personne dédiée exclusivement à la sécurité des intervenants, sans effectuer aucun autre travail",
+                                  "Une alarme sonore automatique",
+                                  "Un contrôle téléphonique ponctuel depuis le bureau"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Tableau 3 indique pour UN ≤ 1 kV : limite extérieure de la zone de travail sous tension DL = Pas de contact, limite extérieure de la zone de voisinage DV = 300 mm."
+                          "explanation": "La surveillance particulière interdit formellement à la personne surveillante d'effectuer tout autre travail : sa concentration est 100 % dédiée à la sécurité."
                   },
                   {
-                          "question": "6. Quelle est la règle stricte régissant la mission d'un surveillant dans le cadre d'une « surveillance particulière » (chapitre 8.4) ?",
+                          "question": "6. Combien de personnes sont obligatoires pour effectuer des travaux sous tension de niveau Tst 2 selon l'art. 75 OCFo (Chapitre 10) ?",
                           "options": [
-                                  "Il peut effectuer le câblage de circuits auxiliaires en parallèle",
-                                  "La personne chargée de la surveillance ne doit réaliser aucun autre travail en parallèle",
-                                  "Il doit être présent uniquement lors de la mise sous tension",
-                                  "Il peut s'absenter si les opérateurs portent tous des casques à visière"
+                                  "Une seule personne qualifiée",
+                                  "Deux personnes au minimum (un responsable compétent formé TST et un surveillant)",
+                                  "Trois personnes au minimum",
+                                  "Quatre personnes avec un ingénieur"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le Chapitre 8.4 (reprenant la norme SN EN 50110-1) stipule formellement que dans une surveillance particulière, la personne chargée de la surveillance ne doit réaliser aucun autre travail en parallèle."
+                          "explanation": "Le Tst 2 impose strictement deux personnes : un responsable de travail compétent formé TST et une deuxième personne assurant la surveillance active."
                   },
                   {
-                          "question": "7. Lors de l'application des 5 règles de sécurité en basse tension, à quelle condition formelle peut-on déroger à la règle 4 (mise à la terre et en court-circuit) ?",
+                          "question": "7. Quelle dérogation aux 5 règles de sécurité est permise en basse tension lors d'un travail hors tension (Procédure 1) ?",
                           "options": [
-                                  "Si le travail est exécuté par un installateur titulaire d'une maîtrise fédérale",
-                                  "Pour autant qu'il n'existe aucun risque de tension induite ni d'alimentation en retour",
-                                  "Si la météo est sèche et sans orage",
-                                  "Uniquement sur les installations photovoltaïques"
+                                  "On peut ne pas vérifier l'absence de tension",
+                                  "La mise à la terre et en court-circuit peut être omise s'il n'y a aucun risque de réalimentation ou de tension induite",
+                                  "On peut laisser le disjoncteur enclenché",
+                                  "On peut intervenir les mains nues sous tension"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "La note du chapitre 10.2.1 autorise la renonciation à la règle 4 en basse tension « pour autant qu'il n'existe aucun risque de tension induite ni d'alimentation en retour »."
+                          "explanation": "En basse tension, si aucun risque de tension induite ou de retour par générateur/PV n'existe, la mise à la terre et en court-circuit peut être dispensée."
                   },
                   {
-                          "question": "8. Pour vérifier l'absence de tension sur une installation électrique, quel équipement est formellement interdit selon le chapitre 10.2.1.1 ?",
+                          "question": "8. Pourquoi l'arc électrique en courant continu (DC) est-il particulièrement destructeur (Chapitre 11) ?",
                           "options": [
-                                  "Les détecteurs de tension bipolaires conformes à la norme EN 61243-3",
-                                  "Les multimètres qui reposent uniquement sur les normes les concernant",
-                                  "Les systèmes intégrés de détection VDS / VDIS",
-                                  "Les vérificateurs d'absence de tension à contact sur parties nues"
+                                  "Parce que la tension DC est toujours trop basse",
+                                  "Parce que l'absence de passage par zéro empêche l'extinction naturelle de l'arc, qui s'auto-maintient violemment",
+                                  "Parce que les câbles DC s'enflamment spontanément au repos",
+                                  "Parce qu'il ne produit aucune chaleur"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "Le chapitre 10.2.1.1 (chap. 6.2.4.1 SN EN 50110-1) stipule : « Les multimètres qui reposent uniquement sur les normes les concernant ne doivent pas être utilisés. »"
+                          "explanation": "En DC, le courant n'alternant pas et ne passant jamais par zéro, l'arc électrique s'étire et persiste jusqu'à destruction complète ou coupure mécanique dédiée."
                   },
                   {
-                          "question": "9. Selon les chapitres 10.2.4.2 et 10.2.4.3, quelle est la composition d'équipe minimale exigée pour un Travail Sous Tension Tst 2 ?",
+                          "question": "9. Selon le Tableau 7 (Chapitre 12), quelle est la limite maximale de fusible amont pour intervenir avec des EPI de Niveau 3 sans coupure obligatoire ?",
                           "options": [
-                                  "Une personne compétente opérant seule avec une caméra de surveillance",
-                                  "Deux personnes au moins, l'une compétente responsable de la conduite/surveillance et l'autre au moins instruite",
-                                  "Trois personnes qualifiées munies de talkies-walkies",
-                                  "Un installateur-électricien et deux apprentis de 1ère année"
+                                  "63 A",
+                                  "125 A",
+                                  "315 A (ou 20 kA de court-circuit présumé)",
+                                  "800 A"
                           ],
-                          "correctAnswer": 1,
-                          "explanation": "L'art. 79 al. 1 OCFo et l'art. 22 al. 3 OIBT cités au point 10.2.4.3 imposent que deux personnes au moins travaillent sur chaque chantier Tst 2, l'une compétente responsable de la conduite/surveillance et l'autre au moins instruite."
+                          "correctAnswer": 2,
+                          "explanation": "Le calibre maximal admis en Niveau 3 est 315 A (ou 20 kA de courant présumé). Au-delà de ce seuil, la mise hors tension est impérative."
                   },
                   {
-                          "question": "10. Selon le Tableau 7 officiel de la directive ESTI 407, que doit-on faire obligatoirement lorsque le courant de court-circuit présumé Ik dépasse 20 kA ou que le fusible amont dépasse 315 A ?",
+                          "question": "10. Lors de la manœuvre de fusibles à couteaux HPC (Chapitre 13), quel équipement auxiliaire est strictement obligatoire ?",
                           "options": [
-                                  "Superposer trois combinaisons de classe APC 2",
-                                  "Déclencher l'installation ou mettre en œuvre des mesures de protection selon une évaluation formelle des dangers",
-                                  "Travailler exclusivement de nuit pour limiter la température ambiante",
-                                  "Augmenter la section des conducteurs sans couper l'alimentation"
+                                  "Une pince universelle isolée",
+                                  "Une poignée de manœuvre homologuée avec manchette de protection enveloppante en cuir et visière anti-arc",
+                                  "Un chiffon sec",
+                                  "Des gants de manutention simples en toile"
                           ],
                           "correctAnswer": 1,
-                          "explanation": "La dernière ligne du Tableau 7 dispose impérativement pour Ik > 20 kA ou fusible > 315 A : « Déclencher ou mise en œuvre des mesures selon l'évaluation des dangers »."
+                          "explanation": "L'insertion ou l'extraction de fusibles HPC impose impérativement la poignée certifiée avec bavolet cuir et écran facial contre le risque d'arc."
                   }
           ],
-          "prevLessonId": "esti-407-lecon-7",
+          "prevLessonId": "esti-407-lecon-13",
           "nextLessonId": null
   }
       ]
@@ -7162,6 +7705,12 @@
       'esti-407-05': 'esti-407-lecon-5',
       'esti-407-06': 'esti-407-lecon-6',
       'esti-407-07': 'esti-407-lecon-7',
+      'esti-407-08': 'esti-407-lecon-8',
+      'esti-407-09': 'esti-407-lecon-9',
+      'esti-407-10': 'esti-407-lecon-10',
+      'esti-407-11': 'esti-407-lecon-11',
+      'esti-407-12': 'esti-407-lecon-12',
+      'esti-407-13': 'esti-407-lecon-13',
       'esti-407-lecon-1': 'esti-407-lecon-1',
       'esti-407-lecon-2': 'esti-407-lecon-2',
       'esti-407-lecon-3': 'esti-407-lecon-3',
@@ -7169,6 +7718,12 @@
       'esti-407-lecon-5': 'esti-407-lecon-5',
       'esti-407-lecon-6': 'esti-407-lecon-6',
       'esti-407-lecon-7': 'esti-407-lecon-7',
+      'esti-407-lecon-8': 'esti-407-lecon-8',
+      'esti-407-lecon-9': 'esti-407-lecon-9',
+      'esti-407-lecon-10': 'esti-407-lecon-10',
+      'esti-407-lecon-11': 'esti-407-lecon-11',
+      'esti-407-lecon-12': 'esti-407-lecon-12',
+      'esti-407-lecon-13': 'esti-407-lecon-13',
       'esti-407-evaluation-finale': 'esti-407-evaluation-finale',
       'esti-407-examen': 'esti-407-evaluation-finale',
       'pyramide-lois': 'pyr-01',
@@ -7538,6 +8093,12 @@
     'esti-407-05': 'esti-407-lecon-5',
     'esti-407-06': 'esti-407-lecon-6',
     'esti-407-07': 'esti-407-lecon-7',
+    'esti-407-08': 'esti-407-lecon-8',
+    'esti-407-09': 'esti-407-lecon-9',
+    'esti-407-10': 'esti-407-lecon-10',
+    'esti-407-11': 'esti-407-lecon-11',
+    'esti-407-12': 'esti-407-lecon-12',
+    'esti-407-13': 'esti-407-lecon-13',
     'esti-407-examen': 'esti-407-evaluation-finale',
     'pyramide-lois': 'pyr-01',
     'pyramide': 'pyr-01',
@@ -10333,7 +10894,7 @@
           </div>
           <h2 id="esti407FeaturedTitle" class="esti-featured-title">Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques</h2>
           <p class="esti-featured-desc">
-            Parcours officiel structuré en 7 leçons conformes à la directive ESTI 407 (Cadre légal & 3 objectifs, Méthode S-T-O-P & qualifications, Organisation & distances, Procédures d'exploitation & DC, Les 4 procédures de travail & TST, EPI & Tableau 7 anti-arc, Liste de contrôle & études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
+            Parcours officiel structuré en 13 leçons calquées 1:1 sur les 13 chapitres de la Directive ESTI n° 407 (Champ d'application, But, Bases légales, Ouvrages de référence, 3 Objectifs de protection, Obligations, Définitions, Principes généraux & S-T-O-P, Mesurage & essais, 4 Procédures de travail & TST, Courant continu, EPI & Niveaux anti-arc, Études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
             <div class="progress-bar-fill" style="width: ${esti407Progress.percentage}%; background:#10b981;"></div>
@@ -11608,10 +12169,10 @@
         </div>
       </header>
 
-      <!-- Liste des 7 Leçons officielles -->
-      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons ESTI 407">
+      <!-- Liste des 13 Leçons officielles -->
+      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 13 leçons ESTI 407">
         <div class="section-heading">
-          <span>📚</span> Les 7 leçons du parcours (fidèles aux 13 chapitres de la directive ESTI 407)
+          <span>📚</span> Les 13 leçons officielles (calquées 1:1 sur les 13 chapitres de la Directive ESTI 407)
         </div>
 
         <div class="ocfo-chapters-list">
@@ -11763,7 +12324,7 @@
     const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
     const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
     const totalEsti221 = isEsti221 ? ProgressionService.getParcoursProgress('esti-221').lessonsTotal : 4;
-    const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 7;
+    const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 13;
 
     // Déterminer les routes de navigation séquentielle
     let nextRoute = null;
@@ -12100,7 +12661,7 @@
               </button>
             ` : isEsti407 ? `
               <button class="btn-continue" onclick="location.hash='#/formations/E/esti-407'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
-                ← Sommaire des 7 leçons ESTI 407
+                ← Sommaire des 13 leçons ESTI 407
               </button>
             ` : `
               <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">

@@ -225,7 +225,7 @@ export function renderModuleView(container, moduleId) {
         </div>
         <h2 id="esti407FeaturedTitle" class="esti-featured-title">Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques</h2>
         <p class="esti-featured-desc">
-          Parcours officiel structuré en 7 leçons conformes à la directive ESTI 407 (Cadre légal & 3 objectifs, Méthode S-T-O-P & qualifications, Organisation & distances, Procédures d'exploitation & DC, Les 4 procédures de travail & TST, EPI & Tableau 7 anti-arc, Liste de contrôle & études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
+          Parcours officiel structuré en 13 leçons calquées 1:1 sur les 13 chapitres de la Directive ESTI n° 407 (Champ d'application, But, Bases légales, Ouvrages de référence, 3 Objectifs de protection, Obligations, Définitions, Principes généraux & S-T-O-P, Mesurage & essais, 4 Procédures de travail & TST, Courant continu, EPI & Niveaux anti-arc, Études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
         </p>
         <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
           <div class="progress-bar-fill" style="width: ${esti407Progress.percentage}%; background:#10b981;"></div>
@@ -1500,10 +1500,10 @@ export function renderEsti407ParcoursView(container) {
       </div>
     </header>
 
-    <!-- Liste des 7 Leçons officielles -->
-    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons ESTI 407">
+    <!-- Liste des 13 Leçons officielles -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 13 leçons ESTI 407">
       <div class="section-heading">
-        <span>📚</span> Les 7 leçons du parcours (fidèles aux 13 chapitres de la directive ESTI 407)
+        <span>📚</span> Les 13 leçons officielles (calquées 1:1 sur les 13 chapitres de la Directive ESTI 407)
       </div>
 
       <div class="ocfo-chapters-list">
