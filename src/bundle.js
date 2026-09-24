@@ -167,8 +167,8 @@
       {
         "id": "rs-734-0-lecon-1",
         "slug": "lecon-1",
-        "number": "I",
-        "title": "Chapitre I — Dispositions générales",
+        "number": "1",
+        "title": "Chapitre 1 — Dispositions générales",
         "articles": "Art. 1 à 3b",
         "duration": "7 min",
         "summary": "Haute surveillance de la Confédération, distinction légale entre faible et fort courant, prescriptions de sécurité et régime des émoluments."
@@ -176,8 +176,8 @@
       {
         "id": "rs-734-0-lecon-2",
         "slug": "lecon-2",
-        "number": "II",
-        "title": "Chapitre II — Installations électriques à faible courant",
+        "number": "2",
+        "title": "Chapitre 2 — Installations électriques à faible courant",
         "articles": "Art. 4 à 12",
         "duration": "5 min",
         "summary": "Conditions précises d'assujettissement des installations à faible courant à la LIE, réserve de l'approbation des plans et historique des articles 5 à 12 abrogés."
@@ -185,8 +185,8 @@
       {
         "id": "rs-734-0-lecon-3",
         "slug": "lecon-3",
-        "number": "III",
-        "title": "Chapitre III — Installations électriques à fort courant",
+        "number": "3",
+        "title": "Chapitre 3 — Installations électriques à fort courant",
         "articles": "Art. 13 à 15d",
         "duration": "9 min",
         "summary": "Assujettissement général du fort courant, définition légale des installations intérieures, délégation aux règles techniques et priorité au câblage souterrain (réforme 2017)."
@@ -194,8 +194,8 @@
       {
         "id": "rs-734-0-lecon-4",
         "slug": "lecon-4",
-        "number": "IIIa",
-        "title": "Chapitre IIIa — Procédure de plan sectoriel",
+        "number": "3a",
+        "title": "Chapitre 3a — Procédure de plan sectoriel",
         "articles": "Art. 15e à 15k",
         "duration": "6 min",
         "summary": "Coordination avec l'aménagement du territoire (LAT), fixation du corridor de ligne, groupe d'accompagnement OFEN et décision finale du Conseil fédéral."
@@ -203,8 +203,8 @@
       {
         "id": "rs-734-0-lecon-5",
         "slug": "lecon-5",
-        "number": "IIIb",
-        "title": "Chapitre IIIb — Procédure d’approbation des plans",
+        "number": "3b",
+        "title": "Chapitre 3b — Procédure d’approbation des plans",
         "articles": "Art. 16 à 17a",
         "duration": "10 min",
         "summary": "Obligation d'approbation préalable, répartition des compétences ESTI/OFEN, enquête publique de 30 jours, effet de concentration et procédure simplifiée."
@@ -212,8 +212,8 @@
       {
         "id": "rs-734-0-lecon-6",
         "slug": "lecon-6",
-        "number": "IIIc",
-        "title": "Chapitre IIIc — Zones réservées et alignements",
+        "number": "3c",
+        "title": "Chapitre 3c — Zones réservées et alignements",
         "articles": "Art. 18 à 18d",
         "duration": "6 min",
         "summary": "Mesures de protection foncière anticipée pour futures lignes THT ≥ 220 kV, alignements, restrictions à la propriété et renvoi à l'expropriation matérielle."
@@ -221,8 +221,8 @@
       {
         "id": "rs-734-0-lecon-7",
         "slug": "lecon-7",
-        "number": "IV",
-        "title": "Chapitre IV — Contrôle",
+        "number": "4",
+        "title": "Chapitre 4 — Contrôle",
         "articles": "Art. 19 à 26a",
         "duration": "8 min",
         "summary": "Responsabilité primaire de l'exploitant (Art. 20), missions de l'Inspection fédérale ESTI, contrôles délégués et surveillance des installations intérieures (OIBT)."
@@ -230,8 +230,8 @@
       {
         "id": "rs-734-0-lecon-8",
         "slug": "lecon-8",
-        "number": "V",
-        "title": "Chapitre V — Dispositions concernant la responsabilité civile",
+        "number": "5",
+        "title": "Chapitre 5 — Dispositions concernant la responsabilité civile",
         "articles": "Art. 27 à 41",
         "duration": "9 min",
         "summary": "Responsabilité causale sans faute de l'exploitant (Art. 27), motifs libératoires stricts (force majeure, faute de la victime), assurance obligatoire, nullité des décharges (Art. 39)."
@@ -239,8 +239,8 @@
       {
         "id": "rs-734-0-lecon-9",
         "slug": "lecon-9",
-        "number": "VI",
-        "title": "Chapitre VI — Expropriation",
+        "number": "6",
+        "title": "Chapitre 6 — Expropriation",
         "articles": "Art. 42 à 54",
         "duration": "6 min",
         "summary": "Titulaires du droit d'expropriation pour cause d'utilité publique, combinaison procédurale et identification des articles 42 et 46 à 54 abrogés."
@@ -248,8 +248,8 @@
       {
         "id": "rs-734-0-lecon-10",
         "slug": "lecon-10",
-        "number": "VII",
-        "title": "Chapitre VII — Dispositions pénales",
+        "number": "7",
+        "title": "Chapitre 7 — Dispositions pénales",
         "articles": "Art. 55 à 60",
         "duration": "7 min",
         "summary": "Amendes jusqu'à 100 000 CHF pour actes intentionnels et 40 000 CHF par négligence, sanctions d'entreprise (Art. 56) et application du DPA (Art. 57)."
@@ -257,8 +257,8 @@
       {
         "id": "rs-734-0-lecon-11",
         "slug": "lecon-11",
-        "number": "VIII",
-        "title": "Chapitre VIII — Dispositions finales",
+        "number": "8",
+        "title": "Chapitre 8 — Dispositions finales",
         "articles": "Art. 61 à 64",
         "duration": "5 min",
         "summary": "Abrogation de la législation de 1889, gestion du droit transitoire des procédures en cours (Art. 63) et pérennité de la LIE jusqu'à son état au 1er avril 2026."
@@ -1128,7 +1128,7 @@
                 "lessonNumber": 1,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 1",
-                "title": "Chapitre I — Dispositions générales",
+                "title": "Chapitre 1 — Dispositions générales",
                 "subtitle": "Haute surveillance fédérale, distinction faible/fort courant et émoluments (Art. 1 à 3b)",
                 "articlesRange": "Art. 1 à 3b",
                 "status": "Disponible",
@@ -1206,7 +1206,7 @@
                 "lessonNumber": 2,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 2",
-                "title": "Chapitre II — Installations électriques à faible courant",
+                "title": "Chapitre 2 — Installations électriques à faible courant",
                 "subtitle": "Champ d'assujettissement des lignes à faible courant et dispositions abrogées (Art. 4 à 12)",
                 "articlesRange": "Art. 4 à 12",
                 "status": "Disponible",
@@ -1277,7 +1277,7 @@
                 "lessonNumber": 3,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 3",
-                "title": "Chapitre III — Installations électriques à fort courant",
+                "title": "Chapitre 3 — Installations électriques à fort courant",
                 "subtitle": "Champ d'application, installations intérieures et règles de câblage souterrain (Art. 13 à 15d)",
                 "articlesRange": "Art. 13 à 15d",
                 "status": "Disponible",
@@ -1352,7 +1352,7 @@
                 "lessonNumber": 4,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 4",
-                "title": "Chapitre IIIa — Procédure de plan sectoriel",
+                "title": "Chapitre 3a — Procédure de plan sectoriel",
                 "subtitle": "Planification territoriale stratégique des lignes THT ≥ 220 kV (Art. 15e à 15k)",
                 "articlesRange": "Art. 15e à 15k",
                 "status": "Disponible",
@@ -1423,7 +1423,7 @@
                 "lessonNumber": 5,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 5",
-                "title": "Chapitre IIIb — Procédure d’approbation des plans",
+                "title": "Chapitre 3b — Procédure d’approbation des plans",
                 "subtitle": "Permis de construire, effet de concentration, oppositions et voies de droit (Art. 16 à 17a)",
                 "articlesRange": "Art. 16 à 17a",
                 "status": "Disponible",
@@ -1514,7 +1514,7 @@
                 "lessonNumber": 6,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 6",
-                "title": "Chapitre IIIc — Zones réservées et alignements",
+                "title": "Chapitre 3c — Zones réservées et alignements",
                 "subtitle": "Réservation foncière, interdictions de bâtir et indemnisation LEx (Art. 18 à 18d)",
                 "articlesRange": "Art. 18 à 18d",
                 "status": "Disponible",
@@ -1585,7 +1585,7 @@
                 "lessonNumber": 7,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 7",
-                "title": "Chapitre IV — Contrôle",
+                "title": "Chapitre 4 — Contrôle",
                 "subtitle": "Surveillance par l'exploitant, organes de contrôle, ESTI et OFEN (Art. 19 à 26a)",
                 "articlesRange": "Art. 19 à 26a",
                 "status": "Disponible",
@@ -1660,7 +1660,7 @@
                 "lessonNumber": 8,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 8",
-                "title": "Chapitre V — Dispositions concernant la responsabilité civile",
+                "title": "Chapitre 5 — Dispositions concernant la responsabilité civile",
                 "subtitle": "Régime de responsabilité causale objective, assurance RC et prescription (Art. 27 à 41)",
                 "articlesRange": "Art. 27 à 41",
                 "status": "Disponible",
@@ -1735,7 +1735,7 @@
                 "lessonNumber": 9,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 9",
-                "title": "Chapitre VI — Expropriation",
+                "title": "Chapitre 6 — Expropriation",
                 "subtitle": "Droit d'expropriation, utilité publique et renvoi à la LEx (Art. 42 à 54)",
                 "articlesRange": "Art. 42 à 54",
                 "status": "Disponible",
@@ -1806,7 +1806,7 @@
                 "lessonNumber": 10,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 10",
-                "title": "Chapitre VII — Dispositions pénales",
+                "title": "Chapitre 7 — Dispositions pénales",
                 "subtitle": "Infractions, sanctions financières, responsabilité en entreprise et DPA (Art. 55 à 60)",
                 "articlesRange": "Art. 55 à 60",
                 "status": "Disponible",
@@ -1877,7 +1877,7 @@
                 "lessonNumber": 11,
                 "totalLessons": 11,
                 "code": "RS 734.0 — Leçon 11",
-                "title": "Chapitre VIII — Dispositions finales",
+                "title": "Chapitre 8 — Dispositions finales",
                 "subtitle": "Abrogations antérieures, dispositions transitoires et réformes récentes (Art. 61 à 64)",
                 "articlesRange": "Art. 61 à 64",
                 "status": "Disponible",
