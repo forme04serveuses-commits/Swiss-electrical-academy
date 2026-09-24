@@ -10871,6 +10871,35 @@
   // Initialisation du Shell, Enregistrement PWA Service Worker et Routeur Hash sans rechargement
 
 
+  // Désactiver la restauration automatique de défilement du navigateur pour les navigations SPA
+  if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  function scrollToTop(container) {
+    const target = container || document.getElementById('pageContainer') || document.querySelector('.main-content');
+    if (target) {
+      target.scrollTop = 0;
+      if (typeof target.scrollTo === 'function') {
+        try {
+          target.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        } catch (e) {
+          target.scrollTop = 0;
+        }
+      }
+    }
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+    if (typeof document !== 'undefined') {
+      if (document.documentElement) document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+    }
+  }
+  if (typeof window !== 'undefined') {
+    window.scrollToTop = scrollToTop;
+  }
+
   function initSEA() {
     const appRoot = document.getElementById('app');
     if (!appRoot) return;
@@ -10912,28 +10941,7 @@
           window.location.reload();
         }
       });
-  // Désactiver la restauration automatique de défilement du navigateur pour les navigations SPA
-  if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  function scrollToTop(container) {
-    const target = container || document.getElementById('pageContainer') || document.querySelector('.main-content');
-    if (target) {
-      target.scrollTop = 0;
-      if (typeof target.scrollTo === 'function') {
-        try {
-          target.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-        } catch (e) {
-          target.scrollTop = 0;
-        }
-      }
     }
-    window.scrollTo(0, 0);
-    if (document.documentElement) document.documentElement.scrollTop = 0;
-    if (document.body) document.body.scrollTop = 0;
-  }
-  window.scrollToTop = scrollToTop;
 
     // Routeur Hash sans rechargement
     function handleRouting() {
