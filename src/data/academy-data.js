@@ -80,6 +80,76 @@ export const TRAINER_DEMO = {
   ]
 };
 
+// Informations officielles et structure en 4 leçons de la Pyramide des lois
+// Source de vérité : Infographie synthétique originale & Recueil systématique du droit fédéral
+export const PYRAMIDE_LOIS_INFO = {
+  id: "pyramide-lois",
+  code: "Pyramide des lois",
+  title: "Pyramide des lois",
+  shortTitle: "Pyramide",
+  description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC, règles techniques NIBT et structure des normes SN, SNR, SNG.",
+  lessons: [
+    {
+      id: "pyr-01",
+      slug: "lecon-1",
+      number: "I",
+      code: "PYR-01",
+      title: "Histoire et Genèse des Lois Électriques (1888–1902)",
+      subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
+      duration: "6 min",
+      xpReward: 30,
+      summary: "Loi du 26 juin 1888 sur les lignes télégraphiques et téléphoniques, création de l'ASE (Electrosuisse) et fondement de la LIE du 24 juin 1902."
+    },
+    {
+      id: "pyr-02",
+      slug: "lecon-2",
+      number: "II",
+      code: "PYR-02",
+      title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
+      subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
+      duration: "8 min",
+      xpReward: 30,
+      summary: "Le Conseil fédéral au sommet, tableau officiel complet des références légales (RS 734.0 à RS 930.11) et widget interactif de la pyramide."
+    },
+    {
+      id: "pyr-03",
+      slug: "lecon-3",
+      number: "III",
+      code: "PYR-03",
+      title: "Règles Techniques et Organismes d'Application",
+      subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
+      duration: "8 min",
+      xpReward: 30,
+      summary: "Règles reconnues de l'art (NIBT SN 411000:2025, SN EN), organismes de contrôle et de surveillance (ESTI, SUVA, AEAI, PDIE) et vidéo pédagogique complète."
+    },
+    {
+      id: "pyr-04",
+      slug: "lecon-4",
+      number: "IV",
+      code: "PYR-04",
+      title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
+      subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
+      duration: "7 min",
+      xpReward: 30,
+      summary: "Analyse comparative des normes exclusives [SN], des règles [SNR] (validité 5 ans + 3 ans) et des guides [SNG]."
+    }
+  ],
+  finalEvaluation: {
+    id: "pyr-evaluation-finale",
+    slug: "evaluation-finale",
+    code: "PYR-FINAL",
+    title: "Évaluation finale — Pyramide des lois",
+    subtitle: "Synthèse générale et validation certifiante sur l'ensemble de la hiérarchie juridique",
+    duration: "15 min",
+    xpReward: 100,
+    summary: "Examen de certification comprenant 8 questions rigoureuses couvrant l'histoire, la hiérarchie, les organismes et la typologie des normes SN/SNR/SNG. Seuil de réussite à 75% requis."
+  },
+  totalLessons: 4,
+  subtitle: "4 leçons officielles · Infographie synthétique en 4 volets · Évaluation finale certifiante",
+  tag: "Cadre normatif fédéral",
+  fullTitle: "Cadre légal et hiérarchie normative suisse (Pyramide des lois)"
+};
+
 // Informations officielles et structure en 11 chapitres de la RS 734.0 (LIE)
 // Source de vérité : 734.0_LIE.pdf (24 juin 1902, état au 1er avril 2026)
 export const RS_734_0_INFO = {
@@ -481,24 +551,203 @@ export const ACADEMY_MODULES = [
     id: "A",
     code: "A",
     title: "Dispositions légales",
-    countLabel: "38 formations",
+    countLabel: "42 formations",
     description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
     badgeTheme: "legal",
     formations: [
+      // ======================================================================
+      // PARCOURS : PYRAMIDE DES LOIS & CADRE NORMATIF SUISSE
+      // 4 leçons autonomes + 1 évaluation finale certifiante
+      // Source de vérité : Infographie synthétique & Recueil systématique RS
+      // ======================================================================
       {
-        id: "pyramide-lois",
-        routeId: "pyramide-lois",
-        code: "Pyramide des lois",
-        title: "Pyramide des lois",
-        subtitle: "Base",
+        id: "pyr-01",
+        routeId: "pyramide-lois/pyr-01",
+        moduleId: "A",
+        parcoursId: "pyramide-lois",
+        lessonNumber: 1,
+        totalLessons: 4,
+        nextLessonId: "pyr-02",
+        code: "PYR-01",
+        title: "Histoire et Genèse des Lois Électriques (1888–1902)",
+        subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
         status: "Disponible",
-        duration: "12 min",
-        tag: "Droit fédéral",
+        duration: "6 min",
+        tag: "Histoire & Genèse",
         xpReward: 30,
-        objective: "Maîtriser la hiérarchie juridique des normes électriques suisses, du Conseil fédéral aux règles techniques et directives, les références officielles (RS) et la structure des normes SN, SNR et SNG.",
-        introduction: `Bienvenue dans la pyramide des normes électriques suisses… promis, on va vous éviter un coup de jus ! ;) 
-De la LIE aux ordonnances comme l’OIBT, jusqu’à la fameuse NIBT 2025, nous allons décortiquer ensemble la pyramide de lois étape par étape. Grâce à des explications simples et visuelles, vous comprendrez enfin la hiérarchie juridique sans vous mélanger les tournevis.
-Prêt à faire la lumière sur le cadre légal et à sécuriser votre travail ?`,
+        objective: "Comprendre l'origine historique du cadre légal électrique suisse : la loi de 1888 sur les lignes télégraphiques et téléphoniques, la création de l'ASE et l'adoption de la LIE du 24 juin 1902.",
+        introduction: "Bienvenue dans la première unité du parcours <strong>Pyramide des lois</strong> ! Pour comprendre la hiérarchie juridique moderne, il est indispensable de remonter aux origines de l'électrotechnique en Suisse. À la fin du XIXe siècle, l'essor rapide du courant fort posa des défis inédits de sécurité et de cohabitation avec les réseaux de communication existants.",
+        contentSections: [
+          {
+            title: "1. La loi fédérale du 26 juin 1888 — Première intervention fédérale",
+            text: `<div class="ocfo-legal-badge">Contexte historique • 26 juin 1888</div>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Avec la <strong>loi fédérale sur l’établissement de lignes téléphoniques et télégraphiques du 26 juin 1888</strong>, la Confédération est intervenue pour la première fois dans le secteur électrique suisse.
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Elle a cherché à protéger le réseau de transmission d'informations car elle observait un <strong>danger réel dans l’alimentation à courant fort</strong> des premières lignes d'énergie, susceptibles de perturber ou d'endommager gravement les télégraphes et téléphones.
+</p>`
+          },
+          {
+            title: "2. Création de l'ASE (Electrosuisse) et naissance de la LIE (1902)",
+            text: `<div class="ocfo-legal-badge">Fondation de l'ASE & Adoption de la LIE • 24 juin 1902</div>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+La création de l’<strong>Association Suisse des Électriciens (ASE)</strong> — aujourd'hui <strong>Electrosuisse</strong> — a été décidée par les professionnels pour répondre aux difficultés techniques liées à l’accroissement rapide de l’alimentation en courant électrique.
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+L’ASE a immédiatement préparé et publié les <strong>premières prescriptions techniques</strong> pour la réalisation et l’exploitation des installations à courant fort en Suisse.
+</p>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Ces prescriptions professionnelles pionnières ont directement constitué le socle technique et la base de la <strong>Loi fédérale sur les installations électriques (LIE) du 24 juin 1902</strong>.
+</p>
+<div class="ocfo-summary-box">
+  <div class="box-title">📌 À RETENIR</div>
+  La loi du 26 juin 1888 a été la première mesure de protection fédérale contre le courant fort. Les prescriptions techniques de l'ASE ont ensuite forgé la base de la LIE du 24 juin 1902, loi-cadre toujours en vigueur aujourd'hui.
+</div>`
+          }
+        ],
+        importantPoint: "La loi du 26 juin 1888 protégeait les lignes de transmission contre les dangers du courant fort. Les premières prescriptions de l'ASE ont ensuite constitué le fondement de la LIE du 24 juin 1902.",
+        quiz: [
+          {
+            id: "q_pyr01_1",
+            type: "single",
+            question: "Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+            options: [
+              "24 juin 1902",
+              "26 juin 1888",
+              "12 juin 2009",
+              "1er janvier 2025"
+            ],
+            correctAnswer: 0,
+            explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
+          },
+          {
+            id: "q_pyr01_2",
+            type: "single",
+            question: "Quel était l'objectif principal de la loi fédérale du 26 juin 1888 sur les lignes téléphoniques et télégraphiques ?",
+            options: [
+              "Protéger les installations de transmission contre le danger causé par l'alimentation à courant fort",
+              "Remplacer toutes les lignes électriques aériennes par des câbles souterrains",
+              "Créer l'Office fédéral de l'énergie (OFEN)",
+              "Imposer la norme NIBT à tous les cantons suisses"
+            ],
+            correctAnswer: 0,
+            explanation: "Par la loi du 26 juin 1888, la Confédération cherchait à protéger les lignes de télécommunication car elle observait un danger dans l’alimentation à courant fort des installations de transmission."
+          }
+        ]
+      },
+      {
+        id: "pyr-02",
+        routeId: "pyramide-lois/pyr-02",
+        moduleId: "A",
+        parcoursId: "pyramide-lois",
+        lessonNumber: 2,
+        totalLessons: 4,
+        nextLessonId: "pyr-03",
+        code: "PYR-02",
+        title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
+        subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
+        status: "Disponible",
+        duration: "8 min",
+        tag: "Hiérarchie légale",
+        xpReward: 30,
+        objective: "Identifier la structure pyramidale du droit fédéral : primauté du Conseil fédéral, articulation des lois fédérales, ordonnances d'exécution (OIBT, OCFo, O DETEC...) et leurs références RS officielles.",
+        introduction: "Dans cette deuxième leçon, nous explorons l'architecture juridique suisse. Au sommet de la pyramide siège le Conseil fédéral. En dessous s'ordonnent les lois fédérales votées par le Parlement et les ordonnances d'exécution qui fixent les prescriptions de sécurité applicables sur le terrain.",
+        contentSections: [
+          {
+            title: "1. Le principe de la hiérarchie juridique suisse",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Dans l’ordre juridique suisse, les règles s’ordonnent du niveau le plus contraignant (au sommet) jusqu’aux modalités techniques d'exécution :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+  <li><strong>Conseil fédéral (CF) :</strong> Au sommet de l'autorité juridiquement contraignante, il édicte les ordonnances d'exécution et veille à l'application des lois.</li>
+  <li><strong>Lois fédérales :</strong> Votées par l'Assemblée fédérale (Parlement), elles fixent les principes généraux, les devoirs fondamentaux et la responsabilité civile (LIE, LSPro, LAA, LTC).</li>
+  <li><strong>Ordonnances fédérales :</strong> Édictées par le Conseil fédéral pour rendre les lois directement applicables (OIBT, OCFo, OCFa, O ESTI, OMBT, OLEI, OCEM, ORNI, OPA).</li>
+  <li><strong>Ordonnances départementales :</strong> Édictées par le DETEC (ex. O DETEC RS 734.272).</li>
+</ul>`
+          },
+          {
+            title: "2. Tableau officiel des abréviations et références légales (RS)",
+            text: `<p style="margin-bottom:0.75rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
+Références officielles au Recueil systématique du droit fédéral (RS) :
+</p>
+<div style="overflow-x:auto; margin-top:0.5rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:180px;">Référence</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>CF</strong></td><td>Conseil fédéral (Autorité suprême au sommet de la pyramide)</td></tr>
+<tr><td><strong>RS 734.0 - LIE</strong></td><td>Loi sur les installations électriques</td></tr>
+<tr><td><strong>RS 734.1 - OCFa</strong></td><td>Ordonnance sur les installations électriques à courant faible</td></tr>
+<tr><td><strong>RS 734.2 - OCFo</strong></td><td>Ordonnance sur les installations électriques à courant fort</td></tr>
+<tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l’Inspection fédérale des installations à courant fort</td></tr>
+<tr><td><strong>RS 734.26 - OMBT</strong></td><td>Ordonnance sur les Matériels électriques à Basse Tension</td></tr>
+<tr><td><strong>RS 734.27 - OIBT</strong></td><td>Ordonnance sur les installations électriques à basse tension</td></tr>
+<tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l’Environnement, des Transports, de l’Energie et de la Communication)</td></tr>
+<tr><td><strong>RS 734.31 - OLEI</strong></td><td>Ordonnance sur les lignes électriques</td></tr>
+<tr><td><strong>RS 734.5 - OCEM</strong></td><td>Ordonnance sur la comptabilité électromagnétique</td></tr>
+<tr><td><strong>RS 784.10 - LTC</strong></td><td>Loi sur les télécommunications</td></tr>
+<tr><td><strong>RS 814.710 - ORNI</strong></td><td>Ordonnance sur la protection contre le rayonnement non ionisant</td></tr>
+<tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l’assurance-accidents</td></tr>
+<tr><td><strong>RS 832.30 - OPA</strong></td><td>Ordonnance sur la prévention des accidents et des maladies professionnelles</td></tr>
+<tr><td><strong>RS 930.11 - LSPro</strong></td><td>Loi fédérale du 12 juin 2009 sur la sécurité des produits</td></tr>
+</tbody>
+</table>
+</div>`
+          }
+        ],
+        interactiveWidget: "pyramid-widget",
+        importantPoint: "Au sommet de la pyramide, le Conseil fédéral (CF) constitue l'autorité suprême. Les lois fédérales (LIE, LSPro, LAA) fixent le cadre et les ordonnances (OIBT, OCFo) précisent les obligations applicables aux professionnels.",
+        quiz: [
+          {
+            id: "q_pyr02_1",
+            type: "single",
+            question: "Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
+            options: [
+              "CF : Conseil fédéral",
+              "Règles techniques / Directives",
+              "Prescriptions des distributeurs d'électricité (PDIE)",
+              "Guides suisses [SNG]"
+            ],
+            correctAnswer: 0,
+            explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
+          },
+          {
+            id: "q_pyr02_2",
+            type: "single",
+            question: "Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
+            options: [
+              "Ordonnance sur les installations électriques à basse tension",
+              "Ordonnance sur les Matériels électriques à Basse Tension",
+              "Ordonnance sur les installations électriques à courant fort",
+              "Ordonnance sur l’Inspection fédérale des installations à courant fort"
+            ],
+            correctAnswer: 0,
+            explanation: "RS 734.27 - OIBT désigne l'Ordonnance sur les installations électriques à basse tension."
+          }
+        ]
+      },
+      {
+        id: "pyr-03",
+        routeId: "pyramide-lois/pyr-03",
+        moduleId: "A",
+        parcoursId: "pyramide-lois",
+        lessonNumber: 3,
+        totalLessons: 4,
+        nextLessonId: "pyr-04",
+        code: "PYR-03",
+        title: "Règles Techniques et Organismes d'Application",
+        subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
+        status: "Disponible",
+        duration: "8 min",
+        tag: "Règles de l'art",
+        xpReward: 30,
+        objective: "Identifier la place des règles techniques (NIBT 2025, SN EN) dans la pyramide et comprendre le rôle des organismes clés : ESTI, AEAI, SUVA et les distributeurs d'électricité (PDIE).",
+        introduction: "Les lois et ordonnances définissent les objectifs fondamentaux de sécurité, mais ce sont les règles techniques reconnues (comme la NIBT 2025) et les organismes de surveillance et de prévention (ESTI, SUVA, AEAI, PDIE) qui encadrent concrètement la pratique sur les chantiers.",
         video: {
           id: "vid-pyramide-lois",
           title: "À regarder — Comprendre la pyramide des lois",
@@ -514,58 +763,114 @@ Prêt à faire la lumière sur le cadre légal et à sécuriser votre travail ?`
         },
         contentSections: [
           {
-            title: "Pyramide des lois",
-            text: `<p style="margin-bottom:0.75rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
-Abréviations et références légales officielles :
+            title: "1. Les règles techniques reconnues : NIBT et SN EN",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Les règles techniques concrétisent l'état de la technique et créent une <strong>présomption de conformité</strong> aux ordonnances fédérales :
 </p>
-<div style="overflow-x:auto; margin-top:0.5rem;">
+<div style="overflow-x:auto; margin-top:0.5rem; margin-bottom:1rem;">
 <table class="thresholds-table">
 <thead>
 <tr>
-<th style="min-width:180px;">Référence</th>
-<th>Signification</th>
+<th style="min-width:180px;">Règle / Norme</th>
+<th>Description et Portée</th>
 </tr>
 </thead>
 <tbody>
-<tr><td><strong>CF</strong></td><td>Conseil fédéral</td></tr>
-<tr><td><strong>RS 734.0 - LIE</strong></td><td>Loi sur les installations électriques</td></tr>
-<tr><td><strong>RS 734.1 - OCFa</strong></td><td>Ordonnance sur les installations électriques à courant faible</td></tr>
-<tr><td><strong>RS 734.2 - OCFo</strong></td><td>Ordonnance sur les installations électriques à courant fort</td></tr>
-<tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l’Inspection fédérale des installations à courant fort</td></tr>
-<tr><td><strong>RS 734.26 - OMBT</strong></td><td>Ordonnance sur les Matériels électriques à Basse Tension</td></tr>
-<tr><td><strong>RS 734.27 - OIBT</strong></td><td>Ordonnance sur les installations électriques à basse tension</td></tr>
-<tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l’Environnement, des Transports, de l’Energie et de la Communication)</td></tr>
-<tr><td><strong>RS 734.31 - OLEI</strong></td><td>Ordonnance sur les lignes électriques</td></tr>
-<tr><td><strong>RS 734.5 - OCEM</strong></td><td>Ordonnance sur la comptabilité électromagnétique</td></tr>
-<tr><td><strong>RS 784.10 - LTC</strong></td><td>Loi sur les télécommunications</td></tr>
-<tr><td><strong>RS 814.710 - ORNI</strong></td><td>Ordonnance sur la protection contre le rayonnement non ionisant</td></tr>
-<tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l’assurance-accidents</td></tr>
-<tr><td><strong>RS 832.30 - OPA</strong></td><td>Ordonnance sur la prévention des accidents et des maladies professionnelles</td></tr>
-<tr><td><strong>RS 930.11 - LSPro</strong></td><td>Loi fédérale du 12 juin 2009 sur la sécurité des produits</td></tr>
-<tr><td><strong>NIBT</strong></td><td>Norme sur les installations à basse tension (SN 411000 :2025)</td></tr>
-<tr><td><strong>SN EN</strong></td><td>Norme Suisse Européenne Norme</td></tr>
-<tr><td><strong>SNR</strong></td><td>Règle Suisse</td></tr>
-<tr><td><strong>SNG</strong></td><td>Guide Suisse</td></tr>
-<tr><td><strong>ESTI</strong></td><td>Inspection fédérale des installations à courant fort</td></tr>
-<tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d’assurance incendie</td></tr>
-<tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d’assurance en cas d’accidents</td></tr>
-<tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d’électricité CH</td></tr>
+<tr><td><strong>NIBT (SN 411000 :2025)</strong></td><td>Norme sur les installations à basse tension. Document technique de référence pour l'étude, l'exécution et le contrôle des installations BT en Suisse.</td></tr>
+<tr><td><strong>SN EN</strong></td><td>Norme Suisse Européenne Norme : normes européennes harmonisées transposées dans la collection suisse.</td></tr>
+<tr><td><strong>SNR / SNG</strong></td><td>Règles Suisses et Guides Suisses élaborés pour préciser des applications sectorielles.</td></tr>
 </tbody>
 </table>
 </div>`
           },
           {
-            title: "Structure et présentation des SN, SNR et SNG",
-            text: `Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d’origine européenne ou internationale et ont été transférées dans l’assortiment de normes suisses.
-
-<div style="overflow-x:auto; margin-top:0.75rem;">
+            title: "2. Les organismes d'application et de surveillance",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Quatre organismes majeurs interviennent pour veiller à la sécurité et à l'application des règles :
+</p>
+<div style="overflow-x:auto; margin-top:0.5rem;">
 <table class="thresholds-table">
 <thead>
 <tr>
-<th style="min-width:140px;"></th>
-<th style="min-width:180px;">[SN]</th>
-<th style="min-width:180px;">[SNR]</th>
-<th style="min-width:180px;">[SNG]</th>
+<th style="min-width:130px;">Sigle</th>
+<th style="min-width:240px;">Organisme officiel</th>
+<th>Rôle et missions principales</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>ESTI</strong></td><td>Inspection fédérale des installations à courant fort</td><td>Surveillance générale, approbation des plans d'installations, surveillance du marché des matériels BT et délivrance des autorisations d'installer (OIBT).</td></tr>
+<tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d’assurance en cas d’accidents</td><td>Prévention des accidents du travail et des maladies professionnelles, édiction des règles vitales pour électriciens.</td></tr>
+<tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d’assurance incendie</td><td>Prescriptions de protection incendie régissant l'implantation et la résistance au feu des installations électriques.</td></tr>
+<tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d’électricité CH</td><td>Prescriptions techniques de raccordement édictées par les gestionnaires de réseau de distribution (GRD).</td></tr>
+</tbody>
+</table>
+</div>`
+          }
+        ],
+        importantPoint: "Les règles de l'art (NIBT 2025, SN EN) matérialisent l'état de la technique reconnu. L'ESTI surveille les installations et octroie les autorisations, la SUVA prévient les accidents, l'AEAI protège contre l'incendie et les PDIE régissent le raccordement.",
+        quiz: [
+          {
+            id: "q_pyr03_1",
+            type: "single",
+            question: "Selon le cadre des normes électriques suisses, que désigne la NIBT (SN 411000 :2025) ?",
+            options: [
+              "La Norme sur les installations à basse tension concrétisant les règles de la technique reconnues",
+              "Une loi fédérale adoptée par le Parlement suisse",
+              "Une ordonnance départementale édictée par le DETEC",
+              "Un guide explicatif non contraignant sans valeur juridique"
+            ],
+            correctAnswer: 0,
+            explanation: "La NIBT (SN 411000 :2025) est la Norme sur les installations à basse tension, concrétisant les règles de la technique reconnues et assurant la conformité aux ordonnances fédérales (OIBT)."
+          },
+          {
+            id: "q_pyr03_2",
+            type: "single",
+            question: "Quel organisme officiel a pour mission la surveillance générale, l'approbation des plans et le contrôle des installations à courant fort en Suisse ?",
+            options: [
+              "ESTI (Inspection fédérale des installations à courant fort)",
+              "AEAI (Association des établissements cantonaux d’assurance incendie)",
+              "SUVA (Caisse nationale suisse d’assurance en cas d’accidents)",
+              "PDIE (Prescriptions des distributeurs d’électricité CH)"
+            ],
+            correctAnswer: 0,
+            explanation: "L'ESTI (Inspection fédérale des installations à courant fort) est l'organe technique placé sous la haute surveillance de la Confédération chargé de veiller à la sécurité des installations et de délivrer les autorisations d'installer."
+          }
+        ]
+      },
+      {
+        id: "pyr-04",
+        routeId: "pyramide-lois/pyr-04",
+        moduleId: "A",
+        parcoursId: "pyramide-lois",
+        lessonNumber: 4,
+        totalLessons: 4,
+        nextLessonId: "pyr-evaluation-finale",
+        code: "PYR-04",
+        title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
+        subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
+        status: "Disponible",
+        duration: "7 min",
+        tag: "Typologie normative",
+        xpReward: 30,
+        objective: "Maîtriser la typologie des publications de normalisation : distinguer formellement une Norme Suisse [SN], une Règle Suisse [SNR] et un Guide Suisse [SNG] selon leur définition, intégration à la collection CH et durée de validité.",
+        introduction: "Le recueil de normes applicables en Suisse compte environ 26'000 documents. Mais toutes les publications normatives n'ont pas la même portée juridique ni la même durée de vie. Cette leçon décortique le tableau comparatif officiel entre [SN], [SNR] et [SNG].",
+        contentSections: [
+          {
+            title: "1. Le paysage normatif suisse : 26'000 normes",
+            text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Actuellement en Suisse, on compte environ <strong>26'000 normes</strong>, dont <strong>un millier de normes exclusivement suisses [SN]</strong>, alors que les 25'000 restantes sont d’origine européenne ou internationale et ont été transférées dans l’assortiment de normes suisses.
+</p>`
+          },
+          {
+            title: "2. Structure et présentation comparée des [SN], [SNR] et [SNG]",
+            text: `<div style="overflow-x:auto; margin-top:0.75rem;">
+<table class="thresholds-table">
+<thead>
+<tr>
+<th style="min-width:140px;">Critère</th>
+<th style="min-width:180px;">[SN] — Norme Suisse</th>
+<th style="min-width:180px;">[SNR] — Règle Suisse</th>
+<th style="min-width:180px;">[SNG] — Guide Suisse</th>
 </tr>
 </thead>
 <tbody>
@@ -577,9 +882,9 @@ Abréviations et références légales officielles :
 </tr>
 <tr>
 <td><strong>Intégration à la norme CH</strong></td>
-<td>Oui</td>
-<td>Non</td>
-<td>Non</td>
+<td><strong>Oui</strong></td>
+<td><strong>Non</strong></td>
+<td><strong>Non</strong></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -589,46 +894,25 @@ Abréviations et références légales officielles :
 </tr>
 <tr>
 <td><strong>Validité</strong></td>
-<td>Illimitée</td>
-<td>5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG</td>
-<td>Illimitée</td>
+<td><strong>Illimitée</strong></td>
+<td><strong>5 ans</strong> Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG</td>
+<td><strong>Illimitée</strong></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="ocfo-summary-box">
+  <div class="box-title">📌 POINTS CLÉS DU TABLEAU COMPARATIF</div>
+  • <strong>[SN] :</strong> Seule publication bénéficiant d'une intégration formelle à la norme CH, validité illimitée.<br>
+  • <strong>[SNR] :</strong> Publication à accord limité sans vote formel, validité limitée à 5 ans (+ 3 ans de prolongation).<br>
+  • <strong>[SNG] :</strong> Guide explicatif sans définition normative, validité illimitée.
 </div>`
-          },
-          {
-            title: "Histoire",
-            text: `Avec la loi fédérale sur l’établissement de lignes téléphoniques et télégraphiques du 26 juin 1888, la Confédération a essayé de protéger car elle observait un danger dans l’alimentation à courant fort des installations de transmission.
-
-La création de l’Association Suisse des Électriciens ASE (Electrosuisse actuellement) a été faite à cause des difficultés à l’accroissement de l’alimentation en courant. L’ASE a préparé les premières prescriptions pour la réalisation et l’exploitation des installations à courant fort. Celles-ci ont formé la base de la LIE du 24 juin 1902.`
           }
         ],
-        interactiveWidget: "pyramid-widget",
-        importantPoint: "Hiérarchie juridique : les règles s’ordonnent du niveau le plus contraignant (Conseil fédéral au sommet) jusqu’aux règles techniques et directives à la base.",
-        synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
-        synthesisVisual: {
-          src: "./public/media/images/module-a/infographie_pyramide_lois.png",
-          alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
-          caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
-          source: "Illustration originale — ELECBOOK"
-        },
+        importantPoint: "Seule la [SN] bénéficie d'une intégration formelle à la norme CH. La [SNR] est une règle à accord limité valable 5 ans (prolongation de 3 ans). Le [SNG] est un guide explicatif sans valeur normative.",
         quiz: [
           {
-            id: "q_a00_1",
-            type: "single",
-            question: "Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
-            options: [
-              "CF : Conseil fédéral",
-              "Règles techniques / Directives",
-              "Prescriptions des distributeurs d'électricité (PDIE)",
-              "Guides suisses [SNG]"
-            ],
-            correctAnswer: 0,
-            explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
-          },
-          {
-            id: "q_a00_2",
+            id: "q_pyr04_1",
             type: "single",
             question: "Actuellement en Suisse, sur environ 26'000 normes, combien sont des normes exclusivement suisses [SN] ?",
             options: [
@@ -641,7 +925,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             explanation: "On compte environ 26'000 normes en Suisse, dont un millier de normes exclusivement suisses [SN], les 25'000 restantes étant d'origine européenne ou internationale."
           },
           {
-            id: "q_a00_3",
+            id: "q_pyr04_2",
             type: "single",
             question: "Quelle est la validité d'une Règle Suisse [SNR] selon la structure des normes en Suisse ?",
             options: [
@@ -654,7 +938,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             explanation: "Selon le tableau officiel de structure des normes, la validité d'une [SNR] est de « 5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG »."
           },
           {
-            id: "q_a00_4",
+            id: "q_pyr04_3",
             type: "single",
             question: "Parmi les publications [SN], [SNR] et [SNG], laquelle bénéficie d'une intégration à la norme CH ?",
             options: [
@@ -667,7 +951,7 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             explanation: "Selon le tableau comparatif officiel, seule la [SN] bénéficie d'une intégration à la norme CH (Oui pour [SN], Non pour [SNR], Non pour [SNG])."
           },
           {
-            id: "q_a00_5",
+            id: "q_pyr04_4",
             type: "single",
             question: "Quelle est la définition officielle d'un Guide Suisse [SNG] ?",
             options: [
@@ -678,11 +962,90 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             ],
             correctAnswer: 0,
             explanation: "Le [SNG] est défini comme : « Publication chapotée par un organisme de normalisation CH indiquant des explications pour l’élaboration et l’utilisation de normes et de règles »."
+          }
+        ]
+      },
+      {
+        id: "pyr-evaluation-finale",
+        routeId: "pyramide-lois/evaluation-finale",
+        moduleId: "A",
+        parcoursId: "pyramide-lois",
+        isFinalEvaluation: true,
+        code: "PYR-FINAL",
+        title: "Évaluation finale — Pyramide des lois",
+        subtitle: "Certification générale sur la hiérarchie juridique et les normes suisses",
+        status: "Disponible",
+        duration: "15 min",
+        tag: "Évaluation officielle",
+        xpReward: 100,
+        objective: "Valider formellement la maîtrise globale de la Pyramide des lois suisses : histoire (1888-1902), hiérarchie juridique, références RS, règles techniques (NIBT) et structure des normes SN, SNR, SNG.",
+        introduction: "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie du parcours <strong>Pyramide des lois</strong>. Composée de 8 questions d'examen à choix multiples, elle couvre l'intégralité des 4 unités pédagogiques : genèse historique (1888-1902), autorité suprême du Conseil fédéral, références légales RS, règles techniques et typologie des normes [SN], [SNR], [SNG]. Un score minimal de 75 % (6/8) est requis pour réussir la certification et obtenir vos 100 XP.",
+        synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
+        synthesisVisual: {
+          src: "./public/media/images/module-a/infographie_pyramide_lois.png",
+          alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
+          caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
+          source: "Illustration originale — ELECBOOK"
+        },
+        contentSections: [
+          {
+            title: "Instructions pour l'évaluation finale",
+            text: `<div class="ocfo-legal-badge">Examen officiel de certification • Pyramide des lois</div>
+<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+Cette évaluation finale récapitule l'intégralité des <strong>4 leçons</strong> du parcours consacré à la <strong>Pyramide des lois</strong> :
+</p>
+<ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+  <li><strong>Nombre de questions :</strong> 8 questions d'examen à choix multiple.</li>
+  <li><strong>Couverture pédagogique :</strong> Histoire & Genèse, Hiérarchie légale (CF & RS), Règles techniques & Organismes, Typologie SN / SNR / SNG.</li>
+  <li><strong>Seuil de validation :</strong> 75% de réponses exactes (6/8).</li>
+  <li><strong>Récompense :</strong> 100 XP et validation certifiante du parcours.</li>
+</ul>`
+          }
+        ],
+        quiz: [
+          {
+            id: "q_final_pyr_1",
+            type: "single",
+            question: "1. Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+            options: [
+              "24 juin 1902",
+              "26 juin 1888",
+              "12 juin 2009",
+              "1er janvier 2025"
+            ],
+            correctAnswer: 0,
+            explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
           },
           {
-            id: "q_a00_6",
+            id: "q_final_pyr_2",
             type: "single",
-            question: "Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
+            question: "2. Quel était le but principal de la première loi fédérale du 26 juin 1888 concernant les lignes télégraphiques et téléphoniques ?",
+            options: [
+              "Protéger les installations de transmission contre le danger causé par l'alimentation à courant fort",
+              "Imposer le raccordement triphasé à toutes les habitations",
+              "Instaurer l'Inspection fédérale ESTI",
+              "Définir les règles de tarification de l'électricité"
+            ],
+            correctAnswer: 0,
+            explanation: "La Confédération a cherché à protéger les installations de télécommunication car elle observait un danger dans l’alimentation à courant fort des installations de transmission."
+          },
+          {
+            id: "q_final_pyr_3",
+            type: "single",
+            question: "3. Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
+            options: [
+              "CF : Conseil fédéral",
+              "Règles techniques / Directives",
+              "Prescriptions des distributeurs d'électricité (PDIE)",
+              "Guides suisses [SNG]"
+            ],
+            correctAnswer: 0,
+            explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
+          },
+          {
+            id: "q_final_pyr_4",
+            type: "single",
+            question: "4. Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
             options: [
               "Ordonnance sur les installations électriques à basse tension",
               "Ordonnance sur les Matériels électriques à Basse Tension",
@@ -693,17 +1056,56 @@ La création de l’Association Suisse des Électriciens ASE (Electrosuisse actu
             explanation: "RS 734.27 - OIBT désigne l'Ordonnance sur les installations électriques à basse tension."
           },
           {
-            id: "q_a00_7",
+            id: "q_final_pyr_5",
             type: "single",
-            question: "Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+            question: "5. Selon la hiérarchie normative suisse, quelle est la nature juridique de la NIBT (SN 411000 :2025) ?",
             options: [
-              "24 juin 1902",
-              "26 juin 1888",
-              "12 juin 2009",
-              "1er janvier 2025"
+              "Une règle technique reconnue matérialisant l'état de la technique pour les installations basse tension",
+              "Une loi fédérale votée au suffrage universel",
+              "Une simple notice commerciale sans valeur de preuve",
+              "Une ordonnance pénale de police administrative"
             ],
             correctAnswer: 0,
-            explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
+            explanation: "La NIBT (SN 411000 :2025) est la norme technique reconnue qui concrétise l'état de la technique et crée une présomption de conformité aux ordonnances fédérales."
+          },
+          {
+            id: "q_final_pyr_6",
+            type: "single",
+            question: "6. Quel organisme officiel assure la surveillance générale et délivre les autorisations d'installer selon l'OIBT ?",
+            options: [
+              "ESTI (Inspection fédérale des installations à courant fort)",
+              "AEAI (Association des établissements cantonaux d’assurance incendie)",
+              "SUVA (Caisse nationale suisse d’assurance en cas d’accidents)",
+              "PDIE (Prescriptions des distributeurs d’électricité)"
+            ],
+            correctAnswer: 0,
+            explanation: "L'ESTI est l'Inspection fédérale chargée de la surveillance générale, des approbations et de la délivrance des autorisations d'installer."
+          },
+          {
+            id: "q_final_pyr_7",
+            type: "single",
+            question: "7. Quelle est la durée de validité officielle d'une Règle Suisse [SNR] ?",
+            options: [
+              "5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG",
+              "Illimitée dès sa parution",
+              "1 an seulement",
+              "20 ans renouvelable une fois"
+            ],
+            correctAnswer: 0,
+            explanation: "Selon le tableau officiel de structure des normes, la validité d'une [SNR] est de 5 ans avec possibilité de prolongation de 3 ans."
+          },
+          {
+            id: "q_final_pyr_8",
+            type: "single",
+            question: "8. Parmi les publications [SN], [SNR] et [SNG], laquelle bénéficie formellement d'une intégration à la norme CH ?",
+            options: [
+              "[SN]",
+              "[SNR]",
+              "[SNG]",
+              "Aucune des trois"
+            ],
+            correctAnswer: 0,
+            explanation: "Seule la [SN] bénéficie de l'intégration formelle à la collection de normes CH (Oui pour [SN], Non pour [SNR], Non pour [SNG])."
           }
         ]
       },
@@ -5554,6 +5956,24 @@ export function findFormation(moduleId, formationId) {
 
   // Aliases pour rétrocompatibilité et accès fluide
   const aliases = {
+    'pyramide-lois': 'pyr-01',
+    'pyramide': 'pyr-01',
+    'a00': 'pyr-01',
+    'pyr-01': 'pyr-01',
+    'pyr-02': 'pyr-02',
+    'pyr-03': 'pyr-03',
+    'pyr-04': 'pyr-04',
+    'pyr-evaluation-finale': 'pyr-evaluation-finale',
+    'pyr-examen': 'pyr-evaluation-finale',
+    'pyramide-lecon-1': 'pyr-01',
+    'pyramide-lecon-2': 'pyr-02',
+    'pyramide-lecon-3': 'pyr-03',
+    'pyramide-lecon-4': 'pyr-04',
+    'pyr-lecon-1': 'pyr-01',
+    'pyr-lecon-2': 'pyr-02',
+    'pyr-lecon-3': 'pyr-03',
+    'pyr-lecon-4': 'pyr-04',
+    'pyramide-evaluation-finale': 'pyr-evaluation-finale',
     'rs-814-710': 'rs-814-710-lecon-1',
     'RS-814-710': 'rs-814-710-lecon-1',
     'rs-814-710-orni': 'rs-814-710-lecon-1',

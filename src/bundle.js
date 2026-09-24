@@ -85,6 +85,76 @@
     ]
   };
 
+  // Informations officielles et structure en 4 leçons de la Pyramide des lois
+  // Source de vérité : Infographie synthétique originale & Recueil systématique du droit fédéral
+  const PYRAMIDE_LOIS_INFO = {
+    id: "pyramide-lois",
+    code: "Pyramide des lois",
+    title: "Pyramide des lois",
+    shortTitle: "Pyramide",
+    description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC, règles techniques NIBT et structure des normes SN, SNR, SNG.",
+    lessons: [
+      {
+        id: "pyr-01",
+        slug: "lecon-1",
+        number: "I",
+        code: "PYR-01",
+        title: "Histoire et Genèse des Lois Électriques (1888–1902)",
+        subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
+        duration: "6 min",
+        xpReward: 30,
+        summary: "Loi du 26 juin 1888 sur les lignes télégraphiques et téléphoniques, création de l'ASE (Electrosuisse) et fondement de la LIE du 24 juin 1902."
+      },
+      {
+        id: "pyr-02",
+        slug: "lecon-2",
+        number: "II",
+        code: "PYR-02",
+        title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
+        subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
+        duration: "8 min",
+        xpReward: 30,
+        summary: "Le Conseil fédéral au sommet, tableau officiel complet des références légales (RS 734.0 à RS 930.11) et widget interactif de la pyramide."
+      },
+      {
+        id: "pyr-03",
+        slug: "lecon-3",
+        number: "III",
+        code: "PYR-03",
+        title: "Règles Techniques et Organismes d'Application",
+        subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
+        duration: "8 min",
+        xpReward: 30,
+        summary: "Règles reconnues de l'art (NIBT SN 411000:2025, SN EN), organismes de contrôle et de surveillance (ESTI, SUVA, AEAI, PDIE) et vidéo pédagogique complète."
+      },
+      {
+        id: "pyr-04",
+        slug: "lecon-4",
+        number: "IV",
+        code: "PYR-04",
+        title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
+        subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
+        duration: "7 min",
+        xpReward: 30,
+        summary: "Analyse comparative des normes exclusives [SN], des règles [SNR] (validité 5 ans + 3 ans) et des guides [SNG]."
+      }
+    ],
+    finalEvaluation: {
+      id: "pyr-evaluation-finale",
+      slug: "evaluation-finale",
+      code: "PYR-FINAL",
+      title: "Évaluation finale — Pyramide des lois",
+      subtitle: "Synthèse générale et validation certifiante sur l'ensemble de la hiérarchie juridique",
+      duration: "15 min",
+      xpReward: 100,
+      summary: "Examen de certification comprenant 8 questions rigoureuses couvrant l'histoire, la hiérarchie, les organismes et la typologie des normes SN/SNR/SNG. Seuil de réussite à 75% requis."
+    },
+    totalLessons: 4,
+    subtitle: "4 leçons officielles · Infographie synthétique en 4 volets · Évaluation finale certifiante",
+    tag: "Cadre normatif fédéral",
+    fullTitle: "Cadre légal et hiérarchie normative suisse (Pyramide des lois)"
+  };
+
   // Informations officielles et structure en 11 chapitres de la RS 734.0 (LIE)
   // Source de vérité : 734.0_LIE.pdf (24 juin 1902, état au 1er avril 2026)
   const RS_734_0_INFO = {
@@ -486,24 +556,203 @@
       id: "A",
       code: "A",
       title: "Dispositions légales",
-      countLabel: "38 formations",
+      countLabel: "42 formations",
       description: "Cadre légal et hiérarchie normative suisse : lois fédérales, ordonnances fédérales, DETEC et prescriptions professionnelles.",
       badgeTheme: "legal",
       formations: [
+        // ======================================================================
+        // PARCOURS : PYRAMIDE DES LOIS & CADRE NORMATIF SUISSE
+        // 4 leçons autonomes + 1 évaluation finale certifiante
+        // Source de vérité : Infographie synthétique & Recueil systématique RS
+        // ======================================================================
         {
-          id: "pyramide-lois",
-          routeId: "pyramide-lois",
-          code: "Pyramide des lois",
-          title: "Pyramide des lois",
-          subtitle: "Base",
+          id: "pyr-01",
+          routeId: "pyramide-lois/pyr-01",
+          moduleId: "A",
+          parcoursId: "pyramide-lois",
+          lessonNumber: 1,
+          totalLessons: 4,
+          nextLessonId: "pyr-02",
+          code: "PYR-01",
+          title: "Histoire et Genèse des Lois Électriques (1888–1902)",
+          subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
           status: "Disponible",
-          duration: "12 min",
-          tag: "Droit fédéral",
+          duration: "6 min",
+          tag: "Histoire & Genèse",
           xpReward: 30,
-          objective: "Maîtriser la hiérarchie juridique des normes électriques suisses, du Conseil fédéral aux règles techniques et directives, les références officielles (RS) et la structure des normes SN, SNR et SNG.",
-          introduction: `Bienvenue dans la pyramide des normes électriques suisses… promis, on va vous éviter un coup de jus ! ;) 
-  De la LIE aux ordonnances comme l’OIBT, jusqu’à la fameuse NIBT 2025, nous allons décortiquer ensemble la pyramide de lois étape par étape. Grâce à des explications simples et visuelles, vous comprendrez enfin la hiérarchie juridique sans vous mélanger les tournevis.
-  Prêt à faire la lumière sur le cadre légal et à sécuriser votre travail ?`,
+          objective: "Comprendre l'origine historique du cadre légal électrique suisse : la loi de 1888 sur les lignes télégraphiques et téléphoniques, la création de l'ASE et l'adoption de la LIE du 24 juin 1902.",
+          introduction: "Bienvenue dans la première unité du parcours <strong>Pyramide des lois</strong> ! Pour comprendre la hiérarchie juridique moderne, il est indispensable de remonter aux origines de l'électrotechnique en Suisse. À la fin du XIXe siècle, l'essor rapide du courant fort posa des défis inédits de sécurité et de cohabitation avec les réseaux de communication existants.",
+          contentSections: [
+            {
+              title: "1. La loi fédérale du 26 juin 1888 — Première intervention fédérale",
+              text: `<div class="ocfo-legal-badge">Contexte historique • 26 juin 1888</div>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Avec la <strong>loi fédérale sur l’établissement de lignes téléphoniques et télégraphiques du 26 juin 1888</strong>, la Confédération est intervenue pour la première fois dans le secteur électrique suisse.
+  </p>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Elle a cherché à protéger le réseau de transmission d'informations car elle observait un <strong>danger réel dans l’alimentation à courant fort</strong> des premières lignes d'énergie, susceptibles de perturber ou d'endommager gravement les télégraphes et téléphones.
+  </p>`
+            },
+            {
+              title: "2. Création de l'ASE (Electrosuisse) et naissance de la LIE (1902)",
+              text: `<div class="ocfo-legal-badge">Fondation de l'ASE & Adoption de la LIE • 24 juin 1902</div>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  La création de l’<strong>Association Suisse des Électriciens (ASE)</strong> — aujourd'hui <strong>Electrosuisse</strong> — a été décidée par les professionnels pour répondre aux difficultés techniques liées à l’accroissement rapide de l’alimentation en courant électrique.
+  </p>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  L’ASE a immédiatement préparé et publié les <strong>premières prescriptions techniques</strong> pour la réalisation et l’exploitation des installations à courant fort en Suisse.
+  </p>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Ces prescriptions professionnelles pionnières ont directement constitué le socle technique et la base de la <strong>Loi fédérale sur les installations électriques (LIE) du 24 juin 1902</strong>.
+  </p>
+  <div class="ocfo-summary-box">
+    <div class="box-title">📌 À RETENIR</div>
+    La loi du 26 juin 1888 a été la première mesure de protection fédérale contre le courant fort. Les prescriptions techniques de l'ASE ont ensuite forgé la base de la LIE du 24 juin 1902, loi-cadre toujours en vigueur aujourd'hui.
+  </div>`
+            }
+          ],
+          importantPoint: "La loi du 26 juin 1888 protégeait les lignes de transmission contre les dangers du courant fort. Les premières prescriptions de l'ASE ont ensuite constitué le fondement de la LIE du 24 juin 1902.",
+          quiz: [
+            {
+              id: "q_pyr01_1",
+              type: "single",
+              question: "Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+              options: [
+                "24 juin 1902",
+                "26 juin 1888",
+                "12 juin 2009",
+                "1er janvier 2025"
+              ],
+              correctAnswer: 0,
+              explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
+            },
+            {
+              id: "q_pyr01_2",
+              type: "single",
+              question: "Quel était l'objectif principal de la loi fédérale du 26 juin 1888 sur les lignes téléphoniques et télégraphiques ?",
+              options: [
+                "Protéger les installations de transmission contre le danger causé par l'alimentation à courant fort",
+                "Remplacer toutes les lignes électriques aériennes par des câbles souterrains",
+                "Créer l'Office fédéral de l'énergie (OFEN)",
+                "Imposer la norme NIBT à tous les cantons suisses"
+              ],
+              correctAnswer: 0,
+              explanation: "Par la loi du 26 juin 1888, la Confédération cherchait à protéger les lignes de télécommunication car elle observait un danger dans l’alimentation à courant fort des installations de transmission."
+            }
+          ]
+        },
+        {
+          id: "pyr-02",
+          routeId: "pyramide-lois/pyr-02",
+          moduleId: "A",
+          parcoursId: "pyramide-lois",
+          lessonNumber: 2,
+          totalLessons: 4,
+          nextLessonId: "pyr-03",
+          code: "PYR-02",
+          title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
+          subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
+          status: "Disponible",
+          duration: "8 min",
+          tag: "Hiérarchie légale",
+          xpReward: 30,
+          objective: "Identifier la structure pyramidale du droit fédéral : primauté du Conseil fédéral, articulation des lois fédérales, ordonnances d'exécution (OIBT, OCFo, O DETEC...) et leurs références RS officielles.",
+          introduction: "Dans cette deuxième leçon, nous explorons l'architecture juridique suisse. Au sommet de la pyramide siège le Conseil fédéral. En dessous s'ordonnent les lois fédérales votées par le Parlement et les ordonnances d'exécution qui fixent les prescriptions de sécurité applicables sur le terrain.",
+          contentSections: [
+            {
+              title: "1. Le principe de la hiérarchie juridique suisse",
+              text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Dans l’ordre juridique suisse, les règles s’ordonnent du niveau le plus contraignant (au sommet) jusqu’aux modalités techniques d'exécution :
+  </p>
+  <ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+    <li><strong>Conseil fédéral (CF) :</strong> Au sommet de l'autorité juridiquement contraignante, il édicte les ordonnances d'exécution et veille à l'application des lois.</li>
+    <li><strong>Lois fédérales :</strong> Votées par l'Assemblée fédérale (Parlement), elles fixent les principes généraux, les devoirs fondamentaux et la responsabilité civile (LIE, LSPro, LAA, LTC).</li>
+    <li><strong>Ordonnances fédérales :</strong> Édictées par le Conseil fédéral pour rendre les lois directement applicables (OIBT, OCFo, OCFa, O ESTI, OMBT, OLEI, OCEM, ORNI, OPA).</li>
+    <li><strong>Ordonnances départementales :</strong> Édictées par le DETEC (ex. O DETEC RS 734.272).</li>
+  </ul>`
+            },
+            {
+              title: "2. Tableau officiel des abréviations et références légales (RS)",
+              text: `<p style="margin-bottom:0.75rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
+  Références officielles au Recueil systématique du droit fédéral (RS) :
+  </p>
+  <div style="overflow-x:auto; margin-top:0.5rem;">
+  <table class="thresholds-table">
+  <thead>
+  <tr>
+  <th style="min-width:180px;">Référence</th>
+  <th>Signification</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr><td><strong>CF</strong></td><td>Conseil fédéral (Autorité suprême au sommet de la pyramide)</td></tr>
+  <tr><td><strong>RS 734.0 - LIE</strong></td><td>Loi sur les installations électriques</td></tr>
+  <tr><td><strong>RS 734.1 - OCFa</strong></td><td>Ordonnance sur les installations électriques à courant faible</td></tr>
+  <tr><td><strong>RS 734.2 - OCFo</strong></td><td>Ordonnance sur les installations électriques à courant fort</td></tr>
+  <tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l’Inspection fédérale des installations à courant fort</td></tr>
+  <tr><td><strong>RS 734.26 - OMBT</strong></td><td>Ordonnance sur les Matériels électriques à Basse Tension</td></tr>
+  <tr><td><strong>RS 734.27 - OIBT</strong></td><td>Ordonnance sur les installations électriques à basse tension</td></tr>
+  <tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l’Environnement, des Transports, de l’Energie et de la Communication)</td></tr>
+  <tr><td><strong>RS 734.31 - OLEI</strong></td><td>Ordonnance sur les lignes électriques</td></tr>
+  <tr><td><strong>RS 734.5 - OCEM</strong></td><td>Ordonnance sur la comptabilité électromagnétique</td></tr>
+  <tr><td><strong>RS 784.10 - LTC</strong></td><td>Loi sur les télécommunications</td></tr>
+  <tr><td><strong>RS 814.710 - ORNI</strong></td><td>Ordonnance sur la protection contre le rayonnement non ionisant</td></tr>
+  <tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l’assurance-accidents</td></tr>
+  <tr><td><strong>RS 832.30 - OPA</strong></td><td>Ordonnance sur la prévention des accidents et des maladies professionnelles</td></tr>
+  <tr><td><strong>RS 930.11 - LSPro</strong></td><td>Loi fédérale du 12 juin 2009 sur la sécurité des produits</td></tr>
+  </tbody>
+  </table>
+  </div>`
+            }
+          ],
+          interactiveWidget: "pyramid-widget",
+          importantPoint: "Au sommet de la pyramide, le Conseil fédéral (CF) constitue l'autorité suprême. Les lois fédérales (LIE, LSPro, LAA) fixent le cadre et les ordonnances (OIBT, OCFo) précisent les obligations applicables aux professionnels.",
+          quiz: [
+            {
+              id: "q_pyr02_1",
+              type: "single",
+              question: "Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
+              options: [
+                "CF : Conseil fédéral",
+                "Règles techniques / Directives",
+                "Prescriptions des distributeurs d'électricité (PDIE)",
+                "Guides suisses [SNG]"
+              ],
+              correctAnswer: 0,
+              explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
+            },
+            {
+              id: "q_pyr02_2",
+              type: "single",
+              question: "Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
+              options: [
+                "Ordonnance sur les installations électriques à basse tension",
+                "Ordonnance sur les Matériels électriques à Basse Tension",
+                "Ordonnance sur les installations électriques à courant fort",
+                "Ordonnance sur l’Inspection fédérale des installations à courant fort"
+              ],
+              correctAnswer: 0,
+              explanation: "RS 734.27 - OIBT désigne l'Ordonnance sur les installations électriques à basse tension."
+            }
+          ]
+        },
+        {
+          id: "pyr-03",
+          routeId: "pyramide-lois/pyr-03",
+          moduleId: "A",
+          parcoursId: "pyramide-lois",
+          lessonNumber: 3,
+          totalLessons: 4,
+          nextLessonId: "pyr-04",
+          code: "PYR-03",
+          title: "Règles Techniques et Organismes d'Application",
+          subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
+          status: "Disponible",
+          duration: "8 min",
+          tag: "Règles de l'art",
+          xpReward: 30,
+          objective: "Identifier la place des règles techniques (NIBT 2025, SN EN) dans la pyramide et comprendre le rôle des organismes clés : ESTI, AEAI, SUVA et les distributeurs d'électricité (PDIE).",
+          introduction: "Les lois et ordonnances définissent les objectifs fondamentaux de sécurité, mais ce sont les règles techniques reconnues (comme la NIBT 2025) et les organismes de surveillance et de prévention (ESTI, SUVA, AEAI, PDIE) qui encadrent concrètement la pratique sur les chantiers.",
           video: {
             id: "vid-pyramide-lois",
             title: "À regarder — Comprendre la pyramide des lois",
@@ -519,58 +768,114 @@
           },
           contentSections: [
             {
-              title: "Pyramide des lois",
-              text: `<p style="margin-bottom:0.75rem; font-size:0.92rem; color:var(--text-secondary); line-height:1.6;">
-  Abréviations et références légales officielles :
+              title: "1. Les règles techniques reconnues : NIBT et SN EN",
+              text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Les règles techniques concrétisent l'état de la technique et créent une <strong>présomption de conformité</strong> aux ordonnances fédérales :
   </p>
-  <div style="overflow-x:auto; margin-top:0.5rem;">
+  <div style="overflow-x:auto; margin-top:0.5rem; margin-bottom:1rem;">
   <table class="thresholds-table">
   <thead>
   <tr>
-  <th style="min-width:180px;">Référence</th>
-  <th>Signification</th>
+  <th style="min-width:180px;">Règle / Norme</th>
+  <th>Description et Portée</th>
   </tr>
   </thead>
   <tbody>
-  <tr><td><strong>CF</strong></td><td>Conseil fédéral</td></tr>
-  <tr><td><strong>RS 734.0 - LIE</strong></td><td>Loi sur les installations électriques</td></tr>
-  <tr><td><strong>RS 734.1 - OCFa</strong></td><td>Ordonnance sur les installations électriques à courant faible</td></tr>
-  <tr><td><strong>RS 734.2 - OCFo</strong></td><td>Ordonnance sur les installations électriques à courant fort</td></tr>
-  <tr><td><strong>RS 734.24 - O ESTI</strong></td><td>Ordonnance sur l’Inspection fédérale des installations à courant fort</td></tr>
-  <tr><td><strong>RS 734.26 - OMBT</strong></td><td>Ordonnance sur les Matériels électriques à Basse Tension</td></tr>
-  <tr><td><strong>RS 734.27 - OIBT</strong></td><td>Ordonnance sur les installations électriques à basse tension</td></tr>
-  <tr><td><strong>RS 734.272 - O DETEC</strong></td><td>Ordonnance du DETEC sur les installations électriques à Basse Tension (Département fédéral de l’Environnement, des Transports, de l’Energie et de la Communication)</td></tr>
-  <tr><td><strong>RS 734.31 - OLEI</strong></td><td>Ordonnance sur les lignes électriques</td></tr>
-  <tr><td><strong>RS 734.5 - OCEM</strong></td><td>Ordonnance sur la comptabilité électromagnétique</td></tr>
-  <tr><td><strong>RS 784.10 - LTC</strong></td><td>Loi sur les télécommunications</td></tr>
-  <tr><td><strong>RS 814.710 - ORNI</strong></td><td>Ordonnance sur la protection contre le rayonnement non ionisant</td></tr>
-  <tr><td><strong>RS 832.20 - LAA</strong></td><td>Loi fédérale sur l’assurance-accidents</td></tr>
-  <tr><td><strong>RS 832.30 - OPA</strong></td><td>Ordonnance sur la prévention des accidents et des maladies professionnelles</td></tr>
-  <tr><td><strong>RS 930.11 - LSPro</strong></td><td>Loi fédérale du 12 juin 2009 sur la sécurité des produits</td></tr>
-  <tr><td><strong>NIBT</strong></td><td>Norme sur les installations à basse tension (SN 411000 :2025)</td></tr>
-  <tr><td><strong>SN EN</strong></td><td>Norme Suisse Européenne Norme</td></tr>
-  <tr><td><strong>SNR</strong></td><td>Règle Suisse</td></tr>
-  <tr><td><strong>SNG</strong></td><td>Guide Suisse</td></tr>
-  <tr><td><strong>ESTI</strong></td><td>Inspection fédérale des installations à courant fort</td></tr>
-  <tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d’assurance incendie</td></tr>
-  <tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d’assurance en cas d’accidents</td></tr>
-  <tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d’électricité CH</td></tr>
+  <tr><td><strong>NIBT (SN 411000 :2025)</strong></td><td>Norme sur les installations à basse tension. Document technique de référence pour l'étude, l'exécution et le contrôle des installations BT en Suisse.</td></tr>
+  <tr><td><strong>SN EN</strong></td><td>Norme Suisse Européenne Norme : normes européennes harmonisées transposées dans la collection suisse.</td></tr>
+  <tr><td><strong>SNR / SNG</strong></td><td>Règles Suisses et Guides Suisses élaborés pour préciser des applications sectorielles.</td></tr>
   </tbody>
   </table>
   </div>`
             },
             {
-              title: "Structure et présentation des SN, SNR et SNG",
-              text: `Actuellement en Suisse, on compte environ 26'000 normes, dont un millier de normes exclusivement suisses [SN], alors que les 25'000 restantes sont d’origine européenne ou internationale et ont été transférées dans l’assortiment de normes suisses.
-
-  <div style="overflow-x:auto; margin-top:0.75rem;">
+              title: "2. Les organismes d'application et de surveillance",
+              text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Quatre organismes majeurs interviennent pour veiller à la sécurité et à l'application des règles :
+  </p>
+  <div style="overflow-x:auto; margin-top:0.5rem;">
   <table class="thresholds-table">
   <thead>
   <tr>
-  <th style="min-width:140px;"></th>
-  <th style="min-width:180px;">[SN]</th>
-  <th style="min-width:180px;">[SNR]</th>
-  <th style="min-width:180px;">[SNG]</th>
+  <th style="min-width:130px;">Sigle</th>
+  <th style="min-width:240px;">Organisme officiel</th>
+  <th>Rôle et missions principales</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr><td><strong>ESTI</strong></td><td>Inspection fédérale des installations à courant fort</td><td>Surveillance générale, approbation des plans d'installations, surveillance du marché des matériels BT et délivrance des autorisations d'installer (OIBT).</td></tr>
+  <tr><td><strong>SUVA</strong></td><td>Caisse nationale suisse d’assurance en cas d’accidents</td><td>Prévention des accidents du travail et des maladies professionnelles, édiction des règles vitales pour électriciens.</td></tr>
+  <tr><td><strong>AEAI</strong></td><td>Association des établissements cantonaux d’assurance incendie</td><td>Prescriptions de protection incendie régissant l'implantation et la résistance au feu des installations électriques.</td></tr>
+  <tr><td><strong>PDIE</strong></td><td>Prescriptions des distributeurs d’électricité CH</td><td>Prescriptions techniques de raccordement édictées par les gestionnaires de réseau de distribution (GRD).</td></tr>
+  </tbody>
+  </table>
+  </div>`
+            }
+          ],
+          importantPoint: "Les règles de l'art (NIBT 2025, SN EN) matérialisent l'état de la technique reconnu. L'ESTI surveille les installations et octroie les autorisations, la SUVA prévient les accidents, l'AEAI protège contre l'incendie et les PDIE régissent le raccordement.",
+          quiz: [
+            {
+              id: "q_pyr03_1",
+              type: "single",
+              question: "Selon le cadre des normes électriques suisses, que désigne la NIBT (SN 411000 :2025) ?",
+              options: [
+                "La Norme sur les installations à basse tension concrétisant les règles de la technique reconnues",
+                "Une loi fédérale adoptée par le Parlement suisse",
+                "Une ordonnance départementale édictée par le DETEC",
+                "Un guide explicatif non contraignant sans valeur juridique"
+              ],
+              correctAnswer: 0,
+              explanation: "La NIBT (SN 411000 :2025) est la Norme sur les installations à basse tension, concrétisant les règles de la technique reconnues et assurant la conformité aux ordonnances fédérales (OIBT)."
+            },
+            {
+              id: "q_pyr03_2",
+              type: "single",
+              question: "Quel organisme officiel a pour mission la surveillance générale, l'approbation des plans et le contrôle des installations à courant fort en Suisse ?",
+              options: [
+                "ESTI (Inspection fédérale des installations à courant fort)",
+                "AEAI (Association des établissements cantonaux d’assurance incendie)",
+                "SUVA (Caisse nationale suisse d’assurance en cas d’accidents)",
+                "PDIE (Prescriptions des distributeurs d’électricité CH)"
+              ],
+              correctAnswer: 0,
+              explanation: "L'ESTI (Inspection fédérale des installations à courant fort) est l'organe technique placé sous la haute surveillance de la Confédération chargé de veiller à la sécurité des installations et de délivrer les autorisations d'installer."
+            }
+          ]
+        },
+        {
+          id: "pyr-04",
+          routeId: "pyramide-lois/pyr-04",
+          moduleId: "A",
+          parcoursId: "pyramide-lois",
+          lessonNumber: 4,
+          totalLessons: 4,
+          nextLessonId: "pyr-evaluation-finale",
+          code: "PYR-04",
+          title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
+          subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
+          status: "Disponible",
+          duration: "7 min",
+          tag: "Typologie normative",
+          xpReward: 30,
+          objective: "Maîtriser la typologie des publications de normalisation : distinguer formellement une Norme Suisse [SN], une Règle Suisse [SNR] et un Guide Suisse [SNG] selon leur définition, intégration à la collection CH et durée de validité.",
+          introduction: "Le recueil de normes applicables en Suisse compte environ 26'000 documents. Mais toutes les publications normatives n'ont pas la même portée juridique ni la même durée de vie. Cette leçon décortique le tableau comparatif officiel entre [SN], [SNR] et [SNG].",
+          contentSections: [
+            {
+              title: "1. Le paysage normatif suisse : 26'000 normes",
+              text: `<p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Actuellement en Suisse, on compte environ <strong>26'000 normes</strong>, dont <strong>un millier de normes exclusivement suisses [SN]</strong>, alors que les 25'000 restantes sont d’origine européenne ou internationale et ont été transférées dans l’assortiment de normes suisses.
+  </p>`
+            },
+            {
+              title: "2. Structure et présentation comparée des [SN], [SNR] et [SNG]",
+              text: `<div style="overflow-x:auto; margin-top:0.75rem;">
+  <table class="thresholds-table">
+  <thead>
+  <tr>
+  <th style="min-width:140px;">Critère</th>
+  <th style="min-width:180px;">[SN] — Norme Suisse</th>
+  <th style="min-width:180px;">[SNR] — Règle Suisse</th>
+  <th style="min-width:180px;">[SNG] — Guide Suisse</th>
   </tr>
   </thead>
   <tbody>
@@ -582,9 +887,9 @@
   </tr>
   <tr>
   <td><strong>Intégration à la norme CH</strong></td>
-  <td>Oui</td>
-  <td>Non</td>
-  <td>Non</td>
+  <td><strong>Oui</strong></td>
+  <td><strong>Non</strong></td>
+  <td><strong>Non</strong></td>
   </tr>
   <tr>
   <td><strong>Description</strong></td>
@@ -594,46 +899,25 @@
   </tr>
   <tr>
   <td><strong>Validité</strong></td>
-  <td>Illimitée</td>
-  <td>5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG</td>
-  <td>Illimitée</td>
+  <td><strong>Illimitée</strong></td>
+  <td><strong>5 ans</strong> Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG</td>
+  <td><strong>Illimitée</strong></td>
   </tr>
   </tbody>
   </table>
+  </div>
+  <div class="ocfo-summary-box">
+    <div class="box-title">📌 POINTS CLÉS DU TABLEAU COMPARATIF</div>
+    • <strong>[SN] :</strong> Seule publication bénéficiant d'une intégration formelle à la norme CH, validité illimitée.<br>
+    • <strong>[SNR] :</strong> Publication à accord limité sans vote formel, validité limitée à 5 ans (+ 3 ans de prolongation).<br>
+    • <strong>[SNG] :</strong> Guide explicatif sans définition normative, validité illimitée.
   </div>`
-            },
-            {
-              title: "Histoire",
-              text: `Avec la loi fédérale sur l’établissement de lignes téléphoniques et télégraphiques du 26 juin 1888, la Confédération a essayé de protéger car elle observait un danger dans l’alimentation à courant fort des installations de transmission.
-
-  La création de l’Association Suisse des Électriciens ASE (Electrosuisse actuellement) a été faite à cause des difficultés à l’accroissement de l’alimentation en courant. L’ASE a préparé les premières prescriptions pour la réalisation et l’exploitation des installations à courant fort. Celles-ci ont formé la base de la LIE du 24 juin 1902.`
             }
           ],
-          interactiveWidget: "pyramid-widget",
-          importantPoint: "Hiérarchie juridique : les règles s’ordonnent du niveau le plus contraignant (Conseil fédéral au sommet) jusqu’aux règles techniques et directives à la base.",
-          synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
-          synthesisVisual: {
-            src: "./public/media/images/module-a/infographie_pyramide_lois.png",
-            alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
-            caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
-            source: "Illustration originale — ELECBOOK"
-          },
+          importantPoint: "Seule la [SN] bénéficie d'une intégration formelle à la norme CH. La [SNR] est une règle à accord limité valable 5 ans (prolongation de 3 ans). Le [SNG] est un guide explicatif sans valeur normative.",
           quiz: [
             {
-              id: "q_a00_1",
-              type: "single",
-              question: "Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
-              options: [
-                "CF : Conseil fédéral",
-                "Règles techniques / Directives",
-                "Prescriptions des distributeurs d'électricité (PDIE)",
-                "Guides suisses [SNG]"
-              ],
-              correctAnswer: 0,
-              explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
-            },
-            {
-              id: "q_a00_2",
+              id: "q_pyr04_1",
               type: "single",
               question: "Actuellement en Suisse, sur environ 26'000 normes, combien sont des normes exclusivement suisses [SN] ?",
               options: [
@@ -646,7 +930,7 @@
               explanation: "On compte environ 26'000 normes en Suisse, dont un millier de normes exclusivement suisses [SN], les 25'000 restantes étant d'origine européenne ou internationale."
             },
             {
-              id: "q_a00_3",
+              id: "q_pyr04_2",
               type: "single",
               question: "Quelle est la validité d'une Règle Suisse [SNR] selon la structure des normes en Suisse ?",
               options: [
@@ -659,7 +943,7 @@
               explanation: "Selon le tableau officiel de structure des normes, la validité d'une [SNR] est de « 5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG »."
             },
             {
-              id: "q_a00_4",
+              id: "q_pyr04_3",
               type: "single",
               question: "Parmi les publications [SN], [SNR] et [SNG], laquelle bénéficie d'une intégration à la norme CH ?",
               options: [
@@ -672,7 +956,7 @@
               explanation: "Selon le tableau comparatif officiel, seule la [SN] bénéficie d'une intégration à la norme CH (Oui pour [SN], Non pour [SNR], Non pour [SNG])."
             },
             {
-              id: "q_a00_5",
+              id: "q_pyr04_4",
               type: "single",
               question: "Quelle est la définition officielle d'un Guide Suisse [SNG] ?",
               options: [
@@ -683,11 +967,90 @@
               ],
               correctAnswer: 0,
               explanation: "Le [SNG] est défini comme : « Publication chapotée par un organisme de normalisation CH indiquant des explications pour l’élaboration et l’utilisation de normes et de règles »."
+            }
+          ]
+        },
+        {
+          id: "pyr-evaluation-finale",
+          routeId: "pyramide-lois/evaluation-finale",
+          moduleId: "A",
+          parcoursId: "pyramide-lois",
+          isFinalEvaluation: true,
+          code: "PYR-FINAL",
+          title: "Évaluation finale — Pyramide des lois",
+          subtitle: "Certification générale sur la hiérarchie juridique et les normes suisses",
+          status: "Disponible",
+          duration: "15 min",
+          tag: "Évaluation officielle",
+          xpReward: 100,
+          objective: "Valider formellement la maîtrise globale de la Pyramide des lois suisses : histoire (1888-1902), hiérarchie juridique, références RS, règles techniques (NIBT) et structure des normes SN, SNR, SNG.",
+          introduction: "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie du parcours <strong>Pyramide des lois</strong>. Composée de 8 questions d'examen à choix multiples, elle couvre l'intégralité des 4 unités pédagogiques : genèse historique (1888-1902), autorité suprême du Conseil fédéral, références légales RS, règles techniques et typologie des normes [SN], [SNR], [SNG]. Un score minimal de 75 % (6/8) est requis pour réussir la certification et obtenir vos 100 XP.",
+          synthesis: "La pyramide des normes électriques suisses s'articule du sommet juridiquement contraignant (Conseil fédéral, lois LIE/LSPro/LAA, ordonnances OCFa/OCFo/O ESTI/OMBT/OIBT/O DETEC/OLEI/OCEM/LTC/ORNI/OPA) jusqu'à sa base technique ([SN], NIBT SN 411000:2025, SN EN, [SNR], [SNG], ESTI, AEAI, SUVA, PDIE).",
+          synthesisVisual: {
+            src: "./public/media/images/module-a/infographie_pyramide_lois.png",
+            alt: "Infographie synthétique en 4 volets : 1) 1888-1902 : La naissance des lois (de la protection courant fort à la LIE), 2) La Hiérarchie : Une pyramide contraignante (Constitution > Lois > Ordonnances > Règles Techniques), 3) Normes NIBT 2025 et Organismes (L'ESTI, la SUVA et les distributeurs appliquent les règles pour la sécurité), 4) SN, SNR, SNG : Trois validités (SN illimitée, SNR 5 ans, SNG guides d'utilisation).",
+            caption: "Figure A.1 — Synthèse visuelle : Histoire, Hiérarchie, Organismes et Validités des normes suisses",
+            source: "Illustration originale — ELECBOOK"
+          },
+          contentSections: [
+            {
+              title: "Instructions pour l'évaluation finale",
+              text: `<div class="ocfo-legal-badge">Examen officiel de certification • Pyramide des lois</div>
+  <p style="margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);">
+  Cette évaluation finale récapitule l'intégralité des <strong>4 leçons</strong> du parcours consacré à la <strong>Pyramide des lois</strong> :
+  </p>
+  <ul style="margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);">
+    <li><strong>Nombre de questions :</strong> 8 questions d'examen à choix multiple.</li>
+    <li><strong>Couverture pédagogique :</strong> Histoire & Genèse, Hiérarchie légale (CF & RS), Règles techniques & Organismes, Typologie SN / SNR / SNG.</li>
+    <li><strong>Seuil de validation :</strong> 75% de réponses exactes (6/8).</li>
+    <li><strong>Récompense :</strong> 100 XP et validation certifiante du parcours.</li>
+  </ul>`
+            }
+          ],
+          quiz: [
+            {
+              id: "q_final_pyr_1",
+              type: "single",
+              question: "1. Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+              options: [
+                "24 juin 1902",
+                "26 juin 1888",
+                "12 juin 2009",
+                "1er janvier 2025"
+              ],
+              correctAnswer: 0,
+              explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
             },
             {
-              id: "q_a00_6",
+              id: "q_final_pyr_2",
               type: "single",
-              question: "Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
+              question: "2. Quel était le but principal de la première loi fédérale du 26 juin 1888 concernant les lignes télégraphiques et téléphoniques ?",
+              options: [
+                "Protéger les installations de transmission contre le danger causé par l'alimentation à courant fort",
+                "Imposer le raccordement triphasé à toutes les habitations",
+                "Instaurer l'Inspection fédérale ESTI",
+                "Définir les règles de tarification de l'électricité"
+              ],
+              correctAnswer: 0,
+              explanation: "La Confédération a cherché à protéger les installations de télécommunication car elle observait un danger dans l’alimentation à courant fort des installations de transmission."
+            },
+            {
+              id: "q_final_pyr_3",
+              type: "single",
+              question: "3. Dans la pyramide des normes électriques suisses, quel niveau se trouve au sommet de l'autorité juridiquement contraignante ?",
+              options: [
+                "CF : Conseil fédéral",
+                "Règles techniques / Directives",
+                "Prescriptions des distributeurs d'électricité (PDIE)",
+                "Guides suisses [SNG]"
+              ],
+              correctAnswer: 0,
+              explanation: "Au sommet de la pyramide des lois, le Conseil fédéral (CF) représente le niveau juridiquement le plus contraignant."
+            },
+            {
+              id: "q_final_pyr_4",
+              type: "single",
+              question: "4. Dans les références légales officielles, à quoi correspond RS 734.27 - OIBT ?",
               options: [
                 "Ordonnance sur les installations électriques à basse tension",
                 "Ordonnance sur les Matériels électriques à Basse Tension",
@@ -698,17 +1061,56 @@
               explanation: "RS 734.27 - OIBT désigne l'Ordonnance sur les installations électriques à basse tension."
             },
             {
-              id: "q_a00_7",
+              id: "q_final_pyr_5",
               type: "single",
-              question: "Quelle date marque l'adoption de la LIE (Loi sur les installations électriques) dont les premières prescriptions furent préparées par l'ASE ?",
+              question: "5. Selon la hiérarchie normative suisse, quelle est la nature juridique de la NIBT (SN 411000 :2025) ?",
               options: [
-                "24 juin 1902",
-                "26 juin 1888",
-                "12 juin 2009",
-                "1er janvier 2025"
+                "Une règle technique reconnue matérialisant l'état de la technique pour les installations basse tension",
+                "Une loi fédérale votée au suffrage universel",
+                "Une simple notice commerciale sans valeur de preuve",
+                "Une ordonnance pénale de police administrative"
               ],
               correctAnswer: 0,
-              explanation: "L'ASE a préparé les premières prescriptions pour la réalisation et l'exploitation des installations à courant fort, qui ont formé la base de la LIE du 24 juin 1902."
+              explanation: "La NIBT (SN 411000 :2025) est la norme technique reconnue qui concrétise l'état de la technique et crée une présomption de conformité aux ordonnances fédérales."
+            },
+            {
+              id: "q_final_pyr_6",
+              type: "single",
+              question: "6. Quel organisme officiel assure la surveillance générale et délivre les autorisations d'installer selon l'OIBT ?",
+              options: [
+                "ESTI (Inspection fédérale des installations à courant fort)",
+                "AEAI (Association des établissements cantonaux d’assurance incendie)",
+                "SUVA (Caisse nationale suisse d’assurance en cas d’accidents)",
+                "PDIE (Prescriptions des distributeurs d’électricité)"
+              ],
+              correctAnswer: 0,
+              explanation: "L'ESTI est l'Inspection fédérale chargée de la surveillance générale, des approbations et de la délivrance des autorisations d'installer."
+            },
+            {
+              id: "q_final_pyr_7",
+              type: "single",
+              question: "7. Quelle est la durée de validité officielle d'une Règle Suisse [SNR] ?",
+              options: [
+                "5 ans Possibilité de prolonger de 3 ans en cas ➔ en SN/SNG",
+                "Illimitée dès sa parution",
+                "1 an seulement",
+                "20 ans renouvelable une fois"
+              ],
+              correctAnswer: 0,
+              explanation: "Selon le tableau officiel de structure des normes, la validité d'une [SNR] est de 5 ans avec possibilité de prolongation de 3 ans."
+            },
+            {
+              id: "q_final_pyr_8",
+              type: "single",
+              question: "8. Parmi les publications [SN], [SNR] et [SNG], laquelle bénéficie formellement d'une intégration à la norme CH ?",
+              options: [
+                "[SN]",
+                "[SNR]",
+                "[SNG]",
+                "Aucune des trois"
+              ],
+              correctAnswer: 0,
+              explanation: "Seule la [SN] bénéficie de l'intégration formelle à la collection de normes CH (Oui pour [SN], Non pour [SNR], Non pour [SNG])."
             }
           ]
         },
@@ -5559,6 +5961,24 @@
 
     // Aliases pour rétrocompatibilité et accès fluide
     const aliases = {
+      'pyramide-lois': 'pyr-01',
+      'pyramide': 'pyr-01',
+      'a00': 'pyr-01',
+      'pyr-01': 'pyr-01',
+      'pyr-02': 'pyr-02',
+      'pyr-03': 'pyr-03',
+      'pyr-04': 'pyr-04',
+      'pyr-evaluation-finale': 'pyr-evaluation-finale',
+      'pyr-examen': 'pyr-evaluation-finale',
+      'pyramide-lecon-1': 'pyr-01',
+      'pyramide-lecon-2': 'pyr-02',
+      'pyramide-lecon-3': 'pyr-03',
+      'pyramide-lecon-4': 'pyr-04',
+      'pyr-lecon-1': 'pyr-01',
+      'pyr-lecon-2': 'pyr-02',
+      'pyr-lecon-3': 'pyr-03',
+      'pyr-lecon-4': 'pyr-04',
+      'pyramide-evaluation-finale': 'pyr-evaluation-finale',
       'rs-814-710': 'rs-814-710-lecon-1',
       'RS-814-710': 'rs-814-710-lecon-1',
       'rs-814-710-orni': 'rs-814-710-lecon-1',
@@ -5890,6 +6310,20 @@
 
   // Table de normalisation des anciens identifiants et alias pour migration déterministe
   const LEGACY_ID_MAP = {
+    'pyramide-lois': 'pyr-01',
+    'pyramide': 'pyr-01',
+    'a00': 'pyr-01',
+    'A00': 'pyr-01',
+    'pyramide-des-lois': 'pyr-01',
+    'pyramide-lecon-1': 'pyr-01',
+    'pyramide-lecon-2': 'pyr-02',
+    'pyramide-lecon-3': 'pyr-03',
+    'pyramide-lecon-4': 'pyr-04',
+    'pyr-lecon-1': 'pyr-01',
+    'pyr-lecon-2': 'pyr-02',
+    'pyr-lecon-3': 'pyr-03',
+    'pyr-lecon-4': 'pyr-04',
+    'pyramide-evaluation-finale': 'pyr-evaluation-finale',
     'rs-814-710': 'rs-814-710-lecon-1',
     'RS-814-710': 'rs-814-710-lecon-1',
     'rs-814-710-orni': 'rs-814-710-lecon-1',
@@ -5927,8 +6361,19 @@
     'evaluation-finale': 'rs-734-2-evaluation-finale'
   };
 
-  // Configuration formelle des 4 sous-parcours structurés de Module A
+  // Configuration formelle des 5 sous-parcours structurés de Module A
   const PARCOURS_REGISTRY = {
+    'pyramide-lois': {
+      id: 'pyramide-lois',
+      shortCode: 'PYR',
+      title: 'Pyramide des lois',
+      fullTitle: 'Cadre légal et hiérarchie normative suisse (Pyramide des lois)',
+      typeLabel: 'Cadre normatif fédéral',
+      accentColor: '#f59e0b',
+      hubRoute: '#/formations/A/pyramide-lois',
+      getLessons: () => (PYRAMIDE_LOIS_INFO ? PYRAMIDE_LOIS_INFO.lessons : []),
+      finalEvaluationId: 'pyr-evaluation-finale'
+    },
     'rs-734-0': {
       id: 'rs-734-0',
       shortCode: 'LIE',
@@ -6066,6 +6511,13 @@
 
         if (!Array.isArray(list)) list = [];
 
+        // Migration auto pour les utilisateurs ayant validé l'ancien 'pyramide-lois' monolithique
+        if (list.includes('pyramide-lois') || list.includes('pyramide') || list.includes('a00') || list.includes('A00')) {
+          ['pyr-01', 'pyr-02', 'pyr-03', 'pyr-04'].forEach(id => {
+            if (!list.includes(id)) list.push(id);
+          });
+        }
+
         const validIds = this.getAllValidFormationIds();
         const cleaned = [];
         const seen = new Set();
@@ -6111,11 +6563,12 @@
     },
 
     /**
-     * Progression spécifique pour un des 4 sous-parcours structurés (LIE, OCFo, OIBT, ORNI).
-     * @param {string} parcoursId - 'rs-734-0' | 'rs-734-2' | 'rs-734-27' | 'rs-814-710' (ou alias court 'lie', 'ocfo', etc.)
+     * Progression spécifique pour un des 5 sous-parcours structurés (Pyramide, LIE, OCFo, OIBT, ORNI).
+     * @param {string} parcoursId - 'pyramide-lois' | 'rs-734-0' | 'rs-734-2' | 'rs-734-27' | 'rs-814-710' (ou alias)
      */
     getParcoursProgress(parcoursId) {
       let key = parcoursId;
+      if (key === 'pyramide' || key === 'pyramide-lois' || key === 'pyr' || key === 'a00' || key === 'A00') key = 'pyramide-lois';
       if (key === 'lie' || key === 'LIE') key = 'rs-734-0';
       if (key === 'ocfo' || key === 'OCFo') key = 'rs-734-2';
       if (key === 'oibt' || key === 'OIBT') key = 'rs-734-27';
@@ -6210,6 +6663,7 @@
       let subParcours = null;
       if (moduleId === 'A') {
         subParcours = {
+          pyramide: this.getParcoursProgress('pyramide-lois'),
           lie: this.getParcoursProgress('rs-734-0'),
           ocfo: this.getParcoursProgress('rs-734-2'),
           oibt: this.getParcoursProgress('rs-734-27'),
@@ -8416,6 +8870,7 @@
     }
 
     const modProgress = ProgressionService.getModuleProgress(moduleId);
+    const pyramideProgress = ProgressionService.getParcoursProgress('pyramide-lois');
     const lieProgress = ProgressionService.getParcoursProgress('rs-734-0');
     const ocfoProgress = ProgressionService.getParcoursProgress('rs-734-2');
     const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
@@ -8460,6 +8915,30 @@
       </header>
 
       ${moduleId === 'A' ? `
+        <!-- Carte Parcours Structuré Pyramide des lois (Cadre normatif fédéral) -->
+        <section class="pyramide-featured-parcours-box" aria-labelledby="pyramideFeaturedTitle">
+          <div class="pyramide-featured-top">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <span class="pyramide-featured-badge">CADRE NORMATIF FÉDÉRAL</span>
+              <span class="pyramide-featured-code">PYRAMIDE DES LOIS</span>
+            </div>
+            <span class="pyramide-featured-stats">${pyramideProgress.lessonsCompleted} / ${pyramideProgress.lessonsTotal} leçons · ${pyramideProgress.percentageFormatted}</span>
+          </div>
+          <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h2>
+          <p class="pyramide-featured-desc">
+            Parcours structuré en 4 leçons officielles (Histoire 1888-1902, Hiérarchie juridique & références RS, Règles techniques & Organismes, Typologie des normes [SN]/[SNR]/[SNG]) et 1 évaluation finale certifiante de 8 questions.
+          </p>
+          <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+            <div class="progress-bar-fill" style="width: ${pyramideProgress.percentage}%; background:#f59e0b;"></div>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <button class="btn-continue" id="btnOpenPyramideHub" onclick="location.hash='#/formations/A/pyramide-lois'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+              <span>Explorer les ${pyramideProgress.lessonsTotal} leçons</span>
+              <span>→</span>
+            </button>
+          </div>
+        </section>
+
         <!-- Carte Parcours Structuré RS 734.0 — LIE (Loi fédérale) -->
         <section class="lie-featured-parcours-box" aria-labelledby="lieFeaturedTitle">
           <div class="lie-featured-top">
@@ -8566,13 +9045,14 @@
           ${mod.formations.map(formation => {
             const isDone = completed.includes(formation.id);
             const isAvailable = formation.status === "Disponible";
+            const isPyramide = formation.id.startsWith('pyr-');
             const isLie = formation.id.startsWith('rs-734-0-');
             const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
             const isOibt = formation.id.startsWith('rs-734-27-');
             const isOrni = formation.id.startsWith('rs-814-710-');
 
             return `
-              <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : '')))}" data-formation-id="${formation.id}">
+              <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : ''))))}" data-formation-id="${formation.id}">
                 <div class="formation-code-col">
                   <span class="formation-code-tag">${formation.code}</span>
                 </div>
@@ -8597,6 +9077,14 @@
         </div>
       </section>
     `;
+
+    // Clic sur le bouton du parcours Pyramide des lois
+    const btnOpenPyramideHub = container.querySelector('#btnOpenPyramideHub');
+    if (btnOpenPyramideHub) {
+      btnOpenPyramideHub.addEventListener('click', () => {
+        location.hash = '#/formations/A/pyramide-lois';
+      });
+    }
 
     // Clic sur le bouton du parcours LIE
     const btnOpenLieHub = container.querySelector('#btnOpenLieHub');
@@ -8634,7 +9122,11 @@
     container.querySelectorAll('.formation-item-card').forEach(card => {
       card.addEventListener('click', () => {
         const formationId = card.getAttribute('data-formation-id');
-        if (formationId.startsWith('rs-734-0-lecon-')) {
+        if (formationId.startsWith('pyr-0')) {
+          location.hash = `#/formations/A/pyramide-lois/${formationId}`;
+        } else if (formationId === 'pyr-evaluation-finale') {
+          location.hash = `#/formations/A/pyramide-lois/evaluation-finale`;
+        } else if (formationId.startsWith('rs-734-0-lecon-')) {
           const leconNum = formationId.replace('rs-734-0-lecon-', '');
           location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
         } else if (formationId === 'rs-734-0-evaluation-finale') {
@@ -8828,6 +9320,200 @@
       card.addEventListener('click', () => {
         const slug = card.getAttribute('data-chapter-slug');
         location.hash = `#/formations/A/rs-734-2/${slug}`;
+      });
+    });
+  }
+
+  // ----------------------------------------------------------------------------
+  // Vue Hub Dédiée : Pyramide des lois (4 Leçons officielles + Évaluation finale)
+  // Source de vérité : Infographie synthétique & Recueil systématique RS
+  // ----------------------------------------------------------------------------
+  function renderPyramideParcoursView(container) {
+    const parcoursProgress = ProgressionService.getParcoursProgress('pyramide-lois');
+    const lessons = PYRAMIDE_LOIS_INFO ? PYRAMIDE_LOIS_INFO.lessons : [];
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
+
+    // Trouver la première leçon non validée
+    let nextLessonSlug = 'pyr-01';
+    const completed = StorageService.getCompletedLessons();
+    for (const l of lessons) {
+      if (!completed.includes(l.id)) {
+        nextLessonSlug = l.id;
+        break;
+      }
+    }
+    if (completedCount === totalLessons && !isFinalDone) {
+      nextLessonSlug = 'evaluation-finale';
+    }
+
+    container.innerHTML = `
+      <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+        <a href="#/" class="breadcrumb-link">Accueil</a>
+        <span>/</span>
+        <a href="#/formations" class="breadcrumb-link">Formations</a>
+        <span>/</span>
+        <a href="#/formations/A" class="breadcrumb-link">Module A — Dispositions légales</a>
+        <span>/</span>
+        <span>Pyramide des lois</span>
+      </nav>
+
+      <!-- Header Hero Card Pyramide -->
+      <header class="ocfo-hub-hero" style="border-left: 4px solid #f59e0b;" role="region" aria-label="En-tête du parcours Pyramide des lois">
+        <div class="ocfo-hub-badge-row">
+          <span class="ocfo-hub-tag">CADRE NORMATIF FÉDÉRAL · HIÉRARCHIE DES NORMES</span>
+          <span class="ocfo-hub-ref" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">PYRAMIDE DES LOIS</span>
+        </div>
+
+        <div class="ocfo-hub-title-row">
+          <div>
+            <div class="ocfo-hub-short" style="color:#f59e0b;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
+            <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h1>
+          </div>
+        </div>
+
+        <p class="ocfo-hub-desc">
+          ${PYRAMIDE_LOIS_INFO.description}
+        </p>
+
+        <div class="ocfo-hub-progress-card">
+          <div class="progress-labels">
+            <span style="font-weight:700; color:var(--text-primary);">Progression du parcours Pyramide</span>
+            <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
+            </span>
+          </div>
+          <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#f59e0b;"></div>
+          </div>
+
+          <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+            <button class="btn-continue" id="btnResumePyramide" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+              <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons && !isFinalDone ? 'Accéder à l\'évaluation finale' : (isFinalDone ? 'Revoir le parcours' : 'Reprendre le parcours'))}</span>
+              <span>→</span>
+            </button>
+            <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+              ← Retour au Module A
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Infographie Synthétique 4 volets -->
+      <section class="ocfo-density-guide-card" style="margin-bottom:2rem; border-left:4px solid #f59e0b;" aria-label="Infographie synthétique officielle">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+          <span style="font-size:1.4rem;">📊</span>
+          <div>
+            <h2 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin:0;">Figure A.1 — Synthèse visuelle en 4 volets</h2>
+            <div style="font-size:0.8rem; color:var(--text-muted);">Histoire (1888-1902) • Hiérarchie juridique • Organismes & NIBT • Typologie [SN] / [SNR] / [SNG]</div>
+          </div>
+        </div>
+        <div style="text-align:center; background:var(--bg-primary); border:1px solid var(--border-medium); border-radius:8px; padding:0.75rem; overflow:hidden;">
+          <img src="./public/media/images/module-a/infographie_pyramide_lois.png" alt="Infographie synthétique en 4 volets de la Pyramide des lois" style="max-width:100%; height:auto; border-radius:6px; display:inline-block;" />
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">
+            Infographie pédagogique officielle ELECBOOK — Cadre normatif et hiérarchie juridique en 4 volets articulés.
+          </p>
+        </div>
+      </section>
+
+      <!-- Liste des 4 Leçons officielles -->
+      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 4 leçons de la Pyramide des lois">
+        <div class="section-heading">
+          <span>📚</span> Les 4 leçons du parcours (fidèles aux 4 volets de la pyramide)
+        </div>
+
+        <div class="ocfo-chapters-list">
+          ${lessons.map((les, idx) => {
+            const isDone = completed.includes(les.id);
+            const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+            return `
+              <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-id="${les.id}" style="${isCurrent ? 'border-color:#f59e0b;' : ''}">
+                <div class="ocfo-card-left">
+                  <span class="ocfo-chap-number" style="border-color:rgba(245,158,11,0.3); color:#f59e0b;">${les.number}</span>
+                  <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                    ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                  </span>
+                </div>
+
+                <div class="ocfo-card-center">
+                  <div class="ocfo-chap-title-row">
+                    <h2 class="ocfo-chap-title">${les.title}</h2>
+                    ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(245,158,11,0.15); color:#f59e0b; border-color:rgba(245,158,11,0.3);">En cours</span>' : '')}
+                  </div>
+                  <div class="ocfo-chap-articles">
+                    <span class="legal-tag" style="border-color:rgba(245,158,11,0.3); color:#f59e0b; background:rgba(245,158,11,0.08);">${les.code}</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                    <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ ${les.xpReward} XP</span>
+                  </div>
+                  <p class="ocfo-chap-summary">${les.summary}</p>
+                </div>
+
+                <div class="ocfo-card-right">
+                  <button class="ocfo-btn-open" aria-label="Ouvrir la leçon ${les.title}">
+                    <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                    <span>→</span>
+                  </button>
+                </div>
+              </article>
+            `;
+          }).join('')}
+
+          <!-- Évaluation Finale (8 questions) -->
+          <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-id="pyr-evaluation-finale">
+            <div class="ocfo-card-left">
+              <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+              <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+                ${isFinalDone ? '[✓]' : '[  ]'}
+              </span>
+            </div>
+
+            <div class="ocfo-card-center">
+              <div class="ocfo-chap-title-row">
+                <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${PYRAMIDE_LOIS_INFO.finalEvaluation.title}</h2>
+                ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+              </div>
+              <div class="ocfo-chap-articles">
+                <span class="legal-tag">PYR-FINAL</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${PYRAMIDE_LOIS_INFO.finalEvaluation.duration}</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ ${PYRAMIDE_LOIS_INFO.finalEvaluation.xpReward} XP</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">8 questions</span>
+              </div>
+              <p class="ocfo-chap-summary">${PYRAMIDE_LOIS_INFO.finalEvaluation.summary}</p>
+            </div>
+
+            <div class="ocfo-card-right">
+              <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+                <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    `;
+
+    // Clic sur bouton Continuer
+    const btnResume = container.querySelector('#btnResumePyramide');
+    if (btnResume) {
+      btnResume.addEventListener('click', () => {
+        location.hash = `#/formations/A/pyramide-lois/${nextLessonSlug}`;
+      });
+    }
+
+    // Clics sur les cartes de leçons
+    container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const lessonId = card.getAttribute('data-lesson-id');
+        if (lessonId) {
+          location.hash = `#/formations/A/pyramide-lois/${lessonId}`;
+        }
       });
     });
   }
@@ -9385,6 +10071,7 @@
     }
 
     const { module: mod, formation } = result;
+    const isPyramide = formation.parcoursId === 'pyramide-lois' || formation.id.startsWith('pyr-');
     const isLie = formation.parcoursId === 'rs-734-0' || formation.id.startsWith('rs-734-0-');
     const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
     const isOibt = formation.parcoursId === 'rs-734-27' || formation.id.startsWith('rs-734-27-');
@@ -9402,6 +10089,7 @@
     const isAvailable = formation.status === "Disponible";
     const isDone = StorageService.isLessonCompleted(formation.id);
 
+    const totalPyramide = isPyramide ? ProgressionService.getParcoursProgress('pyramide-lois').lessonsTotal : 4;
     const totalLie = isLie ? ProgressionService.getParcoursProgress('rs-734-0').lessonsTotal : 11;
     const totalOcfo = isOcfo ? ProgressionService.getParcoursProgress('rs-734-2').lessonsTotal : 8;
     const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
@@ -9410,7 +10098,16 @@
     // Déterminer les routes de navigation séquentielle
     let nextRoute = null;
     let nextLabel = null;
-    if (isLie && formation.nextLessonId) {
+    if (isPyramide && formation.nextLessonId) {
+      if (formation.lessonNumber && formation.lessonNumber < totalPyramide) {
+        const nextNum = formation.lessonNumber + 1;
+        nextRoute = `#/formations/A/pyramide-lois/pyr-0${nextNum}`;
+        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalPyramide}) →`;
+      } else if (formation.lessonNumber === totalPyramide) {
+        nextRoute = `#/formations/A/pyramide-lois/evaluation-finale`;
+        nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+      }
+    } else if (isLie && formation.nextLessonId) {
       if (formation.lessonNumber && formation.lessonNumber < totalLie) {
         const nextNum = formation.lessonNumber + 1;
         nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
@@ -9458,6 +10155,10 @@
           <a href="#/" class="breadcrumb-link">Accueil</a>
           <span>/</span>
           <a href="#/formations/${mod.id}" class="breadcrumb-link">Module ${mod.id} — ${mod.title}</a>
+          ${isPyramide ? `
+            <span>/</span>
+            <a href="#/formations/A/pyramide-lois" class="breadcrumb-link">Pyramide des lois</a>
+          ` : ''}
           ${isLie ? `
             <span>/</span>
             <a href="#/formations/A/rs-734-0" class="breadcrumb-link">RS 734.0 — LIE</a>
@@ -9479,12 +10180,18 @@
         </nav>
 
         <!-- En-tête de leçon (Titre) -->
-        <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : '')))}">
+        <header class="lesson-header-card ${isPyramide ? 'ocfo-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ''))))}">
           <div class="lesson-badges-row">
             <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
               ${mod.id}
             </span>
             <span class="formation-code-tag">${formation.code}</span>
+            ${isPyramide && formation.lessonNumber && formation.lessonNumber <= totalPyramide ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalPyramide}</span>
+            ` : ''}
+            ${isPyramide && formation.isFinalEvaluation ? `
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(245,158,11,0.2); color:#f59e0b; border:1px solid rgba(245,158,11,0.4);">Examen final (${totalPyramide} leçons)</span>
+            ` : ''}
             ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
               <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
             ` : ''}
@@ -9659,7 +10366,11 @@
         <!-- Barre de navigation bas de leçon -->
         <div class="lesson-footer-nav">
           <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
-            ${isLie ? `
+            ${isPyramide ? `
+              <button class="btn-continue" onclick="location.hash='#/formations/A/pyramide-lois'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+                ← Sommaire des 4 leçons Pyramide
+              </button>
+            ` : isLie ? `
               <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
                 ← Sommaire des 11 leçons LIE
               </button>
@@ -9726,8 +10437,14 @@
         const quizEl = createQuizEngine(formation, () => {
           // Callback lors de la complétion
           if (window.updateHeaderXp) window.updateHeaderXp();
-          // Si c'est LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
-          if (isLie) {
+          // Si c'est Pyramide, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+          if (isPyramide) {
+            if (nextRoute) {
+              location.hash = nextRoute;
+            } else {
+              location.hash = '#/formations/A/pyramide-lois';
+            }
+          } else if (isLie) {
             if (nextRoute) {
               location.hash = nextRoute;
             } else {
@@ -10236,6 +10953,12 @@
         return;
       }
 
+      // 3bis. Parcours dédié Pyramide des lois (Hub des 4 leçons) : /formations/A/pyramide-lois ou /formations/A/pyramide
+      if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
+        renderPyramideParcoursView(pageContainer);
+        return;
+      }
+
       // 4. Parcours dédié RS 734.0 (Hub des 11 leçons LIE) : /formations/A/rs-734-0 ou /formations/A/lie
       if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
         renderLieParcoursView(pageContainer);
@@ -10263,6 +10986,25 @@
       // 5. Vue Chapitre ou Leçon
       if (segments[0] === 'formations' && segments.length >= 3) {
         const moduleId = segments[1].toUpperCase();
+
+        // Sous-routes pour le parcours Pyramide des lois (ex: /formations/A/pyramide-lois/pyr-01 ou /lecon-1)
+        if (segments.length >= 4 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
+          const slug = segments[3].toLowerCase();
+          let targetId = slug;
+          if (slug === 'evaluation-finale' || slug === 'examen' || slug === 'final') {
+            targetId = 'pyr-evaluation-finale';
+          } else if (slug === 'lecon-1' || slug === 'pyr-1' || slug === 'pyr-01' || slug === 'chapitre-1') {
+            targetId = 'pyr-01';
+          } else if (slug === 'lecon-2' || slug === 'pyr-2' || slug === 'pyr-02' || slug === 'chapitre-2') {
+            targetId = 'pyr-02';
+          } else if (slug === 'lecon-3' || slug === 'pyr-3' || slug === 'pyr-03' || slug === 'chapitre-3') {
+            targetId = 'pyr-03';
+          } else if (slug === 'lecon-4' || slug === 'pyr-4' || slug === 'pyr-04' || slug === 'chapitre-4') {
+            targetId = 'pyr-04';
+          }
+          renderLessonView(pageContainer, moduleId, targetId);
+          return;
+        }
 
         // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
@@ -10373,9 +11115,12 @@
     window.ProgressionService = ProgressionService;
     window.ACADEMY_MODULES = ACADEMY_MODULES;
     window.OFFICIAL_BADGES = OFFICIAL_BADGES;
+    window.PYRAMIDE_LOIS_INFO = PYRAMIDE_LOIS_INFO;
+    window.findFormation = findFormation;
     window.renderDashboard = renderDashboard;
     window.renderModuleView = renderModuleView;
     window.renderLessonView = renderLessonView;
+    window.renderPyramideParcoursView = renderPyramideParcoursView;
     window.renderLieParcoursView = renderLieParcoursView;
     window.renderOcfoParcoursView = renderOcfoParcoursView;
     window.renderOibtParcoursView = renderOibtParcoursView;

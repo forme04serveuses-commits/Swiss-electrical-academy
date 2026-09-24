@@ -4,7 +4,7 @@
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { ProgressionService } from './services/progression.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -95,6 +95,12 @@ function initSEA() {
       return;
     }
 
+    // 3bis. Parcours dédié Pyramide des lois (Hub des 4 leçons) : /formations/A/pyramide-lois ou /formations/A/pyramide
+    if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
+      renderPyramideParcoursView(pageContainer);
+      return;
+    }
+
     // 4. Parcours dédié RS 734.0 (Hub des 11 leçons LIE) : /formations/A/rs-734-0 ou /formations/A/lie
     if (segments[0] === 'formations' && segments.length === 3 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {
       renderLieParcoursView(pageContainer);
@@ -122,6 +128,25 @@ function initSEA() {
     // 5. Vue Chapitre ou Leçon
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
+
+      // Sous-routes pour le parcours Pyramide des lois (ex: /formations/A/pyramide-lois/pyr-01 ou /lecon-1)
+      if (segments.length >= 4 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = slug;
+        if (slug === 'evaluation-finale' || slug === 'examen' || slug === 'final') {
+          targetId = 'pyr-evaluation-finale';
+        } else if (slug === 'lecon-1' || slug === 'pyr-1' || slug === 'pyr-01' || slug === 'chapitre-1') {
+          targetId = 'pyr-01';
+        } else if (slug === 'lecon-2' || slug === 'pyr-2' || slug === 'pyr-02' || slug === 'chapitre-2') {
+          targetId = 'pyr-02';
+        } else if (slug === 'lecon-3' || slug === 'pyr-3' || slug === 'pyr-03' || slug === 'chapitre-3') {
+          targetId = 'pyr-03';
+        } else if (slug === 'lecon-4' || slug === 'pyr-4' || slug === 'pyr-04' || slug === 'chapitre-4') {
+          targetId = 'pyr-04';
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
 
       // Sous-routes pour le parcours RS 734.0 (ex: /formations/A/rs-734-0/chapitre-1 ou /lecon-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'rs-734-0' || segments[2].toLowerCase() === 'lie')) {

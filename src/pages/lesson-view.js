@@ -23,6 +23,7 @@ export function renderLessonView(container, moduleId, formationId) {
   }
 
   const { module: mod, formation } = result;
+  const isPyramide = formation.parcoursId === 'pyramide-lois' || formation.id.startsWith('pyr-');
   const isLie = formation.parcoursId === 'rs-734-0' || formation.id.startsWith('rs-734-0-');
   const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
   const isOibt = formation.parcoursId === 'rs-734-27' || formation.id.startsWith('rs-734-27-');
@@ -40,6 +41,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const isAvailable = formation.status === "Disponible";
   const isDone = StorageService.isLessonCompleted(formation.id);
 
+  const totalPyramide = isPyramide ? ProgressionService.getParcoursProgress('pyramide-lois').lessonsTotal : 4;
   const totalLie = isLie ? ProgressionService.getParcoursProgress('rs-734-0').lessonsTotal : 11;
   const totalOcfo = isOcfo ? ProgressionService.getParcoursProgress('rs-734-2').lessonsTotal : 8;
   const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
@@ -48,7 +50,16 @@ export function renderLessonView(container, moduleId, formationId) {
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
   let nextLabel = null;
-  if (isLie && formation.nextLessonId) {
+  if (isPyramide && formation.nextLessonId) {
+    if (formation.lessonNumber && formation.lessonNumber < totalPyramide) {
+      const nextNum = formation.lessonNumber + 1;
+      nextRoute = `#/formations/A/pyramide-lois/pyr-0${nextNum}`;
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalPyramide}) →`;
+    } else if (formation.lessonNumber === totalPyramide) {
+      nextRoute = `#/formations/A/pyramide-lois/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  } else if (isLie && formation.nextLessonId) {
     if (formation.lessonNumber && formation.lessonNumber < totalLie) {
       const nextNum = formation.lessonNumber + 1;
       nextRoute = `#/formations/A/rs-734-0/lecon-${nextNum}`;
@@ -96,6 +107,10 @@ export function renderLessonView(container, moduleId, formationId) {
         <a href="#/" class="breadcrumb-link">Accueil</a>
         <span>/</span>
         <a href="#/formations/${mod.id}" class="breadcrumb-link">Module ${mod.id} — ${mod.title}</a>
+        ${isPyramide ? `
+          <span>/</span>
+          <a href="#/formations/A/pyramide-lois" class="breadcrumb-link">Pyramide des lois</a>
+        ` : ''}
         ${isLie ? `
           <span>/</span>
           <a href="#/formations/A/rs-734-0" class="breadcrumb-link">RS 734.0 — LIE</a>
@@ -117,12 +132,18 @@ export function renderLessonView(container, moduleId, formationId) {
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : '')))}">
+      <header class="lesson-header-card ${isPyramide ? 'ocfo-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ''))))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
           </span>
           <span class="formation-code-tag">${formation.code}</span>
+          ${isPyramide && formation.lessonNumber && formation.lessonNumber <= totalPyramide ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalPyramide}</span>
+          ` : ''}
+          ${isPyramide && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(245,158,11,0.2); color:#f59e0b; border:1px solid rgba(245,158,11,0.4);">Examen final (${totalPyramide} leçons)</span>
+          ` : ''}
           ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
             <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
           ` : ''}
@@ -297,7 +318,11 @@ export function renderLessonView(container, moduleId, formationId) {
       <!-- Barre de navigation bas de leçon -->
       <div class="lesson-footer-nav">
         <div style="display:flex; gap:var(--space-2); flex-wrap:wrap;">
-          ${isLie ? `
+          ${isPyramide ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/A/pyramide-lois'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+              ← Sommaire des 4 leçons Pyramide
+            </button>
+          ` : isLie ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Sommaire des 11 leçons LIE
             </button>
@@ -364,8 +389,14 @@ export function renderLessonView(container, moduleId, formationId) {
       const quizEl = createQuizEngine(formation, () => {
         // Callback lors de la complétion
         if (window.updateHeaderXp) window.updateHeaderXp();
-        // Si c'est LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
-        if (isLie) {
+        // Si c'est Pyramide, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+        if (isPyramide) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/A/pyramide-lois';
+          }
+        } else if (isLie) {
           if (nextRoute) {
             location.hash = nextRoute;
           } else {

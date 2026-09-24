@@ -3,7 +3,7 @@
 
 import { StorageService } from '../services/storage.js';
 import { ProgressionService } from '../services/progression.js';
-import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -20,6 +20,7 @@ export function renderModuleView(container, moduleId) {
   }
 
   const modProgress = ProgressionService.getModuleProgress(moduleId);
+  const pyramideProgress = ProgressionService.getParcoursProgress('pyramide-lois');
   const lieProgress = ProgressionService.getParcoursProgress('rs-734-0');
   const ocfoProgress = ProgressionService.getParcoursProgress('rs-734-2');
   const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
@@ -64,6 +65,30 @@ export function renderModuleView(container, moduleId) {
     </header>
 
     ${moduleId === 'A' ? `
+      <!-- Carte Parcours Structuré Pyramide des lois (Cadre normatif fédéral) -->
+      <section class="pyramide-featured-parcours-box" aria-labelledby="pyramideFeaturedTitle">
+        <div class="pyramide-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="pyramide-featured-badge">CADRE NORMATIF FÉDÉRAL</span>
+            <span class="pyramide-featured-code">PYRAMIDE DES LOIS</span>
+          </div>
+          <span class="pyramide-featured-stats">${pyramideProgress.lessonsCompleted} / ${pyramideProgress.lessonsTotal} leçons · ${pyramideProgress.percentageFormatted}</span>
+        </div>
+        <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h2>
+        <p class="pyramide-featured-desc">
+          Parcours structuré en 4 leçons officielles (Histoire 1888-1902, Hiérarchie juridique & références RS, Règles techniques & Organismes, Typologie des normes [SN]/[SNR]/[SNG]) et 1 évaluation finale certifiante de 8 questions.
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${pyramideProgress.percentage}%; background:#f59e0b;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenPyramideHub" onclick="location.hash='#/formations/A/pyramide-lois'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+            <span>Explorer les ${pyramideProgress.lessonsTotal} leçons</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
+
       <!-- Carte Parcours Structuré RS 734.0 — LIE (Loi fédérale) -->
       <section class="lie-featured-parcours-box" aria-labelledby="lieFeaturedTitle">
         <div class="lie-featured-top">
@@ -170,13 +195,14 @@ export function renderModuleView(container, moduleId) {
         ${mod.formations.map(formation => {
           const isDone = completed.includes(formation.id);
           const isAvailable = formation.status === "Disponible";
+          const isPyramide = formation.id.startsWith('pyr-');
           const isLie = formation.id.startsWith('rs-734-0-');
           const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
           const isOibt = formation.id.startsWith('rs-734-27-');
           const isOrni = formation.id.startsWith('rs-814-710-');
 
           return `
-            <article class="formation-item-card ${isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : '')))}" data-formation-id="${formation.id}">
+            <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : ''))))}" data-formation-id="${formation.id}">
               <div class="formation-code-col">
                 <span class="formation-code-tag">${formation.code}</span>
               </div>
@@ -201,6 +227,14 @@ export function renderModuleView(container, moduleId) {
       </div>
     </section>
   `;
+
+  // Clic sur le bouton du parcours Pyramide des lois
+  const btnOpenPyramideHub = container.querySelector('#btnOpenPyramideHub');
+  if (btnOpenPyramideHub) {
+    btnOpenPyramideHub.addEventListener('click', () => {
+      location.hash = '#/formations/A/pyramide-lois';
+    });
+  }
 
   // Clic sur le bouton du parcours LIE
   const btnOpenLieHub = container.querySelector('#btnOpenLieHub');
@@ -238,7 +272,11 @@ export function renderModuleView(container, moduleId) {
   container.querySelectorAll('.formation-item-card').forEach(card => {
     card.addEventListener('click', () => {
       const formationId = card.getAttribute('data-formation-id');
-      if (formationId.startsWith('rs-734-0-lecon-')) {
+      if (formationId.startsWith('pyr-0')) {
+        location.hash = `#/formations/A/pyramide-lois/${formationId}`;
+      } else if (formationId === 'pyr-evaluation-finale') {
+        location.hash = `#/formations/A/pyramide-lois/evaluation-finale`;
+      } else if (formationId.startsWith('rs-734-0-lecon-')) {
         const leconNum = formationId.replace('rs-734-0-lecon-', '');
         location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
       } else if (formationId === 'rs-734-0-evaluation-finale') {
@@ -432,6 +470,200 @@ export function renderOcfoParcoursView(container) {
     card.addEventListener('click', () => {
       const slug = card.getAttribute('data-chapter-slug');
       location.hash = `#/formations/A/rs-734-2/${slug}`;
+    });
+  });
+}
+
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : Pyramide des lois (4 Leçons officielles + Évaluation finale)
+// Source de vérité : Infographie synthétique & Recueil systématique RS
+// ----------------------------------------------------------------------------
+export function renderPyramideParcoursView(container) {
+  const parcoursProgress = ProgressionService.getParcoursProgress('pyramide-lois');
+  const lessons = PYRAMIDE_LOIS_INFO ? PYRAMIDE_LOIS_INFO.lessons : [];
+  const isFinalDone = parcoursProgress.isFinalDone;
+  const completedCount = parcoursProgress.lessonsCompleted;
+  const totalLessons = parcoursProgress.lessonsTotal;
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'pyr-01';
+  const completed = StorageService.getCompletedLessons();
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.id;
+      break;
+    }
+  }
+  if (completedCount === totalLessons && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/A" class="breadcrumb-link">Module A — Dispositions légales</a>
+      <span>/</span>
+      <span>Pyramide des lois</span>
+    </nav>
+
+    <!-- Header Hero Card Pyramide -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #f59e0b;" role="region" aria-label="En-tête du parcours Pyramide des lois">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag">CADRE NORMATIF FÉDÉRAL · HIÉRARCHIE DES NORMES</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">PYRAMIDE DES LOIS</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#f59e0b;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
+          <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${PYRAMIDE_LOIS_INFO.description}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours Pyramide</span>
+          <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
+            ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#f59e0b;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumePyramide" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons && !isFinalDone ? 'Accéder à l\'évaluation finale' : (isFinalDone ? 'Revoir le parcours' : 'Reprendre le parcours'))}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/A'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+            ← Retour au Module A
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Infographie Synthétique 4 volets -->
+    <section class="ocfo-density-guide-card" style="margin-bottom:2rem; border-left:4px solid #f59e0b;" aria-label="Infographie synthétique officielle">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+        <span style="font-size:1.4rem;">📊</span>
+        <div>
+          <h2 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin:0;">Figure A.1 — Synthèse visuelle en 4 volets</h2>
+          <div style="font-size:0.8rem; color:var(--text-muted);">Histoire (1888-1902) • Hiérarchie juridique • Organismes & NIBT • Typologie [SN] / [SNR] / [SNG]</div>
+        </div>
+      </div>
+      <div style="text-align:center; background:var(--bg-primary); border:1px solid var(--border-medium); border-radius:8px; padding:0.75rem; overflow:hidden;">
+        <img src="./public/media/images/module-a/infographie_pyramide_lois.png" alt="Infographie synthétique en 4 volets de la Pyramide des lois" style="max-width:100%; height:auto; border-radius:6px; display:inline-block;" />
+        <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">
+          Infographie pédagogique officielle ELECBOOK — Cadre normatif et hiérarchie juridique en 4 volets articulés.
+        </p>
+      </div>
+    </section>
+
+    <!-- Liste des 4 Leçons officielles -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 4 leçons de la Pyramide des lois">
+      <div class="section-heading">
+        <span>📚</span> Les 4 leçons du parcours (fidèles aux 4 volets de la pyramide)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-id="${les.id}" style="${isCurrent ? 'border-color:#f59e0b;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(245,158,11,0.3); color:#f59e0b;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(245,158,11,0.15); color:#f59e0b; border-color:rgba(245,158,11,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(245,158,11,0.3); color:#f59e0b; background:rgba(245,158,11,0.08);">${les.code}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ ${les.xpReward} XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la leçon ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (8 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-id="pyr-evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${PYRAMIDE_LOIS_INFO.finalEvaluation.title}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag">PYR-FINAL</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${PYRAMIDE_LOIS_INFO.finalEvaluation.duration}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ ${PYRAMIDE_LOIS_INFO.finalEvaluation.xpReward} XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">8 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${PYRAMIDE_LOIS_INFO.finalEvaluation.summary}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumePyramide');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/A/pyramide-lois/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const lessonId = card.getAttribute('data-lesson-id');
+      if (lessonId) {
+        location.hash = `#/formations/A/pyramide-lois/${lessonId}`;
+      }
     });
   });
 }

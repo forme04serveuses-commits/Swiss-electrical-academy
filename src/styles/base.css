@@ -3313,6 +3313,68 @@ button, input, select {
 }
 
 /* ==========================================================================
+   Styles spécifiques Module A — Pyramide des lois (Cadre normatif suisse)
+   ========================================================================== */
+.pyramide-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.05) 100%), var(--bg-surface);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.pyramide-card-accent {
+  border-left: 3px solid #f59e0b !important;
+}
+
+.pyramide-featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pyramide-featured-badge {
+  background: #f59e0b;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.pyramide-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #f59e0b;
+  font-size: 0.85rem;
+}
+
+.pyramide-featured-stats {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.pyramide-featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.pyramide-featured-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
    Styles spécifiques Module A — RS 734.0 (LIE) & Composants Pédagogiques
    ========================================================================== */
 .lie-featured-parcours-box {

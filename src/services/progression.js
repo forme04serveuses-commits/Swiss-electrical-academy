@@ -2,11 +2,25 @@
 // Source unique de vérité pour tous les calculs de progression (global, modules, parcours, leçons)
 // Garantit la cohérence absolue, l'arrondi décimal précis, l'anti-farming et la persistance.
 
-import { ACADEMY_MODULES, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
 import { StorageService } from './storage.js';
 
 // Table de normalisation des anciens identifiants et alias pour migration déterministe
 const LEGACY_ID_MAP = {
+  'pyramide-lois': 'pyr-01',
+  'pyramide': 'pyr-01',
+  'a00': 'pyr-01',
+  'A00': 'pyr-01',
+  'pyramide-des-lois': 'pyr-01',
+  'pyramide-lecon-1': 'pyr-01',
+  'pyramide-lecon-2': 'pyr-02',
+  'pyramide-lecon-3': 'pyr-03',
+  'pyramide-lecon-4': 'pyr-04',
+  'pyr-lecon-1': 'pyr-01',
+  'pyr-lecon-2': 'pyr-02',
+  'pyr-lecon-3': 'pyr-03',
+  'pyr-lecon-4': 'pyr-04',
+  'pyramide-evaluation-finale': 'pyr-evaluation-finale',
   'rs-814-710': 'rs-814-710-lecon-1',
   'RS-814-710': 'rs-814-710-lecon-1',
   'rs-814-710-orni': 'rs-814-710-lecon-1',
@@ -44,8 +58,19 @@ const LEGACY_ID_MAP = {
   'evaluation-finale': 'rs-734-2-evaluation-finale'
 };
 
-// Configuration formelle des 4 sous-parcours structurés de Module A
+// Configuration formelle des 5 sous-parcours structurés de Module A
 const PARCOURS_REGISTRY = {
+  'pyramide-lois': {
+    id: 'pyramide-lois',
+    shortCode: 'PYR',
+    title: 'Pyramide des lois',
+    fullTitle: 'Cadre légal et hiérarchie normative suisse (Pyramide des lois)',
+    typeLabel: 'Cadre normatif fédéral',
+    accentColor: '#f59e0b',
+    hubRoute: '#/formations/A/pyramide-lois',
+    getLessons: () => (PYRAMIDE_LOIS_INFO ? PYRAMIDE_LOIS_INFO.lessons : []),
+    finalEvaluationId: 'pyr-evaluation-finale'
+  },
   'rs-734-0': {
     id: 'rs-734-0',
     shortCode: 'LIE',
@@ -183,6 +208,13 @@ export const ProgressionService = {
 
       if (!Array.isArray(list)) list = [];
 
+      // Migration auto pour les utilisateurs ayant validé l'ancien 'pyramide-lois' monolithique
+      if (list.includes('pyramide-lois') || list.includes('pyramide') || list.includes('a00') || list.includes('A00')) {
+        ['pyr-01', 'pyr-02', 'pyr-03', 'pyr-04'].forEach(id => {
+          if (!list.includes(id)) list.push(id);
+        });
+      }
+
       const validIds = this.getAllValidFormationIds();
       const cleaned = [];
       const seen = new Set();
@@ -228,11 +260,12 @@ export const ProgressionService = {
   },
 
   /**
-   * Progression spécifique pour un des 4 sous-parcours structurés (LIE, OCFo, OIBT, ORNI).
-   * @param {string} parcoursId - 'rs-734-0' | 'rs-734-2' | 'rs-734-27' | 'rs-814-710' (ou alias court 'lie', 'ocfo', etc.)
+   * Progression spécifique pour un des 5 sous-parcours structurés (Pyramide, LIE, OCFo, OIBT, ORNI).
+   * @param {string} parcoursId - 'pyramide-lois' | 'rs-734-0' | 'rs-734-2' | 'rs-734-27' | 'rs-814-710' (ou alias)
    */
   getParcoursProgress(parcoursId) {
     let key = parcoursId;
+    if (key === 'pyramide' || key === 'pyramide-lois' || key === 'pyr' || key === 'a00' || key === 'A00') key = 'pyramide-lois';
     if (key === 'lie' || key === 'LIE') key = 'rs-734-0';
     if (key === 'ocfo' || key === 'OCFo') key = 'rs-734-2';
     if (key === 'oibt' || key === 'OIBT') key = 'rs-734-27';
@@ -327,6 +360,7 @@ export const ProgressionService = {
     let subParcours = null;
     if (moduleId === 'A') {
       subParcours = {
+        pyramide: this.getParcoursProgress('pyramide-lois'),
         lie: this.getParcoursProgress('rs-734-0'),
         ocfo: this.getParcoursProgress('rs-734-2'),
         oibt: this.getParcoursProgress('rs-734-27'),
