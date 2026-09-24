@@ -10851,11 +10851,11 @@
         </section>
 
         <!-- Carte Parcours Structuré Directive ESTI n° 407 (Version 0526) -->
-        <section class="esti-featured-parcours-box" aria-labelledby="esti407FeaturedTitle">
+        <section class="esti407-featured-parcours-box" aria-labelledby="esti407FeaturedTitle">
           <div class="esti-featured-top">
             <div style="display:flex; align-items:center; gap:0.75rem;">
-              <span class="esti-featured-badge">DIRECTIVE ESTI · VERSION 0526</span>
-              <span class="esti-featured-code">ESTI 407</span>
+              <span class="esti407-featured-badge">DIRECTIVE ESTI · VERSION 0526</span>
+              <span class="esti407-featured-code">ESTI 407</span>
             </div>
             <span class="esti-featured-stats">${esti407Progress.lessonsCompleted} / ${esti407Progress.lessonsTotal} leçons · ${esti407Progress.percentageFormatted}</span>
           </div>
@@ -10864,10 +10864,10 @@
             Parcours officiel structuré en 13 leçons calquées 1:1 sur les 13 chapitres de la Directive ESTI n° 407 (Champ d'application, But, Bases légales, Ouvrages de référence, 3 Objectifs de protection, Obligations, Définitions, Principes généraux & S-T-O-P, Mesurage & essais, 4 Procédures de travail & TST, Courant continu, EPI & Niveaux anti-arc, Études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
           </p>
           <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-            <div class="progress-bar-fill" style="width: ${esti407Progress.percentage}%; background:#10b981;"></div>
+            <div class="progress-bar-fill" style="width: ${esti407Progress.percentage}%; background:#f97316;"></div>
           </div>
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-            <button class="btn-continue" id="btnOpenEsti407Hub" onclick="location.hash='#/formations/E/esti-407'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700; cursor:pointer;">
+            <button class="btn-continue" id="btnOpenEsti407Hub" onclick="location.hash='#/formations/E/esti-407'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f97316; color:#ffffff; font-weight:700; cursor:pointer;" onmouseover="this.style.background='#ea580c'" onmouseout="this.style.background='#f97316'">
               <span>Explorer les ${esti407Progress.lessonsTotal} leçons</span>
               <span>→</span>
             </button>
@@ -10888,10 +10888,11 @@
             const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
             const isOibt = formation.id.startsWith('rs-734-27-');
             const isOrni = formation.id.startsWith('rs-814-710-');
-            const isEsti = formation.id.startsWith('esti-221-') || formation.id.startsWith('esti-407-');
+            const isEsti221 = formation.id.startsWith('esti-221-');
+            const isEsti407 = formation.id.startsWith('esti-407-');
 
             return `
-              <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti ? 'esti-card-accent' : '')))))}" data-formation-id="${formation.id}">
+              <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti221 ? 'esti221-card-accent' : (isEsti407 ? 'esti407-card-accent' : ''))))))}" data-formation-id="${formation.id}">
                 <div class="formation-code-col">
                   <span class="formation-code-tag">${formation.code}</span>
                 </div>
@@ -12116,15 +12117,15 @@
       </nav>
 
       <!-- Header Hero Card ESTI 407 -->
-      <header class="ocfo-hub-hero" style="border-left: 4px solid #10b981;" role="region" aria-label="En-tête du parcours ESTI 407">
+      <header class="ocfo-hub-hero" style="border-left: 4px solid #f97316;" role="region" aria-label="En-tête du parcours ESTI 407">
         <div class="ocfo-hub-badge-row">
           <span class="ocfo-hub-tag">DIRECTIVE OFFICIELLE ESTI · VERSION 0526</span>
-          <span class="ocfo-hub-ref" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">ESTI n° 407</span>
+          <span class="ocfo-hub-ref" style="border-color:rgba(249,115,22,0.4); color:#f97316; background:rgba(249,115,22,0.12);">ESTI n° 407</span>
         </div>
 
         <div class="ocfo-hub-title-row">
           <div>
-            <div class="ocfo-hub-short" style="color:#10b981;">ESTI directive n° 407 (Valable dès le 1er mai 2026)</div>
+            <div class="ocfo-hub-short" style="color:#f97316;">ESTI directive n° 407 (Valable dès le 1er mai 2026)</div>
             <h1 class="ocfo-hub-title">Activités sur des installations électriques ou à proximité de celles-ci</h1>
           </div>
         </div>
@@ -12136,16 +12137,16 @@
         <div class="ocfo-hub-progress-card">
           <div class="progress-labels">
             <span style="font-weight:700; color:var(--text-primary);">Progression du parcours ESTI 407</span>
-            <span style="font-weight:800; color:#10b981; font-size:1rem;">
+            <span style="font-weight:800; color:#f97316; font-size:1rem;">
               ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
             </span>
           </div>
           <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#10b981;"></div>
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#f97316;"></div>
           </div>
 
           <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
-            <button class="btn-continue" id="btnResumeEsti407" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700;">
+            <button class="btn-continue" id="btnResumeEsti407" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f97316; color:#ffffff; font-weight:700;">
               <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
               <span>→</span>
             </button>
@@ -12168,9 +12169,9 @@
             const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
 
             return `
-              <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#10b981;' : ''}">
+              <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#f97316;' : ''}">
                 <div class="ocfo-card-left">
-                  <span class="ocfo-chap-number" style="border-color:rgba(16,185,129,0.3); color:#10b981;">${les.number}</span>
+                  <span class="ocfo-chap-number" style="border-color:rgba(249,115,22,0.3); color:#f97316;">${les.number}</span>
                   <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
                     ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
                   </span>
@@ -12179,10 +12180,10 @@
                 <div class="ocfo-card-center">
                   <div class="ocfo-chap-title-row">
                     <h2 class="ocfo-chap-title">${les.title}</h2>
-                    ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(16,185,129,0.15); color:#10b981; border-color:rgba(16,185,129,0.3);">En cours</span>' : '')}
+                    ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(249,115,22,0.15); color:#f97316; border-color:rgba(249,115,22,0.3);">En cours</span>' : '')}
                   </div>
                   <div class="ocfo-chap-articles">
-                    <span class="legal-tag" style="border-color:rgba(16,185,129,0.3); color:#10b981; background:rgba(16,185,129,0.08);">${les.sectionsRange}</span>
+                    <span class="legal-tag" style="border-color:rgba(249,115,22,0.3); color:#f97316; background:rgba(249,115,22,0.08);">${les.sectionsRange}</span>
                     <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
                     <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
                     <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
@@ -12424,7 +12425,7 @@
         </nav>
 
         <!-- En-tête de leçon (Titre) -->
-        <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ((isEsti221 || isEsti407) ? 'esti-lesson-header' : '')))))}">
+        <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : ''))))))}">
           <div class="lesson-badges-row">
             <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
               ${mod.id}
@@ -12467,10 +12468,10 @@
               <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalEsti221} leçons)</span>
             ` : ''}
             ${isEsti407 && formation.lessonNumber && formation.lessonNumber <= totalEsti407 ? `
-              <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalEsti407}</span>
+              <span class="ocfo-progression-pill" style="border-color:rgba(249,115,22,0.4); color:#f97316; background:rgba(249,115,22,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalEsti407}</span>
             ` : ''}
             ${isEsti407 && formation.isFinalEvaluation ? `
-              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalEsti407} leçons)</span>
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(249,115,22,0.2); color:#f97316; border:1px solid rgba(249,115,22,0.4);">Examen final (${totalEsti407} leçons)</span>
             ` : ''}
             <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
             ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}

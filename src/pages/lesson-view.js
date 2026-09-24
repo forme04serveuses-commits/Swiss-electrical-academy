@@ -167,7 +167,7 @@ export function renderLessonView(container, moduleId, formationId) {
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ((isEsti221 || isEsti407) ? 'esti-lesson-header' : '')))))}">
+      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : ''))))))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
@@ -210,10 +210,10 @@ export function renderLessonView(container, moduleId, formationId) {
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalEsti221} leçons)</span>
           ` : ''}
           ${isEsti407 && formation.lessonNumber && formation.lessonNumber <= totalEsti407 ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalEsti407}</span>
+            <span class="ocfo-progression-pill" style="border-color:rgba(249,115,22,0.4); color:#f97316; background:rgba(249,115,22,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalEsti407}</span>
           ` : ''}
           ${isEsti407 && formation.isFinalEvaluation ? `
-            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalEsti407} leçons)</span>
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(249,115,22,0.2); color:#f97316; border:1px solid rgba(249,115,22,0.4);">Examen final (${totalEsti407} leçons)</span>
           ` : ''}
           <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
           ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}

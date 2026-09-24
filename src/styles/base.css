@@ -3800,3 +3800,45 @@ button, input, select {
   border-left: 4px solid #10b981 !important;
 }
 
+/* ==========================================================================
+   Styles spécifiques Module E — Directive ESTI 407 (Orange Sécurité Arc Flash)
+   ========================================================================== */
+.esti407-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.09) 0%, rgba(234, 88, 12, 0.04) 100%), var(--bg-surface);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.esti407-featured-parcours-box:hover {
+  border-color: rgba(249, 115, 22, 0.6);
+}
+
+.esti407-card-accent {
+  border-left: 3px solid #f97316 !important;
+}
+
+.esti407-featured-badge {
+  background: #f97316;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.esti407-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #f97316;
+  font-size: 0.85rem;
+}
+
+.esti407-lesson-header {
+  border-left: 4px solid #f97316 !important;
+}
+
