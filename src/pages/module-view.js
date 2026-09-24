@@ -550,23 +550,6 @@ export function renderPyramideParcoursView(container) {
       </div>
     </header>
 
-    <!-- Infographie Synthétique 4 volets -->
-    <section class="ocfo-density-guide-card" style="margin-bottom:2rem; border-left:4px solid #f59e0b;" aria-label="Infographie synthétique officielle">
-      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
-        <span style="font-size:1.4rem;">📊</span>
-        <div>
-          <h2 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin:0;">Figure A.1 — Synthèse visuelle en 4 volets</h2>
-          <div style="font-size:0.8rem; color:var(--text-muted);">Histoire (1888-1902) • Hiérarchie juridique • Organismes & NIBT • Typologie [SN] / [SNR] / [SNG]</div>
-        </div>
-      </div>
-      <div style="text-align:center; background:var(--bg-primary); border:1px solid var(--border-medium); border-radius:8px; padding:0.75rem; overflow:hidden;">
-        <img src="./public/media/images/module-a/infographie_pyramide_lois.png" alt="Infographie synthétique en 4 volets de la Pyramide des lois" style="max-width:100%; height:auto; border-radius:6px; display:inline-block;" />
-        <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">
-          Infographie pédagogique officielle ELECBOOK — Cadre normatif et hiérarchie juridique en 4 volets articulés.
-        </p>
-      </div>
-    </section>
-
     <!-- Liste des 4 Leçons officielles -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 4 leçons de la Pyramide des lois">
       <div class="section-heading">
