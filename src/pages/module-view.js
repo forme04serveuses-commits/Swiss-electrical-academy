@@ -3,7 +3,7 @@
 
 import { StorageService } from '../services/storage.js';
 import { ProgressionService } from '../services/progression.js';
-import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -26,6 +26,7 @@ export function renderModuleView(container, moduleId) {
   const oibtProgress = ProgressionService.getParcoursProgress('rs-734-27');
   const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
   const esti221Progress = ProgressionService.getParcoursProgress('esti-221');
+  const esti407Progress = ProgressionService.getParcoursProgress('esti-407');
   const completed = StorageService.getCompletedLessons();
 
   container.innerHTML = `
@@ -190,7 +191,7 @@ export function renderModuleView(container, moduleId) {
 
     ${moduleId === 'E' ? `
       <!-- Carte Parcours Structuré Directive ESTI n° 221 (Version 0621) -->
-      <section class="esti-featured-parcours-box" aria-labelledby="estiFeaturedTitle">
+      <section class="esti-featured-parcours-box" aria-labelledby="esti221FeaturedTitle" style="margin-bottom:1rem;">
         <div class="esti-featured-top">
           <div style="display:flex; align-items:center; gap:0.75rem;">
             <span class="esti-featured-badge">DIRECTIVE ESTI · VERSION 0621</span>
@@ -198,7 +199,7 @@ export function renderModuleView(container, moduleId) {
           </div>
           <span class="esti-featured-stats">${esti221Progress.lessonsCompleted} / ${esti221Progress.lessonsTotal} leçons · ${esti221Progress.percentageFormatted}</span>
         </div>
-        <h2 id="estiFeaturedTitle" class="esti-featured-title">Directive ESTI n° 221 — Obligations d'annoncer</h2>
+        <h2 id="esti221FeaturedTitle" class="esti-featured-title">Directive ESTI n° 221 — Obligations d'annoncer</h2>
         <p class="esti-featured-desc">
           Parcours officiel structuré en 4 leçons conformes à la directive ESTI 221 (Cadre légal OIBT, Les 13 cas d'annonce obligatoire, Première vérification & dispense de RaSi, Droit transitoire & notification) et 1 évaluation finale certifiante de 10 questions.
         </p>
@@ -208,6 +209,30 @@ export function renderModuleView(container, moduleId) {
         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
           <button class="btn-continue" id="btnOpenEsti221Hub" onclick="location.hash='#/formations/E/esti-221'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700; cursor:pointer;">
             <span>Explorer les ${esti221Progress.lessonsTotal} leçons</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Carte Parcours Structuré Directive ESTI n° 407 (Version 0526) -->
+      <section class="esti-featured-parcours-box" aria-labelledby="esti407FeaturedTitle">
+        <div class="esti-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="esti-featured-badge">DIRECTIVE ESTI · VERSION 0526</span>
+            <span class="esti-featured-code">ESTI 407</span>
+          </div>
+          <span class="esti-featured-stats">${esti407Progress.lessonsCompleted} / ${esti407Progress.lessonsTotal} leçons · ${esti407Progress.percentageFormatted}</span>
+        </div>
+        <h2 id="esti407FeaturedTitle" class="esti-featured-title">Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques</h2>
+        <p class="esti-featured-desc">
+          Parcours officiel structuré en 7 leçons conformes à la directive ESTI 407 (Cadre légal & 3 objectifs, Méthode S-T-O-P & qualifications, Organisation & distances, Procédures d'exploitation & DC, Les 4 procédures de travail & TST, EPI & Tableau 7 anti-arc, Liste de contrôle & études de cas BT/HT) et 1 évaluation finale certifiante de 10 questions.
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${esti407Progress.percentage}%; background:#10b981;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenEsti407Hub" onclick="location.hash='#/formations/E/esti-407'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700; cursor:pointer;">
+            <span>Explorer les ${esti407Progress.lessonsTotal} leçons</span>
             <span>→</span>
           </button>
         </div>
@@ -227,7 +252,7 @@ export function renderModuleView(container, moduleId) {
           const isOcfo = formation.id.startsWith('rs-734-2-') && !formation.id.startsWith('rs-734-27-');
           const isOibt = formation.id.startsWith('rs-734-27-');
           const isOrni = formation.id.startsWith('rs-814-710-');
-          const isEsti = formation.id.startsWith('esti-221-');
+          const isEsti = formation.id.startsWith('esti-221-') || formation.id.startsWith('esti-407-');
 
           return `
             <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti ? 'esti-card-accent' : '')))))}" data-formation-id="${formation.id}">
@@ -329,6 +354,11 @@ export function renderModuleView(container, moduleId) {
         location.hash = `#/formations/E/esti-221/lecon-${leconNum}`;
       } else if (formationId === 'esti-221-evaluation-finale') {
         location.hash = `#/formations/E/esti-221/evaluation-finale`;
+      } else if (formationId.startsWith('esti-407-lecon-')) {
+        const leconNum = formationId.replace('esti-407-lecon-', '');
+        location.hash = `#/formations/E/esti-407/lecon-${leconNum}`;
+      } else if (formationId === 'esti-407-evaluation-finale') {
+        location.hash = `#/formations/E/esti-407/evaluation-finale`;
       } else {
         location.hash = `#/formations/${mod.id}/${formationId}`;
       }
@@ -1392,5 +1422,183 @@ export function renderEsti221ParcoursView(container) {
     });
   });
 }
+
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : Directive ESTI n° 407 (7 Leçons officielles + Examen final)
+// Source de vérité : Directive ESTI n° 407 / Version 0526 (valable dès le 01.05.2026)
+// Modèle de référence : RS 734.0 — LIE
+// ----------------------------------------------------------------------------
+export function renderEsti407ParcoursView(container) {
+  const parcoursProgress = ProgressionService.getParcoursProgress('esti-407');
+  const lessons = ESTI_407_INFO ? ESTI_407_INFO.lessons : [];
+  const isFinalDone = parcoursProgress.isFinalDone;
+  const completedCount = parcoursProgress.lessonsCompleted;
+  const totalLessons = parcoursProgress.lessonsTotal;
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'lecon-1';
+  const completed = StorageService.getCompletedLessons();
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.slug;
+      break;
+    }
+  }
+  if (completedCount === totalLessons && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/E" class="breadcrumb-link">Module E — ESTI directives</a>
+      <span>/</span>
+      <span>Directive ESTI 407</span>
+    </nav>
+
+    <!-- Header Hero Card ESTI 407 -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #10b981;" role="region" aria-label="En-tête du parcours ESTI 407">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag">DIRECTIVE OFFICIELLE ESTI · VERSION 0526</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">ESTI n° 407</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#10b981;">ESTI directive n° 407 (Valable dès le 1er mai 2026)</div>
+          <h1 class="ocfo-hub-title">Activités sur des installations électriques ou à proximité de celles-ci</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${ESTI_407_INFO ? ESTI_407_INFO.description : ''}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours ESTI 407</span>
+          <span style="font-weight:800; color:#10b981; font-size:1rem;">
+            ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#10b981;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumeEsti407" style="display:inline-flex; align-items:center; gap:0.5rem; background:#10b981; color:#042f2e; font-weight:700;">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/E'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+            ← Retour au Module E
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Liste des 7 Leçons officielles -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons ESTI 407">
+      <div class="section-heading">
+        <span>📚</span> Les 7 leçons du parcours (fidèles aux 13 chapitres de la directive ESTI 407)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#10b981;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(16,185,129,0.3); color:#10b981;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(16,185,129,0.15); color:#10b981; border-color:rgba(16,185,129,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(16,185,129,0.3); color:#10b981; background:rgba(16,185,129,0.08);">${les.sectionsRange}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (10 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.title : 'Évaluation Finale Certifiante'}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag">Chapitres 1 à 13</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.duration : '20 min'}</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">10 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.summary : ''}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumeEsti407');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/E/esti-407/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.getAttribute('data-lesson-slug');
+      if (slug) {
+        location.hash = `#/formations/E/esti-407/${slug}`;
+      }
+    });
+  });
+}
+
 
 

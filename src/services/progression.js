@@ -2,7 +2,7 @@
 // Source unique de vérité pour tous les calculs de progression (global, modules, parcours, leçons)
 // Garantit la cohérence absolue, l'arrondi décimal précis, l'anti-farming et la persistance.
 
-import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
 import { StorageService } from './storage.js';
 
 // Table de normalisation des anciens identifiants et alias pour migration déterministe
@@ -15,6 +15,17 @@ const LEGACY_ID_MAP = {
   'esti-221-03': 'esti-221-lecon-3',
   'esti-221-04': 'esti-221-lecon-4',
   'esti-221-examen': 'esti-221-evaluation-finale',
+  'esti-407': 'esti-407-lecon-1',
+  'ESTI-407': 'esti-407-lecon-1',
+  'esti407': 'esti-407-lecon-1',
+  'esti-407-01': 'esti-407-lecon-1',
+  'esti-407-02': 'esti-407-lecon-2',
+  'esti-407-03': 'esti-407-lecon-3',
+  'esti-407-04': 'esti-407-lecon-4',
+  'esti-407-05': 'esti-407-lecon-5',
+  'esti-407-06': 'esti-407-lecon-6',
+  'esti-407-07': 'esti-407-lecon-7',
+  'esti-407-examen': 'esti-407-evaluation-finale',
   'pyramide-lois': 'pyr-01',
   'pyramide': 'pyr-01',
   'a00': 'pyr-01',
@@ -78,6 +89,17 @@ const PARCOURS_REGISTRY = {
     hubRoute: '#/formations/E/esti-221',
     getLessons: () => (ESTI_221_INFO ? ESTI_221_INFO.lessons : []),
     finalEvaluationId: 'esti-221-evaluation-finale'
+  },
+  'esti-407': {
+    id: 'esti-407',
+    shortCode: 'ESTI 407',
+    title: 'Directive ESTI n° 407',
+    fullTitle: 'Directive ESTI n° 407 — Activités sur des installations électriques ou à proximité de celles-ci',
+    typeLabel: 'Directive ESTI',
+    accentColor: '#10b981',
+    hubRoute: '#/formations/E/esti-407',
+    getLessons: () => (ESTI_407_INFO ? ESTI_407_INFO.lessons : []),
+    finalEvaluationId: 'esti-407-evaluation-finale'
   },
   'pyramide-lois': {
     id: 'pyramide-lois',
@@ -285,6 +307,7 @@ export const ProgressionService = {
   getParcoursProgress(parcoursId) {
     let key = parcoursId;
     if (key === 'esti-221' || key === 'esti221' || key === 'ESTI-221' || key === 'ESTI221') key = 'esti-221';
+    if (key === 'esti-407' || key === 'esti407' || key === 'ESTI-407' || key === 'ESTI407') key = 'esti-407';
     if (key === 'pyramide' || key === 'pyramide-lois' || key === 'pyr' || key === 'a00' || key === 'A00') key = 'pyramide-lois';
     if (key === 'lie' || key === 'LIE') key = 'rs-734-0';
     if (key === 'ocfo' || key === 'OCFo') key = 'rs-734-2';
@@ -388,7 +411,8 @@ export const ProgressionService = {
       };
     } else if (moduleId === 'E') {
       subParcours = {
-        esti221: this.getParcoursProgress('esti-221')
+        esti221: this.getParcoursProgress('esti-221'),
+        esti407: this.getParcoursProgress('esti-407')
       };
     }
 

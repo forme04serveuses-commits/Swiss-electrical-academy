@@ -4,7 +4,7 @@
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { ProgressionService } from './services/progression.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView, renderEsti221ParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView, renderEsti221ParcoursView, renderEsti407ParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -28,7 +28,7 @@ export function scrollToTop(container) {
       }
     }
   }
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
     window.scrollTo(0, 0);
   }
   if (typeof document !== 'undefined') {
@@ -159,6 +159,12 @@ function initSEA() {
       return;
     }
 
+    // 4sexies. Parcours dédié Directive ESTI 407 (Hub des 7 leçons) : /formations/E/esti-407 ou /formations/E/esti407
+    if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-407' || segments[2].toLowerCase() === 'esti407')) {
+      renderEsti407ParcoursView(pageContainer);
+      return;
+    }
+
     // 5. Vue Chapitre ou Leçon
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
@@ -253,6 +259,20 @@ function initSEA() {
         } else if (slug.startsWith('lecon-')) {
           const numPart = slug.replace('lecon-', '');
           targetId = `esti-221-lecon-${numPart}`;
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
+
+      // Sous-routes pour le parcours ESTI 407 (ex: /formations/E/esti-407/lecon-1 ou /evaluation-finale)
+      if (segments.length >= 4 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-407' || segments[2].toLowerCase() === 'esti407')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = slug.startsWith('esti-407-') ? slug : `esti-407-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'esti-407-evaluation-finale';
+        } else if (slug.startsWith('lecon-')) {
+          const numPart = slug.replace('lecon-', '');
+          targetId = `esti-407-lecon-${numPart}`;
         }
         renderLessonView(pageContainer, moduleId, targetId);
         return;
