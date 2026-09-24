@@ -413,7 +413,9 @@ export function renderLessonView(container, moduleId, formationId) {
   initOcfoAnnexe4Visual(container);
 
   // Insertion du quiz
-  if (isAvailable && formation.quiz) {
+  const quizData = formation.quiz || formation.questions;
+  if (isAvailable && quizData) {
+    if (!formation.quiz) formation.quiz = quizData;
     const quizSlot = container.querySelector('#quizSlot');
     if (quizSlot) {
       const quizEl = createQuizEngine(formation, () => {

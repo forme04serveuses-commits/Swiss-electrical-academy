@@ -4,7 +4,7 @@
 import { StorageService } from '../services/storage.js';
 
 export function createQuizEngine(formation, onComplete) {
-  const quizData = formation.quiz;
+  const quizData = formation.quiz || formation.questions;
   if (!quizData || quizData.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'quiz-section';

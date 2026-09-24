@@ -6233,7 +6233,7 @@
                                   "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Certification officielle • Examen final</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'évaluation finale est constituée de <strong>10 questions à choix multiples</strong> couvrant l'intégralité des 6 sections de la directive ESTI 221 / Version 0621 :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Bases légales OIBT & avis d'installation :</strong> Art. 23 et 25 OIBT, rôle de l'ESTI, délais et forme de l'annonce.</li>\n  <li><strong>Signataires autorisés :</strong> Règles spécifiques pour autorisations générales, temporaires et limitées.</li>\n  <li><strong>Les 13 catégories obligatoires :</strong> Seuils de 3,7 kVA, raccordements, PDIE-CH, PV, bornes de charge, chantiers.</li>\n  <li><strong>Première vérification & statut des apprentis :</strong> Art. 24 al. 1 et art. 10a al. 4 OIBT.</li>\n  <li><strong>Dispense de rapport de sécurité formel :</strong> Les 4 critères cumulatifs et maintien du contrôle de réception (< 20 ans).</li>\n  <li><strong>Dispositions transitoires & publication :</strong> Entrée en vigueur au 01.07.2021, abrogation de 2018 et organismes notifiés.</li>\n</ul>\n<div class=\"ocfo-warning-box\">\n  <strong>🎯 Critère de certification :</strong> Seuil d'admission fixé à <strong>80 % (8 bonnes réponses sur 10)</strong>. Vous pouvez recommencer l'évaluation en cas d'échec sans pénalité.\n</div>"
                           }
                   ],
-                  "questions": [
+                  "quiz": [
                           {
                                   "question": "1. Sur quelle base légale révisée de l'OIBT l'ESTI est-elle habilitée à édicter les dérogations à l'obligation d'annoncer ?",
                                   "options": [
@@ -8609,7 +8609,7 @@
 
 
   function createQuizEngine(formation, onComplete) {
-    const quizData = formation.quiz;
+    const quizData = formation.quiz || formation.questions;
     if (!quizData || quizData.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'quiz-section';
@@ -11162,7 +11162,9 @@
     initOcfoAnnexe4Visual(container);
 
     // Insertion du quiz
-    if (isAvailable && formation.quiz) {
+    const quizData = formation.quiz || formation.questions;
+    if (isAvailable && quizData) {
+      if (!formation.quiz) formation.quiz = quizData;
       const quizSlot = container.querySelector('#quizSlot');
       if (quizSlot) {
         const quizEl = createQuizEngine(formation, () => {
