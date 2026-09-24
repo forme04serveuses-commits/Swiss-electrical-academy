@@ -543,6 +543,67 @@ export const RS_814_710_INFO = {
   }
 };
 
+
+// Informations officielles et structure en 4 leçons de la Directive ESTI n° 221
+// Source de vérité : ESTI directive n° 221 / Version 0621 (valable dès le 1er juillet 2021)
+export const ESTI_221_INFO = {
+  "id": "esti-221",
+  "code": "ESTI 221",
+  "title": "Directive ESTI n° 221",
+  "shortTitle": "ESTI 221",
+  "description": "Directive ESTI n° 221 / Version 0621 — Obligations d'annoncer en cas d'autorisation générale ou limitée d'installer (Valable dès le 1er juillet 2021). Référentiel officiel fixant les 13 catégories d'avis d'installation obligatoire auprès des exploitants de réseau et les 4 critères cumulatifs de dispense du rapport de sécurité formel.",
+  "lessons": [
+    {
+      "id": "esti-221-lecon-1",
+      "slug": "lecon-1",
+      "number": "1",
+      "title": "Sections 1 & 2 — Introduction & Principes de l'avis d'installation",
+      "sectionsRange": "Sections 1 & 2",
+      "duration": "7 min",
+      "summary": "Fondements légaux OIBT (art. 23, 24, 25), compétence régalienne de l'ESTI, principe de l'avis d'installation, signataires autorisés et liberté de forme de l'exploitant de réseau."
+    },
+    {
+      "id": "esti-221-lecon-2",
+      "slug": "lecon-2",
+      "number": "2",
+      "title": "Section 3 — Exceptions à l'obligation d'annoncer (Les 13 cas soumis)",
+      "sectionsRange": "Section 3",
+      "duration": "8 min",
+      "summary": "Liste exhaustive des 13 catégories d'installations soumises à annonce, seuil déterminant > 3,7 kVA, raccordements, PDIE-CH, PV, bornes IRVE, chantiers et dispense de tous les autres travaux."
+    },
+    {
+      "id": "esti-221-lecon-3",
+      "slug": "lecon-3",
+      "number": "3",
+      "title": "Section 4 — Première vérification & Exception au rapport de sécurité formel",
+      "sectionsRange": "Section 4",
+      "duration": "9 min",
+      "summary": "Obligation absolue de première vérification (art. 24 al. 1 OIBT), interdiction stricte pour apprentis/auxiliaires (art. 10a al. 4), 4 critères cumulatifs de dispense de RaSi formel et maintien du contrôle de réception < 20 ans."
+    },
+    {
+      "id": "esti-221-lecon-4",
+      "slug": "lecon-4",
+      "number": "4",
+      "title": "Sections 5 & 6 — Dispositions transitoires, Publication & Communication",
+      "sectionsRange": "Sections 5 & 6",
+      "duration": "6 min",
+      "summary": "Entrée en vigueur au 1er juillet 2021, abrogation de la dérogation du 30 novembre 2018, publication au Recueil officiel (RS 170.512) et notification aux 5 organisations de branche (OFEN, AES, EIT.swiss, ASCE, ODEC)."
+    }
+  ],
+  "finalEvaluation": {
+    "id": "esti-221-evaluation-finale",
+    "slug": "evaluation-finale",
+    "title": "Évaluation finale — Directive ESTI n° 221",
+    "sectionsRange": "Sections 1 à 6",
+    "duration": "20 min",
+    "summary": "10 questions représentatives d'examen couvrant les 6 sections de la directive ESTI 221. Seuil de réussite à 80% requis pour valider le module et obtenir le badge Expert ESTI 221."
+  },
+  "totalLessons": 4,
+  "subtitle": "4 leçons officielles · Version 0621 · Valable dès le 1er juillet 2021",
+  "tag": "Directive ESTI",
+  "fullTitle": "Directive ESTI n° 221 — Obligations d'annoncer en cas d'autorisation générale ou limitée d'installer"
+};
+
 export const ACADEMY_MODULES = [
   // --------------------------------------------------------------------------
   // MODULE A — Dispositions légales
@@ -5857,24 +5918,432 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
     id: "E",
     code: "E",
     title: "ESTI directives",
-    countLabel: "2 directives",
+    countLabel: "6 unités (1 directive disponible)",
     description: "Directives de l'Inspection fédérale des installations à courant fort (ESTI) précisant les obligations de sécurité, d'autorisation et de contrôle technique.",
     badgeTheme: "esti",
     formations: [
       {
-        id: "esti-221",
-        routeId: "esti-221",
-        code: "ESTI 221",
-        title: "Directive ESTI 221",
-        subtitle: "Exigences relatives aux autorisations d'installer et de contrôler selon l'OIBT",
-        status: "En développement",
-        duration: "À venir",
-        tag: "Directive ESTI",
-        xpReward: 0,
-        objective: "Connaître les critères de délivrance des autorisations générales et limitées d'installer.",
-        introduction: "Cette formation dédiée est actuellement en cours de préparation conformément aux directives officielles de l'ESTI.",
-        contentSections: [{ title: "🔒 Contenu en préparation", text: "La fiche relative à la directive ESTI 221 sera complétée à partir des sources officielles de l'inspection fédérale." }]
-      },
+                "id": "esti-221-lecon-1",
+                "routeId": "esti-221/lecon-1",
+                "moduleId": "E",
+                "parcoursId": "esti-221",
+                "lessonNumber": 1,
+                "totalLessons": 4,
+                "code": "ESTI 221 — Leçon 1",
+                "title": "Sections 1 & 2 — Introduction & Principes de l'avis d'installation",
+                "subtitle": "Bases légales OIBT, avis d'installation, signataires autorisés et forme de l'annonce",
+                "sectionsRange": "Sections 1 & 2",
+                "status": "Disponible",
+                "duration": "7 min",
+                "tag": "Directive ESTI",
+                "xpReward": 30,
+                "objective": "Maîtriser le cadre légal de l'obligation d'annoncer selon les art. 23 et 25 OIBT, les règles de signature par type d'autorisation et le principe de liberté de forme fixé par les exploitants de réseaux.",
+                "introduction": "La <strong>Directive ESTI n° 221 (Version 0621)</strong>, valable dès le 1<sup>er</sup> juillet 2021, précise les obligations d'annoncer incombant aux titulaires d'autorisations d'installer générales ou limitées en vertu des art. 23 et 25 OIBT. Cette première unité aborde le fondement légal de l'« avis d'installation », les compétences déléguées à l'ESTI, les personnes habilitées à signer l'annonce et le régime formel arrêté par les gestionnaires de réseau.",
+                "contentSections": [
+                        {
+                                "title": "1. Section 1 — Introduction & Fondements légaux OIBT (Art. 23, 24, 25)",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 1 • Cadre légal OIBT révisé</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes <strong>art. 23 et 25 OIBT</strong> régissent les obligations d'annoncer incombant aux titulaires d'autorisations d'installer générales ou limitées. Ces obligations impliquent notamment d'annoncer au <strong>gestionnaire de réseau concerné</strong> les travaux d'installation avant que ceux-ci ne débutent, en pratique sous la forme d'un <strong>« avis d'installation »</strong>.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes art. 23 et 25 OIBT révisés et entrant en vigueur le <strong>1<sup>er</sup> juillet 2021</strong> confient expressément à l'<strong>Inspection fédérale des installations à courant fort ESTI</strong> le soin de définir les dérogations à cette obligation d'annoncer (voir <strong>art. 23 al. 2</strong> et <strong>art. 25 al. 1<sup>bis</sup> OIBT</strong>). Ces dérogations figurent de manière <strong>exhaustive</strong> dans la présente directive.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nIl appartient par ailleurs à l'ESTI de déterminer les cas dans lesquels l'obligation de rédiger un rapport de sécurité ne s'applique pas (voir <strong>art. 24 al. 5 OIBT</strong>).\n</p>"
+                        },
+                        {
+                                "title": "2. Section 2.a — Principe de l'obligation d'annoncer & Contenu de l'annonce",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 2.a • Champ d'application & Délais</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Principe général :</strong> L'ensemble des travaux d'installation exécutés sur des installations électriques à basse tension telles que celles visées à l'<strong>art. 2 al. 1 OIBT</strong> doivent être annoncés à l'exploitant du réseau compétent <strong>avant leur exécution et en temps utile</strong>.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette obligation s'applique de manière égale à <strong>l'ensemble des titulaires d'une autorisation d'installer</strong>, y compris aux titulaires d'une <strong>autorisation temporaire</strong> (voir art. 23 al. 1 OIBT).\n</p>\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>⚡ Contenu de l'annonce :</strong> L'OIBT ne détaille pas les rubriques techniques à renseigner. <strong>Les exploitants de réseaux déterminent eux-mêmes le contenu de l'annonce.</strong>\n</div>"
+                        },
+                        {
+                                "title": "3. Sections 2.b & 2.c — Règles de signature & Liberté de forme",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Sections 2.b & 2.c • Habilitations & Supports</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:35%;\">Type d'autorisation d'installer</th>\n        <th style=\"width:65%;\">Personne habilitée à signer l'annonce (Section 2.b)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Autorisations générales d'installer</strong></td>\n        <td>L'annonce doit être signée par :<br>\n        • <strong>une personne du métier</strong> (art. 8 OIBT) mentionnée dans l'autorisation d'installer <em>OU</em> ;<br>\n        • <strong>une personne autorisée à contrôler</strong> (art. 27 al. 1 let. a OIBT) mentionnée dans l'autorisation d'installer.</td>\n      </tr>\n      <tr>\n        <td><strong>Autorisations temporaires</strong></td>\n        <td>L'annonce doit être signée par la <strong>personne mentionnée dans ladite autorisation</strong> (voir art. 11 al. 1 OIBT).</td>\n      </tr>\n      <tr>\n        <td><strong>Autorisations d'installer limitées</strong></td>\n        <td>L'annonce doit être signée par la <strong>personne qui exécute les travaux d'installation</strong>.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📄 FORME DE L'ANNONCE (Section 2.c)</div>\n  L'OIBT ne prescrit <strong>aucune forme particulière (numérique / écrite)</strong> pour l'annonce. L'obligation d'annoncer visant exclusivement les tâches des exploitants de réseaux, <strong>il appartient à ces derniers d'indiquer la forme souhaitée</strong> pour cette annonce (portail web, formulaire PDF ou papier).\n</div>"
+                        }
+                ],
+                "practicalExample": "Une entreprise d'installation générale emploie un conseiller en sécurité titulaire du brevet fédéral, expressément inscrit comme personne autorisée à contrôler (art. 27 al. 1 let. a OIBT) sur l'autorisation d'installer ESTI de l'entreprise. En vertu de la Section 2.b de la directive 221, ce conseiller en sécurité peut valablement signer l'avis d'installation transmis au gestionnaire de réseau au même titre que la personne du métier (art. 8 OIBT).",
+                "importantPoint": "L'avis d'installation doit obligatoirement parvenir à l'exploitant du réseau avant l'exécution des travaux et en temps utile. Les exploitants déterminent eux-mêmes le contenu et la forme (numérique ou écrite) de l'annonce.",
+                "quiz": [
+                        {
+                                "question": "À quel moment précis l'avis d'installation doit-il être transmis à l'exploitant du réseau selon la directive ESTI 221 ?",
+                                "options": [
+                                        "Au plus tard lors de la mise sous tension de l'installation",
+                                        "Avant l'exécution des travaux et en temps utile",
+                                        "Dans les 30 jours suivant la remise de l'ouvrage au propriétaire",
+                                        "Uniquement lors du contrôle final d'entreprise"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "Selon la Section 2.a de la directive ESTI 221 (et l'art. 23 al. 1 OIBT), l'annonce doit être adressée à l'exploitant du réseau compétent avant l'exécution des travaux et en temps utile."
+                        },
+                        {
+                                "question": "Pour les autorisations générales d'installer, qui peut signer l'avis d'installation selon la Section 2.b ?",
+                                "options": [
+                                        "Exclusivement le directeur général de l'entreprise d'installation",
+                                        "N'importe quel installateur-électricien CFC ayant 3 ans d'expérience",
+                                        "Une personne du métier (art. 8 OIBT) OU une personne autorisée à contrôler (art. 27 al. 1 let. a OIBT) mentionnée dans l'autorisation d'installer",
+                                        "Uniquement un inspecteur assermenté de l'ESTI"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "La Section 2.b dispose que l'annonce doit être signée par une personne du métier (art. 8 OIBT) mentionnée dans l'autorisation d'installer OU une personne autorisée à contrôler (art. 27 al. 1 let. a OIBT) mentionnée dans l'autorisation."
+                        },
+                        {
+                                "question": "Quelle forme l'OIBT impose-t-elle pour l'avis d'installation selon la Section 2.c ?",
+                                "options": [
+                                        "Une forme papier avec lettre recommandée obligatoire",
+                                        "Un formulaire numérique standardisé fédéral géré par l'ESTI",
+                                        "Aucune forme particulière prescrite par l'OIBT : c'est aux exploitants de réseaux d'indiquer la forme souhaitée (numérique ou écrite)",
+                                        "Un courrier électronique obligatoirement signé électroniquement (QES)"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "La Section 2.c précise que l'OIBT ne prescrit aucune forme particulière (numérique/écrite) ; visant exclusivement les tâches des exploitants de réseaux, il leur appartient d'indiquer la forme souhaitée."
+                        }
+                ],
+                "prevLessonId": null,
+                "nextLessonId": "esti-221-lecon-2"
+        },
+        {
+                "id": "esti-221-lecon-2",
+                "routeId": "esti-221/lecon-2",
+                "moduleId": "E",
+                "parcoursId": "esti-221",
+                "lessonNumber": 2,
+                "totalLessons": 4,
+                "code": "ESTI 221 — Leçon 2",
+                "title": "Section 3 — Exceptions à l'obligation d'annoncer (Les 13 cas soumis)",
+                "subtitle": "Liste exhaustive des travaux soumis à annonce, seuil de 3,7 kVA et travaux dispensés",
+                "sectionsRange": "Section 3",
+                "status": "Disponible",
+                "duration": "8 min",
+                "tag": "Directive ESTI",
+                "xpReward": 30,
+                "objective": "Identifier exhaustivement les 13 cas où une annonce aux exploitants de réseaux est obligatoire et déterminer avec certitude les travaux d'installation qui en sont dispensés.",
+                "introduction": "La <strong>Section 3</strong> de la directive ESTI 221 constitue le cœur opérationnel de la réglementation : elle fixe la liste exhaustive des cas où une annonce doit être faite aux exploitants de réseaux. La règle fondamentale posée par l'ESTI est binaire : seuls les travaux entrant dans l'une de ces 13 catégories sont soumis à obligation d'annonce ; <strong>tous les autres travaux en sont dispensés</strong>.",
+                "contentSections": [
+                        {
+                                "title": "1. Principe d'exhaustivité & Règle fondamentale de dispense",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 3 • Cadre dérogatoire exhaustif</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nConformément au mandat conféré par les art. 23 al. 2 et 25 al. 1<sup>bis</sup> OIBT, l'ESTI énumère de manière <strong>exhaustive</strong> les cas où une annonce doit être faite aux exploitants de réseaux.\n</p>\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>⚖️ RÈGLE D'OR DE LA DIRECTIVE 221 :</strong><br>\n  <em>« Les travaux d'installation qui entrent dans l'une de ces catégories sont soumis à une obligation d'annonce. <strong>Tous les autres travaux en sont dispensés.</strong> Ces consignes s'appliquent à l'ensemble des titulaires d'autorisations d'installer. »</em>\n</div>"
+                        },
+                        {
+                                "title": "2. Liste exhaustive des 13 catégories d'installations soumises à annonce",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 3 • Les 13 cas d'annonce obligatoire</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:12%;\">N°</th>\n        <th style=\"width:48%;\">Catégorie de travaux soumise à annonce (Section 3)</th>\n        <th style=\"width:40%;\">Critère technique / Précision officielle</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>1</strong></td>\n        <td>Nouvelles installations et extensions d'installations</td>\n        <td>Entraînant une <strong>augmentation de puissance > 3.7 kVA</strong></td>\n      </tr>\n      <tr>\n        <td><strong>2</strong></td>\n        <td>Démontage d'installations électriques</td>\n        <td>Portant sur une <strong>puissance > 3.7 kVA</strong></td>\n      </tr>\n      <tr>\n        <td><strong>3</strong></td>\n        <td>Nouveau raccordement au réseau</td>\n        <td>Tout premier raccordement physique au réseau basse tension</td>\n      </tr>\n      <tr>\n        <td><strong>4</strong></td>\n        <td>Extension ou modification d'un raccordement existant au réseau</td>\n        <td>Modification de la liaison d'abonné ou de l'introduction bâtiment</td>\n      </tr>\n      <tr>\n        <td><strong>5</strong></td>\n        <td>Raccordement d'appareils et d'installations pouvant provoquer des <strong>variations de tension</strong></td>\n        <td>Selon recommandation de la Branche <strong>PDIE-CH</strong> (publiée par l'AES)</td>\n      </tr>\n      <tr>\n        <td><strong>6</strong></td>\n        <td>Raccordement d'appareils et d'installations pouvant provoquer des <strong>harmoniques</strong></td>\n        <td>Selon recommandation de la Branche <strong>PDIE-CH</strong></td>\n      </tr>\n      <tr>\n        <td><strong>7</strong></td>\n        <td>Raccordement de <strong>filtres actifs</strong> et d'installations de filtrage d'harmoniques</td>\n        <td>Selon recommandation de la Branche <strong>PDIE-CH</strong></td>\n      </tr>\n      <tr>\n        <td><strong>8</strong></td>\n        <td>Raccordement d'installations de <strong>production d'énergie</strong> au réseau de distribution à basse tension</td>\n        <td>Installations photovoltaïques, éoliennes, génératrices en régime <strong>parallèle ou en îlot</strong></td>\n      </tr>\n      <tr>\n        <td><strong>9</strong></td>\n        <td>Raccordement d'<strong>accumulateurs d'énergie électriques</strong></td>\n        <td>Systèmes de batteries stationnaires de stockage d'énergie</td>\n      </tr>\n      <tr>\n        <td><strong>10</strong></td>\n        <td>Raccordement de <strong>stations de charge pour véhicules électriques</strong></td>\n        <td>Bornes de recharge (wallbox et infrastructures IRVE, sans condition de seuil)</td>\n      </tr>\n      <tr>\n        <td><strong>11</strong></td>\n        <td>Nouvelles installations, modifications ou extensions de lignes principales ou de canalisations de commande et de dispositifs de mesure du gestionnaire du réseau</td>\n        <td>Ouvrages de transport, canalisations pilotes et organes de comptage du gestionnaire</td>\n      </tr>\n      <tr>\n        <td><strong>12</strong></td>\n        <td>Installations qui nécessitent une modification, un montage, un démontage ou un remplacement d'appareils de mesure et de commande du gestionnaire du réseau</td>\n        <td>Interventions sur compteurs, relais de télécommande, transformateurs de mesure</td>\n      </tr>\n      <tr>\n        <td><strong>13</strong></td>\n        <td>Installations provisoires ou temporaires</td>\n        <td>Telles que <strong>chantiers, fêtes foraines, etc.</strong></td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<p style=\"font-size:0.8rem; color:var(--text-muted); line-height:1.5;\">\n  <sup>1</sup> <em>PDIE-CH : Recommandation de la Branche Prescriptions des distributeurs d'électricité CH, Conditions techniques de raccordement pour le raccordement de récepteurs d'énergie, d'installations de production ou de stockage, raccordés au réseau basse tension, publiée par l'Association des entreprises électriques suisses AES.</em>\n</p>"
+                        },
+                        {
+                                "title": "3. Application pratique : Les travaux d'installation dispensés d'annonce",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 3 • Régime de dispense</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nTous les travaux qui n'entrent dans aucune des 13 catégories ci-dessus sont <strong>légalement dispensés d'avis d'installation</strong>.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Remplacement à l'identique ou ajout de prises / luminaires :</strong> si l'augmentation de puissance est ≤ 3,7 kVA et qu'aucune ligne principale ou appareil de comptage n'est touché.</li>\n  <li><strong>Rénovation d'installations intérieures terminales existantes :</strong> sans dépassement du seuil de 3,7 kVA et sans modification du coffret d'introduction ou des compteurs.</li>\n  <li><strong>Appareils standards ne provoquant ni harmoniques ni variations de tension :</strong> conformes aux normes CEM sans exigence spécifique PDIE-CH.</li>\n</ul>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 VALEUR CLÉ À RETENIR</div>\n  Le seuil de puissance déclenchant l'obligation d'annonce est de <strong>strictement plus de 3,7 kVA (> 3,7 kVA)</strong> (soit typiquement au-delà d'un circuit monophasé 16 A à 230 V). En deçà ou égal à 3,7 kVA, aucune annonce n'est requise sauf cas spécifiques (stations de charge, PV, accumulateurs, mesure gestionnaire, chantiers).\n</div>"
+                        }
+                ],
+                "practicalExample": "Un installateur pose une prise de recharge murale (wallbox) de 11 kW dans un parking souterrain privé. Même si le raccordement électrique général de l'immeuble est déjà existant et largement dimensionné, cette installation entre obligatoirement dans la catégorie 10 (« Raccordement de stations de charge pour véhicules électriques ») ainsi que dans la catégorie 1 (> 3,7 kVA) : un avis d'installation doit être impérativement soumis à l'exploitant de réseau avant le début des travaux.",
+                "importantPoint": "Pour les nouvelles installations, extensions ou démontages, le seuil est strictement supérieur à 3,7 kVA (> 3,7 kVA). En revanche, les stations de charge, accumulateurs, installations de production et chantiers sont obligatoirement soumis à annonce quel que soit leur niveau de puissance.",
+                "quiz": [
+                        {
+                                "question": "Quel est le seuil de puissance à partir duquel une extension d'installation nécessite obligatoirement une annonce selon le point 3 de l'ESTI 221 ?",
+                                "options": [
+                                        "Une augmentation de puissance supérieure à 2,3 kVA (> 2,3 kVA)",
+                                        "Une augmentation de puissance supérieure à 3,7 kVA (> 3,7 kVA)",
+                                        "Une augmentation de puissance supérieure à 10 kVA (> 10 kVA)",
+                                        "Toute extension quelle que soit sa puissance"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La catégorie 1 de la Section 3 vise les « Nouvelles installations et extensions d'installations entraînant une augmentation de puissance > 3.7 kVA »."
+                        },
+                        {
+                                "question": "Parmi les équipements suivants, lequel est soumis à une obligation d'annonce selon la Section 3 de la directive 221 ?",
+                                "options": [
+                                        "Le simple remplacement d'une prise 230 V défectueuse dans un salon",
+                                        "Le raccordement de stations de charge pour véhicules électriques",
+                                        "L'installation d'un radiateur d'appoint de 2 kW sans modification de puissance souscrite",
+                                        "La pose d'un luminaire LED de 50 W dans un couloir"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La catégorie 10 de la Section 3 soumet obligatoirement à annonce le « Raccordement de stations de charge pour véhicules électriques »."
+                        },
+                        {
+                                "question": "Que prévoit explicitement la directive ESTI 221 pour les travaux d'installation qui ne figurent pas dans la liste des 13 catégories du point 3 ?",
+                                "options": [
+                                        "L'électricien doit demander une dérogation écrite préalable à l'ESTI",
+                                        "Ces travaux sont formellement dispensés de l'obligation d'annonce",
+                                        "L'annonce peut être faite après achèvement des travaux dans un délai de 6 mois",
+                                        "Le propriétaire doit obligatoirement rédiger lui-même l'annonce"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La directive dispose de manière claire et catégorique : « Les travaux d'installation qui entrent dans l'une de ces catégories sont soumis à une obligation d'annonce. Tous les autres travaux en sont dispensés. »"
+                        }
+                ],
+                "prevLessonId": "esti-221-lecon-1",
+                "nextLessonId": "esti-221-lecon-3"
+        },
+        {
+                "id": "esti-221-lecon-3",
+                "routeId": "esti-221/lecon-3",
+                "moduleId": "E",
+                "parcoursId": "esti-221",
+                "lessonNumber": 3,
+                "totalLessons": 4,
+                "code": "ESTI 221 — Leçon 3",
+                "title": "Section 4 — Première vérification & Exception au rapport de sécurité formel",
+                "subtitle": "Procès-verbal de 1ère vérification, statut des apprentis, 4 critères de dispense de RaSi et contrôle de réception",
+                "sectionsRange": "Section 4",
+                "status": "Disponible",
+                "duration": "9 min",
+                "tag": "Directive ESTI",
+                "xpReward": 30,
+                "objective": "Maîtriser les règles strictes de première vérification (art. 24 al. 1 et art. 10a al. 4 OIBT), les 4 critères cumulatifs permettant de renoncer au rapport de sécurité formel et le maintien du contrôle de réception.",
+                "introduction": "La <strong>Section 4</strong> rappelle que la première vérification avec procès-verbal est obligatoire sans exception avant mise en service. Elle définit les conditions exceptionnelles très précises permettant de renoncer à l'établissement du rapport de sécurité formel (RaSi selon l'art. 37 OIBT) au profit du seul procès-verbal de première vérification, tout en préservant le contrôle de réception légal.",
+                "contentSections": [
+                        {
+                                "title": "1. Obligation stricte de première vérification & Rôle des apprentis",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 4 • Première vérification (Art. 24 al. 1 & 10a al. 4 OIBT)</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes titulaires d'une autorisation générale d'installer sont tenus <strong>sans exception</strong> d'effectuer, avant la mise en service d'une installation électrique ou de parties de l'installation électrique, une <strong>première vérification parallèlement à la construction</strong>.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette première vérification doit obligatoirement être <strong>consignée dans un procès-verbal</strong> (voir <strong>art. 24 al. 1 OIBT</strong>).\n</p>\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>🛑 RÈGLE STRICTE APPRENTIS ET AUXILIAIRES (Art. 10a al. 4 OIBT) :</strong><br>\n  • Les apprentis et les auxiliaires <strong>ne peuvent effectuer aucune première vérification sans direction et surveillance</strong>.<br>\n  • Il leur est également <strong>strictement interdit de signer un procès-verbal</strong> de première vérification.\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nPar ailleurs, un <strong>contrôle final propre à l'entreprise</strong> doit être effectué avant la remise d'une installation électrique au propriétaire (voir <strong>art. 24 al. 2 OIBT</strong>).\n</p>"
+                        },
+                        {
+                                "title": "2. Les 4 critères cumulatifs autorisant la dispense de rapport de sécurité formel",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 4 • Conditions cumulatives de dispense de RaSi</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLorsque des travaux d'installation remplissent <strong>simultanément</strong> les 4 critères suivants, il est possible, à titre exceptionnel, de renoncer à la rédaction d'un rapport de sécurité formel :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:15%;\">Critère</th>\n        <th style=\"width:85%;\">Condition cumulative obligatoire (Section 4)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Critère 1</strong></td>\n        <td><strong>Réparations et remplacements</strong> de matériels électriques à basse tension tels que <strong>lampes, appareils ménagers, prises, etc.</strong> ;</td>\n      </tr>\n      <tr>\n        <td><strong>Critère 2</strong></td>\n        <td>Modification de la puissance <strong>inférieure ou égale à 3,7 kVA (≤ 3,7 kVA)</strong> ;</td>\n      </tr>\n      <tr>\n        <td><strong>Critère 3</strong></td>\n        <td><strong>Aucune adaptation</strong> des lignes principales, des lignes d'abonnés ou de distribution ;</td>\n      </tr>\n      <tr>\n        <td><strong>Critère 4</strong></td>\n        <td><strong>Absence d'obligation d'annoncer</strong> au sens du point 3 de la présente directive.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"box-title\">⚖️ CONSÉQUENCES JURIDIQUES ET PRATIQUES</div>\n  • En lieu et place du rapport de sécurité formel (art. 37 OIBT), <strong>il suffira d'établir le procès-verbal de la première vérification et de le remettre au propriétaire</strong>.<br>\n  • Il sera possible de <strong>renoncer au contrôle final</strong> selon l'art. 24 al. 2 OIBT.<br>\n  • Il sera toutefois <em>toujours possible dans ces cas d'établir un rapport de sécurité formel</em> au sens de l'art. 37 OIBT si souhaité.\n</div>"
+                        },
+                        {
+                                "title": "3. Maintien impératif du contrôle de réception (Art. 35 al. 3 ou 4 OIBT)",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 4 • Périodicité de contrôle < 20 ans</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'obligation de procéder à un éventuel <strong>contrôle de réception</strong> au sens de l'<strong>art. 35 al. 3 ou 4 OIBT</strong> est <strong>maintenue</strong> même dans les cas où aucun rapport de sécurité formel n'est délivré par l'installateur.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Champ d'application :</strong> Sont concernées toutes les installations électriques dont la période de contrôle selon l'annexe OIBT est <strong>inférieure à 20 ans</strong> (périodicités de 1 an, 5 ans ou 10 ans, telles que locaux commerciaux, industriels, médicalisés, lieux de rassemblement, etc.).</li>\n  <li><strong>Établissement du RaSi :</strong> Dans ce cas, c'est <strong>l'entreprise chargée du contrôle de réception</strong> (organe de contrôle indépendant accrédité) qui établit le rapport de sécurité formel.</li>\n</ul>"
+                        }
+                ],
+                "practicalExample": "Un électricien procède au remplacement de 4 prises 230 V et de 2 interrupteurs défectueux dans un restaurant (périodicité de contrôle de 5 ans selon l'annexe OIBT). Ces travaux de réparation n'entraînent aucune hausse de puissance (≤ 3,7 kVA), ne touchent pas à la ligne principale et sont dispensés d'annonce selon le point 3 : l'installateur remet simplement son PV de première vérification au restaurateur sans établir de RaSi formel. Toutefois, la période de contrôle étant inférieure à 20 ans (5 ans), l'obligation de contrôle de réception (art. 35 OIBT) subsiste, et c'est l'organisme de contrôle indépendant qui rédigera le rapport de sécurité formel.",
+                "importantPoint": "Pour renoncer au rapport de sécurité formel, les 4 critères de la Section 4 doivent être remplis simultanément. Les apprentis et auxiliaires ne peuvent en aucun cas signer un procès-verbal de première vérification. Le contrôle de réception périodique (< 20 ans) reste obligatoire même sans RaSi de l'installateur.",
+                "quiz": [
+                        {
+                                "question": "Que prévoit l'art. 10a al. 4 OIBT cité dans la Section 4 concernant les apprentis et les auxiliaires ?",
+                                "options": [
+                                        "Ils peuvent réaliser seuls la première vérification sous réserve d'une validation téléphonique",
+                                        "Ils ne peuvent effectuer aucune première vérification sans direction et surveillance, et ont l'interdiction de signer le procès-verbal",
+                                        "Ils ont le droit de signer le procès-verbal de première vérification s'ils sont en 4e année d'apprentissage",
+                                        "Ils sont totalement dispensés de connaître les règles de première vérification"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 4 cite expressément l'art. 10a al. 4 OIBT : les apprentis et les auxiliaires ne peuvent effectuer aucune première vérification sans direction et surveillance ; il leur est également interdit de signer un procès-verbal de première vérification."
+                        },
+                        {
+                                "question": "Combien de critères doivent être réunis SIMULTANÉMENT pour pouvoir renoncer à la rédaction d'un rapport de sécurité formel selon la Section 4 ?",
+                                "options": [
+                                        "2 critères alternatifs au choix",
+                                        "3 critères sur 4",
+                                        "Les 4 critères cumulatifs énumérés à la Section 4",
+                                        "Seul le critère d'absence d'obligation d'annoncer suffit"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "Le texte indique sans équivoque : « Lorsque des travaux d'installation remplissent simultanément les critères suivants, il est possible, à titre exceptionnel, de renoncer à la rédaction d'un rapport de sécurité formel : » (les 4 critères doivent être simultanément remplis)."
+                        },
+                        {
+                                "question": "Dans quel cas l'obligation de procéder à un contrôle de réception (art. 35 OIBT) est-elle maintenue même si aucun rapport de sécurité formel n'est délivré par l'installateur ?",
+                                "options": [
+                                        "Uniquement pour les installations sous haute tension > 1000 V",
+                                        "Pour toutes les installations dont la période de contrôle selon l'annexe OIBT est inférieure à 20 ans",
+                                        "Uniquement si l'exploitant de réseau en fait la demande expresse sous 24h",
+                                        "Le contrôle de réception est toujours automatiquement annulé quand il n'y a pas de RaSi"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 4 précise que l'obligation de procéder à un éventuel contrôle de réception est maintenue même sans rapport de sécurité formel pour « toutes les installations électriques dont la période de contrôle selon l'annexe OIBT est inférieure à 20 ans »."
+                        }
+                ],
+                "prevLessonId": "esti-221-lecon-2",
+                "nextLessonId": "esti-221-lecon-4"
+        },
+        {
+                "id": "esti-221-lecon-4",
+                "routeId": "esti-221/lecon-4",
+                "moduleId": "E",
+                "parcoursId": "esti-221",
+                "lessonNumber": 4,
+                "totalLessons": 4,
+                "code": "ESTI 221 — Leçon 4",
+                "title": "Sections 5 & 6 — Dispositions transitoires, Publication & Communication",
+                "subtitle": "Entrée en vigueur au 1er juillet 2021, abrogation de 2018, publication au RO et organismes notifiés",
+                "sectionsRange": "Sections 5 & 6",
+                "status": "Disponible",
+                "duration": "6 min",
+                "tag": "Directive ESTI",
+                "xpReward": 30,
+                "objective": "Connaître la date d'entrée en vigueur de la directive ESTI 221, l'abrogation de l'ancienne dérogation de 2018, la procédure de publication au Recueil officiel et les 5 organisations partenaires notifiées.",
+                "introduction": "Les <strong>Sections 5 et 6</strong> clôturent la directive ESTI n° 221 en fixant sa date de prise d'effet au 1<sup>er</sup> juillet 2021, en abrogeant l'ancienne dérogation du 30 novembre 2018 et en garantissant la sécurité juridique par sa publication au Recueil officiel fédéral et sa notification aux partenaires de la branche électrique suisse.",
+                "contentSections": [
+                        {
+                                "title": "1. Section 5 — Dispositions transitoires & Abrogation de la dérogation de 2018",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 5 • Droit transitoire</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa directive ESTI n° 221 / Version 0621 <strong>entre en vigueur le 1<sup>er</sup> juillet 2021</strong>.\n</p>\n<div class=\"ocfo-abroge-card\" style=\"margin-bottom:0.85rem;\">\n  <span class=\"ocfo-abroge-badge\">ABROGATION FORMELLE</span>\n  <strong>Abrogation de la dérogation du 30 novembre 2018 :</strong> L'entrée en vigueur de la présente directive a pour effet immédiat d'<strong>abroger la dérogation de l'ESTI du 30 novembre 2018</strong>. Tout travail débuté à compter du 1<sup>er</sup> juillet 2021 est exclusivement soumis aux prescriptions de la directive 221.\n</div>"
+                        },
+                        {
+                                "title": "2. Section 6 — Publication au Recueil officiel & Voies de droit",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 6 • Publications officielles (RS 170.512 & RS 172.021)</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'abrogation de la dérogation de l'ESTI du 30 novembre 2018 et son remplacement par la présente directive sont publiées dans le <strong>Recueil officiel (RO)</strong> conformément aux :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Art. 13 al. 2 let. c et 13 al. 3</strong> de la loi sur les publications officielles (<strong>RS 170.512</strong>) ;</li>\n  <li><strong>Art. 23</strong> de l'Ordonnance sur les publications officielles (<strong>RS 170.512.1</strong>).</li>\n</ul>\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>⚖️ Voies de droit (RS 172.021) :</strong> En application de l'<strong>art. 35 al. 3 de la loi fédérale sur la procédure administrative (RS 172.021)</strong>, les personnes concernées peuvent demander que la décision indique les voies de droit.\n</div>"
+                        },
+                        {
+                                "title": "3. Notification officielle aux 5 organisations de branche",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Section 6 • Destinataires de la communication</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa publication susmentionnée ainsi que la directive sont en outre formellement communiquées à <strong>5 entités clés</strong> du secteur électrotechnique suisse :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Sigle officiel</th>\n        <th style=\"width:75%;\">Dénomination complète de l'organisation</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>OFEN</strong></td>\n        <td>Office fédéral de l'énergie</td>\n      </tr>\n      <tr>\n        <td><strong>AES</strong></td>\n        <td>Association des entreprises électriques suisses</td>\n      </tr>\n      <tr>\n        <td><strong>EIT.swiss</strong></td>\n        <td>Union suisse des installateurs-électriciens</td>\n      </tr>\n      <tr>\n        <td><strong>ASCE</strong></td>\n        <td>Association suisse pour le contrôle des installations électriques</td>\n      </tr>\n      <tr>\n        <td><strong>ODEC</strong></td>\n        <td>Association suisse des diplômées et des diplômés des écoles supérieures</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📌 SYNTHÈSE DE LA LEÇON</div>\n  Valable dès le 1<sup>er</sup> juillet 2021, la directive ESTI 221 remplace la dérogation de 2018. Publiée au Recueil officiel fédéral, elle lie l'ensemble des acteurs sous l'autorité coordonnée de l'ESTI, de l'OFEN, de l'AES, d'EIT.swiss, de l'ASCE et de l'ODEC.\n</div>"
+                        }
+                ],
+                "practicalExample": "Lors d'une contestation administrative sur la portée d'une exigence d'annonce d'un gestionnaire de réseau, un installateur se réfère à la publication officielle de la directive 221 au Recueil officiel (RS 170.512) et demande formellement la communication des voies de droit applicables conformément à l'art. 35 al. 3 de la loi sur la procédure administrative (RS 172.021).",
+                "importantPoint": "La directive ESTI 221 est entrée en vigueur le 1er juillet 2021 en abrogeant la dérogation du 30 novembre 2018. Elle est publiée au Recueil officiel fédéral et notifiée à l'OFEN, l'AES, EIT.swiss, l'ASCE et l'ODEC.",
+                "quiz": [
+                        {
+                                "question": "À quelle date précise la directive ESTI 221 est-elle entrée en vigueur selon la Section 5 ?",
+                                "options": [
+                                        "Le 1er janvier 2020",
+                                        "Le 1er juillet 2021",
+                                        "Le 30 novembre 2018",
+                                        "Le 1er avril 2026"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 5 dispose expressément : « La présente directive entre en vigueur le 1er juillet 2021. »"
+                        },
+                        {
+                                "question": "Quel texte de l'ESTI a été formellement abrogé par l'entrée en vigueur de la directive 221 selon la Section 5 ?",
+                                "options": [
+                                        "La directive ESTI n° 407 de 2015",
+                                        "L'Ordonnance sur le courant fort de 1994",
+                                        "La dérogation de l'ESTI du 30 novembre 2018",
+                                        "La recommandation PDIE-CH de 2008"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "La Section 5 précise : « L'entrée en vigueur de la présente directive a pour effet d'abroger la dérogation de l'ESTI du 30 novembre 2018. »"
+                        },
+                        {
+                                "question": "Parmi les organisations suivantes, laquelle NE fait PAS partie des 5 entités auxquelles la directive ESTI 221 est officiellement communiquée selon la Section 6 ?",
+                                "options": [
+                                        "L'Office fédéral de l'énergie (OFEN)",
+                                        "L'Association suisse pour le contrôle des installations électriques (ASCE)",
+                                        "La Caisse nationale suisse d'assurance en cas d'accidents (SUVA)",
+                                        "L'Union suisse des installateurs-électriciens (EIT.swiss)"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "Les 5 organismes mentionnés à la Section 6 sont l'OFEN, l'AES, EIT.swiss, l'ASCE et l'ODEC. La SUVA ne figure pas dans cette liste."
+                        }
+                ],
+                "prevLessonId": "esti-221-lecon-3",
+                "nextLessonId": "esti-221-evaluation-finale"
+        },
+        {
+                "id": "esti-221-evaluation-finale",
+                "routeId": "esti-221/evaluation-finale",
+                "moduleId": "E",
+                "parcoursId": "esti-221",
+                "isFinalEvaluation": true,
+                "code": "ESTI 221 — EXAMEN",
+                "title": "Évaluation finale — Directive ESTI n° 221",
+                "subtitle": "Certification officielle sur les obligations d'annoncer et dérogations au rapport de sécurité",
+                "sectionsRange": "Sections 1 à 6",
+                "status": "Disponible",
+                "duration": "20 min",
+                "tag": "Évaluation officielle",
+                "xpReward": 100,
+                "objective": "Valider formellement la maîtrise intégrale de la Directive ESTI 221 (Version 0621, en vigueur dès le 1er juillet 2021).",
+                "introduction": "Cette <strong>évaluation finale officielle</strong> valide votre maîtrise approfondie de la <strong>Directive ESTI n° 221</strong> (Version 0621). Composée de 10 questions d'examen représentatives couvrant l'ensemble du texte réglementaire, elle porte sur les bases légales OIBT (art. 23, 24, 25), les règles de signature, la liste exhaustive des 13 cas soumis à annonce, le seuil déterminant de 3,7 kVA, les règles de première vérification pour les apprentis et les 4 critères cumulatifs autorisant la dispense de rapport de sécurité formel. Un score minimal de <strong>80 % (8/10)</strong> est requis pour valider l'examen et remporter le badge Expert ESTI 221 avec 100 XP.",
+                "contentSections": [
+                        {
+                                "title": "Consignes de l'évaluation finale",
+                                "text": "<div class=\"ocfo-legal-badge\">ESTI 221 — Certification officielle • Examen final</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'évaluation finale est constituée de <strong>10 questions à choix multiples</strong> couvrant l'intégralité des 6 sections de la directive ESTI 221 / Version 0621 :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Bases légales OIBT & avis d'installation :</strong> Art. 23 et 25 OIBT, rôle de l'ESTI, délais et forme de l'annonce.</li>\n  <li><strong>Signataires autorisés :</strong> Règles spécifiques pour autorisations générales, temporaires et limitées.</li>\n  <li><strong>Les 13 catégories obligatoires :</strong> Seuils de 3,7 kVA, raccordements, PDIE-CH, PV, bornes de charge, chantiers.</li>\n  <li><strong>Première vérification & statut des apprentis :</strong> Art. 24 al. 1 et art. 10a al. 4 OIBT.</li>\n  <li><strong>Dispense de rapport de sécurité formel :</strong> Les 4 critères cumulatifs et maintien du contrôle de réception (< 20 ans).</li>\n  <li><strong>Dispositions transitoires & publication :</strong> Entrée en vigueur au 01.07.2021, abrogation de 2018 et organismes notifiés.</li>\n</ul>\n<div class=\"ocfo-warning-box\">\n  <strong>🎯 Critère de certification :</strong> Seuil d'admission fixé à <strong>80 % (8 bonnes réponses sur 10)</strong>. Vous pouvez recommencer l'évaluation en cas d'échec sans pénalité.\n</div>"
+                        }
+                ],
+                "questions": [
+                        {
+                                "question": "1. Sur quelle base légale révisée de l'OIBT l'ESTI est-elle habilitée à édicter les dérogations à l'obligation d'annoncer ?",
+                                "options": [
+                                        "L'art. 3 LIE de 1902",
+                                        "Les art. 23 al. 2 et 25 al. 1bis OIBT",
+                                        "L'art. 40 OCFo de 1994",
+                                        "L'art. 12 ORNI de 1999"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 1 de l'ESTI 221 cite expressément les art. 23 al. 2 et 25 al. 1bis OIBT révisés au 1er juillet 2021 comme mandat légal délégué à l'ESTI pour définir ces dérogations."
+                        },
+                        {
+                                "question": "2. Pour les autorisations générales d'installer, qui peut valablement signer l'avis d'installation selon la Section 2.b ?",
+                                "options": [
+                                        "Uniquement le titulaire du diplôme fédéral d'installateur",
+                                        "Une personne du métier (art. 8 OIBT) OU une personne autorisée à contrôler (art. 27 al. 1 let. a OIBT) mentionnée dans l'autorisation d'installer",
+                                        "Tout monteur-électricien chef d'équipe sur le chantier",
+                                        "Le maître d'ouvrage propriétaire de l'immeuble"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "Selon la Section 2.b, l'annonce pour les autorisations générales doit être signée par une personne du métier (art. 8 OIBT) OU une personne autorisée à contrôler (art. 27 al. 1 let. a OIBT) mentionnée dans l'autorisation."
+                        },
+                        {
+                                "question": "3. Qui fixe le contenu et la forme (écrite ou numérique) de l'avis d'installation ?",
+                                "options": [
+                                        "Le Conseil fédéral dans une ordonnance d'exécution",
+                                        "Les exploitants de réseaux compétents eux-mêmes",
+                                        "L'Inspection fédérale ESTI sur un formulaire unique centralisé",
+                                        "L'Office fédéral de l'énergie (OFEN)"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 2.a et 2.c précisent que l'OIBT ne prescrit aucune forme particulière et que les exploitants de réseaux déterminent eux-mêmes le contenu et la forme de l'annonce."
+                        },
+                        {
+                                "question": "4. Quel est le critère de puissance entraînant l'obligation d'annonce lors d'une nouvelle installation ou d'une extension selon la Section 3 ?",
+                                "options": [
+                                        "Une augmentation de puissance supérieure à 2,3 kVA",
+                                        "Une augmentation de puissance supérieure à 3,7 kVA (> 3.7 kVA)",
+                                        "Une augmentation de puissance strictement supérieure à 11 kVA",
+                                        "Toute modification de puissance quelle qu'elle soit"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La catégorie 1 de la Section 3 dispose : « Nouvelles installations et extensions d'installations entraînant une augmentation de puissance > 3.7 kVA »."
+                        },
+                        {
+                                "question": "5. Le démontage d'une installation électrique existante doit-il faire l'objet d'une annonce au réseau ?",
+                                "options": [
+                                        "Non, les démontages sont toujours totalement dispensés",
+                                        "Oui, mais uniquement si la puissance démontée est supérieure à 3,7 kVA (> 3.7 kVA)",
+                                        "Oui, pour tout démontage sans condition de seuil",
+                                        "Uniquement si le bâtiment est entièrement détruit"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La catégorie 2 de la Section 3 soumet explicitement à annonce le « Démontage d'installations électriques > 3.7 kVA »."
+                        },
+                        {
+                                "question": "6. Le raccordement d'une station de charge pour véhicules électriques (wallbox) nécessite-t-il une annonce à l'exploitant de réseau ?",
+                                "options": [
+                                        "Non, sauf si sa puissance dépasse 22 kW en triphasé",
+                                        "Oui, le raccordement de stations de charge pour véhicules électriques figure expressément parmi les 13 cas soumis",
+                                        "Uniquement si elle est accessible au public",
+                                        "Seulement si l'exploitant de réseau le demande par écrit"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La catégorie 10 de la Section 3 vise expressément le « Raccordement de stations de charge pour véhicules électriques », sans condition d'accès public ou de seuil dérogatoire."
+                        },
+                        {
+                                "question": "7. Concernant la première vérification, quelle interdiction formelle l'art. 10a al. 4 OIBT pose-t-il aux apprentis ?",
+                                "options": [
+                                        "Ils ont l'interdiction de mesurer la résistance d'isolement",
+                                        "Ils ne peuvent effectuer aucune première vérification sans surveillance et ont l'interdiction absolue de signer le procès-verbal",
+                                        "Ils ne peuvent participer à la vérification qu'après avoir terminé leur apprentissage",
+                                        "Ils peuvent signer le procès-verbal s'ils sont accompagnés d'un collègue"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 4 cite l'art. 10a al. 4 OIBT : « Les apprentis et les auxiliaires ne peuvent effectuer aucune première vérification sans direction et surveillance ; il leur est également interdit de signer un procès-verbal de première vérification. »"
+                        },
+                        {
+                                "question": "8. Les 4 critères permettant de renoncer à la rédaction d'un rapport de sécurité formel doivent-ils être remplis simultanément ?",
+                                "options": [
+                                        "Non, un seul critère suffit",
+                                        "Deux critères sur quatre suffisent",
+                                        "Oui, les 4 critères doivent obligatoirement être remplis simultanément",
+                                        "C'est au choix exclusif du maître d'ouvrage"
+                                ],
+                                "correctAnswer": 2,
+                                "explanation": "La Section 4 énonce expressément : « Lorsque des travaux d'installation remplissent simultanément les critères suivants, il est possible, à titre exceptionnel, de renoncer à la rédaction d'un rapport de sécurité formel : »."
+                        },
+                        {
+                                "question": "9. Lorsque les 4 critères de dispense de RaSi formel sont réunis, qu'est-ce que l'installateur remet au propriétaire ?",
+                                "options": [
+                                        "Aucun document n'est remis",
+                                        "Le procès-verbal de la première vérification",
+                                        "Une facture acquittée avec mention de garantie légale",
+                                        "Une attestation sur l'honneur rédigée sur papier libre"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 4 précise : « Dans ce cas, en lieu et place du rapport de sécurité formel au sens de l'art. 37 OIBT, il suffira d'établir le procès-verbal de la première vérification et de le remettre au propriétaire. »"
+                        },
+                        {
+                                "question": "10. Quel effet l'entrée en vigueur de la directive ESTI 221 au 1er juillet 2021 a-t-elle eu sur les dérogations antérieures ?",
+                                "options": [
+                                        "Elle a reconduit la dérogation ESTI de 2018 pour une durée indéterminée",
+                                        "Elle a abrogé la dérogation de l'ESTI du 30 novembre 2018",
+                                        "Elle a suspendu toutes les autorisations limitées d'installer",
+                                        "Elle a abrogé l'ensemble de l'OIBT"
+                                ],
+                                "correctAnswer": 1,
+                                "explanation": "La Section 5 précise formellement : « L'entrée en vigueur de la présente directive a pour effet d'abroger la dérogation de l'ESTI du 30 novembre 2018. »"
+                        }
+                ],
+                "prevLessonId": "esti-221-lecon-4",
+                "nextLessonId": null
+        },
+
       {
         id: "esti-407",
         routeId: "esti-407",
@@ -5956,6 +6425,19 @@ export function findFormation(moduleId, formationId) {
 
   // Aliases pour rétrocompatibilité et accès fluide
   const aliases = {
+    'esti-221': 'esti-221-lecon-1',
+    'ESTI-221': 'esti-221-lecon-1',
+    'esti221': 'esti-221-lecon-1',
+    'esti-221-01': 'esti-221-lecon-1',
+    'esti-221-02': 'esti-221-lecon-2',
+    'esti-221-03': 'esti-221-lecon-3',
+    'esti-221-04': 'esti-221-lecon-4',
+    'esti-221-lecon-1': 'esti-221-lecon-1',
+    'esti-221-lecon-2': 'esti-221-lecon-2',
+    'esti-221-lecon-3': 'esti-221-lecon-3',
+    'esti-221-lecon-4': 'esti-221-lecon-4',
+    'esti-221-evaluation-finale': 'esti-221-evaluation-finale',
+    'esti-221-examen': 'esti-221-evaluation-finale',
     'pyramide-lois': 'pyr-01',
     'pyramide': 'pyr-01',
     'a00': 'pyr-01',

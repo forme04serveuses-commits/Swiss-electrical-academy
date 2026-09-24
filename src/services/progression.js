@@ -2,11 +2,19 @@
 // Source unique de vérité pour tous les calculs de progression (global, modules, parcours, leçons)
 // Garantit la cohérence absolue, l'arrondi décimal précis, l'anti-farming et la persistance.
 
-import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
 import { StorageService } from './storage.js';
 
 // Table de normalisation des anciens identifiants et alias pour migration déterministe
 const LEGACY_ID_MAP = {
+  'esti-221': 'esti-221-lecon-1',
+  'ESTI-221': 'esti-221-lecon-1',
+  'esti221': 'esti-221-lecon-1',
+  'esti-221-01': 'esti-221-lecon-1',
+  'esti-221-02': 'esti-221-lecon-2',
+  'esti-221-03': 'esti-221-lecon-3',
+  'esti-221-04': 'esti-221-lecon-4',
+  'esti-221-examen': 'esti-221-evaluation-finale',
   'pyramide-lois': 'pyr-01',
   'pyramide': 'pyr-01',
   'a00': 'pyr-01',
@@ -58,8 +66,19 @@ const LEGACY_ID_MAP = {
   'evaluation-finale': 'rs-734-2-evaluation-finale'
 };
 
-// Configuration formelle des 5 sous-parcours structurés de Module A
+// Configuration formelle des sous-parcours structurés
 const PARCOURS_REGISTRY = {
+  'esti-221': {
+    id: 'esti-221',
+    shortCode: 'ESTI 221',
+    title: 'Directive ESTI n° 221',
+    fullTitle: 'Directive ESTI n° 221 — Obligations d\'annoncer',
+    typeLabel: 'Directive ESTI',
+    accentColor: '#10b981',
+    hubRoute: '#/formations/E/esti-221',
+    getLessons: () => (ESTI_221_INFO ? ESTI_221_INFO.lessons : []),
+    finalEvaluationId: 'esti-221-evaluation-finale'
+  },
   'pyramide-lois': {
     id: 'pyramide-lois',
     shortCode: 'PYR',
@@ -265,6 +284,7 @@ export const ProgressionService = {
    */
   getParcoursProgress(parcoursId) {
     let key = parcoursId;
+    if (key === 'esti-221' || key === 'esti221' || key === 'ESTI-221' || key === 'ESTI221') key = 'esti-221';
     if (key === 'pyramide' || key === 'pyramide-lois' || key === 'pyr' || key === 'a00' || key === 'A00') key = 'pyramide-lois';
     if (key === 'lie' || key === 'LIE') key = 'rs-734-0';
     if (key === 'ocfo' || key === 'OCFo') key = 'rs-734-2';
@@ -365,6 +385,10 @@ export const ProgressionService = {
         ocfo: this.getParcoursProgress('rs-734-2'),
         oibt: this.getParcoursProgress('rs-734-27'),
         orni: this.getParcoursProgress('rs-814-710')
+      };
+    } else if (moduleId === 'E') {
+      subParcours = {
+        esti221: this.getParcoursProgress('esti-221')
       };
     }
 

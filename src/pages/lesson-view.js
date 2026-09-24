@@ -33,6 +33,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const isOcfo = formation.parcoursId === 'rs-734-2' || formation.id.startsWith('rs-734-2-');
   const isOibt = formation.parcoursId === 'rs-734-27' || formation.id.startsWith('rs-734-27-');
   const isOrni = formation.parcoursId === 'rs-814-710' || formation.id.startsWith('rs-814-710-');
+  const isEsti221 = formation.parcoursId === 'esti-221' || formation.id.startsWith('esti-221-');
 
   // Enregistrer comme dernière activité pour le bouton « Continuer »
   StorageService.setLastActivity({
@@ -51,6 +52,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const totalOcfo = isOcfo ? ProgressionService.getParcoursProgress('rs-734-2').lessonsTotal : 8;
   const totalOibt = isOibt ? ProgressionService.getParcoursProgress('rs-734-27').lessonsTotal : 7;
   const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
+  const totalEsti221 = isEsti221 ? ProgressionService.getParcoursProgress('esti-221').lessonsTotal : 4;
 
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
@@ -89,6 +91,15 @@ export function renderLessonView(container, moduleId, formationId) {
       nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalOrni}) →`;
     } else if (formation.lessonNumber === totalOrni) {
       nextRoute = `#/formations/A/rs-814-710/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  } else if (isEsti221 && formation.nextLessonId) {
+    if (formation.lessonNumber && formation.lessonNumber < totalEsti221) {
+      const nextNum = formation.lessonNumber + 1;
+      nextRoute = `#/formations/E/esti-221/lecon-${nextNum}`;
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalEsti221}) →`;
+    } else if (formation.lessonNumber === totalEsti221) {
+      nextRoute = `#/formations/E/esti-221/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (formation.nextChapterId) {
@@ -132,12 +143,16 @@ export function renderLessonView(container, moduleId, formationId) {
           <span>/</span>
           <a href="#/formations/A/rs-814-710" class="breadcrumb-link">RS 814.710 — ORNI</a>
         ` : ''}
+        ${isEsti221 ? `
+          <span>/</span>
+          <a href="#/formations/E/esti-221" class="breadcrumb-link">Directive ESTI 221</a>
+        ` : ''}
         <span>/</span>
         <span>${formation.code}</span>
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ''))))}">
+      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : '')))))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
@@ -172,6 +187,12 @@ export function renderLessonView(container, moduleId, formationId) {
           ` : ''}
           ${isOrni && formation.isFinalEvaluation ? `
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.15); color:var(--accent-red); border-color:rgba(239,68,68,0.3);">Examen final ORNI</span>
+          ` : ''}
+          ${isEsti221 && formation.lessonNumber && formation.lessonNumber <= totalEsti221 ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalEsti221}</span>
+          ` : ''}
+          ${isEsti221 && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4);">Examen final (${totalEsti221} leçons)</span>
           ` : ''}
           <span class="status-badge ${isAvailable ? 'status-available' : 'status-dev'}">${formation.status}</span>
           ${isDone ? '<span class="status-badge status-available">✓ Validée</span>' : ''}
@@ -343,6 +364,10 @@ export function renderLessonView(container, moduleId, formationId) {
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-814-710'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Sommaire des 7 leçons ORNI
             </button>
+          ` : isEsti221 ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/E/esti-221'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
+              ← Sommaire des 4 leçons ESTI 221
+            </button>
           ` : `
             <button class="btn-continue" onclick="location.hash='#/formations/${mod.id}'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Retour au module
@@ -424,6 +449,12 @@ export function renderLessonView(container, moduleId, formationId) {
             location.hash = nextRoute;
           } else {
             location.hash = '#/formations/A/rs-814-710';
+          }
+        } else if (isEsti221) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/E/esti-221';
           }
         } else {
           location.hash = `#/formations/${mod.id}`;

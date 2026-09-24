@@ -4,7 +4,7 @@
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { ProgressionService } from './services/progression.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView, renderEsti221ParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -153,6 +153,12 @@ function initSEA() {
       return;
     }
 
+    // 4quinquies. Parcours dédié Directive ESTI 221 (Hub des 4 leçons) : /formations/E/esti-221 ou /formations/E/esti221
+    if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-221' || segments[2].toLowerCase() === 'esti221')) {
+      renderEsti221ParcoursView(pageContainer);
+      return;
+    }
+
     // 5. Vue Chapitre ou Leçon
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
@@ -233,6 +239,20 @@ function initSEA() {
         } else if (slug.startsWith('chapitre-')) {
           const chapPart = slug.replace('chapitre-', '');
           targetId = `rs-814-710-lecon-${chapPart}`;
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
+
+      // Sous-routes pour le parcours ESTI 221 (ex: /formations/E/esti-221/lecon-1 ou /lecon-2)
+      if (segments.length >= 4 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-221' || segments[2].toLowerCase() === 'esti221')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = slug.startsWith('esti-221-') ? slug : `esti-221-${slug}`;
+        if (slug === 'evaluation-finale' || slug === 'examen') {
+          targetId = 'esti-221-evaluation-finale';
+        } else if (slug.startsWith('lecon-')) {
+          const numPart = slug.replace('lecon-', '');
+          targetId = `esti-221-lecon-${numPart}`;
         }
         renderLessonView(pageContainer, moduleId, targetId);
         return;
