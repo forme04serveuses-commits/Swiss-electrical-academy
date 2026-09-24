@@ -321,6 +321,26 @@ export function renderModuleView(container, moduleId) {
     });
   }
 
+  // Clic sur le bouton du parcours ESTI 221
+  const btnOpenEsti221Hub = container.querySelector('#btnOpenEsti221Hub');
+  if (btnOpenEsti221Hub) {
+    btnOpenEsti221Hub.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      location.hash = '#/formations/E/esti-221';
+    });
+  }
+
+  // Clic sur le bouton du parcours ESTI 407
+  const btnOpenEsti407Hub = container.querySelector('#btnOpenEsti407Hub');
+  if (btnOpenEsti407Hub) {
+    btnOpenEsti407Hub.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      location.hash = '#/formations/E/esti-407';
+    });
+  }
+
   // Événements de clic sur chaque formation
   container.querySelectorAll('.formation-item-card').forEach(card => {
     card.addEventListener('click', () => {
@@ -1556,18 +1576,18 @@ export function renderEsti407ParcoursView(container) {
 
           <div class="ocfo-card-center">
             <div class="ocfo-chap-title-row">
-              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.title : 'Évaluation Finale Certifiante'}</h2>
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.title) || 'Évaluation finale certifiante — Directive ESTI n° 407'}</h2>
               ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
             </div>
             <div class="ocfo-chap-articles">
               <span class="legal-tag">Chapitres 1 à 13</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
-              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.duration : '20 min'}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.duration) || '20 min'}</span>
               <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">10 questions</span>
             </div>
-            <p class="ocfo-chap-summary">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.summary : ''}</p>
+            <p class="ocfo-chap-summary">${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.summary) || 'Examen final officiel de certification de 10 questions sur les 13 chapitres de la Directive ESTI n° 407.'}</p>
           </div>
 
           <div class="ocfo-card-right">

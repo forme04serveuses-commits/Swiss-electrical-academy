@@ -159,7 +159,7 @@ function initSEA() {
       return;
     }
 
-    // 4sexies. Parcours dédié Directive ESTI 407 (Hub des 7 leçons) : /formations/E/esti-407 ou /formations/E/esti407
+    // 4sexies. Parcours dédié Directive ESTI 407 (Hub des 13 leçons) : /formations/E/esti-407 ou /formations/E/esti407
     if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-407' || segments[2].toLowerCase() === 'esti407')) {
       renderEsti407ParcoursView(pageContainer);
       return;

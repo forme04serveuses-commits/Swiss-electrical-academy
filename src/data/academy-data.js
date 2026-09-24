@@ -732,7 +732,19 @@ export const ESTI_407_INFO = {
       "duration": "15 min",
       "summary": "Le Chapitre 13 est le guide d'application pratique de la directive. Il propose une liste de contrôle en 8 étapes et passe en revue des dizaines de situations professionnelles réelles en basse et haute tension."
     }
-  ]
+  ],
+  "finalEvaluation": {
+    "id": "esti-407-evaluation-finale",
+    "slug": "evaluation-finale",
+    "title": "Évaluation finale certifiante — Directive ESTI n° 407",
+    "sectionsRange": "Chapitres 1 à 13",
+    "duration": "20 min",
+    "summary": "10 questions rigoureuses d'examen couvrant l'intégralité des 13 chapitres de la Directive ESTI n° 407 (Édition 0526). Seuil de réussite à 80% requis pour valider le module et obtenir l'attestation de compétence."
+  },
+  "totalLessons": 13,
+  "subtitle": "13 leçons officielles · Version 0526 · Valable dès le 1er mai 2026",
+  "tag": "Directive ESTI",
+  "fullTitle": "Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques"
 };
 
 export const ACADEMY_MODULES = [

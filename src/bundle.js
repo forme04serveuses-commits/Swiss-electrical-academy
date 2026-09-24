@@ -737,7 +737,19 @@
         "duration": "15 min",
         "summary": "Le Chapitre 13 est le guide d'application pratique de la directive. Il propose une liste de contrôle en 8 étapes et passe en revue des dizaines de situations professionnelles réelles en basse et haute tension."
       }
-    ]
+    ],
+    "finalEvaluation": {
+      "id": "esti-407-evaluation-finale",
+      "slug": "evaluation-finale",
+      "title": "Évaluation finale certifiante — Directive ESTI n° 407",
+      "sectionsRange": "Chapitres 1 à 13",
+      "duration": "20 min",
+      "summary": "10 questions rigoureuses d'examen couvrant l'intégralité des 13 chapitres de la Directive ESTI n° 407 (Édition 0526). Seuil de réussite à 80% requis pour valider le module et obtenir l'attestation de compétence."
+    },
+    "totalLessons": 13,
+    "subtitle": "13 leçons officielles · Version 0526 · Valable dès le 1er mai 2026",
+    "tag": "Directive ESTI",
+    "fullTitle": "Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques"
   };
 
   const ACADEMY_MODULES = [
@@ -10945,6 +10957,26 @@
       });
     }
 
+    // Clic sur le bouton du parcours ESTI 221
+    const btnOpenEsti221Hub = container.querySelector('#btnOpenEsti221Hub');
+    if (btnOpenEsti221Hub) {
+      btnOpenEsti221Hub.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        location.hash = '#/formations/E/esti-221';
+      });
+    }
+
+    // Clic sur le bouton du parcours ESTI 407
+    const btnOpenEsti407Hub = container.querySelector('#btnOpenEsti407Hub');
+    if (btnOpenEsti407Hub) {
+      btnOpenEsti407Hub.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        location.hash = '#/formations/E/esti-407';
+      });
+    }
+
     // Événements de clic sur chaque formation
     container.querySelectorAll('.formation-item-card').forEach(card => {
       card.addEventListener('click', () => {
@@ -12180,18 +12212,18 @@
 
             <div class="ocfo-card-center">
               <div class="ocfo-chap-title-row">
-                <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.title : 'Évaluation Finale Certifiante'}</h2>
+                <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.title) || 'Évaluation finale certifiante — Directive ESTI n° 407'}</h2>
                 ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
               </div>
               <div class="ocfo-chap-articles">
                 <span class="legal-tag">Chapitres 1 à 13</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
-                <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.duration : '20 min'}</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.duration) || '20 min'}</span>
                 <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">10 questions</span>
               </div>
-              <p class="ocfo-chap-summary">${ESTI_407_INFO ? ESTI_407_INFO.finalEvaluation.summary : ''}</p>
+              <p class="ocfo-chap-summary">${(ESTI_407_INFO && ESTI_407_INFO.finalEvaluation && ESTI_407_INFO.finalEvaluation.summary) || 'Examen final officiel de certification de 10 questions sur les 13 chapitres de la Directive ESTI n° 407.'}</p>
             </div>
 
             <div class="ocfo-card-right">
@@ -13281,7 +13313,7 @@
         return;
       }
 
-      // 4sexies. Parcours dédié Directive ESTI 407 (Hub des 7 leçons) : /formations/E/esti-407 ou /formations/E/esti407
+      // 4sexies. Parcours dédié Directive ESTI 407 (Hub des 13 leçons) : /formations/E/esti-407 ou /formations/E/esti407
       if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'E' && (segments[2].toLowerCase() === 'esti-407' || segments[2].toLowerCase() === 'esti407')) {
         renderEsti407ParcoursView(pageContainer);
         return;
