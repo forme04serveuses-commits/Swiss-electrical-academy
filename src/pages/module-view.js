@@ -79,10 +79,10 @@ export function renderModuleView(container, moduleId) {
           Parcours structuré en 4 leçons officielles (Histoire 1888-1902, Hiérarchie juridique & références RS, Règles techniques & Organismes, Typologie des normes [SN]/[SNR]/[SNG]) et 1 évaluation finale certifiante de 8 questions.
         </p>
         <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
-          <div class="progress-bar-fill" style="width: ${pyramideProgress.percentage}%; background:#f59e0b;"></div>
+          <div class="progress-bar-fill" style="width: ${pyramideProgress.percentage}%; background:#ec4899;"></div>
         </div>
         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-          <button class="btn-continue" id="btnOpenPyramideHub" onclick="location.hash='#/formations/A/pyramide-lois'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+          <button class="btn-continue" id="btnOpenPyramideHub" onclick="location.hash='#/formations/A/pyramide-lois'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ec4899; color:#ffffff; font-weight:700; cursor:pointer;">
             <span>Explorer les ${pyramideProgress.lessonsTotal} leçons</span>
             <span>→</span>
           </button>
@@ -510,15 +510,15 @@ export function renderPyramideParcoursView(container) {
     </nav>
 
     <!-- Header Hero Card Pyramide -->
-    <header class="ocfo-hub-hero" style="border-left: 4px solid #f59e0b;" role="region" aria-label="En-tête du parcours Pyramide des lois">
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #ec4899;" role="region" aria-label="En-tête du parcours Pyramide des lois">
       <div class="ocfo-hub-badge-row">
         <span class="ocfo-hub-tag">CADRE NORMATIF FÉDÉRAL · HIÉRARCHIE DES NORMES</span>
-        <span class="ocfo-hub-ref" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">PYRAMIDE DES LOIS</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(236,72,153,0.4); color:#f472b6; background:rgba(236,72,153,0.12);">PYRAMIDE DES LOIS</span>
       </div>
 
       <div class="ocfo-hub-title-row">
         <div>
-          <div class="ocfo-hub-short" style="color:#f59e0b;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
+          <div class="ocfo-hub-short" style="color:#ec4899;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
           <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h1>
         </div>
       </div>
@@ -530,16 +530,16 @@ export function renderPyramideParcoursView(container) {
       <div class="ocfo-hub-progress-card">
         <div class="progress-labels">
           <span style="font-weight:700; color:var(--text-primary);">Progression du parcours Pyramide</span>
-          <span style="font-weight:800; color:#f59e0b; font-size:1rem;">
+          <span style="font-weight:800; color:#ec4899; font-size:1rem;">
             ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
           </span>
         </div>
         <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
-          <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#f59e0b;"></div>
+          <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#ec4899;"></div>
         </div>
 
         <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
-          <button class="btn-continue" id="btnResumePyramide" style="display:inline-flex; align-items:center; gap:0.5rem; background:#f59e0b; color:#000; font-weight:700; cursor:pointer;">
+          <button class="btn-continue" id="btnResumePyramide" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ec4899; color:#ffffff; font-weight:700; cursor:pointer;">
             <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons && !isFinalDone ? 'Accéder à l\'évaluation finale' : (isFinalDone ? 'Revoir le parcours' : 'Reprendre le parcours'))}</span>
             <span>→</span>
           </button>
@@ -562,9 +562,9 @@ export function renderPyramideParcoursView(container) {
           const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
 
           return `
-            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-id="${les.id}" style="${isCurrent ? 'border-color:#f59e0b;' : ''}">
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-id="${les.id}" style="${isCurrent ? 'border-color:#ec4899;' : ''}">
               <div class="ocfo-card-left">
-                <span class="ocfo-chap-number" style="border-color:rgba(245,158,11,0.3); color:#f59e0b;">${les.number}</span>
+                <span class="ocfo-chap-number" style="border-color:rgba(236,72,153,0.3); color:#ec4899;">${les.number}</span>
                 <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
                   ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
                 </span>
@@ -573,14 +573,14 @@ export function renderPyramideParcoursView(container) {
               <div class="ocfo-card-center">
                 <div class="ocfo-chap-title-row">
                   <h2 class="ocfo-chap-title">${les.title}</h2>
-                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(245,158,11,0.15); color:#f59e0b; border-color:rgba(245,158,11,0.3);">En cours</span>' : '')}
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(236,72,153,0.15); color:#f472b6; border-color:rgba(236,72,153,0.3);">En cours</span>' : '')}
                 </div>
                 <div class="ocfo-chap-articles">
-                  <span class="legal-tag" style="border-color:rgba(245,158,11,0.3); color:#f59e0b; background:rgba(245,158,11,0.08);">${les.code}</span>
+                  <span class="legal-tag" style="border-color:rgba(236,72,153,0.3); color:#ec4899; background:rgba(236,72,153,0.08);">${les.code}</span>
                   <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
                   <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
                   <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
-                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ ${les.xpReward} XP</span>
+                  <span style="color:#ec4899; font-size:0.8rem; font-weight:700;">⚡ ${les.xpReward} XP</span>
                 </div>
                 <p class="ocfo-chap-summary">${les.summary}</p>
               </div>

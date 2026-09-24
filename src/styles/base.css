@@ -3314,10 +3314,11 @@ button, input, select {
 
 /* ==========================================================================
    Styles spécifiques Module A — Pyramide des lois (Cadre normatif suisse)
+   Couleur distinctive exclusive : Rose Framboise (#ec4899 / #f472b6)
    ========================================================================== */
 .pyramide-featured-parcours-box {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.05) 100%), var(--bg-surface);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(219, 39, 119, 0.05) 100%), var(--bg-surface);
+  border: 1px solid rgba(236, 72, 153, 0.4);
   border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-5);
   margin-bottom: var(--space-4);
@@ -3325,7 +3326,11 @@ button, input, select {
 }
 
 .pyramide-card-accent {
-  border-left: 3px solid #f59e0b !important;
+  border-left: 3px solid #ec4899 !important;
+}
+
+.pyramide-lesson-header {
+  border-left: 4px solid #ec4899 !important;
 }
 
 .pyramide-featured-top {
@@ -3338,8 +3343,8 @@ button, input, select {
 }
 
 .pyramide-featured-badge {
-  background: #f59e0b;
-  color: #000;
+  background: #ec4899;
+  color: #ffffff;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -3350,7 +3355,7 @@ button, input, select {
 .pyramide-featured-code {
   font-family: monospace;
   font-weight: 800;
-  color: #f59e0b;
+  color: #f472b6;
   font-size: 0.85rem;
 }
 

@@ -132,17 +132,17 @@ export function renderLessonView(container, moduleId, formationId) {
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isPyramide ? 'ocfo-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ''))))}">
+      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : ''))))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
           </span>
           <span class="formation-code-tag">${formation.code}</span>
           ${isPyramide && formation.lessonNumber && formation.lessonNumber <= totalPyramide ? `
-            <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalPyramide}</span>
+            <span class="ocfo-progression-pill" style="border-color:rgba(236,72,153,0.4); color:#ec4899; background:rgba(236,72,153,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalPyramide}</span>
           ` : ''}
           ${isPyramide && formation.isFinalEvaluation ? `
-            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(245,158,11,0.2); color:#f59e0b; border:1px solid rgba(245,158,11,0.4);">Examen final (${totalPyramide} leçons)</span>
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(236,72,153,0.2); color:#f472b6; border:1px solid rgba(236,72,153,0.4);">Examen final (${totalPyramide} leçons)</span>
           ` : ''}
           ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
             <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
