@@ -235,15 +235,15 @@ export function renderLessonView(container, moduleId, formationId) {
           <div class="box-icon">🎯</div>
           <div>
             <div class="box-title">Objectif pédagogique</div>
-            <div class="box-text">${formation.objective}</div>
+            <div class="box-text">${formation.objective || formation.summary || ''}</div>
           </div>
         </section>
 
         <!-- Introduction -->
-        ${formation.introduction ? `
+        ${formation.introduction || formation.summary ? `
         <section class="content-article" aria-label="Introduction">
           <div class="section-title">Introduction</div>
-          <div class="section-body">${formation.introduction}</div>
+          <div class="section-body">${formation.introduction || formation.summary}</div>
         </section>
         ` : ''}
 
@@ -273,12 +273,12 @@ export function renderLessonView(container, moduleId, formationId) {
 
         <!-- Contenu Détaillé -->
         <section class="content-article" aria-label="Contenu détaillé">
-          ${formation.contentSections.map(sec => `
+          ${formation.contentSections ? formation.contentSections.map(sec => `
             <div class="content-sub-block">
               <h2 class="section-title">${sec.title}</h2>
-              <div class="section-body">${sec.text}</div>
+              <div class="section-body">${sec.text || sec.content || ''}</div>
             </div>
-          `).join('')}
+          `).join('') : ''}
         </section>
 
         <!-- Illustration / Composant Interactif Dédié -->
