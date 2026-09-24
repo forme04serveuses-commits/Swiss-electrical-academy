@@ -981,7 +981,6 @@ button, input, select {
   flex: 1;
   overflow-y: auto;
   padding: var(--space-4) var(--space-5) 3.5rem;
-  scroll-behavior: smooth;
 }
 
 @media (max-width: 640px) {

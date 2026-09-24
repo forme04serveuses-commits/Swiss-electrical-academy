@@ -9,6 +9,11 @@ import { createQuizEngine } from '../components/quiz.js';
 import { createVideoPlayer } from '../components/video-player.js';
 
 export function renderLessonView(container, moduleId, formationId) {
+  // Défilement immédiat au sommet dès l'entrée dans la leçon
+  if (container) container.scrollTop = 0;
+  window.scrollTo(0, 0);
+  if (window.scrollToTop) window.scrollToTop(container);
+
   const result = findFormation(moduleId, formationId);
 
   if (!result) {
@@ -349,7 +354,7 @@ export function renderLessonView(container, moduleId, formationId) {
         </div>
 
         ${nextRoute ? `
-          <button class="btn-continue" onclick="location.hash='${nextRoute}'" style="display:inline-flex; align-items:center; gap:0.5rem;">
+          <button class="btn-continue" id="btnNextLessonNav" onclick="if(window.scrollToTop) window.scrollToTop(); else { window.scrollTo(0,0); const c = document.getElementById('pageContainer'); if(c) c.scrollTop = 0; } location.hash='${nextRoute}';" style="display:inline-flex; align-items:center; gap:0.5rem; cursor:pointer;">
             <span>${nextLabel}</span>
           </button>
         ` : ''}
@@ -474,4 +479,18 @@ export function renderLessonView(container, moduleId, formationId) {
       }
     });
   }
+
+  // Garantir que la nouvelle leçon s'affiche tout en haut dès la fin du rendu
+  if (container) container.scrollTop = 0;
+  window.scrollTo(0, 0);
+  if (window.scrollToTop) window.scrollToTop(container);
+  requestAnimationFrame(() => {
+    if (container) container.scrollTop = 0;
+    window.scrollTo(0, 0);
+    if (window.scrollToTop) window.scrollToTop(container);
+  });
+  setTimeout(() => {
+    if (container) container.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }, 40);
 }
