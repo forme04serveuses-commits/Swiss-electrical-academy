@@ -6066,7 +6066,7 @@
       id: "E",
       code: "E",
       title: "ESTI directives",
-      countLabel: "21 unités (2 directives disponibles)",
+      countLabel: "19 formations",
       description: "Directives de l'Inspection fédérale des installations à courant fort (ESTI) précisant les obligations de sécurité, d'autorisation et de contrôle technique.",
       badgeTheme: "esti",
       formations: [
