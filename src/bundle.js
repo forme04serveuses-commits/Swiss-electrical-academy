@@ -12633,7 +12633,7 @@
       <!-- Header Hero Card ORNI -->
       <header class="ocfo-hub-hero" style="border-left: 4px solid #8b5cf6;" role="region" aria-label="En-tête du parcours RS 814.710">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag" style="background:rgba(139,92,246,0.15); color:#a78bfa;">DROIT FÉDÉRAL SUISSE · ENVIRONNEMENT & RNI</span>
+          <span class="ocfo-hub-tag" style="background:rgba(139,92,246,0.15); color:#a78bfa;">Droit interne</span>
           <span class="ocfo-hub-ref" style="border-color:rgba(139,92,246,0.4); color:#a78bfa; background:rgba(139,92,246,0.12);">RS 814.710</span>
         </div>
 
