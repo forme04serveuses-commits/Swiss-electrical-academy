@@ -1253,27 +1253,29 @@ export function createSecuriteSimulationWidget() {
                 <!-- Courbe c1 : Seuil de fibrillation ventriculaire -->
                 <path d="${pathC1Stroke}" fill="none" stroke="#94a3b8" stroke-width="2.5" />
 
-                <!-- Badges des Zones (Positionnés en haut pour ne jamais croiser les lignes à 400 ms) -->
-                <rect x="${toSvgX(0.22) - 16}" y="34" width="32" height="18" rx="4" fill="#15803d" />
+                <!-- Badges des Zones (Positionnés précisément au centre géométrique supérieur de chaque zone sans chevaucher les courbes) -->
+                <rect x="${toSvgX(0.22) - 17}" y="34" width="34" height="18" rx="4" fill="#15803d" />
                 <text x="${toSvgX(0.22)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-1</text>
 
-                <rect x="${toSvgX(2.5) - 16}" y="34" width="32" height="18" rx="4" fill="#d97706" />
-                <text x="${toSvgX(2.5)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-2</text>
+                <rect x="${toSvgX(1.6) - 17}" y="34" width="34" height="18" rx="4" fill="#d97706" />
+                <text x="${toSvgX(1.6)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-2</text>
 
-                <rect x="${toSvgX(65) - 16}" y="34" width="32" height="18" rx="4" fill="#ea580c" />
-                <text x="${toSvgX(65)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-3</text>
+                <rect x="${toSvgX(16) - 17}" y="34" width="34" height="18" rx="4" fill="#ea580c" />
+                <text x="${toSvgX(16)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-3</text>
 
-                <rect x="${toSvgX(1100) - 16}" y="34" width="32" height="18" rx="4" fill="#dc2626" />
-                <text x="${toSvgX(1100)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-4</text>
+                <rect x="${toSvgX(350) - 17}" y="34" width="34" height="18" rx="4" fill="#dc2626" />
+                <text x="${toSvgX(350)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-4</text>
 
-                <!-- Lignes de repères statiques normatifs (Subtils) -->
+                <!-- Lignes de repères statiques normatifs (Avec cartouches sur la gauche pour éviter toute collision avec les points et courbes) -->
                 <!-- Repère réglementaire 400 ms -->
-                <line x1="${plotLeft}" y1="${y400}" x2="${plotRight}" y2="${y400}" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.55" />
-                <text x="${plotRight - 8}" y="${y400 - 4}" fill="#ea580c" font-size="7.5" font-weight="800" text-anchor="end">Seuil maximal réglementaire (≤ 400 ms)</text>
+                <line x1="${plotLeft}" y1="${y400}" x2="${plotRight}" y2="${y400}" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" />
+                <rect x="${plotLeft + 6}" y="${y400 - 15}" width="168" height="13" rx="3" fill="#0b1329" fill-opacity="0.9" stroke="#ea580c" stroke-width="0.8" />
+                <text x="${plotLeft + 10}" y="${y400 - 5}" fill="#ea580c" font-size="7.5" font-weight="700">Seuil maximal réglementaire (≤ 400 ms)</text>
 
                 <!-- Repère DDR 25 ms -->
-                <line x1="${plotLeft}" y1="${toSvgY(25)}" x2="${plotRight}" y2="${toSvgY(25)}" stroke="#10b981" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65" />
-                <text x="${plotRight - 8}" y="${toSvgY(25) - 4}" fill="#10b981" font-size="7.5" font-weight="800" text-anchor="end">Coupure DDR ≤ 25 ms (Zone de sécurité)</text>
+                <line x1="${plotLeft}" y1="${toSvgY(25)}" x2="${plotRight}" y2="${toSvgY(25)}" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.8" />
+                <rect x="${plotLeft + 6}" y="${toSvgY(25) - 15}" width="176" height="13" rx="3" fill="#0b1329" fill-opacity="0.9" stroke="#10b981" stroke-width="0.8" />
+                <text x="${plotLeft + 10}" y="${toSvgY(25) - 5}" fill="#10b981" font-size="7.5" font-weight="700">Coupure DDR ≤ 25 ms (Zone de sécurité)</text>
 
                 <!-- Lignes de repères dynamiques associées au point de simulation actuel -->
                 ${calc.effectiveU > 0 ? `
@@ -1281,11 +1283,15 @@ export function createSecuriteSimulationWidget() {
                   <line x1="${dotX}" y1="${dotY}" x2="${dotX}" y2="${plotBottom}" stroke="${calc.zoneColor}" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.9" />
                 ` : ''}
 
-                <!-- Graduations Y (Durée t en ms - Parfaitement alignées sans coupure) -->
-                ${[10000, 5000, 2000, 1000, 500, 400, 200, 100, 50, 20, 10].map(t => `
-                  <text x="76" y="${toSvgY(t) + 3}" fill="${t === 400 ? '#ea580c' : '#94a3b8'}" font-size="${t === 400 ? '8.5' : '7.5'}" font-weight="${t === 400 ? '800' : '500'}" text-anchor="end">${t === 400 ? '400 ms' : t}</text>
+                <!-- Graduations Y (Durée t en ms - Espacement régulier et net) -->
+                ${[10000, 5000, 2000, 1000, 200, 100, 50, 20, 10].map(t => `
+                  <text x="76" y="${toSvgY(t) + 3}" fill="#94a3b8" font-size="7.5" font-weight="500" text-anchor="end">${t}</text>
                 `).join('')}
-                <text x="22" y="150" fill="#94a3b8" font-size="8.5" font-weight="800" transform="rotate(-90 22 150)" text-anchor="middle">Durée de passage du courant [ms]</text>
+                <!-- Repère 400 ms sur l'axe Y -->
+                <line x1="${plotLeft - 4}" y1="${y400}" x2="${plotLeft}" y2="${y400}" stroke="#ea580c" stroke-width="2" />
+                <text x="76" y="${y400 + 3}" fill="#ea580c" font-size="8" font-weight="800" text-anchor="end">400 ms</text>
+
+                <text x="20" y="150" fill="#94a3b8" font-size="8.5" font-weight="800" transform="rotate(-90 20 150)" text-anchor="middle">Durée de passage du courant [ms]</text>
 
                 <!-- Graduations X (Courant I_B en mA - Sans chevauchement 200 / 230) -->
                 ${[0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000].map(i => `
@@ -1299,7 +1305,7 @@ export function createSecuriteSimulationWidget() {
                 <!-- Titre Axe X -->
                 <text x="345" y="${plotBottom + 30}" fill="#94a3b8" font-size="8.5" font-weight="800" text-anchor="middle">Courant de contact I_B [mA] ───────────►</text>
 
-                <!-- Point de fonctionnement dynamique (Avec pulsation SVG concentrique sans décalage) -->
+                <!-- Point de fonctionnement dynamique (Avec pulsation SVG concentrique et étiquette intelligente sans superposition) -->
                 ${calc.effectiveU > 0 ? `
                   <g transform="translate(${dotX}, ${dotY})">
                     <!-- Anneau pulsant concentrique -->
@@ -1309,9 +1315,9 @@ export function createSecuriteSimulationWidget() {
                     </circle>
                     <!-- Point central -->
                     <circle cx="0" cy="0" r="5.5" fill="#ffffff" stroke="${calc.zoneColor}" stroke-width="2.5" />
-                    <!-- Badge d'information au-dessus du point -->
-                    <rect x="-48" y="-24" width="96" height="18" rx="4" fill="#0f172a" stroke="${calc.zoneColor}" stroke-width="1.4" fill-opacity="0.96" />
-                    <text x="0" y="-12" fill="#ffffff" font-size="8.5" font-weight="900" text-anchor="middle">${calc.currentMa} mA · ${tripTimeMs} ms</text>
+                    <!-- Badge d'information au-dessus ou au-dessous du point -->
+                    <rect x="-50" y="${dotY < 60 ? 8 : -26}" width="100" height="18" rx="4" fill="#0b1329" stroke="${calc.zoneColor}" stroke-width="1.5" />
+                    <text x="0" y="${dotY < 60 ? 20 : -14}" fill="#ffffff" font-size="8.5" font-weight="900" text-anchor="middle">${calc.currentMa} mA · ${tripTimeMs} ms</text>
                   </g>
                 ` : `
                   <g transform="translate(${toSvgX(0.1)}, ${toSvgY(10)})">
