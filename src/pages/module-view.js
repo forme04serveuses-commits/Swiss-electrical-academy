@@ -507,7 +507,7 @@ export function renderOcfoParcoursView(container) {
     <!-- Liste des 8 Leçons officielles (7 Chapitres + Leçon 8 Annexes) -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 8 leçons OCFo">
       <div class="section-heading">
-        <span>📚</span> Les 8 leçons du parcours (7 chapitres légaux & Annexes 1 à 4)
+        <span>📚</span> Les 8 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
