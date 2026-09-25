@@ -1742,7 +1742,7 @@ export function renderSecuriteParcoursView(container) {
     <!-- Liste des 7 Leçons officielles -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons de sécurité électrique">
       <div class="section-heading">
-        <span>📚</span> Les 7 leçons du parcours (7 chapitres)
+        <span>📚</span> Les 7 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
