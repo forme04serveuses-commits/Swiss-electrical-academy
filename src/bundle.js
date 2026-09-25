@@ -12456,7 +12456,7 @@
       <!-- Header Hero Card OIBT -->
       <header class="ocfo-hub-hero" style="border-left: 4px solid #10b981;" role="region" aria-label="En-tête du parcours RS 734.27">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag" style="background:rgba(16,185,129,0.15); color:#10b981;">DROIT FÉDÉRAL SUISSE · BASSE TENSION</span>
+          <span class="ocfo-hub-tag" style="background:rgba(16,185,129,0.15); color:#10b981;">Droit interne</span>
           <span class="ocfo-hub-ref" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">RS 734.27</span>
         </div>
 
