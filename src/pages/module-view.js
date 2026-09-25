@@ -637,7 +637,7 @@ export function renderPyramideParcoursView(container) {
     <!-- Header Hero Card Pyramide -->
     <header class="ocfo-hub-hero" style="border-left: 4px solid #ec4899;" role="region" aria-label="En-tête du parcours Pyramide des lois">
       <div class="ocfo-hub-badge-row">
-        <span class="ocfo-hub-tag">CADRE NORMATIF FÉDÉRAL · HIÉRARCHIE DES NORMES</span>
+        <span class="ocfo-hub-tag">Droit interne</span>
         <span class="ocfo-hub-ref" style="border-color:rgba(236,72,153,0.4); color:#f472b6; background:rgba(236,72,153,0.12);">PYRAMIDE DES LOIS</span>
       </div>
 
