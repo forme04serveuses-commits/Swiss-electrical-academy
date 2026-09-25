@@ -97,12 +97,20 @@ Conformément au cahier des charges de conception originale :
   5. **Anatomie & Cheminement corporel** : Visualisation du point d'entrée (main), traversée du thorax/cœur et point de sortie (pieds/terre), table des seuils (1 mA, 5 mA, 15 mA, 50 mA, $\ge 80\text{ mA}$) et décomposition d'impédance de boucle ($750\,\Omega + 240\,\Omega + 10\,\Omega = 1000\,\Omega$).
   6. **Micro-Quiz de validation** : 4 questions ciblées avec score en direct et persistance de la validation dans `localStorage` (+25 XP).
   7. **Accessibilité & Performance** : Support complet du mode sombre et clair, responsive mobile à desktop, navigation clavier, respect de `prefers-reduced-motion`.
+### Mise à jour UX & Gamification (v2.9.2)
+- **Expérience simplifiée & ludique :** Restructuration en 3 parcours clairs et immédiats :
+  1. *Simulateur de Choc (Grandes cartes 1-clic : Contact direct 230V, Défaut de masse, Protection DDR 30mA, Consignation 0V)*.
+  2. *Curseur Magique Avant / Après (Danger 0% ↔ Sécurité 100%)* avec mise à jour visuelle instantanée du schéma SVG et de l'interrupteur.
+  3. *Mini-Défi Interactif (3 questions à validation instantanée avec récompense +25 XP)*.
+- **Réduction de la charge cognitive :** Suppression des onglets techniques fragmentés au profit d'un atelier visuel tout-en-un fluide.
+- **Feedback sensoriel renforcé :** Cœur palpitant/fibrillation dynamique, flux lumineux rouge/vert instantané, jauges de diagnostic synthétiques.
 
 ---
 
 ## 7. Décision Finale
 
-Le livrable respecte **100 %** des spécifications du cahier des charges et de la structure de référence RS 734.0 — LIE.
+Le livrable respecte **100 %** des spécifications du cahier des charges, de l'accessibilité PWA et des normes électrotechniques suisses.
 
-Statut : 🚀 **READY FOR PRODUCTION**
+Statut : 🚀 **READY FOR PRODUCTION (v2.9.2)**
+
 
