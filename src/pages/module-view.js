@@ -1209,7 +1209,7 @@ export function renderOrniParcoursView(container) {
     <!-- Liste des 7 Leçons officielles -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons ORNI">
       <div class="section-heading">
-        <span>📚</span> Les 7 leçons du parcours (Art. 1 à 21 & Annexes 1 et 2)
+        <span>📚</span> Les 7 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
