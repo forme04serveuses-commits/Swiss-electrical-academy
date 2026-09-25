@@ -1707,7 +1707,7 @@ export function renderSecuriteParcoursView(container) {
 
       <div class="ocfo-hub-title-row">
         <div>
-          <div class="ocfo-hub-short" style="color:#ef4444;">Sécurité électrique (7 chapitres · Référentiel officiel)</div>
+          <div class="ocfo-hub-short" style="color:#ef4444;">Sécurité électrique</div>
           <h1 class="ocfo-hub-title">Dangers de l’électricité, grandeurs de contact, protections et cadre réglementaire</h1>
         </div>
       </div>
