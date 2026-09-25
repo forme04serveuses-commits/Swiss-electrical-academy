@@ -12497,7 +12497,7 @@
       <!-- Liste des 7 Leçons officielles (6 Chapitres + Leçon 7 Annexe) -->
       <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons OIBT">
         <div class="section-heading">
-          <span>📚</span> Les 7 leçons du parcours (6 chapitres légaux & Annexe contrôles périodiques)
+          <span>📚</span> Les 7 leçons du parcours
         </div>
 
         <div class="ocfo-chapters-list">
