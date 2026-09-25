@@ -1702,7 +1702,7 @@ export function renderSecuriteParcoursView(container) {
     <header class="ocfo-hub-hero" style="border-left: 4px solid #ef4444;" role="region" aria-label="En-tête du parcours Sécurité électrique">
       <div class="ocfo-hub-badge-row">
         <span class="ocfo-hub-tag" style="background:#ef4444; color:#fff;">SÉCURITÉ VITALE · DANGERS DE L'ÉLECTRICITÉ</span>
-        <span class="ocfo-hub-ref" style="border-color:rgba(239,68,68,0.4); color:#ef4444; background:rgba(239,68,68,0.12);">MODULE B</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(239,68,68,0.4); color:#ef4444; background:rgba(239,68,68,0.12);">Sécurité électrique</span>
       </div>
 
       <div class="ocfo-hub-title-row">
