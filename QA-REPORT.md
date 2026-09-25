@@ -78,8 +78,31 @@ Conformément aux exigences de la structure de référence **RS 734.0 — LIE** 
 
 ---
 
-## 5. Décision Finale
+---
+
+## 6. Animation & Simulation Interactive : Sécurité Électrique & Contact
+
+Conformément au cahier des charges de conception originale :
+- **Inspiration pédagogique** : Suva — *Stromschlag / Électricité* (`suva-stromschlag.html`) & Norme SN EN 61140 / OCFo RS 734.2.
+- **Conception vectorielle et code** : 100 % original ELECBOOK (aucune ressource protégée Suva copiée).
+- **Fonctionnalités interactives intégrées** :
+  1. **Scène Vectorielle SVG** : Schéma interactif d'alimentation 230 V, conducteur de phase L1, neutre N, terre de référence PE, silhouette anatomique humaine stylisée, myocarde battant pulsant en alerte rouge lors d'électrisation, boîtier VAT et disjoncteur/DDR.
+  2. **4 Scénarios d'intervention** :
+     - *Scénario A* : Contact direct 230 V sans DDR (Zone AC-4, fibrillation ventriculaire critique en $< 0.4\text{ s}$).
+     - *Scénario B* : Contact indirect avec carcasse métallique sous défaut d'isolation.
+     - *Scénario C* : Protection différentielle active (déclenchement du DDR 30 mA en $t \le 30\text{ ms}$).
+     - *Scénario D* : Consignation totale selon les 5 règles vitales ($U_b = 0\text{ V}$, $I_b = 0\text{ mA}$).
+  3. **Moteur de décision "Que se passe-t-il ?"** : 4 boutons d'action (*1. Toucher*, *2. Mettre hors tension*, *3. Vérifier au VAT*, *4. Activer le DDR 30 mA*) avec diagnostic immédiat.
+  4. **Curseur interactif Avant / Après** : Variation fluide Danger (0%) ↔ Sécurité totale (100%).
+  5. **Anatomie & Cheminement corporel** : Visualisation du point d'entrée (main), traversée du thorax/cœur et point de sortie (pieds/terre), table des seuils (1 mA, 5 mA, 15 mA, 50 mA, $\ge 80\text{ mA}$) et décomposition d'impédance de boucle ($750\,\Omega + 240\,\Omega + 10\,\Omega = 1000\,\Omega$).
+  6. **Micro-Quiz de validation** : 4 questions ciblées avec score en direct et persistance de la validation dans `localStorage` (+25 XP).
+  7. **Accessibilité & Performance** : Support complet du mode sombre et clair, responsive mobile à desktop, navigation clavier, respect de `prefers-reduced-motion`.
+
+---
+
+## 7. Décision Finale
 
 Le livrable respecte **100 %** des spécifications du cahier des charges et de la structure de référence RS 734.0 — LIE.
 
 Statut : 🚀 **READY FOR PRODUCTION**
+

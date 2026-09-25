@@ -5689,6 +5689,7 @@ L'<strong>Annexe 4</strong> définit la courbe limite de sécurité suisse relia
             "duration": "6 min",
             "tag": "Sécurité vitale",
             "xpReward": 30,
+            "interactiveWidget": "securite-simulation-widget",
             "objective": "Assimiler les principes fondamentaux de prévention : le respect des règles techniques pour supprimer tout danger en conditions normales et de défaut prévisible, la nature silencieuse et inodore du courant électrique, la vigilance face aux pièges de la routine et la délimitation stricte des compétences entre profanes et spécialistes.",
             "introduction": "La sécurité des installations électriques exige que les ouvrages soient réalisés et entretenus selon les règles techniques de l'art, garantissant l'absence de tout danger pour les personnes, les animaux et les choses ainsi que l'absence d'état dangereux en cas de défaut prévisible. L'électricité ne se manifestant ni par la vue ni par l'odorat ni par le bruit, sa dangerosité est fréquemment sous-estimée. Ce premier chapitre pose les jalons essentiels de la culture de prévention et de la répartition des responsabilités.",
             "contentSections": [

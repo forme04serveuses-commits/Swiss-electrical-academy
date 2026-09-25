@@ -4,7 +4,7 @@
 import { StorageService } from '../services/storage.js';
 import { ProgressionService } from '../services/progression.js';
 import { findFormation } from '../data/academy-data.js';
-import { createPyramidWidget, createDangerWidget, createNibtWidget, initOcfoAnnexe4Visual } from '../components/interactive-widgets.js';
+import { createPyramidWidget, createDangerWidget, createNibtWidget, createSecuriteSimulationWidget, initOcfoAnnexe4Visual } from '../components/interactive-widgets.js';
 import { createQuizEngine } from '../components/quiz.js';
 import { createVideoPlayer } from '../components/video-player.js';
 
@@ -452,8 +452,8 @@ export function renderLessonView(container, moduleId, formationId) {
     if (slot) {
       if (formation.interactiveWidget === 'pyramid-widget') {
         slot.appendChild(createPyramidWidget());
-      } else if (formation.interactiveWidget === 'danger-widget') {
-        slot.appendChild(createDangerWidget());
+      } else if (formation.interactiveWidget === 'danger-widget' || formation.interactiveWidget === 'securite-simulation-widget') {
+        slot.appendChild(createSecuriteSimulationWidget());
       } else if (formation.interactiveWidget === 'nibt-widget') {
         slot.appendChild(createNibtWidget());
       }

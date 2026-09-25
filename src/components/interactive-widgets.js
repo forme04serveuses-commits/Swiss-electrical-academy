@@ -121,150 +121,628 @@ export function createPyramidWidget() {
 }
 
 // ----------------------------------------------------------------------------
-// 2. Dangers de l'électricité, notions Ub/Ib et 5 règles (Module B — B00)
+// 2. Simulateur et Animation Interactive — Dangers & Sécurité électrique
+// Inspiration pédagogique : Suva (Stromschlag) & Norme SN EN 61140 / OCFo RS 734.2
 // ----------------------------------------------------------------------------
-export function createDangerWidget() {
+export function createSecuriteSimulationWidget() {
   const container = document.createElement('div');
-  container.className = 'interactive-widget-wrapper';
-  container.innerHTML = `
-    <div class="widget-header">
-      <div class="widget-title">⚡ Simulateur interactif de tension & courant de contact</div>
-      <div class="widget-desc">Ajustez la tension de contact Ub pour observer le courant traversant le corps humain Ib (Rb = 1000 Ω) et le niveau de danger physiologique.</div>
-    </div>
+  container.className = 'securite-sim-container';
+  container.setAttribute('role', 'region');
+  container.setAttribute('aria-label', 'Simulateur interactif des dangers électriques et mécanismes physiologiques');
 
-    <!-- Schéma des grandeurs Ub / Ib / Uf / If -->
-    <div class="danger-metrics-grid">
-      <div class="danger-metric-box">
-        <div class="danger-metric-symbol">Ub</div>
-        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Tension de contact</div>
-        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Tension susceptible d'être pontée par une personne entre deux parties accessibles.</div>
-      </div>
-      <div class="danger-metric-box">
-        <div class="danger-metric-symbol">Ib</div>
-        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Courant de contact</div>
-        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Courant traversant le corps : <code>Ib = Ub / Rb</code>.</div>
-      </div>
-      <div class="danger-metric-box">
-        <div class="danger-metric-symbol">Uf</div>
-        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Tension de défaut</div>
-        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Tension entre une carcasse métallique sous défaut et la terre lointaine.</div>
-      </div>
-      <div class="danger-metric-box">
-        <div class="danger-metric-symbol">If</div>
-        <div style="font-weight:700; color:var(--text-primary); font-size:0.85rem;">Courant de défaut</div>
-        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">Courant total s'écoulant au point de claquage d'isolement.</div>
-      </div>
-    </div>
-
-    <!-- Simulateur interactif de contact -->
-    <div style="background:var(--bg-app); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
-        <span style="font-weight:700; font-size:0.9rem; color:var(--text-primary);">Tension de contact Ub : <span id="valUb" style="color:var(--electric-blue); font-size:1.1rem;">230 V</span></span>
-        <span style="font-size:0.8rem; color:var(--text-muted);">Résistance corporelle conventionnelle Rb = 1000 Ω</span>
-      </div>
-      <input type="range" id="sliderUb" min="10" max="400" step="5" value="230" style="width:100%; cursor:pointer; accent-color:var(--electric-blue);"/>
-
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:1.25rem; padding:0.85rem 1.1rem; border-radius:var(--radius-sm); background:var(--bg-surface-elevated);" id="dangerResultBox">
-        <div>
-          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Courant corporel calculé (Ib)</div>
-          <div style="font-size:1.5rem; font-weight:800;" id="calcIb">230 mA</div>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Conséquence physiologique</div>
-          <div style="font-size:0.95rem; font-weight:700; color:var(--danger);" id="dangerLevelText">⚠️ Risque létal de fibrillation ventriculaire (> 50 mA)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tableau des seuils physiologiques 50 Hz -->
-    <div style="margin-bottom:1.5rem;">
-      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.5rem;">
-        Seuils physiologiques du courant alternatif (50 Hz)
-      </div>
-      <table class="thresholds-table">
-        <thead>
-          <tr>
-            <th>Seuil</th>
-            <th>Intensité</th>
-            <th>Réaction physiologique corporelle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Perception</strong></td>
-            <td><strong>0.5 mA</strong></td>
-            <td>Léger picotement sans danger ni contraction musculaire.</td>
-          </tr>
-          <tr>
-            <td><strong>Non-lâcher</strong></td>
-            <td><strong>10 mA</strong></td>
-            <td>Contraction musculaire tétanisante : impossibilité de lâcher le conducteur saisi.</td>
-          </tr>
-          <tr>
-            <td><strong>Asphyxie respiratoire</strong></td>
-            <td><strong>30 mA</strong></td>
-            <td>Tétanisation des muscles thoraciques si le contact dure. <em>(Seuil des DDR haute sensibilité)</em>.</td>
-          </tr>
-          <tr style="background:rgba(239, 68, 68, 0.08);">
-            <td><strong style="color:var(--danger);">Fibrillation ventriculaire</strong></td>
-            <td><strong style="color:var(--danger);">≥ 50 mA</strong></td>
-            <td>Arrêt circulatoire chaotique du cœur. Mortel en quelques minutes sans défibrillateur.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 5 règles vitales de sécurité -->
-    <div>
-      <div style="font-weight:700; font-size:0.95rem; color:var(--text-primary); margin-bottom:0.65rem;">
-        Les 5 règles vitales de sécurité (SUVA / ESTI) — Ordre chronologique strict :
-      </div>
-      <div class="rule-vital-item"><div class="rule-number">1</div><span><strong>Déclencher</strong> et couper sur tous les pôles.</span></div>
-      <div class="rule-vital-item"><div class="rule-number">2</div><span><strong>Sécuriser</strong> contre tout réenclenchement intempestif.</span></div>
-      <div class="rule-vital-item"><div class="rule-number">3</div><span><strong>Vérifier</strong> l'absence de tension sur tous les conducteurs à l'aide d'un VAT certifié.</span></div>
-      <div class="rule-vital-item"><div class="rule-number">4</div><span><strong>Mettre à terre</strong> et en court-circuit (lignes aériennes et haute tension).</span></div>
-      <div class="rule-vital-item"><div class="rule-number">5</div><span><strong>Protéger</strong> et couvrir les parties voisines restées sous tension.</span></div>
-    </div>
-  `;
-
-  // Logique du slider
-  const slider = container.querySelector('#sliderUb');
-  const valUb = container.querySelector('#valUb');
-  const calcIb = container.querySelector('#calcIb');
-  const dangerLevelText = container.querySelector('#dangerLevelText');
-
-  slider.addEventListener('input', (e) => {
-    const ub = parseInt(e.target.value, 10);
-    valUb.textContent = `${ub} V`;
-    // Rb = 1000 ohms -> Ib = Ub / 1000 A = Ub mA
-    const ib = ub; 
-    calcIb.textContent = `${ib} mA`;
-
-    if (ib < 0.5) {
-      dangerLevelText.textContent = "🟢 En dessous du seuil de perception";
-      dangerLevelText.style.color = "var(--success)";
-      calcIb.style.color = "var(--success)";
-    } else if (ib < 10) {
-      dangerLevelText.textContent = "🟡 Perception tactile sans tétanisation";
-      dangerLevelText.style.color = "var(--warning)";
-      calcIb.style.color = "var(--warning)";
-    } else if (ib < 30) {
-      dangerLevelText.textContent = "🟠 Tétanisation musculaire (seuil de non-lâcher)";
-      dangerLevelText.style.color = "var(--warning)";
-      calcIb.style.color = "var(--warning)";
-    } else if (ib < 50) {
-      dangerLevelText.textContent = "🔴 Asphyxie respiratoire possible si prolongé";
-      dangerLevelText.style.color = "var(--danger)";
-      calcIb.style.color = "var(--danger)";
-    } else {
-      dangerLevelText.textContent = "⚠️ Danger létal : Risque de fibrillation ventriculaire";
-      dangerLevelText.style.color = "var(--danger)";
-      calcIb.style.color = "var(--danger)";
+  // Données des scénarios
+  const scenarios = [
+    {
+      id: 'scen-a',
+      code: 'Scénario A',
+      title: 'Contact direct 230 V sans DDR',
+      desc: 'Contact direct avec la phase nue L1 (230 VAC). Sans protection différentielle, le courant traverse le thorax.',
+      ub: 230,
+      zk: 750,
+      z1: 240,
+      z2: 10,
+      state: 'danger',
+      powerOn: true,
+      ddrActive: false,
+      vatTested: false,
+      touched: true,
+      timeTrip: 'Non coupé (> 1 s)',
+      feedbackTitle: '🛑 Danger mortel immédiat (Zone AC-4)',
+      feedbackText: 'Le courant alternatif 50 Hz traverse la cage thoracique et le myocarde. Avec 230 mA (bien au-delà du seuil mortel de 80 mA), le risque de fibrillation ventriculaire et d\'arrêt circulatoire est quasi certain en moins de 0.4 seconde.'
+    },
+    {
+      id: 'scen-b',
+      code: 'Scénario B',
+      title: 'Contact indirect (Défaut de masse)',
+      desc: 'Défaut d\'isolement interne d\'une machine. La carcasse métallique est portée sous tension Uf = 230 V.',
+      ub: 230,
+      zk: 750,
+      z1: 240,
+      z2: 10,
+      state: 'danger',
+      powerOn: true,
+      ddrActive: false,
+      vatTested: false,
+      touched: true,
+      timeTrip: 'Non coupé (> 1 s)',
+      feedbackTitle: '⚠️ Choc électrique grave par contact indirect',
+      feedbackText: 'En touchant le carter métallique d\'une machine en défaut non protégée par un DDR, l\'opérateur subit une électrisation majeure. Les coupe-surintensité classiques (10 A ou 16 A) ne protègent absolument pas les personnes.'
+    },
+    {
+      id: 'scen-c',
+      code: 'Scénario C',
+      title: 'Protection active (DDR 30 mA)',
+      desc: 'Le circuit est protégé par un Dispositif Différentiel Résiduel 30 mA. Dès le contact, le tore détecte le déséquilibre.',
+      ub: 230,
+      zk: 750,
+      z1: 240,
+      z2: 10,
+      state: 'safe',
+      powerOn: false,
+      ddrActive: true,
+      vatTested: false,
+      touched: true,
+      timeTrip: 'Coupé en ≤ 30 ms',
+      feedbackTitle: '🛡️ Personne protégée par le DDR',
+      feedbackText: 'Dès que le courant de fuite à la terre dépasse 15 à 30 mA, le DDR déclenche instantanément (t ≤ 30 ms). Le passage de courant est stoppé avant l\'apparition de troubles cardiaques irréversibles.'
+    },
+    {
+      id: 'scen-d',
+      code: 'Scénario D',
+      title: 'Consignation & 5 Règles vitales',
+      desc: 'Installation mise hors tension, consignée et vérifiée au VAT (Vérificateur d\'Absence de Tension).',
+      ub: 0,
+      zk: 750,
+      z1: 240,
+      z2: 10,
+      state: 'safe',
+      powerOn: false,
+      ddrActive: true,
+      vatTested: true,
+      touched: true,
+      timeTrip: 'Hors tension (0 V)',
+      feedbackTitle: '✓ Situation 100% sécurisée',
+      feedbackText: 'Règles 1, 2 et 3 appliquées (Déclencher, Sécuriser, Vérifier au VAT). L\'absence de tension est confirmée. Aucun courant ne peut circuler : l\'opérateur travaille en totale sécurité.'
     }
-  });
+  ];
 
+  let currentScenarioIdx = 0;
+  let activeTab = 'sim'; // 'sim' | 'anatomy' | 'quiz'
+  let isPowerOn = true;
+  let isDdrActive = false;
+  let isVatChecked = false;
+  let isHandTouching = true;
+  let safetySliderVal = 0; // 0 (danger) à 100 (sécurisé)
+
+  // Questions du Micro-Quiz
+  const quizQuestions = [
+    {
+      q: "1. Selon la norme SN EN 61140, quelle est la convention usuelle pour la résistance totale indicative d'un corps humain en basse tension ?",
+      options: ["100 [Ω]", "1000 [Ω]", "10 000 [Ω]", "50 000 [Ω]"],
+      correct: 1,
+      explanation: "Dans la pratique électrotechnique et les normes de sécurité (SN EN 61140), nous prenons une valeur indicative conventionnelle de 1000 Ω pour le corps humain (environ 500 Ω par membre)."
+    },
+    {
+      q: "2. Sous une tension de défaut de 230 VAC et une impédance globale de 1000 Ω, quelle intensité traverse l'organisme ?",
+      options: ["23 mA", "230 mA", "2.3 A", "10 A"],
+      correct: 1,
+      explanation: "Selon la loi d'Ohm Ib = Ub / R = 230 V / 1000 Ω = 0.23 A = 230 mA, soit près de 3 fois le seuil mortel de fibrillation ventriculaire (80 mA)."
+    },
+    {
+      q: "3. Quel organe vital est principalement menacé lors d'un passage de courant alternatif 50 Hz entre la main droite et les pieds ?",
+      options: ["Le foie", "Le muscle cardiaque (cœur)", "Les reins", "Les os"],
+      correct: 1,
+      explanation: "Le courant 50 Hz traverse la cage thoracique et le myocarde, provoquant une désynchronisation des ventricules (fibrillation ventriculaire) et l'arrêt de la circulation sanguine."
+    },
+    {
+      q: "4. Pourquoi un fusible classique ou disjoncteur 16 A ne protège-t-il pas une personne contre un choc électrique ?",
+      options: [
+        "Parce qu'il ne déclenche que pour des surintensités de plusieurs ampères, alors que quelques dizaines de milliampères sont déjà mortelles.",
+        "Parce qu'il ne fonctionne qu'en courant continu.",
+        "Parce qu'il est réservé à la haute tension.",
+        "Parce qu'il nécessite une commande manuelle."
+      ],
+      correct: 0,
+      explanation: "Les coupe-surintensité protègent uniquement les câbles et matériels contre l'échauffement (surcharges/courts-circuits). Seul un DDR 30 mA protège les personnes en coupant le circuit dès 15-30 mA en quelques millisecondes."
+    }
+  ];
+
+  let quizAnswers = {};
+  let quizScore = null;
+
+  function renderWidget() {
+    const sc = scenarios[currentScenarioIdx];
+    
+    // Calculs électrotechniques en temps réel
+    let effectiveUb = isPowerOn ? (sc.ub * (1 - safetySliderVal / 100)) : 0;
+    if (isPowerOn && isDdrActive && isHandTouching) {
+      effectiveUb = 0; // DDR coupe immédiatement
+    }
+    const zTotal = sc.zk + sc.z1 + sc.z2; // 1000 ohms
+    const ibVal = isHandTouching ? Math.round((effectiveUb / zTotal) * 1000) : 0; // en mA
+    
+    // Évaluation du niveau de danger physiologique
+    let dangerBadge = '🟢 Sécurisé';
+    let dangerClass = 'safe';
+    let zoneAC = 'AC-1 (Pas de réaction)';
+    if (ibVal >= 80) {
+      dangerBadge = '🛑 Risque Mortel (Fibrillation)';
+      dangerClass = 'danger';
+      zoneAC = 'AC-4 (Effets pathophysiologiques / Arrêt cardiaque)';
+    } else if (ibVal >= 50) {
+      dangerBadge = '🔴 Danger critique (Asphyxie respiratoire)';
+      dangerClass = 'danger';
+      zoneAC = 'AC-3 (Troubles respiratoires / Crampes sévères)';
+    } else if (ibVal >= 15) {
+      dangerBadge = '🟠 Tétanisation musculaire (Non-lâcher)';
+      dangerClass = 'warning';
+      zoneAC = 'AC-3 (Contractions musculaires involontaires)';
+    } else if (ibVal >= 1) {
+      dangerBadge = '🟡 Perception tactile';
+      dangerClass = 'warning';
+      zoneAC = 'AC-2 (Picotements sans effets nocifs)';
+    }
+
+    container.innerHTML = `
+      <div class="securite-sim-header">
+        <div class="securite-sim-badge-tag">⚡ EXPÉRIENCE INTERACTIVE · SÉCURITÉ ÉLECTRIQUE</div>
+        <h3 class="securite-sim-title">Animation Interactive — Dangers du contact électrique & Flux corporel</h3>
+        <p class="securite-sim-desc">
+          Explorez les scénarios professionnels, visualisez la traversée du courant dans l'organisme et testez vos décisions d'intervention selon les normes suisses (SN EN 61140 & OCFo RS 734.2).
+        </p>
+      </div>
+
+      <!-- Onglets de navigation -->
+      <div class="securite-sim-tabs" role="tablist">
+        <button class="securite-sim-tab-btn ${activeTab === 'sim' ? 'active' : ''}" data-tab="sim" role="tab" aria-selected="${activeTab === 'sim'}">
+          <span>🎛️</span> Scénarios & Décisions
+        </button>
+        <button class="securite-sim-tab-btn ${activeTab === 'anatomy' ? 'active' : ''}" data-tab="anatomy" role="tab" aria-selected="${activeTab === 'anatomy'}">
+          <span>👤</span> Cheminement corporel & Seuils
+        </button>
+        <button class="securite-sim-tab-btn ${activeTab === 'quiz' ? 'active' : ''}" data-tab="quiz" role="tab" aria-selected="${activeTab === 'quiz'}">
+          <span>📝</span> Micro-Quiz de validation
+        </button>
+      </div>
+
+      ${activeTab === 'sim' ? `
+        <!-- Sélecteur de scénarios -->
+        <div class="securite-sim-scenario-selector" role="radiogroup" aria-label="Choisir un scénario">
+          ${scenarios.map((s, idx) => `
+            <div class="securite-sim-scenario-card ${idx === currentScenarioIdx ? 'active' : ''}" data-scenario="${idx}" role="radio" aria-checked="${idx === currentScenarioIdx}" tabindex="0">
+              <div class="securite-sim-scenario-code">${s.code}</div>
+              <div class="securite-sim-scenario-title">${s.title}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Scène Vectorielle Interactive (Schéma SVG) -->
+        <div class="securite-sim-scene-box">
+          <svg viewBox="0 0 740 320" class="securite-sim-svg-wrap" aria-label="Schéma interactif du circuit électrique et du contact">
+            <defs>
+              <linearGradient id="gradPanel" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e293b"/>
+                <stop offset="100%" stop-color="#0f172a"/>
+              </linearGradient>
+              <linearGradient id="gradBody" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+              <filter id="glowAlert" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- 1. Tableau d'alimentation -->
+            <rect x="20" y="30" width="160" height="260" rx="8" fill="url(#gradPanel)" stroke="var(--border-medium)" stroke-width="2"/>
+            <text x="100" y="55" fill="var(--text-primary)" font-size="12" font-weight="700" text-anchor="middle">ALIMENTATION 230V</text>
+            <line x1="30" y1="65" x2="170" y2="65" stroke="var(--border-subtle)" stroke-width="1"/>
+
+            <!-- Disjoncteur / DDR -->
+            <rect x="40" y="85" width="120" height="60" rx="6" fill="#0b1329" stroke="${isDdrActive ? '#10b981' : (isPowerOn ? '#ef4444' : '#64748b')}" stroke-width="2"/>
+            <text x="100" y="105" fill="${isDdrActive ? '#10b981' : '#f8fafc'}" font-size="11" font-weight="700" text-anchor="middle">
+              ${isDdrActive ? 'DDR 30mA [ACTIF]' : (isPowerOn ? 'DISJONCTEUR [ON]' : 'DISJONCTEUR [OFF]')}
+            </text>
+            <circle cx="60" cy="125" r="7" fill="${isPowerOn ? '#ef4444' : '#10b981'}"/>
+            <text x="75" y="129" fill="var(--text-secondary)" font-size="10">
+              ${isPowerOn ? 'Sous tension' : 'Hors tension'}
+            </text>
+
+            <!-- Bornier de sortie -->
+            <circle cx="50" cy="240" r="5" fill="#f59e0b"/>
+            <text x="50" y="260" fill="var(--text-muted)" font-size="10" text-anchor="middle">L1</text>
+            <circle cx="100" cy="240" r="5" fill="#38bdf8"/>
+            <text x="100" y="260" fill="var(--text-muted)" font-size="10" text-anchor="middle">N</text>
+            <circle cx="150" cy="240" r="5" fill="#10b981"/>
+            <text x="150" y="260" fill="var(--text-muted)" font-size="10" text-anchor="middle">PE</text>
+
+            <!-- 2. Conducteurs vers l'équipement -->
+            <!-- L1 (Phase) -->
+            <path d="M 50 240 L 50 180 L 260 180 L 260 120 L 320 120" fill="none" stroke="${isPowerOn ? '#ef4444' : '#64748b'}" stroke-width="4" stroke-linecap="round" class="${isPowerOn && ibVal > 0 ? 'sim-flowing-wire' : ''}"/>
+            
+            <!-- Point de contact conducteur exposé -->
+            <circle cx="320" cy="120" r="9" fill="${isPowerOn ? '#ef4444' : '#64748b'}" stroke="#fff" stroke-width="2" filter="${isPowerOn && isHandTouching ? 'url(#glowAlert)' : ''}"/>
+            <text x="320" y="100" fill="${isPowerOn ? '#ef4444' : 'var(--text-muted)'}" font-size="11" font-weight="800" text-anchor="middle">
+              ${isPowerOn ? '⚡ 230 VAC' : '0 V'}
+            </text>
+
+            <!-- Neutre -->
+            <path d="M 100 240 L 100 200 L 290 200 L 290 150 L 320 150" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4 2"/>
+            
+            <!-- PE Terre -->
+            <path d="M 150 240 L 150 220 L 320 220" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="5 3"/>
+
+            <!-- 3. Silhouette humaine stylisée (Anatomie pédagogique) -->
+            <!-- Tête -->
+            <circle cx="460" cy="70" r="22" fill="url(#gradBody)" stroke="var(--border-medium)" stroke-width="2"/>
+            <circle cx="454" cy="67" r="3" fill="#0f172a"/>
+            <circle cx="466" cy="67" r="3" fill="#0f172a"/>
+
+            <!-- Tronc & Thorax -->
+            <path d="M 440 95 L 480 95 L 475 190 L 445 190 Z" fill="url(#gradBody)" stroke="var(--border-medium)" stroke-width="2"/>
+
+            <!-- Cœur qui pulse en cas d'électrisation -->
+            <g transform="translate(455, 125)">
+              <path d="M 0 0 C -6 -8 -16 -4 -16 6 C -16 14 0 24 0 24 C 0 24 16 14 16 6 C 16 -4 6 -8 0 0 Z" 
+                    fill="${ibVal > 50 ? '#ef4444' : '#e11d48'}" 
+                    class="${ibVal > 50 ? 'sim-pulsing-heart' : ''}" 
+                    stroke="#fff" stroke-width="1.5"/>
+            </g>
+
+            <!-- Bras droit (touchant le conducteur) -->
+            <path d="M 440 105 L 370 115 L 320 120" fill="none" stroke="${isPowerOn && isHandTouching && ibVal > 0 ? '#ef4444' : '#38bdf8'}" stroke-width="7" stroke-linecap="round" class="${isPowerOn && isHandTouching && ibVal > 0 ? 'sim-flowing-wire' : ''}"/>
+            <circle cx="320" cy="120" r="5" fill="#f59e0b"/>
+
+            <!-- Bras gauche -->
+            <path d="M 480 105 L 515 140 L 520 170" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+
+            <!-- Jambe gauche & Pied gauche -->
+            <path d="M 450 190 L 445 250 L 440 280 L 430 280" fill="none" stroke="${isPowerOn && isHandTouching && ibVal > 0 ? '#ef4444' : '#38bdf8'}" stroke-width="8" stroke-linecap="round" class="${isPowerOn && isHandTouching && ibVal > 0 ? 'sim-flowing-wire' : ''}"/>
+            
+            <!-- Jambe droite & Pied droit -->
+            <path d="M 470 190 L 475 250 L 480 280 L 490 280" fill="none" stroke="${isPowerOn && isHandTouching && ibVal > 0 ? '#ef4444' : '#38bdf8'}" stroke-width="8" stroke-linecap="round" class="${isPowerOn && isHandTouching && ibVal > 0 ? 'sim-flowing-wire' : ''}"/>
+
+            <!-- Sol & Prise de terre -->
+            <line x1="380" y1="285" x2="560" y2="285" stroke="#64748b" stroke-width="4"/>
+            <path d="M 460 285 L 460 305 M 450 295 L 470 295 M 454 300 L 466 300 M 457 305 L 463 305" fill="none" stroke="#10b981" stroke-width="2"/>
+            <text x="500" y="305" fill="var(--text-muted)" font-size="10">TERRE DE RÉFÉRENCE</text>
+
+            <!-- 4. Boîtier d'information VAT / Indicateur -->
+            <rect x="580" y="30" width="140" height="120" rx="8" fill="url(#gradPanel)" stroke="var(--border-medium)" stroke-width="2"/>
+            <text x="650" y="55" fill="var(--text-primary)" font-size="11" font-weight="700" text-anchor="middle">INDICATEUR VAT</text>
+            <circle cx="615" cy="80" r="10" fill="${isVatChecked ? (effectiveUb > 0 ? '#ef4444' : '#10b981') : '#334155'}" filter="${isVatChecked ? 'url(#glowAlert)' : ''}"/>
+            <text x="635" y="85" fill="var(--text-primary)" font-size="11" font-weight="700">
+              ${isVatChecked ? (effectiveUb > 0 ? 'TENSION !' : '0.0 V OK') : 'Non testé'}
+            </text>
+            <text x="650" y="115" fill="var(--text-muted)" font-size="9" text-anchor="middle">
+              ${isVatChecked ? (effectiveUb > 0 ? '⚠️ Présence de tension' : '✓ Absence prouvée') : 'Tester au VAT'}
+            </text>
+          </svg>
+        </div>
+
+        <!-- 4 Actions interactives (Que se passe-t-il ?) -->
+        <div class="securite-sim-actions-bar" role="group" aria-label="Actions de décision">
+          <button class="securite-sim-action-btn ${isHandTouching && isPowerOn && !isDdrActive ? 'active' : ''}" id="btnToucher">
+            <span style="font-size:1.2rem;">⚡</span>
+            <span>1. Toucher le câble</span>
+            <span style="font-size:0.72rem; color:var(--text-muted);">Simuler contact</span>
+          </button>
+          
+          <button class="securite-sim-action-btn ${!isPowerOn ? 'active' : ''}" id="btnCouper">
+            <span style="font-size:1.2rem;">🔌</span>
+            <span>2. Mettre hors tension</span>
+            <span style="font-size:0.72rem; color:var(--text-muted);">Règle 1 : Déclencher</span>
+          </button>
+          
+          <button class="securite-sim-action-btn ${isVatChecked ? 'active' : ''}" id="btnVat">
+            <span style="font-size:1.2rem;">🔍</span>
+            <span>3. Vérifier au VAT</span>
+            <span style="font-size:0.72rem; color:var(--text-muted);">Règle 3 : Mesurer</span>
+          </button>
+          
+          <button class="securite-sim-action-btn ${isDdrActive ? 'active' : ''}" id="btnDdr">
+            <span style="font-size:1.2rem;">🛡️</span>
+            <span>4. Activer DDR 30mA</span>
+            <span style="font-size:0.72rem; color:var(--text-muted);">Protection différentielle</span>
+          </button>
+        </div>
+
+        <!-- Curseur interactif Avant / Après (Danger ↔ Sécurité) -->
+        <div class="securite-sim-slider-wrap">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; font-size:0.85rem; font-weight:700;">
+            <span style="color:var(--accent-red);">⚡ ÉTAT DE DANGER (0%)</span>
+            <span style="color:var(--electric-blue);">Niveau de consignation : ${safetySliderVal}%</span>
+            <span style="color:#10b981;">🛡️ SITUATION SÉCURISÉE (100%)</span>
+          </div>
+          <input type="range" id="simSafetySlider" min="0" max="100" step="10" value="${safetySliderVal}" style="width:100%; cursor:pointer; accent-color:var(--accent-red);" aria-label="Curseur d'état de danger et de sécurité"/>
+        </div>
+
+        <!-- Métriques en temps réel -->
+        <div class="securite-sim-metrics-grid">
+          <div class="securite-sim-metric-card">
+            <div class="securite-sim-metric-lbl">Tension de contact Ub</div>
+            <div class="securite-sim-metric-val" style="color:${effectiveUb > 50 ? 'var(--accent-red)' : '#10b981'};">${effectiveUb} V</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">Loi d'Ohm Ib = Ub / Z</div>
+          </div>
+
+          <div class="securite-sim-metric-card">
+            <div class="securite-sim-metric-lbl">Impédance totale Z</div>
+            <div class="securite-sim-metric-val">1000 Ω</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">750Ω (corps) + 250Ω (sol)</div>
+          </div>
+
+          <div class="securite-sim-metric-card">
+            <div class="securite-sim-metric-lbl">Courant corporel Ib</div>
+            <div class="securite-sim-metric-val" style="color:${ibVal > 50 ? 'var(--accent-red)' : (ibVal > 0 ? 'var(--warning)' : '#10b981')};">${ibVal} mA</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">${zoneAC}</div>
+          </div>
+
+          <div class="securite-sim-metric-card">
+            <div class="securite-sim-metric-lbl">Diagnostic vital</div>
+            <div class="securite-sim-metric-val" style="font-size:1rem; color:${dangerClass === 'danger' ? 'var(--accent-red)' : (dangerClass === 'warning' ? 'var(--warning)' : '#10b981')};">
+              ${dangerBadge}
+            </div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">${isDdrActive ? 'Coupure ≤ 30 ms' : sc.timeTrip}</div>
+          </div>
+        </div>
+
+        <!-- Feedback explicatif pédagogique -->
+        <div class="securite-sim-feedback ${dangerClass}" role="status" aria-live="polite">
+          <div style="font-size:1.5rem;">${dangerClass === 'danger' ? '🛑' : (dangerClass === 'warning' ? '⚠️' : '✓')}</div>
+          <div>
+            <div style="font-weight:800; font-size:0.95rem; margin-bottom:0.25rem;">${sc.feedbackTitle}</div>
+            <div>${sc.feedbackText}</div>
+          </div>
+        </div>
+      ` : ''}
+
+      ${activeTab === 'anatomy' ? `
+        <!-- Onglet 2 : Anatomie & Cheminement du courant -->
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+          <div style="background:var(--bg-app); border:1px solid var(--border-medium); border-radius:10px; padding:1.25rem; text-align:center;">
+            <div style="font-weight:800; font-size:1rem; color:var(--text-primary); margin-bottom:0.75rem;">Trajet corporel du courant alternatif (Main-Pieds)</div>
+            <svg viewBox="0 0 300 360" style="width:100%; max-width:240px; margin:0 auto; display:block;">
+              <!-- Silhouette détaillée -->
+              <circle cx="150" cy="50" r="28" fill="url(#gradBody)"/>
+              <path d="M 120 85 L 180 85 L 175 220 L 125 220 Z" fill="url(#gradBody)"/>
+              
+              <!-- Cœur -->
+              <g transform="translate(145, 130)">
+                <path d="M 0 0 C -8 -10 -20 -5 -20 8 C -20 18 0 30 0 30 C 0 30 20 18 20 8 C 20 -5 8 -10 0 0 Z" fill="#ef4444" class="sim-pulsing-heart"/>
+              </g>
+
+              <!-- Bras droit (Entrée) -->
+              <path d="M 120 95 L 40 120" stroke="#ef4444" stroke-width="8" stroke-linecap="round" class="sim-flowing-wire"/>
+              <circle cx="40" cy="120" r="7" fill="#f59e0b"/>
+              <text x="40" y="105" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">ENTRÉE (Main)</text>
+
+              <!-- Bras gauche -->
+              <path d="M 180 95 L 250 140" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- Jambe gauche & droite (Sortie) -->
+              <path d="M 135 220 L 125 310 L 110 310" stroke="#ef4444" stroke-width="9" stroke-linecap="round" class="sim-flowing-wire"/>
+              <path d="M 165 220 L 175 310 L 190 310" stroke="#ef4444" stroke-width="9" stroke-linecap="round" class="sim-flowing-wire"/>
+              
+              <text x="150" y="340" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">SORTIE (Pieds / Terre)</text>
+            </svg>
+          </div>
+
+          <div>
+            <div style="font-weight:800; font-size:1rem; color:var(--text-primary); margin-bottom:0.75rem;">Seuils physiologiques normatifs (50 Hz)</div>
+            <div class="ocfo-density-table-wrap" style="margin-bottom:1rem;">
+              <table class="ocfo-density-table">
+                <thead>
+                  <tr>
+                    <th>Intensité</th>
+                    <th>Zone</th>
+                    <th>Effet physiologique sur l'organisme</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>1 [mA]</strong></td><td>AC-1</td><td>Seuil de perception (léger picotement sans danger).</td></tr>
+                  <tr><td><strong>5 [mA]</strong></td><td>AC-2</td><td>Électrisation ressentie, fourmillements.</td></tr>
+                  <tr><td><strong>15 [mA]</strong></td><td>AC-3</td><td>Seuil de contraction musculaire (tétanisation / non-lâcher).</td></tr>
+                  <tr><td><strong>50 [mA]</strong></td><td>AC-3</td><td>Seuil de danger : respiration gênée, asphyxie si prolongé.</td></tr>
+                  <tr style="background:rgba(239, 68, 68, 0.12); color:#fca5a5;">
+                    <td><strong>≥ 80 [mA]</strong></td><td>AC-4</td><td><strong>Seuil mortel :</strong> fibrillation ventriculaire et arrêt cardiaque.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="ocfo-highlight-card">
+              <div class="card-title">⚖️ Décomposition de l'impédance totale de boucle (1000 Ω)</div>
+              • <strong>ZK (Corps humain) :</strong> 750 [Ω] (convention 500 Ω par membre)<br>
+              • <strong>Z1 (Chaussures de sécurité) :</strong> 240 [Ω]<br>
+              • <strong>Z2 (Résistance de contact sol) :</strong> 10 [Ω]<br>
+              <strong>Total :</strong> 1000 [Ω] → Courant de contact IB = 230 V / 1000 Ω = 230 [mA].
+            </div>
+          </div>
+        </div>
+      ` : ''}
+
+      ${activeTab === 'quiz' ? `
+        <!-- Onglet 3 : Micro-Quiz interactif -->
+        <div class="securite-sim-quiz-wrap">
+          <div style="font-weight:800; font-size:1.05rem; color:var(--text-primary); margin-bottom:1rem;">
+            📝 Micro-Quiz d'évaluation des acquis (4 questions)
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:1.25rem;">
+            ${quizQuestions.map((qItem, qIdx) => {
+              const selectedOpt = quizAnswers[qIdx];
+              const isAnswered = selectedOpt !== undefined;
+              const isCorrect = selectedOpt === qItem.correct;
+
+              return `
+                <div style="background:var(--bg-surface-elevated); border:1px solid ${isAnswered ? (isCorrect ? '#10b981' : 'var(--accent-red)') : 'var(--border-subtle)'}; border-radius:8px; padding:1.1rem;">
+                  <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.75rem;">
+                    ${qItem.q}
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    ${qItem.options.map((opt, optIdx) => {
+                      let btnStyle = 'background:var(--bg-app); border:1px solid var(--border-medium); color:var(--text-secondary);';
+                      if (isAnswered) {
+                        if (optIdx === qItem.correct) {
+                          btnStyle = 'background:rgba(16, 185, 129, 0.2); border:1px solid #10b981; color:#10b981; font-weight:700;';
+                        } else if (selectedOpt === optIdx) {
+                          btnStyle = 'background:rgba(239, 68, 68, 0.2); border:1px solid var(--accent-red); color:var(--accent-red); font-weight:700;';
+                        }
+                      }
+                      return `
+                        <button class="sim-quiz-opt-btn" data-q="${qIdx}" data-opt="${optIdx}" style="${btnStyle} padding:0.6rem 0.85rem; border-radius:6px; text-align:left; cursor:pointer; font-size:0.85rem; transition:all 0.15s ease;">
+                          ${opt}
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                  ${isAnswered ? `
+                    <div style="margin-top:0.75rem; font-size:0.82rem; line-height:1.5; color:${isCorrect ? '#10b981' : 'var(--accent-red)'}; background:rgba(0,0,0,0.2); padding:0.65rem; border-radius:6px;">
+                      <strong>${isCorrect ? '✓ Exact !' : '✗ Erreur.'}</strong> ${qItem.explanation}
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <div style="margin-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              ${Object.keys(quizAnswers).length === quizQuestions.length ? `
+                <span style="font-weight:800; font-size:1rem; color:#10b981;">
+                  Score final : ${Object.keys(quizAnswers).filter(k => quizAnswers[k] === quizQuestions[k].correct).length} / ${quizQuestions.length}
+                </span>
+              ` : `
+                <span style="font-size:0.85rem; color:var(--text-muted);">
+                  Répondez aux 4 questions pour valider la simulation.
+                </span>
+              `}
+            </div>
+            <button id="btnValidateSimulation" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--accent-red); color:#fff; font-weight:700; padding:0.65rem 1.25rem; border-radius:8px; border:none; cursor:pointer;" ${Object.keys(quizAnswers).length < quizQuestions.length ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : ''}>
+              <span>Valider la simulation (+25 XP)</span>
+              <span>✓</span>
+            </button>
+          </div>
+        </div>
+      ` : ''}
+
+      <!-- Attribution pédagogique officielle -->
+      <div class="securite-sim-attribution">
+        ℹ️ <strong>Attribution pédagogique :</strong> Inspiration pédagogique : Suva — <em>Stromschlag / Électricité</em> (<a href="https://ssl-server.ch/client/suva/strom/NEU/FR/suva-stromschlag.html" target="_blank" rel="noopener noreferrer" style="color:var(--electric-blue); text-decoration:underline;">suva-stromschlag.html</a>) & Normes électrotechniques suisses (SN EN 61140, OCFo RS 734.2, OIBT RS 734.27). Modélisation et composants vectoriels interactifs originaux ELECBOOK.
+      </div>
+    `;
+
+    // Attachement des gestionnaires d'événements
+    attachEvents();
+  }
+
+  function attachEvents() {
+    // Changement d'onglets
+    container.querySelectorAll('.securite-sim-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeTab = btn.dataset.tab;
+        renderWidget();
+      });
+    });
+
+    // Changement de scénario
+    container.querySelectorAll('.securite-sim-scenario-card').forEach(card => {
+      card.addEventListener('click', () => {
+        currentScenarioIdx = parseInt(card.dataset.scenario, 10);
+        const sc = scenarios[currentScenarioIdx];
+        isPowerOn = sc.powerOn;
+        isDdrActive = sc.ddrActive;
+        isVatChecked = sc.vatTested;
+        isHandTouching = sc.touched;
+        safetySliderVal = sc.state === 'safe' ? 100 : 0;
+        renderWidget();
+      });
+    });
+
+    // Boutons d'action
+    const btnToucher = container.querySelector('#btnToucher');
+    if (btnToucher) {
+      btnToucher.addEventListener('click', () => {
+        isHandTouching = !isHandTouching;
+        renderWidget();
+      });
+    }
+
+    const btnCouper = container.querySelector('#btnCouper');
+    if (btnCouper) {
+      btnCouper.addEventListener('click', () => {
+        isPowerOn = !isPowerOn;
+        if (!isPowerOn) safetySliderVal = 100;
+        else safetySliderVal = 0;
+        renderWidget();
+      });
+    }
+
+    const btnVat = container.querySelector('#btnVat');
+    if (btnVat) {
+      btnVat.addEventListener('click', () => {
+        isVatChecked = true;
+        renderWidget();
+      });
+    }
+
+    const btnDdr = container.querySelector('#btnDdr');
+    if (btnDdr) {
+      btnDdr.addEventListener('click', () => {
+        isDdrActive = !isDdrActive;
+        renderWidget();
+      });
+    }
+
+    // Slider de sécurité
+    const slider = container.querySelector('#simSafetySlider');
+    if (slider) {
+      slider.addEventListener('input', (e) => {
+        safetySliderVal = parseInt(e.target.value, 10);
+        if (safetySliderVal >= 50) {
+          isPowerOn = false;
+        } else {
+          isPowerOn = true;
+        }
+        renderWidget();
+      });
+    }
+
+    // Micro-quiz options
+    container.querySelectorAll('.sim-quiz-opt-btn').forEach(optBtn => {
+      optBtn.addEventListener('click', () => {
+        const qIdx = parseInt(optBtn.dataset.q, 10);
+        const optIdx = parseInt(optBtn.dataset.opt, 10);
+        if (quizAnswers[qIdx] === undefined) {
+          quizAnswers[qIdx] = optIdx;
+          renderWidget();
+        }
+      });
+    });
+
+    // Validation finale de la simulation
+    const btnValSim = container.querySelector('#btnValidateSimulation');
+    if (btnValSim) {
+      btnValSim.addEventListener('click', () => {
+        try {
+          localStorage.setItem('elecbook_securite_simulation_done', 'true');
+        } catch (e) {}
+        btnValSim.textContent = '✓ Simulation enregistrée avec succès !';
+        btnValSim.style.background = '#10b981';
+      });
+    }
+  }
+
+  // Rendu initial
+  renderWidget();
   return container;
 }
+
+// Alias pour compatibilité ascendante
+export function createDangerWidget() {
+  return createSecuriteSimulationWidget();
+}
+
 
 // ----------------------------------------------------------------------------
 // 3. Chaîne de normalisation NIBT & Symboles (Module N — N0)
