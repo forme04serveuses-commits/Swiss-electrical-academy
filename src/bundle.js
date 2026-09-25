@@ -11931,7 +11931,7 @@
       <!-- Header Hero Card OCFo (Section 7) -->
       <header class="ocfo-hub-hero" role="region" aria-label="En-tête du parcours RS 734.2">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE · COURANT FORT</span>
+          <span class="ocfo-hub-tag">Droit interne</span>
           <span class="ocfo-hub-ref">RS 734.2</span>
         </div>
 
