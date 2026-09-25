@@ -752,6 +752,95 @@
     "fullTitle": "Directive ESTI n° 407 — Activités sur ou à proximité des installations électriques"
   };
 
+
+  // Informations officielles et structure en 7 chapitres : Sécurité électrique
+  // Source de vérité : Sécurité électrique.pdf (18 pages, 7 chapitres)
+  // Structure de référence calquée sur RS 734.0 — LIE
+  const SECURITE_ELECTRIQUE_INFO = {
+    "id": "securite-electrique",
+    "code": "Sécurité électrique",
+    "title": "Sécurité électrique",
+    "shortTitle": "Sécurité",
+    "subtitle": "7 leçons officielles · Structure de référence calquée sur RS 734.0 — LIE",
+    "tag": "Sécurité vitale",
+    "fullTitle": "Sécurité électrique — Principes fondamentaux, analyse des risques, protections et cadre réglementaire",
+    "description": "Référentiel officiel suisse de prévention des accidents électriques. De la physique des chocs corporels (Ub, Ib, Uf, If) aux seuils physiologiques, protections différentielles DDR, maintenance des machines (SNG 482638), contrôles légaux OIBT (1 à 20 ans), habilitations NIBT/SN EN 60204-1 et matrice d'intervention.",
+    "totalLessons": 7,
+    "lessons": [
+      {
+        "id": "sec-01",
+        "slug": "lecon-1",
+        "number": "1",
+        "title": "Chapitre 1 — Principes fondamentaux de prévention dans le pratique",
+        "subtitle": "Règles techniques, danger inodore et invisible de l'électricité, profanes et spécialistes",
+        "duration": "6 min",
+        "summary": "Définition de la sécurité des installations selon les règles techniques, dangerosité imperceptible de l'énergie électrique, pièges de la routine et délimitation stricte entre utilisateurs profanes et électriciens de métier."
+      },
+      {
+        "id": "sec-02",
+        "slug": "lecon-2",
+        "number": "2",
+        "title": "Chapitre 2 — Identification des risques et origines des accidents",
+        "subtitle": "Situations à risque, typologie des blessures, seuils AC/DC, grandeurs Ub/Ib/Uf/If, niveaux de tension et incendies",
+        "duration": "10 min",
+        "summary": "Analyse des situations à haut risque, norme SN EN 61140, seuils physiologiques corporels (perception, contraction, fibrillation), exemple numérique (230 V, 1000 Ω, 230 mA, coupure < 400 ms), TBT/BT/HT et causes directes des incendies d'origine électrique en Suisse."
+      },
+      {
+        "id": "sec-03",
+        "slug": "lecon-3",
+        "number": "3",
+        "title": "Chapitre 3 — Dispositifs de protection et sécurité des équipements",
+        "subtitle": "Notions d'électrotechnique, DDR/RCD, coupe-surintensité et classification des matériels I, II et 0",
+        "duration": "8 min",
+        "summary": "Fonctionnement du différentiel (DDR 30 mA, historique chantiers 1976), limites des coupe-surintensité (absence de protection corporelle) et classification des appareils (Classe 0 interdite, Classe I mise à la terre, Classe II double isolation)."
+      },
+      {
+        "id": "sec-04",
+        "slug": "lecon-4",
+        "number": "4",
+        "title": "Chapitre 4 — Directives de sécurité pour le quotidien",
+        "subtitle": "Les 4 règles préventives d'usage au quotidien et adaptateurs DDR",
+        "duration": "5 min",
+        "summary": "Bannir les équipements défectueux, vérifications préalables avant mise en service, raccordement sous protection DDR et mise hors service immédiate en cas de comportement anormal."
+      },
+      {
+        "id": "sec-05",
+        "slug": "lecon-5",
+        "number": "5",
+        "title": "Chapitre 5 — Exigences de maintenance et contrôles réglementaires",
+        "subtitle": "Maintenance machines (SNG 482638), contrôles légaux OIBT (périodicités 1 à 20 ans) et examen sensoriel visuel",
+        "duration": "8 min",
+        "summary": "Guide SNG 482638 pour matériel portatif, responsabilité légale du propriétaire (OIBT art. 3-5), tableau officiel des périodicités (1, 3, 5, 10, 20 ans) et diagnostic sensoriel à 4 sens (vue, toucher, ouïe, odorat)."
+      },
+      {
+        "id": "sec-06",
+        "slug": "lecon-6",
+        "number": "6",
+        "title": "Chapitre 6 — Cadre réglementaire des interventions sur des installations et des machines",
+        "subtitle": "Qualifications NIBT/OIBT vs SN EN 60204-1, limites strictes du profane, autorisations ESTI et 5+5 règles SUVA",
+        "duration": "9 min",
+        "summary": "Référentiels du personnel (personne compétente, instruite, conseiller en sécurité, personne avertie), interdiction professionnelle absolue au profane, régime des 4 autorisations ESTI et consignes vitales de coupure."
+      },
+      {
+        "id": "sec-07",
+        "slug": "lecon-7",
+        "number": "7",
+        "title": "Chapitre 7 — Synthèse : aperçu des activités",
+        "subtitle": "Matrice d'attribution des activités selon les autorisations requises (OIBT art. 7 à 15 vs SN EN 60204-1)",
+        "duration": "7 min",
+        "summary": "Matrice décisionnelle des 8 familles d'activités électriques : distribution générale, lignes d'alimentation de machines, interventions sur automates et travaux de maintenance."
+      }
+    ],
+    "finalEvaluation": {
+      "id": "sec-evaluation-finale",
+      "slug": "evaluation-finale",
+      "title": "Évaluation finale — Sécurité électrique",
+      "subtitle": "Certification officielle couvrant les 7 chapitres",
+      "duration": "20 min",
+      "summary": "10 questions officielles représentatives couvrant l'ensemble des 7 chapitres du guide de sécurité électrique. Seuil d'admission fixé à 80% pour l'obtention de la validation."
+    }
+  };
+
   const ACADEMY_MODULES = [
     // --------------------------------------------------------------------------
     // MODULE A — Dispositions légales
@@ -5579,129 +5668,825 @@
     },
 
     // --------------------------------------------------------------------------
-    // MODULE B — Dangers de l’électricité
+    // MODULE B — Dangers de l’électricité (Sécurité électrique — 7 chapitres officiels)
+    // Source de vérité : Sécurité électrique.pdf
+    // Modèle structurel de référence : RS 734.0 — LIE
     // --------------------------------------------------------------------------
     {
       id: "B",
       code: "B",
       title: "Dangers de l’électricité",
-      countLabel: "1 formation",
-      description: "Analyse des risques d'électrisation, grandeurs physiques de contact (Ub, Ib, Uf, If), seuils physiologiques corporels et 5 règles vitales de sécurité.",
+      countLabel: "7 leçons",
+      description: "Analyse complète des risques électriques : grandeurs physiques de contact (Ub, Ib, Uf, If), seuils physiologiques corporels, DDR et coupe-surintensité, directives du quotidien, maintenance OIBT et cadre réglementaire des habilitations.",
       badgeTheme: "danger",
       formations: [
         {
-          id: "securite-electrique",
-          routeId: "securite-electrique",
-          code: "Sécurité électrique",
-          title: "Sécurité électrique",
-          subtitle: "Grandeurs physiques de défaut, seuils physiologiques du corps humain et 5 règles vitales",
-          status: "Disponible",
-          duration: "8 min",
-          tag: "Sécurité vitale",
-          xpReward: 40,
-          objective: "Identifier avec précision les grandeurs électriques de défaut (Ub, Ib, Uf, If), comprendre la réaction de l'organisme humain selon l'intensité du courant et appliquer rigoureusement les 5 règles de sécurité.",
-          introduction: "Le courant électrique présente un danger invisible et redoutable. Dès lors qu'un corps humain entre en contact avec une pièce sous tension, il ferme un circuit électrique et devient conducteur.",
-          contentSections: [
-            {
-              title: "1. Notions physiques fondamentales en situation de défaut",
-              text: `En électrotechnique de sécurité, on distingue rigoureusement :
-  • Ub (Tension de contact - Berührungsspannung) :
-    Partie de la tension de défaut susceptible d'être pontée par une personne touchant une masse métallique et le sol ou deux éléments simultanément conducteurs.
-
-  • Ib (Courant de contact - Berührungsstrom) :
-    Courant électrique qui traverse effectivement le corps humain lors du contact : Ib = Ub / Rb (où Rb est la résistance électrique interne et superficielle du corps, conventionnellement estimée à 1000 Ω en milieu sec sous 230 V).
-
-  • Uf (Tension de défaut - Fehlerspannung) :
-    Tension apparaissant entre une masse conductrice et une terre de référence lointaine lors d'un claquage d'isolement.
-
-  • If (Courant de défaut - Fehlerstrom) :
-    Courant total s'écoulant au point de défaut d'isolement vers la terre ou le conducteur de protection PE.`
-            },
-            {
-              title: "2. Seuils physiologiques d'effet du courant alternatif (50 Hz)",
-              text: `Les effets sur le corps humain dépendent de l'intensité (mA), de la trajectoire (main-main, main-pied) et de la durée d'exposition :
-  • 0.5 mA — Seuil de perception :
-    Sensation de léger picotement ou de chatouillement à l'extrémité des doigts. Aucun réflexe musculaire dangereux.
-
-  • 10 mA — Seuil de non-lâcher :
-    Contraction musculaire tétanisante involontaire. La personne ne peut plus ouvrir la main pour relâcher le conducteur saisi.
-
-  • 30 mA — Seuil d'asphyxie respiratoire :
-    Paralysie des muscles thoraciques et du diaphragme si le contact se prolonge. Risque d'étouffement rapide. C'est le seuil maximal de déclenchement imposé pour les DDR de protection complémentaire des personnes (30 mA).
-
-  • 50 mA — Seuil de fibrillation ventriculaire :
-    Dérèglement chaotique et irréversible des contractions du cœur. Les ventricules ne pompent plus le sang : arrêt circulatoire mortel en quelques minutes sans réanimation rapide.`
-            },
-            {
-              title: "3. Les 5 règles vitales de sécurité (SUVA / ESTI)",
-              text: `Avant toute intervention sur une installation électrique ou à proximité de celle-ci, les 5 règles vitales doivent être appliquées dans l'ordre chronologique strict :
-  1. Déclencher et couper sur tous les pôles (séparation visible ou garantie de l'alimentation).
-  2. Sécuriser contre le réenclenchement inopiné (cadenassage, condamnation d'organes, pancartes).
-  3. Vérifier l'absence de tension sur tous les conducteurs à l'aide d'un vérificateur d'absence de tension (VAT) préalablement testé.
-  4. Mettre à terre et en court-circuit (obligatoire en haute tension et pour les lignes aériennes basse tension).
-  5. Protéger et couvrir les parties voisines restées sous tension (écrans isolants, nappes en caoutchouc).`
-            }
-          ],
-          interactiveWidget: "danger-widget",
-          practicalExample: "Sous une tension de contact Ub = 230 V avec une impédance corporelle Rb = 1000 Ω, le courant corporel atteint immédiatement Ib = 230 V / 1000 Ω = 230 mA ! Cette valeur est presque 5 fois supérieure au seuil létal de fibrillation cardiaque (50 mA). L'installation doit couper en une fraction de seconde (< 0.4 s en schéma TN).",
-          importantPoint: "Un disjoncteur standard (ex: B16A ou C16A) protège les câbles contre les surintensités, mais ne protège PAS une personne contre l'électrisation ! Seul un dispositif à courant différentiel résiduel (DDR ≤ 30 mA) assure la protection complémentaire des personnes contre les contacts directs et indirects.",
-          synthesis: "La sécurité électrique repose sur deux piliers : des dispositifs techniques fiables (coupure automatique par DDR et mise à la terre) et une discipline professionnelle irréprochable (respect absolu des 5 règles vitales).",
-          quiz: [
-            {
-              id: "q_b00_1",
-              type: "single",
-              question: "Que représente le symbole électrique « Ub » dans l'analyse de sécurité ?",
-              options: [
-                "Le courant s'écoulant au point de défaut",
-                "La tension de contact susceptible d'être pontée par une personne",
-                "La tension nominale du réseau de distribution",
-                "La résistance de boucle de terre"
+              "id": "sec-01",
+              "routeId": "securite-electrique/lecon-1",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 1,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 1",
+              "title": "Chapitre 1 — Principes fondamentaux de prévention dans le pratique",
+              "subtitle": "Règles techniques, danger inodore et invisible de l'électricité, profanes et spécialistes",
+              "status": "Disponible",
+              "duration": "6 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Assimiler les principes fondamentaux de prévention : le respect des règles techniques pour supprimer tout danger en conditions normales et de défaut prévisible, la nature silencieuse et inodore du courant électrique, la vigilance face aux pièges de la routine et la délimitation stricte des compétences entre profanes et spécialistes.",
+              "introduction": "La sécurité des installations électriques exige que les ouvrages soient réalisés et entretenus selon les règles techniques de l'art, garantissant l'absence de tout danger pour les personnes, les animaux et les choses ainsi que l'absence d'état dangereux en cas de défaut prévisible. L'électricité ne se manifestant ni par la vue ni par l'odorat ni par le bruit, sa dangerosité est fréquemment sous-estimée. Ce premier chapitre pose les jalons essentiels de la culture de prévention et de la répartition des responsabilités.",
+              "contentSections": [
+                    {
+                          "title": "1. Règles techniques et définition de la sécurité des installations",
+                          "text": "<div class=\"ocfo-legal-badge\">Principes fondamentaux de prévention</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa <strong>sécurité des installations électriques</strong> définit que les installations ou les parties d’installations sont réalisées ou entretenues selon les règles techniques.\n</p>\n<div class=\"ocfo-summary-box\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"box-title\">🎯 EXIGENCE FONDAMENTALE</div>\n  Ce qui signifie qu’<strong>aucun danger pour les personnes, les animaux et les choses</strong> et <strong>aucun état dangereux en cas de défaut prévisible</strong> ne doivent subsister sur une installation conforme.\n</div>"
+                    },
+                    {
+                          "title": "2. Nature invisible, silencieuse et inodore du danger électrique",
+                          "text": "<div class=\"ocfo-legal-badge\">Dangerosité imperceptible</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLe danger dû à l’électricité n’est pas identifiable car elle est <strong>silencieuse, inodore et invisible</strong>. Nous pouvons sentir le courant qu’à travers ses effets.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nL'omniprésence de l'électricité dans les activités quotidiennes conduit fréquemment à sous-estimer sa dangerosité. Le stress et la précipitation incitent à relâcher la vigilance face à une forme d'énergie invisible et inodore. Un simple isolant endommagé ou un câble détérioré peut pourtant s'avérer mortel.\n</p>"
+                    },
+                    {
+                          "title": "3. Cibles de la prévention et répartition des rôles (Profanes vs Spécialistes)",
+                          "text": "<div class=\"ocfo-legal-badge\">Intervenants et responsabilités</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa prévention s'adresse tant aux <strong>utilisateurs profanes</strong> qu'aux <strong>intervenants qualifiés</strong>, chez qui la routine augmente les risques d'inattention.\n</p>\n<div class=\"ocfo-warning-box\">\n  <strong>⚠️ RÈGLE DE COMPÉTENCE EXCLUSIVE :</strong><br>\n  Bien que la remise en état et la réparation des installations relèvent <strong>exclusivement d'électriciens de métier</strong>, chaque utilisateur doit être en mesure d'identifier une situation à risque pour faire intervenir un spécialiste.\n</div>"
+                    }
               ],
-              correctAnswer: 1,
-              explanation: "Ub (Berührungsspannung) est la tension de contact qui apparaît entre deux parties simultanément accessibles lors d'un défaut."
-            },
-            {
-              id: "q_b00_2",
-              type: "single",
-              question: "À partir de quel seuil d'intensité en courant alternatif 50 Hz le risque de fibrillation ventriculaire irréversible apparaît-il ?",
-              options: [
-                "0.5 mA",
-                "10 mA",
-                "30 mA",
-                "50 mA"
+              "practicalExample": "Sur un lieu de travail ou dans la vie quotidienne, la routine et la précipitation font souvent oublier qu'un conducteur dénudé sous tension ne dégage aucune odeur, aucun bruit et aucun signal visuel d'avertissement avant le contact fatal.",
+              "importantPoint": "La remise en état et la réparation des installations électriques relèvent exclusivement d'électriciens de métier. L'utilisateur profane a pour seule mission d'identifier les situations à risque et de faire appel à un spécialiste.",
+              "synthesis": "La prévention électrique repose sur le respect absolu des règles techniques, la conscience permanente du caractère imperceptible du danger électrique et le respect scrupuleux des prérogatives professionnelles.",
+              "quiz": [
+                    {
+                          "id": "q_sec01_1",
+                          "type": "single",
+                          "question": "Selon les principes de sécurité des installations électriques, que signifie le respect des règles techniques ?",
+                          "options": [
+                                "Réduire au minimum possible le coût des installations",
+                                "Qu'aucun danger n'existe pour les personnes, les animaux et les choses, et aucun état dangereux en cas de défaut prévisible",
+                                "Autoriser les utilisateurs profanes à réparer les disjoncteurs",
+                                "Remplacer les câbles tous les cinq ans"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Selon la définition officielle du référentiel officiel, la sécurité des installations définit qu'elles sont réalisées ou entretenues selon les règles techniques, ce qui signifie qu'aucun danger pour les personnes, animaux et choses et aucun état dangereux en cas de défaut prévisible ne doit subsister.",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    },
+                    {
+                          "id": "q_sec01_2",
+                          "type": "single",
+                          "question": "Pourquoi le danger dû à l'électricité n'est-il pas directement identifiable par nos sens ?",
+                          "options": [
+                                "Parce qu'elle dégage une forte odeur persistante",
+                                "Parce qu'elle émet des vibrations audibles à distance",
+                                "Parce qu'elle est silencieuse, inodore et invisible (on ne sent le courant qu'à travers ses effets)",
+                                "Parce qu'elle change de couleur lors d'un court-circuit"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Le référentiel officiel rappelle formellement : « Le danger dû à l'électricité n'est pas identifiable car elle est silencieuse, inodore et invisible. Nous pouvons sentir le courant qu'à travers ses effets. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    },
+                    {
+                          "id": "q_sec01_3",
+                          "type": "single",
+                          "question": "À qui relève exclusivement la remise en état et la réparation des installations électriques ?",
+                          "options": [
+                                "À chaque utilisateur profane après lecture de la notice",
+                                "Exclusivement à des électriciens de métier",
+                                "Au propriétaire du bâtiment sans formation préalable",
+                                "Aux services municipaux de voirie"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel stipule : « Bien que la remise en état et la réparation des installations relèvent exclusivement d'électriciens de métier, chaque utilisateur doit être en mesure d'identifier une situation à risque pour faire intervenir un spécialiste. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    },
+                    {
+                          "id": "q_sec01_4",
+                          "type": "single",
+                          "question": "Quel effet comportemental la routine produit-elle chez les intervenants qualifiés selon le document ?",
+                          "options": [
+                                "Elle diminue la vitesse de travail",
+                                "Elle augmente les risques d'inattention",
+                                "Elle élimine tout risque d'accident électrique",
+                                "Elle dispense du port des équipements de protection individuelle"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le document précise expressément que la prévention s'adresse tant aux utilisateurs profanes qu'aux intervenants qualifiés, « chez qui la routine augmente les risques d'inattention ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    }
               ],
-              correctAnswer: 3,
-              explanation: "Dès 50 mA en alternatif 50 Hz, le risque de fibrillation cardiaque irréversible survient, rendant le choc potentiellement mortel."
-            },
-            {
-              id: "q_b00_3",
-              type: "single",
-              question: "Quelle est la 3e règle vitale de sécurité parmi les 5 règles officielles ESTI / SUVA ?",
-              options: [
-                "Mettre à terre et en court-circuit",
-                "Vérifier l'absence de tension",
-                "Déclencher et couper sur tous les pôles",
-                "Couvrir les parties voisines"
+              "nextLessonId": "sec-02"
+        },
+        {
+              "id": "sec-02",
+              "routeId": "securite-electrique/lecon-2",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 2,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 2",
+              "title": "Chapitre 2 — Identification des risques et origines des accidents",
+              "subtitle": "Situations à risque, typologie des blessures, seuils AC/DC, grandeurs Ub/Ib/Uf/If, niveaux de tension et incendies",
+              "status": "Disponible",
+              "duration": "10 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "interactiveWidget": "danger-widget",
+              "objective": "Maîtriser les facteurs de gravité des chocs électriques selon la norme SN EN 61140, distinguer électrisation, brûlures et accidents secondaires, assimiler les grandeurs de contact (Ub, Ib, Uf, If), comprendre les zones de durée d'action AC et DC, et identifier les causes majeures d'incendies électriques en Suisse.",
+              "introduction": "Ce chapitre fondamental analyse en détail les mécanismes de l'accident électrique : les situations à risque élevé, les atteintes physiques (électrisation, brûlures thermiques, chutes secondaires), la règle fondamentale de la norme SN EN 61140, l'évaluation quantitative du courant corporel (loi d'Ohm Ib = U/Z) et les seuils d'action physiologique en courant alternatif et continu, jusqu'aux arcs électriques (> 1000 °C) et incendies.",
+              "contentSections": [
+                    {
+                          "title": "2.1 Situations à risque élevé",
+                          "text": "<div class=\"ocfo-legal-badge\">Circonstances de contact direct</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa mise en danger survient principalement lors d'un contact direct avec un élément sous tension. Voici les exemples majeurs identifiés dans la pratique :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Absence ou détérioration :</strong> des capots, couvercles et boîtiers d'isolation ;</li>\n  <li><strong>Maniement d'équipements défectueux :</strong> ou des têtes de fusibles endommagées ;</li>\n  <li><strong>Remplacement à risque :</strong> d'ampoules ou de fusibles effectué sans les précautions requises ;</li>\n  <li><strong>Facteurs environnementaux aggravants :</strong> présence d'humidité, de sols mouillés ou le fait de travailler pieds nus, ce qui renforce considérablement la liaison à la terre et augmente le risque d'électrocution mortelle.</li>\n</ul>"
+                    },
+                    {
+                          "title": "2.2 Typologie des blessures",
+                          "text": "<div class=\"ocfo-legal-badge\">3 catégories d'atteintes physiques</div>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:28%;\">Catégorie</th>\n        <th style=\"width:72%;\">Description et mécanisme physiologique</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>1. L'électrisation</strong></td>\n        <td>Passage du courant à travers l'organisme entraînant des brûlures internes et des perturbations du rythme cardiaque (pouvant conduire à l'électrocution mortelle).</td>\n      </tr>\n      <tr>\n        <td><strong>2. Les brûlures thermiques</strong></td>\n        <td>Occasionnées par le contact avec des surfaces surchauffées ou par le rayonnement intense d'un arc électrique.</td>\n      </tr>\n      <tr>\n        <td><strong>3. Les accidents secondaires</strong></td>\n        <td>Traumatismes consécutifs à la réaction corporelle réflexe au choc (tels qu'une chute depuis un escabeau ou une échelle).</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    },
+                    {
+                          "title": "2.3 Conséquences de l’intensité sur le corps humain (SN EN 61140)",
+                          "text": "<div class=\"ocfo-legal-badge\">Règle fondamentale SN EN 61140 & Résistance corporelle</div>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">⚖️ Règle fondamentale selon SN EN 61140</div>\n  Toutes parties actives dangereuses ne doivent pas être accessibles et les parties conductrices accessibles ne doivent pas devenir des parties actives dangereuses dans des conditions normales ni dans des conditions de premier défaut.\n</div>\n<p style=\"margin-bottom:0.65rem; line-height:1.6; color:var(--text-secondary);\">\nLes facteurs intervenant sur la gravité d’un choc électrique sur l’organisme humain dépendent :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li>L’intensité du courant traversant l’individu (dépendant de la tension de contact et de la résistance du corps humain) ;</li>\n  <li>La durée du contact ;</li>\n  <li>Le trajet du courant dans l’organisme ;</li>\n  <li>Genre de courant et de fréquence (le courant alternatif 50 Hz crée davantage de dommage que le courant continu car il provoque hâtivement des crampes musculaires ou des fibrillations ventriculaires) ;</li>\n  <li>L’environnement.</li>\n</ul>\n<p style=\"margin-bottom:0.65rem; line-height:1.6; color:var(--text-secondary);\">\nLa résistance du corps humain dépend principalement de la nature de la peau, de la constitution corporelle et du trajet du courant dans le corps. De manière générale dans la pratique, nous prenons une <strong>valeur indicative de 1000 [Ω]</strong> pour la résistance d’un corps humain (convention : 500 Ω par membre).\n</p>\n\n<div class=\"ocfo-procedure-box\" style=\"margin-bottom:0.85rem; padding:0.85rem; background:var(--bg-surface); border:1px solid var(--border-medium); border-radius:8px;\">\n  <strong style=\"color:var(--text-primary); display:block; margin-bottom:0.5rem;\">⚡ Seuils indicatifs du courant alternatif (50 Hz) :</strong>\n  <ul style=\"margin:0 0 0 1.2rem; line-height:1.6; font-size:0.88rem; color:var(--text-secondary);\">\n    <li><strong>1 [mA] :</strong> Seuil de perception</li>\n    <li><strong>5 [mA] :</strong> Électrisation, fourmillements</li>\n    <li><strong>15 [mA] :</strong> Seuil de contraction musculaire</li>\n    <li><strong>50 [mA] :</strong> Seuil de danger, respiration gênée</li>\n    <li><strong>À partir de 80 [mA] :</strong> Seuil mortel (fibrillation ventriculaire)</li>\n  </ul>\n</div>\n\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:20%;\">Zone AC</th>\n        <th style=\"width:80%;\">Durée d'action du courant alternatif (50 Hz)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr><td><strong>AC-1</strong></td><td>En général pas d’effets / pas de réaction.</td></tr>\n      <tr><td><strong>AC-2</strong></td><td>En général pas d’effets physiologiques nocifs.</td></tr>\n      <tr><td><strong>AC-3</strong></td><td>Effets physiologiques. En général hypertension, crampes musculaires, troubles respiratoires.</td></tr>\n      <tr><td><strong>AC-4</strong></td><td>Effets pathophysiologiques tels qu’arrêt du cœur, arrêt de la respiration, brûlures graves ou autres dommages cellulaires.</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class=\"ocfo-procedure-box\" style=\"margin-bottom:0.85rem; padding:0.85rem; background:var(--bg-surface); border:1px solid var(--border-medium); border-radius:8px;\">\n  <strong style=\"color:var(--text-primary); display:block; margin-bottom:0.5rem;\">⚡ Seuils indicatifs et zones du courant continu (DC) :</strong>\n  <ul style=\"margin:0 0 0.5rem 1.2rem; line-height:1.6; font-size:0.88rem; color:var(--text-secondary);\">\n    <li><strong>Jusqu'à 2 [mA] :</strong> Seuil de perception</li>\n    <li><strong>100 [mA] :</strong> Seuil de douleur, sans crampes musculaires</li>\n    <li><strong>À partir de 100 [mA] :</strong> Seuil de tétanisation musculaire et Seuil mortel</li>\n  </ul>\n  <table class=\"ocfo-density-table\" style=\"margin-top:0.5rem;\">\n    <thead><tr><th>Zone DC</th><th>Effets physiologiques du courant continu</th></tr></thead>\n    <tbody>\n      <tr><td><strong>DC-1</strong></td><td>Légère sensation de picotement possible à l’établissement, à l’interruption ou à des altérations rapides.</td></tr>\n      <tr><td><strong>DC-2</strong></td><td>En général pas de réaction pathophysiologique.</td></tr>\n      <tr><td><strong>DC-3</strong></td><td>En général pas de danger de fibrillation, en revanche apparition de fortes réactions musculaires incontrôlées mettant en danger la santé de manière passagère ou définitive.</td></tr>\n      <tr><td><strong>DC-4</strong></td><td>Effets pathophysiologiques tels qu’arrêt du cœur, arrêt de la respiration, brûlures graves ou autres dommages cellulaires.</td></tr>\n    </tbody>\n  </table>\n</div>\n\n<div class=\"ocfo-procedure-box\" style=\"margin-bottom:0.85rem; padding:1rem; background:rgba(239, 68, 68, 0.05); border:1px solid rgba(239, 68, 68, 0.3); border-radius:8px;\">\n  <div style=\"font-weight:700; color:var(--accent-red); margin-bottom:0.5rem;\">📐 Exemple de calcul numérique concret :</div>\n  <p style=\"margin-bottom:0.5rem; font-size:0.88rem; line-height:1.5;\">\n  Sous une tension de défaut <strong>UF = 230 [VAC]</strong>, plusieurs impédances entrent en jeu :<br>\n  • Impédance du corps humain <strong>ZK : 750 [Ω]</strong> ;<br>\n  • Impédance due aux chaussures <strong>Z1 : 240 [Ω]</strong> ;<br>\n  • Impédance du sol <strong>Z2 : 10 [Ω]</strong>.<br>\n  En additionnant ces résistances, on obtient une <strong>impédance totale de 1000 [Ω]</strong> pour le circuit à la terre et un <strong>courant de contact IB de 230 [mA]</strong> (0.23 [A]).<br>\n  <strong>Exigence temporelle vitale :</strong> selon les courbes de sécurité, il est essentiel que le courant soit <strong>coupé en moins de 400 [ms]</strong> pour éviter des conséquences graves, voire mortelles.\n  </p>\n</div>\n\n<div class=\"ocfo-density-table-wrap\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Grandeur</th>\n        <th style=\"width:75%;\">Définition officielle</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Tension de contact Ub</strong></td>\n        <td>Tension entre des parties conductrices quand elles sont touchées simultanément par une personne ou un animal.</td>\n      </tr>\n      <tr>\n        <td><strong>Courant de contact Ib</strong></td>\n        <td>Courant électrique passant dans le corps humain ou animal lorsqu'il est en contact avec une ou plusieurs parties accessibles d'une installation électrique ou de matériels électriques.</td>\n      </tr>\n      <tr>\n        <td><strong>Tension de défaut Uf</strong></td>\n        <td>Tension entre un point de défaut donné et la terre de référence, consécutivement à un défaut de l’isolation.</td>\n      </tr>\n      <tr>\n        <td><strong>Courant de défaut If</strong></td>\n        <td>Courant s’écoulant en un point de défaut donné, consécutivement à un défaut de l’isolation.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    },
+                    {
+                          "title": "2.4 Niveaux de tension et risque d’arc électrique",
+                          "text": "<div class=\"ocfo-legal-badge\">Domaines de tension & Définition du fort courant</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nEn Suisse, la réglementation et la normalisation électrotechnique classent les installations selon trois domaines de tension distincts :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th>Domaine</th>\n        <th>Tension alternative (AC)</th>\n        <th>Tension continue (DC)</th>\n        <th>Appréciation du risque</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Très basse tension (TBT)</strong></td>\n        <td>≤ 50 [VAC]</td>\n        <td>≤ 120 [VDC]</td>\n        <td>Considérée sans danger direct en milieu sec, mais un passage dangereux reste possible si peau mouillée ou sol humide.</td>\n      </tr>\n      <tr>\n        <td><strong>Basse tension (BT)</strong></td>\n        <td>&gt; 50 et jusqu'à 1000 [VAC]</td>\n        <td>&gt; 120 et jusqu'à 1500 [VDC]</td>\n        <td>Risque permanent de passage d'un courant dangereux à travers l'organisme. Tensions suisses usuelles : 230 V monophasé / 400 V triphasé.</td>\n      </tr>\n      <tr>\n        <td><strong>Haute tension (HT)</strong></td>\n        <td>&gt; 1000 [VAC]</td>\n        <td>&gt; 1500 [VDC]</td>\n        <td>Amorçage à distance sans contact direct.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<div class=\"ocfo-warning-box\" style=\"margin-bottom:0.85rem;\">\n  <strong>⚡ DOUBLE MODE D'ACTION DU COURANT & ARCS ÉLECTRIQUES :</strong><br>\n  1. <strong>Traversée du corps humain :</strong> électrisation ou électrocution létale dès de très faibles intensités.<br>\n  2. <strong>Arcs électriques de court-circuit :</strong> dégagement d'une température <strong>supérieure à 1000 [°C]</strong>, entraînant de graves brûlures thermiques immédiates.<br>\n  • <strong>Risque critique sur accumulateurs :</strong> la très forte densité énergétique des batteries peut déclencher un arc électrique critique même en très basse tension (&lt; 50 VAC / &lt; 120 VDC).<br>\n  • <strong>Définition légale d'une installation à fort courant :</strong> toute installation présentant un <strong>courant de service supérieur à 2 ampères</strong> est considérée comme une installation électrique à fort courant, quel que soit son niveau de tension.\n</div>"
+                    },
+                    {
+                          "title": "2.5 Déclenchement des incendies d’origine électrique",
+                          "text": "<div class=\"ocfo-legal-badge\">Statistiques et causes d'incendies</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nEn Suisse, <strong>un quart des incendies est imputable au courant électrique</strong>, générant un coût annuel d'environ <strong>50 millions de francs</strong>.\n</p>\n<p style=\"margin-bottom:0.65rem; line-height:1.6; color:var(--text-secondary);\">\nLes causes directes associent :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li>Des défaillances techniques entraînant des fuites de courant (courants différentiels résiduels) ;</li>\n  <li>La surcharge mécanique ou électrique d'outils portatifs conduisant à une surchauffe ;</li>\n  <li>Des défauts de serrage au niveau des bornes ou une isolation détériorée.</li>\n</ul>"
+                    }
               ],
-              correctAnswer: 1,
-              explanation: "L'ordre strict est : 1. Déclencher, 2. Sécuriser contre le réenclenchement, 3. Vérifier l'absence de tension, 4. Mettre à terre et en court-circuit, 5. Couvrir les parties voisines."
-            },
-            {
-              id: "q_b00_4",
-              type: "single",
-              question: "Quelle est la sensibilité maximale d'un disjoncteur différentiel (DDR) destiné à la protection complémentaire des personnes ?",
-              options: [
-                "10 mA",
-                "30 mA",
-                "100 mA",
-                "300 mA"
+              "practicalExample": "Sous une tension de défaut UF = 230 VAC, une impédance globale de 1000 Ω (corps 750 Ω + chaussures 240 Ω + sol 10 Ω) engendre un courant corporel de 230 mA, soit près de trois fois le seuil mortel de 80 mA. La coupure doit obligatoirement intervenir en moins de 400 ms.",
+              "importantPoint": "Toute installation présentant un courant de service supérieur à 2 ampères est classée comme installation à fort courant quel que soit son niveau de tension, et peut générer des arcs électriques destructeurs à plus de 1000 °C.",
+              "synthesis": "La gravité d'un choc dépend de l'intensité, de la durée et du trajet. Dès 50 VAC en alternatif, le danger est permanent. En Suisse, 1 incendie sur 4 est d'origine électrique.",
+              "quiz": [
+                    {
+                          "id": "q_sec02_1",
+                          "type": "single",
+                          "question": "Selon la norme SN EN 61140, quelle est la règle fondamentale de protection contre les chocs électriques ?",
+                          "options": [
+                                "Toutes les parties métalliques doivent être peintes en jaune",
+                                "Toutes parties actives dangereuses ne doivent pas être accessibles et les parties conductrices accessibles ne doivent pas devenir des parties actives dangereuses en conditions normales ou de premier défaut",
+                                "Les installations doivent fonctionner uniquement en très basse tension",
+                                "Tout choc électrique inférieur à 230 V est considéré comme inoffensif"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La norme SN EN 61140 stipule que toutes parties actives dangereuses ne doivent pas être accessibles et les parties conductrices accessibles ne doivent pas devenir des parties actives dangereuses ni en conditions normales ni en conditions de premier défaut.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec02_2",
+                          "type": "single",
+                          "question": "Pourquoi le courant alternatif 50 Hz crée-t-il davantage de dommage que le courant continu de même intensité ?",
+                          "options": [
+                                "Parce qu'il chauffe dix fois plus les conducteurs",
+                                "Parce qu'il provoque hâtivement des crampes musculaires ou des fibrillations ventriculaires",
+                                "Parce que sa tension est toujours supérieure à 1000 V",
+                                "Parce qu'il ne traverse jamais le sol"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel précise que le courant alternatif 50 [Hz] crée davantage de dommage que le courant continu de même intensité parce qu'il provoque hâtivement des crampes musculaires ou des fibrillations ventriculaires.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec02_3",
+                          "type": "single",
+                          "question": "En courant alternatif 50 Hz, quelle valeur de courant de contact marque le seuil de contraction musculaire ?",
+                          "options": [
+                                "1 [mA]",
+                                "5 [mA]",
+                                "15 [mA]",
+                                "80 [mA]"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Selon l'échelle officielle du référentiel : 1 mA = seuil de perception, 5 mA = électrisation/fourmillements, 15 mA = seuil de contraction, 50 mA = seuil de danger/respiration gênée, à partir de 80 mA = seuil mortel.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec02_4",
+                          "type": "single",
+                          "question": "Dans l'exemple numérique du document (UF = 230 VAC, impédance totale = 1000 Ω, IB = 230 mA), en combien de temps au maximum le courant doit-il être coupé ?",
+                          "options": [
+                                "Moins de 10 secondes",
+                                "Moins de 2 secondes",
+                                "Moins de 400 [ms]",
+                                "Moins de 50 [ms]"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Selon le référentiel officiel, sous IB = 230 [mA], « il est essentiel que le courant soit coupé en moins de 400 [ms] pour éviter des conséquences graves, voire mortelles ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec02_5",
+                          "type": "single",
+                          "question": "En Suisse, à partir de quel courant de service une installation est-elle qualifiée d'installation à fort courant, quel que soit son niveau de tension ?",
+                          "options": [
+                                "Supérieur à 0.5 ampère",
+                                "Supérieur à 2 ampères",
+                                "Supérieur à 10 ampères",
+                                "Supérieur à 32 ampères"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel formule formellement : « Toute installation présentant un courant de service supérieur à 2 ampères est considérée comme une installation électrique à fort courant, quel que soit son niveau de tension. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.4"
+                    }
               ],
-              correctAnswer: 1,
-              explanation: "Le seuil légal de protection complémentaire des personnes est 30 mA, choisi car il se situe en dessous du seuil de fibrillation ventriculaire (50 mA)."
-            }
-          ]
+              "nextLessonId": "sec-03"
+        },
+        {
+              "id": "sec-03",
+              "routeId": "securite-electrique/lecon-3",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 3,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 3",
+              "title": "Chapitre 3 — Dispositifs de protection et sécurité des équipements",
+              "subtitle": "Notions d'électrotechnique, DDR/RCD, coupe-surintensité et classification des matériels I, II et 0",
+              "status": "Disponible",
+              "duration": "8 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Comprendre les principes électrotechniques fondamentaux (loi d'Ohm I = U/R, puissance P = U × I), le rôle vital des dispositifs différentiels résiduels (DDR / RCD), les limites impératives des coupe-surintensité (absence totale de protection des personnes) et la classification des matériels (Classe 0 interdite, Classe I avec PE, Classe II double isolation).",
+              "introduction": "Ce chapitre traite des organes de protection matériels et humains. Alors que les coupe-surintensité (fusibles, disjoncteurs) ont pour rôle exclusif de protéger les lignes et le matériel contre les surchauffes, seule la protection différentielle résiduelle (DDR) permet de protéger les individus contre les contacts électriques dangereux.",
+              "contentSections": [
+                    {
+                          "title": "3.1 Notions clés d’électrotechnique",
+                          "text": "<div class=\"ocfo-legal-badge\">Grandeurs physiques de base</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nUn circuit électrique requiert une source de tension (<strong>U</strong>, en volts), un conducteur et un récepteur. L'intensité (<strong>I</strong>, en ampères) varie selon la charge et la résistance (<strong>R</strong>, en ohms) selon la loi d'Ohm fondamentale :\n</p>\n<div class=\"ocfo-procedure-box\" style=\"margin-bottom:0.85rem; text-align:center; font-size:1.1rem; font-weight:700;\">\n  𝐼 = 𝑈 / 𝑅\n</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa puissance (<strong>P</strong>, en watts) s'obtient par le produit de la tension et de l'intensité (<strong>P = U × I</strong>), tandis que la consommation s'exprime en watt-heure (<strong>Wh</strong>). Le réseau basse tension est raccordé à la terre, qui sert de chemin de retour en cas de défaut.\n</p>"
+                    },
+                    {
+                          "title": "3.2 Dispositifs différentiels résiduels (DDR / RCD)",
+                          "text": "<div class=\"ocfo-legal-badge\">Principe, historique et maintenance</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLe DDR mesure en permanence l'équilibre de courant entre le conducteur de phase et le conducteur neutre. Toute déviation (fuite vers le corps ou la terre) provoque la coupure immédiate du réseau.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Efficacité historique :</strong> son imposition sur les chantiers en 1976 a réduit le nombre de décès annuels de 10 à 2 ;</li>\n  <li><strong>Évolutions réglementaires :</strong> obligatoire sur les prises de neuf jusqu'à 32 [A], sur les circuits d'éclairage des logements depuis 2020, et sur les prises &gt; 32 [A] des tableaux de chantier depuis 2024 ;</li>\n  <li><strong>Limitation importante :</strong> le DDR ne protège pas si l'utilisateur entre en contact direct et simultané avec la phase et le neutre sans fuite vers la terre ;</li>\n  <li><strong>Maintenance :</strong> un test fonctionnel doit être effectué au moins une fois par an via le bouton d'essai.</li>\n</ul>"
+                    },
+                    {
+                          "title": "3.3 Coupe-surintensité : Dispositifs, rôle et limites fondamentales",
+                          "text": "<div class=\"ocfo-legal-badge\">Fusibles & Disjoncteurs</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa catégorie des coupe-surintensité réunit trois types d'équipements de sécurité :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li>Les fusibles ;</li>\n  <li>Les disjoncteurs de canalisation ;</li>\n  <li>Les disjoncteurs-moteurs.</li>\n</ul>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Principe de fonctionnement :</strong> chaque coupe-surintensité est calibré pour une valeur précise de courant de déclenchement. Dès que l'intensité franchit ce seuil, le flux est interrompu. La vitesse de déclenchement est liée à l'ampleur du flux : plus la surintensité est forte, plus la coupure est rapide. En cas de défaut sur un appareil de classe I, le courant vers le PE fait réagir le coupe-surintensité.\n</p>\n<div class=\"ocfo-warning-box\">\n  <strong>⚠️ ABSENCE DE PROTECTION DES PERSONNES :</strong><br>\n  • <strong>Protection matérielle exclusive :</strong> les coupe-surintensité servent exclusivement à prémunir les équipements et les lignes contre un échauffement inacceptable entraîné par une surcharge ou un court-circuit.<br>\n  • <strong>Aucune protection corporelle :</strong> ces dispositifs ne protègent en aucun cas les individus lors d'un contact avec des parties sous tension. Les intensités nécessaires pour déclencher un coupe-surintensité sont considérablement trop élevées par rapport au seuil de tolérance du corps humain.<br>\n  • <strong>Complémentarité avec le DDR :</strong> la protection des personnes contre les chocs électriques repose uniquement sur l'utilisation d'un DDR opérationnel et contrôlé régulièrement.\n</div>"
+                    },
+                    {
+                          "title": "3.4 Classification des matériels électriques",
+                          "text": "<div class=\"ocfo-legal-badge\">Classes de protection 0, I, II</div>\n<div class=\"ocfo-density-table-wrap\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Classe</th>\n        <th style=\"width:40%;\">Caractéristiques techniques</th>\n        <th style=\"width:35%;\">Statut réglementaire & Symbole</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Classe 0</strong></td>\n        <td>Dépourvue de double isolation et de mise à la terre.</td>\n        <td><strong style=\"color:var(--accent-red);\">STRICTEMENT PROSCRITE / INTERDITE</strong><br>Les anciens appareils doivent être éliminés.</td>\n      </tr>\n      <tr>\n        <td><strong>Classe I</strong></td>\n        <td>Mise à la terre : les structures métalliques sont reliées au conducteur de protection (PE) pour faire sauter la protection en cas de fuite interne.</td>\n        <td>Symbole de terre ⏚<br>Conducteur de protection PE obligatoire.</td>\n      </tr>\n      <tr>\n        <td><strong>Classe II</strong></td>\n        <td>Double isolation : comporte un cordon à deux fils sans conducteur de protection.</td>\n        <td><strong>Symbole à deux carrés encastrés 回</strong><br>Mode de protection privilégié.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    }
+              ],
+              "practicalExample": "Un disjoncteur 16 A mettrait plusieurs secondes à déclencher à 25 A et ne verra jamais passer un courant de choc corporel mortel de 100 mA (0.1 A). Seul un DDR 30 mA détecte ce déséquilibre et coupe l'alimentation en quelques millisecondes.",
+              "importantPoint": "Les coupe-surintensité protègent uniquement les câbles et le matériel contre les surchauffes, en aucun cas les personnes. La protection des personnes repose impérativement sur le DDR (RCD).",
+              "synthesis": "La sécurité matérielle repose sur les coupe-surintensité, tandis que la sécurité humaine repose sur le DDR et les classes de protection (Classe II privilégiée, Classe I reliée au PE, Classe 0 strictement bannie).",
+              "quiz": [
+                    {
+                          "id": "q_sec03_1",
+                          "type": "single",
+                          "question": "Pourquoi un coupe-surintensité (fusible, disjoncteur) ne protège-t-il pas les personnes contre un choc électrique direct ?",
+                          "options": [
+                                "Parce qu'il ne fonctionne qu'en courant continu",
+                                "Parce que ses intensités de déclenchement sont considérablement trop élevées par rapport au seuil de tolérance de l'organisme humain",
+                                "Parce qu'il est interdit dans les logements récents",
+                                "Parce qu'il se déclenche uniquement en cas de surtension atmosphérique"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel souligne expressément que les intensités nécessaires pour activer le déclenchement d'un coupe-surintensité sont considérablement trop élevées par rapport au seuil de tolérance du corps humain.",
+                          "sourceRef": "Sécurité électrique — Chapitre 3.3"
+                    },
+                    {
+                          "id": "q_sec03_2",
+                          "type": "single",
+                          "question": "Quelle est la limitation importante du dispositif différentiel résiduel (DDR) soulignée dans le document ?",
+                          "options": [
+                                "Il ne fonctionne pas sous une tension de 230 V",
+                                "Il ne protège pas si l'utilisateur entre en contact direct et simultané avec la phase et le neutre sans fuite vers la terre",
+                                "Il ne peut être utilisé que sur les chantiers",
+                                "Il coupe le courant uniquement après 5 secondes de défaut"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Selon le référentiel officiel, « le DDR ne protège pas si l'utilisateur entre en contact direct et simultané avec la phase et le neutre sans fuite vers la terre » car aucun courant résiduel ne s'échappe alors du circuit.",
+                          "sourceRef": "Sécurité électrique — Chapitre 3.2"
+                    },
+                    {
+                          "id": "q_sec03_3",
+                          "type": "single",
+                          "question": "À quelle fréquence minimale un test fonctionnel du DDR doit-il être effectué via son bouton d'essai ?",
+                          "options": [
+                                "Chaque semaine",
+                                "Chaque mois",
+                                "Au moins une fois par an",
+                                "Tous les dix ans"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Le référentiel officiel précise au paragraphe Maintenance : « un test fonctionnel doit être effectué au moins une fois par an via le bouton d'essai ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 3.2"
+                    },
+                    {
+                          "id": "q_sec03_4",
+                          "type": "single",
+                          "question": "Quel symbole graphique et quel mode de raccordement caractérisent les matériels de Classe II (double isolation) ?",
+                          "options": [
+                                "Un triangle jaune et une liaison obligatoire au conducteur PE",
+                                "Le symbole à deux carrés encastrés et un cordon à deux fils sans conducteur de protection PE",
+                                "Un cercle barré et une carcasse métallique mise à la terre",
+                                "Une prise triphasée avec fusible incorporé"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel indique que la Classe II est repérée par le symbole à deux carrés encastrés, comporte un cordon à deux fils sans conducteur de protection, et constitue le mode de protection privilégié.",
+                          "sourceRef": "Sécurité électrique — Chapitre 3.4"
+                    }
+              ],
+              "nextLessonId": "sec-04"
+        },
+        {
+              "id": "sec-04",
+              "routeId": "securite-electrique/lecon-4",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 4,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 4",
+              "title": "Chapitre 4 — Directives de sécurité pour le quotidien",
+              "subtitle": "Les 4 règles préventives d'usage au quotidien et adaptateurs DDR",
+              "status": "Disponible",
+              "duration": "5 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Connaître et appliquer rigoureusement les 4 règles fondamentales de sécurité électrique au quotidien : refus du matériel détérioré, contrôle avant usage, recours systématique au DDR et consignation immédiate de tout équipement défaillant.",
+              "introduction": "Pour garantir leur sécurité, les personnes non spécialisées doivent confier les interventions à risque (installation, modification, réparation) à des électriciens professionnels. Au quotidien, 4 règles élémentaires mais impératives s'imposent à tout utilisateur.",
+              "contentSections": [
+                    {
+                          "title": "1. Principe fondamental pour les personnes non spécialisées",
+                          "text": "<div class=\"ocfo-legal-badge\">Interventions à risque</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nPour garantir leur sécurité, les <strong>personnes non spécialisées</strong> doivent confier les interventions à risque (installation, modification, réparation) à des <strong>électriciens professionnels</strong>.\n</p>"
+                    },
+                    {
+                          "title": "2. Les 4 règles qui s'imposent au quotidien",
+                          "text": "<div class=\"ocfo-legal-badge\">Les 4 règles d'or au quotidien</div>\n<div class=\"ocfo-procedure-box\" style=\"margin-bottom:0.85rem; padding:1rem; background:var(--bg-surface); border:1px solid var(--border-medium); border-radius:8px;\">\n  <div style=\"display:flex; flex-direction:column; gap:0.75rem; font-size:0.9rem;\">\n    <div style=\"display:flex; align-items:flex-start; gap:0.75rem;\">\n      <span style=\"background:var(--accent-red); color:#fff; font-weight:800; border-radius:50%; min-width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center;\">1</span>\n      <div><strong>Bannir l'usage :</strong> d'équipements, de prises ou de câbles endommagés ;</div>\n    </div>\n    <div style=\"display:flex; align-items:flex-start; gap:0.75rem;\">\n      <span style=\"background:var(--accent-red); color:#fff; font-weight:800; border-radius:50%; min-width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center;\">2</span>\n      <div><strong>Vérifier l'état matériel :</strong> avant chaque mise en service et respecter scrupuleusement la notice d'utilisation ;</div>\n    </div>\n    <div style=\"display:flex; align-items:flex-start; gap:0.75rem;\">\n      <span style=\"background:var(--accent-red); color:#fff; font-weight:800; border-radius:50%; min-width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center;\">3</span>\n      <div><strong>Raccorder systématiquement :</strong> les appareils sur un circuit protégé par un DDR (ou utiliser un adaptateur DDR portatif) ;</div>\n    </div>\n    <div style=\"display:flex; align-items:flex-start; gap:0.75rem;\">\n      <span style=\"background:var(--accent-red); color:#fff; font-weight:800; border-radius:50%; min-width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center;\">4</span>\n      <div><strong>Mettre hors service et faire contrôler :</strong> tout équipement présentant un comportement anormal ou ayant déclenché un fusible.</div>\n    </div>\n  </div>\n</div>"
+                    }
+              ],
+              "practicalExample": "L'utilisation sur un chantier ou en extérieur d'une meuleuse portative sur une prise sans DDR fixe exige obligatoirement l'intercalation d'un adaptateur DDR portatif 30 mA.",
+              "importantPoint": "Tout appareil ayant déclenché un fusible ou un disjoncteur ne doit pas être réenclenché à l'aveugle : il doit être mis immédiatement hors service et contrôlé par un professionnel.",
+              "synthesis": "La sécurité au quotidien repose sur 4 gestes élémentaires : refuser le matériel endommagé, vérifier avant usage, exiger la protection différentielle et consigner tout équipement suspect.",
+              "quiz": [
+                    {
+                          "id": "q_sec04_1",
+                          "type": "single",
+                          "question": "Que doit faire une personne non spécialisée face à une intervention à risque (installation, modification, réparation) ?",
+                          "options": [
+                                "Tenter la réparation après avoir coupé un seul fusible",
+                                "La confier obligatoirement à des électriciens professionnels",
+                                "Acheter des pièces de rechange sur internet sans avis technique",
+                                "Faire exécuter la tâche par un apprenti non encadré"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel stipule clairement : « Pour garantir leur sécurité, les personnes non spécialisées doivent confier les interventions à risque (installation, modification, réparation) à des électriciens professionnels. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 4"
+                    },
+                    {
+                          "id": "q_sec04_2",
+                          "type": "single",
+                          "question": "Que convient-il de faire lorsqu'un appareil électrique a déclenché un fusible ou présente un comportement anormal ?",
+                          "options": [
+                                "Forcer le disjoncteur en position fermée avec du ruban adhésif",
+                                "Le mettre hors service et le faire contrôler par un professionnel",
+                                "Continuer à l'utiliser tant qu'aucune fumée n'apparaît",
+                                "Le brancher sur une prise de courant plus puissante"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La 4e règle quotidienne impose de « Mettre hors service et faire contrôler tout équipement présentant un comportement anormal ou ayant déclenché un fusible ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 4"
+                    },
+                    {
+                          "id": "q_sec04_3",
+                          "type": "single",
+                          "question": "Comment sécuriser le raccordement d'un appareil électrique au quotidien selon la règle n° 3 ?",
+                          "options": [
+                                "En le raccordant systématiquement sur un circuit protégé par un DDR (ou utiliser un adaptateur DDR portatif)",
+                                "En reliant la carcasse à un tuyau de chauffage",
+                                "En utilisant uniquement des rallonges de plus de 50 mètres",
+                                "En supprimant la broche de terre de la fiche"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "La règle n° 3 stipule : « Raccorder systématiquement les appareils sur un circuit protégé par un DDR (ou utiliser un adaptateur DDR portatif). »",
+                          "sourceRef": "Sécurité électrique — Chapitre 4"
+                    }
+              ],
+              "nextLessonId": "sec-05"
+        },
+        {
+              "id": "sec-05",
+              "routeId": "securite-electrique/lecon-5",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 5,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 5",
+              "title": "Chapitre 5 — Exigences de maintenance et contrôles réglementaires",
+              "subtitle": "Maintenance machines (SNG 482638), contrôles légaux OIBT (périodicités 1 à 20 ans) et examen sensoriel visuel",
+              "status": "Disponible",
+              "duration": "8 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Maîtriser les obligations de maintenance des machines selon le guide SNG 482638, la responsabilité légale du propriétaire selon les articles 3, 4 et 5 de l'OIBT, le principe de la double vérification, le tableau des périodicités légales de contrôle (1, 3, 5, 10, 20 ans) et la méthodologie de l'examen visuel mobilisant les 4 sens.",
+              "introduction": "La sécurité électrique dans le temps exige une politique de maintenance rigoureuse et des contrôles réglementaires réguliers. En Suisse, l'OIBT fait reposer la sécurité des installations sur le propriétaire et impose des périodicités de contrôle strictes selon les risques des locaux, complétées par une inspection sensorielle préventive continue.",
+              "contentSections": [
+                    {
+                          "title": "5.1 Planification de la maintenance des machines",
+                          "text": "<div class=\"ocfo-legal-badge\">Directives constructeurs & Guide SNG 482638</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa maintenance doit respecter les directives des constructeurs ou les critères du guide <strong>SNG 482638</strong> pour le matériel portatif soumis à de fortes contraintes.\n</p>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">📋 OBLIGATION DE L'ENTREPRISE</div>\n  Les entreprises doivent établir un <strong>plan de maintenance formel</strong> et confier ces opérations à du personnel qualifié ou spécialement instruit.\n</div>"
+                    },
+                    {
+                          "title": "5.2 Contrôles légaux des installations (OIBT) et Périodicités",
+                          "text": "<div class=\"ocfo-legal-badge\">Art. 3, 4, 5 OIBT & Tableau officiel des périodicités</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Responsabilité légale du propriétaire :</strong> conformément aux articles 3, 4 et 5 de l'Ordonnance sur les installations électriques à basse tension (OIBT), la responsabilité de la sécurité des installations ainsi que de la prévention des perturbations <strong>incombe directement aux propriétaires</strong>. Ceux-ci doivent s'assurer en permanence que leurs installations électriques satisfont aux exigences légales de sécurité.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Principe de la double vérification :</strong> les vérifications réglementaires doivent obligatoirement respecter le principe du double contrôle (l'installateur ne peut contrôler son propre travail) ;</li>\n  <li><strong>Invitation officielle :</strong> avant chaque échéance légale, l'exploitant du réseau de distribution ou l'Inspection fédérale des installations à courant fort (ESTI) adresse une invitation formelle au propriétaire afin qu'il fasse exécuter le contrôle ;</li>\n  <li><strong>Entités habilitées :</strong> l'examen doit être confié à un intervenant qualifié titulaire d'une autorisation de contrôler officielle, à savoir un conseiller en sécurité ou un organisme d'inspection accrédité.</li>\n</ul>\n\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:25%;\">Périodicité</th>\n        <th style=\"width:75%;\">Domaines et types d'installations concernés</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong style=\"color:var(--accent-red);\">1 an</strong></td>\n        <td>Chantiers, marchés.</td>\n      </tr>\n      <tr>\n        <td><strong>3 ans</strong></td>\n        <td>Zones à risque d'explosion (Zones Ex 0, 20, 1 et 21).</td>\n      </tr>\n      <tr>\n        <td><strong>5 ans</strong></td>\n        <td>Casernes, terrains de camping, bornes de recharge publiques pour véhicules électriques, locaux industriels et artisanaux.</td>\n      </tr>\n      <tr>\n        <td><strong>10 ans</strong></td>\n        <td>Locaux à usage commercial, ateliers de réparation, églises, musées, exploitations agricoles.</td>\n      </tr>\n      <tr>\n        <td><strong style=\"color:#10b981;\">20 ans</strong></td>\n        <td>Bâtiments d'habitation.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    },
+                    {
+                          "title": "5.3 Examen visuel (mobilisation des 4 sens)",
+                          "text": "<div class=\"ocfo-legal-badge\">Détection préventive multisensorielle</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLa détection préventive des anomalies repose sur une inspection globale mobilisant l'ensemble des sens :\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li>👁️ <strong>Vue :</strong> présence de fissures ou détériorations sur les boîtiers, prises et câbles ;</li>\n  <li>✋ <strong>Toucher :</strong> repérage des échauffements anormaux sur les moteurs ou prises (sans toucher de pièces métalliques nues) ou détection de parties sous tension non recouvertes ;</li>\n  <li>👂 <strong>Ouïe :</strong> identification de bruits de roulement ou de bourdonnements anormaux ;</li>\n  <li>👃 <strong>Odorat :</strong> détection d'odeurs de brûlé, de lubrifiant surchauffé ou d'isolant qui fond.</li>\n</ul>"
+                    }
+              ],
+              "practicalExample": "Lors d'une tournée de vérification dans un atelier, une odeur de bakélite surchauffée (odorat) ou un bourdonnement anormal (ouïe) permet de stopper une machine avant le départ d'un incendie électrique.",
+              "importantPoint": "La responsabilité de la sécurité des installations électriques incombe en premier ressort au propriétaire (art. 3 à 5 OIBT). Les contrôles périodiques respectent strictement le principe du double contrôle (l'installateur ne peut contrôler sa propre installation).",
+              "synthesis": "La pérennité de la sécurité passe par la maintenance formelle (SNG 482638), les contrôles périodiques légaux OIBT (1 à 20 ans) et la vigilance sensorielle permanente.",
+              "quiz": [
+                    {
+                          "id": "q_sec05_1",
+                          "type": "single",
+                          "question": "À qui incombe légalement la responsabilité de la sécurité des installations électriques selon les articles 3, 4 et 5 de l'OIBT ?",
+                          "options": [
+                                "À l'électricien ayant posé la première prise",
+                                "Directement aux propriétaires",
+                                "À la commune de situation de l'immeuble",
+                                "Au distributeur d'énergie uniquement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Selon les articles 3, 4 et 5 de l'OIBT (référentiel OIBT), la responsabilité de la sécurité des installations ainsi que de la prévention des perturbations incombe directement aux propriétaires.",
+                          "sourceRef": "Sécurité électrique — Chapitre 5.2"
+                    },
+                    {
+                          "id": "q_sec05_2",
+                          "type": "single",
+                          "question": "Quelle est la périodicité de contrôle légal OIBT pour les chantiers et les marchés ?",
+                          "options": [
+                                "1 an",
+                                "3 ans",
+                                "5 ans",
+                                "20 ans"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "Le tableau officiel des périodicités  fixe à 1 an l'intervalle de contrôle obligatoire pour les chantiers et les marchés.",
+                          "sourceRef": "Sécurité électrique — Chapitre 5.2"
+                    },
+                    {
+                          "id": "q_sec05_3",
+                          "type": "single",
+                          "question": "Quelle est la périodicité de contrôle obligatoire pour les bâtiments d'habitation selon le tableau OIBT ?",
+                          "options": [
+                                "5 ans",
+                                "10 ans",
+                                "20 ans",
+                                "30 ans"
+                          ],
+                          "correctAnswer": 2,
+                          "explanation": "Le tableau des périodicités  assigne une périodicité de 20 ans aux bâtiments d'habitation.",
+                          "sourceRef": "Sécurité électrique — Chapitre 5.2"
+                    },
+                    {
+                          "id": "q_sec05_4",
+                          "type": "single",
+                          "question": "Quels sens sont mobilisés lors de l'examen visuel préventif décrit dans la directive ?",
+                          "options": [
+                                "La vue, le goût, le toucher et l'odorat",
+                                "La vue, le toucher, l'ouïe et l'odorat",
+                                "La vue, l'ouïe et l'équilibre",
+                                "La vue et l'odorat uniquement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le chapitre 5.3  détaille l'inspection globale mobilisant 4 sens : la vue (fissures), le toucher (échauffements anormaux), l'ouïe (bruits de roulement, bourdonnements) et l'odorat (odeur de brûlé, lubrifiant surchauffé ou isolant fondu).",
+                          "sourceRef": "Sécurité électrique — Chapitre 5.3"
+                    }
+              ],
+              "nextLessonId": "sec-06"
+        },
+        {
+              "id": "sec-06",
+              "routeId": "securite-electrique/lecon-6",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 6,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 6",
+              "title": "Chapitre 6 — Cadre réglementaire des interventions sur des installations et des machines",
+              "subtitle": "Qualifications NIBT/OIBT vs SN EN 60204-1, limites strictes du profane, autorisations ESTI et 5+5 règles SUVA",
+              "status": "Disponible",
+              "duration": "9 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Distinguer les qualifications NIBT/OIBT de celles de la norme machines SN EN 60204-1, connaître le statut et les limites strictes du profane (privé vs professionnel), maîtriser les 4 régimes d'autorisation d'installer ESTI (OIBT art. 6, 7/9, 13, 14, 15) et appliquer les consignes vitales de coupure (5+5 règles vitales Suva).",
+              "introduction": "Les accidents d'origine électrique découlent très souvent d'une formation spécialisée défaillante ou insuffisante. Chaque entreprise est légalement tenue de garantir que les interventions électriques sont confiées exclusivement à un personnel qualifié, instruit et expérimenté, dans le respect de la frontière entre installations du bâtiment et machines.",
+              "contentSections": [
+                    {
+                          "title": "6.1 Habilitations et qualifications du personnel",
+                          "text": "<div class=\"ocfo-legal-badge\">Deux référentiels distincts</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nLes compétences requises sont définies par deux référentiels distincts selon qu'il s'agit d'installations électriques fixes du bâtiment ou d'équipements/machines :\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Qualification</th>\n        <th style=\"width:70%;\">Définition officielle</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Personne compétente</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(NIBT / OIBT)</span></td>\n        <td>Titulaire d'une formation de base en électrotechnique (apprentissage, formation interne équivalente ou études spécialisées) et bénéficiant d'une expérience pratique dans le maniement des dispositifs électrotechniques.</td>\n      </tr>\n      <tr>\n        <td><strong>Personne instruite</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(NIBT / OIBT)</span></td>\n        <td>Sans formation électrotechnique de base, mais spécialement formée pour exécuter des tâches limitées et strictement définies dans des installations à courant fort, en connaissant la situation locale et les mesures de protection.</td>\n      </tr>\n      <tr>\n        <td><strong>Conseiller en sécurité</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(art. 27 OIBT)</span></td>\n        <td>Ayant réussi l'examen professionnel d'électricien chef de projet en installation et sécurité (anciennement contrôleur ou chef monteur) ou personne du métier.</td>\n      </tr>\n      <tr>\n        <td><strong>Personne du métier</strong><br><span style=\"font-size:0.75rem; color:var(--text-muted);\">(Responsable technique)</span></td>\n        <td>Ayant réussi l'examen professionnel supérieur (examen de maîtrise ou examen pratique), habilitée à détenir une autorisation générale d'installer.</td>\n      </tr>\n      <tr>\n        <td><strong>Profane</strong></td>\n        <td>Personne ne possédant ni qualification électrotechnique ni instruction spécifique dans ce domaine.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>\n\n<p style=\"margin-bottom:0.65rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Qualifications relatives aux machines et matériels (Norme SN EN 60204-1) :</strong><br>\n• <strong>Électricien (de métier) :</strong> personne qualifiée et expérimentée capable d'identifier les risques liés aux travaux sur équipements électriques et d'éviter toute mise en danger (= « personne compétente » NIBT) ;<br>\n• <strong>Personne avertie :</strong> personne suffisamment informée ou supervisée par un électricien de métier, capable d'identifier et d'éviter les risques électriques (= « personne instruite »).\n</p>\n\n<div class=\"ocfo-warning-box\">\n  <strong>⚖️ STATUT ET LIMITES STRICTES DU PROFANE :</strong><br>\n  • <strong>Dans le cadre privé (logement propre ou locaux annexes occupés en propre) :</strong> le profane est autorisé à monter ou démonter des luminaires et leurs interrupteurs. Il peut également poser des prises et interrupteurs sur des circuits monophasés 230 [V] existants et protégés par un DDR 30 [mA], <strong>sous réserve d'un contrôle final obligatoire par un conseiller en sécurité</strong>.<br>\n  • <strong>Dans le cadre professionnel :</strong> le profane a l'<strong>interdiction absolue</strong> d'effectuer le moindre travail électrotechnique sur des installations, machines ou matériels.\n</div>"
+                    },
+                    {
+                          "title": "6.2 Séparation entre installation et machine & Autorisations d'installer",
+                          "text": "<div class=\"ocfo-legal-badge\">Distinction bâtiment vs machine & OIBT art. 6</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n• <strong>Installation électrique :</strong> regroupe l'ensemble des câbles, prises, coffrets et systèmes de support (chemins de câbles) fixés à demeure dans la structure du bâtiment (soumis aux autorisations formelles de l'ESTI).<br>\n• <strong>Machine / matériel :</strong> équipement formant une unité structurale autonome intégrant en son sein l'ensemble de ses composants et câblages électriques internes (ex. four industriel, poinçonneuse, centre d'usinage CNC) soumis aux instructions du fabricant.\n</p>\n<div class=\"ocfo-density-table-wrap\" style=\"margin-bottom:0.85rem;\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th style=\"width:30%;\">Catégorie ESTI</th>\n        <th style=\"width:70%;\">Champ d'application réglementaire (OIBT)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Autorisation générale d'installer</strong><br>(art. 7 et 9 OIBT)</td>\n        <td>Couvre l'ensemble des installations électriques à basse tension sans restriction de domaine.</td>\n      </tr>\n      <tr>\n        <td><strong>Autorisation installations propres</strong><br>(art. 13 OIBT)</td>\n        <td>Couvre les travaux de maintenance, le dépannage, les modifications en aval du coupe-surintensité d'abonné ou des disjoncteurs terminaux, ainsi que les installations provisoires (chantiers, marchés, foires, cirques).</td>\n      </tr>\n      <tr>\n        <td><strong>Autorisation installations spéciales</strong><br>(art. 14 OIBT)</td>\n        <td>Domaines spécifiques : systèmes d'alarme, monte-charges, convoyeurs, enseignes lumineuses, photovoltaïque, accumulateurs fixes, UPS, bateaux.</td>\n      </tr>\n      <tr>\n        <td><strong>Autorisation raccordement matériels</strong><br>(art. 15 OIBT)</td>\n        <td>Permet exclusivement le raccordement ou le remplacement des matériels électriques expressément mentionnés dans l'autorisation.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    },
+                    {
+                          "title": "6.3 Interventions sur machines et consignes vitales de sécurité",
+                          "text": "<div class=\"ocfo-legal-badge\">Travaux dispensés d'autorisation ESTI & Consignes vitales</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Travaux dispensés d'autorisation d'installer ESTI :</strong> les travaux d'entretien, de réparation ou de remplacement de composants électriques internes d'une machine (ex. moteurs, capteurs, fusibles) ne nécessitent aucune autorisation d'installer délivrée par l'ESTI, que l'équipement soit branché sur une prise ou raccordé fixe au réseau.\n</p>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\n<strong>Exigences d'instruction des collaborateurs :</strong> lorsqu'un non-électricien (comme un mécanicien) doit intervenir sur la partie électrique d'une machine (voyant, entraînement, mesures), il doit impérativement avoir été instruit au préalable par un électricien de métier ou avoir suivi une formation adéquate.\n</p>\n<div class=\"ocfo-summary-box\">\n  <div class=\"box-title\">🛑 CONSIGNES DE SÉCURITÉ IMPÉRATIVES</div>\n  • <strong>Interdiction du travail sous tension :</strong> aucune tâche ne doit être exécutée sous tension ;<br>\n  • <strong>Vérification d'absence de tension :</strong> l'absence de tension doit être obligatoirement contrôlée avant toute manipulation (en appliquant les <strong>5 + 5 règles vitales de la Suva</strong>) ;<br>\n  • <strong>Traçabilité obligatoire :</strong> l'instruction dispensée aux collaborateurs doit obligatoirement être <strong>consignée par écrit</strong> afin de pouvoir en apporter la preuve.\n</div>"
+                    }
+              ],
+              "practicalExample": "Dans un atelier mécanique, un technicien de maintenance non-électricien peut remplacer un capteur interne sur une machine s'il a été préalablement instruit par écrit par un électricien de métier et que la machine est hors tension.",
+              "importantPoint": "Dans le cadre professionnel, un profane a l'interdiction formelle et absolue de réaliser le moindre travail électrotechnique. L'instruction donnée aux collaborateurs doit obligatoirement faire l'objet d'une preuve écrite.",
+              "synthesis": "Le cadre légal suisse sépare rigoureusement l'installation fixe (OIBT, autorisations ESTI) de la machine (SN EN 60204-1, fabricant), encadre strictement les habilitations et interdit le travail sous tension.",
+              "quiz": [
+                    {
+                          "id": "q_sec06_1",
+                          "type": "single",
+                          "question": "Dans le cadre professionnel, quel est le statut légal du profane concernant les travaux électrotechniques ?",
+                          "options": [
+                                "Il peut changer des prises triphasées sous tension",
+                                "Il a l'interdiction absolue d'effectuer le moindre travail électrotechnique sur des installations, machines ou matériels",
+                                "Il peut réparer les cartes électroniques des machines",
+                                "Il est autorisé à réaliser des raccordements fixes jusqu'à 32 A"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel pose la règle stricte : « Dans le cadre professionnel : Le profane a l'interdiction absolue d'effectuer le moindre travail électrotechnique sur des installations, machines ou matériels. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 6.1"
+                    },
+                    {
+                          "id": "q_sec06_2",
+                          "type": "single",
+                          "question": "Dans son propre logement privé, à quelle condition stricte un profane peut-il poser des prises et interrupteurs sur un circuit 230 V existant protégé par DDR 30 mA ?",
+                          "options": [
+                                "Aucune condition, c'est totalement libre sans vérification",
+                                "Sous réserve d'un contrôle final obligatoire par un conseiller en sécurité",
+                                "Uniquement s'il a acheté le matériel en grande surface",
+                                "Sous réserve d'avertir la commune par écrit dans les 30 jours"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel autorise le profane dans son logement propre à poser des prises et interrupteurs sur circuits 230 V existants avec DDR 30 mA, « sous réserve d'un contrôle final obligatoire par un conseiller en sécurité ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 6.1"
+                    },
+                    {
+                          "id": "q_sec06_3",
+                          "type": "single",
+                          "question": "Les travaux d'entretien, de réparation ou de remplacement de composants électriques internes d'une machine (moteurs, capteurs, fusibles) nécessitent-ils une autorisation d'installer ESTI ?",
+                          "options": [
+                                "Oui, une autorisation générale est exigée dans tous les cas",
+                                "Non, ils ne nécessitent aucune autorisation d'installer délivrée par l'ESTI",
+                                "Oui, une autorisation spéciale art. 14 OIBT est obligatoire",
+                                "Uniquement si la machine est raccordée sur une prise"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel stipule : « Les travaux d'entretien, de réparation ou de remplacement de composants électriques internes d'une machine (ex. moteurs, capteurs, fusibles) ne nécessitent aucune autorisation d'installer délivrée par l'ESTI, que l'équipement soit branché sur une prise ou raccordé fixe au réseau. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 6.3"
+                    },
+                    {
+                          "id": "q_sec06_4",
+                          "type": "single",
+                          "question": "Quelle obligation formelle s'impose à l'employeur concernant l'instruction de sécurité dispensée aux collaborateurs intervenant sur une machine ?",
+                          "options": [
+                                "Une simple consigne orale suffit",
+                                "L'instruction doit obligatoirement être consignée par écrit afin de pouvoir en apporter la preuve",
+                                "L'envoi d'un courriel informel à l'Inspection du travail",
+                                "Aucune formalité n'est requise si le collaborateur a plus de 5 ans d'ancienneté"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le paragraphe des consignes de sécurité  impose : « Traçabilité obligatoire : L'instruction dispensée aux collaborateurs doit obligatoirement être consignée par écrit afin de pouvoir en apporter la preuve. »",
+                          "sourceRef": "Sécurité électrique — Chapitre 6.3"
+                    }
+              ],
+              "nextLessonId": "sec-07"
+        },
+        {
+              "id": "sec-07",
+              "routeId": "securite-electrique/lecon-7",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "lessonNumber": 7,
+              "totalLessons": 7,
+              "code": "Sécurité — Leçon 7",
+              "title": "Chapitre 7 — Synthèse : aperçu des activités",
+              "subtitle": "Matrice d'attribution des activités selon les autorisations requises (OIBT art. 7 à 15 vs SN EN 60204-1)",
+              "status": "Disponible",
+              "duration": "7 min",
+              "tag": "Sécurité vitale",
+              "xpReward": 30,
+              "objective": "Maîtriser la matrice décisionnelle complète des activités d'installation et de machine en fonction des autorisations d'installer OIBT (art. 7/9, 13, 14, 15) et des compétences professionnelles (électricien de métier, personne avertie), avec identification des interventions non recommandées.",
+              "introduction": "Ce septième et dernier chapitre synthétise l'ensemble des règles de compétences et d'autorisations sous forme d'une matrice comparative intégrale. Il permet de déterminer immédiatement pour chaque tâche concrète quelle autorisation est requise et qui est qualifié pour intervenir.",
+              "contentSections": [
+                    {
+                          "title": "1. Présentation de la matrice et légende officielle",
+                          "text": "<div class=\"ocfo-legal-badge\">Matrice officielle synthétique</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette synthèse récapitule les exigences pour 8 types d'activités réparties entre le domaine de l'<strong>Installation</strong> (autorisations d'installer OIBT) et le domaine <strong>Machine / Matériel</strong> (compétences SN EN 60204-1).\n</p>\n<div class=\"ocfo-highlight-card\" style=\"margin-bottom:0.85rem;\">\n  <div class=\"card-title\">📌 Légende officielle</div>\n  • <strong>x</strong> = Exigence ou autorisation requise.<br>\n  • <strong>(x)</strong> = Intervention non recommandée.\n</div>"
+                    },
+                    {
+                          "title": "2. Tableau complet des activités et exigences",
+                          "text": "<div class=\"ocfo-legal-badge\">Tableau officiel des 8 activités</div>\n<div class=\"ocfo-density-table-wrap\">\n  <table class=\"ocfo-density-table\">\n    <thead>\n      <tr>\n        <th rowspan=\"2\" style=\"width:34%; vertical-align:middle;\">Activité</th>\n        <th colspan=\"4\" style=\"text-align:center; background:rgba(245, 158, 11, 0.15); border-bottom:1px solid var(--border-medium);\">Installation (OIBT)</th>\n        <th colspan=\"2\" style=\"text-align:center; background:rgba(56, 189, 248, 0.15); border-bottom:1px solid var(--border-medium);\">Machine / Matériel</th>\n      </tr>\n      <tr>\n        <th style=\"font-size:0.72rem; text-align:center;\">Générale<br>(Art. 7/9)</th>\n        <th style=\"font-size:0.72rem; text-align:center;\">Propres<br>(Art. 13)</th>\n        <th style=\"font-size:0.72rem; text-align:center;\">Spéciales<br>(Art. 14)</th>\n        <th style=\"font-size:0.72rem; text-align:center;\">Raccord.<br>(Art. 15)</th>\n        <th style=\"font-size:0.72rem; text-align:center;\">Électricien<br>de métier</th>\n        <th style=\"font-size:0.72rem; text-align:center;\">Personne<br>avertie</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>1. Établissement, modification ou entretien de circuits de distribution</strong> (en aval d’un coupe-surintensité d’abonné)</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n      </tr>\n      <tr>\n        <td><strong>2. Établissement, modification ou entretien d’une ligne d’alimentation de machine</strong> à partir d’une distribution principale ou secondaire</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n      </tr>\n      <tr>\n        <td><strong>3. Machine de grande taille :</strong> établissement, modification ou entretien de canalisations faisant partie de la machine et raccordées à demeure au bâtiment</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:var(--accent-red);\">(x)</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n      </tr>\n      <tr>\n        <td><strong>4. Établissement, modification ou entretien de canalisations</strong> en aval de l’interrupteur principal</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n      </tr>\n      <tr>\n        <td><strong>5. Remplacement du matériel</strong> (raccordement à demeure d’un interrupteur principal ou d’une boîte de raccordement)</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n      </tr>\n      <tr>\n        <td><strong>6. Travaux de maintenance simples</strong>, tels que le remplacement d’un capteur</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n      </tr>\n      <tr>\n        <td><strong>7. Travaux de maintenance plus complexes</strong> sur les dispositifs électriques d’une machine</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:var(--accent-red);\">(x)</td>\n      </tr>\n      <tr>\n        <td><strong>8. Remplacement d’un appareil de commande</strong> sur une distribution électrique</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center;\">-</td>\n        <td style=\"text-align:center; font-weight:800; color:#10b981;\">x</td>\n        <td style=\"text-align:center; font-weight:800; color:var(--accent-red);\">(x)</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+                    }
+              ],
+              "practicalExample": "Le raccordement fixe d'un nouvel interrupteur principal requiert au minimum une autorisation d'installer limitée au raccordement (art. 15 OIBT) ou une autorisation supérieure (art. 14, 13 ou 7/9).",
+              "importantPoint": "Les travaux de maintenance simples sur machines sont accessibles à la personne avertie, mais dès que la complexité augmente ou qu'on intervient sur un appareil de commande de distribution, seul l'électricien de métier est qualifié.",
+              "synthesis": "Cette matrice est l'outil de référence pour déterminer instantanément qui peut intervenir, avec quelle autorisation ESTI et sous quelles limites techniques.",
+              "quiz": [
+                    {
+                          "id": "q_sec07_1",
+                          "type": "single",
+                          "question": "Selon la matrice d'aperçu des activités, quelle autorisation est requise pour l'établissement, la modification ou l'entretien de circuits de distribution en aval d'un coupe-surintensité d'abonné ?",
+                          "options": [
+                                "Une autorisation de raccordement art. 15 OIBT",
+                                "Une autorisation générale d'installer (OIBT art. 7/9)",
+                                "Une simple attestation de personne avertie",
+                                "Aucune autorisation n'est requise"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Selon la première ligne de la matrice , cette activité exige exclusivement l'autorisation générale d'installer selon l'art. 7/9 OIBT.",
+                          "sourceRef": "Sécurité électrique — Chapitre 7"
+                    },
+                    {
+                          "id": "q_sec07_2",
+                          "type": "single",
+                          "question": "Une personne avertie peut-elle effectuer des travaux de maintenance simples, tels que le remplacement d'un capteur sur une machine ?",
+                          "options": [
+                                "Non, c'est strictement réservé au fabricant de la machine",
+                                "Oui, cette activité est autorisée pour une personne avertie ainsi que pour un électricien de métier",
+                                "Uniquement sous la présence continue d'un conseiller en sécurité",
+                                "Seulement si la machine est débranchée depuis plus de 48 heures"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La ligne 6 de la matrice indique une croix 'x' pour l'électricien de métier ET pour la personne avertie pour les travaux de maintenance simples (ex. remplacement de capteur).",
+                          "sourceRef": "Sécurité électrique — Chapitre 7"
+                    },
+                    {
+                          "id": "q_sec07_3",
+                          "type": "single",
+                          "question": "Pour des travaux de maintenance plus complexes sur les dispositifs électriques d'une machine, quelle est la recommandation officielle vis-à-vis d'une personne avertie ?",
+                          "options": [
+                                "L'intervention est obligatoire",
+                                "L'intervention n'est pas recommandée (notée '(x)')",
+                                "L'intervention est autorisée sans aucune restriction",
+                                "La personne avertie remplace l'électricien de métier"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La ligne 7 de la matrice note '(x)' pour la personne avertie sur les travaux de maintenance plus complexes, ce qui signifie 'Intervention non recommandée' selon la légende officielle.",
+                          "sourceRef": "Sécurité électrique — Chapitre 7"
+                    }
+              ],
+              "nextLessonId": "sec-evaluation-finale"
+        },
+        {
+              "id": "sec-evaluation-finale",
+              "routeId": "securite-electrique/evaluation-finale",
+              "moduleId": "B",
+              "parcoursId": "securite-electrique",
+              "isFinalEvaluation": true,
+              "code": "Sécurité — EXAMEN",
+              "title": "Évaluation finale — Sécurité électrique",
+              "subtitle": "Certification officielle couvrant les 7 chapitres du guide de sécurité",
+              "status": "Disponible",
+              "duration": "20 min",
+              "tag": "Évaluation officielle",
+              "xpReward": 100,
+              "objective": "Valider formellement la maîtrise intégrale des 7 chapitres du guide de sécurité électrique : principes de prévention, analyse des risques Ub/Ib/Uf/If, seuils physiologiques, protections différentielles, maintenance OIBT et cadre réglementaire des habilitations.",
+              "introduction": "Cette <strong>évaluation finale officielle</strong> valide l'assimilation approfondie du guide <strong>Sécurité électrique</strong>. Composée de 10 questions d'examen représentatives couvrant l'ensemble des 7 chapitres, elle exige un score minimal de 80 % (8/10) pour l'obtention de la certification et l'attribution des 100 XP.",
+              "contentSections": [
+                    {
+                          "title": "Instructions pour l'évaluation finale",
+                          "text": "<div class=\"ocfo-legal-badge\">Examen officiel de certification • Sécurité électrique</div>\n<p style=\"margin-bottom:0.75rem; line-height:1.6; color:var(--text-secondary);\">\nCette évaluation finale certifiante récapitule l'intégralité des <strong>7 chapitres</strong> du module de <strong>Sécurité électrique</strong>.\n</p>\n<ul style=\"margin:0 0 0.85rem 1.25rem; line-height:1.6; color:var(--text-secondary);\">\n  <li><strong>Nombre de questions :</strong> 10 questions d'examen à choix multiple.</li>\n  <li><strong>Couverture pédagogique :</strong> Chapitres 1 à 7 (Prévention, Risques, Protections, Règles quotidiennes, Maintenance OIBT, Habilitations, Matrice d'activités).</li>\n  <li><strong>Seuil de validation :</strong> 80% de réponses exactes (8 / 10).</li>\n  <li><strong>Récompense :</strong> 100 XP et validation officielle du Module B.</li>\n</ul>"
+                    }
+              ],
+              "quiz": [
+                    {
+                          "id": "q_sec_fin_1",
+                          "type": "single",
+                          "question": "1. Selon les règles techniques fondamentales de la sécurité électrique (Chapitre 1), quel est l'objectif impératif assigné aux installations ?",
+                          "options": [
+                                "Qu'aucun danger pour les personnes, les animaux et les choses et aucun état dangereux en cas de défaut prévisible ne subsistent",
+                                "Permettre le fonctionnement continu même en cas de rupture d'isolement",
+                                "Supprimer le recours aux professionnels pour les réparations",
+                                "Garantir un coût de fonctionnement inférieur à 10 CHF par mois"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "La sécurité des installations définit qu'elles sont réalisées ou entretenues selon les règles techniques, signifiant qu'aucun danger pour les personnes, animaux et choses et aucun état dangereux en cas de défaut prévisible ne subsistent.",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    },
+                    {
+                          "id": "q_sec_fin_2",
+                          "type": "single",
+                          "question": "2. Pour quelle raison le danger dû à l'électricité est-il qualifié de redoutable et souvent sous-estimé ?",
+                          "options": [
+                                "Parce qu'elle provoque un changement visible de température ambiante",
+                                "Parce qu'elle est silencieuse, inodore et invisible (on ne sent le courant qu'à travers ses effets)",
+                                "Parce qu'elle fait vibrer systématiquement les murs",
+                                "Parce qu'elle sent le soufre à distance"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "L'électricité est silencieuse, inodore et invisible, ce qui incite à relâcher la vigilance face à un danger qui ne se manifeste qu'au moment du contact.",
+                          "sourceRef": "Sécurité électrique — Chapitre 1"
+                    },
+                    {
+                          "id": "q_sec_fin_3",
+                          "type": "single",
+                          "question": "3. Quelles sont les trois catégories principales d'atteintes physiques consécutives à un choc électrique (Chapitre 2) ?",
+                          "options": [
+                                "L'électrisation, les brûlures thermiques et les accidents secondaires",
+                                "L'éblouissement, l'intoxication et la surdité",
+                                "La fracture, l'entorse et la luxation",
+                                "L'hypothermie, l'insolation et la suffocation"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "Le référentiel officiel distingue formellement 1. L'électrisation (brûlures internes, perturbations cardiaques), 2. Les brûlures thermiques (surfaces surchauffées, rayonnement d'arc) et 3. Les accidents secondaires (chutes de hauteur).",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.2"
+                    },
+                    {
+                          "id": "q_sec_fin_4",
+                          "type": "single",
+                          "question": "4. Selon la norme SN EN 61140, quelle règle fondamentale régit la protection contre les chocs électriques ?",
+                          "options": [
+                                "Toutes les machines doivent être peintes en orange",
+                                "Toutes parties actives dangereuses ne doivent pas être accessibles et les parties conductrices accessibles ne doivent pas devenir actives dangereuses en conditions normales ni de premier défaut",
+                                "Seul le courant continu est admis dans les installations industrielles",
+                                "La tension maximale admissible est de 12 V en tout lieu"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "La règle fondamentale stipule que les parties actives dangereuses ne doivent pas être accessibles et les parties conductrices accessibles ne doivent pas devenir actives dangereuses en conditions normales ou de premier défaut.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec_fin_5",
+                          "type": "single",
+                          "question": "5. Sous une tension de défaut UF = 230 VAC avec une impédance globale de 1000 Ω (courant de contact IB = 230 mA), en combien de temps au maximum le courant doit-il être coupé ?",
+                          "options": [
+                                "En moins de 1 seconde",
+                                "En moins de 400 [ms]",
+                                "En moins de 5 secondes",
+                                "En moins de 2 minutes"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le calcul numérique officiel établit qu'il est essentiel que le courant soit coupé en moins de 400 [ms] pour éviter des conséquences graves, voire mortelles.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.3"
+                    },
+                    {
+                          "id": "q_sec_fin_6",
+                          "type": "single",
+                          "question": "6. Selon la réglementation suisse, quelle est la définition légale d'une installation électrique à fort courant ?",
+                          "options": [
+                                "Toute installation présentant une tension supérieure à 10 000 V",
+                                "Toute installation présentant un courant de service supérieur à 2 ampères, quel que soit son niveau de tension",
+                                "Toute installation alimentée par un transformateur triphasé",
+                                "Toute installation située sur un chantier de construction"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Toute installation présentant un courant de service supérieur à 2 ampères est classée installation à fort courant quel que soit son niveau de tension.",
+                          "sourceRef": "Sécurité électrique — Chapitre 2.4"
+                    },
+                    {
+                          "id": "q_sec_fin_7",
+                          "type": "single",
+                          "question": "7. Quelle différence fondamentale de protection existe-t-il entre un coupe-surintensité et un dispositif différentiel résiduel (DDR) ?",
+                          "options": [
+                                "Le coupe-surintensité protège exclusivement les câbles et matériels contre l'échauffement ; seul le DDR assure la protection des personnes",
+                                "Le coupe-surintensité protège les personnes et le DDR protège les câbles",
+                                "Il n'y a aucune différence, les deux ont exactement le même rôle",
+                                "Le coupe-surintensité est réservé à la très basse tension"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "Les coupe-surintensité ne protègent en aucun cas les personnes, leurs intensités de déclenchement étant trop élevées. La protection des personnes repose uniquement sur le DDR.",
+                          "sourceRef": "Sécurité électrique — Chapitre 3.3"
+                    },
+                    {
+                          "id": "q_sec_fin_8",
+                          "type": "single",
+                          "question": "8. Parmi les directives de sécurité au quotidien (Chapitre 4), laquelle est une règle d'or impérative ?",
+                          "options": [
+                                "Bannir l'usage d'équipements, de prises ou de câbles endommagés",
+                                "Remplacer les fusibles par du fil de cuivre",
+                                "Réparer les appareils sous tension avec des gants mouillés",
+                                "Nettoyer les tableaux électriques à grande eau"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "La première règle quotidienne formulée à la page 12 est : « Bannir l'usage d'équipements, de prises ou de câbles endommagés ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 4"
+                    },
+                    {
+                          "id": "q_sec_fin_9",
+                          "type": "single",
+                          "question": "9. Quelles sont les périodicités légales de contrôle OIBT pour les chantiers et pour les bâtiments d'habitation ?",
+                          "options": [
+                                "1 an pour les chantiers, 20 ans pour les bâtiments d'habitation",
+                                "5 ans pour les chantiers, 10 ans pour les bâtiments d'habitation",
+                                "3 ans pour les chantiers, 5 ans pour les bâtiments d'habitation",
+                                "6 mois pour les chantiers, 50 ans pour les bâtiments d'habitation"
+                          ],
+                          "correctAnswer": 0,
+                          "explanation": "Le tableau officiel des périodicités  fixe le contrôle à 1 an pour les chantiers et marchés, et à 20 ans pour les bâtiments d'habitation.",
+                          "sourceRef": "Sécurité électrique — Chapitre 5.2"
+                    },
+                    {
+                          "id": "q_sec_fin_10",
+                          "type": "single",
+                          "question": "10. Dans le cadre professionnel, quelle est la règle stricte concernant l'exercice de travaux électrotechniques par un profane ?",
+                          "options": [
+                                "Il est autorisé à changer les prises triphasées",
+                                "Il a l'interdiction absolue d'effectuer le moindre travail électrotechnique sur des installations, machines ou matériels",
+                                "Il peut réparer le matériel tant que la tension est inférieure à 400 V",
+                                "Il a quartier libre sous réserve d'avertir son employeur verbalement"
+                          ],
+                          "correctAnswer": 1,
+                          "explanation": "Le référentiel officiel énonce formellement : « Dans le cadre professionnel : Le profane a l'interdiction absolue d'effectuer le moindre travail électrotechnique sur des installations, machines ou matériels ».",
+                          "sourceRef": "Sécurité électrique — Chapitre 6.1"
+                    }
+              ]
         }
-      ]
+  ]
     },
 
     // --------------------------------------------------------------------------
@@ -7649,6 +8434,27 @@
 
     // Aliases pour rétrocompatibilité et accès fluide
     const aliases = {
+      'securite-electrique': 'sec-01',
+      'securite': 'sec-01',
+      'b00': 'sec-01',
+      'B00': 'sec-01',
+      'sec-01': 'sec-01',
+      'sec-02': 'sec-02',
+      'sec-03': 'sec-03',
+      'sec-04': 'sec-04',
+      'sec-05': 'sec-05',
+      'sec-06': 'sec-06',
+      'sec-07': 'sec-07',
+      'sec-lecon-1': 'sec-01',
+      'sec-lecon-2': 'sec-02',
+      'sec-lecon-3': 'sec-03',
+      'sec-lecon-4': 'sec-04',
+      'sec-lecon-5': 'sec-05',
+      'sec-lecon-6': 'sec-06',
+      'sec-lecon-7': 'sec-07',
+      'sec-evaluation-finale': 'sec-evaluation-finale',
+      'sec-examen': 'sec-evaluation-finale',
+      'securite-evaluation-finale': 'sec-evaluation-finale',
       'esti-221': 'esti-221-lecon-1',
       'ESTI-221': 'esti-221-lecon-1',
       'esti221': 'esti-221-lecon-1',
@@ -7964,7 +8770,7 @@
         }
 
         // Badge Sécurité (Module B)
-        if (badge.id === 'badge-security' && completed.includes('securite-electrique')) {
+        if (badge.id === 'badge-security' && (completed.includes('securite-electrique') || completed.includes('sec-01') || completed.includes('sec-evaluation-finale') || completed.some(id => id.startsWith('sec-')))) {
           shouldUnlock = true;
         }
 
@@ -8042,6 +8848,18 @@
 
   // Table de normalisation des anciens identifiants et alias pour migration déterministe
   const LEGACY_ID_MAP = {
+    'securite-electrique': 'sec-01',
+    'securite': 'sec-01',
+    'b00': 'sec-01',
+    'B00': 'sec-01',
+    'sec-lecon-1': 'sec-01',
+    'sec-lecon-2': 'sec-02',
+    'sec-lecon-3': 'sec-03',
+    'sec-lecon-4': 'sec-04',
+    'sec-lecon-5': 'sec-05',
+    'sec-lecon-6': 'sec-06',
+    'sec-lecon-7': 'sec-07',
+    'sec-examen': 'sec-evaluation-finale',
     'esti-221': 'esti-221-lecon-1',
     'ESTI-221': 'esti-221-lecon-1',
     'esti221': 'esti-221-lecon-1',
@@ -8120,6 +8938,17 @@
 
   // Configuration formelle des sous-parcours structurés
   const PARCOURS_REGISTRY = {
+    'securite-electrique': {
+      id: 'securite-electrique',
+      shortCode: 'SÉCURITÉ',
+      title: 'Sécurité électrique',
+      fullTitle: 'Sécurité électrique — Dangers de l\'électricité et prévention',
+      typeLabel: 'Sécurité vitale',
+      accentColor: '#ef4444',
+      hubRoute: '#/formations/B/securite-electrique',
+      getLessons: () => (SECURITE_ELECTRIQUE_INFO ? SECURITE_ELECTRIQUE_INFO.lessons : []),
+      finalEvaluationId: 'sec-evaluation-finale'
+    },
     'esti-221': {
       id: 'esti-221',
       shortCode: 'ESTI 221',
@@ -10663,6 +11492,7 @@
     const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
     const esti221Progress = ProgressionService.getParcoursProgress('esti-221');
     const esti407Progress = ProgressionService.getParcoursProgress('esti-407');
+    const securiteProgress = ProgressionService.getParcoursProgress('securite-electrique');
     const completed = StorageService.getCompletedLessons();
 
     container.innerHTML = `
@@ -10875,6 +11705,32 @@
         </section>
       ` : ''}
 
+      ${moduleId === 'B' ? `
+        <!-- Carte Parcours Structuré Sécurité électrique (Module B) -->
+        <section class="securite-featured-parcours-box" aria-labelledby="securiteFeaturedTitle">
+          <div class="securite-featured-top">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <span class="securite-featured-badge">SÉCURITÉ VITALE</span>
+              <span class="securite-featured-code">SÉCURITÉ ÉLECTRIQUE</span>
+            </div>
+            <span class="securite-featured-stats">${securiteProgress.lessonsCompleted} / ${securiteProgress.lessonsTotal} leçons · ${securiteProgress.percentageFormatted}</span>
+          </div>
+          <h2 id="securiteFeaturedTitle" class="securite-featured-title">Sécurité électrique — Dangers de l'électricité et prévention</h2>
+          <p class="securite-featured-desc">
+            ${SECURITE_ELECTRIQUE_INFO.description}
+          </p>
+          <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+            <div class="progress-bar-fill" style="width: ${securiteProgress.percentage}%; background:#ef4444;"></div>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <button class="btn-continue" id="btnOpenSecuriteHub" onclick="location.hash='#/formations/B/securite-electrique'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ef4444; color:#ffffff; font-weight:700; cursor:pointer;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+              <span>Explorer les ${securiteProgress.lessonsTotal} leçons</span>
+              <span>→</span>
+            </button>
+          </div>
+        </section>
+      ` : ''}
+
       <section aria-label="Liste des formations du module">
         <div class="section-heading">
           <span>📑</span> Contenu de la formation (${mod.countLabel})
@@ -10890,9 +11746,10 @@
             const isOrni = formation.id.startsWith('rs-814-710-');
             const isEsti221 = formation.id.startsWith('esti-221-');
             const isEsti407 = formation.id.startsWith('esti-407-');
+            const isSecurite = formation.id.startsWith('sec-');
 
             return `
-              <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti221 ? 'esti221-card-accent' : (isEsti407 ? 'esti407-card-accent' : ''))))))}" data-formation-id="${formation.id}">
+              <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti221 ? 'esti221-card-accent' : (isEsti407 ? 'esti407-card-accent' : (isSecurite ? 'securite-card-accent' : '')))))))}" data-formation-id="${formation.id}">
                 <div class="formation-code-col">
                   <span class="formation-code-tag">${formation.code}</span>
                 </div>
@@ -10923,6 +11780,14 @@
     if (btnOpenPyramideHub) {
       btnOpenPyramideHub.addEventListener('click', () => {
         location.hash = '#/formations/A/pyramide-lois';
+      });
+    }
+
+    // Clic sur le bouton du parcours Sécurité électrique
+    const btnOpenSecuriteHub = container.querySelector('#btnOpenSecuriteHub');
+    if (btnOpenSecuriteHub) {
+      btnOpenSecuriteHub.addEventListener('click', () => {
+        location.hash = '#/formations/B/securite-electrique';
       });
     }
 
@@ -10986,6 +11851,11 @@
           location.hash = `#/formations/A/pyramide-lois/${formationId}`;
         } else if (formationId === 'pyr-evaluation-finale') {
           location.hash = `#/formations/A/pyramide-lois/evaluation-finale`;
+        } else if (formationId.startsWith('sec-0')) {
+          const leconNum = formationId.replace('sec-0', '');
+          location.hash = `#/formations/B/securite-electrique/lecon-${leconNum}`;
+        } else if (formationId === 'sec-evaluation-finale') {
+          location.hash = `#/formations/B/securite-electrique/evaluation-finale`;
         } else if (formationId.startsWith('rs-734-0-lecon-')) {
           const leconNum = formationId.replace('rs-734-0-lecon-', '');
           location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
@@ -12257,6 +13127,185 @@
     });
   }
 
+  // ----------------------------------------------------------------------------
+  // Vue Hub Dédiée : Sécurité électrique — Module B (7 Leçons officielles)
+  // Source de vérité : DOC_20260924_danger_electricite.pdf (18 pages, 7 chapitres)
+  // Structure de référence : Calquée sur RS 734.0 — LIE
+  // ----------------------------------------------------------------------------
+  function renderSecuriteParcoursView(container) {
+    const parcoursProgress = ProgressionService.getParcoursProgress('securite-electrique');
+    const lessons = SECURITE_ELECTRIQUE_INFO ? SECURITE_ELECTRIQUE_INFO.lessons : [];
+    const isFinalDone = parcoursProgress.isFinalDone;
+    const completedCount = parcoursProgress.lessonsCompleted;
+    const totalLessons = parcoursProgress.lessonsTotal;
+
+    // Trouver la première leçon non validée
+    let nextLessonSlug = 'lecon-1';
+    const completed = StorageService.getCompletedLessons();
+    for (const l of lessons) {
+      if (!completed.includes(l.id)) {
+        nextLessonSlug = l.slug;
+        break;
+      }
+    }
+    if (completedCount === totalLessons && !isFinalDone) {
+      nextLessonSlug = 'evaluation-finale';
+    }
+
+    container.innerHTML = `
+      <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+        <a href="#/" class="breadcrumb-link">Accueil</a>
+        <span>/</span>
+        <a href="#/formations" class="breadcrumb-link">Formations</a>
+        <span>/</span>
+        <a href="#/formations/B" class="breadcrumb-link">Module B — Dangers de l’électricité</a>
+        <span>/</span>
+        <span>Sécurité électrique</span>
+      </nav>
+
+      <!-- Header Hero Card Sécurité électrique -->
+      <header class="ocfo-hub-hero" style="border-left: 4px solid #ef4444;" role="region" aria-label="En-tête du parcours Sécurité électrique">
+        <div class="ocfo-hub-badge-row">
+          <span class="ocfo-hub-tag" style="background:#ef4444; color:#fff;">SÉCURITÉ VITALE · DANGERS DE L'ÉLECTRICITÉ</span>
+          <span class="ocfo-hub-ref" style="border-color:rgba(239,68,68,0.4); color:#ef4444; background:rgba(239,68,68,0.12);">MODULE B</span>
+        </div>
+
+        <div class="ocfo-hub-title-row">
+          <div>
+            <div class="ocfo-hub-short" style="color:#ef4444;">Sécurité électrique (7 chapitres · Référentiel officiel)</div>
+            <h1 class="ocfo-hub-title">Dangers de l’électricité, grandeurs de contact, protections et cadre réglementaire</h1>
+          </div>
+        </div>
+
+        <p class="ocfo-hub-desc">
+          ${SECURITE_ELECTRIQUE_INFO.description}
+        </p>
+
+        <div class="ocfo-hub-progress-card">
+          <div class="progress-labels">
+            <span style="font-weight:700; color:var(--text-primary);">Progression du parcours Sécurité électrique</span>
+            <span style="font-weight:800; color:#ef4444; font-size:1rem;">
+              ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
+            </span>
+          </div>
+          <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+            <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#ef4444;"></div>
+          </div>
+
+          <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+            <button class="btn-continue" id="btnResumeSecurite" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ef4444; color:#ffffff; font-weight:700; cursor:pointer;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+              <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+              <span>→</span>
+            </button>
+            <button class="btn-continue" onclick="location.hash='#/formations/B'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+              ← Retour au Module B
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Liste des 7 Leçons officielles -->
+      <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons de sécurité électrique">
+        <div class="section-heading">
+          <span>📚</span> Les 7 leçons du parcours (fidèles aux 7 chapitres du guide officiel)
+        </div>
+
+        <div class="ocfo-chapters-list">
+          ${lessons.map((les, idx) => {
+            const isDone = completed.includes(les.id);
+            const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+            return `
+              <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#ef4444;' : ''}">
+                <div class="ocfo-card-left">
+                  <span class="ocfo-chap-number" style="border-color:rgba(239,68,68,0.3); color:#ef4444;">${les.number}</span>
+                  <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                    ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                  </span>
+                </div>
+
+                <div class="ocfo-card-center">
+                  <div class="ocfo-chap-title-row">
+                    <h2 class="ocfo-chap-title">${les.title}</h2>
+                    ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(239,68,68,0.15); color:#ef4444; border-color:rgba(239,68,68,0.3);">En cours</span>' : '')}
+                  </div>
+                  <div class="ocfo-chap-articles">
+                    <span class="legal-tag" style="border-color:rgba(239,68,68,0.3); color:#ef4444; background:rgba(239,68,68,0.08);">${les.code || ('SEC-0' + les.number)}</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                    <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                    <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                  </div>
+                  <p class="ocfo-chap-summary">${les.summary}</p>
+                </div>
+
+                <div class="ocfo-card-right">
+                  <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                    <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                    <span>→</span>
+                  </button>
+                </div>
+              </article>
+            `;
+          }).join('')}
+
+          <!-- Évaluation Finale (10 questions) -->
+          <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+            <div class="ocfo-card-left">
+              <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+              <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+                ${isFinalDone ? '[✓]' : '[  ]'}
+              </span>
+            </div>
+
+            <div class="ocfo-card-center">
+              <div class="ocfo-chap-title-row">
+                <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${SECURITE_ELECTRIQUE_INFO.finalEvaluation.title}</h2>
+                ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+              </div>
+              <div class="ocfo-chap-articles">
+                <span class="legal-tag" style="border-color:rgba(239,68,68,0.3); color:#ef4444; background:rgba(239,68,68,0.08);">Chapitres 1 à 7</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${SECURITE_ELECTRIQUE_INFO.finalEvaluation.duration}</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                <span style="color:var(--text-muted); font-size:0.8rem;">10 questions</span>
+              </div>
+              <p class="ocfo-chap-summary">${SECURITE_ELECTRIQUE_INFO.finalEvaluation.summary}</p>
+            </div>
+
+            <div class="ocfo-card-right">
+              <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+                <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+                <span>→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    `;
+
+    // Clic sur bouton Continuer
+    const btnResume = container.querySelector('#btnResumeSecurite');
+    if (btnResume) {
+      btnResume.addEventListener('click', () => {
+        location.hash = `#/formations/B/securite-electrique/${nextLessonSlug}`;
+      });
+    }
+
+    // Clics sur les cartes de leçons
+    container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const slug = card.getAttribute('data-lesson-slug');
+        if (slug) {
+          location.hash = `#/formations/B/securite-electrique/${slug}`;
+        }
+      });
+    });
+  }
+
+
 
 
 
@@ -12293,6 +13342,7 @@
     const isOrni = formation.parcoursId === 'rs-814-710' || formation.id.startsWith('rs-814-710-');
     const isEsti221 = formation.parcoursId === 'esti-221' || formation.id.startsWith('esti-221-');
     const isEsti407 = formation.parcoursId === 'esti-407' || formation.id.startsWith('esti-407-');
+    const isSecurite = formation.parcoursId === 'securite-electrique' || formation.id.startsWith('sec-');
 
     // Enregistrer comme dernière activité pour le bouton « Continuer »
     StorageService.setLastActivity({
@@ -12313,6 +13363,7 @@
     const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
     const totalEsti221 = isEsti221 ? ProgressionService.getParcoursProgress('esti-221').lessonsTotal : 4;
     const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 13;
+    const totalSecurite = isSecurite ? ProgressionService.getParcoursProgress('securite-electrique').lessonsTotal : 7;
 
     // Déterminer les routes de navigation séquentielle
     let nextRoute = null;
@@ -12324,6 +13375,15 @@
         nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalPyramide}) →`;
       } else if (formation.lessonNumber === totalPyramide) {
         nextRoute = `#/formations/A/pyramide-lois/evaluation-finale`;
+        nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+      }
+    } else if (isSecurite && formation.nextLessonId) {
+      if (formation.lessonNumber && formation.lessonNumber < totalSecurite) {
+        const nextNum = formation.lessonNumber + 1;
+        nextRoute = `#/formations/B/securite-electrique/lecon-${nextNum}`;
+        nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalSecurite}) →`;
+      } else if (formation.lessonNumber === totalSecurite) {
+        nextRoute = `#/formations/B/securite-electrique/evaluation-finale`;
         nextLabel = `Passer à l'Évaluation finale 🏁 →`;
       }
     } else if (isLie && formation.nextLessonId) {
@@ -12396,6 +13456,10 @@
             <span>/</span>
             <a href="#/formations/A/pyramide-lois" class="breadcrumb-link">Pyramide des lois</a>
           ` : ''}
+          ${isSecurite ? `
+            <span>/</span>
+            <a href="#/formations/B/securite-electrique" class="breadcrumb-link">Sécurité électrique</a>
+          ` : ''}
           ${isLie ? `
             <span>/</span>
             <a href="#/formations/A/rs-734-0" class="breadcrumb-link">RS 734.0 — LIE</a>
@@ -12425,7 +13489,7 @@
         </nav>
 
         <!-- En-tête de leçon (Titre) -->
-        <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : ''))))))}">
+        <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : (isSecurite ? 'securite-lesson-header' : '')))))))}">
           <div class="lesson-badges-row">
             <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
               ${mod.id}
@@ -12436,6 +13500,12 @@
             ` : ''}
             ${isPyramide && formation.isFinalEvaluation ? `
               <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(236,72,153,0.2); color:#f472b6; border:1px solid rgba(236,72,153,0.4);">Examen final (${totalPyramide} leçons)</span>
+            ` : ''}
+            ${isSecurite && formation.lessonNumber && formation.lessonNumber <= totalSecurite ? `
+              <span class="ocfo-progression-pill" style="border-color:rgba(239,68,68,0.4); color:var(--danger); background:rgba(239,68,68,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalSecurite}</span>
+            ` : ''}
+            ${isSecurite && formation.isFinalEvaluation ? `
+              <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:#f87171; border:1px solid rgba(239,68,68,0.4);">Examen final (${totalSecurite} leçons)</span>
             ` : ''}
             ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
               <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
@@ -12486,6 +13556,7 @@
             </div>
           ` : ''}
         </header>
+
 
         ${isAvailable ? `
           <!-- Objectif Pédagogique -->
@@ -12627,6 +13698,10 @@
               <button class="btn-continue" onclick="location.hash='#/formations/A/pyramide-lois'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
                 ← Sommaire des 4 leçons Pyramide
               </button>
+            ` : isSecurite ? `
+              <button class="btn-continue" onclick="location.hash='#/formations/B/securite-electrique'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+                ← Sommaire des 7 leçons Sécurité électrique
+              </button>
             ` : isLie ? `
               <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
                 ← Sommaire des 11 leçons LIE
@@ -12704,12 +13779,18 @@
         const quizEl = createQuizEngine(formation, () => {
           // Callback lors de la complétion
           if (window.updateHeaderXp) window.updateHeaderXp();
-          // Si c'est Pyramide, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+          // Si c'est Pyramide, Sécurité, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
           if (isPyramide) {
             if (nextRoute) {
               location.hash = nextRoute;
             } else {
               location.hash = '#/formations/A/pyramide-lois';
+            }
+          } else if (isSecurite) {
+            if (nextRoute) {
+              location.hash = nextRoute;
+            } else {
+              location.hash = '#/formations/B/securite-electrique';
             }
           } else if (isLie) {
             if (nextRoute) {
@@ -13320,9 +14401,34 @@
         return;
       }
 
+      // 4septies. Parcours dédié Sécurité électrique (Hub des 7 leçons) : /formations/B/securite-electrique ou /formations/B/securite ou /formations/B/b00
+      if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'B' && (segments[2].toLowerCase() === 'securite-electrique' || segments[2].toLowerCase() === 'securite' || segments[2].toLowerCase() === 'b00')) {
+        renderSecuriteParcoursView(pageContainer);
+        return;
+      }
+
       // 5. Vue Chapitre ou Leçon
       if (segments[0] === 'formations' && segments.length >= 3) {
         const moduleId = segments[1].toUpperCase();
+
+        // Sous-routes pour le parcours Sécurité électrique (ex: /formations/B/securite-electrique/lecon-1 ou /sec-01 ou /evaluation-finale)
+        if (segments.length >= 4 && segments[1].toUpperCase() === 'B' && (segments[2].toLowerCase() === 'securite-electrique' || segments[2].toLowerCase() === 'securite' || segments[2].toLowerCase() === 'b00')) {
+          const slug = segments[3].toLowerCase();
+          let targetId = slug;
+          if (slug === 'evaluation-finale' || slug === 'examen' || slug === 'final') {
+            targetId = 'sec-evaluation-finale';
+          } else if (slug.startsWith('lecon-')) {
+            const num = slug.replace('lecon-', '');
+            targetId = `sec-0${num}`;
+          } else if (slug.startsWith('chapitre-')) {
+            const num = slug.replace('chapitre-', '');
+            targetId = `sec-0${num}`;
+          } else if (slug.startsWith('sec-')) {
+            targetId = slug;
+          }
+          renderLessonView(pageContainer, moduleId, targetId);
+          return;
+        }
 
         // Sous-routes pour le parcours Pyramide des lois (ex: /formations/A/pyramide-lois/pyr-01 ou /lecon-1)
         if (segments.length >= 4 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
@@ -13498,6 +14604,8 @@
     window.ESTI_221_INFO = ESTI_221_INFO;
     window.renderEsti407ParcoursView = renderEsti407ParcoursView;
     window.ESTI_407_INFO = ESTI_407_INFO;
+    window.renderSecuriteParcoursView = renderSecuriteParcoursView;
+    window.SECURITE_ELECTRIQUE_INFO = SECURITE_ELECTRIQUE_INFO;
     window.renderProgressView = renderProgressView;
     window.renderTrainerView = renderTrainerView;
     window.renderProfileView = renderProfileView;

@@ -168,7 +168,7 @@ export const StorageService = {
       }
 
       // Badge Sécurité (Module B)
-      if (badge.id === 'badge-security' && completed.includes('securite-electrique')) {
+      if (badge.id === 'badge-security' && (completed.includes('securite-electrique') || completed.includes('sec-01') || completed.includes('sec-evaluation-finale') || completed.some(id => id.startsWith('sec-')))) {
         shouldUnlock = true;
       }
 

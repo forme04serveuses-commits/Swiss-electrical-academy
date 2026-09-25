@@ -3856,3 +3856,72 @@ button, input, select {
   border-left: 4px solid #f97316 !important;
 }
 
+/* ==========================================================================
+   Styles spécifiques Module B — Sécurité électrique & Dangers de l'électricité
+   ========================================================================== */
+.securite-featured-parcours-box {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(245, 158, 11, 0.04) 100%), var(--bg-surface);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.securite-featured-parcours-box:hover {
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+.securite-card-accent {
+  border-left: 3px solid #ef4444 !important;
+}
+
+.securite-card-accent .formation-code-tag {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.securite-featured-badge {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.securite-featured-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #ef4444;
+  font-size: 0.85rem;
+}
+
+.securite-featured-stats {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.securite-featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.securite-featured-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  max-width: 780px;
+}
+
+.securite-lesson-header {
+  border-left: 4px solid #ef4444 !important;
+}
+

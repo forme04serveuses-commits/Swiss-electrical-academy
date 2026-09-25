@@ -35,6 +35,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const isOrni = formation.parcoursId === 'rs-814-710' || formation.id.startsWith('rs-814-710-');
   const isEsti221 = formation.parcoursId === 'esti-221' || formation.id.startsWith('esti-221-');
   const isEsti407 = formation.parcoursId === 'esti-407' || formation.id.startsWith('esti-407-');
+  const isSecurite = formation.parcoursId === 'securite-electrique' || formation.id.startsWith('sec-');
 
   // Enregistrer comme dernière activité pour le bouton « Continuer »
   StorageService.setLastActivity({
@@ -55,6 +56,7 @@ export function renderLessonView(container, moduleId, formationId) {
   const totalOrni = isOrni ? ProgressionService.getParcoursProgress('rs-814-710').lessonsTotal : 7;
   const totalEsti221 = isEsti221 ? ProgressionService.getParcoursProgress('esti-221').lessonsTotal : 4;
   const totalEsti407 = isEsti407 ? ProgressionService.getParcoursProgress('esti-407').lessonsTotal : 13;
+  const totalSecurite = isSecurite ? ProgressionService.getParcoursProgress('securite-electrique').lessonsTotal : 7;
 
   // Déterminer les routes de navigation séquentielle
   let nextRoute = null;
@@ -66,6 +68,15 @@ export function renderLessonView(container, moduleId, formationId) {
       nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalPyramide}) →`;
     } else if (formation.lessonNumber === totalPyramide) {
       nextRoute = `#/formations/A/pyramide-lois/evaluation-finale`;
+      nextLabel = `Passer à l'Évaluation finale 🏁 →`;
+    }
+  } else if (isSecurite && formation.nextLessonId) {
+    if (formation.lessonNumber && formation.lessonNumber < totalSecurite) {
+      const nextNum = formation.lessonNumber + 1;
+      nextRoute = `#/formations/B/securite-electrique/lecon-${nextNum}`;
+      nextLabel = `Passer à la Leçon ${nextNum} (${nextNum} / ${totalSecurite}) →`;
+    } else if (formation.lessonNumber === totalSecurite) {
+      nextRoute = `#/formations/B/securite-electrique/evaluation-finale`;
       nextLabel = `Passer à l'Évaluation finale 🏁 →`;
     }
   } else if (isLie && formation.nextLessonId) {
@@ -138,6 +149,10 @@ export function renderLessonView(container, moduleId, formationId) {
           <span>/</span>
           <a href="#/formations/A/pyramide-lois" class="breadcrumb-link">Pyramide des lois</a>
         ` : ''}
+        ${isSecurite ? `
+          <span>/</span>
+          <a href="#/formations/B/securite-electrique" class="breadcrumb-link">Sécurité électrique</a>
+        ` : ''}
         ${isLie ? `
           <span>/</span>
           <a href="#/formations/A/rs-734-0" class="breadcrumb-link">RS 734.0 — LIE</a>
@@ -167,7 +182,7 @@ export function renderLessonView(container, moduleId, formationId) {
       </nav>
 
       <!-- En-tête de leçon (Titre) -->
-      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : ''))))))}">
+      <header class="lesson-header-card ${isPyramide ? 'pyramide-lesson-header' : (isLie ? 'ocfo-lesson-header' : (isOcfo ? 'ocfo-lesson-header' : (isOibt ? 'oibt-lesson-header' : (isOrni ? 'orni-lesson-header' : (isEsti221 ? 'esti-lesson-header' : (isEsti407 ? 'esti407-lesson-header' : (isSecurite ? 'securite-lesson-header' : '')))))))}">
         <div class="lesson-badges-row">
           <span class="module-code-badge badge-${mod.id}" style="width:30px; height:30px; font-size:0.85rem;">
             ${mod.id}
@@ -178,6 +193,12 @@ export function renderLessonView(container, moduleId, formationId) {
           ` : ''}
           ${isPyramide && formation.isFinalEvaluation ? `
             <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(236,72,153,0.2); color:#f472b6; border:1px solid rgba(236,72,153,0.4);">Examen final (${totalPyramide} leçons)</span>
+          ` : ''}
+          ${isSecurite && formation.lessonNumber && formation.lessonNumber <= totalSecurite ? `
+            <span class="ocfo-progression-pill" style="border-color:rgba(239,68,68,0.4); color:var(--danger); background:rgba(239,68,68,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalSecurite}</span>
+          ` : ''}
+          ${isSecurite && formation.isFinalEvaluation ? `
+            <span class="ocfo-badge-eval" style="display:inline-block; padding:0.2rem 0.65rem; font-size:0.75rem; background:rgba(239,68,68,0.2); color:#f87171; border:1px solid rgba(239,68,68,0.4);">Examen final (${totalSecurite} leçons)</span>
           ` : ''}
           ${isLie && formation.lessonNumber && formation.lessonNumber <= totalLie ? `
             <span class="ocfo-progression-pill" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">${formation.code} · ${formation.lessonNumber} / ${totalLie}</span>
@@ -228,6 +249,7 @@ export function renderLessonView(container, moduleId, formationId) {
           </div>
         ` : ''}
       </header>
+
 
       ${isAvailable ? `
         <!-- Objectif Pédagogique -->
@@ -369,6 +391,10 @@ export function renderLessonView(container, moduleId, formationId) {
             <button class="btn-continue" onclick="location.hash='#/formations/A/pyramide-lois'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
               ← Sommaire des 4 leçons Pyramide
             </button>
+          ` : isSecurite ? `
+            <button class="btn-continue" onclick="location.hash='#/formations/B/securite-electrique'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+              ← Sommaire des 7 leçons Sécurité électrique
+            </button>
           ` : isLie ? `
             <button class="btn-continue" onclick="location.hash='#/formations/A/rs-734-0'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium);">
               ← Sommaire des 11 leçons LIE
@@ -446,12 +472,18 @@ export function renderLessonView(container, moduleId, formationId) {
       const quizEl = createQuizEngine(formation, () => {
         // Callback lors de la complétion
         if (window.updateHeaderXp) window.updateHeaderXp();
-        // Si c'est Pyramide, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
+        // Si c'est Pyramide, Sécurité, LIE, OCFo, OIBT ou ORNI et qu'une leçon suivante existe, naviguer vers la suite ou le hub
         if (isPyramide) {
           if (nextRoute) {
             location.hash = nextRoute;
           } else {
             location.hash = '#/formations/A/pyramide-lois';
+          }
+        } else if (isSecurite) {
+          if (nextRoute) {
+            location.hash = nextRoute;
+          } else {
+            location.hash = '#/formations/B/securite-electrique';
           }
         } else if (isLie) {
           if (nextRoute) {

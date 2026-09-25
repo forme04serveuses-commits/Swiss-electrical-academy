@@ -2,11 +2,23 @@
 // Source unique de vérité pour tous les calculs de progression (global, modules, parcours, leçons)
 // Garantit la cohérence absolue, l'arrondi décimal précis, l'anti-farming et la persistance.
 
-import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO, SECURITE_ELECTRIQUE_INFO, OFFICIAL_BADGES } from '../data/academy-data.js';
 import { StorageService } from './storage.js';
 
 // Table de normalisation des anciens identifiants et alias pour migration déterministe
 const LEGACY_ID_MAP = {
+  'securite-electrique': 'sec-01',
+  'securite': 'sec-01',
+  'b00': 'sec-01',
+  'B00': 'sec-01',
+  'sec-lecon-1': 'sec-01',
+  'sec-lecon-2': 'sec-02',
+  'sec-lecon-3': 'sec-03',
+  'sec-lecon-4': 'sec-04',
+  'sec-lecon-5': 'sec-05',
+  'sec-lecon-6': 'sec-06',
+  'sec-lecon-7': 'sec-07',
+  'sec-examen': 'sec-evaluation-finale',
   'esti-221': 'esti-221-lecon-1',
   'ESTI-221': 'esti-221-lecon-1',
   'esti221': 'esti-221-lecon-1',
@@ -85,6 +97,17 @@ const LEGACY_ID_MAP = {
 
 // Configuration formelle des sous-parcours structurés
 const PARCOURS_REGISTRY = {
+  'securite-electrique': {
+    id: 'securite-electrique',
+    shortCode: 'SÉCURITÉ',
+    title: 'Sécurité électrique',
+    fullTitle: 'Sécurité électrique — Dangers de l\'électricité et prévention',
+    typeLabel: 'Sécurité vitale',
+    accentColor: '#ef4444',
+    hubRoute: '#/formations/B/securite-electrique',
+    getLessons: () => (SECURITE_ELECTRIQUE_INFO ? SECURITE_ELECTRIQUE_INFO.lessons : []),
+    finalEvaluationId: 'sec-evaluation-finale'
+  },
   'esti-221': {
     id: 'esti-221',
     shortCode: 'ESTI 221',

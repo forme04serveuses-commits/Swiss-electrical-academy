@@ -3,7 +3,7 @@
 
 import { StorageService } from '../services/storage.js';
 import { ProgressionService } from '../services/progression.js';
-import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO } from '../data/academy-data.js';
+import { ACADEMY_MODULES, PYRAMIDE_LOIS_INFO, RS_734_0_INFO, RS_734_2_INFO, RS_734_27_INFO, RS_814_710_INFO, ESTI_221_INFO, ESTI_407_INFO, SECURITE_ELECTRIQUE_INFO } from '../data/academy-data.js';
 
 export function renderModuleView(container, moduleId) {
   const mod = ACADEMY_MODULES.find(m => m.id === moduleId);
@@ -27,6 +27,7 @@ export function renderModuleView(container, moduleId) {
   const orniProgress = ProgressionService.getParcoursProgress('rs-814-710');
   const esti221Progress = ProgressionService.getParcoursProgress('esti-221');
   const esti407Progress = ProgressionService.getParcoursProgress('esti-407');
+  const securiteProgress = ProgressionService.getParcoursProgress('securite-electrique');
   const completed = StorageService.getCompletedLessons();
 
   container.innerHTML = `
@@ -239,6 +240,32 @@ export function renderModuleView(container, moduleId) {
       </section>
     ` : ''}
 
+    ${moduleId === 'B' ? `
+      <!-- Carte Parcours Structuré Sécurité électrique (Module B) -->
+      <section class="securite-featured-parcours-box" aria-labelledby="securiteFeaturedTitle">
+        <div class="securite-featured-top">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="securite-featured-badge">SÉCURITÉ VITALE</span>
+            <span class="securite-featured-code">SÉCURITÉ ÉLECTRIQUE</span>
+          </div>
+          <span class="securite-featured-stats">${securiteProgress.lessonsCompleted} / ${securiteProgress.lessonsTotal} leçons · ${securiteProgress.percentageFormatted}</span>
+        </div>
+        <h2 id="securiteFeaturedTitle" class="securite-featured-title">Sécurité électrique — Dangers de l'électricité et prévention</h2>
+        <p class="securite-featured-desc">
+          ${SECURITE_ELECTRIQUE_INFO.description}
+        </p>
+        <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
+          <div class="progress-bar-fill" style="width: ${securiteProgress.percentage}%; background:#ef4444;"></div>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button class="btn-continue" id="btnOpenSecuriteHub" onclick="location.hash='#/formations/B/securite-electrique'" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ef4444; color:#ffffff; font-weight:700; cursor:pointer;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+            <span>Explorer les ${securiteProgress.lessonsTotal} leçons</span>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
+    ` : ''}
+
     <section aria-label="Liste des formations du module">
       <div class="section-heading">
         <span>📑</span> Contenu de la formation (${mod.countLabel})
@@ -254,9 +281,10 @@ export function renderModuleView(container, moduleId) {
           const isOrni = formation.id.startsWith('rs-814-710-');
           const isEsti221 = formation.id.startsWith('esti-221-');
           const isEsti407 = formation.id.startsWith('esti-407-');
+          const isSecurite = formation.id.startsWith('sec-');
 
           return `
-            <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti221 ? 'esti221-card-accent' : (isEsti407 ? 'esti407-card-accent' : ''))))))}" data-formation-id="${formation.id}">
+            <article class="formation-item-card ${isPyramide ? 'pyramide-card-accent' : (isLie ? 'lie-card-accent' : (isOcfo ? 'ocfo-card-accent' : (isOibt ? 'oibt-card-accent' : (isOrni ? 'orni-card-accent' : (isEsti221 ? 'esti221-card-accent' : (isEsti407 ? 'esti407-card-accent' : (isSecurite ? 'securite-card-accent' : '')))))))}" data-formation-id="${formation.id}">
               <div class="formation-code-col">
                 <span class="formation-code-tag">${formation.code}</span>
               </div>
@@ -287,6 +315,14 @@ export function renderModuleView(container, moduleId) {
   if (btnOpenPyramideHub) {
     btnOpenPyramideHub.addEventListener('click', () => {
       location.hash = '#/formations/A/pyramide-lois';
+    });
+  }
+
+  // Clic sur le bouton du parcours Sécurité électrique
+  const btnOpenSecuriteHub = container.querySelector('#btnOpenSecuriteHub');
+  if (btnOpenSecuriteHub) {
+    btnOpenSecuriteHub.addEventListener('click', () => {
+      location.hash = '#/formations/B/securite-electrique';
     });
   }
 
@@ -350,6 +386,11 @@ export function renderModuleView(container, moduleId) {
         location.hash = `#/formations/A/pyramide-lois/${formationId}`;
       } else if (formationId === 'pyr-evaluation-finale') {
         location.hash = `#/formations/A/pyramide-lois/evaluation-finale`;
+      } else if (formationId.startsWith('sec-0')) {
+        const leconNum = formationId.replace('sec-0', '');
+        location.hash = `#/formations/B/securite-electrique/lecon-${leconNum}`;
+      } else if (formationId === 'sec-evaluation-finale') {
+        location.hash = `#/formations/B/securite-electrique/evaluation-finale`;
       } else if (formationId.startsWith('rs-734-0-lecon-')) {
         const leconNum = formationId.replace('rs-734-0-lecon-', '');
         location.hash = `#/formations/A/rs-734-0/lecon-${leconNum}`;
@@ -1620,6 +1661,185 @@ export function renderEsti407ParcoursView(container) {
     });
   });
 }
+
+// ----------------------------------------------------------------------------
+// Vue Hub Dédiée : Sécurité électrique — Module B (7 Leçons officielles)
+// Source de vérité : DOC_20260924_danger_electricite.pdf (18 pages, 7 chapitres)
+// Structure de référence : Calquée sur RS 734.0 — LIE
+// ----------------------------------------------------------------------------
+export function renderSecuriteParcoursView(container) {
+  const parcoursProgress = ProgressionService.getParcoursProgress('securite-electrique');
+  const lessons = SECURITE_ELECTRIQUE_INFO ? SECURITE_ELECTRIQUE_INFO.lessons : [];
+  const isFinalDone = parcoursProgress.isFinalDone;
+  const completedCount = parcoursProgress.lessonsCompleted;
+  const totalLessons = parcoursProgress.lessonsTotal;
+
+  // Trouver la première leçon non validée
+  let nextLessonSlug = 'lecon-1';
+  const completed = StorageService.getCompletedLessons();
+  for (const l of lessons) {
+    if (!completed.includes(l.id)) {
+      nextLessonSlug = l.slug;
+      break;
+    }
+  }
+  if (completedCount === totalLessons && !isFinalDone) {
+    nextLessonSlug = 'evaluation-finale';
+  }
+
+  container.innerHTML = `
+    <nav class="breadcrumb-nav" aria-label="Fil d'ariane">
+      <a href="#/" class="breadcrumb-link">Accueil</a>
+      <span>/</span>
+      <a href="#/formations" class="breadcrumb-link">Formations</a>
+      <span>/</span>
+      <a href="#/formations/B" class="breadcrumb-link">Module B — Dangers de l’électricité</a>
+      <span>/</span>
+      <span>Sécurité électrique</span>
+    </nav>
+
+    <!-- Header Hero Card Sécurité électrique -->
+    <header class="ocfo-hub-hero" style="border-left: 4px solid #ef4444;" role="region" aria-label="En-tête du parcours Sécurité électrique">
+      <div class="ocfo-hub-badge-row">
+        <span class="ocfo-hub-tag" style="background:#ef4444; color:#fff;">SÉCURITÉ VITALE · DANGERS DE L'ÉLECTRICITÉ</span>
+        <span class="ocfo-hub-ref" style="border-color:rgba(239,68,68,0.4); color:#ef4444; background:rgba(239,68,68,0.12);">MODULE B</span>
+      </div>
+
+      <div class="ocfo-hub-title-row">
+        <div>
+          <div class="ocfo-hub-short" style="color:#ef4444;">Sécurité électrique (7 chapitres · Référentiel officiel)</div>
+          <h1 class="ocfo-hub-title">Dangers de l’électricité, grandeurs de contact, protections et cadre réglementaire</h1>
+        </div>
+      </div>
+
+      <p class="ocfo-hub-desc">
+        ${SECURITE_ELECTRIQUE_INFO.description}
+      </p>
+
+      <div class="ocfo-hub-progress-card">
+        <div class="progress-labels">
+          <span style="font-weight:700; color:var(--text-primary);">Progression du parcours Sécurité électrique</span>
+          <span style="font-weight:800; color:#ef4444; font-size:1rem;">
+            ${parcoursProgress.percentageFormatted} · ${completedCount} / ${totalLessons} leçons
+          </span>
+        </div>
+        <div class="progress-bar-bg" style="height:10px; margin-top:0.5rem;">
+          <div class="progress-bar-fill" style="width: ${parcoursProgress.percentage}%; background:#ef4444;"></div>
+        </div>
+
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+          <button class="btn-continue" id="btnResumeSecurite" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ef4444; color:#ffffff; font-weight:700; cursor:pointer;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+            <span>${completedCount === 0 ? 'Commencer la Leçon 1' : (completedCount === totalLessons ? 'Accéder à l\'évaluation finale' : 'Reprendre le parcours')}</span>
+            <span>→</span>
+          </button>
+          <button class="btn-continue" onclick="location.hash='#/formations/B'" style="background:var(--bg-surface-elevated); color:var(--text-primary); border:1px solid var(--border-medium); cursor:pointer;">
+            ← Retour au Module B
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Liste des 7 Leçons officielles -->
+    <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 7 leçons de sécurité électrique">
+      <div class="section-heading">
+        <span>📚</span> Les 7 leçons du parcours (fidèles aux 7 chapitres du guide officiel)
+      </div>
+
+      <div class="ocfo-chapters-list">
+        ${lessons.map((les, idx) => {
+          const isDone = completed.includes(les.id);
+          const isCurrent = !isDone && (idx === 0 || completed.includes(lessons[idx - 1].id));
+
+          return `
+            <article class="ocfo-chapter-card ${isCurrent ? 'chapter-in-progress' : ''} ${isDone ? 'chapter-completed' : ''}" data-lesson-slug="${les.slug}" style="${isCurrent ? 'border-color:#ef4444;' : ''}">
+              <div class="ocfo-card-left">
+                <span class="ocfo-chap-number" style="border-color:rgba(239,68,68,0.3); color:#ef4444;">${les.number}</span>
+                <span class="ocfo-status-box ${isDone ? 'box-done' : (isCurrent ? 'box-current' : 'box-pending')}">
+                  ${isDone ? '[✓]' : (isCurrent ? '[●]' : '[  ]')}
+                </span>
+              </div>
+
+              <div class="ocfo-card-center">
+                <div class="ocfo-chap-title-row">
+                  <h2 class="ocfo-chap-title">${les.title}</h2>
+                  ${isDone ? '<span class="ocfo-badge-done">✓ Validé</span>' : (isCurrent ? '<span class="ocfo-badge-current" style="background:rgba(239,68,68,0.15); color:#ef4444; border-color:rgba(239,68,68,0.3);">En cours</span>' : '')}
+                </div>
+                <div class="ocfo-chap-articles">
+                  <span class="legal-tag" style="border-color:rgba(239,68,68,0.3); color:#ef4444; background:rgba(239,68,68,0.08);">${les.code || ('SEC-0' + les.number)}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${les.duration}</span>
+                  <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+                  <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 30 XP</span>
+                </div>
+                <p class="ocfo-chap-summary">${les.summary}</p>
+              </div>
+
+              <div class="ocfo-card-right">
+                <button class="ocfo-btn-open" aria-label="Ouvrir la ${les.title}">
+                  <span>${isDone ? 'Revoir' : (isCurrent ? 'Continuer' : 'Commencer')}</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('')}
+
+        <!-- Évaluation Finale (10 questions) -->
+        <article class="ocfo-chapter-card ocfo-final-card ${isFinalDone ? 'chapter-completed' : ''}" data-lesson-slug="evaluation-finale">
+          <div class="ocfo-card-left">
+            <span class="ocfo-chap-number" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">🏁</span>
+            <span class="ocfo-status-box ${isFinalDone ? 'box-done' : 'box-pending'}">
+              ${isFinalDone ? '[✓]' : '[  ]'}
+            </span>
+          </div>
+
+          <div class="ocfo-card-center">
+            <div class="ocfo-chap-title-row">
+              <h2 class="ocfo-chap-title" style="color:var(--text-primary);">${SECURITE_ELECTRIQUE_INFO.finalEvaluation.title}</h2>
+              ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
+            </div>
+            <div class="ocfo-chap-articles">
+              <span class="legal-tag" style="border-color:rgba(239,68,68,0.3); color:#ef4444; background:rgba(239,68,68,0.08);">Chapitres 1 à 7</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${SECURITE_ELECTRIQUE_INFO.finalEvaluation.duration}</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--warning); font-size:0.8rem; font-weight:700;">⚡ 100 XP</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
+              <span style="color:var(--text-muted); font-size:0.8rem;">10 questions</span>
+            </div>
+            <p class="ocfo-chap-summary">${SECURITE_ELECTRIQUE_INFO.finalEvaluation.summary}</p>
+          </div>
+
+          <div class="ocfo-card-right">
+            <button class="ocfo-btn-open" style="background:var(--accent-red); color:#fff; border-color:var(--accent-red);" aria-label="Ouvrir l'évaluation finale">
+              <span>${isFinalDone ? 'Revoir' : 'Passer l\'examen'}</span>
+              <span>→</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  `;
+
+  // Clic sur bouton Continuer
+  const btnResume = container.querySelector('#btnResumeSecurite');
+  if (btnResume) {
+    btnResume.addEventListener('click', () => {
+      location.hash = `#/formations/B/securite-electrique/${nextLessonSlug}`;
+    });
+  }
+
+  // Clics sur les cartes de leçons
+  container.querySelectorAll('.ocfo-chapter-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const slug = card.getAttribute('data-lesson-slug');
+      if (slug) {
+        location.hash = `#/formations/B/securite-electrique/${slug}`;
+      }
+    });
+  });
+}
+
 
 
 

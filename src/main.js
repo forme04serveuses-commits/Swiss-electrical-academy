@@ -4,7 +4,7 @@
 import { setupNavigation, updateActiveNav } from './components/navigation.js';
 import { ProgressionService } from './services/progression.js';
 import { renderDashboard } from './pages/dashboard.js';
-import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView, renderEsti221ParcoursView, renderEsti407ParcoursView } from './pages/module-view.js';
+import { renderModuleView, renderPyramideParcoursView, renderOcfoParcoursView, renderLieParcoursView, renderOibtParcoursView, renderOrniParcoursView, renderEsti221ParcoursView, renderEsti407ParcoursView, renderSecuriteParcoursView } from './pages/module-view.js';
 import { renderLessonView } from './pages/lesson-view.js';
 import { renderProgressView } from './pages/progress-view.js';
 import { renderTrainerView } from './pages/trainer-view.js';
@@ -165,9 +165,34 @@ function initSEA() {
       return;
     }
 
+    // 4septies. Parcours dédié Sécurité électrique (Hub des 7 leçons) : /formations/B/securite-electrique ou /formations/B/securite ou /formations/B/b00
+    if (segments[0] === 'formations' && segments.length === 3 && segments[1].toUpperCase() === 'B' && (segments[2].toLowerCase() === 'securite-electrique' || segments[2].toLowerCase() === 'securite' || segments[2].toLowerCase() === 'b00')) {
+      renderSecuriteParcoursView(pageContainer);
+      return;
+    }
+
     // 5. Vue Chapitre ou Leçon
     if (segments[0] === 'formations' && segments.length >= 3) {
       const moduleId = segments[1].toUpperCase();
+
+      // Sous-routes pour le parcours Sécurité électrique (ex: /formations/B/securite-electrique/lecon-1 ou /sec-01 ou /evaluation-finale)
+      if (segments.length >= 4 && segments[1].toUpperCase() === 'B' && (segments[2].toLowerCase() === 'securite-electrique' || segments[2].toLowerCase() === 'securite' || segments[2].toLowerCase() === 'b00')) {
+        const slug = segments[3].toLowerCase();
+        let targetId = slug;
+        if (slug === 'evaluation-finale' || slug === 'examen' || slug === 'final') {
+          targetId = 'sec-evaluation-finale';
+        } else if (slug.startsWith('lecon-')) {
+          const num = slug.replace('lecon-', '');
+          targetId = `sec-0${num}`;
+        } else if (slug.startsWith('chapitre-')) {
+          const num = slug.replace('chapitre-', '');
+          targetId = `sec-0${num}`;
+        } else if (slug.startsWith('sec-')) {
+          targetId = slug;
+        }
+        renderLessonView(pageContainer, moduleId, targetId);
+        return;
+      }
 
       // Sous-routes pour le parcours Pyramide des lois (ex: /formations/A/pyramide-lois/pyr-01 ou /lecon-1)
       if (segments.length >= 4 && (segments[2].toLowerCase() === 'pyramide-lois' || segments[2].toLowerCase() === 'pyramide' || segments[2].toLowerCase() === 'a00')) {
