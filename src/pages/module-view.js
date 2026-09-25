@@ -245,7 +245,7 @@ export function renderModuleView(container, moduleId) {
       <section class="securite-featured-parcours-box" aria-labelledby="securiteFeaturedTitle">
         <div class="securite-featured-top">
           <div style="display:flex; align-items:center; gap:0.75rem;">
-            <span class="securite-featured-badge">SÉCURITÉ VITALE</span>
+            <span class="securite-featured-badge">PUBLICATION SPÉCIALISÉE</span>
             <span class="securite-featured-code">SÉCURITÉ ÉLECTRIQUE</span>
           </div>
           <span class="securite-featured-stats">${securiteProgress.lessonsCompleted} / ${securiteProgress.lessonsTotal} leçons · ${securiteProgress.percentageFormatted}</span>
@@ -1701,7 +1701,7 @@ export function renderSecuriteParcoursView(container) {
     <!-- Header Hero Card Sécurité électrique -->
     <header class="ocfo-hub-hero" style="border-left: 4px solid #ef4444;" role="region" aria-label="En-tête du parcours Sécurité électrique">
       <div class="ocfo-hub-badge-row">
-        <span class="ocfo-hub-tag" style="background:#ef4444; color:#fff;">SÉCURITÉ VITALE · DANGERS DE L'ÉLECTRICITÉ</span>
+        <span class="ocfo-hub-tag" style="background:#ef4444; color:#fff;">PUBLICATION SPÉCIALISÉE</span>
         <span class="ocfo-hub-ref" style="border-color:rgba(239,68,68,0.4); color:#ef4444; background:rgba(239,68,68,0.12);">Sécurité électrique</span>
       </div>
 
