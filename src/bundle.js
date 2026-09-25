@@ -10922,22 +10922,48 @@
     // Modale Graphique Normatif CEI 60479 (Haute résolution & Lisibilité)
     // --------------------------------------------------------------------------
     function renderTechGraphModal(calc) {
-      const dotX = calc.effectiveU === 0 ? toSvgX(0.1) : toSvgX(calc.currentMa);
-      const dotY = toSvgY(tripTimeMs);
-      const xA = toSvgX(0.5);
-      const x230 = toSvgX(230);
-      const y400 = toSvgY(400);
+      const graphPlotLeft = 85;
+      const graphPlotRight = 550;
+      const graphPlotTop = 26;
+      const graphPlotBottom = 275;
 
-      const pathBPoints = ptsCurveB.map(([t, i]) => `${toSvgX(i)},${toSvgY(t)}`).join(' L ');
+      function toGLogX(iMa) {
+        const val = Math.max(0.1, Math.min(2000, iMa));
+        const logMin = Math.log10(0.1);
+        const logMax = Math.log10(2000);
+        const ratio = (Math.log10(val) - logMin) / (logMax - logMin);
+        return Math.round((graphPlotLeft + ratio * (graphPlotRight - graphPlotLeft)) * 10) / 10;
+      }
+
+      function toGLogY(tMs) {
+        const val = Math.max(10, Math.min(10000, tMs));
+        const logMin = Math.log10(10);
+        const logMax = Math.log10(10000);
+        const ratio = (Math.log10(val) - logMin) / (logMax - logMin);
+        return Math.round((graphPlotBottom - ratio * (graphPlotBottom - graphPlotTop)) * 10) / 10;
+      }
+
+      const dotX = calc.effectiveU === 0 ? toGLogX(0.1) : toGLogX(calc.currentMa);
+      const dotY = toGLogY(tripTimeMs);
+      const xA = toGLogX(0.5);
+      const x230 = toGLogX(230);
+      const y400 = toGLogY(400);
+      const y25 = toGLogY(25);
+
+      const pathBPoints = ptsCurveB.map(([t, i]) => `${toGLogX(i)},${toGLogY(t)}`).join(' L ');
       const pathBStroke = `M ${pathBPoints}`;
-      const pathC1Points = ptsCurveC1.map(([t, i]) => `${toSvgX(i)},${toSvgY(t)}`).join(' L ');
+      const pathC1Points = ptsCurveC1.map(([t, i]) => `${toGLogX(i)},${toGLogY(t)}`).join(' L ');
       const pathC1Stroke = `M ${pathC1Points}`;
 
-      const dAc1 = `M ${plotLeft},${plotTop} L ${xA},${plotTop} L ${xA},${plotBottom} L ${plotLeft},${plotBottom} Z`;
-      const dAc2 = `M ${xA},${plotTop} L ${pathBPoints} L ${xA},${plotBottom} Z`;
-      const ptsC1Rev = [...ptsCurveC1].reverse().map(([t, i]) => `${toSvgX(i)},${toSvgY(t)}`).join(' L ');
-      const dAc3 = `M ${toSvgX(ptsCurveB[0][1])},${toSvgY(ptsCurveB[0][0])} L ${pathBPoints} L ${ptsC1Rev} Z`;
-      const dAc4 = `M ${toSvgX(ptsCurveC1[0][1])},${toSvgY(ptsCurveC1[0][0])} L ${pathC1Points} L ${plotRight},${plotBottom} L ${plotRight},${plotTop} Z`;
+      const dAc1 = `M ${graphPlotLeft},${graphPlotTop} L ${xA},${graphPlotTop} L ${xA},${graphPlotBottom} L ${graphPlotLeft},${graphPlotBottom} Z`;
+      const dAc2 = `M ${xA},${graphPlotTop} L ${pathBPoints} L ${xA},${graphPlotBottom} Z`;
+      const ptsC1Rev = [...ptsCurveC1].reverse().map(([t, i]) => `${toGLogX(i)},${toGLogY(t)}`).join(' L ');
+      const dAc3 = `M ${toGLogX(ptsCurveB[0][1])},${toGLogY(ptsCurveB[0][0])} L ${pathBPoints} L ${ptsC1Rev} Z`;
+      const dAc4 = `M ${toGLogX(ptsCurveC1[0][1])},${toGLogY(ptsCurveC1[0][0])} L ${pathC1Points} L ${graphPlotRight},${graphPlotBottom} L ${graphPlotRight},${graphPlotTop} Z`;
+
+      // Décalage intelligent de l'infobulle pour ne jamais sortir de la zone de tracé
+      const tipDx = dotX > 470 ? -52 : (dotX < 140 ? 52 : 0);
+      const tipDy = dotY < 55 ? 20 : -22;
 
       return `
         <div class="sim-modal-backdrop" id="techGraphBackdrop">
@@ -10952,9 +10978,9 @@
 
             <div class="sim-modal-body" style="flex-direction:column;">
               <div class="sim-svg-wrap" style="min-height:360px;">
-                <svg viewBox="0 0 660 350" class="sim-svg-graph" aria-label="Courbe normative des zones AC-1 à AC-4">
+                <svg viewBox="0 0 740 350" class="sim-svg-graph" aria-label="Courbe normative des zones AC-1 à AC-4">
                   <!-- Fond du graphique -->
-                  <rect x="${plotLeft}" y="${plotTop}" width="${plotRight - plotLeft}" height="${plotBottom - plotTop}" fill="#0a1224" stroke="#334155" stroke-width="1.5" />
+                  <rect x="${graphPlotLeft}" y="${graphPlotTop}" width="${graphPlotRight - graphPlotLeft}" height="${graphPlotBottom - graphPlotTop}" fill="#0a1224" stroke="#334155" stroke-width="1.5" />
 
                   <!-- Zones Physiologiques Colorées -->
                   <path d="${dAc1}" fill="rgba(16, 185, 129, 0.18)" />
@@ -10964,73 +10990,79 @@
 
                   <!-- Quadrillage vertical logarithmique (Courant I_B) -->
                   ${[0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000].map(i => `
-                    <line x1="${toSvgX(i)}" y1="${plotTop}" x2="${toSvgX(i)}" y2="${plotBottom}" stroke="#334155" stroke-width="1" opacity="${i === 0.5 ? '0.7' : '0.4'}" />
+                    <line x1="${toGLogX(i)}" y1="${graphPlotTop}" x2="${toGLogX(i)}" y2="${graphPlotBottom}" stroke="#334155" stroke-width="1" opacity="${i === 0.5 ? '0.7' : '0.4'}" />
                   `).join('')}
 
                   <!-- Quadrillage horizontal logarithmique (Durée t) -->
                   ${[10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000].map(t => `
-                    <line x1="${plotLeft}" y1="${toSvgY(t)}" x2="${plotRight}" y2="${toSvgY(t)}" stroke="#334155" stroke-width="1" opacity="0.4" />
+                    <line x1="${graphPlotLeft}" y1="${toGLogY(t)}" x2="${graphPlotRight}" y2="${toGLogY(t)}" stroke="#334155" stroke-width="1" opacity="0.4" />
                   `).join('')}
 
                   <!-- Courbes caractéristiques normées -->
                   <!-- Ligne a (0.5 mA) : Seuil de perception -->
-                  <line x1="${xA}" y1="${plotTop}" x2="${xA}" y2="${plotBottom}" stroke="#475569" stroke-width="2.2" stroke-dasharray="5 3" />
+                  <line x1="${xA}" y1="${graphPlotTop}" x2="${xA}" y2="${graphPlotBottom}" stroke="#475569" stroke-width="2.2" stroke-dasharray="5 3" />
                   <!-- Courbe b : Seuil de non-lâcher -->
                   <path d="${pathBStroke}" fill="none" stroke="#64748b" stroke-width="2.5" />
                   <!-- Courbe c1 : Seuil de fibrillation ventriculaire -->
                   <path d="${pathC1Stroke}" fill="none" stroke="#94a3b8" stroke-width="2.5" />
 
-                  <!-- Badges des Zones (Positionnés précisément au centre géométrique supérieur de chaque zone sans chevaucher les courbes) -->
-                  <rect x="${toSvgX(0.22) - 17}" y="34" width="34" height="18" rx="4" fill="#15803d" />
-                  <text x="${toSvgX(0.22)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-1</text>
+                  <!-- Badges des Zones (Positionnés précisément au centre supérieur de chaque zone) -->
+                  <rect x="${toGLogX(0.22) - 17}" y="34" width="34" height="18" rx="4" fill="#15803d" />
+                  <text x="${toGLogX(0.22)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-1</text>
 
-                  <rect x="${toSvgX(1.6) - 17}" y="34" width="34" height="18" rx="4" fill="#d97706" />
-                  <text x="${toSvgX(1.6)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-2</text>
+                  <rect x="${toGLogX(1.6) - 17}" y="34" width="34" height="18" rx="4" fill="#d97706" />
+                  <text x="${toGLogX(1.6)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-2</text>
 
-                  <rect x="${toSvgX(16) - 17}" y="34" width="34" height="18" rx="4" fill="#ea580c" />
-                  <text x="${toSvgX(16)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-3</text>
+                  <rect x="${toGLogX(16) - 17}" y="34" width="34" height="18" rx="4" fill="#ea580c" />
+                  <text x="${toGLogX(16)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-3</text>
 
-                  <rect x="${toSvgX(350) - 17}" y="34" width="34" height="18" rx="4" fill="#dc2626" />
-                  <text x="${toSvgX(350)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-4</text>
+                  <rect x="${toGLogX(350) - 17}" y="34" width="34" height="18" rx="4" fill="#dc2626" />
+                  <text x="${toGLogX(350)}" y="46.5" fill="#fff" font-size="8.5" font-weight="900" text-anchor="middle">AC-4</text>
 
-                  <!-- Lignes de repères statiques normatifs (Avec cartouches sur la gauche pour éviter toute collision avec les points et courbes) -->
-                  <!-- Repère réglementaire 400 ms -->
-                  <line x1="${plotLeft}" y1="${y400}" x2="${plotRight}" y2="${y400}" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.75" />
-                  <rect x="${plotLeft + 6}" y="${y400 - 15}" width="168" height="13" rx="3" fill="#0b1329" fill-opacity="0.9" stroke="#ea580c" stroke-width="0.8" />
-                  <text x="${plotLeft + 10}" y="${y400 - 5}" fill="#ea580c" font-size="7.5" font-weight="700">Seuil maximal réglementaire (≤ 400 ms)</text>
+                  <!-- Lignes de repères normatifs de référence (Traversent le graphe sans texte encombrant) -->
+                  <!-- Ligne 400 ms -->
+                  <line x1="${graphPlotLeft}" y1="${y400}" x2="${graphPlotRight}" y2="${y400}" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.85" />
+                  <!-- Flèche & Cartouche 400 ms dans la marge de droite (Zéro collision avec le graphique) -->
+                  <path d="M ${graphPlotRight} ${y400} L ${graphPlotRight + 7} ${y400 - 4} L ${graphPlotRight + 7} ${y400 + 4} Z" fill="#ea580c" />
+                  <rect x="${graphPlotRight + 10}" y="${y400 - 13}" width="168" height="26" rx="4" fill="#181512" stroke="#ea580c" stroke-width="1.2" />
+                  <text x="${graphPlotRight + 18}" y="${y400 - 1}" fill="#ea580c" font-size="8" font-weight="900">400 ms — Seuil max NIBT</text>
+                  <text x="${graphPlotRight + 18}" y="${y400 + 9}" fill="#cbd5e1" font-size="6.8">Temps de coupure limite</text>
 
-                  <!-- Repère DDR 25 ms -->
-                  <line x1="${plotLeft}" y1="${toSvgY(25)}" x2="${plotRight}" y2="${toSvgY(25)}" stroke="#10b981" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.8" />
-                  <rect x="${plotLeft + 6}" y="${toSvgY(25) - 15}" width="176" height="13" rx="3" fill="#0b1329" fill-opacity="0.9" stroke="#10b981" stroke-width="0.8" />
-                  <text x="${plotLeft + 10}" y="${toSvgY(25) - 5}" fill="#10b981" font-size="7.5" font-weight="700">Coupure DDR ≤ 25 ms (Zone de sécurité)</text>
+                  <!-- Ligne DDR 25 ms -->
+                  <line x1="${graphPlotLeft}" y1="${y25}" x2="${graphPlotRight}" y2="${y25}" stroke="#10b981" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.85" />
+                  <!-- Flèche & Cartouche DDR 25 ms dans la marge de droite (Zéro collision avec le graphique) -->
+                  <path d="M ${graphPlotRight} ${y25} L ${graphPlotRight + 7} ${y25 - 4} L ${graphPlotRight + 7} ${y25 + 4} Z" fill="#10b981" />
+                  <rect x="${graphPlotRight + 10}" y="${y25 - 13}" width="168" height="26" rx="4" fill="#0b241b" stroke="#10b981" stroke-width="1.2" />
+                  <text x="${graphPlotRight + 18}" y="${y25 - 1}" fill="#10b981" font-size="8" font-weight="900">≤ 25 ms — Coupure DDR</text>
+                  <text x="${graphPlotRight + 18}" y="${y25 + 9}" fill="#6ee7b7" font-size="6.8">Zone de survie garantie</text>
 
                   <!-- Lignes de repères dynamiques associées au point de simulation actuel -->
                   ${calc.effectiveU > 0 ? `
-                    <line x1="${plotLeft}" y1="${dotY}" x2="${dotX}" y2="${dotY}" stroke="${calc.zoneColor}" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.9" />
-                    <line x1="${dotX}" y1="${dotY}" x2="${dotX}" y2="${plotBottom}" stroke="${calc.zoneColor}" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.9" />
+                    <line x1="${graphPlotLeft}" y1="${dotY}" x2="${dotX}" y2="${dotY}" stroke="${calc.zoneColor}" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.9" />
+                    <line x1="${dotX}" y1="${dotY}" x2="${dotX}" y2="${graphPlotBottom}" stroke="${calc.zoneColor}" stroke-width="1.8" stroke-dasharray="4 3" opacity="0.9" />
                   ` : ''}
 
                   <!-- Graduations Y (Durée t en ms - Espacement régulier et net) -->
                   ${[10000, 5000, 2000, 1000, 200, 100, 50, 20, 10].map(t => `
-                    <text x="76" y="${toSvgY(t) + 3}" fill="#94a3b8" font-size="7.5" font-weight="500" text-anchor="end">${t}</text>
+                    <text x="${graphPlotLeft - 9}" y="${toGLogY(t) + 3}" fill="#94a3b8" font-size="7.5" font-weight="500" text-anchor="end">${t}</text>
                   `).join('')}
                   <!-- Repère 400 ms sur l'axe Y -->
-                  <line x1="${plotLeft - 4}" y1="${y400}" x2="${plotLeft}" y2="${y400}" stroke="#ea580c" stroke-width="2" />
-                  <text x="76" y="${y400 + 3}" fill="#ea580c" font-size="8" font-weight="800" text-anchor="end">400 ms</text>
+                  <line x1="${graphPlotLeft - 5}" y1="${y400}" x2="${graphPlotLeft}" y2="${y400}" stroke="#ea580c" stroke-width="2" />
+                  <text x="${graphPlotLeft - 9}" y="${y400 + 3}" fill="#ea580c" font-size="8" font-weight="800" text-anchor="end">400 ms</text>
 
                   <text x="20" y="150" fill="#94a3b8" font-size="8.5" font-weight="800" transform="rotate(-90 20 150)" text-anchor="middle">Durée de passage du courant [ms]</text>
 
                   <!-- Graduations X (Courant I_B en mA - Sans chevauchement 200 / 230) -->
                   ${[0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000].map(i => `
-                    <text x="${toSvgX(i)}" y="${plotBottom + 13}" fill="#94a3b8" font-size="7.5" text-anchor="middle">${i}</text>
+                    <text x="${toGLogX(i)}" y="${graphPlotBottom + 13}" fill="#94a3b8" font-size="7.5" text-anchor="middle">${i}</text>
                   `).join('')}
 
                   <!-- Tick spécial 230 mA (Cas standard d'école) -->
-                  <line x1="${x230}" y1="${plotBottom}" x2="${x230}" y2="${plotBottom + 4}" stroke="#ea580c" stroke-width="2" />
-                  <text x="${x230}" y="${plotBottom + 14}" fill="#ea580c" font-size="8" font-weight="900" text-anchor="middle">230</text>
+                  <line x1="${x230}" y1="${graphPlotBottom}" x2="${x230}" y2="${graphPlotBottom + 4}" stroke="#ea580c" stroke-width="2" />
+                  <text x="${x230}" y="${graphPlotBottom + 14}" fill="#ea580c" font-size="8" font-weight="900" text-anchor="middle">230</text>
 
                   <!-- Titre Axe X -->
-                  <text x="345" y="${plotBottom + 30}" fill="#94a3b8" font-size="8.5" font-weight="800" text-anchor="middle">Courant de contact I_B [mA] ───────────►</text>
+                  <text x="${graphPlotLeft + (graphPlotRight - graphPlotLeft) / 2}" y="${graphPlotBottom + 30}" fill="#94a3b8" font-size="8.5" font-weight="800" text-anchor="middle">Courant de contact I_B [mA] ───────────►</text>
 
                   <!-- Point de fonctionnement dynamique (Avec pulsation SVG concentrique et étiquette intelligente sans superposition) -->
                   ${calc.effectiveU > 0 ? `
@@ -11042,12 +11074,14 @@
                       </circle>
                       <!-- Point central -->
                       <circle cx="0" cy="0" r="5.5" fill="#ffffff" stroke="${calc.zoneColor}" stroke-width="2.5" />
-                      <!-- Badge d'information au-dessus ou au-dessous du point -->
-                      <rect x="-50" y="${dotY < 60 ? 8 : -26}" width="100" height="18" rx="4" fill="#0b1329" stroke="${calc.zoneColor}" stroke-width="1.5" />
-                      <text x="0" y="${dotY < 60 ? 20 : -14}" fill="#ffffff" font-size="8.5" font-weight="900" text-anchor="middle">${calc.currentMa} mA · ${tripTimeMs} ms</text>
+                      <!-- Badge d'information au-dessus ou au-dessous du point avec décalage dynamique -->
+                      <g transform="translate(${tipDx}, ${tipDy})">
+                        <rect x="-48" y="-10" width="96" height="20" rx="4" fill="#0b1329" stroke="${calc.zoneColor}" stroke-width="1.5" />
+                        <text x="0" y="3.5" fill="#ffffff" font-size="8.5" font-weight="900" text-anchor="middle">${calc.currentMa} mA · ${tripTimeMs} ms</text>
+                      </g>
                     </g>
                   ` : `
-                    <g transform="translate(${toSvgX(0.1)}, ${toSvgY(10)})">
+                    <g transform="translate(${toGLogX(0.1)}, ${toGLogY(10)})">
                       <circle cx="0" cy="0" r="6" fill="#10b981" stroke="#fff" stroke-width="2" />
                       <text x="12" y="4" fill="#10b981" font-size="9" font-weight="800">0 mA (Hors tension)</text>
                     </g>

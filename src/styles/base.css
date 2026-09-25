@@ -2933,7 +2933,7 @@ button, input, select {
   background: var(--bg-surface);
   border: 2px solid var(--border-medium);
   border-radius: 14px;
-  max-width: 680px;
+  max-width: 760px;
   width: 100%;
   padding: 1.5rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
