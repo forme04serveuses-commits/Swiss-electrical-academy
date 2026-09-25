@@ -678,7 +678,7 @@ export function renderPyramideParcoursView(container) {
     <!-- Liste des 4 Leçons officielles -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 4 leçons de la Pyramide des lois">
       <div class="section-heading">
-        <span>📚</span> Les 4 leçons du parcours (fidèles aux 4 volets de la pyramide)
+        <span>📚</span> Les 4 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
