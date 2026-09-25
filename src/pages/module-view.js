@@ -855,7 +855,7 @@ export function renderLieParcoursView(container) {
     <!-- Liste des 11 Leçons officielles (Parties I à VIII) -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 11 leçons LIE">
       <div class="section-heading">
-        <span>📚</span> Les 11 leçons du parcours (fidèles aux 11 parties de la LIE · Art. 1 à 64)
+        <span>📚</span> Les 11 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
