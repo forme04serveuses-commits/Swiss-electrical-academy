@@ -134,7 +134,7 @@ const PARCOURS_REGISTRY = {
     id: 'pyramide-lois',
     shortCode: 'PYR',
     title: 'Pyramide des lois',
-    fullTitle: 'Cadre légal et hiérarchie normative suisse (Pyramide des lois)',
+    fullTitle: 'Cadre légal et hiérarchie normative suisse',
     typeLabel: 'Cadre normatif fédéral',
     accentColor: '#f59e0b',
     hubRoute: '#/formations/A/pyramide-lois',

@@ -77,7 +77,7 @@ export function renderModuleView(container, moduleId) {
           </div>
           <span class="pyramide-featured-stats">${pyramideProgress.lessonsCompleted} / ${pyramideProgress.lessonsTotal} leçons · ${pyramideProgress.percentageFormatted}</span>
         </div>
-        <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h2>
+        <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse</h2>
         <p class="pyramide-featured-desc">
           Parcours structuré en 4 leçons officielles (Histoire 1888-1902, Hiérarchie juridique & références RS, Règles techniques & Organismes, Typologie des normes [SN]/[SNR]/[SNG]) et 1 évaluation finale certifiante de 8 questions.
         </p>
@@ -644,7 +644,7 @@ export function renderPyramideParcoursView(container) {
       <div class="ocfo-hub-title-row">
         <div>
           <div class="ocfo-hub-short" style="color:#ec4899;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
-          <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h1>
+          <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse</h1>
         </div>
       </div>
 

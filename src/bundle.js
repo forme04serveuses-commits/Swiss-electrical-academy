@@ -152,7 +152,7 @@
     totalLessons: 4,
     subtitle: "4 leçons officielles · Infographie synthétique en 4 volets · Évaluation finale certifiante",
     tag: "Cadre normatif fédéral",
-    fullTitle: "Cadre légal et hiérarchie normative suisse (Pyramide des lois)"
+    fullTitle: "Cadre légal et hiérarchie normative suisse"
   };
 
   // Informations officielles et structure en 11 chapitres de la RS 734.0 (LIE)
@@ -8975,7 +8975,7 @@
       id: 'pyramide-lois',
       shortCode: 'PYR',
       title: 'Pyramide des lois',
-      fullTitle: 'Cadre légal et hiérarchie normative suisse (Pyramide des lois)',
+      fullTitle: 'Cadre légal et hiérarchie normative suisse',
       typeLabel: 'Cadre normatif fédéral',
       accentColor: '#f59e0b',
       hubRoute: '#/formations/A/pyramide-lois',
@@ -11542,7 +11542,7 @@
             </div>
             <span class="pyramide-featured-stats">${pyramideProgress.lessonsCompleted} / ${pyramideProgress.lessonsTotal} leçons · ${pyramideProgress.percentageFormatted}</span>
           </div>
-          <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h2>
+          <h2 id="pyramideFeaturedTitle" class="pyramide-featured-title">Cadre légal et hiérarchie normative suisse</h2>
           <p class="pyramide-featured-desc">
             Parcours structuré en 4 leçons officielles (Histoire 1888-1902, Hiérarchie juridique & références RS, Règles techniques & Organismes, Typologie des normes [SN]/[SNR]/[SNG]) et 1 évaluation finale certifiante de 8 questions.
           </p>
@@ -12109,7 +12109,7 @@
         <div class="ocfo-hub-title-row">
           <div>
             <div class="ocfo-hub-short" style="color:#ec4899;">HIÉRARCHIE DU DROIT ÉLECTRIQUE SUISSE</div>
-            <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse (Pyramide des lois)</h1>
+            <h1 class="ocfo-hub-title">Cadre légal et hiérarchie normative suisse</h1>
           </div>
         </div>
 

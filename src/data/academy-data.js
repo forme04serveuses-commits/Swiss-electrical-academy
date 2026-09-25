@@ -147,7 +147,7 @@ export const PYRAMIDE_LOIS_INFO = {
   totalLessons: 4,
   subtitle: "4 leçons officielles · Infographie synthétique en 4 volets · Évaluation finale certifiante",
   tag: "Cadre normatif fédéral",
-  fullTitle: "Cadre légal et hiérarchie normative suisse (Pyramide des lois)"
+  fullTitle: "Cadre légal et hiérarchie normative suisse"
 };
 
 // Informations officielles et structure en 11 chapitres de la RS 734.0 (LIE)
