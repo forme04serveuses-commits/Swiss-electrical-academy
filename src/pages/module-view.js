@@ -814,7 +814,7 @@ export function renderLieParcoursView(container) {
     <!-- Header Hero Card LIE -->
     <header class="ocfo-hub-hero" style="border-left: 4px solid #f59e0b;" role="region" aria-label="En-tête du parcours RS 734.0">
       <div class="ocfo-hub-badge-row">
-        <span class="ocfo-hub-tag">DROIT FÉDÉRAL SUISSE · LOI-CADRE FONDAMENTALE</span>
+        <span class="ocfo-hub-tag">Droit interne</span>
         <span class="ocfo-hub-ref" style="border-color:rgba(245,158,11,0.4); color:#f59e0b; background:rgba(245,158,11,0.12);">RS 734.0</span>
       </div>
 
