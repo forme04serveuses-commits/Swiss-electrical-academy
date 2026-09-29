@@ -14383,7 +14383,7 @@
       <!-- Header Hero Card ESTI 221 -->
       <header class="ocfo-hub-hero" style="border-left: 4px solid #10b981;" role="region" aria-label="En-tête du parcours ESTI 221">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag">DIRECTIVE OFFICIELLE ESTI · VERSION 0621</span>
+          <span class="ocfo-hub-tag">Règle technique</span>
           <span class="ocfo-hub-ref" style="border-color:rgba(16,185,129,0.4); color:#10b981; background:rgba(16,185,129,0.12);">ESTI n° 221</span>
         </div>
 
