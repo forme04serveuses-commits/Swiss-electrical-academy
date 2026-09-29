@@ -14424,7 +14424,7 @@
       <!-- Liste des 4 Leçons officielles -->
       <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 4 leçons ESTI 221">
         <div class="section-heading">
-          <span>📚</span> Les 4 leçons du parcours (fidèles aux 6 sections de la directive ESTI 221)
+          <span>📚</span> Les 4 leçons du parcours
         </div>
 
         <div class="ocfo-chapters-list">
