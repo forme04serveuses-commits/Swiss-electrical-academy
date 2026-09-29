@@ -202,7 +202,7 @@ export function renderModuleView(container, moduleId) {
         </div>
         <h2 id="esti221FeaturedTitle" class="esti-featured-title">Directive ESTI n° 221 — Obligations d'annoncer</h2>
         <p class="esti-featured-desc">
-          Parcours officiel structuré en 4 leçons conformes à la directive ESTI 221 (Cadre légal OIBT, Les 13 cas d'annonce obligatoire, Première vérification & dispense de RaSi, Droit transitoire & notification) et 1 évaluation finale certifiante de 10 questions.
+          Parcours officiel structuré en 4 leçons conformes à la directive ESTI 221 (Cadre légal OIBT, Les 13 cas d'annonce obligatoire, Première vérification & dispense de RS, Droit transitoire & notification) et 1 évaluation finale certifiante de 10 questions.
         </p>
         <div class="progress-bar-bg" style="height:6px; margin-bottom:1rem;">
           <div class="progress-bar-fill" style="width: ${esti221Progress.percentage}%; background:#10b981;"></div>
