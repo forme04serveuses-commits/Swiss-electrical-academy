@@ -98,7 +98,7 @@
         id: "pyr-01",
         slug: "lecon-1",
         number: "1",
-        code: "PYR-01",
+        code: "PYR — Leçon 1",
         title: "Histoire et Genèse des Lois Électriques (1888–1902)",
         subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
         duration: "6 min",
@@ -109,7 +109,7 @@
         id: "pyr-02",
         slug: "lecon-2",
         number: "2",
-        code: "PYR-02",
+        code: "PYR — Leçon 2",
         title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
         subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
         duration: "8 min",
@@ -120,7 +120,7 @@
         id: "pyr-03",
         slug: "lecon-3",
         number: "3",
-        code: "PYR-03",
+        code: "PYR — Leçon 3",
         title: "Règles Techniques et Organismes d'Application",
         subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
         duration: "8 min",
@@ -131,7 +131,7 @@
         id: "pyr-04",
         slug: "lecon-4",
         number: "4",
-        code: "PYR-04",
+        code: "PYR — Leçon 4",
         title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
         subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
         duration: "7 min",
@@ -142,7 +142,7 @@
     finalEvaluation: {
       id: "pyr-evaluation-finale",
       slug: "evaluation-finale",
-      code: "PYR-FINAL",
+      code: "PYR — EXAMEN",
       title: "Évaluation finale — Pyramide des lois",
       subtitle: "Synthèse générale et validation certifiante sur l'ensemble de la hiérarchie juridique",
       duration: "15 min",
@@ -866,7 +866,7 @@
           lessonNumber: 1,
           totalLessons: 4,
           nextLessonId: "pyr-02",
-          code: "PYR-01",
+          code: "PYR — Leçon 1",
           title: "Histoire et Genèse des Lois Électriques (1888–1902)",
           subtitle: "De la protection télégraphique à la création de l'ASE et la LIE de 1902",
           status: "Disponible",
@@ -942,7 +942,7 @@
           lessonNumber: 2,
           totalLessons: 4,
           nextLessonId: "pyr-03",
-          code: "PYR-02",
+          code: "PYR — Leçon 2",
           title: "La Hiérarchie Juridique — Du Conseil Fédéral aux Ordonnances",
           subtitle: "Niveau suprême (CF), lois fédérales (LIE, LSPro, LAA) et ordonnances d'application",
           status: "Disponible",
@@ -1037,7 +1037,7 @@
           lessonNumber: 3,
           totalLessons: 4,
           nextLessonId: "pyr-04",
-          code: "PYR-03",
+          code: "PYR — Leçon 3",
           title: "Règles Techniques et Organismes d'Application",
           subtitle: "NIBT 2025, normes SN EN, directives et rôles de l'ESTI, la SUVA, l'AEAI et les PDIE",
           status: "Disponible",
@@ -1143,7 +1143,7 @@
           lessonNumber: 4,
           totalLessons: 4,
           nextLessonId: "pyr-evaluation-finale",
-          code: "PYR-04",
+          code: "PYR — Leçon 4",
           title: "Structure et Typologie des Normes — [SN], [SNR] et [SNG]",
           subtitle: "26'000 normes en Suisse, tableau comparatif : définitions, intégration CH et durées de validité",
           status: "Disponible",
@@ -1269,7 +1269,7 @@
           moduleId: "A",
           parcoursId: "pyramide-lois",
           isFinalEvaluation: true,
-          code: "PYR-FINAL",
+          code: "PYR — EXAMEN",
           title: "Évaluation finale — Pyramide des lois",
           subtitle: "Certification générale sur la hiérarchie juridique et les normes suisses",
           status: "Disponible",
@@ -13772,7 +13772,7 @@
                 ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
               </div>
               <div class="ocfo-chap-articles">
-                <span class="legal-tag">PYR-FINAL</span>
+                <span class="legal-tag">${PYRAMIDE_LOIS_INFO.finalEvaluation.code}</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${PYRAMIDE_LOIS_INFO.finalEvaluation.duration}</span>
                 <span style="color:var(--text-muted); font-size:0.8rem;">•</span>

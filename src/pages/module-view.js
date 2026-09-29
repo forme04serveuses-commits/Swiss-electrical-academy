@@ -735,7 +735,7 @@ export function renderPyramideParcoursView(container) {
               ${isFinalDone ? '<span class="ocfo-badge-done">✓ Certifié</span>' : '<span class="ocfo-badge-eval">Examen final</span>'}
             </div>
             <div class="ocfo-chap-articles">
-              <span class="legal-tag">PYR-FINAL</span>
+              <span class="legal-tag">${PYRAMIDE_LOIS_INFO.finalEvaluation.code}</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">⏱️ ${PYRAMIDE_LOIS_INFO.finalEvaluation.duration}</span>
               <span style="color:var(--text-muted); font-size:0.8rem;">•</span>
