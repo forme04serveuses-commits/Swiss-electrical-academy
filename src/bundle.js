@@ -14561,7 +14561,7 @@
       <!-- Header Hero Card ESTI 407 -->
       <header class="ocfo-hub-hero" style="border-left: 4px solid #f97316;" role="region" aria-label="En-tête du parcours ESTI 407">
         <div class="ocfo-hub-badge-row">
-          <span class="ocfo-hub-tag">DIRECTIVE OFFICIELLE ESTI · VERSION 0526</span>
+          <span class="ocfo-hub-tag">Règle technique</span>
           <span class="ocfo-hub-ref" style="border-color:rgba(249,115,22,0.4); color:#f97316; background:rgba(249,115,22,0.12);">ESTI n° 407</span>
         </div>
 
