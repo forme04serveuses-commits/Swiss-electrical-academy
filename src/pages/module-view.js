@@ -219,7 +219,7 @@ export function renderModuleView(container, moduleId) {
       <section class="esti407-featured-parcours-box" aria-labelledby="esti407FeaturedTitle">
         <div class="esti-featured-top">
           <div style="display:flex; align-items:center; gap:0.75rem;">
-            <span class="esti407-featured-badge">DIRECTIVE ESTI · VERSION 0526</span>
+            <span class="esti407-featured-badge">Règle technique</span>
             <span class="esti407-featured-code">ESTI 407</span>
           </div>
           <span class="esti-featured-stats">${esti407Progress.lessonsCompleted} / ${esti407Progress.lessonsTotal} leçons · ${esti407Progress.percentageFormatted}</span>
