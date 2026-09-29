@@ -1565,7 +1565,7 @@ export function renderEsti407ParcoursView(container) {
     <!-- Liste des 13 Leçons officielles -->
     <section class="ocfo-chapters-section" aria-label="Liste ordonnée des 13 leçons ESTI 407">
       <div class="section-heading">
-        <span>📚</span> Les 13 leçons officielles (calquées 1:1 sur les 13 chapitres de la Directive ESTI 407)
+        <span>📚</span> Les 13 leçons du parcours
       </div>
 
       <div class="ocfo-chapters-list">
